@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório Semanal Individual de Atividades — Liomar Antonio de Oliveira</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+    @page {
+      size: A4;
+      margin: 10mm 12mm 10mm 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.38;
+      font-size: 8.6pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 277mm;
+      position: relative;
+      padding-bottom: 25px;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .header-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0284c7 100%);
+      color: #ffffff;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 2px 10px;
+      border-radius: 14px;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 5px;
+      color: #e0f2fe;
+    }
+
+    .header-banner h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15pt;
+      font-weight: 800;
+      margin-bottom: 2px;
+      letter-spacing: -0.4px;
+      color: #ffffff;
+    }
+
+    .header-banner p.subtitle {
+      font-size: 8.8pt;
+      color: #cbd5e1;
+      font-weight: 400;
+    }
+
+    .sub-header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 9px 16px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sub-header h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .sub-header .badge-mini {
+      background: #0284c7;
+      color: #ffffff;
+      font-size: 7.2pt;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-item .label {
+      font-size: 6.8pt;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.4px;
+    }
+
+    .meta-item .val {
+      font-size: 8.3pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    h3.section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9.6pt;
+      font-weight: 700;
+      color: #0f172a;
+      border-left: 3px solid #0284c7;
+      padding-left: 8px;
+      margin-top: 10px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .kpi-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 7px 9px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2.5px;
+      background: #0284c7;
+    }
+
+    .kpi-card.emerald::before { background: #10b981; }
+    .kpi-card.purple::before { background: #8b5cf6; }
+    .kpi-card.amber::before { background: #f59e0b; }
+
+    .kpi-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    .kpi-label {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 2px;
+    }
+
+    .kpi-desc {
+      font-size: 6.5pt;
+      color: #94a3b8;
+    }
+
+    .table-container {
+      margin-bottom: 9px;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.6pt;
+      text-align: left;
+    }
+
+    thead {
+      background: #f1f5f9;
+      border-bottom: 1px solid #cbd5e1;
+    }
+
+    th {
+      padding: 5px 8px;
+      font-weight: 700;
+      color: #334155;
+      font-size: 6.8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    td {
+      padding: 4.5px 8px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #334155;
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 1.5px 6px;
+      border-radius: 8px;
+      font-size: 6.8pt;
+      font-weight: 700;
+    }
+
+    .badge-blue { background: #e0f2fe; color: #0369a1; }
+    .badge-green { background: #dcfce7; color: #15803d; }
+    .badge-purple { background: #f3e8ff; color: #7e22ce; }
+    .badge-amber { background: #fef3c7; color: #b45309; }
+
+    .time-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-bottom: 9px;
+    }
+
+    .time-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+      font-size: 7.5pt;
+    }
+
+    .time-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .time-label {
+      width: 160px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .time-bar-wrap {
+      flex: 1;
+      height: 9px;
+      background: #e2e8f0;
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 0 8px;
+    }
+
+    .time-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #0284c7, #38bdf8);
+      border-radius: 5px;
+    }
+
+    .time-val {
+      width: 40px;
+      text-align: right;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .card-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .card-desc {
+      font-size: 7.4pt;
+      color: #334155;
+      line-height: 1.35;
+    }
+
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 6.8pt;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PÁGINA 1 -->
+  <div class="page">
+    <!-- HEADER BANNER -->
+    <div class="header-banner">
+      <div class="header-badge">Relatório Semanal de Atividades — Setor de TI</div>
+      <h1>Liomar Antonio de Oliveira</h1>
+      <p class="subtitle">Analista de TI Sênior | Supervisor de TI | Coordenação: Isvi Neemias</p>
+    </div>
+
+    <!-- META INFO -->
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="label">Empresa</span>
+        <span class="val">Ten Soluções e Serviços</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Período de Referência</span>
+        <span class="val">07/09/2026 a 13/09/2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Semana Operacional</span>
+        <span class="val">Semana 37 / 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Status Individual</span>
+        <span class="val"><span class="badge badge-green">Consolidado Multi-Fonte</span></span>
+      </div>
+    </div>
+
+    <!-- KPI GRID -->
+    <h3 class="section-title">Resumo Executivo da Semana</h3>
+    <div class="kpi-grid">
+      <div class="kpi-card emerald">
+        <div class="kpi-value">62</div>
+        <div class="kpi-label">Commits AutoTickets</div>
+        <div class="kpi-desc">Sprints 247 a 264</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">100%</div>
+        <div class="kpi-label">Disponibilidade DC</div>
+        <div class="kpi-desc">Servidores e Switch 24p</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">5</div>
+        <div class="kpi-label">Demandas Concluídas</div>
+        <div class="kpi-desc">Infra, Dev e Protocolos</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-value">2</div>
+        <div class="kpi-label">Projetos em Validação</div>
+        <div class="kpi-desc">MailCow e Outline</div>
+      </div>
+    </div>
+
+    <!-- 1. GESTÃO DE DEMANDAS -->
+    <h3 class="section-title">1. Gestão de Demandas & Entregas da Semana</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Protocolo / Ref.</th>
+            <th>Descrição da Demanda / Entrega</th>
+            <th>Status / Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Protocolo 3062633</strong></td>
+            <td>Manutenção programada e restabelecimento da controladora iDRAC no Dell R550. Substituição de cabeamento por CAT6 no rack DC.</td>
+            <td><span class="badge badge-green">Concluído 100%</span> Acesso out-of-band recuperado; conector reparado.</td>
+          </tr>
+          <tr>
+            <td><strong>Protocolo 3070027</strong></td>
+            <td>Instalação de Switch Gerenciável TP-Link T2600G-28TS 24p Gigabit no rack DC Chácara (IP 172.16.30.27, VLAN 1) e patchcords CAT6.</td>
+            <td><span class="badge badge-green">Concluído 100%</span> Gargalo de 8p eliminado; interligação dos servidores ao CCR1009.</td>
+          </tr>
+          <tr>
+            <td><strong>Sprints 247-264</strong></td>
+            <td>62 commits no AutoTickets v2: telemetria FreeRADIUS em tempo real para NOC, filtros Voalle, chat omnichannel e Apple Bento Grid.</td>
+            <td><span class="badge badge-green">Em Produção</span> Visibilidade em falhas PPPoE e stack em React 19 / Tailwind v4.</td>
+          </tr>
+          <tr>
+            <td><strong>Protocolos Teste TI</strong></td>
+            <td>Testes de integração com APIs do Voalle para cancelamento/solicitação de IP público e rotinas de desconto (2854202 a 2873161).</td>
+            <td><span class="badge badge-blue">Homologado</span> Validação concluída sem impacto na base produtiva.</td>
+          </tr>
+          <tr>
+            <td><strong>Outline (Doc. Interna)</strong></td>
+            <td>Validação de requisitos com Tiago Silva (Fiscal/DP) após descarte do SharePoint corporativo (Protocolo 3187490).</td>
+            <td><span class="badge badge-amber">Em Andamento (40%)</span> Contato realizado, aguardando retorno formal.</td>
+          </tr>
+          <tr>
+            <td><strong>MailCow (E-mail TI)</strong></td>
+            <td>Prospecção e validação de VM com MailCow para provisionamento rápido e integração iminente com Slack corporativo.</td>
+            <td><span class="badge badge-amber">Em Andamento (70%)</span> Análise técnica da VM realizada por Liomar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. REGISTRO DE ATIVIDADES E SUPERVISÃO -->
+    <h3 class="section-title">2. Registro de Atividades e Distribuição do Tempo</h3>
+    <div class="time-box">
+      <div class="time-row">
+        <div class="time-label">Projetos & Dev (AutoTickets / APIs)</div>
+        <div class="time-bar-wrap"><div class="time-bar" style="width: 50%;"></div></div>
+        <div class="time-val">50%</div>
+      </div>
+      <div class="time-row">
+        <div class="time-label">Infraestrutura & Data Center (Servidores/Switches)</div>
+        <div class="time-bar-wrap"><div class="time-bar" style="width: 20%;"></div></div>
+        <div class="time-val">20%</div>
+      </div>
+      <div class="time-row">
+        <div class="time-label">Supervisão & Alinhamento da Equipe de TI</div>
+        <div class="time-bar-wrap"><div class="time-bar" style="width: 15%;"></div></div>
+        <div class="time-val">15%</div>
+      </div>
+      <div class="time-row">
+        <div class="time-label">Suporte Especializado (N2/N3) & Fornecedores</div>
+        <div class="time-bar-wrap"><div class="time-bar" style="width: 15%;"></div></div>
+        <div class="time-val">15%</div>
+      </div>
+    </div>
+
+    <!-- FOOTER PAGE 1 -->
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. | Setor de TI</span>
+      <span>Relatório Semanal Individual — Liomar Antonio de Oliveira (Supervisor de TI)</span>
+      <span>Página 1 de 2</span>
+    </div>
+  </div>
+
+  <!-- PÁGINA 2 -->
+  <div class="page page-break">
+    <!-- SUB-HEADER -->
+    <div class="sub-header">
+      <h2>Liomar Antonio de Oliveira — Relatório Semanal de Atividades</h2>
+      <div class="badge-mini">Página 2 / 2</div>
+    </div>
+
+    <!-- 3. PROJETOS E ENTREGAS -->
+    <h3 class="section-title">3. Projetos, Entregas e Integrações</h3>
+    <div class="two-cols">
+      <div class="card-box">
+        <div class="card-title">🚀 AutoTickets v2 (Desenvolvimento & NOC)</div>
+        <div class="card-desc">
+          Entregues módulos de logs FreeRADIUS em tempo real para o NOC (detecção de falhas de autenticação), telemetria óptica ao vivo, dock de widgets e redesign Apple Bento Grid com React 19.
+        </div>
+      </div>
+      <div class="card-box">
+        <div class="card-title">📞 Telefonia Native PBX & TIP Brasil</div>
+        <div class="card-desc">
+          Monitoramento do tronco SIP junto à operadora TIP Brasil com interface dedicada e VLAN 331 no Datacom SV01, assegurando isolamento contra oscilações de link.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. INCIDENTES TRATADOS -->
+    <h3 class="section-title">4. Incidentes Tratados na Semana</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Sistema / Incidente</th>
+            <th>Severidade</th>
+            <th>Causa Raiz</th>
+            <th>Solução Aplicada</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>iDRAC Dell R550</strong></td>
+            <td><span class="badge badge-amber">Média</span></td>
+            <td>Trava do conector RJ45 quebrado no rack.</td>
+            <td>Cabo CAT6 novo crimpado e instalado; acesso restaurado em 13 min.</td>
+            <td><span class="badge badge-green">Definitivo</span></td>
+          </tr>
+          <tr>
+            <td><strong>Saturação Switch DC</strong></td>
+            <td><span class="badge badge-blue">Baixa/Média</span></td>
+            <td>Switch antigo de 8p sem portas para novos hosts.</td>
+            <td>Substituição por Switch Gerenciável TP-Link 24p Gigabit + SFP.</td>
+            <td><span class="badge badge-green">Definitivo</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5 & 6. SUPORTE INTERNO E AO CAMPO -->
+    <div class="two-cols">
+      <div>
+        <h3 class="section-title">5. Suporte Interno (Informática)</h3>
+        <div class="card-box">
+          <div class="card-desc">
+            • <strong>Supervisão Operacional:</strong> Direcionamento a Isac Costa no inventário de lojas e David Fernandes nos testes de bancada de switches.<br>
+            • <strong>Fiscal/DP:</strong> Alinhamento sobre estrutura de documentação colaborativa interna.
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="section-title">6. Suporte ao Técnico de Campo</h3>
+        <div class="card-box">
+          <div class="card-desc">
+            • <strong>Wi-Fi 6 Mesh Datacom:</strong> Triagem de ONTs (DM986 AX30/AX27) para homologação de firmware e resolução de falhas de provisionamento.<br>
+            • <strong>Oportunidade:</strong> Consulta direta de CTO via AutoTickets.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. INFRAESTRUTURA E SISTEMAS CRÍTICOS -->
+    <h3 class="section-title">7. Infraestrutura, Servidores e Sistemas Críticos</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Recurso / Sistema</th>
+            <th>Disponibilidade</th>
+            <th>Capacidade / Manutenção</th>
+            <th>Status de Backups</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ERP Voalle</strong></td>
+            <td><span class="badge badge-green">100%</span></td>
+            <td>Sem gargalos de banco ou filas travadas.</td>
+            <td>Rotinas executadas com sucesso.</td>
+          </tr>
+          <tr>
+            <td><strong>Data Center Chácara</strong></td>
+            <td><span class="badge badge-green">100%</span></td>
+            <td>Rack padronizado com Switch 24p e cabos CAT6.</td>
+            <td>VMs replicadas e snapshots íntegros.</td>
+          </tr>
+          <tr>
+            <td><strong>Servidores Físicos (SV01/R550)</strong></td>
+            <td><span class="badge badge-green">100%</span></td>
+            <td>SSDs NVMe E1.S e SATA operando em baixa latência.</td>
+            <td>Controladora iDRAC ativa 24/7.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 8. PONTOS DE ATENÇÃO E PRÓXIMAS AÇÕES -->
+    <h3 class="section-title">8. Pontos de Atenção e Próximas Ações</h3>
+    <div class="card-box">
+      <div class="card-desc">
+        • <strong>Validação do MailCow:</strong> Ajuste de registros DNS (SPF, DKIM, DMARC) antes da liberação oficial do Slack.<br>
+        • <strong>Ações Próxima Semana:</strong> Concluir testes de bancada Wi-Fi 6 Datacom e consolidar relatórios individuais da equipe para o Relatório Semanal Unificado do Setor de TI.
+      </div>
+    </div>
+
+    <!-- FOOTER PAGE 2 -->
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. | Setor de TI</span>
+      <span>Relatório Semanal Individual — Liomar Antonio de Oliveira (Supervisor de TI)</span>
+      <span>Página 2 de 2</span>
+    </div>
+  </div>
+
+</body>
+</html>
