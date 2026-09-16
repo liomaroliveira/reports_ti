@@ -12,7 +12,7 @@
 ## 👤 Equipe do Setor de TI
 1. **Liomar Antonio de Oliveira**
    - **CPF:** ***.848.515-**
-   - **Cargo:** Analista de TI Sênior (Supervisor de TI — responsável pela gestão técnica, supervisão do Assistente e Auxiliar, desenvolvimento de automações e consolidação dos relatórios semanais do setor)
+   - **Cargo:** Analista de TI Sênior (Responsável pelo desenvolvimento de automações, gestão técnica e consolidação dos relatórios semanais do setor)
    - **WhatsApp:** [telefone removido]
 
 2. **Isac Costa Silva**

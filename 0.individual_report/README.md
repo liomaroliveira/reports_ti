@@ -7,7 +7,7 @@ Este diretório armazena os relatórios de atividades individuais de cada membro
 ## 👥 Estrutura de Subdiretórios por Colaborador
 ```text
 0.individual_report/
-├── liomar/    # Liomar Antonio de Oliveira (Analista de TI Sênior / Supervisor)
+├── liomar/    # Liomar Antonio de Oliveira (Analista de TI Sênior)
 ├── isac/      # Isac Costa Silva (Assistente de TI Pleno)
 └── david/     # David Brasil Fernandes (Auxiliar de TI Junior)
 ```
