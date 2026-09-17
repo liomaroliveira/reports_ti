@@ -28,11 +28,33 @@
 ---
 
 ## 🖥️ Sistemas e Fontes de Dados em Escopo
-1. **ERP Voalle:** ERP principal da empresa (Módulos de Atendimento, Service Desk, O.S., Projetos, Infraestrutura e Apontamentos).
-2. **AutoTickets:** Plataforma de automação e integração de sistemas desenvolvida e mantida por Liomar Oliveira.
-   - **Repositório e Commits Locais:** `/home/liomarti/dev/autotickets-v2`
-3. **Históricos de WhatsApp:** Comunicações operacionais com fornecedores, equipe interna, NOC e coordenação armazenadas em `3.whatsapp_histories/`.
-4. **Infraestrutura e Plataformas Integradas:** Flashman, Native PBX (telefonia), Made4NOC / Grafana, FullCam, MailCow, Servidores Datacom (SV01), Dell PowerEdge (R550) e SuperMicro, Mikrotik e Switches Gerenciáveis.
+
+1. **ERP Voalle (`1.voalle/`):**
+   - ERP principal da empresa (Módulos de Atendimento, Service Desk, O.S., Projetos, Infraestrutura e Apontamentos).
+   - Exportações brutas e relatórios de tarefas e atendimentos em PDF/CSV.
+
+2. **AutoTickets (`2.autotickets/` e Repositório Local):**
+   - Plataforma de automação e integração de sistemas desenvolvida e mantida por Liomar Oliveira.
+   - **Repositório e Commits Locais:** `/home/liomarti/dev/autotickets-v2` (inspecionar commits no período para mapear entregas técnicas, novas features, correções e manutenções).
+   - **Exportações Tratadas em CSV (`2.autotickets/*.csv`):** Arquivos contendo dados tratados, filtrados e estruturados pelo AutoTickets integrando a base de dados do Voalle (chamados ativos, chamados concluídos, tarefas ativas e protocolos de acompanhamento). Os dados têm mérito do próprio sistema AutoTickets em tratá-los e prepará-los para auditoria.
+
+3. **Históricos e Comunicações de WhatsApp (`3.whatsapp_histories/`):**
+   - **Banco SQLite Mestre (`database/msgstore.db`):** Base de dados relacional com o histórico completo de mensagens (mais de 340 conversas e quase 40.000 mensagens), atualizada semanalmente a partir do backup com chave de 64 dígitos (`input/msgstore.db.crypt15`).
+   - **Exportações Manuais (`manual_exports/`):** Conversas estratégicas exportadas separadamente e de forma manual pelo WhatsApp Business (*Isvi TI Ten.txt*, *Tecnologia TEN.txt*, *Tudo Incluso - TEN.txt*, *[Made4NOC] TEN INTERNET LTDA PREMIUM.txt*).
+   - **Conversas Exportadas em Lote (`conversas_exportadas/`):** Histórico completo de chats individuais extraídos em formato `.txt` puro e catálogo geral indexado em `indice_conversas.json`.
+   - **Harness de Scripts (`scripts/`):**
+     - `sync_backup.py`: Descriptografa o novo backup em `input/` e atualiza `database/msgstore.db`.
+     - `query_history.py`: Utilitário de consulta relacional por período (`--start`, `--end`) e categoria (`campo`, `interno`, `coordenacao`, `incidentes`).
+     - `export_all_chats.py`: Utilitário para re-exportar todas as conversas para `.txt`.
+   - **Extratos Temporais (`exports/`):** Relatórios filtrados por período em Markdown (`extrato-campo.md`, etc.).
+
+4. **Infraestrutura e Plataformas Integradas:**
+   - Flashman, Native PBX (telefonia), Made4NOC / Grafana, FullCam, MailCow, Servidores Datacom (SV01), Dell PowerEdge (R550) e SuperMicro, Mikrotik e Switches Gerenciáveis.
+
+5. **Painéis de BI com Parceiros (Analítica 3M e EasyBI / MW Solutions) - Contexto Real:**
+   - **Analítica 3M:** Acesso limitado de Liomar Oliveira. O setor de TI não gerencia, não costuma utilizar e não realiza acompanhamento direto da integração.
+   - **EasyBI (MW Solutions):** Acesso nunca recebido, link direto (`https://easybi.teninternet.com.br`) inacessível (DNS), sem participação em grupos e fora do escopo direto de atuação da equipe.
+   - *Diretriz:* Caso citado no relatório, justificar formalmente o status real acima, sem simular atividades inexistentes.
 
 ---
 
@@ -47,27 +69,41 @@
 
 ```text
 reports_ti/
-├── GEMINI.md                                  # Contexto principal, diretrizes e regras para a IA
+├── GEMINI.md                                  # Contexto principal, diretrizes e regras obrigatórias para a IA
+├── PROMPT.md                                  # Especificação das tarefas, direcionamento e regras do usuário
+├── .gitignore                                 # Controle de exclusão de arquivos binários pesados e venv
 ├── modelo_coordenador/                        # Documento oficial de padronização do Coordenador de TI
 │   ├── modelo_relatorio_setor_ti.pdf          # PDF de referência emitido por Isvi Neemias
 │   └── README.md                              # Resumo dos tópicos e critérios de avaliação
 ├── 0.individual_report/                       # Relatórios individuais dos membros da equipe
 │   ├── README.md                              # Diretrizes para relatórios individuais e regras de fallback
-│   ├── liomar/                                # Relatórios individuais de Liomar Oliveira (YYYY-MM-DD-YYYY-MM-DD.pdf/.md/.html)
+│   ├── liomar/                                # Relatórios individuais de Liomar Oliveira
+│   │   ├── old/                               # Versões legadas de relatórios arquivadas
+│   │   └── [YYYY-MM-DD]-[YYYY-MM-DD].[ext]    # Novo relatório individual gerado
 │   ├── isac/                                  # Relatórios individuais de Isac Costa Silva
 │   └── david/                                 # Relatórios individuais de David Brasil Fernandes
 ├── 1.voalle/                                  # Exportações e dados brutos do ERP Voalle
 │   ├── README.md                              # Guia de interpretação de chamados, OS e apontamentos
 │   └── [Nome]-[DataInicio]-[DataFim].pdf/.csv # Relatórios de tarefas e atendimentos do Voalle
-├── 2.autotickets/                             # Dados de desenvolvimento e automações
-│   ├── README.md                              # Guia para leitura de relatórios e inspeção de commits do repositório
-│   └── [arquivos_exportados]                  # Exportações de métricas do AutoTickets
-├── 3.whatsapp_histories/                      # Registros de conversas operacionais de TI
-│   ├── README.md                              # Mapeamento dos grupos e contatos estratégicos
-│   ├── Conversa do WhatsApp com Isvi TI Ten.txt
-│   ├── Conversa do WhatsApp com Tecnologia TEN.txt
-│   ├── Conversa do WhatsApp com Tudo Incluso - TEN.txt
-│   └── Conversa do WhatsApp com [Made4NOC] TEN INTERNET LTDA PREMIUM.txt
+├── 2.autotickets/                             # Dados tratados e relatórios gerados via AutoTickets
+│   ├── README.md                              # Guia para leitura de relatórios e inspeção de commits
+│   └── [arquivos_exportados].csv              # CSVs tratados (chamados ativos, concluídos, tarefas, etc.)
+├── 3.whatsapp_histories/                      # Harness de comunicações e históricos do WhatsApp Business
+│   ├── README.md                              # Manual completo do harness, rotina semanal e queries
+│   ├── key_64digits.txt                       # Chave de 64 dígitos para descriptografia automática
+│   ├── input/                                 # Onde o usuário insere o novo msgstore.db.crypt15 semanal
+│   ├── database/                              # Banco SQLite mestre (msgstore.db) descriptografado
+│   ├── manual_exports/                        # Conversas estratégicas exportadas manualmente no celular
+│   │   ├── Conversa do WhatsApp com Isvi TI Ten.txt
+│   │   ├── Conversa do WhatsApp com Tecnologia TEN.txt
+│   │   ├── Conversa do WhatsApp com Tudo Incluso - TEN.txt
+│   │   └── Conversa do WhatsApp com [Made4NOC] TEN INTERNET LTDA  PREMIUM.txt
+│   ├── conversas_exportadas/                  # 340+ arquivos .txt individuais e indice_conversas.json
+│   ├── scripts/                               # Automação de sincronização e queries da IA
+│   │   ├── sync_backup.py                     # Sincroniza input/ com database/msgstore.db
+│   │   ├── query_history.py                   # Utilitário CLI para filtros temporais e categorização
+│   │   └── export_all_chats.py                # Utilitário de exportação sob demanda para TXT
+│   └── exports/                               # Extratos semanais gerados em Markdown/JSON
 └── 4.weekly_reports/                          # Relatórios semanais consolidados do setor de TI
     ├── README.md                              # Padrão de saída consolidado
     ├── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].md
@@ -79,20 +115,21 @@ reports_ti/
 
 ## 🔍 Regra de Mapeamento Ativo e Fallback de Atividades
 
-Quando um colaborador **NÃO possuir** um relatório semanal individual prévio dentro de `0.individual_report/[nome_colaborador]/`:
+Quando for gerar o relatório individual ou consolidado de um período (`YYYY-MM-DD` a `YYYY-MM-DD`):
 
-1. **Mineração Multi-Fonte:** A IA deve analisar ativamente todas as fontes de dados disponíveis no período (`YYYY-MM-DD` a `YYYY-MM-DD`):
-   - **Voalle (`1.voalle/`):** Tarefas executadas, chamados, O.S., relatos de atendimento e tempos trabalhados.
-   - **AutoTickets Commits (`/home/liomarti/dev/autotickets-v2`):** Histórico de commits no git do repositório local dentro do período especificado (sprints entregues, refatorações, novas features, correções).
-   - **WhatsApp (`3.whatsapp_histories/`):** Alinhamentos com o Coordenador, orientações dadas ao time, tratativas de incidentes com fornecedores (Made4NOC, TIP Brasil, Bemobi, etc.).
-2. **Geração do Relatório Individual:** A IA deve primeiro compilar e salvar o relatório individual nas extensões `.md`, `.html` e `.pdf` em `0.individual_report/[nome_colaborador]/[data_inicio]-[data_fim].[ext]`.
-3. **Consolidação:** Em seguida, integrar os dados individuais no relatório semanal consolidado do setor em `4.weekly_reports/`.
+1. **Mineração Multi-Fonte:** A IA deve analisar ativamente todas as fontes de dados disponíveis no período:
+   - **AutoTickets Commits (`/home/liomarti/dev/autotickets-v2`):** Histórico de commits no git no período da semana (sprints entregues, refatorações, novas features, correções).
+   - **AutoTickets CSVs (`2.autotickets/`):** Tarefas, chamados ativos e concluídos tratados e consolidados.
+   - **Voalle (`1.voalle/`):** Atendimentos, OS, relatos avulsos e horas apontadas.
+   - **WhatsApp (`3.whatsapp_histories/`):** Executar `query_history.py --start YYYY-MM-DD --end YYYY-MM-DD` para extrair mensagens de suporte ao campo, suporte interno, coordenação e Made4NOC, cruzando também com `manual_exports/` quando aplicável.
+2. **Geração do Relatório Individual:** Compilar e salvar o relatório individual nas extensões `.md`, `.html` e `.pdf` em `0.individual_report/[nome_colaborador]/[data_inicio]-[data_fim].[ext]`.
+3. **Consolidação do Setor:** Integrar as entregas de Liomar, Isac e David no relatório semanal consolidado em `4.weekly_reports/`.
 
 ---
 
 ## 📋 Tópicos Obrigatórios do Relatório (Conforme Modelo da Coordenação)
 
-Cada relatório (individual ou consolidado) deve respeitar rigorosamente a seguinte estrutura:
+Cada relatório (individual ou consolidado) deve respeitar a estrutura oficial:
 
 1. **Gestão de Demandas:**
    - Demandas pendentes (descrição resumida, solicitante, prioridade e previsão de início).
@@ -104,26 +141,29 @@ Cada relatório (individual ou consolidado) deve respeitar rigorosamente a segui
    - Resumo das atividades executadas por integrante no período.
    - Distribuição do tempo por frentes de trabalho (Projetos, Suporte Interno, Suporte ao Campo, Infraestrutura).
    - Pontos de desenvolvimento e necessidades de treinamento identificadas.
+   - **Colaborador do TI mais ativo no Voalle:** Gráfico/estatística comparativa de apontamentos.
 
 3. **Projetos e Entregas:**
    - Status dos projetos em andamento (AutoTickets, integrações Voalle x Flashman, telefonia Native PBX, WiFeed, etc.).
-   - Painéis de BI com parceiros (Analítica 3M, MW Solutions EasyBI ou AutoTickets).
+   - Painéis de BI com parceiros: Esclarecer o status real de Analítica 3M e EasyBI (MW Solutions).
    - Entregas colocadas em produção na semana e resultados observados.
    - Dependências de terceiros ou outros setores que estejam travando entregas.
 
 4. **Incidentes Tratados:**
    - Relação dos incidentes da semana (sistema/serviço afetado, severidade, data/hora, duração e impacto).
    - Causa raiz identificada e correção aplicada (definitiva ou paliativa).
-   - Incidentes recorrentes e planos de mitigação.
+   - Incidentes recorrentes e planos de mitigação (com base nas tratativas da Made4NOC e monitoramento).
 
 5. **Suporte Interno (Informática):**
    - Quantidade de solicitações recebidas e atendidas (computadores, acessos, e-mails, impressoras).
    - Tempo médio de atendimento e pendências em aberto.
-   - Setores que mais demandaram suporte.
+   - **Setores que mais demandaram suporte do TI:** Lista e estatísticas de interações.
+   - **Colaboradores que mais abriram chamados:** Informando equipe e setor.
+   - **Relatório de Visitas Presenciais:** Deslocamentos operacionais com veículos da empresa.
 
 6. **Suporte ao Técnico de Campo:**
-   - Quantidade de apoios prestados a equipes de campo (provisionamento de ONTs/roteadores, liberações, consultas).
-   - Tipos de apoio mais frequentes e tempo médio de resposta.
+   - Quantidade de apoios prestados a equipes de campo (provisionamento de ONTs, liberações, consultas, troca de estrutura).
+   - Tipos de apoio mais frequentes e tempo médio de resposta (extraídos de *ServiceDesk Suporte ao técnico* e Voalle).
    - Oportunidades de automação ou capacitação para redução de dependência do TI.
 
 7. **Infraestrutura e Sistemas Críticos:**
@@ -140,6 +180,15 @@ Cada relatório (individual ou consolidado) deve respeitar rigorosamente a segui
 
 ---
 
+## ⚖️ Regras Explícitas de Fidedignidade e Auditoria
+
+1. **Nunca inventar dados:** O relatório deve ser 100% baseado em fatos, números e evidências comprovadas.
+2. **Fontes Auditáveis:** Toda afirmação ou número citado deve ter sua origem rastreável (ex.: número do protocolo Voalle, ID de tarefa, hash de commit no repositório `autotickets-v2`, data e hora da mensagem no WhatsApp).
+3. **Ausência Justificada:** É permitido não preencher conteúdo em um tópico obrigatório caso não tenham ocorrido demandas compatíveis na semana, desde que acompanhado de justificativa formal clara.
+4. **Sem Distorções:** Não alterar o sentido original das informações, manutenções ou incidentes relatados pelas equipes.
+
+---
+
 ## ⏰ Prazos e Convenção de Nomes
 - **Período de Referência:** Segunda-feira a Domingo.
 - **Padrão de Datas em Arquivos:** `YYYY-MM-DD-YYYY-MM-DD` (ex.: `2026-09-07-2026-09-13`).
@@ -149,5 +198,5 @@ Cada relatório (individual ou consolidado) deve respeitar rigorosamente a segui
 
 ## 🔄 Controle de Versão e Commits Obrigatórios (Git)
 - **Regra Fundamental:** **TODA E QUALQUER ALTERAÇÃO** realizada no repositório (atualização de dados, novos relatórios em `0.individual_report/` ou `4.weekly_reports/`, inclusão de READMEs de harness ou alterações no `GEMINI.md`) **DEVE SER OBRIGATORIAMENTE COMMITADA NO GIT**.
-- **Padrão de Mensagens de Commit:** Devem ser descritivas e claras, utilizando boas práticas (ex.: `docs: atualiza GEMINI.md e harness`, `feat: gera relatorio individual liomar 2026-09-07 a 2026-09-13`).
+- **Padrão de Mensagens de Commit:** Devem ser descritivas e claras, utilizando boas práticas (ex.: `docs: atualiza GEMINI.md com novas fontes e harness`, `feat: gera relatorio individual liomar 2026-09-07 a 2026-09-13`).
 - **Automação:** A IA deve executar os commits no repositório imediatamente após concluir as modificações.

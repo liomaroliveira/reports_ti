@@ -1,5 +1,9 @@
 # PROMPT DE GERAÇÃO DE RELATÓRIOS SEMANAIS
 
+Data inicial: 01/09/2026
+
+Data final: 13/09/2026
+
 ## TASKS:
 
 - [ ] Analise todas as minhas atividades (Liomar) identificadas dentro de:
