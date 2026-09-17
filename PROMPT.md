@@ -15,7 +15,7 @@
 
 <!-- Digite aqui orientações contextuais ou pontos de atenção para a execução corrente -->
 
-1. **Relatório de Visitas Presenciais e Veículos:** Ler obrigatoriamente o arquivo [1.voalle/Relatório de Visita Técnica Presencial - Setor TI.md](file:///home/liomarti/dev/reports_ti/1.voalle/Relat%C3%B3rio%20de%20Visita%20T%C3%A9cnica%20Presencial%20-%20Setor%20TI.md) e mapear os deslocamentos com veículos da empresa realizados no período de setembro/2026 para alimentar o subtópico de visitas em Suporte Interno.
+1. **Relatório de Visitas Presenciais e Veículos:** Ler obrigatoriamente o arquivo [1.voalle/Relatório de Visita Técnica Presencial - Setor TI.md](<file:///home/liomarti/dev/reports_ti/1.voalle/Relat%C3%B3rio%20de%20Visita%20T%C3%A9cnica%20Presencial%20-%20Setor%20TI.md>) e mapear os deslocamentos com veículos da empresa realizados no período de setembro/2026 para alimentar o subtópico de visitas em Suporte Interno.
    - *Obs.:* Caso não hajam dados neste arquivo para o período selecionado, identificar se houveram atendimentos presenciais nos demais dados levantados e registrar no tópico correspondente.
 2. **Painéis de BI com Parceiros (Tópico de Projetos):** Manter a justificativa factual real:
    - **Analítica 3M:** Acesso limitado de Liomar; o setor de TI não gerencia e não realiza acompanhamento direto da integração. Ficou pendente de o coordenador de TI Isvi Neemias solicitar a inclusão do contato no grupo de WhatsApp para esta demanda.
@@ -102,6 +102,7 @@ Antes de gerar o consolidado, a IA deve verificar:
 ## 📐 3. ESTRUTURA HIERÁRQUICA E DIRETRIZES VISUAIS DO RELATÓRIO CONSOLIDADO
 
 ### 🎨 3.1 Moldura do Topo e Bloco Institucional
+
 A moldura de abertura do documento deve seguir estritamente o padrão corporativo:
 
 * **Título Principal:** Relatório Semanal Consolidado - Setor TI
@@ -113,6 +114,7 @@ A moldura de abertura do documento deve seguir estritamente o padrão corporativ
   4. **Equipe Integrada:** `Liomar Oliveira, Isac Costa e David Brasil`
 
 ### 📑 3.2 Paginação, Diagramação e Renderização PDF
+
 1. **Remoção de Cabeçalho/Rodapé do Navegador no PDF:**
    - Na geração do PDF via Chromium/Playwright, utilizar obrigatoriamente o parâmetro `--no-pdf-header-footer` (ou equivalente no CSS com `@page { margin: 15mm 12mm 15mm 12mm; }`), evitando que datas automáticas e caminhos locais (`file:///...` ou numerações `1/2`) poluam o cabeçalho e rodapé.
    - O próprio design HTML/CSS deve gerenciar cabeçalhos e numeração de página de forma interna e elegante.
@@ -126,6 +128,7 @@ A moldura de abertura do documento deve seguir estritamente o padrão corporativ
 ---
 
 ### 📂 3.3 Índice Geral de Navegação (com Links Âncoras)
+
 O relatório deve conter um **Índice Completo** no início, com links internos para todos os tópicos e subtópicos:
 
 * [Resumo Executivo](#resumo-executivo)
@@ -180,9 +183,11 @@ O relatório deve conter um **Índice Completo** no início, com links internos 
 ### 📝 3.4 Conteúdo Detalhado por Tópico
 
 #### Resumo Executivo
+
 Visão geral analítica da semana: síntese das principais entregas de engenharia de software e infraestrutura, quantitativo global de chamados e suportes a técnicos, principais conquistas e prioridades operacionais para a próxima semana.
 
 #### 1. Gestão de Demandas
+
 * **1.1 Demandas Pendentes:** Demandas paradas ou na fila aguardando início, informando ID/Protocolo, solicitante, prioridade técnica e data prevista.
 * **1.2 Demandas em Andamento:** Atividades em execução, indicando responsável direto, percentual de avanço estimado, bloqueios técnicos ou dependências de terceiros e previsão de conclusão.
 * **1.3 Demandas Concluídas:** Todas as entregas finalizadas na semana com detalhamento do resultado prático obtido.
@@ -190,13 +195,16 @@ Visão geral analítica da semana: síntese das principais entregas de engenhari
   * **1.4.1 Comparativo Entradas × Saídas:** Análise quantitativa demonstrando se a fila de trabalho do setor está crescendo ou reduzindo (com statcards e balanço líquido).
 
 #### 2. Registro de Atividades por Membro da Equipe
+
 Para cada colaborador (**2.1 David Brasil Fernandes**, **2.2 Isac Costa Silva** e **2.3 Liomar Antonio de Oliveira**), detalhar:
+
 * **Resumo das Atividades:** Narrativa aprofundada dos chamados, projetos e intervenções técnicas realizadas.
 * **Distribuição do Tempo:** Percentual de alocação entre frentes (Projetos, Suporte Interno, Suporte ao Campo, Infraestrutura e Rotinas Administrativas).
 * **Desenvolvimento e Capacitação:** Dificuldades observadas, pontos fortes demonstrados e necessidades de treinamento identificadas.
 * **2.4 Desempenho e Produtividade Comparativa no Voalle:** Gráfico comparativo e ranking com total de horas apontadas, quantidade de chamados concluídos e análise de engajamento no ERP.
 
 #### 3. Projetos e Entregas
+
 * **Detalhamento por Projeto (3.1, 3.2...):** Identificar projetos ativos (ex.: AutoTickets v2, Automação RADIUS/FreeRADIUS, Hardening de Roteadores/SSH, WireGuard).
   * **Status e Andamento:** Fases do ciclo de vida, protocolos associados parados há tempo, análise de relatos e status atual.
   * **Entregas em Produção:** O que foi efetivamente disponibilizado em ambiente produtivo, melhorias observadas e dependências externas pendentes.
@@ -204,29 +212,35 @@ Para cada colaborador (**2.1 David Brasil Fernandes**, **2.2 Isac Costa Silva** 
 * **3.3 Painéis de BI com Parceiros:** Esclarecimento formal do status real de **Analítica 3M** (acesso restrito, aguardando grupo de WhatsApp com Isvi Neemias) e **EasyBI / MW Solutions** (inacessível via DNS, ausência de credenciais), incluindo as diretrizes estratégicas e visão de benchmarking futuro da coordenação de TI.
 
 #### 4. Incidentes Tratados
+
 Detalhamento de cada incidente ocorrido na semana:
+
 * Identificação, sistema/serviço afetado, severidade, data/hora e impacto na operação.
 * Causa raiz técnica identificada.
 * Solução adotada (definitiva ou paliativa/contorno).
 * Classificação de recorrência (incidente novo vs. recorrente) e respectivo plano de eliminação/mitigação.
 
 #### 5. Suporte Interno (Informática)
+
 * **5.1 Relação de Incidentes e Chamados:** Análise dos atendimentos a usuários internos (estações de trabalho, acessos, e-mails, sistemas operacionais e periféricos), com causa e solução de cada ocorrência.
 * **5.2 Setores que mais Demandaram:** Ranking e gráfico visual dos departamentos mais demandantes (Marketing, NOC, Atendimento, Estoque, etc.).
 * **5.3 Colaboradores Solicitantes Mais Frequentes:** Ranking nominal identificando setor e tipo de demanda.
 * **5.4 Relatório de Visitas Técnicas Presenciais e Gestão de Veículos:** Subtópico obrigatório com atendimentos presenciais, deslocamentos operacionais, quilometragem/veículo utilizado (ex.: Fiat Palio, Honda Bros) e alertas sobre a frota da empresa.
 
 #### 6. Suporte ao Técnico de Campo
+
 * **6.1 Volumetria de Solicitações:** Quantidade total de apoios prestados via WhatsApp (*ServiceDesk Suporte ao técnico*) e Voalle, diferenciando atendimentos com abertura de protocolo e atendimentos rápidos informais.
 * **6.2 Tipos de Apoio Mais Frequentes e Tempo Médio de Resposta:** Provisionamento de ONTs Datacom/Parks, manobras de CTO, consultas cadastrais, liberação de portas e trocas de estrutura.
 * **6.3 Oportunidades de Automação e Capacitação:** Propostas práticas de melhorias no AutoTickets ou treinamentos de campo para diminuir a dependência dos técnicos em relação à equipe de TI.
 
 #### 7. Infraestrutura e Sistemas Críticos
+
 * **7.1 Disponibilidade de Serviços e Incidentes em Sistemas:** Monitoramento e saúde de Voalle, Flashman, PBX, Grafana/Made4NOC, MailCow, switches e servidores Datacom/Dell/SuperMicro.
 * **7.2 Execução e Validação de Backups:** Status dos backups rotineiros, integridade dos dumps e plano de recuperação.
 * **7.3 Atualizações, Melhorias e Ações de Modernização:** Aplicações de patches, reorganização de infraestrutura, cabeamento e melhorias em andamento.
 
 #### 8. Pontos de Atenção e Próximas Ações
+
 * **8.1 Riscos Tecnológicos e Vulnerabilidades Identificadas:** Registro aprofundado de vulnerabilidades críticas (ex.: incidente de varredura/ataques SSH nos MikroTik e medidas de contenção).
 * **8.2 Necessidades de Investimentos e Aquisições:** Equipamentos, licenças, upgrades de hardware e insumos demandados.
 * **8.3 Ações Planejadas para as Próximas Semanas:** Roadmap de entregas e cronograma de prioridades do setor para os períodos subsequentes.
