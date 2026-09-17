@@ -1,6 +1,6 @@
-# PROMPT DE GERAÇÃO DE RELATÓRIOS
+# PROMPT DE GERAÇÃO DE RELATÓRIOS SEMANAIS
 
-# TASKS:
+## TASKS:
 
 - [ ] Analise todas as minhas atividades (Liomar) identificadas dentro de:
   - [ ] `1.voalle`
@@ -15,7 +15,7 @@
   - [ ] Conteúdos obrigatórios com base no arquivo `modelo_relatorio_setor_ti.pdf` (além de fazer os demais tópicos listados):
   - [ ] No tópico 2.5, acrescentar relatório de visitas presenciais (com foco em locomoções com veículos da empresa).
 
-# INFORMAÇÕES ADICIONAIS (CONTEXTO):
+## INFORMAÇÕES ADICIONAIS (CONTEXTO):
 
 Segue abaixo alguns esclarecimentos e considerações, para considerar também no conteúdo do relatório:
 
@@ -29,7 +29,7 @@ Segue abaixo alguns esclarecimentos e considerações, para considerar também n
   • Tenho acesso ao Analitica 3M, mas é um acesso limitado. Não gerencio nada lá, não costumo utilizar o sistema. Não tenho nenhum contato com a Analitica 3M, não sei como funciona e nem como é o acompanhamento entre Analitica x Ten Internet..
   • Nunca acessei o Easy BI. Os acessos foram criados, mas eu nunca recebi. Até quando entro no MW Sistema e clico no Easy BI, vai pro Grafana. E quando digito o link direto (https://easybi.teninternet.com.br), não carrega (DNS_PROBE_POSSIBLE). Também não faço parte do grupo EASY BI do WhatsApp. Vi que o email do TI foi passado, mas não foi enviado nada e nunca pedi acesso por entender que não era algo do nosso escopo.
 
-# REGRAS EXPLÍCITAS:
+## REGRAS EXPLÍCITAS:
 
 - Nunca inventar dados;
 - Não alterar o sentido das palavras ou das informações identificadas;
