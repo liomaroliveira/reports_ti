@@ -8,3 +8,6 @@
 
 # Temporary extraction artifacts
 3.whatsapp_histories/bkp_64digits/exported_txt/
+
+# Python Virtual Environment
+.venv/
