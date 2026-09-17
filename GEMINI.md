@@ -1,6 +1,7 @@
 # Diretrizes e Contexto do Projeto: Relatório Semanal do Setor de TI
 
 ## 🏢 Informações Institucionais e Gestão
+
 - **Empresa:** Ten Soluções e Serviços LTDA. (Ten Provedor de Internet)
 - **Site da empresa:** https://teninternet.com.br/
 - **Coordenador de Tecnologia:** Isvi Neemias
@@ -10,35 +11,40 @@
 ---
 
 ## 👤 Equipe do Setor de TI
+
 1. **Liomar Antonio de Oliveira**
+
    - **CPF:** ***.848.515-**
    - **Cargo:** Analista de TI Sênior (Responsável pelo desenvolvimento de automações, gestão técnica e consolidação dos relatórios semanais do setor)
    - **WhatsApp:** [telefone removido]
-
+   - **ID Colaborador Voalle:**#107184
 2. **Isac Costa Silva**
+
    - **CPF:** ***.404.875-**
    - **Cargo:** Assistente de TI Pleno
    - **WhatsApp:** [telefone removido]
-
 3. **David Brasil Fernandes**
+
    - **CPF:** ***.899.744-**
    - **Cargo:** Auxiliar de TI Junior
    - **WhatsApp:** [telefone removido]
+   - **ID Colaborador Voalle:**#116367
 
 ---
 
 ## 🖥️ Sistemas e Fontes de Dados em Escopo
 
 1. **ERP Voalle (`1.voalle/`):**
+
    - ERP principal da empresa (Módulos de Atendimento, Service Desk, O.S., Projetos, Infraestrutura e Apontamentos).
    - Exportações brutas e relatórios de tarefas e atendimentos em PDF/CSV.
-
 2. **AutoTickets (`2.autotickets/` e Repositório Local):**
+
    - Plataforma de automação e integração de sistemas desenvolvida e mantida por Liomar Oliveira.
    - **Repositório e Commits Locais:** `/home/liomarti/dev/autotickets-v2` (inspecionar commits no período para mapear entregas técnicas, novas features, correções e manutenções).
    - **Exportações Tratadas em CSV (`2.autotickets/*.csv`):** Arquivos contendo dados tratados, filtrados e estruturados pelo AutoTickets integrando a base de dados do Voalle (chamados ativos, chamados concluídos, tarefas ativas e protocolos de acompanhamento). Os dados têm mérito do próprio sistema AutoTickets em tratá-los e prepará-los para auditoria.
-
 3. **Históricos e Comunicações de WhatsApp (`3.whatsapp_histories/`):**
+
    - **Banco SQLite Mestre (`database/msgstore.db`):** Base de dados relacional com o histórico completo de mensagens (mais de 340 conversas e quase 40.000 mensagens), atualizada semanalmente a partir do backup com chave de 64 dígitos (`input/msgstore.db.crypt15`).
    - **Exportações Manuais (`manual_exports/`):** Conversas estratégicas exportadas separadamente e de forma manual pelo WhatsApp Business (*Isvi TI Ten.txt*, *Tecnologia TEN.txt*, *Tudo Incluso - TEN.txt*, *[Made4NOC] TEN INTERNET LTDA PREMIUM.txt*).
    - **Conversas Exportadas em Lote (`conversas_exportadas/`):** Histórico completo de chats individuais extraídos em formato `.txt` puro e catálogo geral indexado em `indice_conversas.json`.
@@ -47,11 +53,11 @@
      - `query_history.py`: Utilitário de consulta relacional por período (`--start`, `--end`) e categoria (`campo`, `interno`, `coordenacao`, `incidentes`).
      - `export_all_chats.py`: Utilitário para re-exportar todas as conversas para `.txt`.
    - **Extratos Temporais (`exports/`):** Relatórios filtrados por período em Markdown (`extrato-campo.md`, etc.).
-
 4. **Infraestrutura e Plataformas Integradas:**
-   - Flashman, Native PBX (telefonia), Made4NOC / Grafana, FullCam, MailCow, Servidores Datacom (SV01), Dell PowerEdge (R550) e SuperMicro, Mikrotik e Switches Gerenciáveis.
 
+   - Flashman, Native PBX (telefonia), Made4NOC / Grafana, FullCam, MailCow, Servidores Datacom (SV01), Dell PowerEdge (R550) e SuperMicro, Mikrotik e Switches Gerenciáveis.
 5. **Painéis de BI com Parceiros (Analítica 3M e EasyBI / MW Solutions) - Contexto Real:**
+
    - **Analítica 3M:** Acesso limitado de Liomar Oliveira. O setor de TI não gerencia, não costuma utilizar e não realiza acompanhamento direto da integração.
    - **EasyBI (MW Solutions):** Acesso nunca recebido, link direto (`https://easybi.teninternet.com.br`) inacessível (DNS), sem participação em grupos e fora do escopo direto de atuação da equipe.
    - *Diretriz:* Caso citado no relatório, justificar formalmente o status real acima, sem simular atividades inexistentes.
@@ -59,6 +65,7 @@
 ---
 
 ## 🎯 Finalidade e Objetivos
+
 - **Alimentação da Dashboard Executiva:** Fornecer à Coordenação de TI (Isvi Neemias) um panorama fidedigno, métricas de desempenho e status das demandas do setor para apresentação semanal à Direção toda terça-feira pela manhã.
 - **Transparência e Rastreabilidade Operacional:** Mapear entregas, projetos em andamento, suporte a usuários internos, suporte a técnicos de campo e saúde da infraestrutura de telecom/TI.
 - **Padrão de Saída Multi-formato:** Todos os relatórios (semanais consolidados e individuais) devem ser gerados em **Markdown (.md)**, **HTML estilizado (.html)** e **PDF executivo (.pdf)** com diagramação profissional em formato A4.
@@ -132,48 +139,49 @@ Quando for gerar o relatório individual ou consolidado de um período (`YYYY-MM
 Cada relatório (individual ou consolidado) deve respeitar a estrutura oficial:
 
 1. **Gestão de Demandas:**
+
    - Demandas pendentes (descrição resumida, solicitante, prioridade e previsão de início).
    - Demandas em andamento (responsável, % de avanço, bloqueios/dependências e previsão de conclusão).
    - Demandas concluídas na semana (entrega realizada e resultado obtido).
    - Demandas novas abertas e comparativo entradas × saídas (fila crescendo ou reduzindo).
-
 2. **Registro de Atividades por Membro da Equipe:**
+
    - Resumo das atividades executadas por integrante no período.
    - Distribuição do tempo por frentes de trabalho (Projetos, Suporte Interno, Suporte ao Campo, Infraestrutura).
    - Pontos de desenvolvimento e necessidades de treinamento identificadas.
    - **Colaborador do TI mais ativo no Voalle:** Gráfico/estatística comparativa de apontamentos.
-
 3. **Projetos e Entregas:**
+
    - Status dos projetos em andamento (AutoTickets, integrações Voalle x Flashman, telefonia Native PBX, WiFeed, etc.).
    - Painéis de BI com parceiros: Esclarecer o status real de Analítica 3M e EasyBI (MW Solutions).
    - Entregas colocadas em produção na semana e resultados observados.
    - Dependências de terceiros ou outros setores que estejam travando entregas.
-
 4. **Incidentes Tratados:**
+
    - Relação dos incidentes da semana (sistema/serviço afetado, severidade, data/hora, duração e impacto).
    - Causa raiz identificada e correção aplicada (definitiva ou paliativa).
    - Incidentes recorrentes e planos de mitigação (com base nas tratativas da Made4NOC e monitoramento).
-
 5. **Suporte Interno (Informática):**
+
    - Quantidade de solicitações recebidas e atendidas (computadores, acessos, e-mails, impressoras).
    - Tempo médio de atendimento e pendências em aberto.
    - **Setores que mais demandaram suporte do TI:** Lista e estatísticas de interações.
    - **Colaboradores que mais abriram chamados:** Informando equipe e setor.
    - **Relatório de Visitas Presenciais:** Deslocamentos operacionais com veículos da empresa.
-
 6. **Suporte ao Técnico de Campo:**
+
    - Quantidade de apoios prestados a equipes de campo (provisionamento de ONTs, liberações, consultas, troca de estrutura).
    - Tipos de apoio mais frequentes e tempo médio de resposta (extraídos de *ServiceDesk Suporte ao técnico* e Voalle).
    - Oportunidades de automação ou capacitação para redução de dependência do TI.
-
 7. **Infraestrutura e Sistemas Críticos:**
+
    - Disponibilidade dos sistemas críticos (Voalle, Flashman, servidores, telefonia, links).
    - Execução e validação de backups (sucessos × falhas).
    - Capacidade de armazenamento, memória e processamento dos servidores (alertas de esgotamento).
    - Ações de modernização (cluster, SSDs, migração de VMs, cabeamento estruturado).
    - Atualizações de segurança e vulnerabilidades identificadas.
-
 8. **Pontos de Atenção e Próximas Ações:**
+
    - Riscos tecnológicos para a operação.
    - Necessidades de investimento ou aquisição de equipamentos/licenças.
    - Ações planejadas para a semana seguinte.
@@ -190,6 +198,7 @@ Cada relatório (individual ou consolidado) deve respeitar a estrutura oficial:
 ---
 
 ## ⏰ Prazos e Convenção de Nomes
+
 - **Período de Referência:** Segunda-feira a Domingo.
 - **Padrão de Datas em Arquivos:** `YYYY-MM-DD-YYYY-MM-DD` (ex.: `2026-09-07-2026-09-13`).
 - **Prazo Limite de Entrega:** Toda segunda-feira até as 14h.
@@ -197,6 +206,7 @@ Cada relatório (individual ou consolidado) deve respeitar a estrutura oficial:
 ---
 
 ## 🔄 Controle de Versão e Commits Obrigatórios (Git)
+
 - **Regra Fundamental:** **TODA E QUALQUER ALTERAÇÃO** realizada no repositório (atualização de dados, novos relatórios em `0.individual_report/` ou `4.weekly_reports/`, inclusão de READMEs de harness ou alterações no `GEMINI.md`) **DEVE SER OBRIGATORIAMENTE COMMITADA NO GIT**.
 - **Padrão de Mensagens de Commit:** Devem ser descritivas e claras, utilizando boas práticas (ex.: `docs: atualiza GEMINI.md com novas fontes e harness`, `feat: gera relatorio individual liomar 2026-09-07 a 2026-09-13`).
 - **Automação:** A IA deve executar os commits no repositório imediatamente após concluir as modificações.
