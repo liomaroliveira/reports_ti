@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório Individual de Atividades — Liomar Antonio de Oliveira (01/09/2026 a 13/09/2026)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+    @page {
+      size: A4;
+      margin: 12mm 14mm 12mm 14mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.42;
+      font-size: 8.8pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 100%;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .header-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0284c7 100%);
+      color: #ffffff;
+      padding: 18px 22px;
+      border-radius: 10px;
+      margin-bottom: 14px;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 2px 10px;
+      border-radius: 14px;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 5px;
+      color: #e0f2fe;
+    }
+
+    .header-banner h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15pt;
+      font-weight: 800;
+      margin-bottom: 2px;
+      letter-spacing: -0.4px;
+      color: #ffffff;
+    }
+
+    .header-banner p.subtitle {
+      font-size: 8.8pt;
+      color: #cbd5e1;
+      font-weight: 400;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .meta-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      padding: 8px 12px;
+    }
+
+    .meta-card .label {
+      font-size: 7pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 2px;
+    }
+
+    .meta-card .value {
+      font-size: 8.8pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .meta-card .value.highlight {
+      color: #0284c7;
+    }
+
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      border-bottom: 2px solid #0284c7;
+      padding-bottom: 4px;
+      margin-top: 14px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .demand-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #0284c7;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+    }
+
+    .demand-item.pending {
+      border-left-color: #f59e0b;
+    }
+
+    .demand-item.in-progress {
+      border-left-color: #3b82f6;
+    }
+
+    .demand-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .demand-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 8.8pt;
+    }
+
+    .demand-badge {
+      font-size: 6.8pt;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .badge-concluded { background: #dcfce7; color: #166534; }
+    .badge-progress { background: #dbeafe; color: #1e40af; }
+    .badge-pending { background: #fef3c7; color: #92400e; }
+
+    .demand-desc {
+      font-size: 8.2pt;
+      color: #334155;
+      margin-bottom: 4px;
+    }
+
+    .demand-meta {
+      font-size: 7.2pt;
+      color: #64748b;
+      font-family: monospace;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 12px 0;
+      font-size: 8pt;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      font-weight: 600;
+      text-align: left;
+      padding: 6px 10px;
+      font-size: 7.6pt;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    .alert-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin: 8px 0;
+      font-size: 8.2pt;
+      color: #1e40af;
+    }
+
+    .alert-box strong {
+      color: #1e3a8a;
+    }
+
+    .footer {
+      margin-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PÁGINA 1 -->
+  <div class="page">
+    <div class="header-banner">
+      <div class="header-badge">Setor de Tecnologia da Informação — Ten Internet</div>
+      <h1>Relatório Semanal Individual de Atividades</h1>
+      <p class="subtitle">Acompanhamento Técnico, Desenvolvimento de Sistemas e Gestão de Infraestrutura</p>
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-card">
+        <div class="label">Colaborador</div>
+        <div class="value">Liomar Antonio de Oliveira</div>
+      </div>
+      <div class="meta-card">
+        <div class="label">Cargo / Função</div>
+        <div class="value">Analista de TI Sênior</div>
+      </div>
+      <div class="meta-card">
+        <div class="label">Período Avaliado</div>
+        <div class="value highlight">01/09/2026 a 13/09/2026</div>
+      </div>
+      <div class="meta-card">
+        <div class="label">Horas Apontadas (Voalle)</div>
+        <div class="value highlight">30h 09min</div>
+      </div>
+    </div>
+
+    <div class="section-title">2.1 Gestão de Demandas</div>
+
+    <div class="demand-item">
+      <div class="demand-header">
+        <span class="demand-title">AutoTickets — Módulo de Logs RADIUS em Tempo Real & PPPoE</span>
+        <span class="demand-badge badge-concluded">Concluído (100%)</span>
+      </div>
+      <p class="demand-desc">Integração com serviço de autenticação RADIUS do Voalle para diagnóstico em tempo real, permitindo rastreamento de falhas por MAC, telemetria de sinal óptico e sincronismo com CGNAT.</p>
+      <div class="demand-meta">Fonte: ERP Voalle (Atividade Diária 11/09 e 12/09 — 13h30) | Commits: 894d00f3, 77e346e5</div>
+    </div>
+
+    <div class="demand-item">
+      <div class="demand-header">
+        <span class="demand-title">AutoTickets — Otimização de Performance e Refinamento de Consultas SQL</span>
+        <span class="demand-badge badge-concluded">Concluído (100%)</span>
+      </div>
+      <p class="demand-desc">Implementação de cache intermediário e refatoração de queries de telemetria óptica integradas ao Grafana, eliminando deadlocks, contenção de banco de dados e lentidão operacional.</p>
+      <div class="demand-meta">Fonte: ERP Voalle (Atividade Diária 12/09 — 07h30) | Commit: ead9dcfc</div>
+    </div>
+
+    <div class="demand-item">
+      <div class="demand-header">
+        <span class="demand-title">AutoTickets — Matriz de Permissões Modulares e Governança de Usuários</span>
+        <span class="demand-badge badge-concluded">Concluído (100%)</span>
+      </div>
+      <p class="demand-desc">Estruturação de papéis de acesso (Administradores, Analistas, Operadores) via Spatie, com bloqueio reativo de botões e tela amigável informativa de restrição de módulos.</p>
+      <div class="demand-meta">Fonte: ERP Voalle (Atividade Diária 02/09 — 04h00) | Commits: eabcd168, 643b04f9</div>
+    </div>
+
+    <div class="demand-item">
+      <div class="demand-header">
+        <span class="demand-title">Infraestrutura DC Chácara — Instalação de Switch Gerenciável 24p</span>
+        <span class="demand-badge badge-concluded">Concluído (100%)</span>
+      </div>
+      <p class="demand-desc">Substituição de switch de 8p desprovido de gerenciamento por Switch Gerenciável TP-Link T2600G-28TS (IP 172.16.30.27, VLAN 1), com cabeamento CAT6 em todos os servidores.</p>
+      <div class="demand-meta">Fonte: ERP Voalle (Protocolo #3070027 — 08/09 — 01h56)</div>
+    </div>
+
+    <div class="demand-item in-progress">
+      <div class="demand-header">
+        <span class="demand-title">AutoTickets — Drivers de Telemetria de ONTs (Parks & Datacom AX30)</span>
+        <span class="demand-badge badge-progress">Em Andamento (75%)</span>
+      </div>
+      <p class="demand-desc">Desenvolvimento de drivers dedicados para coleta remota de telemetria de potência óptica (dBm), EasyMesh e clientes Wi-Fi conectados via CGNAT e IP Público.</p>
+      <div class="demand-meta">Fonte: Repositório autotickets-v2 | Previsão: 18/09/2026</div>
+    </div>
+
+    <div class="demand-item in-progress">
+      <div class="demand-header">
+        <span class="demand-title">Estudo de Servidores de E-mail Corporativo (MailCow / iRedMail)</span>
+        <span class="demand-badge badge-progress">Em Andamento (40%)</span>
+      </div>
+      <p class="demand-desc">Avaliação técnica e levantamento de requisitos de servidores de caixa postal (MailCow, iRedMail e Modoboa) para substituição e autonomia institucional.</p>
+      <div class="demand-meta">Fonte: ERP Voalle (Protocolo #3187496) | WhatsApp: Alinhamento Isvi Neemias (04/09)</div>
+    </div>
+
+    <div class="section-title">2.2 Distribuição de Tempo por Frente de Trabalho</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Frente de Atuação</th>
+          <th>Carga Horária</th>
+          <th>% do Tempo</th>
+          <th>Foco e Entregas Principais</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Projetos e Automação (AutoTickets)</strong></td>
+          <td>25h 00min</td>
+          <td>70%</td>
+          <td>Módulo RADIUS, Governança Spatie, Otimização de SQL/Grafana, React 19</td>
+        </tr>
+        <tr>
+          <td><strong>Infraestrutura e Sistemas Críticos</strong></td>
+          <td>05h 00min</td>
+          <td>15%</td>
+          <td>Switch 24p DC Chácara, iDRAC Dell R550, SSDs NVMe Datacom DM-SV01</td>
+        </tr>
+        <tr>
+          <td><strong>Suporte Técnico / Campo Especializado</strong></td>
+          <td>03h 00min</td>
+          <td>10%</td>
+          <td>Diagnóstico in loco em Mairi e testes de bancada Wi-Fi 6 Datacom AX27</td>
+        </tr>
+        <tr>
+          <td><strong>Suporte Interno e Homologação</strong></td>
+          <td>01h 30min</td>
+          <td>5%</td>
+          <td>Homologação de fluxos no AutoTickets, alinhamentos Outline e MailCow</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. — Setor de Tecnologia da Informação</span>
+      <span>Página 1 de 2</span>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- PÁGINA 2 -->
+  <div class="page">
+    <div class="section-title">2.3 Projetos e Entregas Técnicas</div>
+    <div class="alert-box">
+      <strong>Painéis de BI com Parceiros (Contexto Factual):</strong> Conforme informado, o analista possui acesso de visualização restrito na <em>Analítica 3M</em>, sem gestão do sistema. Quanto ao <em>EasyBI (MW Solutions)</em>, o link encontra-se inacessível via DNS e os acessos nunca foram funcionalmente disponibilizados, estando fora do escopo de atuação do TI.
+    </div>
+
+    <p class="demand-desc" style="margin-bottom: 8px;">
+      <strong>AutoTickets v2 — Destaques da Quinzena:</strong>
+      <br>• <strong>Modernização da Arquitetura:</strong> Migração para React 19 e TailwindCSS v4, com decomposição atômica de telas densas.
+      <br>• <strong>Segurança e UI:</strong> Criação de tela temática retro terminal CRT TV para resposta a acessos não autorizados (HTTP 403).
+      <br>• <strong>WiFeed Automation:</strong> Implementação de rotinas headless via Playwright Chromium para consolidação de hotspots.
+    </p>
+
+    <div class="section-title">2.4 Incidentes Tratados</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Data/Hora</th>
+          <th>Serviço Afetado</th>
+          <th>Severidade</th>
+          <th>Causa Raiz & Ação Aplicada</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>04/09 08:30</td>
+          <td>Wi-Fi 6 Mesh Dr. Wendson (Mairi)</td>
+          <td><strong>Alta</strong></td>
+          <td>Instabilidade na ONT Datacom AX27. Testes de bancada e solicitação de troca preventiva por AX30 (Prot. #3184572).</td>
+          <td>Mitigado</td>
+        </tr>
+        <tr>
+          <td>08/09 12:35</td>
+          <td>Gerenciamento Remoto Dell R550</td>
+          <td><strong>Média</strong></td>
+          <td>Conector RJ45 da interface iDRAC quebrado. Substituído conector e recabeado com CAT6 (Prot. #3062633).</td>
+          <td><strong>Resolvido</strong></td>
+        </tr>
+        <tr>
+          <td>12/09 16:00</td>
+          <td>Consultas de Telemetria AutoTickets</td>
+          <td><strong>Média</strong></td>
+          <td>Contenção em banco de dados por requisições concorrentes. Criado cache intermediário para eliminar deadlocks.</td>
+          <td><strong>Resolvido</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-title">2.5 Suporte Interno e Visitas Presenciais (Veículos)</div>
+    <p class="demand-desc">
+      • <strong>Mapeamento Institucional:</strong> O documento oficial <em>Relatório de Visita Técnica Presencial - Setor TI.md</em> consolida históricos até agosto/2026.
+      <br>• <strong>Deslocamento Presencial no Período (01/09 a 13/09):</strong> Realizada visita técnica externa presencial no município de <strong>Mairi</strong>, em conjunto com Saulo Xavier e Matheus, para validação in loco da rede óptica e testes de estabilidade dos roteadores mesh na residência do cliente Dr. Wendson (atendimento formalizado no Protocolo Voalle #3184572).
+    </p>
+
+    <div class="section-title">2.6 Suporte ao Técnico de Campo</div>
+    <p class="demand-desc">
+      • <strong>Diagnóstico por MAC no AutoTickets:</strong> Entrega de funcionalidade que permite aos técnicos de suporte identificar falhas de login RADIUS apenas pelo MAC da CPE, agilizando liberações de campo.
+      <br>• <strong>Testes de Roteadores Wi-Fi 6:</strong> Suporte consultivo na seleção de equipamentos estáveis para clientes de planos corporativos e residenciais avançados.
+    </p>
+
+    <div class="section-title">2.7 Infraestrutura e Sistemas Críticos</div>
+    <p class="demand-desc">
+      • <strong>Servidores Corporativos:</strong> Acesso à iDRAC do Dell PowerEdge R550 totalmente operacional; validação de 4x SSDs NVMe E1.S no servidor Datacom DM-SV01.
+      <br>• <strong>Comissionamento de Switch DC:</strong> Switch gerenciável TP-Link T2600G-28TS em produção no Datacenter da Chácara com portas gigabit e cabos CAT6.
+    </p>
+
+    <div class="section-title">2.8 Pontos de Atenção e Próximas Ações</div>
+    <p class="demand-desc">
+      <strong>Riscos Tecnológicos:</strong> Comportamento instável do modelo Datacom AX27 em redes mesh densas; necessidade de padronização para AX30.
+      <br><strong>Próximas Ações:</strong>
+      <br>1. Concluir homologação dos drivers de telemetria Parks e Datacom AX30 no AutoTickets.
+      <br>2. Validar plataforma de documentação Outline com Tiago Silva (Fiscal/DP) (Prot. #3187490).
+      <br>3. Estruturar proposta arquitetural do servidor de e-mail MailCow para a Coordenação de TI.
+      <br>4. Acompanhar a substituição do roteador do cliente em Mairi.
+    </p>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. — Setor de Tecnologia da Informação</span>
+      <span>Página 2 de 2</span>
+    </div>
+  </div>
+
+</body>
+</html>
