@@ -23,6 +23,7 @@
    - **CPF:** ***.404.875-**
    - **Cargo:** Assistente de TI Pleno
    - **WhatsApp:** [telefone removido]
+   - **ID Colaborador Voalle:**#94562
 3. **David Brasil Fernandes**
 
    - **CPF:** ***.899.744-**
