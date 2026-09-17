@@ -1,0 +1,10 @@
+# WhatsApp raw database backups
+*.crypt14
+*.crypt15
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+
+# Temporary extraction artifacts
+3.whatsapp_histories/bkp_64digits/exported_txt/
