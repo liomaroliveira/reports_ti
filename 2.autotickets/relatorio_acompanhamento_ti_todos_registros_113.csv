@@ -1,0 +1,2288 @@
+﻿"Nível / Tipo de Registro";"Protocolo ID";Título;Tipo;Status;"Data de Abertura";"Última Movimentação";"Dias Sem Movimentação";"Alerta 15+ Dias Parado";Responsável;"Equipe Atual";Criador;"Equipe Criador";"Protocolo Pai ID";"Protocolo Pai Título";Progresso;Prioridade;"Descrição Completa";"Qtd Relatos";"Todos os Relatos"
+"Protocolo Principal";3424664;"Protocolo 3195063 - Requisição de carro para Lages do Batata - DAVID BRASIL FERNANDES";"Sol. Interna";Abertura;"15/09/2026 15:12:33";"Sem Data / Movimentação";0;Não;"Sem Responsável";"Gestão de Frota";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Favor, preencher os detalhes da solicitação e demanda. 
+Atentar-se para prazo mínimo de antecedência de 24h úteis, salvo emergências/urgências. 
+
+Tipo de veículo necessário: Fechado
+Destino: Lages do Batata
+Motivo/Finalidade: Atendimento na Loja
+Responsável pelo veículo/Motorista: David Brasil
+Número de contato do solicitante: [telefone removido]
+
+Data da retirada: 21/09/2026
+Horário da retirada: 07:30
+
+Data Devolução: 21/09/2026
+Horário previsto de devolução: 18:00";1;"[#1 | 15/09/2026 15:12:32 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3195063"
+"Protocolo Principal";3425956;"Protocolo 3196075 - Acesso ao slack - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"16/09/2026 15:42:03";"Sem Data / Movimentação";0;Não;"DAVID BRASIL FERNANDES";"Setor TI";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Realizada a conferência e validação dos e-mails corporativos vinculados às contas dos colaboradores no Slack, visando a implantação da plataforma como o novo canal oficial de comunicação interna da empresa. O procedimento garante a conformidade dos acessos, a padronização das contas e a correta transição da equipe para a nova ferramenta.";1;"[#1 | 16/09/2026 15:42:03 | DAVID BRASIL FERNANDES]
+Realizada a conferência e validação dos e-mails corporativos vinculados às contas dos colaboradores no Slack, visando a implantação da plataforma como o novo canal oficial de comunicação interna da empresa. O procedimento garante a conformidade dos acessos, a padronização das contas e a correta transição da equipe para a nova ferramenta."
+"Protocolo Principal";3425572;"Protocolo 3195779 - Requisição de Régua de Rack - DAVID BRASIL FERNANDES";"Sol. Interna";Abertura;"16/09/2026 11:16:51";"Sem Data / Movimentação";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Triagem";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: Régua de rack de no minimo 8 tomadas
+Quantidade: 02
+Destinação: Será instalada na loja de jacobina.
+______________________ 
+Descrição: parafuso para régua do rack
+Quantidade: 08 unidades
+Destinação: Será instalada na loja de jacobina.
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Solicitante: David Brasil 
+Contato: [telefone removido]
+Justificativa: Substituição da régua de tomadas do rack devido à queima do equipamento, visando normalizar o fornecimento de energia para os dispositivos conectados.";1;"[#1 | 16/09/2026 11:16:51 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3195779"
+"Protocolo Principal";3425560;"Protocolo 3195768 - Solicitação de Caneta de Quadro Branco - DAVID BRASIL FERNANDES";"Sol. Interna";Abertura;"16/09/2026 11:13:02";"Sem Data / Movimentação";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Triagem";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: Caneta piloto de quadro branco na cor vermelha
+Quantidade: 02
+Destinação: Setor de TI
+______________________ 
+Descrição: Caneta piloto de quadro branco na cor Preta
+Quantidade: 02
+Destinação: Setor de Ti
+______________________ 
+Descrição: Caneta piloto de quadro branco na cor azul
+Quantidade: 02
+Destinação: Setor de TI
+______________________ 
+Solicitante: David Brasil
+Contato: [telefone removido]
+Justificativa: Canetas que temos ja está acabando a tinta.";1;"[#1 | 16/09/2026 11:13:01 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3195768"
+"Protocolo Principal";3424832;"Protocolo 3195211 - Requisição de memória para computador - DAVID BRASIL FERNANDES";"Sol. Interna";Abertura;"15/09/2026 16:26:59";"Sem Data / Movimentação";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Triagem";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: memória DDR3 8GB 1600MHz para computador
+Quantidade: 01
+Destinação: Fernando Timotio do Service Desk
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Solicitante: David Brasil
+Contato: [telefone removido]
+Justificativa: Computador está apresentando gargalo nas atividades realizada pelo colaborador, mesmo otimizando as configurações do navegador continua dando picos de 100% da utilização do processador e com o consumo médio da memoria em 81%, causando travamentos e lentidão.";1;"[#1 | 15/09/2026 16:26:59 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3195211"
+"Protocolo Principal";3424772;"Protocolo 3195155 - Requisição de Nobreak para loja de Jacobina - DAVID BRASIL FERNANDES";"Sol. Interna";Abertura;"15/09/2026 16:04:03";"Sem Data / Movimentação";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Triagem";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: Nobreak
+Quantidade: 01
+Destinação: Ionara Caixa de Jacobina
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Solicitante: David Brasil
+Contato: [telefone removido]
+Justificativa: O nobreak da colaboradora queimou e precisa ser substituído. Como estarei em trânsito para Lages do Batata no dia 21/09 e passarei pela unidade de Jacobina, solicito a liberação do equipamento para aproveitar o deslocamento e realizar a instalação.";1;"[#1 | 15/09/2026 16:04:03 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3195155"
+"Protocolo Principal";3424683;"Protocolo 3195080 - Manutenção preventiva no computador do Esc. de Lages do Batata - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"15/09/2026 15:17:50";"Sem Data / Movimentação";0;Não;"DAVID BRASIL FERNANDES";"Setor TI";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Realizar manutenção no computador do escritório.";1;"[#1 | 15/09/2026 15:17:49 | DAVID BRASIL FERNANDES]
+Realizar manutenção no computador do escritório."
+"Protocolo Principal";3319360;"Protocolo 3104869 - Servidor minha conexão";"Tarefa Avulsa";"0% - Andamento";"19/06/2026 16:23:17";"Sem Data / Movimentação";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"RAIMARA S DOS SANTOS";"Instalação/Suporte - Jacobina - Fredson";3317605;"Protocolo 3104869 - (NOC) Solução/Melhoria - Técnica - Interna / NOC - IAN VICTOR ARAUJO DA SILVA";0%;Normal;"Segue link com os pre-requisitos para subir uma vm para um server para o minha conexão:
+https://www.minhaconexao.com.br/perguntas-frequentes/instalacao-servidor-testes";0;"Nenhum relato registrado."
+"Protocolo Principal";3420829;"Protocolo 3191809 - Devolução de celular Sansumg A14 - DAVID BRASIL FERNANDES";"Sol. Interna";Abertura;"11/09/2026 15:05:49";"Sem Data / Movimentação";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Devolução de Equipamentos";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Dispositivo se encontra no setor de TI para retirada.
+
+Protocolo : 3191752
+Foi tentado realizar o Donwgrade no dispositivo para versão do android 13 onde não tem essa barreira da conta google, mais ao pesquisar encotrei forúns que relataram que não será possivel realizar o donwgrade para versões de binários inferior a versão que o android ja está.
+
+Celular:
+• Marca: SANSUMG
+• Modelo: A146M/DS
+• Android (atual) : 15 ( A146MUBSCDZB2 ) Binário: C
+
+A versão do android 13 é binário 8 ou seja é inferior ao binário C (hexadecimal), então não conseguimos retroceder a versão do android pois o processador do celular tem um mecanismo chamado eFUSE que é o que impede de instalarmos uma versão inferior.
+
+eFUSE: O processador possui microfusíveis eletrônicos microscópios. Quando o aparelho é atualizado para o binário C (valor 12 em hexadecimal), fusíveis internos são queimados permanentemente por tensão elétrica para registrar esse novo nível.
+
+Possiveis soluções:
+
+• 1 - Procurar saber quem era o antigo colaborador para ele deslogar a conta GOOGLE que está no dispositivo;
+• 2 - Entrar em contato com a assistência da SANSUMG junto com a nota fiscal do dispositivo para recuperar o acesso do mesmo.";1;"[#1 | 11/09/2026 15:05:48 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3191809"
+"Protocolo Principal";3415744;"Protocolo 3187496 - Encontrar ferramentas de caixa de e-mail que podem ser utilizadas na empresa - ISVI NEEMIAS SANTOS SILVA";"Sol. Interna";Andamento;"08/09/2026 17:45:49";"Sem Data / Movimentação";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"Isvi solicita a busca por novas ferramentas de caixa de e-mail. Sugeriu algumas que já estava pesquisando:
+• MailCow
+• iRedMail
+• Modoboa";1;"[#1 | 08/09/2026 17:45:48 | LIOMAR ANTONIO DE OLIVEIRA]
+Início do atendimento - Protocolo 3187496"
+"Protocolo Principal";3415984;"Protocolo 3187693 - CONFIGURAR WIREGUARD - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"09/09/2026 08:18:32";"Sem Data / Movimentação";0;Não;"ISAC COSTA SILVA";"Setor TI";"ISAC COSTA SILVA";"Setor TI";;;0%;Normal;"- Configurar Wireguard no notebook do setor de TI";1;"[#1 | 09/09/2026 08:18:32 | ISAC COSTA SILVA]
+Início do atendimento - Protocolo 3187693"
+"Protocolo Principal";3415981;"Protocolo 3187691 - CONFIGURAR GERENCIADOR SSH - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"09/09/2026 08:17:36";"Sem Data / Movimentação";0;Não;"ISAC COSTA SILVA";"Setor TI";"ISAC COSTA SILVA";"Setor TI";;;0%;Normal;"- Configurar software gerenciador de sessões SSH e salvar todos os hosts frequentes (Servidores Proxmox, VMs e outros)";1;"[#1 | 09/09/2026 08:17:35 | ISAC COSTA SILVA]
+Início do atendimento - Protocolo 3187691"
+"Protocolo Principal";3410610;"Protocolo 3183222 - Devolução de câmera retirada do POP de Pedras Altas - DAVID BRASIL FERNANDES";"Sol. Interna";Abertura;"03/09/2026 11:17:52";"Sem Data / Movimentação";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Devolução de Equipamentos";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Câmera Intelbras:
+Modelo: DOME
+MAC: 98:e5:5b:1c:df:63
+S/N: DEH0001717994
+
+Câmera resetada para configurações de fábrica.";1;"[#1 | 03/09/2026 11:17:51 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3183222"
+"Protocolo Principal";3409597;"Protocolo 3182349 - Devolução de Equipamentos - DAVID BRASIL FERNANDES";"Sol. Interna";Abertura;"02/09/2026 16:16:53";"Sem Data / Movimentação";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Devolução de Equipamentos";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Itens Devolvidos ao estoque:
+
+1. Switch
+• Marca/Modelo: TP-Link (Model: TL-SG1016D)
+• Quantidade: 01 unidade
+• Ocorrência/Status: Equipamento não liga (já testado com outros cabos de força).
+2. Computador
+• Marca/Modelo: Positivo Union UL7550
+• N/S (Número de Série): 4A471V51U
+• Ocorrência/Status: Equipamento entregue sem memória RAM e sem SSD/HD; placa-mãe com defeito (não está conduzindo a energia que chega).
+3. Computador
+• Marca: LG
+• S/N (Número de Série): 608BZTE000449
+• Patrimônio: 005691
+• Ocorrência/Status: Equipamento sem fonte de alimentação (impossibilitado de realizar testes no momento).
+
+Equipamentos retirado do setor de T.I. por Daniel Silva - Estoque.";1;"[#1 | 02/09/2026 16:16:53 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3182349"
+"Protocolo Principal";3366837;"Protocolo 3145634 - Devolução de Controladora KVM e Cabos KVM - DAVID BRASIL FERNANDES";"Sol. Interna";Abertura;"31/07/2026 08:12:31";"Sem Data / Movimentação";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Devolução de Equipamentos";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Por favor, informe em qual estoque estará alocado os produtos e patrimônios que estão sendo devolvidos. 
+
+Informe o número de série de todos os patrimônios após informar o modelo 
+
+TRENDnet
+TK-803R
+04 - Cabos KVM - Manter os cabos juntos com a controladora.
+
+Retirado do DC Chácara.";1;"[#1 | 31/07/2026 08:12:31 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3145634"
+"Protocolo Principal";3401339;"Protocolo 3175289 - Enviar impressora de Pereira do Riacho para Manutenção - DAVID BRASIL FERNANDES";"Sol. Interna";Abertura;"27/08/2026 12:31:30";"Sem Data / Movimentação";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Devolução de Equipamentos";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Foram realizados testes de impressão e constatou-se que a impressora apresenta falhas no tracionamento de papel. O problema é intermitente: ora a folha passa direto, ora a impressão sai cortada por puxar a folha de forma irregular, e em alguns casos o papel atola no meio do processo. O possível causador do problema é um desgaste no Rolete Tracionador. 
+Equipamento: Epson L4150 | NS: X59D002961";1;"[#1 | 27/08/2026 12:31:29 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3175289"
+"Protocolo Principal";3356507;"Protocolo 3137037 - Buscar informações do sistema Zeus para iniciar operação de Telefonia Fixa (TIP Brasil) - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"22/07/2026 17:42:58";"Sem Data / Movimentação";0;Não;"ISAC COSTA SILVA";"Setor TI";"ISAC COSTA SILVA";"Setor TI";;;0%;Normal;"Realizar estudo do sistema Zeus, que é o mesmo gateway responsável pelo recebimento da linha fixa interna Oi da nossa empresa (ramal de números (74) 3651-5900 até 5949). Também, será o mesmo sistema no qual iremos vender linhas fixas para nossos clientes (gestão de clientes internamente, semelhante ao que o FullCam faz atualmente).
+
+Com isso, faz-se necessário o estudo deste sistema, no qual foi disponibilizado um treinamento em cima da Wiki que eles disponibilizaram, para operar o sistema em suas funções básicas, o que foi feito sem muitos exemplos. Com isso, será necessário um estudo aprofundado, visando antender os seguintes quesitos, visando o lançamento do nosso novo produto de telefonia fixa:
+
+• Requisitos para funcionamento do produto: Como funciona, como será a configuração para o cliente, operação, limitações, entre outros;
+• Como adquirir novas linhas (cliente x Ten Internet e Ten Internet x TIP Brasil, nste caso, se há limites);
+• Custos para empresa (limites e formas de cobrança);
+• Custos para o cliente (como parametrizar a cobrança da Ten para clientes, por exemplo);
+• Faturamento;
+• Portabilidade;
+• Equipamentos compatíveis com o produto (telefone IP, soft fone, VoIP ONT, entre outros).
+
+Segue informações que já possuo, abaixo (credenciais necessárias na base de conhecimento do Notion):
+
+https://www.notion.so/liomar/Zeus-TIP-Brasil-Telefonia-2ae3df5f6d6880ee9e76cf9c44a8a4e1?source=copy_link
+
+• Contrato: 7140 → TEN Internet - Capim Grosso → 177.47.224.98
+• SUPORTE TIP BRASIL - Abertura de Tickets: https://tip.movidesk.com/
+• SUPORTE TIP BRASIL - Telefone Tickets: (19) 3090-2255
+• ZEUS: https://administrator.tipbrasil.com.br/zeus_admin/cp_zeus/conexoes.php
+• Manual de Portabilidade Easy Serviços - https://tip.movidesk.com/kb/pt-br/article/526696/portabilidade-via-easy-servicos
+• Procedimento Operacional Padrão - https://tip.movidesk.com/kb/pt-br/article/506400/pop-configuracao-do-ddr-no-sistema-de-telefonia
+• Resolução de Problemas: Verificações no Administrador - https://tip.movidesk.com/kb/pt-br/article/494871/verificacoes-no-administrator";1;"[#1 | 22/07/2026 17:42:58 | ISAC COSTA SILVA]
+Abertura de solicitação vinculada com objetivo de auxiliar na tratativa da demanda."
+"Protocolo Principal";3426004;"Protocolo 3196112 - (N2-TI) SOLICITAÇÃO DE DESCONTO (PROB. CONEXÃO) / Padrão - VALDIR SOUZA DOS REIS";"Sol. Externa";Andamento;"16/09/2026 16:18:24";"16/09/2026 17:30:00";0;Não;"ISAC COSTA SILVA";"Setor TI";"ANDRESSA DOS SANTOS RIOS";"Atendimento Presencial - Jacobina";;;0%;Normal;"16/09/2026 - 16:23 
+Cliente solicita desconto dos dias que ficou sem conexão: 
+Dias: 4
+Mês: 08/2026.
+
+Cliente veio em loja, relatando que ficou sem conexão no dia 07/08/2026 e a conexão retornou no dia 11/08/2026.";2;"[#1 | 16/09/2026 16:18:23 | ANDRESSA DOS SANTOS RIOS]
+16/09/2026 - 16:23 
+Cliente solicita desconto dos dias que ficou sem conexão:
+Dias: 4
+Mês: 08/2026.
+
+Cliente veio em loja, relatando que ficou sem conexão no dia 07/08/2026 e a conexão retornou no dia 11/08/2026.
+
+----------------------------------------
+
+[#2 | 16/09/2026 16:23:05 | ANDRESSA DOS SANTOS RIOS]
+Cliente solicita desconto..."
+"Protocolo Principal";3420390;"Protocolo 3191462 - (N2-TI) Configuração de Equipamentos / TI - NEVTON LUAN OLIVEIRA MARQUES";"Sol. Externa";Andamento;"11/09/2026 11:11:21";"16/09/2026 17:12:37";0;Não;"ISAC COSTA SILVA";"Setor TI";"TATIANE FERREIRA NUNES DA SILVA";"Atendimento Presencial - Saúde";;;0%;Normal;"11/09/2026 - 11:23 
+Após alinhamento com a gestão, foi autorizada a instalação e configuração de 01 Mikrotik e 02 equipamentos Grandstream, adquiridos pelo cliente para uso particular, conforme necessidade identificada na viabilidade interna registrada no protocolo nº 3117126.
+Considerando que o cliente realizou a aquisição dos equipamentos por conta própria, é necessário realizar o devido alinhamento quanto à forma de execução do serviço, incluindo a instalação e configuração dos equipamentos com alinhamento com a equipe técnica Protocolo 3191439 - 
+Gentileza realizar o registro com a cronometragem exata do período efetivamente utilizado para a execução do serviço, considerando que o cliente está ciente de que o valor será calculado e cobrado por hora trabalhada e
+posterior cobrança.";6;"[#1 | 11/09/2026 11:11:20 | TATIANE FERREIRA NUNES DA SILVA]
+11/09/2026 - 11:23 
+Após alinhamento com a gestão, foi autorizada a instalação e configuração de 01 Mikrotik e 02 equipamentos Grandstream, adquiridos pelo cliente para uso particular, conforme necessidade identificada na viabilidade interna registrada no protocolo nº 3117126.
+Considerando que o cliente realizou a aquisição dos equipamentos por conta própria, é necessário realizar o devido alinhamento quanto à forma de execução do serviço, incluindo a instalação e configuração dos equipamentos com alinhamento com a equipe técnica Protocolo 3191439 - 
+Gentileza realizar o registro com a cronometragem exata do período efetivamente utilizado para a execução do serviço, considerando que o cliente está ciente de que o valor será calculado e cobrado por hora trabalhada e
+posterior cobrança.
+
+----------------------------------------
+
+[#2 | 11/09/2026 11:23:32 | TATIANE FERREIRA NUNES DA SILVA]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#3 | 14/09/2026 07:41:07 | ISAC COSTA SILVA]
+14/09/2026 - 07:54 
+Após consultar o supervisor de TI (Isvi), foi decidida a seguinte abordagem:
+• Cliente será o único usuário do mikrotik;
+• Cliente abrirá conta na controladora Grandstream, nós vamos configurar usando o acesso do mesmo;
+
+----------------------------------------
+
+[#4 | 16/09/2026 09:45:40 | ISAC COSTA SILVA]
+16/09/2026 - 10:07 
+Técnico de campo entrou em contato para iniciar a configuração via acesso remoto. Foi realizada a configuração do mikrotik RB750Gr3, estamos aguardando o cliente comprar as fontes para os APs e criar uma conta na GDMS para finalizar a configuração dos Grandstream.
+
+----------------------------------------
+
+[#5 | 16/09/2026 10:20:44 | ISAC COSTA SILVA]
+16/09/2026 - 10:59 
+Após o cliente criar o cadastro, foi realizada a configuração dos Grandstream GWN7660E.
+MAC: EC74D7CA7B92
+MAC: EC74D7CA73C2
+Aguardando o técnico realizar a instalação.
+
+----------------------------------------
+
+[#6 | 16/09/2026 17:09:12 | ISAC COSTA SILVA]
+16/09/2026 - 17:12 
+O técnico responsável pela instalação relatou que a construção do cliente ainda está inacabada, inclusive sem energia, portanto, não foi possível realizar os testes necessários na instalação, portanto, a demanda será concluída assim que o cliente finalizar a sua construção.
+
+Relato do técnico:
+""...Dessa forma, o atendimento não pôde ser finalizado devido à pendência da estrutura elétrica, finalização da pintura e chegada dos equipamentos adquiridos pelo cliente. O cliente foi orientado e também concordou que a finalização seja realizada somente após toda a estrutura estar concluída, possibilitando a fixação dos equipamentos, organização do cabeamento e conclusão da instalação."""
+"Protocolo Principal";3425783;"Protocolo 3195932 - (N2-TI) Configuração de Equipamentos / Suporte Técnico - THAÍS RODRIGUES DA SILVA";"Sol. Externa";Andamento;"16/09/2026 14:12:49";"16/09/2026 14:35:55";0;Não;"ISAC COSTA SILVA";"Setor TI";"NAILA GABRIELI RIOS MELO";"Atendimento Presencial - Capim Grosso";;;0%;Normal;"16/09/2026 - 14:14 
+Por gentileza, realizar configuração do GWN e RB. 
+
+Rede: Padaria Bom Gosto
+Senha: cliente10";3;"[#1 | 16/09/2026 14:12:48 | NAILA GABRIELI RIOS MELO]
+16/09/2026 - 14:14 
+Por gentileza, realizar configuração do GWN e RB.
+
+Rede: Padaria Bom Gosto
+Senha: cliente10
+
+----------------------------------------
+
+[#2 | 16/09/2026 14:14:00 | NAILA GABRIELI RIOS MELO]
+Abertura Solicitação para visita técnica no cliente, a pedido do mesmo.
+
+----------------------------------------
+
+[#3 | 16/09/2026 14:31:36 | ISAC COSTA SILVA]
+16/09/2026 - 14:35 
+Equipamentos configurados, atualizados e testados.
+1x Mikrotik RB750Gr3
+MAC: D0:EA:11:06:3C:F1
+SERIAL: HKK0BAQM0BR
+
+1x GWN 7660E
+MAC: 14:4C:FF:05:FD:9C
+SERIAL: 36102C23AE
+
+Equipamentos aguardando retirada no setor."
+"Protocolo Principal";3315164;"Protocolo 3102934 - INTEGRAÇÃO DATACAKE E PliQ - ISVI NEEMIAS SANTOS SILVA";"Sol. Interna";Andamento;"16/06/2026 15:02:05";"16/09/2026 10:10:21";0;Não;"ISAC COSTA SILVA";"Setor TI";"ISAC COSTA SILVA";"Setor TI";;;0%;Normal;"Realizar integração do toten Datacake da loja de Jacobina com sistema PliQ.
+• Verificar com a Datacake como realizar a integração e atualizar o software.
+• Verificar com comercial se é necessário configurar impressão no toten.";3;"[#1 | 16/06/2026 15:02:05 | ISAC COSTA SILVA]
+Início do atendimento - Protocolo 3102934
+
+----------------------------------------
+
+[#2 | 16/06/2026 17:55:46 | OTTON CARLOS CARVALHO ARAUJO]
+Em contato com o suporte Wendel Barbosa da Datacake através do protocolo C202611024, relatamos nossa necessidade para o totem e foi aberto um ticket registrado sob código AC-5448 para tratativa da Datacake em relação à integração com o sistema da PliQ.
+
+----------------------------------------
+
+[#3 | 16/09/2026 10:08:59 | ISAC COSTA SILVA]
+16/09/2026 - 10:10 
+O suporte da Datacake entrou em contato para prosseguir com a integração, solicitando as seguintes informações referentes ao sistema PliQ:
+- Identificador da pesquisa criada pela Pliqxc (Ele é o link da pesquisa da Pliq);
+- Header da API.
+
+Entramos em contato com a PliQ, aguardando retorno."
+"Protocolo Principal";3423851;"Protocolo 3194407 - Requisição de pilha 9v recarregável - DAVID BRASIL FERNANDES";"Sol. Interna";"ESTQ. AG. RETIRADA / ENVIO";"15/09/2026 09:23:43";"16/09/2026 09:39:00";0;Não;"DANIEL SILVA RIOS";"Patrimônio e Logística - Sede - Separado";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: Pilha 9V recarregável
+Quantidade: 02
+Destinação: Setor de TI
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Solicitante: David Brasil
+Contato: [telefone removido]
+Justificativa: Solicito o envio de pilhas de 9V para repor a carga do nosso testador de cabos RJ-45 e do multímetro, ferramentas que usamos no dia a dia para diagnósticos de rede e medições elétricas e que no momento dependem dessa troca para continuar funcionando.";7;"[#1 | 15/09/2026 09:23:42 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3194407
+
+----------------------------------------
+
+[#2 | 15/09/2026 10:56:14 | DANIEL RIOS DA SILVA]
+15/09/2026 - 10:56 
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#3 | 15/09/2026 10:56:51 | DANIEL RIOS DA SILVA]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#4 | 15/09/2026 11:00:57 | TEN INTERNET LTDA]
+15/09/2026 - 11:00 
+Encaminhamento para separação
+
+ESTQ. TRIAGEM — Gestor Estoque
+Relato v6 · app 23.24
+
+Protocolo: 3194407
+Título: Requisição de pilha 9v recarregável
+Solicitante: DAVID BRASIL FERNANDES
+Triagem por: Daniel Rios
+Separação atribuída a: Daniel Silva
+Data: 15/09/2026, 14:00
+
+Técnicos / destinos: 1
+
+1) DAVID BRASIL FERNANDES · T.I
+ • PILHA 9V: 2 UN
+ → Separação (estoque)
+
+Resumo do fluxo:
+ • 1 item(ns) para separação de estoque
+
+----------------------------------------
+
+[#5 | 15/09/2026 11:00:57 | TEN INTERNET LTDA]
+Encaminhamento de Solicitação
+
+----------------------------------------
+
+[#6 | 16/09/2026 09:38:59 | TEN INTERNET LTDA]
+16/09/2026 - 09:39 
+ESTQ. Material Separado
+
+ESTQ. CONFERÊNCIA — material liberado
+
+Protocolo 3194407 — Requisição de pilha 9v recarregável
+Solicitante: DAVID BRASIL FERNANDES
+Separador: Daniel Silva · Conferente: Gabriel Silva
+Concluído em: 16/09/2026, 12:39
+Atenção: conferência parcial — ainda há itens aguardando.
+
+Volumes por técnico:
+ • DAVID BRASIL FERNANDES (T.I): 0 volume(s)
+Total: 0 volume(s)
+Obs. conferência: Sem estoque
+
+Materiais conferidos (por destino):
+(nenhum item conferido)
+
+----------------------------------------
+
+[#7 | 16/09/2026 09:39:01 | TEN INTERNET LTDA]
+Encaminhamento de Solicitação"
+"Protocolo Principal";3424570;"Protocolo 3194983 - Favor, verificar computador de Fernando servicedesk  - ELIABE DOS SANTOS OLIVEIRA";"Sol. Interna";"Aguardando compra";"15/09/2026 14:13:23";"15/09/2026 16:29:32";0;Não;"DAVID BRASIL FERNANDES";"Setor TI";"ELIABE DOS SANTOS OLIVEIRA";"Instalação/Suporte - Jacobina - Fredson";;;0%;Normal;"Favor, verificar computador de Fernando servicedesk 
+constantemente bate 100 de processamento utilizado e começa a travar bastante.";2;"[#1 | 15/09/2026 14:13:22 | ELIABE DOS SANTOS OLIVEIRA]
+Início do atendimento - Protocolo 3194983
+
+----------------------------------------
+
+[#2 | 15/09/2026 16:27:38 | DAVID BRASIL FERNANDES]
+15/09/2026 - 16:29 
+A estação de trabalho vem apresentando lentidão constante e travamentos frequentes durante a execução das atividades do colaborador. Mesmo após a realização de ajustes e otimizações nas configurações do navegador, o equipamento continuou apresentando gargalo crítico de hardware, registrando picos recorrentes de 100% de uso do processador e operando sob estresse contínuo com consumo médio de 81% da memória RAM.
+A análise técnica constatou que a capacidade atual dos componentes físicos não comporta mais a carga de trabalho exigida pela rotina operacional. Diante dessa limitação e para restabelecer a estabilidade do sistema, foi formalizado o pedido de upgrade de memória através do protocolo nº 3195211."
+"Protocolo Principal";3412181;"Protocolo 3184526 - Solicitação de Quadro - DAVID BRASIL FERNANDES";"Sol. Interna";"ESTQ. SEPARAÇÃO";"04/09/2026 10:37:59";"15/09/2026 12:27:35";0;Não;"GABRIEL SILVA ROCHA";"Patrimônio e Logística - Sede - Separação";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: 
+Lousa Quadro Branco Magnético 60x40 Alumínio 10 Imãs Canetas
+Quantidade: 01
+Destinação: Setor de TI, a recomendação desse link é que ja inclui as canetas piloto e os imãs do quadro.
+Link de indicação: https://www.mercadolivre.com.br/lousa-quadro-branco-magnetico-60x40-aluminio-10-imas-canetas/up/MLBU770884510?pdp_filters=item_id:MLB3705852168#is_advertising=true&searchVariation=MLBU770884510&backend_model=search-backend;EQ:QUADRO%20MAGNETICO%2060X40%20CANETAS;EQ:QUADRO%20BRANCO%2060X40;EQ:QUADRO%20LOUSA%2060X40&be_origin=mixed&position=3&search_layout=grid&type=pad&tracking_id=c24284cd-e25f-4a36-ac6b-887ab1eb8dfd&ad_domain=VQCATCORE_LST&ad_position=3&ad_click_id=MjgxNmNkNzktZGIwYy00ODU4LWJjZTgtOWY0ZGE3NWFhNTVj
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Solicitante: David Brasil
+Contato: [telefone removido]
+Justificativa: Solicitação de aquisição de um quadro magnético para otimizar a gestão visual de demandas e fluxos de trabalho operacionais. O equipamento será utilizado para centralizar o controle de tarefas diárias, priorização de entregas e acompanhamento de prazos, utilizando ferramentas de organização física (anotações e notas adesivas) para garantir maior clareza, agilidade e redução de gargalos na rotina do setor.";11;"[#1 | 04/09/2026 10:37:59 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3184526
+
+----------------------------------------
+
+[#2 | 04/09/2026 10:55:45 | TEN INTERNET LTDA]
+04/09/2026 - 10:55 
+ESTQ. Aguardar compra de material
+
+[Gestor Estoque] Protocolo encaminhado para aguardar compra de material.
+Protocolo ESTQ: 3184526
+Protocolo de compra aberto: 3184575
+Solicitante: DAVID BRASIL FERNANDES
+Título da compra: Solicitação de Quadro
+Aberto por: Daniel Rios
+Equipe: Patrimônio e Logística - Sede - Aguardando Compra
+Status: ESTQ. AG. COMPRA
+
+----------------------------------------
+
+[#3 | 04/09/2026 10:55:45 | TEN INTERNET LTDA]
+Encaminhamento de Solicitação
+
+----------------------------------------
+
+[#4 | 04/09/2026 10:55:45 | TEN INTERNET LTDA]
+[Gestor Estoque] Protocolo encaminhado para aguardar compra de material.
+Protocolo ESTQ: 3184526
+Protocolo de compra aberto: 3184575
+Solicitante: DAVID BRASIL FERNANDES
+Título da compra: Solicitação de Quadro
+Aberto por: Daniel Rios
+Equipe: Patrimônio e Logística - Sede - Aguardando Compra
+Status: ESTQ. AG. COMPRA
+
+----------------------------------------
+
+[#5 | 14/09/2026 17:32:26 | ELISÂNGELA FERREIRA DOS SANTOS]
+14/09/2026 - 17:33 
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+Descrição:
+Lousa Quadro Branco Magnético 60x40 Alumínio 10 Imãs Canetas
+Quantidade: 01
+
+----------------------------------------
+
+[#6 | 14/09/2026 17:33:32 | ELISÂNGELA FERREIRA DOS SANTOS]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#7 | 15/09/2026 12:27:14 | TEN INTERNET LTDA]
+15/09/2026 - 12:27 
+Triagem
+
+[Gestor Estoque] Protocolo devolvido para a Triagem.
+Protocolo ESTQ: 3184526
+Equipe: Patrimônio e Logística - Sede - Triagem
+Status: Andamento
+Atendente: (nenhum — fila da equipe)
+Status anterior no Gestor: separacao
+Devolvido por: Daniel Rios
+
+Justificativa:
+corrigir
+
+----------------------------------------
+
+[#8 | 15/09/2026 12:27:14 | TEN INTERNET LTDA]
+Encaminhamento de Solicitação
+
+----------------------------------------
+
+[#9 | 15/09/2026 12:27:14 | TEN INTERNET LTDA]
+[Gestor Estoque] Protocolo devolvido para a Triagem.
+Protocolo ESTQ: 3184526
+Equipe: Patrimônio e Logística - Sede - Triagem
+Status: Andamento
+Atendente: (nenhum — fila da equipe)
+Status anterior no Gestor: separacao
+Devolvido por: Daniel Rios
+
+Justificativa:
+corrigir
+
+----------------------------------------
+
+[#10 | 15/09/2026 12:27:35 | TEN INTERNET LTDA]
+15/09/2026 - 12:27 
+Encaminhamento para separação
+
+ESTQ. TRIAGEM — Gestor Estoque
+Relato v6 · app 23.24
+
+Protocolo: 3184526
+Título: Solicitação de Quadro
+Solicitante: DAVID BRASIL FERNANDES
+Triagem por: Daniel Rios
+Separação atribuída a: Gabriel Silva
+Data: 15/09/2026, 15:27
+
+Obs. geral: Devolvido à triagem (15/09/2026, 12:27:16):
+corrigir
+
+Técnicos / destinos: 1
+
+1) DAVID BRASIL FERNANDES · T.I
+ • Lousa Quadro Branco Magnético 60x40 Alumínio 10 Imãs Canetas: 1 UN
+ → Separação (estoque)
+
+Resumo do fluxo:
+ • 1 item(ns) para separação de estoque
+
+----------------------------------------
+
+[#11 | 15/09/2026 12:27:35 | TEN INTERNET LTDA]
+Encaminhamento de Solicitação"
+"Subtarefa Vinculada (Pai #3412181)";3412190;"Protocolo 3184526 - DAVID BRASIL FERNANDES";"Tarefa de Aprovação";Concluído;"04/09/2026 10:40:40";"15/09/2026 09:47:40";0;Não;"ISVI NEEMIAS SANTOS SILVA";"Patrimônio e Logística - Sede - Separação";"DAVID BRASIL FERNANDES";"Setor TI";3412181;"Protocolo 3184526 - Solicitação de Quadro - DAVID BRASIL FERNANDES";100%;Normal;"Solicitação de aquisição de um quadro magnético para otimizar a gestão visual de demandas e fluxos de trabalho operacionais. O equipamento será utilizado para centralizar o controle de tarefas diárias, priorização de entregas e acompanhamento de prazos, utilizando ferramentas de organização física (anotações e notas adesivas) para garantir maior clareza, agilidade e redução de gargalos na rotina do setor.";1;"[#1 | 15/09/2026 09:47:40 | ISVI NEEMIAS SANTOS SILVA]
+Aprovado, verifica se encontra nas mesmas características e menor custo."
+"Protocolo Principal";3421747;"Protocolo 3192572 - Realizar verificação nas tomadas do caixa de Jacbonia - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"14/09/2026 08:55:59";"14/09/2026 16:31:22";0;Não;"ROSENILDO DOS SANTOS OLIVEIRA";"INFRAESTRUTURA PREDIAL";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Por gentileza, peço a verificação elétrica das tomadas da sala do caixa de Jacobina (posto da colaboradora Ionara), pois este já é o segundo nobreak que opera exclusivamente na bateria e não recarrega ao ser conectado à rede, indicando uma falha no ponto de energia; solicito também o envio de um nobreak para realizar a substituição imediata do equipamento atual.";3;"[#1 | 14/09/2026 08:55:58 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3192572
+
+----------------------------------------
+
+[#2 | 14/09/2026 10:14:03 | DANIEL RIOS DA SILVA]
+Processo de análise para necessidade de visita técnica.
+
+----------------------------------------
+
+[#3 | 14/09/2026 16:31:22 | JEAN LIMA BARRETO]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda."
+"Protocolo Principal";3417014;"Protocolo 3188625 - Requisição de Nobreak - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";"ESTQ. AG. COMPRA";"09/09/2026 12:49:11";"14/09/2026 09:45:24";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Aguardando Compra";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: Nobreak NHS Compact Plus 4 1500VA
+Quantidade: 01
+Destinação: Rack da Chácará
+Link de indicação: https://meli.la/2v8uhPg
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Solicitante: Liomar Antonio 
+Contato: 
+Justificativa: Constatou-se após análise que a capacidade de fornecimento do nobreak em uso (600VA) é insuficiente para suportar o consumo simultâneo dos dispositivos conectados. Para suprir a carga elétrica atual com a margem de segurança adequada, é necessária a implementação de um equipamento de 1500VA.";4;"[#1 | 09/09/2026 12:49:10 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3188625
+
+----------------------------------------
+
+[#2 | 14/09/2026 09:45:22 | TEN INTERNET LTDA]
+14/09/2026 - 09:45 
+ESTQ. Aguardar compra de material
+
+[Gestor Estoque] Protocolo encaminhado para aguardar compra de material.
+Protocolo ESTQ: 3188625
+Protocolo de compra aberto: 3192726
+Solicitante: LIOMAR ANTONIO DE OLIVEIRA
+Título da compra: Requisição de Nobreak
+Aberto por: Daniel Rios
+Equipe: Patrimônio e Logística - Sede - Aguardando Compra
+Status: ESTQ. AG. COMPRA
+
+----------------------------------------
+
+[#3 | 14/09/2026 09:45:23 | TEN INTERNET LTDA]
+Encaminhamento de Solicitação
+
+----------------------------------------
+
+[#4 | 14/09/2026 09:45:23 | TEN INTERNET LTDA]
+[Gestor Estoque] Protocolo encaminhado para aguardar compra de material.
+Protocolo ESTQ: 3188625
+Protocolo de compra aberto: 3192726
+Solicitante: LIOMAR ANTONIO DE OLIVEIRA
+Título da compra: Requisição de Nobreak
+Aberto por: Daniel Rios
+Equipe: Patrimônio e Logística - Sede - Aguardando Compra
+Status: ESTQ. AG. COMPRA"
+"Protocolo Principal";3248354;"Protocolo 3048028 - Migração Chat Seguro x Native PBX - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"20/04/2026 10:58:18";"14/09/2026 09:09:04";0;Não;"ISAC COSTA SILVA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"Verificar etapas, procedimentos necessários e o que falta fazer para concluir a migração do Chat Seguro para o Native PBX, para que possamos prosseguir com o desligamento do sistema Chat Seguro para a empresa. 
+
+Alguns pontos que precisam ser levantados:
+• Todos os recursos do Chat Seguro devem ser parametrizados no chat Native PBX, como usuários, grupos entre outros, mantendo o padrão de organização atual.
+• Backup de conversas do Chat Seguro: Verificar se o sistema possui o recurso de exportar as conversas e os anexos. Caso não, entrar em contato com a empresa para solicitar o backup (NESTE CASO, APENAS APÓS AUTORIZAÇÃO DE ISVI E LIOMAR).
+• Realizar testes na plataforma de Chat.
+• Mapear o que mais será necessário verificar e sinalizar.";55;"[#1 | 20/04/2026 10:58:18 | LIOMAR ANTONIO DE OLIVEIRA]
+Verificar etapas, procedimentos necessários e o que falta fazer para concluir a migração do Chat Seguro para o Native PBX, para que possamos prosseguir com o desligamento do sistema Chat Seguro para a empresa.
+
+Alguns pontos que precisam ser levantados:
+• Todos os recursos do Chat Seguro devem ser parametrizados no chat Native PBX, como usuários, grupos entre outros, mantendo o padrão de organização atual.
+• Backup de conversas do Chat Seguro: Verificar se o sistema possui o recurso de exportar as conversas e os anexos. Caso não, entrar em contato com a empresa para solicitar o backup (NESTE CASO, APENAS APÓS AUTORIZAÇÃO DE ISVI E LIOMAR).
+• Realizar testes na plataforma de Chat.
+• Mapear o que mais será necessário verificar e sinalizar.
+
+----------------------------------------
+
+[#2 | 20/04/2026 11:00:03 | ISAC COSTA SILVA]
+Atendimento interrompido
+
+----------------------------------------
+
+[#3 | 20/04/2026 13:45:32 | ISAC COSTA SILVA]
+20/04/2026 - 14:43 
+Sobre o backup do chat seguro:
+Backup das conversas agrupadas por setor:
+No perfil admin do ChatSeguro, abrir aba “histórico/grupos” e selecionar o grupo para fazer dowloads das conversas; o histórico abre em uma nova aba no navegador, sendo possível o download com ctrl+p e salvar como PDF. O histórico começa sempre da mensagem mais antiga à mais recente, independente da ordenação feita antes do download.
+
+Backup dos anexos:
+No mesmo perfil admin, em “histórico/arquivos” é possível fazer o download dos anexos enviados em todas as conversas, porém, não há separação por setor e o download é feito de apenas uma página com 30 anexos por vez, sendo no total 3003 páginas(!).
+
+----------------------------------------
+
+[#4 | 20/04/2026 14:45:14 | ISAC COSTA SILVA]
+20/04/2026 - 14:49 
+Recursos faltantes do Native PBX:
+Foi detectado que alguns setores não possuem colaboradores, apenas um usuário único para todo setor, e em comparação ao ChatSeguro, alguns setores estão faltando colaboradores, estou no aguardo da relação de colaboradores atualizada para prosseguir com análise e cadastramento dos colaboradores ausentes no sistema. A mesma já foi solicitada ao DP.
+
+----------------------------------------
+
+[#5 | 20/04/2026 14:55:52 | ISAC COSTA SILVA]
+20/04/2026 - 15:05 
+INFORMAÇÃO IMPORTANTE SOBRE BACKUP DE ANEXOS NO CHATSEGURO:
+Após mais testes, foi detectado que não é possível o download os 30 anexos por página simultaneamente, apenas seleção para exclusão. Para baixar os anexos do ChatSeguro, independente do formato do arquivo, é necessário abrir individualmente cada um e realizar o download. No total são 90.090 arquivos, totalizando 30GB.
+
+SOBRE O NATIVE PBX:
+Após testes, foi confirmado que o chat aceita qualquer tipo de arquivo, mesmo áudio, apesar de não permitir a gravação dentro do chat. Foi percebido também a impossibilidade de ""arrastar"" documentos para o chat, como costuma funcionar em sistemas de chat padrão. Outra fragilidade do Native PBX é a falta de uma revisão do anexo que vai ser enviado, ao selecionar o arquivo ele é enviado imediatamente, e não pode ser removido do chat. Também não é possível enviar mais de um anexo de cada vez.
+
+----------------------------------------
+
+[#6 | 20/04/2026 15:14:32 | ISAC COSTA SILVA]
+20/04/2026 - 15:31 
+Identificou-se um detalhe no backup de mensagens do ChatSeguro: conforme relatos anteriores, o backup de conversas dos grupos (ex:agendamento, comercial e etc) é simples, basta organizar os dados, porém, para o backup de conversas individuais, deve-se selecionar cada usuário, escolher a data das conversas (QUE NÃO PODE SER SUPERIOR A 3 ANOS) e então exportar o backup, um usuário de cada vez. Para simplificar esta demanda, estou desenvolvendo uma automação.
+
+----------------------------------------
+
+[#7 | 20/04/2026 15:32:01 | ISAC COSTA SILVA]
+20/04/2026 - 17:07 
+Foi iniciada a construção da automação responsável por organizar os arquivos de backup das conversas.
+
+Ainda precisam ser realizados ajustes e finalização do script responsável pela leitura e exportação das mensagens privadas do chat.
+
+----------------------------------------
+
+[#8 | 22/04/2026 14:50:59 | ISAC COSTA SILVA]
+22/04/2026 - 15:24 
+continuação dos estudos para automatizar download do histórico de conversas do chatseguro
+
+----------------------------------------
+
+[#9 | 22/04/2026 15:29:11 | ISAC COSTA SILVA]
+22/04/2026 - 15:58 
+Continuação da construção da automação.
+
+----------------------------------------
+
+[#10 | 23/04/2026 07:49:07 | ISAC COSTA SILVA]
+23/04/2026 - 08:41 
+Foi realizada a conferência dos usuários cadastrados no Native PBX e colaboradores ativos da empresa, para assim criar o cadastro dos ausentes.
+
+----------------------------------------
+
+[#11 | 23/04/2026 15:02:11 | ISAC COSTA SILVA]
+23/04/2026 - 15:28 
+Finalização do levantamento de usuários cadastrados no Native PBX x colaboradores ativos da empresa.
+Necessita avaliação superior para definir se os perfis criados para setor (ex: marketing, ramal 584) serão mantidos assim OU será criado o perfil individual dos colaboradores dos setores que atualmente estão cadastrados assim.
+PLANILHA ANEXADA NO PROTOCOLO.
+
+----------------------------------------
+
+[#12 | 24/04/2026 08:11:44 | ISAC COSTA SILVA]
+24/04/2026 - 08:44 
+Foi requisitado ao DP um análise dos colaboradores ativos que não estão cadastrados no Native PBX, para que os usuários possam ser criados com precisão, evitando retrabalho no futuro.
+
+----------------------------------------
+
+[#13 | 24/04/2026 10:38:03 | ISAC COSTA SILVA]
+Atendimento interrompido
+
+----------------------------------------
+
+[#14 | 27/04/2026 08:06:43 | ISAC COSTA SILVA]
+27/04/2026 - 09:48 
+A automação de downloads foi criada e testada, funcionou corretamente, porém travou em determinado ponto, iniciando investigação para identificar e corrigir o erro para prosseguir com o Backup
+
+----------------------------------------
+
+[#15 | 28/04/2026 07:44:39 | ISAC COSTA SILVA]
+28/04/2026 - 09:10 
+Foi realizado o alinhamento com Liomar a respeito do padrão ao cadastrar usuários e ramais no Native PBX, além de discutir melhorias para o sistema de automação do backup.
+
+----------------------------------------
+
+[#16 | 30/04/2026 10:43:29 | ISAC COSTA SILVA]
+Realizando ajustes na automação de backups das conversas.
+
+----------------------------------------
+
+[#17 | 30/04/2026 14:11:13 | ISAC COSTA SILVA]
+30/04/2026 - 17:58 
+Foram feitas as alterações finais na automação de backups das conversas individuais, agora o sistema realiza o download do html das conversas, resultando em mais desempenho tanto no download quanto no funcionamento do sistema.
+Agora falta ajustar o leitor do sistema para identificar html ao invés de pdf e demais demandas do protocolo.
+
+----------------------------------------
+
+[#18 | 04/05/2026 08:31:21 | ISAC COSTA SILVA]
+Atendimento interrompido para resolução de protocolos abertos
+
+----------------------------------------
+
+[#19 | 04/05/2026 09:11:48 | ISAC COSTA SILVA]
+04/05/2026 - 11:46 
+Backup de todas as conversas concluído, finalizando estrutura do sistema.
+
+----------------------------------------
+
+[#20 | 04/05/2026 13:42:01 | ISAC COSTA SILVA]
+04/05/2026 - 16:00 
+Foram realizadas alterações no frontend, melhorando a experiência do usuário, e o projeto foi armazenado no github.
+
+----------------------------------------
+
+[#21 | 04/05/2026 16:27:53 | ISAC COSTA SILVA]
+Ajustes para novas funções do sistema (RBAC)
+• Gerenciar usuários
+• Ajustar permissões dos usuários
+
+----------------------------------------
+
+[#22 | 05/05/2026 07:43:29 | ISAC COSTA SILVA]
+Implementando RBAC no sistema.
+
+----------------------------------------
+
+[#23 | 05/05/2026 09:07:22 | ISAC COSTA SILVA]
+Atendimento interrompido
+
+----------------------------------------
+
+[#24 | 05/05/2026 13:46:32 | ISAC COSTA SILVA]
+Atendimento interrompido
+
+----------------------------------------
+
+[#25 | 05/05/2026 16:04:24 | ISAC COSTA SILVA]
+Atendimento interrompido
+
+----------------------------------------
+
+[#26 | 06/05/2026 10:15:55 | ISAC COSTA SILVA]
+Atendimento interrompido para atender demanda de configuração de ramais.
+
+----------------------------------------
+
+[#27 | 06/05/2026 15:40:52 | ISAC COSTA SILVA]
+Finalização das rotas do RBAC e tela de Login
+
+----------------------------------------
+
+[#28 | 07/05/2026 07:31:22 | ISAC COSTA SILVA]
+Ajustes no processo de login/logout, categorias de usuários e fix no frontend.
+
+----------------------------------------
+
+[#29 | 07/05/2026 13:43:05 | ISAC COSTA SILVA]
+Feature da geração automática de senha automática aleatória, mudança de senha obrigatória no primeiro acesso, configurações do admin em relação ao controle de usuários e geração de nova senha caso o colaborador precise recuperar.
+
+----------------------------------------
+
+[#30 | 08/05/2026 08:56:30 | ISAC COSTA SILVA]
+Finalizados ajustes para a gestão de usuários e senhas funcionarem corretamente.
+
+----------------------------------------
+
+[#31 | 08/05/2026 14:02:45 | ISAC COSTA SILVA]
+Atendimento interrompido
+
+----------------------------------------
+
+[#32 | 11/05/2026 08:44:35 | ISAC COSTA SILVA]
+adicionadas rotas de criação de novos usuários, aba de configurações de admin para gerência de usuários e ajustes no frontend.
+
+----------------------------------------
+
+[#33 | 11/05/2026 11:21:50 | ISAC COSTA SILVA]
+Atendimento interrompido
+
+----------------------------------------
+
+[#34 | 11/05/2026 14:31:42 | ISAC COSTA SILVA]
+11/05/2026 - 17:45 
+Finalização e testes da gestão de usuários e acessos.
+
+----------------------------------------
+
+[#35 | 13/05/2026 09:01:00 | ISAC COSTA SILVA]
+Ajustes no sistema de parser (importação de html) e na exclusão de usuários.
+
+----------------------------------------
+
+[#36 | 13/05/2026 13:48:31 | ISAC COSTA SILVA]
+Atendimento interrompido
+
+----------------------------------------
+
+[#37 | 14/05/2026 08:27:03 | ISAC COSTA SILVA]
+14/05/2026 - 10:35 
+Ajustado sistema de download do backup, finalizado sistema de rbac e frontend geral.
+
+----------------------------------------
+
+[#38 | 14/05/2026 14:07:50 | ISAC COSTA SILVA]
+Implementação da configuração dos grupos.
+
+----------------------------------------
+
+[#39 | 15/05/2026 13:46:45 | ISAC COSTA SILVA]
+Ajustando mecânicas de grupo, gestão de usuários por grupo e etc.
+
+----------------------------------------
+
+[#40 | 20/05/2026 07:40:00 | ISAC COSTA SILVA]
+Criação da configuração de grupos
+
+----------------------------------------
+
+[#41 | 21/05/2026 09:39:18 | ISAC COSTA SILVA]
+21/05/2026 - 11:50 
+Ajustes no frontend e no parser de mensagens, haviam alguns erros na importação e leitura dos dados, agora realizando novo backup para importação definitiva de todas as mensagens.
+
+----------------------------------------
+
+[#42 | 21/05/2026 13:38:44 | ISAC COSTA SILVA]
+21/05/2026 - 17:40 
+Ajustes finais da configuração de grupos e correção de pequenos problemas.
+
+----------------------------------------
+
+[#43 | 22/05/2026 08:19:32 | ISAC COSTA SILVA]
+Atendimento interrompido
+
+----------------------------------------
+
+[#44 | 22/05/2026 09:16:33 | ISAC COSTA SILVA]
+Realizando ajustes no sistema de importação dos htmls
+
+----------------------------------------
+
+[#45 | 22/05/2026 13:57:48 | ISAC COSTA SILVA]
+Novas features finalizadas, agora implementando o download de anexos e inserção dos mesmos nas conversas.
+
+----------------------------------------
+
+[#46 | 25/05/2026 11:30:09 | ISAC COSTA SILVA]
+Ajuste na importação dos grupos, pois não estavam identificados e separados corretamente.
+
+----------------------------------------
+
+[#47 | 25/05/2026 13:52:59 | ISAC COSTA SILVA]
+25/05/2026 - 17:35 
+Otimização da performance, refatorando buscas no banco de dados. 
+Feature de baixar e exibir anexos nas conversas.
+
+----------------------------------------
+
+[#48 | 26/05/2026 14:40:11 | ISAC COSTA SILVA]
+26/05/2026 - 17:51 
+Ajustes na segurança do sistema, download dos anexos das conversas, preparação para deploy e realizando correções no parser para garantir a integridade das conversas.
+
+----------------------------------------
+
+[#49 | 29/05/2026 14:59:21 | ISAC COSTA SILVA]
+29/05/2026 - 16:52 
+Ajustes no downloader, com mais de 1 worker estava dando erro no cache do chatseguro, agora fazendo novo backup de todas as conversas.
+
+----------------------------------------
+
+[#50 | 01/06/2026 08:14:33 | ISAC COSTA SILVA]
+01/06/2026 - 17:53 
+Foi revisada toda a parte de segurança da aplicação, feito novo backup e preparativos para deploy.
+
+----------------------------------------
+
+[#51 | 02/06/2026 08:39:18 | ISAC COSTA SILVA]
+Ajustes na importação dos arquivos.
+
+----------------------------------------
+
+[#52 | 03/06/2026 10:57:16 | ISAC COSTA SILVA]
+03/06/2026 - 17:41 
+Parser de mensagens ajustado e testado, funcionando perfeitamente, as conversas dos usuários estão íntegras, seguras e carregam com velocidade.
+
+----------------------------------------
+
+[#53 | 17/06/2026 10:31:51 | ISAC COSTA SILVA]
+17/06/2026 - 17:48 
+Feito novo backup, ajustado download de anexos e revisão geral da integridade das conversas.
+
+----------------------------------------
+
+[#54 | 27/07/2026 15:43:18 | ISAC COSTA SILVA]
+teste
+
+----------------------------------------
+
+[#55 | 14/09/2026 09:07:27 | ISAC COSTA SILVA]
+14/09/2026 - 09:09 
+Foi realizado o backup das últimas conversas, antecedendo a migração à nova plataforma de chat interno da empresa."
+"Protocolo Principal";3401042;"Protocolo 3175023 - VERIFICAR IMPRESSORA - RIACHO DA ONÇA - NAILA GABRIELI RIOS MELO";"Sol. Interna";Andamento;"27/08/2026 10:35:24";"14/09/2026 08:13:24";0;Não;"DAVID BRASIL FERNANDES";"Setor TI";"NAILA GABRIELI RIOS MELO";"Atendimento Presencial - Capim Grosso";;;0%;Normal;"Por gentileza, verificar impressora de Riacho da Onça pois está embolando e rasgando as páginas e as vezes não sai impressão da forma correta. 
+
+David Brasil ciente.";4;"[#1 | 27/08/2026 10:35:23 | NAILA GABRIELI RIOS MELO]
+Início do atendimento - Protocolo 3175023
+
+----------------------------------------
+
+[#2 | 27/08/2026 12:22:07 | DAVID BRASIL FERNANDES]
+27/08/2026 - 12:29 
+Foram realizados testes de impressão e constatou-se que a impressora apresenta falhas no tracionamento de papel. O problema é intermitente: ora a folha passa direto, ora a impressão sai cortada por puxar a folha de forma irregular, e em alguns casos o papel atola no meio do processo. O possível causador do problema é um desgaste no Rolete Tracionador. 
+Equipamento: Epson L4150 | NS: X59D002961""
+
+----------------------------------------
+
+[#3 | 02/09/2026 08:23:29 | DAVID BRASIL FERNANDES]
+02/09/2026 - 08:24 
+Impressora foi entregue ao setor de suprimentos para enviar-lá para manutenção. Agora estou aguardando a mesma retorna da manutenção.
+
+----------------------------------------
+
+[#4 | 14/09/2026 08:12:32 | DAVID BRASIL FERNANDES]
+14/09/2026 - 08:13 
+Entrei em contato com o setor de estoque via whatsapp e me informaram que a impressora foi para manutenção e ainda não retornou."
+"Protocolo Principal";3390594;"Protocolo 3166028 - ANALISE DE NOTBOOK DE EMERSON OLIVEIRA - EMERSON SOUSA DE OLIVEIRA";"Sol. Interna";Andamento;"18/08/2026 17:29:44";"11/09/2026 12:47:34";0;Não;"DAVID BRASIL FERNANDES";"Setor TI";"Emerson Sousa De Oliveira";"Sem Equipe";;;0%;Normal;"POR FAVOR REALIZAR ANALISE DO NOTEBOOK MODELO GALAXY BOOK4 AONDED O MESMO APRESENTOU UMA MANCHA AMARELA NA TELA. IMAGEM ESTARÁ ANEXADA NO PROTOCOLO";2;"[#1 | 18/08/2026 17:29:44 | EMERSON SOUSA DE OLIVEIRA]
+Início do atendimento - Protocolo 3166028
+
+----------------------------------------
+
+[#2 | 11/09/2026 12:46:10 | DAVID BRASIL FERNANDES]
+11/09/2026 - 12:47 
+Entrei em contato com o requerente e ficou combinado de trazer o notebook para o setor de TI para analisar a possibilidade de troca de tela. O mesmo informou que segunda passará no setor."
+"Protocolo Principal";3411763;"Protocolo 3184155 - Câmera externa do Galpão/Garagem de Capim Grosso Offiline - DAVID BRASIL FERNANDES";"Sol. Interna";Fechamento;"04/09/2026 08:31:16";"11/09/2026 09:18:55";0;Não;"FELIPE NERE JESUS DOS SANTOS";"Instalação/Suporte - Capim Grosso - CAMILO";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Por gentileza verificar a câmera do Galpão/Garagem que se encontra offline desde 02/09/2026 às 17:59:33. Segue a descrição da câmera para localiza-lá e verificar o que fez ela ficar offline.
+
+Câmera do Estoque/Garagem:
+• TEN CG Galpão - Garagem Portão Externa 02
+• Offline desde: 02/09/2026 às 17:59:33
+Segue o anexo da câmera para melhor localiza-lá.";8;"[#1 | 04/09/2026 08:31:16 | DAVID BRASIL FERNANDES]
+Por gentileza verificar a câmera do Galpão/Garagem que se encontra offline desde 02/09/2026 às 17:59:33. Segue a descrição da câmera para localiza-lá e verificar o que fez ela ficar offline.
+
+Câmera do Estoque/Garagem:
+• TEN CG Galpão - Garagem Portão Externa 02
+• Offline desde: 02/09/2026 às 17:59:33
+Segue o anexo da câmera para melhor localiza-lá.
+
+----------------------------------------
+
+[#2 | 04/09/2026 08:31:54 | DAVID BRASIL FERNANDES]
+Agendamento
+
+----------------------------------------
+
+[#3 | 04/09/2026 10:09:38 | DANIEL BASTOS FERREIRA]
+Agendamento
+
+----------------------------------------
+
+[#4 | 04/09/2026 10:15:02 | JAIR DE JESUS SOUSA]
+Realizar reparo
+
+----
+Solicitação agendada para dia 04/09/2026 de 10:20 até 11:30
+
+----------------------------------------
+
+[#5 | 04/09/2026 10:15:03 | JAIR DE JESUS SOUSA]
+Encaminhado para agendamento
+
+----------------------------------------
+
+[#6 | 04/09/2026 10:28:04 | CAMILO BISPO PESSOA NETO]
+Relato padrão de deslocamento. 
+
+------------
+Motorista: CAMILO BISPO PESSOA NETO
+
+Dispositivo: samsung SM-A165M
+Versão do Android: 16
+Versão do V·Tasks: 5.9.206
+
+----------------------------------------
+
+[#7 | 04/09/2026 10:28:53 | CAMILO BISPO PESSOA NETO]
+Atendimento realizado pelos colaboradores Camilo e Ailton.
+
+Ao chegarmos ao local, realizamos a substituição de todo o cabeamento da câmera, com o objetivo de identificar e solucionar a falha apresentada. Após a substituição, entramos em contato com o setor de TI, que realizou a verificação e informou que a câmera permanecia sem funcionamento.
+
+Diante da situação, repassamos as informações ao supervisor Saulo, que ficou responsável por realizar um contato posterior para verificar as configurações do equipamento e identificar se a falha está relacionada à configuração ou a um possível defeito físico da câmera.
+
+Para a realização do procedimento, utilizamos o cabeamento que já estava disponível em nosso veículo, proveniente de uma retirada realizada anteriormente em um evento. Dessa forma, não houve necessidade de realizar um novo lançamento de materiais referentes ao cabo de rede TP e aos conectores RJ, uma vez que o material utilizado já estava disponível e em sobra no veículo da equipe.
+
+Atendimento realizado, porém a câmera permanece sem funcionamento, aguardando análise das configurações ou avaliação do equipamento pelo responsável.
+
+Dispositivo: samsung SM-A165M
+Versão do Android: 16
+Versão do V·Tasks: 5.9.206
+
+ Status alterado de Encaminhado para Fechamento
+
+----------------------------------------
+
+[#8 | 11/09/2026 09:11:11 | FELIPE NERE JESUS DOS SANTOS]
+Atendimento interrompido"
+"Subtarefa Vinculada (Pai #3411763)";3412451;"Auxiliares do atendimento #6008308";RAUX;Outro;"04/09/2026 12:10:29";"Sem Data / Movimentação";0;Não;"CAMILO BISPO PESSOA NETO";"Instalação/Suporte - Capim Grosso - CAMILO";"CAMILO BISPO PESSOA NETO";"Setor TI";3411763;"Protocolo 3184155 - Câmera externa do Galpão/Garagem de Capim Grosso Offiline - DAVID BRASIL FERNANDES";100%;Normal;"Relatos dos auxiliares do atendimento #6008308";1;"[#1 | 04/09/2026 12:10:29 | AILTON DE SOUZA NASCIMENTO]
+Relato por CAMILO BISPO PESSOA NETO
+--------------------
+Atendimento realizado pelos colaboradores Camilo e Ailton.
+
+Ao chegarmos ao local, realizamos a substituição de todo o cabeamento da câmera, com o objetivo de identificar e solucionar a falha apresentada. Após a substituição, entramos em contato com o setor de TI, que realizou a verificação e informou que a câmera permanecia sem funcionamento.
+
+Diante da situação, repassamos as informações ao supervisor Saulo, que ficou responsável por realizar um contato posterior para verificar as configurações do equipamento e identificar se a falha está relacionada à configuração ou a um possível defeito físico da câmera.
+
+Para a realização do procedimento, utilizamos o cabeamento que já estava disponível em nosso veículo, proveniente de uma retirada realizada anteriormente em um evento. Dessa forma, não houve necessidade de realizar um novo lançamento de materiais referentes ao cabo de rede TP e aos conectores RJ, uma vez que o material utilizado já estava disponível e em sobra no veículo da equipe.
+
+Atendimento realizado, porém a câmera permanece sem funcionamento, aguardando análise das configurações ou avaliação do equipamento pelo responsável.
+
+Dispositivo: samsung SM-A165M
+Versão do Android: 16
+Versão do V·Tasks: 5.9.206
+
+ Status alterado de Encaminhado para Fechamento
+--------------------
+AILTON DE SOUZA NASCIMENTO"
+"Protocolo Principal";3409552;"Protocolo 3182310 - (Service Desk) Conexão Lenta / Padrão - WENDSON SANTANA DE ALMEIDA";"Sol. Externa";Andamento;"02/09/2026 15:55:32";"08/09/2026 17:43:50";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"DANILO RIOS DOS REIS";"Comercial Geral";;;0%;Baixa;"02/09/2026 - 16:03 
+Cliente relata que a conexão no escritório não está funcionando corretamente na rede 2.4 GHz. Informa também que não consegue conectar suas tomadas inteligentes à rede. Relata que foi orientado de que, em situações como essa, deveria acionar o setor de TI. Por gentileza, verificar a situação e realizar os procedimentos necessários para identificar e solucionar o problema.";4;"[#1 | 02/09/2026 15:55:31 | DANILO RIOS DOS REIS]
+02/09/2026 - 16:03 
+Cliente relata que a conexão no escritório não está funcionando corretamente na rede 2.4 GHz. Informa também que não consegue conectar suas tomadas inteligentes à rede. Relata que foi orientado de que, em situações como essa, deveria acionar o setor de TI. Por gentileza, verificar a situação e realizar os procedimentos necessários para identificar e solucionar o problema.
+
+----------------------------------------
+
+[#2 | 02/09/2026 16:03:02 | DANILO RIOS DOS REIS]
+Encaminhamento para melhoria técnica
+
+----------------------------------------
+
+[#3 | 02/09/2026 16:29:41 | SAUAN PARANHOS SOUSA]
+Encaminhamento para retorno ao cliente.
+
+----------------------------------------
+
+[#4 | 02/09/2026 16:31:11 | LIOMAR ANTONIO DE OLIVEIRA]
+Solicitação inicial"
+"Protocolo Principal";3415737;"Protocolo 3187490 - Verificar sistemas de documentação interna com Tiago Silva (Fiscal/DP) - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"08/09/2026 17:42:57";"08/09/2026 17:43:47";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"Isvi solicita a validação com Tiago Silva sobre se o sistema atualmente em desenvolvimento por mim (Outline) atende os requisitos de documentação interna e colaborativa. Caso não, verificar outras ferramentas com o mesmo, já que agora o Microsoft Sharepoint foi descartado.";2;"[#1 | 08/09/2026 17:42:56 | LIOMAR ANTONIO DE OLIVEIRA]
+Início do atendimento - Protocolo 3187490
+
+----------------------------------------
+
+[#2 | 08/09/2026 17:43:02 | LIOMAR ANTONIO DE OLIVEIRA]
+08/09/2026 - 17:43 
+Entrei em contato com o mesmo e estou no aguardo por um retorno."
+"Protocolo Principal";3382928;"Protocolo 3159582 - Requisição de Régua de Rack - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"12/08/2026 08:30:38";"08/09/2026 15:03:13";0;Não;"GABRIEL SILVA ROCHA";"Patrimônio e Logística - Sede - Separação";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: Régua de rack
+Quantidade: 02
+Destinação: DC Chácará
+Link: https://meli.la/1DyWvHH
+_____________________ 
+
+Descrição: Fonte Interna de Mikrotik CCR 1009-7G-1C-1S+
+Quantidade: 02
+Destinação: DC Chácara
+Link: https://meli.la/2jLC5qc
+_____________________
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Solicitante: Liomar Antonio
+Contato: [telefone removido]
+Justificativa: O Mikrotik CCR em questão é o FIREWALL/VPN da empresa e a régua de tomadas é utilizada para ligar o Mikrotik e servidores e uma delas queimou.";7;"[#1 | 12/08/2026 08:30:38 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3159582
+
+----------------------------------------
+
+[#2 | 12/08/2026 09:11:19 | ERICK GOMES GONÇALVES]
+12/08/2026 - 09:11 
+Este protocolo está sendo encaminhado pois será necessário aguardar a compra/reposição dos seguintes itens:
+
+----------------------------------------
+
+[#3 | 12/08/2026 09:11:53 | ERICK GOMES GONÇALVES]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#4 | 01/09/2026 17:32:09 | ELISÂNGELA FERREIRA DOS SANTOS]
+01/09/2026 - 17:33 
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+Descrição: Régua de rack
+Quantidade: 02
+Destinação: DC Chácará
+_____________________
+
+Descrição: Fonte Interna de Mikrotik CCR 1009-7G-1C-1S+
+Quantidade: 02
+Destinação: DC Chácara
+
+----------------------------------------
+
+[#5 | 01/09/2026 17:33:10 | ELISÂNGELA FERREIRA DOS SANTOS]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#6 | 08/09/2026 15:02:41 | DANIEL RIOS DA SILVA]
+08/09/2026 - 15:03 
+Realizar a separação e movimentação dos itens e quantidades descritos a seguir:
+
+Descrição: Régua de rack
+Quantidade: 02
+Destinação: DC Chácará
+Link: https://meli.la/1DyWvHH
+_____________________
+
+Descrição: Fonte Interna de Mikrotik CCR 1009-7G-1C-1S+
+Quantidade: 02
+Destinação: DC Chácara
+Link: https://meli.la/2jLC5qc
+
+----------------------------------------
+
+[#7 | 08/09/2026 15:03:12 | DANIEL RIOS DA SILVA]
+Realizar a separação e movimentação dos itens e quantidades descritos a seguir:"
+"Protocolo Principal";3406644;"Protocolo 3179841 - (TI) PC/Note/Impressora/Rede Etc. - Manutenção/Reparo / (TI) - Sol. Interna - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"01/09/2026 08:06:22";"08/09/2026 10:13:11";0;Não;"Sem Responsável";"Agendamento Geral ---";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Câmera se encontra offline desde 16/08/2026 às 00:41:33. Segue o anexo da câmera.";4;"[#1 | 01/09/2026 08:06:22 | DAVID BRASIL FERNANDES]
+Câmera se encontra offline desde 16/08/2026 às 00:41:33. Segue o anexo da câmera.
+
+----------------------------------------
+
+[#2 | 01/09/2026 08:10:40 | DAVID BRASIL FERNANDES]
+01/09/2026 - 08:11 
+Imagem anexada.
+
+----------------------------------------
+
+[#3 | 01/09/2026 08:28:02 | DAVID BRASIL FERNANDES]
+Agendamento
+
+----------------------------------------
+
+[#4 | 08/09/2026 10:13:11 | DANIEL BASTOS FERREIRA]
+TORRE DO CRUZEIRO"
+"Protocolo Principal";3397074;"Protocolo 3171518 - (N2-TI) Configuração de Equipamentos / TI - WENDSON SANTANA DE ALMEIDA";"Sol. Externa";Abertura;"25/08/2026 08:59:36";"04/09/2026 11:50:08";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Baixa;"A pedido de Isvi Neemias, acompanhar Saulo Xavier em visita técnica ao cliente para dar apoio na resolução de problemas enfrentados pelo cliente.
+
+--- Solicitação Original ---
+Protocolo 3167690
+Cliente: WENDSON SANTANA DE ALMEIDA
+Responsável: MATHEUS MOREIRA
+Etiqueta: 391VJTG9 - Serviços de Comunicação Multimídia-SCM (600 mb gamer) FTTH";1;"[#1 | 25/08/2026 08:59:46 | LIOMAR ANTONIO DE OLIVEIRA]
+Solicitação inicial"
+"Protocolo Principal";3285926;"Protocolo 3078726 - Documentação dos Mikrotik's - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"22/05/2026 13:29:44";"03/09/2026 17:06:37";0;Não;"ISAC COSTA SILVA";"Setor TI";"ISAC COSTA SILVA";"Setor TI";;;0%;Normal;"Listar todos os clientes Mikrotik para padronizar a configuração de firewall e usuários cadastrados.
+Objetivo: Padronizar a segurança, filtros, coleta de dados Zabbix, permissões de serviços e usuários cadastrados.
+
+Etapas: 
+* Criar script padrão para todos;
+* Listar equipamentos de clientes; 
+* Listar equipamentos de eventos;
+* Anexar a lista de Mikrotik de escritórios que já mapeamos;
+* Testar como funciona um sistema de alterar configurações de Mikrotik em lote (tem um sendo implantado na empresa que parece servir. Vamos testar, caso não sirva, vamos em busca de outros métodos);";3;"[#1 | 22/05/2026 13:29:43 | ISAC COSTA SILVA]
+Início do atendimento - Protocolo 3078726
+
+----------------------------------------
+
+[#2 | 15/06/2026 17:05:21 | ISAC COSTA SILVA]
+Atendimento interrompido
+
+----------------------------------------
+
+[#3 | 03/09/2026 17:02:26 | ISAC COSTA SILVA]
+03/09/2026 - 17:06 
+Após a filtragem no Autotickets, a lista de clientes que possuem mikrotiks foi gerada.
+Lista anexada ao protocolo.
+Será realizada uma classificação dos mikrotiks listados para melhor organização entre clientes residenciais, coorporativos e escritórios da empresa."
+"Protocolo Principal";3408469;"Protocolo 3181397 - Realizar verificação de câmeras PPA junto com o FULLTIME - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"02/09/2026 08:50:27";"02/09/2026 10:28:14";0;Não;"DAVID BRASIL FERNANDES";"Setor TI";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Verificar com o FULLCAM:
+
+• Funcionamento da câmera PPA;
+• Verificar recursos que estão funcionando atualmente ( girar, comunicação bi-direcional, cartão de memória );
+• Custo das câmeras;
+• Como Adquirir;
+• Modelos disponíveis;";2;"[#1 | 02/09/2026 08:50:27 | DAVID BRASIL FERNANDES]
+Verificar com o FULLCAM:
+
+• Funcionamento da câmera PPA;
+• Verificar recursos que estão funcionando atualmente ( girar, comunicação bi-direcional, cartão de memória );
+• Custo das câmeras;
+• Como Adquirir;
+• Modelos disponíveis;
+
+----------------------------------------
+
+[#2 | 02/09/2026 08:50:35 | DAVID BRASIL FERNANDES]
+02/09/2026 - 10:28 
+RELATÓRIO TÉCNICO E COMERCIAL: REDUÇÃO DE CUSTOS EM NOVAS INSTALAÇÕES DE CÂMERAS
+
+Objetivo: Apresentar estudo de viabilidade para redução de custos em novas instalações e expansões de câmeras da empresa, avaliando a adoção dos modelos homologados Fulltime (PPA/TWG) em comparação aos modelos da Intelbras utilizados atualmente.
+
+1. Contexto e Cenário Atual
+Atualmente, o parque de monitoramento da empresa utiliza modelos Bullet e Dome da Intelbras, que contam com recursos como microfone embutido (escuta), detecção de movimento/pessoas e compressão H.265+.
+
+O objetivo desta análise não é substituir o parque atual de aproximadamente 144 câmeras, mas sim reduzir os custos de aquisição em novas instalações e futuras expansões. Para embasar este estudo, foi realizado contato direto com o suporte e atendimento comercial da Fulltime, sendo direcionado ao consultor técnico e comercial Tiago (contato: +55 14 97607-7430), que validou a homologação, os preços e as condições comerciais dos modelos PPA e TWG.
+
+2. Comparativo de Custos e Tecnologias
+Padrão Utilizado Atualmente (Intelbras - Bullet e Dome):
+
+Custo Médio de Aquisição: R$ 200,00 a R$ 270,00 por unidade.
+
+Recursos Nativos: Microfone embutido (escuta ambiente), detecção de movimento/pessoas e compressão H.265+. (Nota técnica: Assim como as opções da Fulltime, estes modelos padrão também não possuem suporte a áudio bidirecional).
+
+Alternativa Avaliada para Novas Instalações (PPA / TWG homologadas no Fullcam - Alinhado com Tiago/Fulltime):
+
+Custo de Aquisição: R$ 170,00 por unidade (compra definitiva, sem comodato).
+
+Tipos disponíveis: Modelos Bullet e Dome atuais (fixos) com o mesmo preço e especificações equivalentes.
+
+Recursos e Gestão: Microfone embutido (escuta) e detecção de pessoas. O grande diferencial operacional apontado pelo consultor é que a configuração dessas câmeras é feita diretamente na plataforma do Fullcam, centralizando a gestão. Há também a opção de analítico embarcado LPR (Leitura de Placas) por R$ 25,90 mensais por canal.
+
+Perspectiva Futura (PTZ): Conforme alinhado com o suporte, a Fulltime e a PPA já estão trabalhando na integração de modelos PTZ (com movimentação de giro e zoom), com previsão de lançamento na plataforma até o final deste ano (2026).
+
+3. Análise de Custo-Benefício e Impacto Financeiro
+🔹 Vantagens (Foco em Redução de Custo e Facilidade Operacional)
+Redução Direta no Capex: Com as câmeras PPA/TWG custando R$ 170,00 na aquisição definitiva via Fulltime, a economia por nova câmera instalada varia de R$ 30,00 a R$ 100,00 em comparação ao custo atual da Intelbras, gerando um alívio expressivo no orçamento de expansão.
+
+Paridade Tecnológica sem Perdas: Como os modelos que a empresa já utiliza também não possuem áudio bidirecional (falar e ouvir), a transição para a PPA/TWG não representa perda funcional para os operadores, mantendo a escuta via microfone e a detecção de pessoas.
+
+Gestão e Configuração Centralizada: Conforme alinhado com o suporte da Fulltime (+55 14 97607-7430), toda a configuração dessas câmeras é realizada diretamente pela plataforma do Fullcam, eliminando a necessidade de acessar interfaces web externas de configuração para cada equipamento e otimizando o tempo da equipe de TI.
+
+Integração Nativa: Por nascerem homologadas no ecossistema da Fulltime, entram em operação com estabilidade imediata e sem atritos de compatibilidade.
+
+Roadmap Futuro Alinhado: Saber que os modelos com PTZ (movimento e zoom) têm previsão de chegada ao ecossistema até o final do ano garante que a padronização atual com a Fulltime não limitará futuros projetos que exijam movimentação de câmera.
+
+4. Conclusão e Recomendação para a Gestão
+Viabilidade da Redução de Custos: Altamente recomendada. A troca para os modelos PPA/TWG em novos projetos une economia financeira, paridade de recursos e ganho de produtividade com a gestão unificada direto no Fullcam.
+
+Plano de Ação Sugerido:
+
+Realizar Teste Piloto: Adquirir uma quantidade reduzida de unidades (2 a 4 câmeras PPA/TWG, misturando Bullet e Dome) diretamente com o consultor Tiago para testes práticos e validação da facilidade de configuração via plataforma Fullcam.
+
+Diretriz de Compras: Adotar os modelos PPA/TWG fixos (a R$ 170,00) como padrão oficial para todas as novas instalações e expansões de perímetro geral da empresa, aguardando os lançamentos de modelos PTZ previstos para o final do ano para pontos que venham a exigir movimentação e zoom."
+"Protocolo Principal";3406659;"Protocolo 3179856 - Câmera do POP Filadélfia Offline - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"01/09/2026 08:10:34";"01/09/2026 08:26:11";0;Não;"Sem Responsável";"Agendamento Geral ---";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Câmera se encontra offline desde 16/08/2026 12/08/2026 às 09:16:43. Segue o anexo da câmera.";2;"[#1 | 01/09/2026 08:10:34 | DAVID BRASIL FERNANDES]
+Câmera se encontra offline desde 16/08/2026 12/08/2026 às 09:16:43. Segue o anexo da câmera.
+
+----------------------------------------
+
+[#2 | 01/09/2026 08:26:10 | DAVID BRASIL FERNANDES]
+Agendamento"
+"Protocolo Principal";3399994;"Protocolo 3174084 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";PROC;Outro;"26/08/2026 16:04:53";"26/08/2026 16:08:42";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3399993;"Protocolo 3174084 - Reembolso de recarga de chips da empresa - LIOMAR ANTONIO DE OLIVEIRA";100%;Normal;"APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";0;"Nenhum relato registrado."
+"Subtarefa Vinculada (Pai #3399994)";3399996;"Protocolo 3174084 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO SEGUNDO APROVADOR";"Tarefa de Aprovação";Concluído;"26/08/2026 16:04:53";"26/08/2026 17:02:47";0;Não;"DANIELE CRISTINA DE SOUZA BARROS";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3399994;"Protocolo 3174084 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução:";1;"[#1 | 26/08/2026 17:02:47 | DANIELE CRISTINA DE SOUZA BARROS]
+APROVADO"
+"Subtarefa Vinculada (Pai #3399994)";3399995;"Protocolo 3174084 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO PRIMEIRO APROVADOR";"Tarefa de Aprovação";Concluído;"26/08/2026 16:04:53";"26/08/2026 16:29:38";0;Não;"ISVI NEEMIAS SANTOS SILVA";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3399994;"Protocolo 3174084 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução: Acesse o documento. QUANDO A AUTORIZAÇÃO NÃO FOR CONCEDIDA, CANCELE A TAREFA.";1;"[#1 | 26/08/2026 16:29:37 | ISVI NEEMIAS SANTOS SILVA]
+Aprovado"
+"Protocolo Principal";3379105;"Protocolo 3156300 - TRANSFORMADOR PARA LOJA DE VÁRZEA DO POÇO - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";"ESTQ. SEPARAÇÃO";"10/08/2026 10:41:11";"25/08/2026 09:16:46";0;Não;"DANIEL SILVA RIOS";"Patrimônio e Logística - Sede - Separado";"ISAC COSTA SILVA";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: Transformador 110v/220v de no mínimo 1500VA.
+Quantidade: 1 
+Destinação: Loja de Várzea do Poço (Encaminhar para o TI instalar)
+______________________ 
+
+Solicitante: Liomar Antonio de Oliveira
+Contato: [telefone removido]
+Justificativa: O transformador atual da loja está apresentando barulhos incomuns, podendo interromper a atividade da colaboradora e causar defeitos na impressora.";5;"[#1 | 10/08/2026 10:41:11 | ISAC COSTA SILVA]
+Início do atendimento - Protocolo 3156300
+
+----------------------------------------
+
+[#2 | 13/08/2026 17:25:25 | DANIEL RIOS DA SILVA]
+13/08/2026 - 17:25 
+Realizar a separação e movimentação dos itens e quantidades descritos a seguir:
+
+Descrição: Transformador 110v/220v de no mínimo 1500VA.
+Quantidade: 1 
+Destinação: Loja de Várzea do Poço (Encaminhar para o TI instalar)
+
+----------------------------------------
+
+[#3 | 13/08/2026 17:25:56 | DANIEL RIOS DA SILVA]
+Realizar a separação e movimentação dos itens e quantidades descritos a seguir:
+
+----------------------------------------
+
+[#4 | 25/08/2026 09:16:28 | DANIEL SILVA RIOS]
+25/08/2026 - 09:16 
+Os itens e quantidades a seguir foram separados e movimentados conforme solicitado:
+
+----------------------------------------
+
+[#5 | 25/08/2026 09:16:46 | DANIEL SILVA RIOS]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda."
+"Subtarefa Vinculada (Pai #3379105)";3397701;"Protocolo 3156300 - LIOMAR ANTONIO DE OLIVEIRA";"Tarefa de Aprovação";Concluído;"25/08/2026 11:39:45";"27/08/2026 10:42:47";0;Não;"GABRIEL SILVA ROCHA";"Patrimônio e Logística - Sede - Separado";"DANIEL SILVA RIOS";"Setor TI";3379105;"Protocolo 3156300 - TRANSFORMADOR PARA LOJA DE VÁRZEA DO POÇO - LIOMAR ANTONIO DE OLIVEIRA";100%;Normal;"conferir material 
+
+Descrição: Transformador 110v/220v de no mínimo 1500VA.
+Quantidade: 1
+Destinação: Loja de Várzea do Poço";1;"[#1 | 27/08/2026 10:42:46 | GABRIEL SILVA ROCHA]
+MATERIAL CONFERIDO."
+"Subtarefa Vinculada (Pai #3379105)";3408952;"Protocolo 3156300 - LIOMAR ANTONIO DE OLIVEIRA";"Tarefa de Aprovação";"0% - Andamento";"02/09/2026 11:06:23";"Sem Data / Movimentação";0;Não;"FÁBIO CERQUEIRA MENDES";"Patrimônio e Logística - Sede - Separado";"DANIEL SILVA RIOS";"Setor TI";3379105;"Protocolo 3156300 - TRANSFORMADOR PARA LOJA DE VÁRZEA DO POÇO - LIOMAR ANTONIO DE OLIVEIRA";0%;Normal;"confirmação de entrega de material 
+
+Descrição: Transformador 110v/220v de no mínimo 1500VA.
+Quantidade: 1
+Destinação: Loja de Várzea do Poço";0;"Nenhum relato registrado."
+"Protocolo Principal";3393749;"Protocolo 3168670 - Tentar desbloquear celular Samsung usado por ex colaborador - EMERSON SOUSA DE OLIVEIRA";"Sol. Interna";Andamento;"21/08/2026 08:15:23";"21/08/2026 08:15:30";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"A pedido de Emerson, foi entregue por Daniel (Almoxarife) um aparelho de marca Samsung, dito ter sido utilizado por um ex colaborador. Verificar possibilidades de desbloqueio sem as credenciais que eram utilizadas.
+
+Em caso de sucesso, o aparelho será utilizado por um colaborador da área técnica de Jacobina.";2;"[#1 | 21/08/2026 08:15:23 | LIOMAR ANTONIO DE OLIVEIRA]
+Início do atendimento - Protocolo 3168670
+
+----------------------------------------
+
+[#2 | 21/08/2026 08:15:29 | LIOMAR ANTONIO DE OLIVEIRA]
+Solicitação inicial"
+"Protocolo Principal";3119125;"Protocolo 2936263 - Instalação de Câmeras Serrolândia - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"29/12/2025 07:40:29";"17/08/2026 16:28:28";0;Não;"DAVID BRASIL FERNANDES";"Ativação e manutenção Câmeras Ten";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Financeiro: rtmp://1513.servicestream.io:1938/stream/8717298ae253
+Atendimento 1: rtmp://1513.servicestream.io:1939/stream/8353a3177320
+Atendimento 2: rtmp://1513.servicestream.io:1940/stream/8dc3909438d9
+Frente Loja Externa: rtmp://1513.servicestream.io:1937/stream/7a52d01ee905
+
+Câmeras já configuradas e enviadas para a localidade aguardando instalação, de acordo com o PROTOCOLO: 2904464";19;"[#1 | 29/12/2025 07:40:28 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 2936263
+
+----------------------------------------
+
+[#2 | 29/12/2025 07:51:48 | DAVID BRASIL FERNANDES]
+Agendamento
+
+----------------------------------------
+
+[#3 | 05/01/2026 14:10:18 | ELIABE DOS SANTOS OLIVEIRA]
+Agendamento
+
+----------------------------------------
+
+[#4 | 13/02/2026 09:12:24 | ELIABE DOS SANTOS OLIVEIRA]
+Agendamento
+
+----------------------------------------
+
+[#5 | 17/02/2026 14:18:46 | PEDRO VICTOR DOS SANTOS DEL GRECCO]
+Gentileza realizar a tentativa de visita técnica
+
+----
+Solicitação agendada para dia 18/02/2026 de 08:00 até 09:30
+
+----------------------------------------
+
+[#6 | 17/02/2026 14:18:47 | PEDRO VICTOR DOS SANTOS DEL GRECCO]
+Encaminhado para agendamento
+
+----------------------------------------
+
+[#7 | 17/02/2026 16:21:01 | PEDRO VICTOR DOS SANTOS DEL GRECCO]
+Agendamento
+
+----------------------------------------
+
+[#8 | 17/02/2026 16:25:24 | PEDRO VICTOR DOS SANTOS DEL GRECCO]
+Gentileza realizar a tentativa de visita técnica
+
+----
+Solicitação reagendada para dia 17/02/2026 de 08:00 até 09:00
+
+----------------------------------------
+
+[#9 | 17/02/2026 16:25:25 | PEDRO VICTOR DOS SANTOS DEL GRECCO]
+Encaminhado para agendamento
+
+----------------------------------------
+
+[#10 | 18/02/2026 07:59:15 | PEDRO VICTOR DOS SANTOS DEL GRECCO]
+gentileza realizar a tentativa de visita técnica
+
+----
+Solicitação reagendada para dia 18/02/2026 de 08:00 até 09:00
+
+----------------------------------------
+
+[#11 | 18/02/2026 08:02:08 | ARILTON BISPO DOS SANTOS]
+Relato padrão de deslocamento. 
+
+------------
+Motorista: ARILTON BISPO DOS SANTOS
+
+Dispositivo: samsung SM-A156M
+Versão do Android: 16
+Versão do V·Tasks: 5.9.191
+
+----------------------------------------
+
+[#12 | 18/02/2026 08:02:17 | ARILTON BISPO DOS SANTOS]
+A instalação das câmeras na parte interna foi realizada com sucesso. O protocolo está sendo encerrado como em andamento, pois ainda falta a instalação da câmera externa.
+A instalação da câmera externa não pôde ser concluída no momento devido à complexidade na passagem do cabeamento. Dessa forma, o serviço ficará agendado para outro horário, quando será finalizado e o protocolo devidamente concluído.
+
+Dispositivo: samsung SM-A156M
+Versão do Android: 16
+Versão do V·Tasks: 5.9.191
+
+----------------------------------------
+
+[#13 | 20/02/2026 12:39:25 | ARILTON BISPO DOS SANTOS]
+.
+
+Dispositivo: samsung SM-A156M
+Versão do Android: 16
+Versão do V·Tasks: 5.9.191
+
+----------------------------------------
+
+[#14 | 20/02/2026 14:32:09 | PEDRO VICTOR DOS SANTOS DEL GRECCO]
+Agendamento
+
+----------------------------------------
+
+[#15 | 10/03/2026 15:15:03 | ELIABE DOS SANTOS OLIVEIRA]
+Agendamento
+
+----------------------------------------
+
+[#16 | 24/04/2026 09:50:33 | DAVID BRASIL FERNANDES]
+24/04/2026 - 09:57 
+Verificado com o encarregado da área, foi instalado todas as câmeras exceto a câmera da frente da loja, mas foi informado que para concluir essa instalação precisa rever a passagem do cabo após a reforma da fachada da loja, agora estou no aguardo.
+
+----------------------------------------
+
+[#17 | 26/05/2026 10:37:20 | DAVID BRASIL FERNANDES]
+26/05/2026 - 10:37 
+Aguardando ainda a reforma da frente da loja para realizarem a instalação da câmera.
+
+----------------------------------------
+
+[#18 | 31/07/2026 09:48:25 | DAVID BRASIL FERNANDES]
+31/07/2026 - 16:28 
+Entrei em contato via whatsapp do setor de TI com Emerson Oliveira para confirmar se já tínhamos uma previsão de quando poderia instalar a câmera que está faltando na loja de Serrolândia. Ele me informou que o comercial ficou de mandar retirar os acms para então poder instalar a câmera, mas ai entrei em contato com Geisa Maira e a mesma me informou que iria verificar e me dar um retorno.
+
+----------------------------------------
+
+[#19 | 17/08/2026 16:28:01 | DAVID BRASIL FERNANDES]
+17/08/2026 - 16:28 
+Ainda sem retorno."
+"Protocolo Principal";3388785;"Protocolo 3164530 - Câmera do POP Filadélfia Offline - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"17/08/2026 14:51:50";"17/08/2026 14:52:26";0;Não;"Sem Responsável";"Agendamento Geral ---";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Câmera se encontra offline desde 12/08/2026 09:16:43. Necessário enviar equipe técnica no local para verificar. Anexo da imagem no protocolo.";2;"[#1 | 17/08/2026 14:51:50 | DAVID BRASIL FERNANDES]
+Câmera se encontra offline desde 12/08/2026 09:16:43. Necessário enviar equipe técnica no local para verificar. Anexo da imagem no protocolo.
+
+----------------------------------------
+
+[#2 | 17/08/2026 14:52:25 | DAVID BRASIL FERNANDES]
+Agendamento"
+"Protocolo Principal";3374625;"Protocolo 3152430 - (TI) PC/Note/Impressora/Rede Etc. - Manutenção/Reparo / (TI) - Sol. Interna - LARISSA ROZA";"Sol. Interna";Abertura;"05/08/2026 18:05:55";"12/08/2026 11:58:08";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LARISSA RIBEIRO ROZA";"ADM Operacional";;;0%;Normal;"Gentileza realizar integração da bemobi e Fortics para realizar disparos de mansagens para autenticação em 2FA pelo whatsapp. 
+
+Informações necessárias no print abaixo. Integração será realizada pelo canal (74) 36515901. Qualquer dúvida falar com Isvi Neemias.";2;"[#1 | 05/08/2026 18:05:54 | LARISSA RIBEIRO ROZA]
+Início do atendimento - Protocolo 3152430
+
+----------------------------------------
+
+[#2 | 12/08/2026 11:58:08 | LIOMAR ANTONIO DE OLIVEIRA]
+Solicitação inicial"
+"Protocolo Principal";3378921;"Protocolo 3156135 - (TI) PC/Note/Impressora/Rede Etc. - Manutenção/Reparo / (TI) - Sol. Interna - Isa Costa";"Sol. Interna";Andamento;"10/08/2026 10:08:21";"10/08/2026 10:41:50";0;Não;"ISAC COSTA SILVA";"Setor TI";"ISAELE COSTA DE MATOS";"Atendimento Presencial - Capim Grosso";;;0%;Normal;"Gentileza, verificar a impressora da loja de Várzea do Poço. O transformador está apresentando um barulho incomum. Geisa encaminhou um vídeo para auxiliar na análise do problema.";2;"[#1 | 10/08/2026 10:08:21 | ISAELE COSTA DE MATOS]
+Início do atendimento - Protocolo 3156135
+
+----------------------------------------
+
+[#2 | 10/08/2026 10:28:43 | ISAC COSTA SILVA]
+10/08/2026 - 10:41 
+Após conversar com a colaboradora do local, a mesma informou que a impressora está funcionando normalmente, o único problema é o barulho do transformador. Será solicitado outro ao estoque para realizar a substituição do mesmo.
+Protocolo aberto ao estoque: 3156300"
+"Protocolo Principal";3367030;"Protocolo 3145811 - (Patrimônio e Logística) Requisição de Materiais e Equipamentos / (Patrimônio e logística) - Sol. Interna - ES- Capim Grosso";"Sol. Interna";Andamento;"31/07/2026 08:58:21";"04/08/2026 09:29:20";0;Não;"DANIEL SILVA RIOS";"Patrimônio e Logística - Sede - Separado";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: Kit de mouse e teclado
+Quantidade: 03
+Destinação: Setor ti para reposição em atendimento.
+______________________ 
+Descrição: Alicates de crimpar conectores
+Quantidade: 03
+Destinação: setor de ti
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Solicitante: David Brasil
+Contato: [telefone removido]
+Justificativa: A aquisição dos kits de mouse e teclado destina-se ao estoque do setor para reposição imediata durante os atendimentos de suporte, garantindo a continuidade do trabalho dos colaboradores em caso de falha de periféricos. Além disso, a compra de novos alicates de crimpagem RJ-45 é fundamental para a confecção e manutenção dos cabos de rede, visto que as ferramentas atuais da equipe apresentam desgaste mecânico e já não realizam a crimpagem de forma adequada, gerando risco de mau contato e falhas nas conexões.";10;"[#1 | 31/07/2026 08:58:20 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3145811
+
+----------------------------------------
+
+[#2 | 31/07/2026 11:00:34 | ERICK GOMES GONÇALVES]
+31/07/2026 - 11:01 
+Realizar a separação e movimentação dos itens e quantidades descritos a seguir:
+
+Descrição: Alicates de crimpar conectores
+Quantidade: 03
+Destinação: setor de ti
+
+----------------------------------------
+
+[#3 | 31/07/2026 11:01:06 | ERICK GOMES GONÇALVES]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#4 | 31/07/2026 14:42:23 | DANIEL SILVA RIOS]
+31/07/2026 - 14:42 
+Os itens e quantidades a seguir foram separados e movimentados conforme solicitado:
+
+----------------------------------------
+
+[#5 | 31/07/2026 14:42:37 | DANIEL SILVA RIOS]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#6 | 03/08/2026 10:11:21 | DANIEL SILVA RIOS]
+03/08/2026 - 10:11 
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#7 | 03/08/2026 17:07:24 | LIOMAR ANTONIO DE OLIVEIRA]
+O material que foi entregue não veio na quantidade solicitada.
+
+----------------------------------------
+
+[#8 | 03/08/2026 17:11:55 | LIOMAR ANTONIO DE OLIVEIRA]
+Verificar materiais pendentes de entrega.
+
+----------------------------------------
+
+[#9 | 04/08/2026 09:24:46 | DANIEL SILVA RIOS]
+04/08/2026 - 09:29 
+quando chegar mais alicates o setor de logística vai manda!
+referente aos kits isvi disse que so vai 2
+
+----------------------------------------
+
+[#10 | 04/08/2026 09:29:19 | DANIEL SILVA RIOS]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda."
+"Subtarefa Vinculada (Pai #3367030)";3369214;"Protocolo 3145811 - DAVID BRASIL FERNANDES";"Tarefa de Aprovação";Concluído;"03/08/2026 09:13:12";"03/08/2026 10:10:55";0;Não;"GABRIEL SILVA ROCHA";"Patrimônio e Logística - Sede - Separado";"DANIEL SILVA RIOS";"Setor TI";3367030;"Protocolo 3145811 - (Patrimônio e Logística) Requisição de Materiais e Equipamentos / (Patrimônio e logística) - Sol. Interna - ES- Capim Grosso";100%;Normal;"conferir material 
+
+Descrição: Kit de mouse e teclado
+Quantidade: 02
+Destinação: Setor ti para reposição em atendimento.
+______________________
+Descrição: Alicates de crimpar conectores
+Quantidade: 01
+Destinação: setor de ti";1;"[#1 | 03/08/2026 10:10:54 | GABRIEL SILVA ROCHA]
+material conferido"
+"Subtarefa Vinculada (Pai #3367030)";3369233;"Protocolo 3145811 - DAVID BRASIL FERNANDES";"Tarefa de Aprovação";Concluído;"03/08/2026 09:19:05";"03/08/2026 09:30:49";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Patrimônio e Logística - Sede - Separado";"DANIEL SILVA RIOS";"Setor TI";3367030;"Protocolo 3145811 - (Patrimônio e Logística) Requisição de Materiais e Equipamentos / (Patrimônio e logística) - Sol. Interna - ES- Capim Grosso";100%;Normal;"confirmação de entrega de material 
+
+Descrição: Kit de mouse e teclado
+Quantidade: 02
+Destinação: Setor ti para reposição em atendimento.
+______________________
+Descrição: Alicates de crimpar conectores
+Quantidade: 01
+Destinação: setor de ti";1;"[#1 | 03/08/2026 09:30:49 | LIOMAR ANTONIO DE OLIVEIRA]
+Segue relação de material que foi recebida hoje (03/08/2026) às 09h20m:
+- 2x Kit mouse e teclado
+- 1x Alicate de crimpar"
+"Protocolo Principal";3367697;"Protocolo 3146411 - Requisição de Itens para estoque doTI - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"31/07/2026 11:47:31";"03/08/2026 12:20:58";0;Não;"DANIEL SILVA RIOS";"Patrimônio e Logística - Sede - Separado";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: Transformador 2000VA
+Quantidade: 01
+Destinação: Setor de TI
+______________________ 
+Descrição: Kit de tinta para impressora Epson L395
+Quantidade: 02
+Destinação: setor de ti
+______________________ 
+Descrição: Kit de tinta para impressora Epson L4150
+Quantidade: 02
+Destinação: setor de ti
+______________________ 
+
+Descrição: Kit de tinta para impressora HP SMART 584
+Quantidade: 02
+Destinação: setor de ti
+______________________
+Solicitante: David Brasil
+Contato: [telefone removido]
+Justificativa: Aquisição de itens para composição do estoque de TI. O objetivo é garantir a pronta substituição de materiais durante os atendimentos nas lojas, conferindo agilidade às manutenções e minimizando o impacto na produtividade dos colaboradores.";5;"[#1 | 31/07/2026 11:47:30 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3146411
+
+----------------------------------------
+
+[#2 | 03/08/2026 08:27:26 | ERICK GOMES GONÇALVES]
+03/08/2026 - 08:27 
+Realizar a separação e movimentação dos itens e quantidades descritos a seguir:
+
+----------------------------------------
+
+[#3 | 03/08/2026 08:27:49 | ERICK GOMES GONÇALVES]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#4 | 03/08/2026 12:20:43 | DANIEL SILVA RIOS]
+03/08/2026 - 12:20 
+Os itens e quantidades a seguir foram separados e movimentados conforme solicitado:
+
+----------------------------------------
+
+[#5 | 03/08/2026 12:20:57 | DANIEL SILVA RIOS]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda."
+"Subtarefa Vinculada (Pai #3367697)";3370004;"Protocolo 3146411 - DAVID BRASIL FERNANDES";"Tarefa de Aprovação";Concluído;"03/08/2026 12:39:57";"04/08/2026 08:07:13";0;Não;"GABRIEL SILVA ROCHA";"Patrimônio e Logística - Sede - Separado";"DANIEL SILVA RIOS";"Setor TI";3367697;"Protocolo 3146411 - Requisição de Itens para estoque doTI - DAVID BRASIL FERNANDES";100%;Normal;"conferir material 
+
+Descrição: Kit de tinta para impressora Epson L395
+Quantidade: 01
+Destinação: setor de ti
+
+Descrição: Kit de tinta para impressora HP SMART 584
+Quantidade: 01
+Destinação: setor de ti";1;"[#1 | 04/08/2026 08:07:13 | GABRIEL SILVA ROCHA]
+material conferido"
+"Subtarefa Vinculada (Pai #3367697)";3371114;"Protocolo 3146411 - DAVID BRASIL FERNANDES";"Tarefa de Aprovação";Concluído;"04/08/2026 08:28:08";"04/08/2026 11:00:30";0;Não;"DAVID BRASIL FERNANDES";"Patrimônio e Logística - Sede - Separado";"DANIEL SILVA RIOS";"Setor TI";3367697;"Protocolo 3146411 - Requisição de Itens para estoque doTI - DAVID BRASIL FERNANDES";100%;Normal;"confirmação de entrega de material 
+
+Descrição: Kit de tinta para impressora Epson L395
+Quantidade: 01
+Destinação: setor de ti
+
+Descrição: Kit de tinta para impressora HP SMART 584
+Quantidade: 01
+Destinação: setor de ti";1;"[#1 | 04/08/2026 11:00:29 | DAVID BRASIL FERNANDES]
+Material Entregue:
+
+Descrição: Kit de tinta para impressora Epson L395
+Quantidade: 01
+Destinação: setor de ti
+
+Descrição: Kit de tinta para impressora HP SMART 584
+Quantidade: 01
+Destinação: setor de ti
+
+Material Faltante:
+
+Descrição: Transformador 2000VA
+Quantidade: 01
+Destinação: Setor de TI
+
+Descrição: Kit de tinta para impressora Epson L395
+Quantidade: 01
+Destinação: setor de ti
+
+Descrição: Kit de tinta para impressora Epson L4150
+Quantidade: 02
+Destinação: setor de ti
+
+Descrição: Kit de tinta para impressora HP SMART 584
+Quantidade: 01
+Destinação: setor de ti"
+"Protocolo Principal";3367677;"Protocolo 3146392 - Reinstalar Proxmox nos servidores Supermicro e Datacom SV01 - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"31/07/2026 11:41:04";"03/08/2026 09:25:02";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"Realizar formatação / reinstalação do sistema operacional Proxmox dos servidores Supermicro e Datacom SV01. A situação individual deles é a seguinte:
+
+Supermicro: Dos 2x SSDs Micron 1TB, 1 deles queimou e foi substituído na operação do Protocolo 3143788 por 2x Kingston 480GB. Será necessária a reinstalação limpa do Proxmox em RAID1 ZFS nestes novos SSDs e a limpeza do SSD Micron 1TB (para evitar resquícios do Proxmox anterior), pois em partições ZFS, não é possível adicionar discos em um RAID existente quando os novos discos são menores.
+
+Datacom SV01: O sistema Proxmox foi instalado quando havia apenas 1x SSD NVMe 256GB, permanecendo assim até hoje. Foi instalada uma placa riser com 2x NVMEs Samsung 512 GB para funcionarem em RAID 1 com o Proxmox, porém, o sistema foi instalado em modo LVM legado (ao invés de ZFS moderno) e para criar um RAID e passar para os novos discos, exigiriam grandes manobras arriscadas, podendo dar certo, mas gerando possíveis bugs e falhas na operação em produção. Recomendada também a formatação e reinstalação limpa do Proxmox em RAID1 ZFS com os novos discos e a limpeza total do SSD 256GB NVMe atual (para evitar resquícios do Proxmox anterior).";3;"[#1 | 31/07/2026 11:41:03 | LIOMAR ANTONIO DE OLIVEIRA]
+Início do atendimento - Protocolo 3146392
+
+----------------------------------------
+
+[#2 | 31/07/2026 11:41:34 | LIOMAR ANTONIO DE OLIVEIRA]
+31/07/2026 - 11:43 
+Para evitar problemas de compatibilidade e diminuir down time ao máximo, será conferido o backup diário bare metal que é realizado para o servidor Supermicro, com as configurações do Proxmox e do sistema operacional interno para realizar a importação após a formatação, garantindo 100% de compatibilidade com as VMs, CTs e discos atuais. No caso do Supermicro, como é nele mesmo que residem todos os backups, será feito um backup local em meu PC das configurações bare metal. Em seguida, serão realizados testes em laboratório de TI para verificar o sucesso de formatar o Proxmox e recuperar toda a estrutura existente sem perder nenhum disco, sistema e parâmetros de configuração atuais.
+
+----------------------------------------
+
+[#3 | 31/07/2026 11:43:48 | LIOMAR ANTONIO DE OLIVEIRA]
+Atendimento interrompido"
+"Protocolo Principal";3292217;"Protocolo 3083979 - (N2-TI) Configuração de Equipamentos / TI - Valdirene Rios da Silva";"Sol. Externa";Andamento;"28/05/2026 10:12:30";"03/08/2026 09:24:49";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"Solicitação aberta para testes de integração com Anlix Flashman. Favor ignorar.";2;"[#1 | 28/05/2026 10:12:29 | LIOMAR ANTONIO DE OLIVEIRA]
+28/05/2026 - 10:13 
+Solicitação aberta para testes de integração com Anlix Flashman. Favor ignorar.
+
+----------------------------------------
+
+[#2 | 28/05/2026 10:14:53 | LIOMAR ANTONIO DE OLIVEIRA]
+Atendimento interrompido"
+"Protocolo Principal";3315725;"Protocolo 3103374 - Configurar TI Zabbix para coletar hosts ativos por DHCP de Mikrotiks - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"17/06/2026 08:03:17";"03/08/2026 09:24:23";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"Afim de monitorar total de dispositivos ativos separados por DHCP (para saber quantos dispositivos de uso interno e quantos de hotspot, por exemplo), implementar regras no Zabbix para esta coleta em separado, visto que, nativamente, não é possível obter esse número consolidado, apenas totalizado sem separação.";2;"[#1 | 17/06/2026 08:03:17 | LIOMAR ANTONIO DE OLIVEIRA]
+Afim de monitorar total de dispositivos ativos separados por DHCP (para saber quantos dispositivos de uso interno e quantos de hotspot, por exemplo), implementar regras no Zabbix para esta coleta em separado, visto que, nativamente, não é possível obter esse número consolidado, apenas totalizado sem separação.
+
+----------------------------------------
+
+[#2 | 17/06/2026 08:03:23 | LIOMAR ANTONIO DE OLIVEIRA]
+Atendimento interrompido"
+"Protocolo Principal";3326828;"Protocolo 3112382 - (N2-TI) Análise de equipamentos Cliente (incidente) / (TI) - Sol. Interna - LARISSA ROZA";"Sol. Interna";Andamento;"29/06/2026 10:39:17";"03/08/2026 09:23:45";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LARISSA RIBEIRO ROZA";"ADM Operacional";;;0%;Normal;"Gentileza realizar bloqueio de acesso as cameras do clientes abaixo:
+
+Nome: MARIA LUSIMEIRE GRANGEIRO OLIVEIRA
+CPF: ***.111.873-**
+N° contrato: 95252
+
+Nome: JOAO CARLOS EVANGELISTA
+CPF: ***.544.255-**
+N° contrato: 95472
+
+Nome: KELLY LAYANNI DA SILVA ALENCAR
+CPF: ***.282.045-**
+N° contrato: 96634
+
+Nome: FERNANDO ARAUJO DOS SANTOS
+Cnpj: 63.568.006/0001-80
+N° contrato: 96905
+
+Nome: EDIVANIA CERQUEIRA DOS SANTOS
+CPF: ***.137.635-**
+N° Contrato: 95904";4;"[#1 | 29/06/2026 10:39:17 | LARISSA RIBEIRO ROZA]
+Início do atendimento - Protocolo 3112382
+
+----------------------------------------
+
+[#2 | 08/07/2026 11:28:28 | LIOMAR ANTONIO DE OLIVEIRA]
+08/07/2026 - 11:30 
+Estou desenvolvendo uma aplicação que corrige e melhora a integração atual que cria o cliente TenSeg no sistema FullCam, onde atualmente, não há tratamentos para cliente com múltiplas câmeras em um único item, cliente TenSeg atual que contrata novas câmeras com contratos adicionais, cancelamentos, bloqueios e desbloqueios. Paralelamente, irei validar todos os contratos e itens de câmera de todos os clientes entre Voalle x FullCam e, posteriormente, emitir um relatório do antes x depois da auditoria.
+
+----------------------------------------
+
+[#3 | 08/07/2026 11:30:25 | LIOMAR ANTONIO DE OLIVEIRA]
+09/07/2026 - 14:47 
+Larissa está ajustando os contratos de todos os clientes Ten Seg por estarem incorretos. Tiago Silva está ajustando a natureza da operação dos contratos também. Com isso, a lógica da integração que está ativa atualmente ficou incorreta e gerou inúmeras inconsistências, como ID de câmera desvinculado do contrato real e duplicação de câmeras no FullCam para cada combo substituído nos itens de contrato de cada cliente. Com isso, gerou demanda manual para mim. 
+
+Estou conferindo manualmente todos os contratos e ajustando as câmeras de acordo com os itens de contrato atualizados e excluindo as câmeras que foram duplicadas erroneamente. Além disso, finalizando a nova integração para substituir a atual, que não prevê inúmeras situações atuais dos contratos TenSeg.
+
+----------------------------------------
+
+[#4 | 09/07/2026 14:47:32 | LIOMAR ANTONIO DE OLIVEIRA]
+Atendimento interrompido"
+"Protocolo Principal";3366581;"Protocolo 3145443 - (TI) PC/Note/Impressora/Rede Etc. - Manutenção/Reparo / (TI) - Sol. Interna - DANIEL RIOS";"Sol. Interna";Andamento;"30/07/2026 17:29:33";"30/07/2026 17:58:41";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Triagem";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito manutenção urgente neste notebook, pois falhas de hardware estão inviabilizando meu trabalho. O equipamento está com a bateria morta, funcionando exclusivamente conectado à tomada, e o adaptador Wi-Fi parou de funcionar, não detectando nenhuma rede. Somado a isso, o sistema apresenta lentidão severa e travamentos constantes devido à limitação de apenas 4GB de memória RAM, sendo imprescindível a troca da bateria, o conserto ou substituição da placa de rede sem fio e um upgrade de memória para que a máquina volte a ter condições mínimas de uso e produtividade.";4;"[#1 | 30/07/2026 17:29:33 | DAVID BRASIL FERNANDES]
+Solicito manutenção urgente neste notebook, pois falhas de hardware estão inviabilizando meu trabalho. O equipamento está com a bateria morta, funcionando exclusivamente conectado à tomada, e o adaptador Wi-Fi parou de funcionar, não detectando nenhuma rede. Somado a isso, o sistema apresenta lentidão severa e travamentos constantes devido à limitação de apenas 4GB de memória RAM, sendo imprescindível a troca da bateria, o conserto ou substituição da placa de rede sem fio e um upgrade de memória para que a máquina volte a ter condições mínimas de uso e produtividade.
+
+----------------------------------------
+
+[#2 | 30/07/2026 17:34:56 | DAVID BRASIL FERNANDES]
+30/07/2026 - 17:40 
+Relatório de Análise Técnica: Notebook Samsung Galaxy Book 2
+1. Bateria
+• Diagnóstico: Apresenta anomalias não resolvíveis via software.
+• Ação Recomendada: Enviar o equipamento a uma assistência técnica especializada para avaliação de hardware e provável substituição da peça.
+2. Adaptador Wi-Fi (Rede Sem Fio)
+• Diagnóstico: O adaptador não é reconhecido pela placa-mãe.
+• Limitação Técnica: O componente é soldado diretamente na placa. O setor de TI atual não dispõe de equipamentos de microssoldagem ou profissionais com experiência neste tipo de reparo eletrônico.
+• Vias de Solução:• Solução 1 (Imediata e de Baixo Custo): Utilizar um adaptador Wi-Fi USB (dongle). É prático, não exige abertura da máquina, mas ocupará permanentemente uma porta USB do notebook.
+• Solução 2 (Definitiva e de Alto Custo): Enviar o notebook para uma assistência especializada que realize o reparo em nível de placa (remoção da solda antiga e instalação de um novo chip). É um procedimento mais caro e demorado.
+
+3. Memória RAM
+• Diagnóstico: O notebook possui apenas 4 GB de RAM (DDR4 a 3200 MHz), o que é insuficiente para manter um bom desempenho nos sistemas operacionais atuais, causando lentidão em tarefas básicas.
+• Ação Recomendada: Adicionar um módulo de memória extra de 4 GB com a mesma frequência (DDR4 3200 MHz) já instalada. Isso elevará o sistema ao mínimo recomendado de 8 GB, além de possivelmente ativar a tecnologia dual-channel, melhorando significativamente a velocidade da máquina.
+
+----------------------------------------
+
+[#3 | 30/07/2026 17:51:59 | DAVID BRASIL FERNANDES]
+30/07/2026 - 17:57 
+Encaminhado para o Estoque:
+Encaminha para a assistência técnica: 
+
+1. Diagnóstico Adicional (Carregador):
+• O cabo do carregador apresenta um dos conectores torto, o que está causando mau contato durante o carregamento. Será necessária a substituição por um novo cabo padrão USB-C nas duas extremidades.
+2. Fluxo do Protocolo:
+• Estou encaminhando este protocolo para o setor de Estoque para que o notebook seja enviado a uma assistência técnica especializada.
+• Serviços solicitados à assistência: Averiguação detalhada do estado da bateria e do adaptador de Wi-Fi.
+• Em seguida (ou em paralelo), o setor responsável deve proceder com a compra dos itens listados abaixo para o upgrade e reparo.
+3. Lista de Itens para Compra:
+• 01 un. - Cabo de carregamento USB-C para USB-C (macho nas duas pontas).
+• 01 un. - Memória RAM para notebook de 4 GB (Padrão DDR4, Frequência 3200 MHz).
+
+----------------------------------------
+
+[#4 | 30/07/2026 17:58:40 | DAVID BRASIL FERNANDES]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda."
+"Protocolo Principal";3363523;"Protocolo 3142822 - Instalação/Reparo de Câmera POP Cabaças - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"29/07/2026 10:11:19";"29/07/2026 11:00:36";0;Não;"Sem Responsável";"Agendamento Geral ---";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Realizar instalação de câmera no pop de cabaças.Qualquer duvida entrar em contato com o setor de ti.";2;"[#1 | 29/07/2026 10:11:18 | DAVID BRASIL FERNANDES]
+Realizar instalação de câmera no pop de cabaças.Qualquer duvida entrar em contato com o setor de ti.
+
+----------------------------------------
+
+[#2 | 29/07/2026 11:00:35 | DAVID BRASIL FERNANDES]
+Agendamento"
+"Protocolo Principal";3363696;"Protocolo 3142982 - Reparo de Câmera POP Senhor do Bonfim - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"29/07/2026 10:57:57";"29/07/2026 10:59:57";0;Não;"Sem Responsável";"Agendamento Geral ---";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Câmera do POP do Senhor do Bonfim se encontra offline, gentileza realizar reparo, segue o anexo da ultima imagem capturada.";2;"[#1 | 29/07/2026 10:57:56 | DAVID BRASIL FERNANDES]
+Câmera do POP do Senhor do Bonfim se encontra offline, gentileza realizar reparo, segue o anexo da ultima imagem capturada.
+
+----------------------------------------
+
+[#2 | 29/07/2026 10:59:56 | DAVID BRASIL FERNANDES]
+Agendamento"
+"Protocolo Principal";3363534;"Protocolo 3142833 - Instalação/Reparo de Câmera POP Pedras Altas - DAVID BRASIL FERNANDES";"Sol. Interna";Andamento;"29/07/2026 10:15:28";"29/07/2026 10:59:14";0;Não;"Sem Responsável";"Agendamento Geral ---";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Realizar instalação da câmera do pop de pedras altas.";2;"[#1 | 29/07/2026 10:15:27 | DAVID BRASIL FERNANDES]
+Realizar instalação da câmera do pop de pedras altas.
+
+----------------------------------------
+
+[#2 | 29/07/2026 10:59:13 | DAVID BRASIL FERNANDES]
+Agendamento"
+"Protocolo Principal";3244206;"Protocolo 3044658 - Backlog no Notion - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"15/04/2026 15:05:47";"22/07/2026 16:00:36";0;Não;"ISAC COSTA SILVA";"Setor TI";"ISAC COSTA SILVA";"Setor TI";;;0%;Normal;"Criar o Backlog do T.I no Notion, com objetivo de inserir as ideias, projetos em andamento, e tudo aquilo que for relacionado a programação de software dentro da empresa, em função de avaliar a real necessidade dos projetos, verificar alternativas, definir prioridades e etc.";4;"[#1 | 15/04/2026 15:05:46 | ISAC COSTA SILVA]
+Criar o Backlog do T.I no Notion, com objetivo de inserir as ideias, projetos em andamento, e tudo aquilo que for relacionado a programação de software dentro da empresa, em função de avaliar a real necessidade dos projetos, verificar alternativas, definir prioridades e etc.
+
+----------------------------------------
+
+[#2 | 15/04/2026 15:06:15 | ISAC COSTA SILVA]
+Foi criado o Backlog e inserido informações do projeto da Wiki, restando apenas documentar o restante dos projetos e ideias.
+
+----------------------------------------
+
+[#3 | 28/04/2026 09:54:17 | ISAC COSTA SILVA]
+28/04/2026 - 10:07 
+Foi inserido no backlog a ideia do sistema de gerenciamento de hotspots da TEN.
+
+----------------------------------------
+
+[#4 | 22/07/2026 13:52:18 | ISAC COSTA SILVA]
+22/07/2026 - 16:00 
+Alteração de prazo.
+Foram criadas as páginas ""Internet para eventos"", ""Roteiro para manutenção preventiva - 2026"" e ""Script padrão Mikrotik"" no backlog do TI, para organizar as ideias e planos debatidos no brainstorm do dia 21/07/2026."
+"Protocolo Principal";3248549;"Protocolo 3048200 - Realizar integração Módulo de Cobrança Native x Voalle - ISVI NEEMIAS SANTOS SILVA";"Sol. Interna";Andamento;"20/04/2026 11:50:17";"22/07/2026 12:49:54";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"Realizar integração Módulo de Cobrança Native x Voalle. 
+Verificar com Isvi documentação e tutoriais.";1;"[#1 | 20/04/2026 11:50:17 | LIOMAR ANTONIO DE OLIVEIRA]
+Realizar integração Módulo de Cobrança Native x Voalle.
+Verificar com Isvi documentação e tutoriais."
+"Protocolo Principal";3248535;"Protocolo 3048188 - Buscar informações do sistema Zeus para iniciar operação de Telefonia Fixa (TIP Brasil) - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"20/04/2026 11:47:05";"22/07/2026 12:49:45";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"Realizar estudo do sistema Zeus, que é o mesmo gateway responsável pelo recebimento da linha fixa interna Oi da nossa empresa (ramal de números (74) 3651-5900 até 5949). Também, será o mesmo sistema no qual iremos vender linhas fixas para nossos clientes (gestão de clientes internamente, semelhante ao que o FullCam faz atualmente).
+
+Com isso, faz-se necessário o estudo deste sistema, no qual foi disponibilizado um treinamento em cima da Wiki que eles disponibilizaram, para operar o sistema em suas funções básicas, o que foi feito sem muitos exemplos. Com isso, será necessário um estudo aprofundado, visando antender os seguintes quesitos, visando o lançamento do nosso novo produto de telefonia fixa:
+
+• Requisitos para funcionamento do produto: Como funciona, como será a configuração para o cliente, operação, limitações, entre outros;
+• Como adquirir novas linhas (cliente x Ten Internet e Ten Internet x TIP Brasil, nste caso, se há limites);
+• Custos para empresa (limites e formas de cobrança);
+• Custos para o cliente (como parametrizar a cobrança da Ten para clientes, por exemplo);
+• Faturamento;
+• Portabilidade;
+• Equipamentos compatíveis com o produto (telefone IP, soft fone, VoIP ONT, entre outros).
+
+Segue informações que já possuo, abaixo (credenciais necessárias na base de conhecimento do Notion):
+
+https://www.notion.so/liomar/Zeus-TIP-Brasil-Telefonia-2ae3df5f6d6880ee9e76cf9c44a8a4e1?source=copy_link
+
+• Contrato: 7140 → TEN Internet - Capim Grosso → 177.47.224.98
+• SUPORTE TIP BRASIL - Abertura de Tickets: https://tip.movidesk.com/
+• SUPORTE TIP BRASIL - Telefone Tickets: (19) 3090-2255
+• ZEUS: https://administrator.tipbrasil.com.br/zeus_admin/cp_zeus/conexoes.php
+• Manual de Portabilidade Easy Serviços - https://tip.movidesk.com/kb/pt-br/article/526696/portabilidade-via-easy-servicos
+• Procedimento Operacional Padrão - https://tip.movidesk.com/kb/pt-br/article/506400/pop-configuracao-do-ddr-no-sistema-de-telefonia
+• Resolução de Problemas: Verificações no Administrador - https://tip.movidesk.com/kb/pt-br/article/494871/verificacoes-no-administrator";1;"[#1 | 20/04/2026 11:47:04 | LIOMAR ANTONIO DE OLIVEIRA]
+Realizar estudo do sistema Zeus, que é o mesmo gateway responsável pelo recebimento da linha fixa interna Oi da nossa empresa (ramal de números (74) 3651-5900 até 5949). Também, será o mesmo sistema no qual iremos vender linhas fixas para nossos clientes (gestão de clientes internamente, semelhante ao que o FullCam faz atualmente).
+
+Com isso, faz-se necessário o estudo deste sistema, no qual foi disponibilizado um treinamento em cima da Wiki que eles disponibilizaram, para operar o sistema em suas funções básicas, o que foi feito sem muitos exemplos. Com isso, será necessário um estudo aprofundado, visando antender os seguintes quesitos, visando o lançamento do nosso novo produto de telefonia fixa:
+
+• Requisitos para funcionamento do produto: Como funciona, como será a configuração para o cliente, operação, limitações, entre outros;
+• Como adquirir novas linhas (cliente x Ten Internet e Ten Internet x TIP Brasil, nste caso, se há limites);
+• Custos para empresa (limites e formas de cobrança);
+• Custos para o cliente (como parametrizar a cobrança da Ten para clientes, por exemplo);
+• Faturamento;
+• Portabilidade;
+• Equipamentos compatíveis com o produto (telefone IP, soft fone, VoIP ONT, entre outros).
+
+Segue informações que já possuo, abaixo (credenciais necessárias na base de conhecimento do Notion):
+
+https://www.notion.so/liomar/Zeus-TIP-Brasil-Telefonia-2ae3df5f6d6880ee9e76cf9c44a8a4e1?source=copy_link
+
+• Contrato: 7140 → TEN Internet - Capim Grosso → 177.47.224.98
+• SUPORTE TIP BRASIL - Abertura de Tickets: https://tip.movidesk.com/
+• SUPORTE TIP BRASIL - Telefone Tickets: (19) 3090-2255
+• ZEUS: https://administrator.tipbrasil.com.br/zeus_admin/cp_zeus/conexoes.php
+• Manual de Portabilidade Easy Serviços - https://tip.movidesk.com/kb/pt-br/article/526696/portabilidade-via-easy-servicos
+• Procedimento Operacional Padrão - https://tip.movidesk.com/kb/pt-br/article/506400/pop-configuracao-do-ddr-no-sistema-de-telefonia
+• Resolução de Problemas: Verificações no Administrador - https://tip.movidesk.com/kb/pt-br/article/494871/verificacoes-no-administrator"
+"Protocolo Principal";2926591;"Protocolo 2765578 - Estudo de API Voalle para integrações e desenvolvimento de novas aplicações - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"09/07/2025 11:57:54";"22/07/2026 12:49:35";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"Após identificar algumas deficiências em alguns setores, incluindo necessidades do próprio setor de TI, estou iniciando os estudos ao funcionamento do sistema Elleven Voalle no intuito de criar novas soluções e integrações, visando a melhoria na produtividade para os colaboradores e gerar economia para a empresa.";10;"[#1 | 09/07/2025 11:57:53 | LIOMAR ANTONIO DE OLIVEIRA]
+Após identificar algumas deficiências em alguns setores, incluindo necessidades do próprio setor de TI, estou iniciando os estudos ao funcionamento do sistema Elleven Voalle no intuito de criar novas soluções e integrações, visando a melhoria na produtividade para os colaboradores e gerar economia para a empresa.
+
+----------------------------------------
+
+[#2 | 09/07/2025 11:58:42 | LIOMAR ANTONIO DE OLIVEIRA]
+09/07/2025 - 12:02 
+Realizada visita ao setor de Cobrança / CS / Financeiro para entender o cenário e identificar deficiências do setor e necessidades de melhorias no dia 29/05/2025.
+A listagem dos problemas foram registrados e neste período, já havia iniciado os estudos relacionados ao funcionamento do sistema Voalle.
+Informei que assim que desenvolvesse alguma aplicação que iria realizar um período de testes com o setor CS e Cobrança.
+
+----------------------------------------
+
+[#3 | 09/07/2025 12:02:54 | LIOMAR ANTONIO DE OLIVEIRA]
+09/07/2025 - 12:10 
+Iniciados os estudos para criar uma aplicação que auxilia na tratativa de protocolos de solicitação de desconto no dia 22/05/2025. Inicialmente, a aplicação começou a ser desenvolvida em Python, porém, foi percebido após vários estudos relacionados a autenticação do sistema e obtenção de dados que era possível ser feita em PHP, que funciona melhor com servidores locais. 
+
+Antes da atualização para a Elleven, já conseguia obter a listagem dos protocolos e a obtenção dos dados de conexão do extrato, porém, após a atualização, a forma de autenticação da API no sistema foi completamente alterada. Com isso, estou estudando para recomeçar a aplicação do zero.
+
+----------------------------------------
+
+[#4 | 09/07/2025 12:10:27 | LIOMAR ANTONIO DE OLIVEIRA]
+11/07/2025 - 08:10 
+Solicitado ao Suporte Voalle a atualização da documentação dos endpoints de API para integração. No momento, realizando testes de requisição via API detectadas à partir do navegador.
+
+----------------------------------------
+
+[#5 | 22/07/2025 09:48:21 | LIOMAR ANTONIO DE OLIVEIRA]
+22/07/2025 - 09:49 
+No dia de ontem, foi possível criar um controller que autentica no sistema Voalle e obtém dados de solicitações, passo crucial para a aplicação funcionar e obtive sucesso após mais de 1 mês de estudo. Graças à atualização para a Elleven, tive que reestudar toda a aplicação para entender o novo fluxo interno do backend do sistema deles.
+
+----------------------------------------
+
+[#6 | 22/07/2025 09:49:43 | LIOMAR ANTONIO DE OLIVEIRA]
+22/07/2025 - 20:13 
+Reiniciado o projeto do zero com todo o aprendizado obtido, foi possível construir uma tela de registro e tela inicial que valida o login do Voalle e notifica dentro da aplicação sobre o funcionamento do Voalle.
+
+----------------------------------------
+
+[#7 | 30/07/2025 09:08:05 | LIOMAR ANTONIO DE OLIVEIRA]
+30/07/2025 - 09:08 
+Finalizada lógica de geração de cookies, token de autenticação e renovação e obtenção de dados de tarefas executadas, primeiro passo para análise da produtividade do nosso setor.
+
+----------------------------------------
+
+[#8 | 30/07/2025 09:08:46 | LIOMAR ANTONIO DE OLIVEIRA]
+31/07/2025 - 21:34 
+Finalizada lógica de obtenção de cookies e renovação de tokens de acordo com seus prazos de expiração.
+
+----------------------------------------
+
+[#9 | 12/12/2025 09:54:31 | LIOMAR ANTONIO DE OLIVEIRA]
+12/12/2025 - 10:08 
+Desde o início do desenvolvimento das ferramentas que hoje resultaram na aplicação em seu estado atual (22 de maio de 2025), passando por:
+• pdf2xlsx_synsuite - Tratamento de relatórios de produtividade do Voalle, de forma a exibir melhor os dados para as reuniões de apresentação de resultados da época.
+• protocols_synsuite - Autenticação automatizada no Voalle para captura de dados de solicitações pendentes, pensando em algum dia automatizar tarefas que são mais simples a nível técnico.
+• autotickets - Repositório da aplicação em seu estado atual.
+
+Durante esse tempo, criamos uma página oficial da Ten Internet para abrigar os desenvolvedores e também hospedar os repositórios lá, afim de controlar melhor quem está desenvolvendo para a empresa e manter o controle dos códigos-fonte na posse da empresa. Todos os detalhes disso serão passados posteriormente para o meu gestor atual, para que possamos formalizar profissionalmente cada vez mais as soluções que são criadas dentro da empresa para a empresa.
+
+Atualmente, a aplicação AutoTicekts faz:
+• Relatório de produtividade detalhado de colaboradores
+• Dashboard que exibem dados estatísticos de todas as informações que a aplicação já captura, como vendas e contratos, conexões, quantidade de solicitações tratadas e quantidade de palavras digitadas por tarefa, entre outros.
+• Tratamento de solicitações semi-automática, como inclusão e exclusão de IP público, análise de solicitações de desconto, encaminhamento de solicitações em massa, adição de relato e alteração de status em massa, vinculação de solicitações em massa
+• Informações práticas de cada solicitação aberta
+• Integrações com WiFeed (para atualização de tokens com os novos clientes, 100% automatizada)
+• Nova integração com FullCam (em desenvolvimento), com tratamento de solicitações de instalação de câmera semi-automática
+• Gerenciamento de cadastos de contratos e clientes
+• Gestão de conexões de rede, futuramente com várias automatizações a serem desenvolvidas.
+
+----------------------------------------
+
+[#10 | 22/04/2026 11:22:55 | OTTON CARLOS CARVALHO ARAUJO]
+Atendimento terá continuidade em outro momento."
+"Protocolo Principal";3216505;"Protocolo 3021169 - Realizar inventário em todos os servidores físicos do Datacenter - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"24/03/2026 11:51:13";"22/07/2026 12:46:21";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"Realizar inventário em todos os servidores físicos do Datacenter, afim de verificar tudo que é necessário para deixar os servidores em pleno funcionamento e com margem para novas instalações de serviços, além de evitar problemas posteriores.";4;"[#1 | 24/03/2026 11:51:13 | LIOMAR ANTONIO DE OLIVEIRA]
+Realizar inventário em todos os servidores físicos do Datacenter, afim de verificar tudo que é necessário para deixar os servidores em pleno funcionamento e com margem para novas instalações de serviços, além de evitar problemas posteriores.
+
+----------------------------------------
+
+[#2 | 24/03/2026 11:51:18 | LIOMAR ANTONIO DE OLIVEIRA]
+24/03/2026 - 11:52 
+Foi constatado após analisar problema em uma VM específica (UniFi Controller no servidor HP DL380 VMWare) que dois SSDs de um array RAID10 de 4 SSDs deram problema. Com isso, vamos analisar especificamente este servidor, fazer o levantamento de hardware e ver o que é necessário para melhora-lo e deixa-lo mais seguro e evitar parar serviços essenciais, pois este é o servidor que mais possuem VMs em operação no momento atual.
+
+----------------------------------------
+
+[#3 | 24/03/2026 11:52:43 | LIOMAR ANTONIO DE OLIVEIRA]
+25/03/2026 - 17:14 
+Foi constatado que o servidor HPE DL380 está em estado gravíssimo. Este servidor é o que tem o maior número de VMs funcionando em produção. Segue o resumo da análise abaixo:
+
+Falhas detectadas:
+• 4 Discos SSD domésticos operando em RAID 10 com muitas VMs, incluindo o próprio sistema operacional do servidor! 1 dos SSDs parou de funcionar, fez com que outro também parasse, apenas dois estão funcionando. Dos dois, um ou os dois estão com bad blocks, colocando em risco todo o servidor.• VMs afetadas: Anlix medidor, DNS-NOVO, EVE-NG, PHP IPAM, OLT-Manager (DWDM), Proxy Made 4, Servidor SFTP-TFTP, Grafana, Zabbix, Unifi Controller, Voalle Staging, Wanguard, WebServer.
+
+• 2 Discos SSD SATA 3 Kingston em RAID 1 (1 TB) de boa qualidade e adequados para servidor, mas acusando 27% de saúde (extremamente baixo). Este pool de SSDs está comportando o restante das VMs do servidor.• VMs neste disco: Anlix Flashman, CDNTV (Edge e Origin), FreeRadius, Native PBX (também usa o NVMe), RR-CG, Zabbix Proxy.
+
+• 2 Discos HD em RAID 1 (2.4 TB) do tipo SAS de boa qualidade e adequados para servidor com duas VMs apenas, aparentemente em bom estado. Porém, são HDs.• VMs neste disco: Internal, Fortics PBX (inativa), ZEUS.
+
+• 1 SSD M.2 NVMe Samsung SSD 970 EVO Plus (2 TB) - Funcionando bem e com 91% de saúde. Porém, pela falta de recursos necessários para SSD de servidor, Não há proteção contra perda de energia e nem mecanismos para suportar alta carga de uso, o que pode causar danos mais cedo, além de ele ser o único M.2 NVMe do servidor, ou seja, não há redundância. Se der defeito, tudo é perdido.• VMs neste disco: Docker-01, LOGFULL, MiniRouter, Native PBX, NMS Plus.
+
+• Atualmente, não há rotina de backups para nenhum servidor.
+
+Procedimentos a realizar
+• Confeccionar novo serviço de backup em rede, para alocar arquivos de backups de todas as VMs de todos os servidores, priorizando este, que está prestes a falhar totalmente.
+• Realizar os backups ou importar diretamente para outros servidores todas as VMs deste servidor, devendo ser feita a configuração manual uma a uma para funcionarem corretamente nos novos servidores, além de depender do NOC para alterar IPs, VLANs e rotas de acessos de cada uma das VMs (e torcer para as credenciais estarem corretas).• Possivelmene, terei que fazer os backups à noite devido a criticidade.
+
+• Subir as VMs nos outros servidores.
+• Listar peças para substituição.
+• Após realizar a substituição, formatar completamente o servidor para Proxmox, parametrizar tudo e retornar as VMs.
+
+Durante esta semana, irei finalizar a criação do servidor de armazenamento, para em seguida iniciar os backups de cada VM, uma a uma, para não degradar ainda mais os discos e acabar derrubando todo o servidor.
+
+----------------------------------------
+
+[#4 | 03/07/2026 11:35:34 | LIOMAR ANTONIO DE OLIVEIRA]
+22/07/2026 - 12:46 
+Ao longo dos últimos meses, foram realizados diversos procedimentos que alteram os recursos dos servidores físicos, como:
+• Upgrade/substituição de armazenamentos
+• Redefinição de recursos de VMs
+• Mudança de VMs de servidor
+Além disso, foi implantado o sistema PBS (Proxmox Backup Server) com configuração de backup diário, parametrizado para auto-incluir novas VMs na rotina. Os backups estão sendo feitos em discos RAID-10 totalizando 15 TB, no servidor SuperMicro, com mapeamento para todos os demais servidores físicos. 
+Também, foi feito cluster entre os servidores Datacom SV01 e HPE DL380, onde está pendente a realocação do servidor DL380 para Jacobina.
+Por fim, o servidor Dell R420 de Jacobina foi desativado, tendo sido feito backup de todas as VMs e realocação da VM.
+
+Darei continuidade na tratativa após realocar o servidor DL380."
+"Protocolo Principal";2901141;"Protocolo 2742025 - Instalação VM debian 12 - RAIMARA S DOS SANTOS";"Sol. Interna";Andamento;"12/06/2025 14:32:06";"22/07/2026 12:36:21";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"Raimara Souza dos Santos";"Sem Equipe";;;0%;Normal;"Segue requisitos para instalação da VM que vai ser usada pela flowspec para instalar coletor de netflow e integração wanguard para grafana.
+
+debian 12
+16g de memória 
+1t de disco ou 500G
+CPU o máximo que puder.
+
+Vlan 332
+
+Gateway 2804:4d8:1000:332::1
+VM:2804:4d8:1000:332::2/64
+
+Quando for instalar informar a vm para configurar o ip e a vlan do lado do sw.";2;"[#1 | 12/06/2025 14:32:06 | RAIMARA S DOS SANTOS]
+Início do atendimento - Protocolo 2742025
+
+----------------------------------------
+
+[#2 | 26/05/2026 09:57:42 | LIOMAR ANTONIO DE OLIVEIRA]
+22/07/2026 - 12:36 
+Confirmado com a requerente que a instalação desta VM pode esperar. Vamos finalizar a readequação total dos servidores físicos para analisar os recursos disponíveis, realocar o servidor DL380 e após isso daremos continuidade na tratativa."
+"Protocolo Principal";3350960;"Protocolo 3132491 - (Vendas digital/Online) Assinante - Oportunidade de Negócio / Padrão - DANIELLE LOPES RIOS";"Sol. Externa";Andamento;"17/07/2026 12:16:15";"17/07/2026 12:23:03";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Vendas Digital/On-Line - Sede";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"Assunto: Acompanhamento pós-visita técnica e contingência de equipamentos
+Referência: Protocolo TI nº 3129316 
+Cliente: DANIELLE LOPES RIOS 
+Ponto: PPPoE daniellerios
+
+Situação da Infraestrutura: A equipe de TI, em conjunto com a equipe técnica local de Serrolândia, realizou visita presencial e identificou instabilidade na topologia Mesh e falhas de configuração física e lógica nos equipamentos Datacom. A rede foi reestruturada com a função Mesh desativada, passando a operar em roaming padrão (para os dispositivos da cliente mudarem de roteador conforme deslocamento na residência). Os testes de deslocamento, cobertura e velocidade apresentaram resultados satisfatórios na configuração atual. Porém, informei a cliente que o setor comercial entraria em contato após 1 ou 2 semanas da visita para saber da experiência e se a mesma desejará realizar o upgrade de equipamentos.
+
+Diretrizes para o Comercial:
+• Monitoramento: Entrar em contato com a cliente em um prazo de 1 a 2 semanas para aferir a estabilidade da rede e o nível de satisfação após as intervenções.
+• Oferta de Upgrade: Caso a cliente registre novas reclamações referentes à cobertura ou estabilidade do Wi-Fi, o Comercial deve ofertar o upgrade da infraestrutura para equipamentos de linha corporativa. A viabilidade técnica e a disposição física já foram mapeadas e alinhadas com a equipe de campo, incluindo a posição dos novos equipamentos na residência.
+
+Topologia validada para o upgrade, se necessário:
+• 1x Mikrotik RB750Gr3 + ONU (substituindo a ONT atual).
+• 2x Grandstream GWN7660 (distribuídos entre academia e térreo).
+• Manter 1x Datacom DM956-4GT 3000 (existente no escritório) para cobertura do primeiro andar, caso a equipe técnica perceba que o sinal do Grandstream do térreo não consiga chegar com qualidade no primeiro andar.
+
+Conversamos com Naila sobre o assunto, porém, para dúvidas, estamos à disposição. Entrar em contato com Liomar ou Isac (Setor TI).";1;"[#1 | 17/07/2026 12:16:15 | LIOMAR ANTONIO DE OLIVEIRA]
+17/07/2026 - 12:23 
+Assunto: Acompanhamento pós-visita técnica e contingência de equipamentos
+Referência: Protocolo TI nº 3129316
+Cliente: DANIELLE LOPES RIOS
+Ponto: PPPoE daniellerios
+
+Situação da Infraestrutura: A equipe de TI, em conjunto com a equipe técnica local de Serrolândia, realizou visita presencial e identificou instabilidade na topologia Mesh e falhas de configuração física e lógica nos equipamentos Datacom. A rede foi reestruturada com a função Mesh desativada, passando a operar em roaming padrão (para os dispositivos da cliente mudarem de roteador conforme deslocamento na residência). Os testes de deslocamento, cobertura e velocidade apresentaram resultados satisfatórios na configuração atual. Porém, informei a cliente que o setor comercial entraria em contato após 1 ou 2 semanas da visita para saber da experiência e se a mesma desejará realizar o upgrade de equipamentos.
+
+Diretrizes para o Comercial:
+• Monitoramento: Entrar em contato com a cliente em um prazo de 1 a 2 semanas para aferir a estabilidade da rede e o nível de satisfação após as intervenções.
+• Oferta de Upgrade: Caso a cliente registre novas reclamações referentes à cobertura ou estabilidade do Wi-Fi, o Comercial deve ofertar o upgrade da infraestrutura para equipamentos de linha corporativa. A viabilidade técnica e a disposição física já foram mapeadas e alinhadas com a equipe de campo, incluindo a posição dos novos equipamentos na residência.
+
+Topologia validada para o upgrade, se necessário:
+• 1x Mikrotik RB750Gr3 + ONU (substituindo a ONT atual).
+• 2x Grandstream GWN7660 (distribuídos entre academia e térreo).
+• Manter 1x Datacom DM956-4GT 3000 (existente no escritório) para cobertura do primeiro andar, caso a equipe técnica perceba que o sinal do Grandstream do térreo não consiga chegar com qualidade no primeiro andar.
+
+Conversamos com Naila sobre o assunto, porém, para dúvidas, estamos à disposição. Entrar em contato com Liomar ou Isac (Setor TI)."
+"Protocolo Principal";3342920;"Falha na captura de áudio (microfone) – Loja Lagoa 33";"Tarefa Avulsa";"0% - Andamento";"10/07/2026 14:13:33";"10/07/2026 14:13:33";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"CAMILA SILVA DE MORAIS";"Atendimento Presencial - Capim Grosso";;;0%;Normal;"O computador da loja Lagoa 33 apresenta uma falha na conexão do fone. O equipamento apenas reproduz som (áudio funcionando), mas não reconhece a captação do microfone, impossibilitando o envio de mensagens de voz nas plataformas de comunicação.
+Testes já realizados, como troca do fone, adaptadores, enviado um CPU, porem ao ligar na energia queimou! o monitor não tem entrada para fone.
+
+Como o problema persiste mesmo após as trocas, não é possível gravar áudios diretamente pelo computador. Solicito suporte para correção do problema.";0;"Nenhum relato registrado."
+"Protocolo Principal";3326680;"Protocolo 3112244 - Analisar falhas de backup ocorrendo em algumas VMs Proxmox - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"29/06/2026 10:06:54";"29/06/2026 10:09:50";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"LIOMAR ANTONIO DE OLIVEIRA";NOC;;;0%;Normal;"As falhas de backup dos jobs que eu configurei para rodar de madrugada estão aumentando. 
+Já havia percebido as falhas ocorrendo em uma única VM de todos os 5 servidores, mas na última semana, mais VMs tem sido afetadas pelos erros. Verificar a causa e a solução.";2;"[#1 | 29/06/2026 10:06:53 | LIOMAR ANTONIO DE OLIVEIRA]
+Início do atendimento - Protocolo 3112244
+
+----------------------------------------
+
+[#2 | 29/06/2026 10:07:00 | LIOMAR ANTONIO DE OLIVEIRA]
+29/06/2026 - 10:09 
+Já havia feito procedimentos durante a semana fora do chamado, como redução de largura de banda durante os backups, configurar VMs específicas para horários específicos da madrugada para evitar concorrência, aumentando ainda mais o espaçamento que já estava parametrizado, mas tais procedimentos não resolveu. 
+
+Percebi que a maioria das falhas só ocorrem em VMs com alta taxa de I/O, indicando que pode estar havendo uma alta concorrência de dados no momento do backup, mesmo com redução de largura de banda. 
+Neste momento, estou configurando discos de alta performance com fleecing em cada servidor para criar um cache local para dados de VMs com alto I/O, para mitigar este problema. Após isso, irei acompanhar no dia seguinte se ainda haverão erros. Caso haja, irei isolar as VMs que estão com falha em jobs separados e continuar estudando soluções para o problema."
+"Protocolo Principal";3306821;"Câmera para instalar em Varzea do Poço";"Tarefa Avulsa";"0% - Andamento";"09/06/2026 10:16:58";"09/06/2026 10:16:58";0;Não;"ERICK GOMES GONÇALVES";"Sem Equipe";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Baixa;"Câmera foi entregue para ser encaminhada para o escritório de Várzea do Poço para ser instalada.";0;"Nenhum relato registrado."
+"Protocolo Principal";3018799;"Solicitação de Cotação";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 11:22:33";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018663;"Cotação e Orçamento";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3018973;"Encaminhar para equipes de campo";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 12:20:01";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Sem Equipe";3018698;"Encaminhar para equipes de campo";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3018964;"Reunião com diretoria";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 12:14:44";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018817;"Reunião com diretoria";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3018957;"(TI) Revisão em equipe da apresentação";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 12:13:19";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018812;"(TI) Revisão em equipe da apresentação";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3185147;"Estudo de viabilidade";"Tarefa Avulsa";"0% - Andamento";"26/02/2026 08:39:15";"29/05/2026 12:00:39";0;Não;"DAVID BRASIL FERNANDES";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018590;"Estudo de viabilidade";0%;Normal;"Levantamento de infraestrutura atual.• Estimativa de demanda de banda por local.";0;"Nenhum relato registrado."
+"Protocolo Principal";3018697;"Gerar conexões e abrir solicitações";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 10:46:12";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018666;"Implantação Técnica";0%;Normal;"Verificar com o TI a lista de locais para criar conexão para todos. Inserir nomes personalizados no usuário PPPOE.";0;"Nenhum relato registrado."
+"Protocolo Principal";3018750;"Criar Apresentação";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 11:03:49";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018664;"Apresentação à Diretoria";0%;Normal;"Com todos os dados em mãos, gerar apresentação sintética para apresentação à direção, buscando aprovação.
+
+Necessário:
+1. Introdução: apresentação do projeto, objetivos, e apresentar situação atual do serviço de Hotspot
+2. Impacto almejado (visibilidade de marca, retenção de clientes, geração de leads, inclusão digital)
+3. Custos previstos (CAPEX + OPEX)
+4. Cronograma
+5. Síntese dos locais (mapa interativo)
+6. Projeção de usuários assinantes beneficiados (mensal)
+7. Projeção de leads capturados (mensal)
+8. Demais considerações pertinentes
+9. Conclusão - Solicitação de Aprovação";0;"Nenhum relato registrado."
+"Protocolo Principal";3018984;"Implantar processo de curadoria (TI)";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 12:23:24";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Sem Equipe";3018675;"Implantar processo de curadoria (TI)";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3018945;"Reunião com times envolvidos: TI + Suporte Campo";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 12:09:01";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018604;"Reunião com times envolvidos: TI + Suporte Campo";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3018941;"Reunião com times envolvidos: TI + Comercial + Marketing";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 12:08:47";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018568;"Reunião com times envolvidos: TI + Comercial + Marketing";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3018736;"Requisição de Materiais para pré-configuração";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 10:56:18";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018665;"Compras e Logística";0%;Normal;"Realizar pedido de Materiais, visando configuração inicial no TI, dos itens que for necessário.";0;"Nenhum relato registrado."
+"Protocolo Principal";3018937;"(TI) Criação do projeto";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 12:08:07";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018730;"(TI) Criação do projeto";0%;Normal;"1. Verificar locais selecionados e inserir em planilha com identificação clara.
+2. Especificar equipamentos necessários (APs outdoor/indoor, roteador, switches/fonte PoE, natureza link).
+• 3. Definir padrão de instalação (altura mínima, segurança, cabeamento, fornecimento de energia alternativo).
+• 4. Desenhar arquitetura de rede do hotspot: Configurações Wifeed, autenticação, diagramação, etc.";0;"Nenhum relato registrado."
+"Protocolo Principal";3185119;"Reunião com times envolvidos: TI + Comercial + Marketing";"Tarefa Avulsa";"0% - Andamento";"26/02/2026 08:31:56";"29/05/2026 12:00:39";0;Não;"DAVID BRASIL FERNANDES";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018568;"Reunião com times envolvidos: TI + Comercial + Marketing";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3185110;"(TI) Revisão em equipe da apresentação";"Tarefa Avulsa";"0% - Andamento";"26/02/2026 08:29:47";"29/05/2026 12:00:39";0;Não;"DAVID BRASIL FERNANDES";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018812;"(TI) Revisão em equipe da apresentação";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3018932;"Reunião alinhamento TI para revisão do projeto";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 12:07:19";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018809;"Reunião alinhamento TI para revisão do projeto";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3018743;"(TI) Acompanhamento, configuração e homologação dos equipamentos";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 10:59:42";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018667;Homologação;0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3185104;"Reunião alinhamento TI para revisão do projeto";"Tarefa Avulsa";"0% - Andamento";"26/02/2026 08:28:17";"29/05/2026 12:00:39";0;Não;"DAVID BRASIL FERNANDES";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Sem Equipe";3018809;"Reunião alinhamento TI para revisão do projeto";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3185096;"Reunião com times envolvidos: TI + Suporte Campo";"Tarefa Avulsa";"0% - Andamento";"26/02/2026 08:25:22";"29/05/2026 12:00:39";0;Não;"DAVID BRASIL FERNANDES";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018604;"Reunião com times envolvidos: TI + Suporte Campo";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3018952;"Consolidação da planilha de custos";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 12:11:47";"29/05/2026 12:00:39";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Instalação/Suporte - Jacobina - Fredson";3018800;"Consolidação da planilha de custos";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3018913;"Reunião inicial de alinhamento e apresentação do projeto com todos os envolvidos";"Tarefa Avulsa";"0% - Andamento";"29/09/2025 11:59:51";"29/05/2026 12:00:38";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"ISVI NEEMIAS SANTOS SILVA";"Sem Equipe";3018655;"Reunião inicial de alinhamento e apresentação do projeto com todos os envolvidos";0%;Normal;;0;"Nenhum relato registrado."
+"Protocolo Principal";3281403;"Protocolo 3075108 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";PROC;Outro;"19/05/2026 09:47:51";"19/05/2026 11:26:08";0;Não;"DAVID BRASIL FERNANDES";"Sem Equipe";"DAVID BRASIL FERNANDES";"Setor TI";3281402;"Protocolo 3075108 - SOLICITAÇÃO DE RECURSOS / DEMANDAS ADMINISTRATIVAS - LIOMAR ANTONIO DE OLIVEIRA";100%;Normal;"APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";0;"Nenhum relato registrado."
+"Subtarefa Vinculada (Pai #3281403)";3281405;"Protocolo 3075108 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO SEGUNDO APROVADOR";"Tarefa de Aprovação";Concluído;"19/05/2026 09:47:51";"21/05/2026 09:57:38";0;Não;"DANIELE CRISTINA DE SOUZA BARROS";"Sem Equipe";"DAVID BRASIL FERNANDES";"Setor TI";3281403;"Protocolo 3075108 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução:";1;"[#1 | 21/05/2026 09:57:38 | DANIELE CRISTINA DE SOUZA BARROS]
+APROVADO"
+"Subtarefa Vinculada (Pai #3281403)";3281404;"Protocolo 3075108 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO PRIMEIRO APROVADOR";"Tarefa de Aprovação";Concluído;"19/05/2026 09:47:51";"21/05/2026 09:55:18";0;Não;"ISVI NEEMIAS SANTOS SILVA";"Sem Equipe";"DAVID BRASIL FERNANDES";"Setor TI";3281403;"Protocolo 3075108 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução: Acesse o documento. QUANDO A AUTORIZAÇÃO NÃO FOR CONCEDIDA, CANCELE A TAREFA.";1;"[#1 | 21/05/2026 09:55:18 | ISVI NEEMIAS SANTOS SILVA]
+Aprovado."
+"Protocolo Principal";3274320;"Protocolo 3069558 - Realizar Levantamento de Equipamentos de determinadas lojas - LIOMAR ANTONIO DE OLIVEIRA";"Sol. Interna";Andamento;"12/05/2026 12:39:06";"15/05/2026 11:39:21";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"• Realizar levantamento de equipamentos usados na parte de atendimento comercial das lojas de Santaluz, Campo Formoso, Serrolândia, Ourolândia, Jacobina, Várzea da Roça e Caldeirão Grande.
+
+• Objetivo: Verificar se os computadores utilizados são desktop ou notebook, se há impressora e qual o modelo. Verificar qual o roteador/mikrotik da loja e onde fica, se já há banco de baterias, fonte nobreak ou algum tipo de redundância de energia.
+
+• O objetivo geral é passar as informações para o setor de Infraestrutura para providenciar maior eficiência energética visando não ficar sem atendimento presencial durante quedas de energia.";8;"[#1 | 12/05/2026 12:39:05 | DAVID BRASIL FERNANDES]
+• Realizar levantamento de equipamentos usados na parte de atendimento comercial das lojas de Santaluz, Campo Formoso, Serrolândia, Ourolândia, Jacobina, Várzea da Roça e Caldeirão Grande.
+
+• Objetivo: Verificar se os computadores utilizados são desktop ou notebook, se há impressora e qual o modelo. Verificar qual o roteador/mikrotik da loja e onde fica, se já há banco de baterias, fonte nobreak ou algum tipo de redundância de energia.
+
+• O objetivo geral é passar as informações para o setor de Infraestrutura para providenciar maior eficiência energética visando não ficar sem atendimento presencial durante quedas de energia.
+
+----------------------------------------
+
+[#2 | 12/05/2026 13:32:30 | ISAC COSTA SILVA]
+Foram levantados os dados de Santaluz e Serrolândia.
+Link dos dados atualizados em tempo real: https://docs.google.com/spreadsheets/d/1iRySE153pgMG6_uqvJxULeq1K1JkWJgppvvz2wyFrAk/edit?usp=sharing
+
+----------------------------------------
+
+[#3 | 12/05/2026 16:15:47 | ISAC COSTA SILVA]
+Realizado levantamento de Campo Formoso
+
+----------------------------------------
+
+[#4 | 12/05/2026 16:34:02 | ISAC COSTA SILVA]
+12/05/2026 - 18:03 
+Dados de Jacobina, Várzea da Roça e Ourolândia levantados.
+
+----------------------------------------
+
+[#5 | 13/05/2026 07:44:15 | ISAC COSTA SILVA]
+Restam apenas os dados de Caldeirão Grande e Ourolândia, que foram insuficientes, portanto entrei em contato com o gestor da localidade, estou aguardando retorno das informações.
+
+----------------------------------------
+
+[#6 | 14/05/2026 13:49:23 | ISAC COSTA SILVA]
+Dados de Caldeirão Grande obtidos.
+
+----------------------------------------
+
+[#7 | 15/05/2026 11:37:28 | ISAC COSTA SILVA]
+15/05/2026 - 11:39 
+LINK DO LEVANTAMENTO DE DADOS:
+https://docs.google.com/spreadsheets/d/1iRySE153pgMG6_uqvJxULeq1K1JkWJgppvvz2wyFrAk/edit?usp=sharing
+
+----------------------------------------
+
+[#8 | 15/05/2026 11:39:21 | ISAC COSTA SILVA]
+Solicito aprovação da cotação a seguir:﻿"
+"Protocolo Principal";3219934;"Protocolo 3024008 - Requisição de material - DAVID BRASIL FERNANDES";"Sol. Interna";"Aguardando compra";"26/03/2026 11:50:54";"04/05/2026 18:49:11";0;Não;"Sem Responsável";"Patrimônio e Logística - Sede - Aguardando Compra";"DAVID BRASIL FERNANDES";"Setor TI";;;0%;Normal;"Solicito o(s) material(is) a seguir: 
+(Por gentileza, seguir o padrão: descrição do item, quantidade e destinação. Ao final, informar os dados solicitados.) 
+
+Descrição: Cordão Óptica Dúplex Multímodo LC UPC de 5 Metros
+Quantidade: 03
+Destinação: servidor chácara
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Descrição: 
+Quantidade: 
+Destinação: 
+______________________ 
+Solicitante: Liomar Antonio
+Contato: [telefone removido]
+Justificativa: Será colocado no antigo servidor da netflix, pôs o cabo que se encontra la é pequeno.";11;"[#1 | 26/03/2026 11:50:53 | DAVID BRASIL FERNANDES]
+Início do atendimento - Protocolo 3024008
+
+----------------------------------------
+
+[#2 | 26/03/2026 12:06:11 | ERICK GOMES GONÇALVES]
+26/03/2026 - 12:06 
+Realizar a separação e movimentação dos itens e quantidades descritos a seguir:
+
+----------------------------------------
+
+[#3 | 26/03/2026 12:06:34 | ERICK GOMES GONÇALVES]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#4 | 22/04/2026 13:54:15 | RUAN GLEDSON CRUZ BALTAZAR]
+22/04/2026 - 13:56 
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#5 | 22/04/2026 13:56:47 | RUAN GLEDSON CRUZ BALTAZAR]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#6 | 24/04/2026 11:50:58 | ERICK GOMES GONÇALVES]
+27/04/2026 - 08:44 
+Realizar a separação e movimentação dos itens e quantidades descritos a seguir:
+
+----------------------------------------
+
+[#7 | 27/04/2026 08:44:40 | ERICK GOMES GONÇALVES]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#8 | 28/04/2026 17:05:53 | GABRIEL SILVA ROCHA]
+28/04/2026 - 17:06 
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#9 | 28/04/2026 17:06:19 | GABRIEL SILVA ROCHA]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda.
+
+----------------------------------------
+
+[#10 | 04/05/2026 18:48:48 | ERICK GOMES GONÇALVES]
+04/05/2026 - 18:49 
+Este protocolo está sendo encaminhado pois será necessário aguardar a compra/reposição dos seguintes itens:
+
+----------------------------------------
+
+[#11 | 04/05/2026 18:49:11 | ERICK GOMES GONÇALVES]
+Este protocolo está sendo encaminhado para que seja dada continuidade com o atendimento da demanda."
+"Protocolo Principal";2255517;"Protocolo 2154282 - Instalação Servidor TACACS";"Sol. Interna";Andamento;"05/01/2024 14:19:23";"26/01/2026 09:41:10";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Setor TI";"J A De Almeida Suprimentos - Eireli - Me";"Sem Equipe";;;0%;Baixa;"Instalação Servidor TACACS para gerenciar os acessos aos equipamentos.";4;"[#1 | 05/01/2024 14:19:24 | RAIMARA S DOS SANTOS]
+Instalação Servidor TACACS para gerenciar os acessos aos equipamentos.
+
+----------------------------------------
+
+[#2 | 25/10/2024 16:52:56 | SANDRO SANTOS ROSA JUNIOR]
+Analisadas configurações utilizando o tac_plus da facebook como possibilidade
+
+progredir nos próximos dias
+
+----------------------------------------
+
+[#3 | 05/11/2024 18:12:31 | SANDRO SANTOS ROSA JUNIOR]
+configuração da VM para parametrização do TACACS
+
+----------------------------------------
+
+[#4 | 26/01/2026 09:40:57 | LIOMAR ANTONIO DE OLIVEIRA]
+Alteração de atendente"
+"Protocolo Principal";3149481;"Protocolo 2963020 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";PROC;Outro;"26/01/2026 08:29:38";"26/01/2026 08:30:05";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3149480;"Protocolo 2963020 - Cópia de chave da sala do servidor na chácara - LIOMAR ANTONIO DE OLIVEIRA";100%;Normal;"APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";0;"Nenhum relato registrado."
+"Subtarefa Vinculada (Pai #3149481)";3149482;"Protocolo 2963020 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO PRIMEIRO APROVADOR";"Tarefa de Aprovação";Concluído;"26/01/2026 08:29:38";"26/01/2026 08:30:05";0;Não;"ISVI NEEMIAS SANTOS SILVA";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3149481;"Protocolo 2963020 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução: Acesse o documento. QUANDO A AUTORIZAÇÃO NÃO FOR CONCEDIDA, CANCELE A TAREFA.";1;"[#1 | 26/01/2026 09:29:13 | ISVI NEEMIAS SANTOS SILVA]
+Aprovado."
+"Subtarefa Vinculada (Pai #3149481)";3149483;"Protocolo 2963020 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO SEGUNDO APROVADOR";"Tarefa de Aprovação";Concluído;"26/01/2026 08:29:38";"26/01/2026 08:29:38";0;Não;"DANIELE CRISTINA DE SOUZA BARROS";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3149481;"Protocolo 2963020 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução:";1;"[#1 | 26/01/2026 09:41:57 | DANIELE CRISTINA DE SOUZA BARROS]
+APROVADO"
+"Protocolo Principal";3149461;"Protocolo 2963009 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";PROC;Outro;"26/01/2026 08:23:36";"26/01/2026 08:24:01";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3149460;"Protocolo 2963009 - Reembolso de recarga de chip emergencial - LIOMAR ANTONIO DE OLIVEIRA";100%;Normal;"APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";0;"Nenhum relato registrado."
+"Subtarefa Vinculada (Pai #3149461)";3149463;"Protocolo 2963009 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO SEGUNDO APROVADOR";"Tarefa de Aprovação";Concluído;"26/01/2026 08:23:36";"26/01/2026 08:23:36";0;Não;"DANIELE CRISTINA DE SOUZA BARROS";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3149461;"Protocolo 2963009 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução:";1;"[#1 | 26/01/2026 09:41:04 | DANIELE CRISTINA DE SOUZA BARROS]
+APROVADO"
+"Subtarefa Vinculada (Pai #3149461)";3149462;"Protocolo 2963009 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO PRIMEIRO APROVADOR";"Tarefa de Aprovação";Concluído;"26/01/2026 08:23:36";"26/01/2026 08:24:01";0;Não;"ISVI NEEMIAS SANTOS SILVA";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3149461;"Protocolo 2963009 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução: Acesse o documento. QUANDO A AUTORIZAÇÃO NÃO FOR CONCEDIDA, CANCELE A TAREFA.";1;"[#1 | 26/01/2026 09:30:34 | ISVI NEEMIAS SANTOS SILVA]
+Aprovado."
+"Protocolo Principal";3149432;"Protocolo 2962990 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";PROC;Outro;"26/01/2026 08:14:03";"26/01/2026 08:15:18";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3149431;"Protocolo 2962990 - SOLICITAÇÃO DE RECURSOS / DEMANDAS ADMINITRATIVAS - Liomar";100%;Normal;"APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";0;"Nenhum relato registrado."
+"Subtarefa Vinculada (Pai #3149432)";3149434;"Protocolo 2962990 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO SEGUNDO APROVADOR";"Tarefa de Aprovação";Concluído;"26/01/2026 08:14:03";"26/01/2026 08:14:03";0;Não;"DANIELE CRISTINA DE SOUZA BARROS";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3149432;"Protocolo 2962990 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução:";1;"[#1 | 26/01/2026 11:08:26 | DANIELE CRISTINA DE SOUZA BARROS]
+APROVADO"
+"Subtarefa Vinculada (Pai #3149432)";3149433;"Protocolo 2962990 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO PRIMEIRO APROVADOR";"Tarefa de Aprovação";Concluído;"26/01/2026 08:14:03";"26/01/2026 08:15:18";0;Não;"ISVI NEEMIAS SANTOS SILVA";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3149432;"Protocolo 2962990 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução: Acesse o documento. QUANDO A AUTORIZAÇÃO NÃO FOR CONCEDIDA, CANCELE A TAREFA.";1;"[#1 | 26/01/2026 10:24:25 | ISVI NEEMIAS SANTOS SILVA]
+Aprovado."
+"Protocolo Principal";3091386;"Protocolo 2911955 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";PROC;Outro;"01/12/2025 15:42:25";"01/12/2025 15:43:57";0;Não;"LIOMAR ANTONIO DE OLIVEIRA";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3091385;"Protocolo 2911955 - SOLICITAÇÃO DE RECURSOS / DEMANDAS ADMINITRATIVAS - Liomar";100%;Normal;"APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";0;"Nenhum relato registrado."
+"Subtarefa Vinculada (Pai #3091386)";3091388;"Protocolo 2911955 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO SEGUNDO APROVADOR";"Tarefa de Aprovação";Concluído;"01/12/2025 15:42:25";"01/12/2025 15:42:25";0;Não;"DANIELE CRISTINA DE SOUZA BARROS";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3091386;"Protocolo 2911955 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução:";1;"[#1 | 02/12/2025 07:41:53 | DANIELE CRISTINA DE SOUZA BARROS]
+APROVADO"
+"Subtarefa Vinculada (Pai #3091386)";3091387;"Protocolo 2911955 - LIOMAR ANTONIO DE OLIVEIRA - LIDERANÇA - SOLICITAR AUTORIZAÇÃO DO PRIMEIRO APROVADOR";"Tarefa de Aprovação";Concluído;"01/12/2025 15:42:25";"01/12/2025 15:43:57";0;Não;"ISVI NEEMIAS SANTOS SILVA";"Sem Equipe";"LIOMAR ANTONIO DE OLIVEIRA";NOC;3091386;"Protocolo 2911955 - LIOMAR ANTONIO DE OLIVEIRA - APROVAÇÃO DE LIBERAÇÃO DE RECURSOS";100%;Normal;"O detalhe das informações para análise e aprovação está disponível no menu Solicitação - Identificação localizado na lateral esquerda da sua tela. 
+Se ficares com dificuldade, assista à instrução: Acesse o documento. QUANDO A AUTORIZAÇÃO NÃO FOR CONCEDIDA, CANCELE A TAREFA.";1;"[#1 | 01/12/2025 19:39:14 | ISVI NEEMIAS SANTOS SILVA]
+Aprovado."
