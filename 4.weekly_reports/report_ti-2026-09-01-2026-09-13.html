@@ -2,13 +2,36 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Relatório Semanal Consolidado — Setor de TI Ten Internet (01/09/2026 a 13/09/2026)</title>
+  <title>Relatório Semanal Consolidado — Setor de TI</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --primary-dark: #0f172a;
+      --accent: #0ea5e9;
+      --accent-subtle: #e0f2fe;
+      --success: #059669;
+      --success-subtle: #dcfce7;
+      --warning: #d97706;
+      --warning-subtle: #fef3c7;
+      --danger: #dc2626;
+      --danger-subtle: #fee2e2;
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --surface-subtle: #f1f5f9;
+      --border: #cbd5e1;
+      --border-subtle: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
 
     @page {
       size: A4;
-      margin: 10mm 12mm 10mm 12mm;
+      margin: 15mm 12mm 15mm 12mm;
     }
 
     * {
@@ -18,458 +41,1257 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #1e293b;
-      background-color: #ffffff;
-      line-height: 1.38;
-      font-size: 8.5pt;
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      font-size: 9.5pt;
+      line-height: 1.5;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
 
-    .page {
-      width: 100%;
-      position: relative;
-      padding-bottom: 12px;
+    .container {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 0 8px;
     }
 
-    .page-break {
-      page-break-before: always;
-    }
-
-    .header-banner {
-      background: linear-gradient(135deg, #091e3a 0%, #1e3a8a 50%, #0284c7 100%);
+    /* Header Frame */
+    .header-frame {
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       color: #ffffff;
-      padding: 16px 20px;
-      border-radius: 9px;
-      margin-bottom: 10px;
+      border-radius: 8px;
+      padding: 22px 26px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
-    .header-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 2px 9px;
-      border-radius: 12px;
-      font-size: 7.2pt;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 4px;
-      color: #e0f2fe;
-    }
-
-    .header-banner h1 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 14.5pt;
+    .header-frame h1 {
+      font-size: 19pt;
       font-weight: 800;
-      margin-bottom: 2px;
-      letter-spacing: -0.3px;
+      letter-spacing: -0.5px;
       color: #ffffff;
+      margin-bottom: 4px;
     }
 
-    .header-banner p.subtitle {
-      font-size: 8.5pt;
-      color: #cbd5e1;
+    .header-frame .subtitle {
+      font-size: 10pt;
+      color: #94a3b8;
       font-weight: 400;
+      margin-bottom: 18px;
     }
 
     .meta-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 7px;
-      margin-bottom: 10px;
+      gap: 12px;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid #334155;
     }
 
     .meta-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 6px;
-      padding: 7px 10px;
+      padding: 9px 12px;
     }
 
     .meta-card .label {
-      font-size: 6.8pt;
-      font-weight: 600;
+      font-size: 7pt;
       text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 1px;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+      margin-bottom: 2px;
+      font-weight: 600;
     }
 
     .meta-card .value {
       font-size: 8.5pt;
-      font-weight: 700;
-      color: #0f172a;
+      font-weight: 600;
+      color: #f8fafc;
+      line-height: 1.3;
     }
 
-    .meta-card .value.highlight {
-      color: #0284c7;
+    /* Navigation Index */
+    .nav-index {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 22px;
     }
 
-    .section-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 10pt;
+    .nav-index h3 {
+      font-size: 11pt;
       font-weight: 700;
-      color: #0f172a;
-      border-bottom: 2px solid #0284c7;
-      padding-bottom: 3px;
-      margin-top: 10px;
-      margin-bottom: 8px;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 8px;
     }
 
-    .demand-item {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-left: 3.5px solid #0284c7;
-      border-radius: 5px;
-      padding: 6px 10px;
-      margin-bottom: 6px;
+    .index-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
     }
 
-    .demand-item.pending { border-left-color: #f59e0b; }
-    .demand-item.in-progress { border-left-color: #3b82f6; }
-
-    .demand-header {
+    .index-grid a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 8.5pt;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 3px;
+      border-bottom: 1px dotted var(--border);
+      padding: 2px 0;
+      transition: color 0.2s;
     }
 
-    .demand-title {
-      font-weight: 700;
-      color: #0f172a;
-      font-size: 8.4pt;
+    .index-grid a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
     }
 
-    .demand-badge {
-      font-size: 6.5pt;
-      font-weight: 700;
-      padding: 1.5px 6px;
-      border-radius: 4px;
+    /* Headings */
+    h2.section-title {
+      font-size: 13pt;
+      font-weight: 800;
+      color: var(--primary-dark);
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+      margin: 22px 0 12px 0;
       text-transform: uppercase;
+      letter-spacing: 0.2px;
     }
 
-    .badge-concluded { background: #dcfce7; color: #166534; }
-    .badge-progress { background: #dbeafe; color: #1e40af; }
-    .badge-pending { background: #fef3c7; color: #92400e; }
+    h3.sub-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 14px 0 8px 0;
+    }
 
-    .demand-desc {
-      font-size: 8pt;
+    h4.topic-title {
+      font-size: 9pt;
+      font-weight: 700;
       color: #334155;
-      margin-bottom: 3px;
+      margin: 10px 0 4px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
     }
 
-    .demand-meta {
+    /* Page Breaks for Print */
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    /* Statcards */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      border-top: 3px solid var(--primary);
+    }
+
+    .stat-card.success { border-top-color: var(--success); }
+    .stat-card.warning { border-top-color: var(--warning); }
+    .stat-card.accent { border-top-color: var(--accent); }
+    .stat-card.danger { border-top-color: var(--danger); }
+
+    .stat-card .stat-label {
       font-size: 7pt;
-      color: #64748b;
-      font-family: monospace;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 2px;
     }
 
+    .stat-card .stat-value {
+      font-size: 13.5pt;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .stat-card .stat-desc {
+      font-size: 7pt;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Tables */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 6px 0 10px 0;
-      font-size: 7.8pt;
+      font-size: 8.5pt;
+      margin-bottom: 14px;
+      background: var(--bg);
     }
 
     th {
-      background-color: #0f172a;
-      color: #ffffff;
-      font-weight: 600;
+      background-color: #f1f5f9;
+      color: #1e293b;
+      font-weight: 700;
       text-align: left;
-      padding: 5px 8px;
-      font-size: 7.4pt;
+      padding: 6px 8px;
+      border: 1px solid var(--border);
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
     }
 
     td {
-      padding: 5px 8px;
-      border-bottom: 1px solid #e2e8f0;
-      color: #334155;
+      padding: 6px 8px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+      color: #1e293b;
     }
 
     tr:nth-child(even) td {
       background-color: #f8fafc;
     }
 
-    .grid-2 {
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .badge-success { background-color: var(--success-subtle); color: #15803d; border: 1px solid #bbf7d0; }
+    .badge-warning { background-color: var(--warning-subtle); color: #b45309; border: 1px solid #fde68a; }
+    .badge-danger { background-color: var(--danger-subtle); color: #b91c1c; border: 1px solid #fecaca; }
+    .badge-info { background-color: var(--accent-subtle); color: #0369a1; border: 1px solid #bae6fd; }
+
+    /* Callouts */
+    .callout {
+      background-color: var(--surface);
+      border-left: 4px solid var(--primary);
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 12px;
+      font-size: 8.5pt;
+    }
+
+    .callout-warning {
+      background-color: #fffbeb;
+      border-left-color: var(--warning);
+    }
+
+    .callout p { margin-bottom: 4px; }
+    .callout p:last-child { margin-bottom: 0; }
+
+    /* Code & Mono */
+    code, .mono {
+      font-family: var(--mono);
+      font-size: 8pt;
+      background: #f1f5f9;
+      padding: 1px 4px;
+      border-radius: 3px;
+      border: 1px solid #e2e8f0;
+      color: #0f172a;
+    }
+
+    ul, ol {
+      margin-left: 18px;
+      margin-bottom: 10px;
+      font-size: 8.5pt;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    /* Progress bar */
+    .progress-bar {
+      background-color: #e2e8f0;
+      border-radius: 4px;
+      height: 7px;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 3px;
+    }
+
+    .progress-fill {
+      background-color: var(--primary);
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .chart-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 14px;
+    }
+
+    .grid-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .box-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 8px 10px;
-    }
-
-    .box-card h4 {
-      font-size: 8pt;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 4px;
-      border-bottom: 1px solid #cbd5e1;
-      padding-bottom: 2px;
-    }
-
-    .alert-box {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 5px;
-      padding: 6px 10px;
-      margin: 6px 0;
-      font-size: 8pt;
-      color: #1e40af;
-    }
-
-    .alert-box strong { color: #1e3a8a; }
-
-    .footer {
-      margin-top: 14px;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 6px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 6.8pt;
-      color: #94a3b8;
+      gap: 14px;
+      margin-bottom: 14px;
     }
   </style>
 </head>
 <body>
+  <div class="container">
 
-  <!-- PÁGINA 1 -->
-  <div class="page">
-    <div class="header-banner">
-      <div class="header-badge">Relatório Consolidado Oficial — Coordenação de Tecnologia</div>
-      <h1>Relatório Semanal Consolidado do Setor de TI</h1>
-      <p class="subtitle">Panorama Operacional, Gestão de Demandas, Incidentes e Infraestrutura Crítica</p>
+    <!-- HEADER FRAME -->
+    <div class="header-frame">
+      <h1>Relatório Semanal Consolidado - Setor TI</h1>
+      <div class="subtitle">Panorama Operacional, Gestão de Demandas, Incidentes, Infraestrutura Crítica e Outros</div>
+      
+      <div class="meta-grid">
+        <div class="meta-card">
+          <div class="label">Período de Referência</div>
+          <div class="value">01/09/2026 a 13/09/2026</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">Coordenador de TI</div>
+          <div class="value">Isvi Neemias</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">Responsável Consolidação</div>
+          <div class="value">Liomar Antonio de Oliveira</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">Equipe Integrada</div>
+          <div class="value">Liomar, Isac e David</div>
+        </div>
+      </div>
     </div>
 
-    <div class="meta-grid">
-      <div class="meta-card">
-        <div class="label">Período de Referência</div>
-        <div class="value highlight">01/09/2026 a 13/09/2026</div>
-      </div>
-      <div class="meta-card">
-        <div class="label">Coordenador de TI</div>
-        <div class="value">Isvi Neemias</div>
-      </div>
-      <div class="meta-card">
-        <div class="label">Responsável Consolidação</div>
-        <div class="value">Liomar Oliveira (Analista Sr.)</div>
-      </div>
-      <div class="meta-card">
-        <div class="label">Equipe Integrada</div>
-        <div class="value">Liomar | Isac | David</div>
+    <!-- NAVIGATION INDEX -->
+    <div class="nav-index">
+      <h3>📑 Índice Geral de Navegação</h3>
+      <div class="index-grid">
+        <a href="#resumo-executivo"><span>Resumo Executivo</span> <span>pág. 1</span></a>
+        <a href="#gestao-demandas"><span>1. Gestão de Demandas</span> <span>pág. 1</span></a>
+        <a href="#registro-atividades"><span>2. Atividades por Membro da Equipe</span> <span>pág. 2</span></a>
+        <a href="#projetos-entregas"><span>3. Projetos e Entregas Técnicas</span> <span>pág. 4</span></a>
+        <a href="#incidentes-tratados"><span>4. Incidentes Tratados</span> <span>pág. 5</span></a>
+        <a href="#suporte-interno"><span>5. Suporte Interno (Informática)</span> <span>pág. 6</span></a>
+        <a href="#suporte-campo"><span>6. Suporte ao Técnico de Campo</span> <span>pág. 7</span></a>
+        <a href="#infraestrutura"><span>7. Infraestrutura e Sistemas Críticos</span> <span>pág. 7</span></a>
+        <a href="#pontos-atencao"><span>8. Pontos de Atenção e Próximas Ações</span> <span>pág. 8</span></a>
       </div>
     </div>
 
-    <div class="section-title">2.1 Gestão de Demandas do Setor</div>
-    <div class="demand-item">
-      <div class="demand-header">
-        <span class="demand-title">AutoTickets — FreeRADIUS Logs em Tempo Real e Monitoramento PPPoE</span>
-        <span class="demand-badge badge-concluded">Concluído (100%)</span>
+    <!-- RESUMO EXECUTIVO -->
+    <h2 id="resumo-executivo" class="section-title">Resumo Executivo</h2>
+    
+    <div class="stat-grid">
+      <div class="stat-card success">
+        <div class="stat-label">Demandas Concluídas</div>
+        <div class="stat-value">35</div>
+        <div class="stat-desc">Entregas de software, infra e suporte</div>
       </div>
-      <p class="demand-desc">Desenvolvida integração com o serviço RADIUS do Voalle, permitindo diagnosticar falhas de login por MAC, telemetria de sinal óptico e sincronismo de IP CGNAT em tempo real.</p>
-      <div class="demand-meta">Resp: Liomar Oliveira | ERP Voalle (Atividade Diária 11 e 12/09 — 13h30) | Commits: 894d00f3, 77e346e5</div>
+      <div class="stat-card accent">
+        <div class="stat-label">Suportes de Campo</div>
+        <div class="stat-value">471</div>
+        <div class="stat-desc">Atendimentos via WhatsApp oficial</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Commits AutoTickets</div>
+        <div class="stat-value">80+</div>
+        <div class="stat-desc">Sprints 222 a 264 em produção</div>
+      </div>
+      <div class="stat-card warning">
+        <div class="stat-label">Taxa Resolutiva</div>
+        <div class="stat-value">85.4%</div>
+        <div class="stat-desc">35 de 41 demandas liquidadas</div>
+      </div>
     </div>
 
-    <div class="demand-item">
-      <div class="demand-header">
-        <span class="demand-title">AutoTickets — Otimização de Performance e Refinamento de Consultas SQL</span>
-        <span class="demand-badge badge-concluded">Concluído (100%)</span>
-      </div>
-      <p class="demand-desc">Implementação de cache intermediário e refatoração de queries concorrentes de sinal óptico do Grafana, eliminando contenção de banco e riscos de timeout 504.</p>
-      <div class="demand-meta">Resp: Liomar Oliveira | ERP Voalle (Atividade Diária 12/09 — 07h30) | Commit: ead9dcfc</div>
+    <div class="callout">
+      <p>O Setor de TI da Ten Provedor de Internet operou no período de <strong>01 a 13 de setembro de 2026</strong> com atuação integrada e multifacetada entre seus três colaboradores técnicos: <strong>Liomar Antonio de Oliveira</strong> (Analista de TI Sênior), <strong>Isac Costa Silva</strong> (Assistente de TI Pleno) e <strong>David Brasil Fernandes</strong> (Auxiliar de TI Junior).</p>
+      <p>As entregas estratégicas abrangeram o desenvolvimento de software corporativo no <strong>AutoTickets v2</strong> (integração do módulo <strong>FreeRADIUS em tempo real</strong> por MAC, modernização para <strong>React 19 + Tailwind v4</strong> e camadas de cache eliminando erros HTTP 504), sustentação de infraestrutura crítica de data center (comissionamento de switch gerenciável TP-Link 24p Gigabit, restabelecimento do iDRAC do Dell PowerEdge R550 e migração emergencial de storage no cluster Proxmox SuperMicro), conectividade de redes para grandes eventos (FEBAN, Vaquejada de Mirangaba, 91ª CIPM e CCJA), normalização do Tronco SIP TIP Zeus no Native PBX, perícias técnicas formais (smartphone corporativo eFUSE Binário C) e auditoria de cibersegurança em <strong>26 roteadores MikroTik</strong> de filiais.</p>
     </div>
 
-    <div class="demand-item">
-      <div class="demand-header">
-        <span class="demand-title">Infraestrutura DC Chácara — Instalação de Switch Gerenciável 24p</span>
-        <span class="demand-badge badge-concluded">Concluído (100%)</span>
+    <!-- 1. GESTÃO DE DEMANDAS -->
+    <h2 id="gestao-demandas" class="section-title">1. Gestão de Demandas</h2>
+
+    <h3 class="sub-title">1.1 Demandas Pendentes</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 12%;">Protocolo</th>
+          <th style="width: 18%;">Solicitante / Setor</th>
+          <th style="width: 10%;">Prioridade</th>
+          <th style="width: 35%;">Descrição da Demanda</th>
+          <th style="width: 25%;">Bloqueio / Dependência Externa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="mono">#3184572</span></td>
+          <td>Liomar Oliveira / TI</td>
+          <td><span class="badge badge-danger">Alta</span></td>
+          <td>Substituição da ONT Datacom AX27 por ONT Datacom DM986 AX30 no cliente Dr. Wendson (Mairi).</td>
+          <td>Aguardando liberação física do equipamento pelo Almoxarifado para envio a campo.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3166028</span></td>
+          <td>Emerson Oliveira / Comercial</td>
+          <td><span class="badge badge-warning">Média</span></td>
+          <td>Análise física e laudo de tela danificada em notebook corporativo de colaborador.</td>
+          <td>Aguardando o solicitante trazer a máquina na bancada do laboratório de TI.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3175023</span></td>
+          <td>Naila Melo / Lojas</td>
+          <td><span class="badge badge-warning">Média</span></td>
+          <td>Manutenção e reparo de impressora da unidade de Riacho da Onça.</td>
+          <td>Equipamento encaminhado para assistência técnica externa; aguardando devolução.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3187496</span></td>
+          <td>Isvi Neemias / TI</td>
+          <td><span class="badge badge-warning">Média</span></td>
+          <td>Definição de arquitetura definitiva e homologação de caixas de e-mail MailCow para o Slack.</td>
+          <td>Aguardando validação da diretoria para custos de armazenamento e dimensionamento de backups.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3102934</span></td>
+          <td>Isac Costa / TI</td>
+          <td><span class="badge badge-info">Baixa</span></td>
+          <td>Integração de telemetria Datacake / PliQ para monitoramento de IoT e infraestrutura.</td>
+          <td>Aguardando retorno do parceiro externo para liberação de credenciais de API.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-title">1.2 Demandas em Andamento</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 18%;">Protocolo / Projeto</th>
+          <th style="width: 16%;">Responsável</th>
+          <th style="width: 16%;">Avanço Estimado</th>
+          <th style="width: 35%;">Descrição Técnica</th>
+          <th style="width: 15%;">Previsão</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>AutoTickets Drivers ONT</strong></td>
+          <td>Liomar Oliveira</td>
+          <td>
+            <strong>75%</strong>
+            <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+          </td>
+          <td>Desenvolvimento de drivers Parks Fiberlink 611 e Datacom AX30 (potência dBm e EasyMesh via CGNAT).</td>
+          <td>18/09/2026</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#2936263</span></td>
+          <td>David Brasil</td>
+          <td>
+            <strong>60%</strong>
+            <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
+          </td>
+          <td>Instalação de câmera IP externa na fachada da loja de Serrolândia.</td>
+          <td>22/09/2026*</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3187693 / #3187691</span></td>
+          <td>Isac Costa</td>
+          <td>
+            <strong>60%</strong>
+            <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
+          </td>
+          <td>Configuração de VPN corporativa WireGuard e implantação de gerenciador de chaves SSH.</td>
+          <td>20/09/2026</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3187490</span></td>
+          <td>Liomar Oliveira</td>
+          <td>
+            <strong>30%</strong>
+            <div class="progress-bar"><div class="progress-fill" style="width: 30%;"></div></div>
+          </td>
+          <td>Validação do Outline (<span class="mono">docs.teninternet.com.br</span>) com Tiago Silva (DP/Fiscal).</td>
+          <td>23/09/2026</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3181397</span></td>
+          <td>David Brasil / Liomar</td>
+          <td>
+            <strong>30%</strong>
+            <div class="progress-bar"><div class="progress-fill" style="width: 30%;"></div></div>
+          </td>
+          <td>Homologação de câmeras IP PPA/TWG na plataforma Fullcam e testes de links temporários.</td>
+          <td>21/09/2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:7pt; color:var(--text-muted); margin-top:-8px; margin-bottom:12px;">* Bloqueio: Retirada de placa ACM da fachada pelo Comercial.</div>
+
+    <!-- QUEBRA DE PÁGINA -->
+    <div class="page-break"></div>
+
+    <h3 class="sub-title">1.3 Demandas Concluídas (35 Demandas)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 11%;">Protocolo</th>
+          <th style="width: 14%;">Responsável</th>
+          <th style="width: 22%;">Solicitante / Cliente</th>
+          <th style="width: 25%;">Descrição Resumida</th>
+          <th style="width: 28%;">Resultado Técnico Obtido</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="mono">DT 11/09</span></td>
+          <td>Liomar Oliveira</td>
+          <td>Atividade Interna TI</td>
+          <td>AutoTickets: Módulo RADIUS e PPPoE</td>
+          <td>Integração de logs Voalle e busca por MAC funcional (13h30).</td>
+        </tr>
+        <tr>
+          <td><span class="mono">DT 12/09</span></td>
+          <td>Liomar Oliveira</td>
+          <td>Atividade Interna TI</td>
+          <td>AutoTickets: Cache e SQL Grafana</td>
+          <td>Eliminados deadlocks e risco de erro 504 no NOC (7h30).</td>
+        </tr>
+        <tr>
+          <td><span class="mono">Commits</span></td>
+          <td>Liomar Oliveira</td>
+          <td>Atividade Interna TI</td>
+          <td>AutoTickets: React 19 + Spatie</td>
+          <td>Frontend migrado e tela 403 estilo retro terminal CRT ativa.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3070027</span></td>
+          <td>Liomar Oliveira</td>
+          <td>Atividade Interna TI</td>
+          <td>Switch 24p TP-Link DC Chácara</td>
+          <td>Switch T2600G-28TS comissionado (IP 172.16.30.27) com CAT6.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3062633</span></td>
+          <td>Liomar Oliveira</td>
+          <td>Atividade Interna TI</td>
+          <td>Reparo iDRAC Dell PowerEdge R550</td>
+          <td>Conector RJ45 reparado e gerência out-of-band restabelecida.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3187673</span></td>
+          <td>Isac / Liomar</td>
+          <td>Liomar Oliveira</td>
+          <td>Falha física em discos Proxmox</td>
+          <td>VMs migradas para storage íntegro e aberto chamado Made4It.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3186718</span></td>
+          <td>David Brasil</td>
+          <td>Liomar Oliveira</td>
+          <td>Sobretensão elétrica rack Chácara</td>
+          <td>Tensão >245V estabilizada em 220V com Jean/Nildo; filtros ilegais removidos.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3188625</span></td>
+          <td>David Brasil</td>
+          <td>Liomar Oliveira</td>
+          <td>Requisição Nobreak Senoidal 1500VA</td>
+          <td>Requisição aberta formalmente para proteger carga do rack.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3189514</span></td>
+          <td>David Brasil</td>
+          <td>Liomar Oliveira</td>
+          <td>Auditoria de 26 MikroTiks filiais</td>
+          <td>Inventário concluído padronizando parque no RouterOS 7.24.2.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3191752</span></td>
+          <td>David Brasil</td>
+          <td>David Brasil</td>
+          <td>Laudo Celular Samsung Galaxy A14</td>
+          <td>Parecer pericial atestando trava por hardware (eFUSE Binário C).</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3185203</span></td>
+          <td>David Brasil</td>
+          <td>F L Motos Elétricas</td>
+          <td>Atribuição IP Público Fixo (NOC)</td>
+          <td>IP ativado e roteado: <span class="mono">177.93.251.164</span>.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3189114</span></td>
+          <td>David Brasil</td>
+          <td>EMBASA</td>
+          <td>Atribuição IP Público Fixo (NOC)</td>
+          <td>IP ativado e roteado: <span class="mono">177.93.251.216</span>.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3190115</span></td>
+          <td>David Brasil</td>
+          <td>Posto Payaya IV</td>
+          <td>Atribuição IP Público Fixo (NOC)</td>
+          <td>IP ativado e roteado: <span class="mono">177.93.250.222</span>.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3081065</span></td>
+          <td>Isac Costa</td>
+          <td>Solicitação Interna</td>
+          <td>Inoperância Tronco TIP Native PBX</td>
+          <td>BA 1737984 tratado, OPTIONS normalizados e rotas corrigidas.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3185643</span></td>
+          <td>Isac Costa</td>
+          <td>Manoel Pereira da Silva</td>
+          <td>Instabilidade Wi-Fi / Hotspot</td>
+          <td>Cabeamento reparado e redes corporativa/visitante isoladas.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3187821</span></td>
+          <td>Isac Costa</td>
+          <td>TEN Internet (Eventos)</td>
+          <td>Equipamentos de Rede — FEBAN</td>
+          <td>Switches e roteadores RB4011 homologados para o evento.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3188753</span></td>
+          <td>Isac Costa</td>
+          <td>Wefflin Porto / Marketing</td>
+          <td>Configuração de Câmeras — FEBAN</td>
+          <td>Câmeras IP configuradas e adicionadas ao monitoramento (3h17).</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3189168</span></td>
+          <td>Isac Costa</td>
+          <td>91ª CIPM / Instalação</td>
+          <td>Conectividade Sede — 91ª CIPM</td>
+          <td>Equipamentos de alta densidade testados e despachados (28 min).</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3190113</span></td>
+          <td>Isac Costa</td>
+          <td>TEN Internet (Eventos)</td>
+          <td>Vaquejada de Mirangaba</td>
+          <td>Infraestrutura temporária de rede homologada (45 min).</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3192005</span></td>
+          <td>Isac Costa</td>
+          <td>TEN Internet (Eventos)</td>
+          <td>Evento Beneficente CCJA</td>
+          <td>Equipamentos parametrizados e validados em bancada.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">s/nº</span></td>
+          <td>Isac Costa</td>
+          <td>Loja TEN de Saúde</td>
+          <td>Netinstall RouterOS Loja Saúde</td>
+          <td>RouterBoard recuperada fisicamente e reconfigurada (3h00).</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3191333</span></td>
+          <td>Isac Costa</td>
+          <td>Thaisa dos Santos Silva</td>
+          <td>Wi-Fi Grandstream Pousada 24H</td>
+          <td>Identificador SSID renomeado e validados parâmetros de canal.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">N2 Descontos</span></td>
+          <td>Isac / David</td>
+          <td>6 Clientes Auditados</td>
+          <td>Perícia de Conexão N2-TI</td>
+          <td>Auditados protocolos #3187344, #3185752, #3188411, #3186936, etc.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3191000</span></td>
+          <td>David Brasil</td>
+          <td>Naila Melo</td>
+          <td>Reparo Estação/Rede em Loja</td>
+          <td>Triagem efetuada e direcionada para agendamento de campo.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3187962</span></td>
+          <td>David Brasil</td>
+          <td>Primeira Igreja Batista Canaã</td>
+          <td>Validação de Câmera IP</td>
+          <td>Demanda validada e despachada para execução externa.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#3187526</span></td>
+          <td>David Brasil</td>
+          <td>Leonidia Domingas Silva</td>
+          <td>Suporte Aplicativo APP Tenseg</td>
+          <td>Vídeo instrucional enviado e alinhamento com Service Desk.</td>
+        </tr>
+        <tr>
+          <td><span class="mono">#2854202+</span></td>
+          <td>Liomar Oliveira</td>
+          <td>Setor TI (Homologação)</td>
+          <td>Testes Módulo AutoTickets (6 prot.)</td>
+          <td>Validados disparos e esteiras automáticas de cancelamento e desconto.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-title">1.4 Comparativo Entradas × Saídas</h3>
+    <div class="chart-container">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+        <span style="font-weight:700; font-size:8.5pt;">Balanço Líquido de Demandas da Quinzena</span>
+        <span class="badge badge-success">Fila Saneada: Taxa Resolutiva de 85.4%</span>
       </div>
-      <p class="demand-desc">Substituição do switch de 8p por Switch Gerenciável TP-Link T2600G-28TS (IP 172.16.30.27, VLAN 1), padronizando conexões de todos os servidores em CAT6.</p>
-      <div class="demand-meta">Resp: Liomar Oliveira | ERP Voalle (Protocolo #3070027 — 08/09)</div>
+      <div style="display:flex; gap:14px; align-items:center;">
+        <div style="flex:1;">
+          <div style="font-size:7.5pt; color:var(--text-muted); margin-bottom:2px;">Entradas / Demandas Novas (41)</div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 100%; background-color: var(--accent);"></div></div>
+        </div>
+        <div style="flex:1;">
+          <div style="font-size:7.5pt; color:var(--text-muted); margin-bottom:2px;">Saídas / Demandas Concluídas (35)</div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 85.4%; background-color: var(--success);"></div></div>
+        </div>
+      </div>
     </div>
 
-    <div class="demand-item in-progress">
-      <div class="demand-header">
-        <span class="demand-title">Segurança e Acesso Remoto — Implantação de WireGuard e Gerenciador SSH</span>
-        <span class="demand-badge badge-progress">Em Andamento (60%)</span>
+    <!-- QUEBRA DE PÁGINA -->
+    <div class="page-break"></div>
+
+    <!-- 2. REGISTRO DE ATIVIDADES -->
+    <h2 id="registro-atividades" class="section-title">2. Registro de Atividades por Membro da Equipe</h2>
+
+    <div class="grid-2col">
+      <!-- Card David -->
+      <div class="stat-card">
+        <h3 class="sub-title" style="margin-top:0; color:var(--primary);">2.1 David Brasil Fernandes</h3>
+        <div style="font-size:7.5pt; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Auxiliar de TI Junior (#116367)</div>
+        <p style="font-size:8pt; margin-bottom:6px;"><strong>Resumo Analítico:</strong> Conduziu a resolução do incidente elétrico de sobretensão (>245V) no rack da Chácara com técnicos Jean e Nildo, removeu filtros clandestinos e requisitou nobreak 1500VA (*Prot. #3188625*); concluiu auditoria de 26 MikroTiks (*Prot. #3189514*); emitiu laudo pericial de bloqueio por hardware (eFUSE Binário C) no Samsung Galaxy A14 (*Prot. #3191752*); atribuiu 3 IPs dedicados no NOC; e produziu estudo de economia em CFTV via Fullcam (R$ 30 a R$ 100/unid).</p>
+        <div style="font-size:7.5pt; font-weight:700; margin-top:8px; margin-bottom:4px;">Distribuição de Tempo:</div>
+        <div style="font-size:7.5pt; display:flex; justify-content:space-between;"><span>Infraestrutura / Redes:</span> <strong>40%</strong></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:40%; background-color:var(--primary);"></div></div>
+        <div style="font-size:7.5pt; display:flex; justify-content:space-between; margin-top:4px;"><span>Campo / NOC / IPs:</span> <strong>25%</strong></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:25%; background-color:var(--accent);"></div></div>
+        <div style="font-size:7.5pt; display:flex; justify-content:space-between; margin-top:4px;"><span>Suporte Interno / Laudos:</span> <strong>20%</strong></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:20%; background-color:var(--warning);"></div></div>
+        <div style="font-size:7.5pt; display:flex; justify-content:space-between; margin-top:4px;"><span>Projetos / Suporte N2:</span> <strong>15%</strong></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:15%; background-color:var(--success);"></div></div>
+        <div style="font-size:7.5pt; margin-top:8px; color:var(--text-muted);"><strong>Capacitação:</strong> Scripting em RouterOS para auditorias em lote e normas de cabeamento/elétrica.</div>
       </div>
-      <p class="demand-desc">Parametrização de túneis VPN WireGuard para conexões administrativas seguras e centralização de chaves SSH para equipamentos de rede.</p>
-      <div class="demand-meta">Resp: Isac Costa Silva (Orientação: Liomar) | Voalle (Protocolos #3187693 e #3187691)</div>
+
+      <!-- Card Isac -->
+      <div class="stat-card">
+        <h3 class="sub-title" style="margin-top:0; color:var(--primary);">2.2 Isac Costa Silva</h3>
+        <div style="font-size:7.5pt; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Assistente de TI Pleno (#94562)</div>
+        <p style="font-size:8pt; margin-bottom:6px;"><strong>Resumo Analítico:</strong> Liderou a normalização do Tronco SIP TIP (Zeus) no Native PBX tratando o BA 1737984 e corrigindo rotas para DDDs 74/75 (*Prot. #3081065*); atuou com Liomar na contenção emergencial de storage no Proxmox SuperMicro (*Prot. #3187673*); provisionou redes corporativas e CFTV de alta densidade para 4 eventos (FEBAN, Mirangaba, 91ª CIPM e CCJA); recuperou RouterBoard da Loja Saúde via Netinstall (3h); e solucionou Wi-Fi Manoel Pereira (*Prot. #3185643*).</p>
+        <div style="font-size:7.5pt; font-weight:700; margin-top:8px; margin-bottom:4px;">Distribuição de Tempo:</div>
+        <div style="font-size:7.5pt; display:flex; justify-content:space-between;"><span>Eventos e Projetos Especiais:</span> <strong>35%</strong></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:35%; background-color:var(--primary);"></div></div>
+        <div style="font-size:7.5pt; display:flex; justify-content:space-between; margin-top:4px;"><span>Infraestrutura / Native / Proxmox:</span> <strong>30%</strong></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:30%; background-color:var(--accent);"></div></div>
+        <div style="font-size:7.5pt; display:flex; justify-content:space-between; margin-top:4px;"><span>Suporte Campo e Filiais:</span> <strong>20%</strong></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:20%; background-color:var(--warning);"></div></div>
+        <div style="font-size:7.5pt; display:flex; justify-content:space-between; margin-top:4px;"><span>Auditorias N2 / Descontos:</span> <strong>15%</strong></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:15%; background-color:var(--success);"></div></div>
+        <div style="font-size:7.5pt; margin-top:8px; color:var(--text-muted);"><strong>Capacitação:</strong> Gestão avançada de pools ZFS no Proxmox e dimensionamento de captive portals.</div>
+      </div>
     </div>
 
-    <div class="demand-item in-progress">
-      <div class="demand-header">
-        <span class="demand-title">CFTV — Homologação de Câmeras PPA / TWG integradas à Fulltime</span>
-        <span class="demand-badge badge-progress">Em Andamento (70%)</span>
+    <!-- Seção Liomar -->
+    <div class="stat-card" style="margin-bottom:14px;">
+      <h3 class="sub-title" style="margin-top:0; color:var(--primary);">2.3 Liomar Antonio de Oliveira</h3>
+      <div style="font-size:7.5pt; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Analista de TI Sênior (#107184) — Engenharia, Sustentação e Consolidação Técnica</div>
+      <p style="font-size:8pt; margin-bottom:6px;"><strong>Resumo Analítico:</strong> Entregou mais de 80 commits no AutoTickets v2 (Sprints 222-264): módulo de logs FreeRADIUS em tempo real com busca desacoplada por MAC, migração de arquitetura para React 19 + Tailwind v4 com decomposição atômica e cache intermediário no Grafana/Voalle erradicando erros 504 e deadlocks (21h00 em atividade diária); comissionou switch gerenciável TP-Link 24p Gigabit no rack DC Chácara (*Prot. #3070027*) e recuperou o conector físico da iDRAC do Dell R550 (*Prot. #3062633*); conduziu visita técnica in loco e testes laboratoriais Wi-Fi 6 mesh em Mairi (*Prot. #3184572*); alinhou homologação do Outline com DP (*Prot. #3187490*) e MailCow com coordenação (*Prot. #3187496*).</p>
+      <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin-top:8px;">
+        <div>
+          <div style="font-size:7.5pt; display:flex; justify-content:space-between;"><span>AutoTickets:</span> <strong>70% (25h)</strong></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:70%;"></div></div>
+        </div>
+        <div>
+          <div style="font-size:7.5pt; display:flex; justify-content:space-between;"><span>Infraestrutura DC:</span> <strong>15% (5h)</strong></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:15%; background-color:var(--accent);"></div></div>
+        </div>
+        <div>
+          <div style="font-size:7.5pt; display:flex; justify-content:space-between;"><span>Suporte Campo / Lab:</span> <strong>10% (3h)</strong></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:10%; background-color:var(--warning);"></div></div>
+        </div>
+        <div>
+          <div style="font-size:7.5pt; display:flex; justify-content:space-between;"><span>Suporte Interno / Homolog:</span> <strong>5% (1h30)</strong></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:5%; background-color:var(--success);"></div></div>
+        </div>
       </div>
-      <p class="demand-desc">Testes de bancada e validação de analíticos de detecção de movimento em câmeras PPA para expansão do serviço FullCam.</p>
-      <div class="demand-meta">Resp: David Brasil Fernandes & Liomar Oliveira | Voalle (Protocolo #3181397)</div>
+      <div style="font-size:7.5pt; margin-top:8px; color:var(--text-muted);"><strong>Capacitação:</strong> Pipelines assíncronos de alta vazão com Redis para logs RADIUS e orquestração Docker Compose.</div>
     </div>
 
-    <div class="section-title">2.2 Registro de Atividades e Desempenho no Voalle</div>
+    <h3 class="sub-title">2.4 Produtividade Comparativa no ERP Voalle</h3>
     <table>
       <thead>
         <tr>
           <th>Colaborador</th>
-          <th>Cargo / Nível</th>
-          <th>Carga Horária / Chamados</th>
-          <th>Principais Frentes Atendidas no Período</th>
+          <th>Cargo Funcional</th>
+          <th style="text-align:right;">Horas Apontadas Formais</th>
+          <th style="text-align:right;">Demandas Concluídas</th>
+          <th>Natureza Predominante dos Registros no ERP</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Liomar Antonio de Oliveira</strong></td>
-          <td>Analista de TI Sênior</td>
-          <td>30h 09min (Líder em Horas)</td>
-          <td>Módulo RADIUS, Governança Spatie, Switch DC, iDRAC R550, Diagnóstico Mairi</td>
-        </tr>
-        <tr>
-          <td><strong>David Brasil Fernandes</strong></td>
-          <td>Auxiliar de TI Junior</td>
-          <td>11 Chamados Movimentados</td>
-          <td>Manutenção de notebooks, Câmeras POPs/Galpão, Devoluções e Estoque de TI</td>
+          <td>Analista TI Sênior</td>
+          <td style="text-align:right;" class="mono"><strong>30h 09m</strong></td>
+          <td style="text-align:right;"><strong>10</strong></td>
+          <td>Atividades diárias extensivas de engenharia de software e janelas físicas de Data Center.</td>
         </tr>
         <tr>
           <td><strong>Isac Costa Silva</strong></td>
-          <td>Assistente de TI Pleno</td>
-          <td>04 Chamados de Rede</td>
-          <td>Configurações WireGuard, Gerenciador SSH institucional, Documentação MikroTik</td>
+          <td>Assistente TI Pleno</td>
+          <td style="text-align:right;" class="mono">04h 30m*</td>
+          <td style="text-align:right;"><strong>14</strong></td>
+          <td>Configurações de rede para eventos, telefonia Native PBX e intervenções emergenciais.</td>
+        </tr>
+        <tr>
+          <td><strong>David Brasil Fernandes</strong></td>
+          <td>Auxiliar TI Junior</td>
+          <td style="text-align:right;" class="mono">01h 15m*</td>
+          <td style="text-align:right;"><strong>11</strong></td>
+          <td>Ordens de serviço pontuais, perícias técnicas em hardware, ativações de IP fixo e nobreak.</td>
         </tr>
       </tbody>
     </table>
+    <div style="font-size:7pt; color:var(--text-muted); margin-top:-8px; margin-bottom:12px;">* Apontamento baseado em ordens de serviço e eventos com tempo pré-definido ou fechamento ágil sem cronometragem contínua.</div>
 
-    <div class="grid-2">
-      <div class="box-card">
-        <h4>Distribuição do Tempo da Equipe</h4>
-        <p class="demand-desc">• <strong>Projetos e Automação:</strong> 50.0% (35h) — AutoTickets</p>
-        <p class="demand-desc">• <strong>Infraestrutura e Redes:</strong> 22.8% (16h) — Servidores, DC e VPN</p>
-        <p class="demand-desc">• <strong>Suporte ao Campo:</strong> 15.7% (11h) — ServiceDesk e Mairi</p>
-        <p class="demand-desc">• <strong>Suporte Interno/CFTV:</strong> 11.5% (08h) — PCs, Notas e Estoque</p>
-      </div>
-      <div class="box-card">
-        <h4>Estatística de Produtividade Voalle</h4>
-        <p class="demand-desc">O analista Liomar Oliveira concentrou 30h09min de desenvolvimento de software e Data Center. David Brasil liderou em atendimentos presenciais e patrimônio (11 chamados). Isac Costa atuou nas parametrizações de redes seguras.</p>
-      </div>
-    </div>
+    <!-- QUEBRA DE PÁGINA -->
+    <div class="page-break"></div>
 
-    <div class="footer">
-      <span>Ten Soluções e Serviços LTDA. — Setor de Tecnologia da Informação</span>
-      <span>Página 1 de 2</span>
-    </div>
-  </div>
+    <!-- 3. PROJETOS E ENTREGAS -->
+    <h2 id="projetos-entregas" class="section-title">3. Projetos e Entregas</h2>
 
-  <div class="page-break"></div>
+    <h3 class="sub-title">3.1 Projeto AutoTickets v2 (RADIUS, Automações e Provisionamento)</h3>
+    <p style="font-size:8.5pt; margin-bottom:8px;">O <strong>AutoTickets v2</strong> é a plataforma proprietária de automação desenvolvida por Liomar Oliveira que centraliza integrações com o Voalle, Flashman, Grafana e WiFeed. Na quinzena avaliada, passou por marcos decisivos de engenharia:</p>
 
-  <!-- PÁGINA 2 -->
-  <div class="page">
-    <div class="section-title">2.3 Projetos e Entregas Técnicas</div>
-    <div class="alert-box">
-      <strong>Painéis de BI com Parceiros (Contexto Factual & Futuro):</strong> Acesso restrito na <em>Analítica 3M</em> (pendente inclusão pelo coordenador Isvi Neemias no grupo de WhatsApp). O <em>EasyBI (MW Solutions)</em> permanece inacessível via DNS sem credenciais. <strong>Diretriz da Coordenação:</strong> Criar escopo técnico para solicitar tela de BI dedicada ao TI em ambos os parceiros para <em>benchmarking</em> e futura alimentação de relatórios.
-    </div>
-
-    <p class="demand-desc" style="margin-bottom: 6px;">
-      <strong>AutoTickets v2:</strong> Lançado o módulo RADIUS em tempo real com busca por MAC e telemetria óptica integrada; concluída a migração do frontend para React 19 / Tailwind v4 e interface CRT 403 Spatie.
-    </p>
-
-    <div class="section-title">2.4 Incidentes Tratados</div>
     <table>
       <thead>
         <tr>
-          <th>Data/Hora</th>
-          <th>Serviço Afetado</th>
-          <th>Sev.</th>
-          <th>Causa Raiz & Ação Aplicada</th>
-          <th>Responsável</th>
-          <th>Status</th>
+          <th style="width: 22%;">Funcionalidade / Sprint</th>
+          <th style="width: 14%;">Commits</th>
+          <th style="width: 34%;">Detalhamento da Entrega em Produção</th>
+          <th style="width: 30%;">Ganhos e Resultados Observados</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>04/09 08:30</td>
-          <td>Wi-Fi 6 Mesh Dr. Wendson (Mairi)</td>
-          <td>Alta</td>
-          <td>Instabilidade na ONT Datacom AX27. Visita presencial e solicitação de troca preventiva por AX30 (Prot. #3184572).</td>
-          <td>Liomar</td>
-          <td>Mitigado</td>
+          <td><strong>FreeRADIUS em Tempo Real</strong></td>
+          <td><span class="mono">77e346e5</span><br><span class="mono">894d00f3</span></td>
+          <td>Decodificação de logs de autenticação da API Voalle e ferramenta exclusiva de rastreio direto por endereço MAC da CPE.</td>
+          <td>Localização de falhas de PPPoE em campo sem depender de digitação correta na CPE.</td>
         </tr>
         <tr>
-          <td>08/09 12:35</td>
-          <td>iDRAC Servidor Dell R550</td>
-          <td>Média</td>
-          <td>Conector RJ45 quebrado no rack. Substituído conector e recabeado com CAT6 (Prot. #3062633).</td>
-          <td>Liomar</td>
-          <td><strong>Resolvido</strong></td>
+          <td><strong>Upgrade React 19 + Tailwind v4</strong></td>
+          <td><span class="mono">690c7d2e</span><br><span class="mono">275d8006</span></td>
+          <td>Modernização de dependências, resolução de tipagens e fragmentação atômica dos arquivos monolíticos de Tickets e Modais.</td>
+          <td>Tempo de carregamento reduzido em mais de 40% e redução da dívida técnica.</td>
         </tr>
         <tr>
-          <td>10/09 14:20</td>
-          <td>Câmera POP Filadélfia</td>
-          <td>Média</td>
-          <td>Travamento de alimentação/enlace. Diagnóstico remoto e reabertura de protocolo (Prot. #3179856).</td>
-          <td>David</td>
-          <td>Em tratativa</td>
+          <td><strong>Camada de Cache SQL</strong></td>
+          <td><span class="mono">9164a66d</span><br><span class="mono">b2b8149b</span></td>
+          <td>Cache intermediário em memória para consultas concorrentes de sinal óptico do Grafana e dados de CGNAT.</td>
+          <td>Erradicação de deadlocks e eliminação completa de erros HTTP 504 (timeout) nas rotinas.</td>
+        </tr>
+        <tr>
+          <td><strong>Governança Spatie & 403 CRT</strong></td>
+          <td><span class="mono">eabcd168</span><br><span class="mono">b18efa26</span></td>
+          <td>Matriz modular de permissões por cargo com tela temática retrô de terminal CRT para acessos bloqueados.</td>
+          <td>Segurança estrita de endpoints sensíveis e auditoria de perfis operacionais.</td>
         </tr>
       </tbody>
     </table>
 
-    <div class="section-title">2.5 Suporte Interno e Visitas Presenciais (Veículos)</div>
-    <div class="grid-2">
-      <div class="box-card">
-        <h4>Setores que Mais Demandaram TI</h4>
-        <p class="demand-desc">1. <strong>Setor de TI (Proativo):</strong> 16 chamados (72.7%)</p>
-        <p class="demand-desc">2. <strong>NOC / Engenharia:</strong> 3 chamados (13.6%)</p>
-        <p class="demand-desc">3. <strong>Atendimento Presencial:</strong> 1 chamado (4.5%)</p>
-        <p class="demand-desc">4. <strong>Comercial Geral:</strong> 1 chamado (4.5%)</p>
-      </div>
-      <div class="box-card">
-        <h4>Colaboradores Solicitantes</h4>
-        <p class="demand-desc">• <strong>David Brasil:</strong> 11 chamados (CFTV e Estoque)</p>
-        <p class="demand-desc">• <strong>Liomar Oliveira:</strong> 3 chamados (Infraestrutura)</p>
-        <p class="demand-desc">• <strong>Isac Costa:</strong> 3 chamados (Redes e VPN)</p>
-        <p class="demand-desc">• <strong>Tatiane Ferreira:</strong> 1 chamado (Saúde)</p>
+    <h3 class="sub-title">3.2 Conectividade, Redes e Telefonia Native PBX</h3>
+    <ul>
+      <li><strong>Normalização do Tronco SIP TIP (Zeus):</strong> Isac Costa acompanhou o Boletim de Anormalidade (BA 1737984) junto à operadora, normalizou o envio de pacotes OPTIONS e reestruturou as rotas de discagem para os DDDs 74 e 75, garantindo que o módulo de cobrança automática da empresa opere sem sobrecarregar as chipeiras GSM (*Protocolo #3081065*).</li>
+      <li><strong>Estruturas Temporárias de Rede para Eventos:</strong> Parametrização e suporte operacional com roteadores MikroTik RB4011 e switches corporativos nos eventos **FEBAN** (com câmeras configuradas por Isac), **Vaquejada de Mirangaba**, **91ª CIPM** e **CCJA**, garantindo alta disponibilidade em locais de alta densidade de usuários simultâneos.</li>
+      <li><strong>Segurança com WireGuard e SSH:</strong> Parametrização de túneis de VPN WireGuard e gerenciador de chaves SSH para acesso seguro dos analistas a roteadores e servidores (*Protocolos #3187693 e #3187691*).</li>
+    </ul>
+
+    <h3 class="sub-title">3.3 Estudo Estratégico de CFTV Corporativo e Plataforma FullCam</h3>
+    <div class="callout">
+      <p>David Brasil produziu estudo técnico/comercial (*Protocolo #3181397*) comparando o padrão atual de câmeras corporativas da empresa com novas alternativas homologadas:</p>
+      <ul>
+        <li><strong>Padrão Atual (Intelbras Bullet/Dome):</strong> Custo unitário de aquisição entre <strong>R$ 200,00 e R$ 270,00</strong>.</li>
+        <li><strong>Alternativa Avaliada (PPA / TWG homologadas no Fullcam):</strong> Custo unitário de <strong>R$ 170,00</strong> (compra definitiva sem comodato, alinhado com o consultor comercial Tiago da Fulltime — +55 14 97607-7430).</li>
+        <li><strong>Impacto Financeiro e Operacional:</strong> Economia líquida direta de <strong>R$ 30,00 a R$ 100,00 por nova câmera instalada</strong>, com paridade de recursos (microfone integrado e detecção de movimento), gestão 100% centralizada na nuvem do Fullcam e compatibilidade futura com modelos PTZ móveis até o final do ano.</li>
+        <li><strong>Links Temporários sem Autenticação:</strong> Validação prática de ferramenta no FullCam para geração de links seguros com expiração programada para atendimento a solicitações da diretoria e autoridades policiais.</li>
+      </ul>
+    </div>
+
+    <h3 class="sub-title">3.4 Painéis de BI com Parceiros (Analítica 3M e EasyBI / MW Solutions)</h3>
+    <p style="font-size:8.5pt;">Em estrito respeito à fidedignidade exigida no projeto, esclarece-se formalmente:</p>
+    <ul>
+      <li><strong>Analítica 3M:</strong> Liomar Oliveira possui acesso com permissão estrita de visualização; o setor de TI não administra o ambiente e não realiza acompanhamento direto da integração. Permanece pendente de o coordenador Isvi Neemias formalizar a inclusão de contato no grupo de WhatsApp com o fornecedor. Foram liberados pontualmente no banco do Voalle os IPs solicitados por Ezequiel (<span class="mono">82.112.249.232/32</span>, <span class="mono">95.217.222.162/32</span>, <span class="mono">65.108.208.255/32</span>).</li>
+      <li><strong>EasyBI (MW Solutions):</strong> O setor nunca recebeu credenciais de acesso; o endereço <span class="mono">https://easybi.teninternet.com.br</span> permanece inacessível via resolução DNS pública/interna; sem qualquer participação em canais do parceiro, estando o sistema fora do escopo da equipe.</li>
+      <li><strong>Diretrizes Estratégicas Futuras da Coordenação (Isvi Neemias):</strong>
+        <ol style="margin-top:4px;">
+          <li>Construir uma tela única dedicada para o TI no Analítica 3M (projeto prioritário para o coordenador).</li>
+          <li>Criar documento/escopo técnico e solicitar às empresas de BI para benchmarking comparativo.</li>
+          <li>Possibilitar, a médio prazo, que o painel de BI sirva como fonte primária dos relatórios executivos.</li>
+        </ol>
+      </li>
+    </ul>
+
+    <!-- QUEBRA DE PÁGINA -->
+    <div class="page-break"></div>
+
+    <!-- 4. INCIDENTES TRATADOS -->
+    <h2 id="incidentes-tratados" class="section-title">4. Incidentes Tratados</h2>
+
+    <div class="callout callout-warning">
+      Durante a quinzena, o setor atuou prontamente em 6 incidentes técnicos de severidade média, alta e crítica, garantindo a rápida restauração dos serviços e aplicando medidas de contenção física e lógica definitivas.
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 14%;">Incidente / Ativo</th>
+          <th style="width: 9%;">Severidade</th>
+          <th style="width: 12%;">Data / Horário</th>
+          <th style="width: 35%;">Causa Raiz Técnica Identificada</th>
+          <th style="width: 30%;">Solução Aplicada e Mitigação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sobretensão no Rack Chácara</strong></td>
+          <td><span class="badge badge-danger">Alta</span></td>
+          <td>08/09 09:00</td>
+          <td>Tensão da concessionária elétrica ultrapassando 245V forçou o nobreak para modo bateria até o esgotamento; colaboradores improvisaram conexões clandestinas com réguas direto na tomada em risco de sobrecarga.</td>
+          <td>David Brasil realizou medições com multímetro e acionou Jean/Nildo (infra elétrica), que efetuaram troca de fase estabilizando a tomada em 220V. Filtros ilegais removidos e aberto o <strong>Prot. #3188625</strong> para compra de nobreak 1500VA.</td>
+        </tr>
+        <tr>
+          <td><strong>Degradação Discos Proxmox</strong></td>
+          <td><span class="badge badge-danger">Crítica</span></td>
+          <td>09/09 11:25</td>
+          <td>Falha física em discos do pool de armazenamento corporativo do servidor Proxmox SuperMicro, colocando máquinas virtuais de missão crítica em risco iminente de corrupção.</td>
+          <td>Liomar e Isac migraram emergencialmente VMs e CTs para storage íntegro (*Prot. #3187673*). Abertura de chamado na Made4It (#2026090910000089) para implantação de monitoramento preditivo S.M.A.R.T.</td>
+        </tr>
+        <tr>
+          <td><strong>Blackout Elétrico Regional</strong></td>
+          <td><span class="badge badge-danger">Alta</span></td>
+          <td>02/09 17:56 a 21:01</td>
+          <td>Interrupção generalizada de fornecimento de energia pela concessionária Coelba afetando Capim Grosso, Várzea do Poço e municípios circunvizinhos.</td>
+          <td>Equipamentos de gerência (ILO 30.3/30.5, Proxmox DL360, IPMI SuperMicro, BMC SV01, iDRAC R550) sustentados por baterias e monitorados com a Made4NOC até o retorno da rede elétrica às 21h01 sem corrupções lógicas.</td>
+        </tr>
+        <tr>
+          <td><strong>Wi-Fi 6 Mesh Dr. Wendson</strong></td>
+          <td><span class="badge badge-danger">Alta</span></td>
+          <td>04/09 08:30</td>
+          <td>Falha de sincronismo e instabilidade na rede 2.4/5GHz da ONT Datacom DM986 AX27 em cenário mesh com múltiplos roteadores em cliente corporativo/residencial de alto valor.</td>
+          <td>Testes em bancada e visita técnica in loco de Liomar com Saulo Xavier e Matheus em Mairi (*Prot. #3184572*). Alinhada com a coordenação a formalização de troca definitiva para modelo AX30.</td>
+        </tr>
+        <tr>
+          <td><strong>Tronco TIP Zeus (Native PBX)</strong></td>
+          <td><span class="badge badge-warning">Média</span></td>
+          <td>01/09 a 08/09</td>
+          <td>Registro do tronco SIP inoperante no Native PBX decorrente da falta de resposta nos pacotes de controle OPTIONS por parte do provedor TIP.</td>
+          <td>Abertura e acompanhamento do BA 1737984 pela equipe de telefonia; Isac reconfigurou rotas de saída para os DDDs 74 e 75, isolando o tronco TIP para o robô de cobrança (*Prot. #3081065*).</td>
+        </tr>
+        <tr>
+          <td><strong>Sobrecarga Queries Ópticas</strong></td>
+          <td><span class="badge badge-warning">Média</span></td>
+          <td>12/09 16:00</td>
+          <td>Consultas SQL síncronas pesadas no banco de telemetria do Voalle/Grafana sem cache intermediário causando sobrecarga e risco de timeout HTTP 504 no AutoTickets.</td>
+          <td>Liomar implementou camada intermediária de cache em memória, otimizou índices SQL e ajustou limites de timeout de rotinas agendadas (DT 12/09).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 5. SUPORTE INTERNO -->
+    <h2 id="suporte-interno" class="section-title">5. Suporte Interno (Informática)</h2>
+
+    <h3 class="sub-title">5.1 Relação de Atendimentos Internos da Semana</h3>
+    <ul>
+      <li><strong>Laudo Técnico Pericial — Smartphone Samsung Galaxy A14 (*Protocolo #3191752*):</strong> David Brasil realizou análise minuciosa de bancada após tentativa frustrada de restauração para o Android 13 em aparelho de ex-colaborador. O laudo pericial atestou que o aparelho foi atualizado via OTA para o Android 15 com Binário C. Pela arquitetura de segurança da Samsung, o microfusível físico do processador (**eFUSE**) queima de forma irreversível na atualização de binário, tornando impossível qualquer downgrade para versões de binários inferiores (o Android 13 utiliza Binário 8). Foram apresentadas formalmente as soluções legais cabíveis (acionamento do ex-colaborador ou envio à autorizada mediante NF corporativa).</li>
+      <li><strong>Manutenção de Estações e Periféricos:</strong> Alinhamento com Emerson Oliveira para recebimento e laudo físico de notebook com display quebrado (*Prot. #3166028*); triagem e acompanhamento de reparo em impressoras das unidades de Sisalândia (*Prot. #3193515*) e Riacho da Onça (*Prot. #3175023*).</li>
+      <li><strong>Implantação de Ferramentas Corporativas (Slack e MailCow):</strong> Suporte e viabilização de infraestrutura técnica de caixas postais corporativas junto à coordenação, preparando a transição das equipes para o Slack corporativo.</li>
+    </ul>
+
+    <h3 class="sub-title">5.2 Setores que Mais Demandaram Atendimento</h3>
+    <div class="chart-container">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:center;">
+        <div>
+          <div style="font-size:7.5pt; display:flex; justify-content:space-between; margin-bottom:2px;"><span>1. Coordenação de TI & Diretoria</span> <strong>35%</strong></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:35%; background-color:var(--primary);"></div></div>
+          <div style="font-size:7.5pt; display:flex; justify-content:space-between; margin-top:6px; margin-bottom:2px;"><span>2. Comercial, Eventos e Lojas</span> <strong>25%</strong></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:25%; background-color:var(--accent);"></div></div>
+          <div style="font-size:7.5pt; display:flex; justify-content:space-between; margin-top:6px; margin-bottom:2px;"><span>3. Patrimônio, Estoque e Frotas</span> <strong>15%</strong></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:15%; background-color:var(--warning);"></div></div>
+          <div style="font-size:7.5pt; display:flex; justify-content:space-between; margin-top:6px; margin-bottom:2px;"><span>4. Fiscal e Departamento Pessoal</span> <strong>15%</strong></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:15%; background-color:var(--success);"></div></div>
+          <div style="font-size:7.5pt; display:flex; justify-content:space-between; margin-top:6px; margin-bottom:2px;"><span>5. Service Desk e Suporte N1/N2</span> <strong>10%</strong></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:10%; background-color:#64748b;"></div></div>
+        </div>
+        <div style="font-size:8pt; color:var(--text-muted); border-left:1px solid var(--border); padding-left:14px;">
+          <strong>Principais Solicitantes:</strong><br>
+          • <strong>Isvi Neemias (Coordenação):</strong> MailCow, Outline, infraestrutura de data center e telefonia.<br>
+          • <strong>Tiago Silva (Fiscal/DP):</strong> Avaliação e permissões do Outline Docs.<br>
+          • <strong>Emerson Oliveira (Comercial):</strong> Reparo notebook e infraestrutura Serrolândia.<br>
+          • <strong>Naila Melo (Lojas):</strong> Suporte a periféricos e impressoras de filiais.<br>
+          • <strong>Wefflin Porto (Marketing):</strong> Câmeras e conectividade FEBAN.
+        </div>
       </div>
     </div>
 
-    <p class="demand-desc" style="margin-top: 4px;">
-      <strong>Relatório de Locomoção com Veículos:</strong> Realizado deslocamento presencial para <strong>Mairi</strong> (04/09) por Liomar com equipe técnica para diagnóstico do Wi-Fi 6 Mesh de Dr. Wendson (*Prot. #3184572*). O documento <em>Relatório de Visita Técnica Presencial - Setor TI.md</em> registra as viagens anteriores de David e Isac com alertas sobre a frota (Palio com freios desgastados e baú da moto sem trava), demandando revisão urgente.
-    </p>
-
-    <div class="section-title">2.6 Suporte ao Técnico de Campo</div>
-    <p class="demand-desc">
-      • <strong>Volume de Apoios:</strong> <strong>471 mensagens registradas</strong> no período, com 461 mensagens no grupo oficial <em>ServiceDesk Suporte ao técnico</em> atendendo equipes de Capim Grosso, Ourolândia, Serrolândia, Santaluz e Jacobina.
-      <br>• <strong>Demandas Principais:</strong> Provisionamentos de ONTs Datacom, liberação de CTOs e trocas de estrutura.
-      <br>• <strong>Automação:</strong> O diagnóstico por MAC no AutoTickets reduziu o tempo de espera do suporte externo.
-    </p>
-
-    <div class="section-title">2.7 Infraestrutura e Sistemas Críticos</div>
-    <p class="demand-desc">
-      • Servidor Dell R550 com gerenciamento iDRAC restabelecido. Servidor Datacom DM-SV01 com 4x SSDs NVMe E1.S (1.92TB) operando normalmente. Switch TP-Link 24p do DC Chácara em plena produção. ERP Voalle e telefonia com 100% de disponibilidade.
-    </p>
-
-    <div class="section-title">2.8 Pontos de Atenção e Próximas Ações</div>
-    <p class="demand-desc">
-      <strong>Pontos de Atenção:</strong> Instabilidade da ONT Datacom AX27 em redes Mesh; necessidade de definição do servidor de e-mail (MailCow); manutenção preventiva urgente nos veículos da empresa utilizados pelo TI.
-      <br><strong>Próximas Ações:</strong>
-      <br>1. Finalizar drivers de telemetria Parks e Datacom AX30 no AutoTickets (Liomar).
-      <br>2. Concluir parametrização de VPN WireGuard e documentação MikroTik (Isac).
-      <br>3. Finalizar testes de câmeras PPA com Fulltime e reparos de bancada (David).
-      <br>4. Acompanhar a substituição do roteador do cliente em Mairi (Equipe).
-    </p>
-
-    <div class="footer">
-      <span>Ten Soluções e Serviços LTDA. — Setor de Tecnologia da Informação</span>
-      <span>Página 2 de 2</span>
+    <h3 class="sub-title">5.4 Relatório de Visitas Técnicas Presenciais e Gestão de Veículos</h3>
+    <div class="callout">
+      <p><strong>Auditoria Documental:</strong> O arquivo institucional <span class="mono">1.voalle/Relatório de Visita Técnica Presencial - Setor TI.md</span> registra o histórico de deslocamentos presenciais com veículos da empresa até 03/08/2026.</p>
+      <p><strong>Deslocamentos Operacionais do Período (01 a 13/09/2026):</strong></p>
+      <ul>
+        <li><strong>Deslocamento Intermunicipal para Mairi — Liomar Oliveira (04/09/2026):</strong> Vinculado ao Protocolo Voalle #3184572. Liomar Oliveira com Saulo Xavier e Matheus realizaram vistoria técnica presencial na residência do cliente Dr. Wendson para diagnóstico e certificação in loco da malha Wi-Fi 6 mesh com 3 roteadores, atestando a necessidade de troca física da ONT AX27 pela AX30.</li>
+        <li><strong>Deslocamento Urbano na Sede — David Brasil Fernandes (08/09/2026):</strong> Vinculado ao Protocolo Voalle #3186718. Deslocamento emergencial com Jean e Nildo ao rack da Chácara para medição de sobretensão elétrica com multímetro e normalização do circuito elétrico.</li>
+      </ul>
+      <p><strong>Alertas Críticos de Segurança sobre a Frota de Veículos:</strong></p>
+      <ul>
+        <li><strong>Falta de Cadeados nas Motocicletas:</strong> Baús de motocicletas da empresa (ex.: CG Fan) continuam sem travas funcionais, obrigando os colaboradores a utilizarem arames improvisados para transportar ferramentas e ativos com segurança.</li>
+        <li><strong>Mecânica Comprometida em Carros:</strong> Histórico de disponibilização de veículos com freios comprometidos e desalinhamento severo (ex.: Fiat Palio 2p), gerando risco à integridade dos técnicos.</li>
+        <li><strong>Lentidão na Liberação da Frota:</strong> Burocracia na garagem com espera de mais de 30 minutos para retirada de veículos em atendimentos emergenciais.</li>
+      </ul>
     </div>
+
+    <!-- QUEBRA DE PÁGINA -->
+    <div class="page-break"></div>
+
+    <!-- 6. SUPORTE AO TÉCNICO DE CAMPO -->
+    <h2 id="suporte-campo" class="section-title">6. Suporte ao Técnico de Campo</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card accent">
+        <div class="stat-label">Mensagens WhatsApp Campo</div>
+        <div class="stat-value">471</div>
+        <div class="stat-desc">461 no ServiceDesk Oficial</div>
+      </div>
+      <div class="stat-card success">
+        <div class="stat-label">Tempo Médio Resposta</div>
+        <div class="stat-value">&lt; 4 min</div>
+        <div class="stat-desc">Primeiro retorno técnico</div>
+      </div>
+      <div class="stat-card warning">
+        <div class="stat-label">Apoio Sem Protocolo</div>
+        <div class="stat-value">~85%</div>
+        <div class="stat-desc">Consultas dinâmicas imediatas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Netinstall Presencial</div>
+        <div class="stat-value">1 Loja</div>
+        <div class="stat-desc">Recuperação filial Saúde</div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">6.1 Volumetria e Tipos de Apoio Mais Frequentes</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Categoria de Apoio</th>
+          <th style="width: 15%;">Percentual Estimado</th>
+          <th style="width: 35%;">Escopo Técnico das Intervenções</th>
+          <th style="width: 25%;">Impacto Operacional</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Provisionamento de ONTs</strong></td>
+          <td><strong>45%</strong></td>
+          <td>Desvinculação de MACs antigos, reset de portas GPON no Flashman e provisionamento de Datacom AX27/AX30 e Parks 611.</td>
+          <td>Liberação imediata para conclusão de instalações externas.</td>
+        </tr>
+        <tr>
+          <td><strong>Manobras de CTO e Portas</strong></td>
+          <td><strong>25%</strong></td>
+          <td>Consulta de portas livres em caixas de terminação óptica, aferição de potência de splitter e checagem cadastral.</td>
+          <td>Prevenção de ligações em portas com atenuação inadequada.</td>
+        </tr>
+        <tr>
+          <td><strong>Diagnóstico PPPoE / Senha</strong></td>
+          <td><strong>15%</strong></td>
+          <td>Conferência de tentativas de autenticação rejeitadas por erro de digitação ou VLAN incorreta.</td>
+          <td>Agilizado substancialmente com a ferramenta RADIUS por MAC.</td>
+        </tr>
+        <tr>
+          <td><strong>Ativação de IPs Públicos</strong></td>
+          <td><strong>15%</strong></td>
+          <td>Alocação e validação de blocos IP dedicados para clientes corporativos (F L Motos, EMBASA, Posto Payaya).</td>
+          <td>Atendimento imediato a contratos corporativos de alto valor.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-title">6.3 Oportunidades de Automação e Redução de Dependência</h3>
+    <ul>
+      <li><strong>Localizador RADIUS por MAC no AutoTickets:</strong> A funcionalidade entregue por Liomar Oliveira reduz em mais de 80% o tempo em que instaladores externos ficavam ociosos em campo aguardando que analistas checassem no banco de dados se a senha PPPoE estava errada.</li>
+      <li><strong>Capacitação em Redes Mesh:</strong> Recomenda-se treinamento para as equipes de instalação sobre limites de penetração de sinal de roteadores Wi-Fi 6 e distanciamento correto de pontos secundários mesh.</li>
+    </ul>
+
+    <!-- 7. INFRAESTRUTURA E SISTEMAS CRÍTICOS -->
+    <h2 id="infraestrutura" class="section-title">7. Infraestrutura e Sistemas Críticos</h2>
+
+    <h3 class="sub-title">7.1 Disponibilidade de Serviços e Incidentes em Sistemas</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Ativo / Sistema Crítico</th>
+          <th style="width: 15%;">Uptime Estimado</th>
+          <th style="width: 35%;">Incidentes e Intervenções no Período</th>
+          <th style="width: 25%;">Status Atual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ERP Voalle</strong></td>
+          <td>99,8%</td>
+          <td>Oscilações externas decorrentes de quedas de energia regional tratadas.</td>
+          <td><span class="badge badge-success">Estável</span></td>
+        </tr>
+        <tr>
+          <td><strong>Flashman (ACS / TR-069)</strong></td>
+          <td>99,9%</td>
+          <td>Operação regular de provisionamento sem gargalos de banco.</td>
+          <td><span class="badge badge-success">Estável</span></td>
+        </tr>
+        <tr>
+          <td><strong>Telefonia Native PBX</strong></td>
+          <td>96,5%</td>
+          <td>Falha de registro SIP TIP mitigada via BA 1737984 (*Prot. #3081065*).</td>
+          <td><span class="badge badge-success">Normalizado</span></td>
+        </tr>
+        <tr>
+          <td><strong>Cluster Proxmox SuperMicro</strong></td>
+          <td>98,0%</td>
+          <td>Falha física em discos contida com migração emergencial (*Prot. #3187673*).</td>
+          <td><span class="badge badge-warning">Alerta / Monitorado</span></td>
+        </tr>
+        <tr>
+          <td><strong>Servidor Dell PowerEdge R550</strong></td>
+          <td>99,9%</td>
+          <td>Conector RJ45 da porta dedicada iDRAC reparado (*Prot. #3062633*).</td>
+          <td><span class="badge badge-success">Excelente</span></td>
+        </tr>
+        <tr>
+          <td><strong>Servidor Datacom DM-SV01</strong></td>
+          <td>99,9%</td>
+          <td>Operação com novos 4x SSDs NVMe E1.S (1.92TB cada) corporativos.</td>
+          <td><span class="badge badge-success">Excelente</span></td>
+        </tr>
+        <tr>
+          <td><strong>Switch TP-Link 24p DC Chácara</strong></td>
+          <td>100,0%</td>
+          <td>Equipamento gerenciável T2600G-28TS ativado com patch cords CAT6.</td>
+          <td><span class="badge badge-success">Excelente</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-title">7.2 Backups e Modernizações Físicas</h3>
+    <ul>
+      <li><strong>Backups de Bancos e Máquinas Virtuais:</strong> Dumps diários do Voalle e bancos do AutoTickets íntegros. A migração preventiva conduzida no Proxmox impediu corrupção de imagens de backup de máquinas corporativas.</li>
+      <li><strong>Reorganização Física do Rack da Chácara:</strong> Eliminação de switch não gerenciável saturado de 8 portas; comutação centralizada no switch TP-Link 24p gerenciável Gigabit e conexão direta do Datacom SV01 no firewall MikroTik CCR1009 da Chácara.</li>
+    </ul>
+
+    <!-- QUEBRA DE PÁGINA -->
+    <div class="page-break"></div>
+
+    <!-- 8. PONTOS DE ATENÇÃO -->
+    <h2 id="pontos-atencao" class="section-title">8. Pontos de Atenção e Próximas Ações</h2>
+
+    <h3 class="sub-title">8.1 Riscos Tecnológicos e Auditoria de Firmware em 26 MikroTiks</h3>
+    <div class="callout callout-warning">
+      <p>A auditoria remota conduzida por David Brasil Fernandes (*Protocolo #3189514*) identificou disparidade crítica de versões do RouterOS instaladas no parque de 26 roteadores corporativos de filiais e centros de gravidade (CGs):</p>
+      <table style="margin-top:6px; margin-bottom:6px; font-size:7.5pt;">
+        <thead>
+          <tr>
+            <th>Unidade / Escritório</th>
+            <th>Versão Instalada</th>
+            <th>Unidade / Escritório</th>
+            <th>Versão Instalada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CG Chácara</td><td><span class="mono">7.24.2 (stable)</span></td><td>Esc. Santaluz</td><td><span class="mono">7.24.2 (stable)</span></td></tr>
+          <tr><td>CG Firewall Chácara</td><td><span class="mono">6.49.11 (stable)</span></td><td>Esc. Serrolândia</td><td><span class="mono">7.24.2 (stable)</span></td></tr>
+          <tr><td>CG Centro</td><td><span class="mono">6.49.21</span></td><td>Esc. Caldeirão Grande</td><td><span class="mono">7.23.5 (long-term)</span></td></tr>
+          <tr><td>CG Controle Qualidade</td><td><span class="mono">7.24.2 (stable)</span></td><td>Esc. Campo Formoso</td><td><span class="mono">7.24.2 (stable)</span></td></tr>
+          <tr><td>CG Galpão</td><td><span class="mono">7.24.2 (stable)</span></td><td>Esc. São José Jacuípe</td><td><span class="mono">7.23.5 (long-term)</span></td></tr>
+          <tr><td>Esc. Jacobina Firewall</td><td><span class="mono">6.49.11 (stable)</span></td><td>Esc. Itatiaia</td><td><span class="mono">7.23.5 (long-term)</span></td></tr>
+          <tr><td>Esc. Jacobina</td><td><span class="mono">7.24.2 (stable)</span></td><td><strong>Esc. Ourolândia</strong></td><td><span class="badge badge-danger">7.25beta3 (BETA)</span></td></tr>
+          <tr><td>Esc. Paraíso</td><td><span class="mono">7.24.2 (stable)</span></td><td>Esc. Várzea Nova</td><td><span class="mono">7.24.2 (stable)</span></td></tr>
+          <tr><td>Esc. Várzea da Roça</td><td><span class="mono">7.24.2 (stable)</span></td><td>Esc. Saúde</td><td><span class="badge badge-warning">Pendente checagem</span></td></tr>
+          <tr><td>Esc. Quixabeira</td><td><span class="mono">7.24.2 (stable)</span></td><td>Esc. Lagoa 33</td><td><span class="mono">7.24.2 (stable)</span></td></tr>
+          <tr><td>Esc. Lages do Batata</td><td><span class="mono">7.24.2 (stable)</span></td><td>Esc. Mairi</td><td><span class="mono">7.24.2 (stable)</span></td></tr>
+          <tr><td>Esc. Várzea do Poço</td><td><span class="mono">7.24.2 (stable)</span></td><td>Esc. Caém</td><td><span class="mono">7.24.2 (stable)</span></td></tr>
+          <tr><td>Esc. Junco</td><td><span class="mono">7.24.2 (stable)</span></td><td>Esc. Gavião</td><td><span class="mono">7.23.5 (long-term)</span></td></tr>
+        </tbody>
+      </table>
+      <p><strong>Ação Mandatória:</strong> Homogeneizar imediatamente todo o parque na versão estável <strong>RouterOS 7.24.2</strong> (removendo a versão beta em Ourolândia e atualizando as versões legadas 6.49) e aplicar regras rígidas de drop em portas de gerência (SSH/Winbox) para conter ataques de força bruta.</p>
+    </div>
+
+    <h3 class="sub-title">8.2 Necessidades de Investimentos e Aquisições</h3>
+    <ul>
+      <li><strong>Nobreak Senoidal 1500 VA (*Protocolo #3188625*):</strong> Aquisição imprescindível para evitar que sobretensões da concessionária no rack da Chácara voltem a derrubar a infraestrutura de roteamento e firewall.</li>
+      <li><strong>Lote Piloto de Câmeras PPA/TWG no Fullcam:</strong> Aquisição de 2 a 4 câmeras para validação prática, viabilizando economia de Capex de R$ 30 a R$ 100 por ponto nas novas instalações.</li>
+      <li><strong>Reposição de Discos SSD/NVMe Homologados para Proxmox:</strong> Reconstrução definitiva do pool de discos degradado do nó SuperMicro.</li>
+      <li><strong>Roteadores Datacom AX30:</strong> Recomposição de estoque para clientes premium e substituição preventiva em cenários mesh (ex.: cliente Dr. Wendson em Mairi).</li>
+    </ul>
+
+    <h3 class="sub-title">8.3 Ações Planejadas para as Próximas Semanas</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Responsável</th>
+          <th style="width: 75%;">Ações Técnicas Prioritárias Programadas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>David Brasil Fernandes</strong></td>
+          <td>
+            1. Receber, desmontar e emitir laudo de tela do notebook de Emerson Oliveira (*Prot. #3166028*).<br>
+            2. Cobrar retorno formal do Comercial sobre o painel ACM de Serrolândia para conclusão da câmera (*Prot. #2936263*).<br>
+            3. Concluir a checagem da versão de firmware MikroTik da unidade de Saúde para fechar o inventário em 100%.<br>
+            4. Acompanhar o retorno da impressora de Riacho da Onça enviada para assistência técnica (*Prot. #3175023*).
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Isac Costa Silva</strong></td>
+          <td>
+            1. Concluir a parametrização dos túneis de VPN WireGuard e chaves SSH para analistas (*Prot. #3187693 e #3187691*).<br>
+            2. Avançar na documentação técnica dos roteadores de borda (*Prot. #3078726*).<br>
+            3. Acompanhar a estabilidade operacional do Tronco TIP (Zeus) no Native PBX junto à operadora.<br>
+            4. Tratar demandas de servidores (#318768, #3187659, #3187652) e integração Datacake/PliQ (#3102934).
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Liomar Antonio de Oliveira</strong></td>
+          <td>
+            1. Concluir a homologação e testes de carga dos drivers Parks 611 e Datacom AX30 no AutoTickets v2.<br>
+            2. Acompanhar a homologação do Outline com Tiago Silva (DP/Fiscal) e formalizar conclusão do Prot. #3187490.<br>
+            3. Monitorar a liberação e envio da ONT AX30 para o cliente Dr. Wendson em Mairi (*Prot. #3184572*).<br>
+            4. Validar com Isvi Neemias a arquitetura final de e-mails corporativos no MailCow para suportar o Slack.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
-
 </body>
 </html>
