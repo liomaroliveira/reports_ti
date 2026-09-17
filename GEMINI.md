@@ -114,9 +114,10 @@ reports_ti/
 │   └── exports/                               # Extratos semanais gerados em Markdown/JSON
 └── 4.weekly_reports/                          # Relatórios semanais consolidados do setor de TI
     ├── README.md                              # Padrão de saída consolidado
-    ├── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].md
-    ├── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].html
-    └── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].pdf
+    └── [YYYY-MM-DD]_[YYYY-MM-DD]/             # Subdiretório dedicado por período avaliado
+        ├── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].md
+        ├── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].html
+        └── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].pdf
 ```
 
 ---
@@ -131,7 +132,7 @@ Quando for gerar o relatório individual ou consolidado de um período (`YYYY-MM
    - **Voalle (`1.voalle/`):** Atendimentos, OS, relatos avulsos e horas apontadas.
    - **WhatsApp (`3.whatsapp_histories/`):** Executar `query_history.py --start YYYY-MM-DD --end YYYY-MM-DD` para extrair mensagens de suporte ao campo, suporte interno, coordenação e Made4NOC, cruzando também com `manual_exports/` quando aplicável.
 2. **Geração do Relatório Individual:** Compilar e salvar o relatório individual nas extensões `.md`, `.html` e `.pdf` em `0.individual_report/[nome_colaborador]/[data_inicio]-[data_fim].[ext]`.
-3. **Consolidação do Setor:** Integrar as entregas de Liomar, Isac e David no relatório semanal consolidado em `4.weekly_reports/`.
+3. **Consolidação do Setor:** Integrar as entregas de Liomar, Isac e David no relatório semanal consolidado, criando e salvando no subdiretório dedicado em `4.weekly_reports/[data_inicio]_[data_fim]/report_ti-[data_inicio]-[data_fim].[ext]`.
 
 ---
 
