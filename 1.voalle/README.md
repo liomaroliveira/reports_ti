@@ -6,8 +6,8 @@ Este diretório contém relatórios de tarefas, chamados, solicitações interna
 
 ## 📄 Padrão de Nomenclatura dos Arquivos de Entrada
 
-- `[Nome]-[DataInicio]-[DataFim].pdf` (ex.: `Liomar-2026_09_01-2026_09_15.pdf`)
-- `[Nome]-[DataInicio]-[DataFim].csv`
+- `[Nome]_[Data-Inicio]-[Data-Fim].pdf` (ex.: `Liomar_2026-09-01_2026-09-15.pdf`)
+- `[Nome]-[Data-Inicio]-[Data-Fim].csv`
 
 ---
 

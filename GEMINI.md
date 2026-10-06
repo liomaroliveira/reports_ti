@@ -130,8 +130,8 @@ Quando for gerar o relatório individual ou consolidado de um período (`YYYY-MM
    - **AutoTickets Commits (`/home/liomarti/dev/autotickets-v2`):** Histórico de commits no git no período da semana (sprints entregues, refatorações, novas features, correções).
    - **AutoTickets CSVs (`2.autotickets/`):** Tarefas, chamados ativos e concluídos tratados e consolidados.
    - **Voalle (`1.voalle/`):** Atendimentos, OS, relatos avulsos e horas apontadas.
-   - **WhatsApp (`3.whatsapp_histories/`):** Executar `query_history.py --start YYYY-MM-DD --end YYYY-MM-DD` para extrair mensagens de suporte ao campo, suporte interno, coordenação e Made4NOC, cruzando também com `manual_exports/` quando aplicável.
-2. **Geração do Relatório Individual:** Compilar e salvar o relatório individual nas extensões `.md`, `.html` e `.pdf` em `0.individual_report/[nome_colaborador]/[data_inicio]-[data_fim].[ext]`.
+   - **WhatsApp (`3.whatsapp_histories/`):** Executar (apenas se os arquivos forem criados/modificados dentro do período solicitado) `query_history.py --start YYYY-MM-DD --end YYYY-MM-DD` para extrair mensagens de suporte ao campo, suporte interno, coordenação e Made4NOC, cruzando também com `manual_exports/` quando aplicável. Caso não hajam modificações, o diretório deve ser ignorado na análise.
+2. **Geração do Relatório Individual:** Compilar e salvar o relatório individual nas extensões `.md`, `.html` e `.pdf` em `0.individual_report/[nome_colaborador]/[data-inicio]_[data-fim].[ext]`.
 3. **Consolidação do Setor:** Integrar as entregas de Liomar, Isac e David no relatório semanal consolidado, criando e salvando no subdiretório dedicado em `4.weekly_reports/[data_inicio]_[data_fim]/report_ti-[data_inicio]-[data_fim].[ext]`.
 
 ---
@@ -202,7 +202,7 @@ Cada relatório (individual ou consolidado) deve respeitar a estrutura oficial:
 ## ⏰ Prazos e Convenção de Nomes
 
 - **Período de Referência:** Segunda-feira a Domingo.
-- **Padrão de Datas em Arquivos:** `YYYY-MM-DD-YYYY-MM-DD` (ex.: `2026-09-07-2026-09-13`).
+- **Padrão de Datas em Arquivos:** `YYYY-MM-DD_YYYY-MM-DD` (ex.: `2026-09-07_2026-09-13`).
 - **Prazo Limite de Entrega:** Toda segunda-feira até as 14h.
 
 ---

@@ -5,6 +5,7 @@ Este diretório armazena os relatórios de atividades individuais de cada membro
 ---
 
 ## 👥 Estrutura de Subdiretórios por Colaborador
+
 ```text
 0.individual_report/
 ├── liomar/    # Liomar Antonio de Oliveira (Analista de TI Sênior)
@@ -15,15 +16,19 @@ Este diretório armazena os relatórios de atividades individuais de cada membro
 ---
 
 ## 📄 Padrão de Nomenclatura dos Arquivos
+
 Os arquivos individuais devem seguir o padrão:
-- `[data_inicio]-[data_fim].md` (ex.: `2026-09-07-2026-09-13.md`)
-- `[data_inicio]-[data_fim].html` (ex.: `2026-09-07-2026-09-13.html`)
-- `[data_inicio]-[data_fim].pdf` (ex.: `2026-09-07-2026-09-13.pdf`)
+
+- `[data_inicio]_[data_fim].md` (ex.: `2026-09-07_2026-09-13.md`)
+- `[data_inicio]_[data_fim].html` (ex.: `2026-09-07_2026-09-13.html`)
+- `[data_inicio]_[data_fim].pdf` (ex.: `2026-09-07_2026-09-13.pdf`)
 
 ---
 
 ## 🔍 Regra de Fallback e Mineração Ativa
+
 Quando um colaborador **NÃO** tiver entregue seu relatório individual consolidado:
+
 1. A IA deve realizar a varredura nas seguintes fontes de dados:
    - **`1.voalle/`**: Tarefas, chamados, O.S. e apontamentos de horas.
    - **`2.autotickets/`**: Commits no repositório `/home/liomarti/dev/autotickets-v2` e exportações.
