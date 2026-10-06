@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório Semanal Individual de Atividades — Liomar Antonio de Oliveira</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+    @page {
+      size: A4;
+      margin: 10mm 12mm 10mm 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.4;
+      font-size: 8.6pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 100%;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    .header-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #0284c7 100%);
+      color: #ffffff;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 2px 10px;
+      border-radius: 14px;
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      color: #e0f2fe;
+    }
+
+    .header-banner h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15pt;
+      font-weight: 800;
+      margin-bottom: 3px;
+      letter-spacing: -0.4px;
+      color: #ffffff;
+    }
+
+    .header-banner p.subtitle {
+      font-size: 8.5pt;
+      color: #cbd5e1;
+      font-weight: 400;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-item .label {
+      font-size: 6.8pt;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.4px;
+      margin-bottom: 2px;
+    }
+
+    .meta-item .val {
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .meta-item .val-sub {
+      font-size: 7pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .context-box {
+      background: #f0fdf4;
+      border-left: 4px solid #16a34a;
+      border: 1px solid #bbf7d0;
+      border-left-width: 4px;
+      border-radius: 6px;
+      padding: 9px 12px;
+      margin-bottom: 12px;
+      font-size: 7.8pt;
+      color: #166534;
+      line-height: 1.45;
+    }
+
+    .context-box strong {
+      color: #14532d;
+    }
+
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: #0f172a;
+      border-left: 3.5px solid #0284c7;
+      padding-left: 9px;
+      margin-top: 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-title .badge-count {
+      font-size: 7pt;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+
+    .kpi-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #0284c7;
+    }
+
+    .kpi-card.emerald::before { background: #10b981; }
+    .kpi-card.purple::before { background: #8b5cf6; }
+    .kpi-card.amber::before { background: #f59e0b; }
+
+    .kpi-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    .kpi-label {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 3px;
+    }
+
+    .kpi-desc {
+      font-size: 6.6pt;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .table-container {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.8pt;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 7px 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-size: 6.8pt;
+      border: none;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 6.8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .badge-concluido { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+    .badge-andamento { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+    .badge-alta { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+    .badge-media { background: #fef3c7; color: #d97706; border: 1px solid #fde68a; }
+    .badge-info { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+
+    .progress-bar-bg {
+      background: #e2e8f0;
+      border-radius: 10px;
+      height: 7px;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 3px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #0284c7, #38bdf8);
+    }
+
+    .narrative-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 8px;
+    }
+
+    .narrative-card h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .narrative-card p {
+      font-size: 7.7pt;
+      color: #475569;
+      line-height: 1.45;
+    }
+
+    .narrative-card ul {
+      margin-left: 16px;
+      margin-top: 4px;
+      font-size: 7.6pt;
+      color: #475569;
+    }
+
+    .narrative-card li {
+      margin-bottom: 2px;
+    }
+
+    .time-dist-container {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+    }
+
+    .time-dist-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 7.6pt;
+    }
+
+    .time-dist-label {
+      width: 230px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .time-dist-bar-wrap {
+      flex: 1;
+      height: 7px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      margin: 0 12px;
+      overflow: hidden;
+    }
+
+    .time-dist-bar {
+      height: 100%;
+      background: #0284c7;
+      border-radius: 4px;
+    }
+
+    .time-dist-val {
+      width: 40px;
+      text-align: right;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 6px;
+      margin-top: 12px;
+      font-size: 6.8pt;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PÁGINA 1 -->
+  <div class="page">
+    <div class="header-banner">
+      <div class="header-badge">Relatório Individual de Atividades • Semana 40 / 2026</div>
+      <h1>Liomar Antonio de Oliveira</h1>
+      <p class="subtitle">Analista de TI Sênior (#107184) — Engenharia de Software, Arquitetura de Sistemas & Gestão Técnica</p>
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="label">Período de Análise</span>
+        <span class="val">28/09 a 04/10/2026</span>
+        <span class="val-sub">Semana 40</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Coordenador de TI</span>
+        <span class="val">Isvi Neemias</span>
+        <span class="val-sub">Tecnologia TEN</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Empresa</span>
+        <span class="val">Ten Soluções e Serviços</span>
+        <span class="val-sub">TEN Internet</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Data de Emissão</span>
+        <span class="val">06/10/2026</span>
+        <span class="val-sub">Consolidação Oficial</span>
+      </div>
+    </div>
+
+    <div class="context-box">
+      <strong>Contexto Operacional do Período:</strong> Retorno oficial do período de férias no dia <strong>01/10/2026</strong>. Atuação com alta densidade técnica focada em <strong>Engenharia de Software e Arquitetura no AutoTickets v2</strong> (30 sprints concluídas e 83 commits no período), reestruturação e recuperação emergencial da estação de desenvolvimento Linux CachyOS, abertura de chamado crítico de sustentação no Voalle ERP e planejamento da integração com Slack.
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-value">83</div>
+        <div class="kpi-label">Commits Git</div>
+        <div class="kpi-desc">Repositório autotickets-v2</div>
+      </div>
+      <div class="kpi-card emerald">
+        <div class="kpi-value">30</div>
+        <div class="kpi-label">Sprints Concluídas</div>
+        <div class="kpi-desc">Sprints 269 e 291 a 320</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">604</div>
+        <div class="kpi-label">Arquivos Impactados</div>
+        <div class="kpi-desc">+143k / -9k linhas de código</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-value">05h 16m</div>
+        <div class="kpi-label">Horas no Voalle</div>
+        <div class="kpi-desc">Demandas oficiais de retorno</div>
+      </div>
+    </div>
+
+    <h3 class="section-title">
+      1. Gestão de Demandas — Concluídas na Semana
+      <span class="badge-count">Principais Entregas</span>
+    </h3>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 18%;">Protocolo / Ref.</th>
+            <th style="width: 52%;">Descrição Técnica da Intervenção</th>
+            <th style="width: 30%;">Resultado Obtido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AutoTickets v2</strong><br><span style="font-size: 6.8pt; color: #64748b;">Sprints 291 a 320</span></td>
+            <td>Desenvolvimento do Motor de Relatórios Executivos em 7 tópicos (PDF A4, HTML in-place e Markdown); sincronização Local-First com duplo cursor Voalle; orquestrador multi-provedor IA com telemetria de custos e servidor MCP oficial.</td>
+            <td><span class="badge badge-concluido">Concluído</span><br>Geração automatizada de relatórios em segundos e redução de carga no banco do Voalle.</td>
+          </tr>
+          <tr>
+            <td><strong>Protocolo #3209592</strong><br><span style="font-size: 6.8pt; color: #64748b;">Estação de TI (02h 49m)</span></td>
+            <td>Diagnóstico e reparo no Linux CachyOS após falha de atualização gráfica (ausência de <code>libLLVM.so.23.1</code>). Reinstalação de stack Mesa/LLVM e migração de configs KDL do Noctalia Shell para a versão 5.</td>
+            <td><span class="badge badge-concluido">Concluído</span><br>Estação de trabalho restabelecida com integridade sem perda de dados ou formatação.</td>
+          </tr>
+          <tr>
+            <td><strong>Protocolo #3210518</strong><br><span style="font-size: 6.8pt; color: #64748b;">Auditoria de Férias</span></td>
+            <td>Levantamento, conferência e auditoria de todas as atividades realizadas por Isac Costa e David Brasil entre 18/09 e 01/10/2026 para alinhamento e transição de demandas do setor.</td>
+            <td><span class="badge badge-concluido">Concluído</span><br>Alinhamento técnico restabelecido e prioridades da semana definidas.</td>
+          </tr>
+          <tr>
+            <td><strong>Saneamento Voalle</strong><br><span style="font-size: 6.8pt; color: #64748b;">Tarefas Residuais</span></td>
+            <td>Identificação e encerramento administrativo de tarefas com timers antigos abertos herdados de períodos passados (#3182310, #3171518, #3168670 e #3152430).</td>
+            <td><span class="badge badge-concluido">Concluído</span><br>Fila de chamados do ERP higienizada e precisão estatística restabelecida.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="section-title">
+      Demandas em Andamento e Fila Ativa
+      <span class="badge-count">Acompanhamento</span>
+    </h3>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 22%;">Demanda / Protocolo</th>
+            <th style="width: 14%;">Avanço</th>
+            <th style="width: 46%;">Bloqueios Técnicos / Dependências</th>
+            <th style="width: 18%;">Previsão</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Protocolo #3209683</strong><br><span style="font-size: 6.8pt; color: #64748b;">Bug Logout Voalle</span></td>
+            <td>
+              <span style="font-weight: 700; color: #d97706;">40%</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 40%; background: #f59e0b;"></div></div>
+            </td>
+            <td>Aguardando retorno do setor de desenvolvimento da Synsuite/Voalle via chamado aberto com o atendente Eduardo Aguiar.</td>
+            <td>09/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>Protocolo #3210508</strong><br><span style="font-size: 6.8pt; color: #64748b;">Integração Slack</span></td>
+            <td>
+              <span style="font-weight: 700; color: #0284c7;">35%</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 35%;"></div></div>
+            </td>
+            <td>Especificação de APIs, limites de requisições e persistência para contornar o expurgo de 90 dias do plano free do Slack.</td>
+            <td>16/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>Local-First Voalle Sync</strong><br><span style="font-size: 6.8pt; color: #64748b;">Webhooks AutoTickets</span></td>
+            <td>
+              <span style="font-weight: 700; color: #16a34a;">75%</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%; background: #16a34a;"></div></div>
+            </td>
+            <td>Estrutura de dados pronta; pendente testes de homologação dos webhooks em ambiente produtivo.</td>
+            <td>14/10/2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. • Setor de Tecnologia da Informação</span>
+      <span>Página 1 de 2</span>
+    </div>
+  </div>
+
+  <!-- PÁGINA 2 -->
+  <div class="page page-break">
+    <div class="sub-header" style="background: #0f172a; color: white; padding: 10px 16px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+      <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 10pt; font-weight: 700;">Relatório Individual — Liomar Antonio de Oliveira (Continuação)</h2>
+      <span class="badge-mini" style="background: #0284c7; color: white; font-size: 7.2pt; padding: 2px 8px; border-radius: 10px; font-weight: 700;">Semana 40 / 2026</span>
+    </div>
+
+    <h3 class="section-title">2. Distribuição do Tempo por Frente de Trabalho</h3>
+    <div class="time-dist-container">
+      <div class="time-dist-row">
+        <span class="time-dist-label">Engenharia de Software & Arquitetura (AutoTickets v2)</span>
+        <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 70%; background: #0284c7;"></div></div>
+        <span class="time-dist-val">70%</span>
+      </div>
+      <div class="time-dist-row">
+        <span class="time-dist-label">Suporte Interno & Manutenção Estação de TI</span>
+        <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 15%; background: #10b981;"></div></div>
+        <span class="time-dist-val">15%</span>
+      </div>
+      <div class="time-dist-row">
+        <span class="time-dist-label">Gestão de Fornecedores & Auditoria ERP Voalle</span>
+        <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 10%; background: #f59e0b;"></div></div>
+        <span class="time-dist-val">10%</span>
+      </div>
+      <div class="time-dist-row">
+        <span class="time-dist-label">Coordenação Técnica & Alinhamento Operacional</span>
+        <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 5%; background: #8b5cf6;"></div></div>
+        <span class="time-dist-val">5%</span>
+      </div>
+    </div>
+
+    <h3 class="section-title">3. Detalhamento dos Projetos Estratégicos Entregues</h3>
+
+    <div class="narrative-card">
+      <h4>
+        <span>Motor de Relatórios Executivos e Analíticos (AutoTickets v2)</span>
+        <span class="badge badge-info">Sprints 291-310</span>
+      </h4>
+      <p>Desenvolvimento da suíte de relatórios executivos parametrizados estruturados em 7 tópicos modulares com exportação para PDF corporativo em alta densidade diagramado para impressão A4, visualizador HTML dinâmico com suporte a edição <em>in-place</em> e exportador Markdown universal. Inclui cálculo automático de balanço de fluxo e gráficos proporcionais.</p>
+    </div>
+
+    <div class="narrative-card">
+      <h4>
+        <span>Arquitetura Local-First e Sincronização Duplo Cursor Voalle</span>
+        <span class="badge badge-info">Sprints 295-296</span>
+      </h4>
+      <p>Criação do pipeline de sincronização incremental baseado no algoritmo monotônico <code>MAX(id)</code> + <code>MAX(modified)</code>. A solução reduz a latência de consultas analíticas para menos de 15ms e isola as requisições na base local, eliminando o risco de instabilidade ou travamento no banco de dados produtivo do ERP Voalle.</p>
+    </div>
+
+    <div class="narrative-card">
+      <h4>
+        <span>Orquestrador de IA Multi-Provedor & Servidor MCP Oficial</span>
+        <span class="badge badge-info">Sprints 269 & 293</span>
+      </h4>
+      <p>Implementação do orquestrador multi-provedor integrado ao SDK oficial do Google Gemini com telemetria rigorosa de tokens e custos (<code>AiTokenUsage</code>) e priorização do modelo Gemini Flash. Construção do servidor MCP oficial (<code>laravel/mcp</code>) permitindo interoperabilidade segura com agentes de inteligência artificial.</p>
+    </div>
+
+    <h3 class="section-title">4. Incidentes Críticos Tratados</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 18%;">Incidente</th>
+            <th style="width: 16%;">Ativo / Sistema</th>
+            <th style="width: 14%;">Severidade</th>
+            <th style="width: 34%;">Diagnóstico & Causa Raiz</th>
+            <th style="width: 18%;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>INC-LIO-01</strong></td>
+            <td>Estação TI Linux<br>(#3209592)</td>
+            <td><span class="badge badge-alta">ALTA</span></td>
+            <td>Incompatibilidade do driver gráfico Mesa e ausência de <code>libLLVM.so.23.1</code> após atualização do CachyOS. Reparado via sincronização forçada e migração KDL.</td>
+            <td><span class="badge badge-concluido">Resolvido</span></td>
+          </tr>
+          <tr>
+            <td><strong>INC-LIO-02</strong></td>
+            <td>Sessão Voalle ERP<br>(#3209683)</td>
+            <td><span class="badge badge-alta">ALTA</span></td>
+            <td>Falha de backend da Synsuite ocasionando logout abrupto em meio ao uso operacional. Aberto chamado de emergência sob acompanhamento.</td>
+            <td><span class="badge badge-andamento">Acompanhando</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="section-title">5. Pontos de Atenção e Próximas Ações</h3>
+    <div class="narrative-card">
+      <ul>
+        <li><strong>Cobrança de Solução no Voalle ERP:</strong> Cobrar posição diária da equipe da Synsuite sobre a instabilidade de sessões (Protocolo #3209683) para estancar a perda de produtividade dos setores.</li>
+        <li><strong>Aceleração da Integração com Slack:</strong> Desenvolver os endpoints receptores para viabilizar a auditoria de conversas e superar o limite de 90 dias do plano gratuito.</li>
+        <li><strong>Homologação de Webhooks em Produção:</strong> Concluir a parametrização dos gatilhos de eventos entre Voalle e AutoTickets v2.</li>
+        <li><strong>Supervisão Técnica da Equipe:</strong> Orientar Isac e David no encerramento de protocolos de bancada e nas próximas manutenções estruturantes de rede e infraestrutura.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. • Setor de Tecnologia da Informação</span>
+      <span>Página 2 de 2</span>
+    </div>
+  </div>
+
+</body>
+</html>
