@@ -133,13 +133,18 @@ reports_ti/
 
 Quando for gerar o relatório individual ou consolidado de um período (`YYYY-MM-DD` a `YYYY-MM-DD`):
 
-1. **Mineração Multi-Fonte:** A IA deve analisar ativamente todas as fontes de dados disponíveis no período:
+1. **Aproveitamento de Relatórios Individuais Existentes:**
+   - A IA deve verificar previamente se já existe arquivo de relatório referente ao período em `0.individual_report/[colaborador]/` (em formato `.pdf`, `.md` ou `.html`).
+   - **Caso já houver arquivo dentro do período:** **NÃO é necessário gerar um novo relatório individual**. O relatório existente é a fonte oficial do colaborador e deve ser lido e considerado integralmente na confecção do relatório semanal consolidado em `4.weekly_reports/`.
+   - **Caso NÃO haja arquivo para o colaborador:** Proceder com a mineração multi-fonte (fallback) para compilar e gerar o relatório individual pendente antes da consolidação.
+
+2. **Mineração Multi-Fonte (para colaboradores sem relatório pré-existente):**
    - **AutoTickets Commits (`/home/liomarti/dev/autotickets-v2`):** Histórico de commits no git no período da semana (sprints entregues, refatorações, novas features, correções).
    - **AutoTickets CSVs (`2.autotickets/`):** Tarefas, chamados ativos e concluídos tratados e consolidados.
    - **Voalle (`1.voalle/`):** Atendimentos, OS, relatos avulsos e horas apontadas.
    - **WhatsApp (`3.whatsapp_histories/`):** Executar (apenas se os arquivos forem criados/modificados dentro do período solicitado) `query_history.py --start YYYY-MM-DD --end YYYY-MM-DD` para extrair mensagens de suporte ao campo, suporte interno, coordenação e Made4NOC, cruzando também com `manual_exports/` quando aplicável. Caso não hajam modificações, o diretório deve ser ignorado na análise.
-2. **Geração do Relatório Individual:** Compilar e salvar o relatório individual nas extensões `.md`, `.html` e `.pdf` em `0.individual_report/[nome_colaborador]/[data-inicio]_[data-fim].[ext]`.
-3. **Consolidação do Setor:** Integrar as entregas de Liomar, Isac e David no relatório semanal consolidado, criando e salvando no subdiretório dedicado em `4.weekly_reports/[data_inicio]_[data_fim]/report_ti-[data_inicio]-[data_fim].[ext]`.
+3. **Geração do Relatório Individual (se necessário):** Compilar e salvar o relatório individual nas extensões `.md`, `.html` e `.pdf` em `0.individual_report/[nome_colaborador]/[data-inicio]_[data-fim].[ext]`.
+4. **Consolidação do Setor:** Integrar as entregas de Liomar, Isac e David no relatório semanal consolidado, criando e salvando no subdiretório dedicado em `4.weekly_reports/[data_inicio]_[data_fim]/report_ti-[data_inicio]-[data_fim].[ext]`.
 
 ---
 

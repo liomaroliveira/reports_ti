@@ -9,8 +9,11 @@ Este diretório armazena os relatórios de atividades individuais de cada membro
 ```text
 0.individual_report/
 ├── liomar/    # Liomar Antonio de Oliveira (Analista de TI Sênior)
+│   └── old/   # Versões legadas e relatórios de semanas anteriores arquivados
 ├── isac/      # Isac Costa Silva (Assistente de TI Pleno)
+│   └── old/   # Relatórios de semanas anteriores arquivados
 └── david/     # David Brasil Fernandes (Auxiliar de TI Junior)
+    └── old/   # Relatórios de semanas anteriores arquivados
 ```
 
 ---
@@ -25,12 +28,12 @@ Os arquivos individuais devem seguir o padrão:
 
 ---
 
-## 🔍 Regra de Fallback e Mineração Ativa
+## 🔍 Regra de Validação e Fallback
 
-Quando um colaborador **NÃO** tiver entregue seu relatório individual consolidado:
-
-1. A IA deve realizar a varredura nas seguintes fontes de dados:
-   - **`1.voalle/`**: Tarefas, chamados, O.S. e apontamentos de horas.
-   - **`2.autotickets/`**: Commits no repositório `/home/liomarti/dev/autotickets-v2` e exportações.
-   - **`3.whatsapp_histories/`**: Grupos operacionais e contatos diretos.
-2. A IA compila e gera o relatório individual do colaborador em seu subdiretório correspondente antes de gerar o relatório semanal consolidado.
+1. **Arquivo Pré-existente no Período:** Quando já houver arquivo dentro do período na pasta do colaborador (seja `.pdf`, `.md` ou `.html`), **NÃO é necessário gerar um novo relatório individual**. O arquivo existente é a fonte oficial das entregas do membro e deve ser lido e considerado diretamente na confecção do relatório semanal em `4.weekly_reports/`.
+2. **Mineração Ativa (Fallback):** Quando um colaborador **NÃO** possuir arquivo consolidado para o período:
+   - A IA realiza a varredura nas fontes de dados:
+     - **`1.voalle/`**: Tarefas, chamados, O.S. e apontamentos de horas.
+     - **`2.autotickets/`**: Commits no repositório `/home/liomarti/dev/autotickets-v2` e exportações.
+     - **`3.whatsapp_histories/`**: Grupos operacionais e contatos diretos.
+   - A IA compila e gera o relatório individual do colaborador em seu subdiretório correspondente antes de gerar o relatório semanal consolidado.

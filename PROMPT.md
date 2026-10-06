@@ -7,33 +7,19 @@
 > [!NOTE]
 > Altere os campos abaixo a cada nova semana antes de solicitar a execução da IA.
 
-* **Data Inicial:** `2026-09-01`
-* **Data Final:** `2026-09-13`
+* **Data Inicial:** `2026-09-28`
+* **Data Final:** `2026-10-04`
 * **Colaborador Principal (Responsável pela Consolidação):** Liomar Antonio de Oliveira
 
 ### 📝 Instruções e Focos Específicos Desta Semana (Customizável):
 
 <!-- Digite aqui orientações contextuais ou pontos de atenção para a execução corrente -->
 
-1. **Relatório de Visitas Presenciais e Veículos:** Ler obrigatoriamente o arquivo [1.voalle/Relatório de Visita Técnica Presencial - Setor TI.md](<file:///home/liomarti/dev/reports_ti/1.voalle/Relat%C3%B3rio%20de%20Visita%20T%C3%A9cnica%20Presencial%20-%20Setor%20TI.md>) e mapear os deslocamentos com veículos da empresa realizados no período de setembro/2026 para alimentar o subtópico de visitas em Suporte Interno.
-   - *Obs.:* Caso não hajam dados neste arquivo para o período selecionado, identificar se houveram atendimentos presenciais nos demais dados levantados e registrar no tópico correspondente.
-2. **Painéis de BI com Parceiros (Tópico de Projetos):** Manter a justificativa factual real:
-   - **Analítica 3M:** Acesso limitado de Liomar; o setor de TI não gerencia e não realiza acompanhamento direto da integração. Ficou pendente de o coordenador de TI Isvi Neemias solicitar a inclusão do contato no grupo de WhatsApp para esta demanda.
-   - **EasyBI (MW Solutions):** Acesso nunca recebido funcionalmente, link inacessível por DNS (`https://easybi.teninternet.com.br`), sem participação em grupos e fora do escopo direto de atuação do TI.
-   - **Diretriz de Demanda Futura do Coordenador:**
-     - *"Vamos verificar as telas pra ajustar o que for necessário. Mas o principal foco: Quero construir uma tela pra o TI, assim como estamos construindo para outros setores (somente no Analítica 3M, por enquanto)."*
-     - *"Criar um documento/escopo e solicitar aos BIs para criar a tela, até para termos um benchmarking entre a construção de cada empresa."*
-     - *"Se um dia, a tela de BI puder substituir ou servir como principal fonte de dados dos relatórios, vai ser ótimo."*
-3. **Mérito do AutoTickets:** Os arquivos `.csv` em [2.autotickets/](file:///home/liomarti/dev/reports_ti/2.autotickets/) são dados tratados, filtrados e preparados pelo próprio sistema AutoTickets para auditoria.
+1. **Relatório de Visitas Presenciais e Veículos:** Identificar nas fontes de dados por serviços que exigiram deslocamentos com veículos da empresa, para alimentar o subtópico de visitas em Suporte Interno.
 
-### 📌 Tarefas Extras Pontuais Desta Semana (Customizável):
+   - *Obs.:* Caso não hajam dados neste arquivo para o período selecionado, identificar se houveram atendimentos presenciais nos demais dados levantados e registrar no tópico correspondente.
 
 <!-- Adicione novas tarefas ou tópicos avulsos que surjam nesta semana -->
-
-- [ ] Validar correções recentes no driver da ONT Parks e Datacom implementadas no AutoTickets.
-- [ ] Mapear status da migração para o Slack e contas de e-mail criadas.
-
----
 
 ## 🚦 2. GATEKEEPER E FLUXO DE EXECUÇÃO EM DUAS ETAPAS
 
@@ -52,32 +38,42 @@ graph TD
 
 ### Fase 0: Checklist de Pré-Requisitos (Fontes de Liomar)
 
-Antes de gerar o relatório individual de Liomar, a IA deve validar:
+> [!NOTE]
+> **Verificação Prévia de Relatório Existente:** Caso já exista arquivo de relatório para o colaborador no período em `0.individual_report/[colaborador]/` (em formato `.pdf`, `.md` ou `.html`), **não é necessário gerar um novo relatório individual**. O arquivo existente deve ser aproveitado e considerado diretamente na confecção do relatório semanal em `4.weekly_reports/`.
 
-- [ ] **Voalle (`1.voalle/`):** Arquivo PDF/CSV cobrindo o período da semana.
-- [ ] **AutoTickets Local (`/home/liomarti/dev/autotickets-v2`):** Commits no período via `git log`.
-- [ ] **AutoTickets CSVs (`2.autotickets/*.csv`):** Arquivos de chamados e tarefas atualizados.
+Antes de gerar o relatório individual de Liomar (caso ainda não exista para o período), a IA deve validar:
+
+- [ ] **Voalle (`1.voalle/`):** Arquivo gerado pelo ERP em formato PDF/CSV cobrindo o período da semana.
+- [ ] **AutoTickets Local (`/home/liomarti/dev/autotickets-v2`):**
+  - [ ] Relatório de desenvolvimento do AutoTickets durante o período da semana em formato consolidado ou commits brutos
+  - [ ] Produtividade das automações da ferramenta.
+- [ ] **AutoTickets CSVs (`2.autotickets/*.csv`):** Arquivos de chamados e tarefas atualizados (tratados do Banco de Dados Voalle).
 - [ ] **WhatsApp (`3.whatsapp_histories/database/msgstore.db`):** Mensagens cobrindo as datas da semana. *(Nota: O database é do WhatsApp corporativo do setor de TI utilizado pelos 3 colaboradores. Tratar como demanda geral atendida pelo setor quando não houver identificação explícita do autor da resposta).*
 
 > [!WARNING]
-> **Ponto de Interrupção 1:** Caso falte qualquer uma das fontes acima para Liomar, a IA **DEVE INTERROMPER** a execução imediatamente, listar em tabela o status de cada fonte e perguntar se o usuário deseja prosseguir com dados parciais ou aguardar atualização.
+> **Ponto de Interrupção 1:** Caso falte qualquer uma das fontes acima para Liomar (e ele não possua relatório existente no período), a IA **DEVE INTERROMPER** a execução imediatamente, listar em tabela o status de cada fonte e perguntar se o usuário deseja prosseguir com dados parciais ou aguardar atualização.
 
 ---
 
 ### ETAPA 1: Relatório Individual de Liomar Oliveira
 
+*(Pular esta etapa se já existir relatório individual de Liomar para o período em `0.individual_report/liomar/`)*
+
 1. **Mineração:** Cruzar os dados de Voalle, commits do AutoTickets e histórico do WhatsApp.
 2. **Estrutura:** Seguir rigorosamente o padrão analítico e o modelo de tópicos oficiais.
-3. **Formatos de Saída:** Salvar os 3 arquivos em `0.individual_report/liomar/[data_inicio]-[data_fim].[ext]` (`.md`, `.html` estilizado e `.pdf` executivo A4).
+3. **Formatos de Saída:** Salvar os 3 arquivos em `0.individual_report/liomar/[data_inicio]_[data_fim].[ext]` (`.md`, `.html` estilizado e `.pdf` executivo A4).
 
 ---
 
 ### Fase 1.5: Validação dos Colegas (Gatekeeper de Consolidação)
 
-Antes de gerar o consolidado, a IA deve verificar:
+Antes de gerar o consolidado, a IA deve verificar se os colegas já possuem relatórios para o período:
 
-- [ ] Relatório de **Isac Costa Silva** em `0.individual_report/isac/[data_inicio]-[data_fim].[ext]`.
-- [ ] Relatório de **David Brasil Fernandes** em `0.individual_report/david/[data_inicio]-[data_fim].[ext]`.
+- [ ] Relatório de **Isac Costa Silva** em `0.individual_report/isac/[data_inicio]_[data_fim].[ext]`.
+- [ ] Relatório de **David Brasil Fernandes** em `0.individual_report/david/[data_inicio]_[data_fim].[ext]`.
+
+> [!TIP]
+> Se o arquivo de Isac ou David já existir (seja `.pdf`, `.md` ou `.html`), ele é considerado pronto: **não é gerado novo relatório** e suas informações são integradas diretamente ao consolidado semanal.
 
 > [!WARNING]
 > **Ponto de Interrupção 2:** Se faltar o relatório individual de Isac ou David:
