@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório Semanal Consolidado — Setor TI (28/09/2026 a 04/10/2026)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+    @page {
+      size: A4;
+      margin: 12mm 12mm 12mm 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.42;
+      font-size: 8.5pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page-section {
+      width: 100%;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    /* MOLDURA E BANNER INSTITUCIONAL */
+    .header-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #0284c7 100%);
+      color: #ffffff;
+      padding: 18px 24px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 3px 12px;
+      border-radius: 14px;
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      color: #e0f2fe;
+    }
+
+    .header-banner h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16.5pt;
+      font-weight: 800;
+      margin-bottom: 3px;
+      letter-spacing: -0.4px;
+      color: #ffffff;
+    }
+
+    .header-banner p.subtitle {
+      font-size: 8.8pt;
+      color: #cbd5e1;
+      font-weight: 400;
+    }
+
+    /* 4 CARDS DE IDENTIFICAÇÃO EXECUTIVA */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-item .label {
+      font-size: 6.8pt;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.4px;
+      margin-bottom: 2px;
+    }
+
+    .meta-item .val {
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .meta-item .val-sub {
+      font-size: 7pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* TÍTULOS E SUBTÍTULOS */
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11pt;
+      font-weight: 800;
+      color: #0f172a;
+      border-left: 4px solid #0284c7;
+      padding-left: 10px;
+      margin-top: 16px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sub-section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9.2pt;
+      font-weight: 700;
+      color: #1e293b;
+      margin-top: 12px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+
+    .badge-count {
+      font-size: 7pt;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    /* STATCARDS */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .kpi-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 9px 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #0284c7;
+    }
+
+    .kpi-card.emerald::before { background: #10b981; }
+    .kpi-card.purple::before { background: #8b5cf6; }
+    .kpi-card.amber::before { background: #f59e0b; }
+    .kpi-card.rose::before { background: #f43f5e; }
+
+    .kpi-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    .kpi-label {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 3px;
+    }
+
+    .kpi-desc {
+      font-size: 6.6pt;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    /* TABELAS */
+    .table-container {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.8pt;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 7px 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-size: 6.8pt;
+      border: none;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* BADGES */
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 6.7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .badge-concluido { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+    .badge-andamento { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+    .badge-pendente { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+    .badge-alta { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+    .badge-media { background: #fef3c7; color: #d97706; border: 1px solid #fde68a; }
+    .badge-baixa { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+    .badge-info { background: #f1f5f9; color: #0284c7; border: 1px solid #cbd5e1; }
+
+    /* CARDS DE CONTEXTO E NARRATIVA */
+    .narrative-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .narrative-card h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.8pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .narrative-card p {
+      font-size: 7.8pt;
+      color: #475569;
+      line-height: 1.45;
+    }
+
+    .narrative-card ul {
+      margin-left: 18px;
+      margin-top: 4px;
+      font-size: 7.7pt;
+      color: #475569;
+    }
+
+    .narrative-card li {
+      margin-bottom: 3px;
+    }
+
+    /* BARRAS DE PROGRESSO / TEMPO */
+    .time-dist-container {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+    }
+
+    .time-dist-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 7.6pt;
+    }
+
+    .time-dist-label {
+      width: 250px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .time-dist-bar-wrap {
+      flex: 1;
+      height: 7px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      margin: 0 12px;
+      overflow: hidden;
+    }
+
+    .time-dist-bar {
+      height: 100%;
+      background: #0284c7;
+      border-radius: 4px;
+    }
+
+    .time-dist-val {
+      width: 45px;
+      text-align: right;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    /* ÍNDICE */
+    .toc-container {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin-bottom: 14px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      font-size: 7.6pt;
+    }
+
+    .toc-item a {
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .toc-item a:hover {
+      text-decoration: underline;
+    }
+
+    .toc-subitem {
+      padding-left: 12px;
+      font-size: 7.2pt;
+      color: #64748b;
+    }
+
+    .toc-subitem a {
+      color: #475569;
+      font-weight: 500;
+    }
+
+    /* GRÁFICO VISUAL (FLEX CARDS) */
+    .chart-container {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .chart-card {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    .chart-card h5 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 6px;
+      margin-top: 14px;
+      font-size: 6.8pt;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CAPA E RESUMO EXECUTIVO (PÁGINA 1) -->
+  <div class="page-section">
+    <div class="header-banner">
+      <div class="header-badge">Governança Setorial • Semana 40 / 2026</div>
+      <h1>Relatório Semanal Consolidado - Setor TI</h1>
+      <p class="subtitle">Panorama Operacional, Gestão de Demandas, Incidentes, Infraestrutura Crítica e Outros</p>
+    </div>
+
+    <!-- 4 CARDS DE IDENTIFICAÇÃO -->
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="label">Período de Referência</span>
+        <span class="val">28/09/2026 a 04/10/2026</span>
+        <span class="val-sub">Semana 40 / 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Coordenador de TI</span>
+        <span class="val">Isvi Neemias</span>
+        <span class="val-sub">Tecnologia TEN Internet</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Responsável Consolidação</span>
+        <span class="val">Liomar Antonio de Oliveira</span>
+        <span class="val-sub">Analista TI Sênior (#107184)</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Equipe Integrada</span>
+        <span class="val">Liomar, Isac e David</span>
+        <span class="val-sub">Engenharia, N2 & Infra</span>
+      </div>
+    </div>
+
+    <!-- STATCARDS GLOBAIS -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-value">75h 22m</div>
+        <div class="kpi-label">Horas Apontadas Voalle</div>
+        <div class="kpi-desc">84 lançamentos auditados</div>
+      </div>
+      <div class="kpi-card emerald">
+        <div class="kpi-value">63</div>
+        <div class="kpi-label">Demandas Concluídas</div>
+        <div class="kpi-desc">31 David + 24 Isac + 4 Lio + Sprints</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">83 / 30</div>
+        <div class="kpi-label">Commits / Sprints Git</div>
+        <div class="kpi-desc">Ecossistema AutoTickets v2</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-value">108,6%</div>
+        <div class="kpi-label">Taxa Resolutividade</div>
+        <div class="kpi-desc">63 entregues vs 58 abertas</div>
+      </div>
+    </div>
+
+    <!-- ÍNDICE DE NAVEGAÇÃO -->
+    <div class="toc-container">
+      <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 8.4pt; font-weight: 700; color: #0f172a; margin-bottom: 6px;">
+        📑 Índice Geral de Navegação
+      </h4>
+      <div class="toc-grid">
+        <div>
+          <div class="toc-item"><a href="#resumo-executivo">• Resumo Executivo</a></div>
+          <div class="toc-item"><a href="#1-gestao-de-demandas">• 1. Gestão de Demandas</a></div>
+          <div class="toc-subitem"><a href="#11-demandas-pendentes">1.1 Demandas Pendentes</a> | <a href="#12-demandas-em-andamento">1.2 Em Andamento</a></div>
+          <div class="toc-subitem"><a href="#13-demandas-concluidas">1.3 Demandas Concluídas</a> | <a href="#14-demandas-novas">1.4 Comparativo Entradas × Saídas</a></div>
+          <div class="toc-item"><a href="#2-registro-de-atividades">• 2. Atividades por Membro da Equipe</a></div>
+          <div class="toc-subitem"><a href="#21-david-brasil">2.1 David Brasil</a> | <a href="#22-isac-costa">2.2 Isac Costa</a> | <a href="#23-liomar-oliveira">2.3 Liomar Oliveira</a></div>
+          <div class="toc-subitem"><a href="#24-comparativo-voalle">2.4 Produtividade Comparativa no Voalle</a></div>
+          <div class="toc-item"><a href="#3-projetos-e-entregas">• 3. Projetos e Entregas</a></div>
+          <div class="toc-subitem"><a href="#31-autotickets">3.1 AutoTickets v2</a> | <a href="#32-conectividade">3.2 WireGuard & SIEM</a> | <a href="#33-paineis-bi">3.3 Painéis de BI</a></div>
+        </div>
+        <div>
+          <div class="toc-item"><a href="#4-incidentes-tratados">• 4. Incidentes Tratados</a></div>
+          <div class="toc-item"><a href="#5-suporte-interno">• 5. Suporte Interno (Informática)</a></div>
+          <div class="toc-subitem"><a href="#51-relacao-chamados">5.1 Relação de Incidentes e Chamados</a></div>
+          <div class="toc-subitem"><a href="#52-setores-demandantes">5.2 Setores mais Demandantes</a> | <a href="#53-solicitantes">5.3 Solicitantes Frequentes</a></div>
+          <div class="toc-subitem"><a href="#54-visitas-presenciais"><strong>5.4 Visitas Técnicas & Gestão de Veículos</strong></a></div>
+          <div class="toc-item"><a href="#6-suporte-a-campo">• 6. Suporte ao Técnico de Campo</a></div>
+          <div class="toc-subitem"><a href="#61-volumetria-campo">6.1 Volumetria</a> | <a href="#62-tipos-apoio">6.2 Tipos & Tempo</a> | <a href="#63-automacao">6.3 Oportunidades</a></div>
+          <div class="toc-item"><a href="#7-infraestrutura">• 7. Infraestrutura e Sistemas Críticos</a></div>
+          <div class="toc-subitem"><a href="#71-disponibilidade">7.1 Disponibilidade</a> | <a href="#72-backups">7.2 Backups</a> | <a href="#73-modernizacao">7.3 Modernização</a></div>
+          <div class="toc-item"><a href="#8-pontos-de-atencao">• 8. Pontos de Atenção e Próximas Ações</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESUMO EXECUTIVO -->
+    <div id="resumo-executivo" class="narrative-card" style="border-left: 4px solid #0284c7;">
+      <h4>
+        <span>Resumo Executivo</span>
+        <span class="badge badge-info">Síntese Estratégica</span>
+      </h4>
+      <p>
+        A semana de <strong>28/09/2026 a 04/10/2026</strong> consolidou avanços determinantes para o Setor de TI da TEN Internet. 
+        Com a liderança de engenharia de software exercida por <strong>Liomar Oliveira</strong> (retorno de férias em 01/10), foram entregues <strong>83 commits</strong> e <strong>30 sprints</strong> no ecossistema <strong>AutoTickets v2</strong>, destacando-se o novo motor de relatórios em 7 tópicos, o sincronizador Local-First com duplo cursor que reduziu as consultas analíticas no Voalle para &lt;15ms e o servidor MCP oficial. 
+        Na infraestrutura de redes e segurança, <strong>David Brasil</strong> e <strong>Isac Costa</strong> reestruturaram a malha VPN WireGuard em Hub-and-Spoke com o SIEM Wazuh na faixa <code>10.50.50.0/24</code>, sanando colisões de sockets na RB Chácara. 
+        Em campo, uma <strong>missão presencial de 05h 38m</strong> em Sisalândia e Riacho da Onça restabeleceu a operação das lojas e impressoras fiscais. O setor acumulou <strong>75h 22m apontadas no Voalle</strong> e encerrou a semana com saldo deflacionário na fila de chamados (resolutividade de 108,6%).
+      </p>
+    </div>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. • Setor de Tecnologia da Informação</span>
+      <span>Página 1 de 9</span>
+    </div>
+  </div>
+
+  <!-- TÓPICO 1: GESTÃO DE DEMANDAS (PÁGINA 2) -->
+  <div id="1-gestao-de-demandas" class="page-section page-break">
+    <h3 class="section-title">
+      1. Gestão de Demandas
+      <span class="badge-count">Fluxo & Filas</span>
+    </h3>
+
+    <div class="chart-container">
+      <div class="chart-card">
+        <h5>Comparativo Entradas × Saídas (Balanço da Fila)</h5>
+        <div style="display: flex; align-items: flex-end; gap: 16px; height: 60px; padding-top: 10px;">
+          <div style="flex: 1; text-align: center;">
+            <div style="font-size: 8pt; font-weight: 700; color: #b91c1c; margin-bottom: 2px;">58</div>
+            <div style="background: #fee2e2; height: 35px; border-radius: 4px; border: 1px solid #fecaca;"></div>
+            <span style="font-size: 6.8pt; color: #64748b; font-weight: 600;">Entradas (Novas)</span>
+          </div>
+          <div style="flex: 1; text-align: center;">
+            <div style="font-size: 8pt; font-weight: 700; color: #15803d; margin-bottom: 2px;">63</div>
+            <div style="background: #dcfce7; height: 42px; border-radius: 4px; border: 1px solid #bbf7d0;"></div>
+            <span style="font-size: 6.8pt; color: #64748b; font-weight: 600;">Saídas (Concluídas)</span>
+          </div>
+          <div style="flex: 1.2; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px; text-align: center;">
+            <div style="font-size: 6.8pt; color: #64748b; text-transform: uppercase; font-weight: 700;">Balanço Líquido</div>
+            <div style="font-size: 11pt; font-weight: 800; color: #15803d; margin: 2px 0;">-5 chamados</div>
+            <div style="font-size: 6.5pt; color: #166534;">Redução da Fila (108,6%)</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h5>Distribuição de Demandas por Frentes Técnicas</h5>
+        <div style="display: flex; flex-direction: column; gap: 4px; justify-content: center; height: 60px;">
+          <div style="display: flex; justify-content: space-between; font-size: 7.2pt;">
+            <span>Hardware, Bancada & Lojas:</span><span style="font-weight: 700;">28 tarefas (44%)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 7.2pt;">
+            <span>Atendimento N2 & Perícias Campo:</span><span style="font-weight: 700;">18 tarefas (29%)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 7.2pt;">
+            <span>Redes, Servidores & Segurança:</span><span style="font-weight: 700;">11 tarefas (17%)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 7.2pt;">
+            <span>Sistemas & Governança:</span><span style="font-weight: 700;">6 tarefas (10%)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1.1 DEMANDAS PENDENTES -->
+    <h4 id="11-demandas-pendentes" class="sub-section-title">1.1 Demandas Pendentes (Fila de Início)</h4>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 15%;">Protocolo / ID</th>
+            <th style="width: 25%;">Solicitante / Setor</th>
+            <th style="width: 15%;">Responsável</th>
+            <th style="width: 12%;">Prioridade</th>
+            <th style="width: 33%;">Descrição Técnica & Bloqueio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#3209322</strong></td>
+            <td>David Brasil / TI</td>
+            <td>David Brasil</td>
+            <td><span class="badge badge-alta">Alta</span></td>
+            <td>Expedição de impressora Epson L395 de Sisalândia para assistência técnica especializada autorizada.</td>
+          </tr>
+          <tr>
+            <td><strong>#3209665</strong></td>
+            <td>David Brasil / TI</td>
+            <td>David Brasil</td>
+            <td><span class="badge badge-media">Média</span></td>
+            <td>Varredura de portas no switch do 1º andar da Sede para restabelecer câmeras do Estoque/Armazém 1.</td>
+          </tr>
+          <tr>
+            <td><strong>#3202572</strong></td>
+            <td>Compras / TI</td>
+            <td>David Brasil</td>
+            <td><span class="badge badge-alta">Alta</span></td>
+            <td>Substituição de tela do notebook Dell Vostro 15 3510 (aguarda entrega de tela pelo fornecedor).</td>
+          </tr>
+          <tr>
+            <td><strong>#2936263</strong></td>
+            <td>Lojas / TI</td>
+            <td>David Brasil</td>
+            <td><span class="badge badge-baixa">Baixa</span></td>
+            <td>Homologação de streams RTSP para monitoramento da Loja Serrolândia (aguarda obra civil na fachada).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 1.2 DEMANDAS EM ANDAMENTO -->
+    <h4 id="12-demandas-em-andamento" class="sub-section-title">1.2 Demandas em Andamento</h4>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 16%;">Protocolo / Ref.</th>
+            <th style="width: 16%;">Responsável</th>
+            <th style="width: 12%;">Avanço</th>
+            <th style="width: 44%;">Bloqueios Técnicos / Dependências de Terceiros</th>
+            <th style="width: 12%;">Previsão</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#3209683</strong></td>
+            <td>Liomar Oliveira</td>
+            <td><span style="font-weight: 700; color: #d97706;">40%</span></td>
+            <td>Bug crítico de encerramento prematuro de sessão no Voalle. Escalado junto à Synsuite (atendente Eduardo Aguiar).</td>
+            <td>09/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3210508</strong></td>
+            <td>Liomar Oliveira</td>
+            <td><span style="font-weight: 700; color: #0284c7;">35%</span></td>
+            <td>Integração AutoTickets × Slack para superação do limite de 90 dias do plano free e auditoria de mensagens.</td>
+            <td>16/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3137037</strong></td>
+            <td>Isac Costa</td>
+            <td><span style="font-weight: 700; color: #16a34a;">60%</span></td>
+            <td>Estudo de implantação do sistema telefônico ZEUS TIP Brasil. Documento PDF estruturado anexado ao chamado.</td>
+            <td>09/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3200935</strong></td>
+            <td>David Brasil</td>
+            <td><span style="font-weight: 700; color: #16a34a;">80%</span></td>
+            <td>Validação de exportação Syslog nos MikroTiks da Chácara e TI para ingestão no SIEM Wazuh.</td>
+            <td>09/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3210625</strong></td>
+            <td>David Brasil</td>
+            <td><span style="font-weight: 700; color: #d97706;">70%</span></td>
+            <td>Defesa técnica e financeira junto a Compras (Michel Carvalho) comprovando viabilidade de Nobreaks NHS Senoidais.</td>
+            <td>08/10/2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 1.3 DEMANDAS CONCLUÍDAS -->
+    <h4 id="13-demandas-concluidas" class="sub-section-title">1.3 Demandas Concluídas na Semana (Destaques)</h4>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 16%;">Protocolo / ID</th>
+            <th style="width: 14%;">Responsável</th>
+            <th style="width: 44%;">Intervenção Executada & Solução Técnica</th>
+            <th style="width: 26%;">Resultado Prático Obtido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#3175023 / #3207218</strong></td>
+            <td>David Brasil</td>
+            <td>Missão externa a Sisalândia e Riacho da Onça (05h 38m): instalação limpa de Win 10 no PC da recepção e ativação Epson L4150 Wi-Fi.</td>
+            <td>Recepções operando com impressão fiscal e recolhimento da Epson L395 para bancada.</td>
+          </tr>
+          <tr>
+            <td><strong>#3200935</strong></td>
+            <td>David Brasil</td>
+            <td>Reestruturação WireGuard Hub-Spoke em 10.50.50.0/24; resolução de colisão de socket UDP 13231 na RB Chácara para 13235.</td>
+            <td>Túnel corporativo ativo com latência média de 1.3ms e zero perda de pacotes.</td>
+          </tr>
+          <tr>
+            <td><strong>#3209227</strong></td>
+            <td>David Brasil</td>
+            <td>Instalação de Nobreak Senoidal Puro NHS Compact Plus 4 1500VA no rack da Chácara (tolerância até 268V).</td>
+            <td>Blindagem elétrica contra picos para equipamentos com fontes de PFC Ativo.</td>
+          </tr>
+          <tr>
+            <td><strong>#3102934</strong></td>
+            <td>Isac Costa</td>
+            <td>Integração do Totem de autoatendimento da loja de Jacobina com Datacake e PliQ.</td>
+            <td>Tokens de autenticação gerados e formulários validados com sucesso.</td>
+          </tr>
+          <tr>
+            <td><strong>#3196163</strong></td>
+            <td>Isac Costa</td>
+            <td>Apoio a campo no técnico Fredson: diagnóstico comprovou placa de rede a 10 Mbps e colisão de faixas DHCP no cliente.</td>
+            <td>Link da TEN inocentado; cliente instruído a acionar suporte próprio de TI.</td>
+          </tr>
+          <tr>
+            <td><strong>#3209592</strong></td>
+            <td>Liomar Oliveira</td>
+            <td>Diagnóstico e reparo no Linux CachyOS após falha de atualização gráfica; sincronização de mirrors e migração KDL Noctalia v5.</td>
+            <td>Estação de TI restaurada com sucesso sem perda de dados ou formatação.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. • Setor de Tecnologia da Informação</span>
+      <span>Página 2 de 9</span>
+    </div>
+  </div>
+
+  <!-- TÓPICO 2: REGISTRO DE ATIVIDADES POR MEMBRO DA EQUIPE (PÁGINA 3) -->
+  <div id="2-registro-de-atividades" class="page-section page-break">
+    <h3 class="section-title">
+      2. Registro de Atividades por Membro da Equipe
+      <span class="badge-count">Desempenho Individual & Conjunto</span>
+    </h3>
+
+    <!-- 2.1 DAVID BRASIL -->
+    <div id="21-david-brasil" class="narrative-card">
+      <h4>
+        <span>2.1 David Brasil Fernandes — Auxiliar de TI Junior (#116367)</span>
+        <span class="badge badge-info">50h 33m no Voalle • 31 Concluídas</span>
+      </h4>
+      <p>
+        <strong>Resumo das Atividades:</strong> Apresentou altíssimo engajamento operacional com 84 apontamentos no ERP Voalle. Conduziu com excelência a <strong>Missão Técnica Externa a Sisalândia e Riacho da Onça</strong> (05h 38m de deslocamento e atuação in loco), reativando computadores e impressoras. Liderou a implantação do <strong>WireGuard Hub-and-Spoke em 10.50.50.0/24 para o SIEM Wazuh</strong>, corrigindo colisão de porta na RB Chácara via CLI. Concluiu 7 perícias N2 de desconto proporcional no Voalle, realizou a troca de estações em Cobrança (#3210878, #3211281) e conduziu junto a Isac a higienização física do Dell PowerEdge R910.
+      </p>
+      <div class="time-dist-container" style="margin-top: 8px; margin-bottom: 6px;">
+        <div class="time-dist-row">
+          <span class="time-dist-label">Suporte Interno & Manutenção Hardware:</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 38%; background: #0284c7;"></div></div>
+          <span class="time-dist-val">38%</span>
+        </div>
+        <div class="time-dist-row">
+          <span class="time-dist-label">Operação de Campo & Deslocamento Externo:</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 22%; background: #10b981;"></div></div>
+          <span class="time-dist-val">22%</span>
+        </div>
+        <div class="time-dist-row">
+          <span class="time-dist-label">Rotinas Ágeis N2 & Perícias de Conexão:</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 20%; background: #f59e0b;"></div></div>
+          <span class="time-dist-val">20%</span>
+        </div>
+        <div class="time-dist-row">
+          <span class="time-dist-label">Redes, Segurança & SIEM Wazuh:</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 12%; background: #8b5cf6;"></div></div>
+          <span class="time-dist-val">12%</span>
+        </div>
+        <div class="time-dist-row">
+          <span class="time-dist-label">Rotinas Administrativas e Gestão de Frota:</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 8%; background: #64748b;"></div></div>
+          <span class="time-dist-val">8%</span>
+        </div>
+      </div>
+      <p style="font-size: 7.2pt; color: #64748b;">
+        <strong>Desenvolvimento e Capacitação:</strong> Excelente domínio em hardware, manutenção de estações e diagnóstico em RouterOS CLI. Recomendado capacitação em regras avançadas de firewall Mangle/Filter e roteamento dinâmico.
+      </p>
+    </div>
+
+    <!-- 2.2 ISAC COSTA -->
+    <div id="22-isac-costa" class="narrative-card">
+      <h4>
+        <span>2.2 Isac Costa Silva — Assistente de TI Pleno (#94562)</span>
+        <span class="badge badge-info">19h 33m no Voalle • 24 Concluídas</span>
+      </h4>
+      <p>
+        <strong>Resumo das Atividades:</strong> Atuou decisivamente nas frentes de atendimento N2, perícias técnicas de campo e infraestrutura interna. Destacou-se pelo apoio pericial ao técnico Fredson (#3196163), no qual comprovou defeito na placa de rede do servidor do cliente (negociando a 10 Mbps) e duplicidade de servidores DHCP, resguardando o provedor de reclamações indevidas. Configurou equipamentos corporativos para o cliente Barba's Burguer (#3210293), finalizou a integração do Totem da loja de Jacobina com a PliQ (#3102934), dedicou 03h 35m aos estudos de implantação da telefonia fixa ZEUS TIP Brasil (#3137037) e conduziu 23 atendimentos rotineiros de help desk.
+      </p>
+      <div class="time-dist-container" style="margin-top: 8px; margin-bottom: 6px;">
+        <div class="time-dist-row">
+          <span class="time-dist-label">Infraestrutura Interna, Servidores & Help Desk:</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 57%; background: #0284c7;"></div></div>
+          <span class="time-dist-val">57%</span>
+        </div>
+        <div class="time-dist-row">
+          <span class="time-dist-label">Projetos Especiais & Documentação Técnica:</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 23%; background: #8b5cf6;"></div></div>
+          <span class="time-dist-val">23%</span>
+        </div>
+        <div class="time-dist-row">
+          <span class="time-dist-label">Atendimento N2 & Apoio a Técnicos de Campo:</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 20%; background: #10b981;"></div></div>
+          <span class="time-dist-val">20%</span>
+        </div>
+      </div>
+      <p style="font-size: 7.2pt; color: #64748b;">
+        <strong>Desenvolvimento e Capacitação:</strong> Alta acurácia em troubleshooting de redes heterogêneas e relacionamento técnico com fornecedores. Recomendado aprofundamento em dimensionamento de fluxos SIP e Asterisk/FreePBX.
+      </p>
+    </div>
+
+    <!-- 2.3 LIOMAR OLIVEIRA -->
+    <div id="23-liomar-oliveira" class="narrative-card">
+      <h4>
+        <span>2.3 Liomar Antonio de Oliveira — Analista de TI Sênior (#107184)</span>
+        <span class="badge badge-info">83 Commits • 30 Sprints AutoTickets v2</span>
+      </h4>
+      <p>
+        <strong>Resumo das Atividades:</strong> Retornou de férias em 01/10/2026, concentrando dedicação integral em Engenharia de Software e Arquitetura no AutoTickets v2 (83 commits e 30 sprints entregues). Construiu o Motor de Relatórios Executivos, a arquitetura Local-First de sincronização com Voalle (Duplo Cursor), o Orquestrador de IA com telemetria de custos e o Servidor MCP Oficial. No retorno físico à empresa, diagnosticou e recuperou em 02h 49m o stack gráfico de sua estação Linux CachyOS (#3209592), abriu e escalonou junto à Voalle chamado sobre instabilidade de sessões (#3209683), realizou auditoria de férias (#3210518) e modelou a integração AutoTickets × Slack (#3210508).
+      </p>
+      <div class="time-dist-container" style="margin-top: 8px; margin-bottom: 6px;">
+        <div class="time-dist-row">
+          <span class="time-dist-label">Engenharia de Software & Arquitetura (AutoTickets):</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 70%; background: #0284c7;"></div></div>
+          <span class="time-dist-val">70%</span>
+        </div>
+        <div class="time-dist-row">
+          <span class="time-dist-label">Suporte Interno & Recuperação Estação de TI:</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 15%; background: #10b981;"></div></div>
+          <span class="time-dist-val">15%</span>
+        </div>
+        <div class="time-dist-row">
+          <span class="time-dist-label">Gestão de Fornecedores & Auditoria ERP Voalle:</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 10%; background: #f59e0b;"></div></div>
+          <span class="time-dist-val">10%</span>
+        </div>
+        <div class="time-dist-row">
+          <span class="time-dist-label">Coordenação Técnica & Alinhamento Operacional:</span>
+          <div class="time-dist-bar-wrap"><div class="time-dist-bar" style="width: 5%; background: #8b5cf6;"></div></div>
+          <span class="time-dist-val">5%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.4 COMPARATIVO VOALLE -->
+    <h4 id="24-comparativo-voalle" class="sub-section-title">2.4 Desempenho e Produtividade Comparativa no Voalle</h4>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 25%;">Colaborador</th>
+            <th style="width: 20%;">Cargo</th>
+            <th style="width: 15%;">Horas no Voalle</th>
+            <th style="width: 18%;">Demandas Tratadas</th>
+            <th style="width: 22%;">Foco Operacional Primário</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>David Brasil Fernandes</strong></td>
+            <td>Auxiliar de TI Jr.</td>
+            <td><strong>50h 33m</strong></td>
+            <td>31 concluídas (43 únicas)</td>
+            <td>Campo Presencial, Nobreaks & Help Desk</td>
+          </tr>
+          <tr>
+            <td><strong>Isac Costa Silva</strong></td>
+            <td>Assistente de TI Pl.</td>
+            <td><strong>19h 33m</strong></td>
+            <td>24 concluídas (41 únicas)</td>
+            <td>Apoio a Campo N2, Telefonia ZEUS & Suporte</td>
+          </tr>
+          <tr>
+            <td><strong>Liomar Antonio de Oliveira</strong></td>
+            <td>Analista de TI Sr.</td>
+            <td><strong>05h 16m</strong> <em>(*)</em></td>
+            <td>4 concluídas + 30 Sprints</td>
+            <td>Engenharia de Software AutoTickets & Gestão</td>
+          </tr>
+          <tr style="background: #f1f5f9; font-weight: 700;">
+            <td colspan="2">TOTAL CONSOLIDADO DO SETOR</td>
+            <td>75h 22m</td>
+            <td>59 no Voalle + 30 Sprints</td>
+            <td>100% das demandas operacionais absorvidas</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size: 6.8pt; color: #64748b; font-style: italic;">
+      (*) Nota: As horas de Liomar no Voalle refletem os atendimentos específicos do retorno de férias a partir de 01/10. Seu foco operacional primário no período foi a liderança técnica do AutoTickets v2 (83 commits e +143k linhas de código).
+    </p>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. • Setor de Tecnologia da Informação</span>
+      <span>Página 3 de 9</span>
+    </div>
+  </div>
+
+  <!-- TÓPICO 3: PROJETOS E ENTREGAS (PÁGINA 4) -->
+  <div id="3-projetos-e-entregas" class="page-section page-break">
+    <h3 class="section-title">
+      3. Projetos e Entregas
+      <span class="badge-count">Engenharia, Redes & BI</span>
+    </h3>
+
+    <!-- 3.1 AUTOTICKETS V2 -->
+    <div id="31-autotickets" class="narrative-card">
+      <h4>
+        <span>3.1 Projeto AutoTickets v2 (RADIUS, Automações e Relatórios Analíticos)</span>
+        <span class="badge badge-concluido">30 Sprints Entregues</span>
+      </h4>
+      <p>
+        <strong>Status & Andamento:</strong> Plataforma em produção contínua com avanço massivo na branch <code>dev</code> (Sprints 269 e 291 a 320). No período, foram registrados <strong>83 commits</strong> impactando 604 arquivos (+143.638 adições / -9.285 remoções), com 100% de conformidade sob <code>DatabaseTransactions</code>.
+      </p>
+      <div style="margin-top: 8px;">
+        <p><strong>Entregas em Produção e Resultados Observados:</strong></p>
+        <ul>
+          <li><strong>Motor de Relatórios Executivos (Sprints 291-310):</strong> Geração automatizada dos relatórios semanais estruturados em 7 tópicos, suportando exportação para PDF corporativo diagramado para A4 sem poluição de navegador, HTML dinâmico com edição <em>in-place</em> e Markdown universal.</li>
+          <li><strong>Arquitetura Local-First (Duplo Cursor Voalle):</strong> Algoritmo incremental <code>MAX(id)</code> + <code>MAX(modified)</code> persistido em <code>report_voalle_raw_records</code>. Consultas complexas que levavam 1.800ms passaram a rodar em menos de 15ms, blindando o banco do Voalle contra gargalos.</li>
+          <li><strong>Orquestrador de IA Multi-Provedor & Telemetria:</strong> Integração com Google Gemini SDK e rastreamento rigoroso de custos e tokens em <code>AiTokenUsage</code>, priorizando automaticamente o Gemini Flash para relatórios operacionais.</li>
+          <li><strong>Servidor MCP Oficial (Sprint 293):</strong> Exposição segura de dados operacionais e de rede a agentes autônomos de IA via Model Context Protocol nativo em Laravel.</li>
+          <li><strong>Design System & Glassmorphism:</strong> Catálogo vivo de componentes, Live CSS Playground protegido contra scripts e motor de Glassmorphism adaptativo com transparências configuráveis.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3.2 PROJETOS DE CONECTIVIDADE E REDES -->
+    <div id="32-conectividade" class="narrative-card">
+      <h4>
+        <span>3.2 Projetos de Conectividade e Redes (WireGuard Hub-Spoke & Telefonia ZEUS)</span>
+        <span class="badge badge-concluido">Em Operação</span>
+      </h4>
+      <p>
+        <strong>Topologia VPN Corporativa Hub-and-Spoke com SIEM Wazuh (#3200935):</strong>
+        Estruturação de malha WireGuard segura na sub-rede <code>10.50.50.0/24</code> para tráfego de telemetria e logs:
+      </p>
+      <div class="table-container" style="margin-top: 6px; margin-bottom: 6px;">
+        <table>
+          <thead>
+            <tr>
+              <th>Ativo / Host</th>
+              <th>Interface</th>
+              <th>IP WireGuard</th>
+              <th>Porta UDP</th>
+              <th>Papel na Topologia</th>
+              <th>Status do Enlace</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Servidor Wazuh</strong></td>
+              <td><code>wg0</code></td>
+              <td>10.50.50.1/24</td>
+              <td>51820</td>
+              <td>Concentrador Central (Hub)</td>
+              <td><span class="badge badge-concluido">ONLINE</span></td>
+            </tr>
+            <tr>
+              <td><strong>RB TI (Sede)</strong></td>
+              <td><code>wg-wazuh</code></td>
+              <td>10.50.50.2/24</td>
+              <td>13231</td>
+              <td>Ponto Remoto (Spoke - TI)</td>
+              <td><span class="badge badge-concluido">HANDSHAKE &lt; 2MS</span></td>
+            </tr>
+            <tr>
+              <td><strong>RB Chácara (Sede)</strong></td>
+              <td><code>wg-wazuh</code></td>
+              <td>10.50.50.3/24</td>
+              <td>13235</td>
+              <td>Ponto Remoto (Spoke - Chácara)</td>
+              <td><span class="badge badge-concluido">HANDSHAKE 1.3MS</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 7.4pt; color: #475569;">
+        <em>Resolução Técnica:</em> A interface da RB Chácara apresentou conflito ao tentar usar a porta padrão 13231 (em uso por outro túnel). David Brasil remapeou a porta para 13235 via terminal CLI, restaurando a interface e obtendo latência média de 1.309ms sem perda de pacotes.
+      </p>
+      <p style="font-size: 7.4pt; color: #475569; margin-top: 4px;">
+        <strong>Telefonia ZEUS TIP Brasil (#3137037):</strong> Isac Costa concluiu o levantamento de requisitos técnicos e mapeamento de troncos SIP para homologação da plataforma de telefonia fixa, gerando dossiê anexado ao ERP.
+      </p>
+    </div>
+
+    <!-- 3.3 PAINÉIS DE BI COM PARCEIROS -->
+    <div id="33-paineis-bi" class="narrative-card">
+      <h4>
+        <span>3.3 Painéis de BI com Parceiros (Analítica 3M e EasyBI / MW Solutions)</span>
+        <span class="badge badge-pendente">Esclarecimento Formal</span>
+      </h4>
+      <p>
+        Em consonância com as regras de fidedignidade e auditoria estabelecidas pela Coordenação de TI:
+      </p>
+      <ul>
+        <li><strong>Analítica 3M:</strong> Acesso limitado disponibilizado a Liomar Oliveira. O setor de TI não gerencia, não administra dashboards e não realiza acompanhamento técnico direto desta solução, mantida diretamente por terceiros e coordenação. Permanece no aguardo de grupo de alinhamento com Isvi Neemias.</li>
+        <li><strong>EasyBI (MW Solutions):</strong> O setor de TI nunca recebeu credenciais de acesso, o endereço homologado (<code>https://easybi.teninternet.com.br</code>) permanece inacessível na rede por falha de resolução DNS pública/interna e o projeto está fora do escopo de atuação técnica da equipe.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. • Setor de Tecnologia da Informação</span>
+      <span>Página 4 de 9</span>
+    </div>
+  </div>
+
+  <!-- TÓPICO 4: INCIDENTES TRATADOS (PÁGINA 5) -->
+  <div id="4-incidentes-tratados" class="page-section page-break">
+    <h3 class="section-title">
+      4. Incidentes Tratados
+      <span class="badge-count">Pronta Resposta & Causa Raiz</span>
+    </h3>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 10%;">ID</th>
+            <th style="width: 20%;">Ativo / Ambiente</th>
+            <th style="width: 10%;">Severidade</th>
+            <th style="width: 32%;">Diagnóstico & Causa Raiz</th>
+            <th style="width: 28%;">Ação Corretiva Executada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>INC-01</strong></td>
+            <td>WireGuard Chácara<br><span style="font-size: 6.8pt; color: #64748b;">#3200935</span></td>
+            <td><span class="badge badge-alta">ALTA</span></td>
+            <td>Colisão de porta UDP local (porta 13231 monopolizada por outro túnel pré-existente na RouterBoard).</td>
+            <td>Remapeamento da escuta para a porta UDP 13235 via RouterOS CLI; enlace restabelecido com 1.3ms.</td>
+          </tr>
+          <tr>
+            <td><strong>INC-02</strong></td>
+            <td>Desktop Bancada TI<br><span style="font-size: 6.8pt; color: #64748b;">#3209592</span></td>
+            <td><span class="badge badge-alta">ALTA</span></td>
+            <td>Corrupção do stack gráfico no CachyOS Linux por falta da biblioteca <code>libLLVM.so.23.1</code> após update.</td>
+            <td>Reinstalação forçada de mirrors, pacotes Mesa/LLVM e migração das configurações do Noctalia Shell v5.</td>
+          </tr>
+          <tr>
+            <td><strong>INC-03</strong></td>
+            <td>Recepção Sisalândia<br><span style="font-size: 6.8pt; color: #64748b;">#3175023</span></td>
+            <td><span class="badge badge-media">MÉDIA</span></td>
+            <td>Incompatibilidade do spooler Linux da estação local travando emissão de contratos e ordens.</td>
+            <td>Instalação limpa de Windows 10 e pareamento definitivo com a impressora HP LaserJet da loja.</td>
+          </tr>
+          <tr>
+            <td><strong>INC-04</strong></td>
+            <td>Câmera Jacobina<br><span style="font-size: 6.8pt; color: #64748b;">#3206204</span></td>
+            <td><span class="badge badge-media">MÉDIA</span></td>
+            <td>Interrupção de stream de vídeo provocada por oxidação mecânica no conector RJ-45 da câmera.</td>
+            <td>Apoio a técnico de campo com decapagem e nova crimpagem de conector de rede protegido.</td>
+          </tr>
+          <tr>
+            <td><strong>INC-05</strong></td>
+            <td>Caixa Jacobina<br><span style="font-size: 6.8pt; color: #64748b;">#3211961</span></td>
+            <td><span class="badge badge-alta">ALTA</span></td>
+            <td>Rompimento físico de condutor em cabo de rede, isolando a máquina do caixa de pagamentos.</td>
+            <td>Acionamento emergencial de técnico para passagem de cabo de rede provisório até a mesa.</td>
+          </tr>
+          <tr>
+            <td><strong>INC-06</strong></td>
+            <td>PC Cobrança<br><span style="font-size: 6.8pt; color: #64748b;">#3211281</span></td>
+            <td><span class="badge badge-media">MÉDIA</span></td>
+            <td>Curto-circuito interno na estação com queima definitiva da fonte de alimentação elétrica.</td>
+            <td>Substituição imediata por fonte Fortrek 200W nova, instalação de Windows 10 e testes.</td>
+          </tr>
+          <tr>
+            <td><strong>INC-07</strong></td>
+            <td>Sessão ERP Voalle<br><span style="font-size: 6.8pt; color: #64748b;">#3209683</span></td>
+            <td><span class="badge badge-alta">ALTA</span></td>
+            <td>Falha de backend da Synsuite ocasionando logout abrupto em colaboradores durante digitação.</td>
+            <td>Abertura de chamado de sustentação e escalonamento para o time de desenvolvimento da Voalle.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="narrative-card">
+      <h4>
+        <span>Classificação de Recorrência & Planos de Mitigação</span>
+        <span class="badge badge-info">Análise de Causa Raiz</span>
+      </h4>
+      <p>
+        • <strong>Incidentes de Infraestrutura de Rede (INC-01, INC-04, INC-05):</strong> Foram todos sanados de forma definitiva ou contornados com infraestrutura provisória. A passagem definitiva do cabo do Caixa de Jacobina está agendada no chamado #3211969.<br>
+        • <strong>Incidentes de Software & Sistemas (INC-03, INC-07):</strong> O problema do spooler em Sisalândia foi resolvido em definitivo com a padronização do Windows 10. O bug de logout no Voalle (INC-07) é o principal incidente recorrente em monitoramento que requer acompanhamento diário junto ao fornecedor.
+      </p>
+    </div>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. • Setor de Tecnologia da Informação</span>
+      <span>Página 5 de 9</span>
+    </div>
+  </div>
+
+  <!-- TÓPICO 5: SUPORTE INTERNO E VEÍCULOS (PÁGINA 6) -->
+  <div id="5-suporte-interno" class="page-section page-break">
+    <h3 class="section-title">
+      5. Suporte Interno (Informática)
+      <span class="badge-count">Atendimento aos Setores & Frotas</span>
+    </h3>
+
+    <!-- 5.1 E 5.2 SETORES MAIS DEMANDANTES -->
+    <div class="chart-container">
+      <div class="chart-card">
+        <h5 id="52-setores-demandantes">Ranking de Setores mais Demandantes</h5>
+        <div style="display: flex; flex-direction: column; gap: 5px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; font-size: 7.4pt;">
+            <span style="font-weight: 600;">1. SAC / Atendimento:</span>
+            <span style="font-weight: 700; color: #0284c7;">12 chamados (35,3%)</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; font-size: 7.4pt;">
+            <span style="font-weight: 600;">2. Lojas & Recepção:</span>
+            <span style="font-weight: 700; color: #10b981;">8 chamados (23,5%)</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; font-size: 7.4pt;">
+            <span style="font-weight: 600;">3. Cobrança:</span>
+            <span style="font-weight: 700; color: #f59e0b;">5 chamados (14,7%)</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; font-size: 7.4pt;">
+            <span style="font-weight: 600;">4. Infra & Redes Internas:</span>
+            <span style="font-weight: 700; color: #8b5cf6;">5 chamados (14,7%)</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; font-size: 7.4pt;">
+            <span style="font-weight: 600;">5. Projetos & Outros:</span>
+            <span style="font-weight: 700; color: #64748b;">4 chamados (11,8%)</span>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h5 id="53-solicitantes">Colaboradores Solicitantes Mais Frequentes</h5>
+        <div style="display: flex; flex-direction: column; gap: 5px;">
+          <div style="display: flex; justify-content: space-between; font-size: 7.4pt;">
+            <span><strong>Suzana Marinho</strong> (Lojas):</span><span>3 chamados (Caixa/Ourolândia)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 7.4pt;">
+            <span><strong>Marilúcia / Larissa</strong> (Cobrança):</span><span>3 chamados (Troca PC/Fonte)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 7.4pt;">
+            <span><strong>Raquel Santos / Mirele</strong> (SAC):</span><span>3 chamados (Perícias Desconto)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 7.4pt;">
+            <span><strong>Carlos Reis / Jair</strong> (Agendamento):</span><span>2 chamados (Native PBX)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5.4 RELATÓRIO DE VISITAS PRESENCIAIS E GESTÃO DE VEÍCULOS -->
+    <div id="54-visitas-presenciais" class="narrative-card" style="border: 2px solid #0284c7; background: #f0f9ff;">
+      <h4>
+        <span style="color: #0369a1;">5.4 Relatório de Visitas Técnicas Presenciais e Gestão de Veículos (Foco da Semana)</span>
+        <span class="badge badge-concluido">Missão Concluída</span>
+      </h4>
+      <p style="color: #0f172a; font-weight: 600;">
+        Operação de Campo — Atendimento Presencial com Deslocamento Rodoviário Intermunicipal
+      </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; font-size: 7.6pt;">
+        <div>
+          <p>• <strong>Unidades Atendidas:</strong> Lojas de Sisalândia e Riacho da Onça.</p>
+          <p>• <strong>Data da Missão:</strong> 30 de Setembro de 2026.</p>
+          <p>• <strong>Técnico Designado:</strong> <strong>David Brasil Fernandes</strong> (#116367).</p>
+          <p>• <strong>Duração Total da Operação:</strong> <strong>05h 38m</strong> (tempo integral de trânsito e suporte).</p>
+        </div>
+        <div>
+          <p>• <strong>Protocolo de Atendimento:</strong> #3175023 (Chamado Oficial Voalle).</p>
+          <p>• <strong>Protocolo de Frota / Veículo:</strong> <strong>#3207218</strong> (Requisição de Veículo).</p>
+          <p>• <strong>Status do Veículo:</strong> Veículo corporativo utilizado para condução do técnico e transporte de ativos.</p>
+        </div>
+      </div>
+      <div style="margin-top: 8px; border-top: 1px dashed #bae6fd; padding-top: 6px;">
+        <p style="font-weight: 700; color: #0369a1;">Intervenções Realizadas in loco:</p>
+        <ul style="color: #334155;">
+          <li><strong>Riacho da Onça:</strong> Ativação e homologação em rede Wi-Fi da impressora multifuncional Epson L4150, resolvendo indisponibilidade de impressão no atendimento.</li>
+          <li><strong>Sisalândia:</strong> Recuperação emergencial da máquina de atendimento da recepção. Devido a travamentos crônicos no spooler Linux, foi realizada formatação limpa com Windows 10 e pareamento com a impressora HP LaserJet.</li>
+          <li><strong>Logística Reversa de Ativo:</strong> Recolhimento seguro da impressora Epson L395 danificada para laudo pericial na bancada da sede (Protocolo #3208869).</li>
+          <li><strong>Alerta de Frota:</strong> O protocolo de frota <strong>#3207218</strong> aguarda apenas o lançamento do odômetro de retorno para encerramento formal do chamado no ERP.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. • Setor de Tecnologia da Informação</span>
+      <span>Página 6 de 9</span>
+    </div>
+  </div>
+
+  <!-- TÓPICO 6: SUPORTE AO TÉCNICO DE CAMPO (PÁGINA 7) -->
+  <div id="6-suporte-a-campo" class="page-section page-break">
+    <h3 class="section-title">
+      6. Suporte ao Técnico de Campo
+      <span class="badge-count">Apoio N2, Bancada & Automação</span>
+    </h3>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-value">14</div>
+        <div class="kpi-label">Apoios com Protocolo</div>
+        <div class="kpi-desc">Registrados no ERP Voalle</div>
+      </div>
+      <div class="kpi-card emerald">
+        <div class="kpi-value">~18</div>
+        <div class="kpi-label">Apoios Sem Protocolo</div>
+        <div class="kpi-desc">Pronta resposta via chat</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">32 min</div>
+        <div class="kpi-label">Tempo Médio Resposta</div>
+        <div class="kpi-desc">Resolução de chamados de campo</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-value">100%</div>
+        <div class="kpi-label">Acurácia Pericial</div>
+        <div class="kpi-desc">Diagnósticos sem reincidência</div>
+      </div>
+    </div>
+
+    <!-- 6.2 TIPOS DE APOIO -->
+    <h4 id="62-tipos-apoio" class="sub-section-title">6.2 Tipos de Apoio Mais Frequentes e Tempos de Resposta</h4>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 28%;">Tipo de Apoio a Campo</th>
+            <th style="width: 14%;">Volumetria</th>
+            <th style="width: 16%;">Tempo Médio</th>
+            <th style="width: 42%;">Exemplo Prático Auditado na Semana</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Diagnóstico Pericial em Assinante</strong></td>
+            <td>2 ocorrências</td>
+            <td>120 min</td>
+            <td><strong>#3196163 (Técnico Fredson):</strong> Prova técnica de placa de rede a 10 Mbps e duplo DHCP particular no cliente.</td>
+          </tr>
+          <tr>
+            <td><strong>Parametrização de Bancada (CPEs)</strong></td>
+            <td>3 ocorrências</td>
+            <td>45 min</td>
+            <td><strong>#3210293 (Barba's Burguer):</strong> Configuração de MikroTik RB 750Gr3 e AP Grandstream com redes separadas.</td>
+          </tr>
+          <tr>
+            <td><strong>Apoio a Cabeamento & CFTV</strong></td>
+            <td>4 ocorrências</td>
+            <td>25 min</td>
+            <td><strong>#3206204 & #3211961:</strong> Crimpagem nova em câmera de loja e passagem de cabo provisório no caixa.</td>
+          </tr>
+          <tr>
+            <td><strong>Consultas de Roteamento & IP Fixo</strong></td>
+            <td>9 ocorrências</td>
+            <td>12 min</td>
+            <td>Liberação e validação de IP corporativo fixo <code>177.93.251.159</code> entregue via NOC.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 6.3 OPORTUNIDADES DE AUTOMAÇÃO -->
+    <div id="63-automacao" class="narrative-card">
+      <h4>
+        <span>6.3 Oportunidades de Automação e Redução de Dependência do TI</span>
+        <span class="badge badge-info">Melhoria Contínua</span>
+      </h4>
+      <p>
+        A análise das intervenções de campo evidenciou pontos estratégicos para reduzir a dependência das equipes em relação ao setor de TI:
+      </p>
+      <ul>
+        <li><strong>Capacitação em Diagnóstico Físico Local (Ethernet & Duplex):</strong> No atendimento #3196163, o técnico de campo gastou horas investigando lentidão atribuída ao link externo quando a placa do servidor do cliente negociava em míseros 10 Mbps. Recomenda-se treinar os técnicos para checar a taxa de negociação na ONT e verificar a existência de roteadores particulares antes de escalar ao N2.</li>
+        <li><strong>Provisionamento de CPEs via AutoTickets v2:</strong> Criar perfis de pré-configuração para MikroTik e APs Grandstream direto no AutoTickets, reduzindo o tempo de bancada de 45 min para menos de 5 min via templates prontos.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. • Setor de Tecnologia da Informação</span>
+      <span>Página 7 de 9</span>
+    </div>
+  </div>
+
+  <!-- TÓPICO 7: INFRAESTRUTURA E SISTEMAS CRÍTICOS (PÁGINA 8) -->
+  <div id="7-infraestrutura" class="page-section page-break">
+    <h3 class="section-title">
+      7. Infraestrutura e Sistemas Críticos
+      <span class="badge-count">Disponibilidade, Backups & Modernização</span>
+    </h3>
+
+    <!-- 7.1 DISPONIBILIDADE -->
+    <h4 id="71-disponibilidade" class="sub-section-title">7.1 Disponibilidade de Serviços e Incidentes em Sistemas</h4>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 25%;">Sistema / Ativo Crítico</th>
+            <th style="width: 15%;">Disponibilidade</th>
+            <th style="width: 20%;">Carga / Desempenho</th>
+            <th style="width: 40%;">Diagnóstico Operacional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ERP Voalle</strong></td>
+            <td>99,8%</td>
+            <td>Normal</td>
+            <td>Disponibilidade de rede estável, com incidente pontual de encerramento forçado de sessão (#3209683).</td>
+          </tr>
+          <tr>
+            <td><strong>Flashman (TR-069)</strong></td>
+            <td>100,0%</td>
+            <td>Estável (&lt; 40% CPU)</td>
+            <td>Provisionamento e telemetria de CPEs operando com regularidade.</td>
+          </tr>
+          <tr>
+            <td><strong>Telefonia Native PBX</strong></td>
+            <td>100,0%</td>
+            <td>Nominal</td>
+            <td>Sem registros de indisponibilidade; novos discadores implantados.</td>
+          </tr>
+          <tr>
+            <td><strong>Servidores Dell R550 & R910</strong></td>
+            <td>100,0%</td>
+            <td>Otimizado</td>
+            <td>Servidor R910 passou por manutenção profunda de arrefecimento mecânico.</td>
+          </tr>
+          <tr>
+            <td><strong>Switches & Roteadores Sede</strong></td>
+            <td>100,0%</td>
+            <td>Latência &lt; 2ms</td>
+            <td>Protegidos por novo nobreak senoidal na Chácara e rotas WireGuard ativas.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7.2 BACKUPS -->
+    <h4 id="72-backups" class="sub-section-title">7.2 Execução e Validação de Backups</h4>
+    <div class="narrative-card">
+      <p>
+        • <strong>Backups de Máquinas Virtuais:</strong> Isac Costa realizou a conferência periódica das cópias de segurança de todas as VMs em execução nos hosts Proxmox/VMware. Todos os dumps agendados foram validados com integridade no storage secundário.<br>
+        • <strong>Integridade Transacional de Banco de Dados:</strong> O ecossistema AutoTickets v2 foi totalmente blindado através da migração da suíte de testes automatizados para <code>DatabaseTransactions</code>, garantindo 0 risco de corrupção ou perda acidental de dados no banco local de desenvolvimento.
+      </p>
+    </div>
+
+    <!-- 7.3 ATUALIZAÇÕES E MODERNIZAÇÃO -->
+    <h4 id="73-modernizacao" class="sub-section-title">7.3 Atualizações, Melhorias e Ações de Modernização</h4>
+    <div class="narrative-card">
+      <ul>
+        <li><strong>Manutenção Preventiva Profunda no Dell PowerEdge R910:</strong> Desmontagem integral do chassi 4U executada conjuntamente por David Brasil e Isac Costa, com remoção completa de resíduos particulados e troca de pasta térmica nos dissipadores de calor, assegurando maior sobrevida ao hardware.</li>
+        <li><strong>Blindagem Elétrica do Rack da Chácara:</strong> Instalação do Nobreak Senoidal Puro NHS Compact Plus 4 1500VA com tolerância de entrada até 268V, garantindo proteção aos switches e CCRs contra oscilações na rede elétrica rural.</li>
+        <li><strong>Evolução do Design System AutoTickets v2:</strong> Publicação do catálogo vivo de componentes UI e motor de Glassmorphism com isolamento de estilo e segurança contra injeções CSS.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. • Setor de Tecnologia da Informação</span>
+      <span>Página 8 de 9</span>
+    </div>
+  </div>
+
+  <!-- TÓPICO 8: PONTOS DE ATENÇÃO E PRÓXIMAS AÇÕES (PÁGINA 9) -->
+  <div id="8-pontos-de-atencao" class="page-section page-break">
+    <h3 class="section-title">
+      8. Pontos de Atenção e Próximas Ações
+      <span class="badge-count">Riscos, Investimentos & Roadmap</span>
+    </h3>
+
+    <!-- 8.1 RISCOS TECNOLÓGICOS -->
+    <div id="81-riscos" class="narrative-card" style="border-left: 4px solid #ef4444;">
+      <h4>
+        <span style="color: #b91c1c;">8.1 Riscos Tecnológicos e Vulnerabilidades Identificadas</span>
+        <span class="badge badge-alta">Atenção Crítica</span>
+      </h4>
+      <ul>
+        <li><strong>Instabilidade de Sessão no ERP Voalle (Risco Operacional Alto):</strong> O encerramento abrupto de sessões enquanto colaboradores preenchem chamados e atendimentos gera retrabalho e insatisfação generalizada. <em>Mitigação:</em> Cobrança prioritária junto à equipe de desenvolvimento da Synsuite (Protocolo #3209683).</li>
+        <li><strong>Expurgo Automático de Mensagens no Slack (Risco de Conformidade):</strong> A restrição de 90 dias do plano gratuito ameaça a retenção de dados estratégicos do setor. <em>Mitigação:</em> Aceleração do módulo de espelhamento e auditoria no AutoTickets v2 (Protocolo #3210508).</li>
+        <li><strong>Degradação de Equipamentos por Nobreaks Semi-Senoidais:</strong> Fontes de servidores e switches com PFC Ativo expostas a ondas quadradas sofrem estresse térmico acelerado. <em>Mitigação:</em> Aquisição de modelos senoidais puros já aprovada tecnicamente.</li>
+      </ul>
+    </div>
+
+    <!-- 8.2 INVESTIMENTOS E AQUISIÇÕES -->
+    <div id="82-investimentos" class="narrative-card">
+      <h4>
+        <span>8.2 Necessidades de Investimentos e Aquisições Identificadas</span>
+        <span class="badge badge-media">Orçamento & Compras</span>
+      </h4>
+      <div class="table-container" style="margin-top: 6px; margin-bottom: 4px;">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%;">Item / Equipamento</th>
+              <th style="width: 15%;">Setor Destino</th>
+              <th style="width: 45%;">Justificativa Técnica</th>
+              <th style="width: 15%;">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nobreaks Senoidais NHS 1500VA</strong></td>
+              <td>Chácara e Sede</td>
+              <td>Proteção de equipamentos críticos com PFC Ativo (Protocolo #3210625).</td>
+              <td><span class="badge badge-andamento">Em Cotação</span></td>
+            </tr>
+            <tr>
+              <td><strong>Tela Notebook Dell Vostro 3510</strong></td>
+              <td>Estoque / TI</td>
+              <td>Reposição para recuperação de máquina danificada (#3202572).</td>
+              <td><span class="badge badge-andamento">Em Trânsito</span></td>
+            </tr>
+            <tr>
+              <td><strong>Memória RAM DDR4 8GB</strong></td>
+              <td>Loja Ourolândia</td>
+              <td>Upgrade de máquina com saturação de RAM (Protocolo #3210011).</td>
+              <td><span class="badge badge-pendente">Aguardando</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 8.3 AÇÕES PLANEJADAS -->
+    <h4 id="83-acoes-planejadas" class="sub-section-title">8.3 Ações Planejadas para as Próximas Semanas (Roadmap)</h4>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 20%;">Responsável</th>
+            <th style="width: 50%;">Ação Prioritária Programada</th>
+            <th style="width: 15%;">Prazo Alvo</th>
+            <th style="width: 15%;">Impacto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Liomar Oliveira</strong></td>
+            <td>Cobrar resolução definitiva do bug de logout no Voalle e homologar correção.</td>
+            <td>09/10/2026</td>
+            <td><span class="badge badge-alta">Alto</span></td>
+          </tr>
+          <tr>
+            <td><strong>Liomar Oliveira</strong></td>
+            <td>Concluir modelagem de banco e endpoints da API do Slack no AutoTickets v2.</td>
+            <td>16/10/2026</td>
+            <td><span class="badge badge-alta">Alto</span></td>
+          </tr>
+          <tr>
+            <td><strong>David Brasil</strong></td>
+            <td>Lançar odômetro de retorno e baixar o protocolo de frota da viagem (#3207218).</td>
+            <td>06/10/2026</td>
+            <td><span class="badge badge-media">Médio</span></td>
+          </tr>
+          <tr>
+            <td><strong>David Brasil</strong></td>
+            <td>Embalar e expedir impressora Epson L395 para assistência externa (#3209322).</td>
+            <td>07/10/2026</td>
+            <td><span class="badge badge-media">Médio</span></td>
+          </tr>
+          <tr>
+            <td><strong>David Brasil</strong></td>
+            <td>Configurar exportação Syslog nos MikroTiks para validação no SIEM Wazuh.</td>
+            <td>09/10/2026</td>
+            <td><span class="badge badge-alta">Alto</span></td>
+          </tr>
+          <tr>
+            <td><strong>Isac Costa</strong></td>
+            <td>Concluir proposta técnica de migração para telefonia ZEUS TIP Brasil (#3137037).</td>
+            <td>09/10/2026</td>
+            <td><span class="badge badge-alta">Alto</span></td>
+          </tr>
+          <tr>
+            <td><strong>Isac Costa</strong></td>
+            <td>Acompanhar chamados de N2 e validações de links corporativos junto aos técnicos.</td>
+            <td>10/10/2026</td>
+            <td><span class="badge badge-media">Médio</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <span>Ten Soluções e Serviços LTDA. • Setor de Tecnologia da Informação</span>
+      <span>Página 9 de 9</span>
+    </div>
+  </div>
+
+</body>
+</html>
