@@ -79,6 +79,7 @@
 reports_ti/
 ├── GEMINI.md                                  # Contexto principal, diretrizes e regras obrigatórias para a IA
 ├── PROMPT.md                                  # Especificação das tarefas, direcionamento e regras do usuário
+├── PONTOS_A_MELHORAR.md                       # Registro de oportunidades de melhoria e ajustes identificados
 ├── .gitignore                                 # Controle de exclusão de arquivos binários pesados e venv
 ├── modelo_coordenador/                        # Documento oficial de padronização do Coordenador de TI
 │   ├── modelo_relatorio_setor_ti.pdf          # PDF de referência emitido por Isvi Neemias
@@ -86,15 +87,21 @@ reports_ti/
 ├── 0.individual_report/                       # Relatórios individuais dos membros da equipe
 │   ├── README.md                              # Diretrizes para relatórios individuais e regras de fallback
 │   ├── liomar/                                # Relatórios individuais de Liomar Oliveira
-│   │   ├── old/                               # Versões legadas de relatórios arquivadas
-│   │   └── [YYYY-MM-DD]-[YYYY-MM-DD].[ext]    # Novo relatório individual gerado
+│   │   ├── old/                               # Versões legadas e relatórios de semanas anteriores arquivados
+│   │   └── [YYYY-MM-DD]_[YYYY-MM-DD].[ext]    # Novo relatório individual gerado
 │   ├── isac/                                  # Relatórios individuais de Isac Costa Silva
+│   │   ├── old/                               # Relatórios e documentos de semanas anteriores arquivados
+│   │   └── [YYYY-MM-DD]_[YYYY-MM-DD].[ext]    # Relatório individual gerado no período
 │   └── david/                                 # Relatórios individuais de David Brasil Fernandes
+│       ├── old/                               # Relatórios e documentos de semanas anteriores arquivados
+│       └── [YYYY-MM-DD]_[YYYY-MM-DD].[ext]    # Relatório individual gerado no período
 ├── 1.voalle/                                  # Exportações e dados brutos do ERP Voalle
 │   ├── README.md                              # Guia de interpretação de chamados, OS e apontamentos
+│   ├── old/                                   # Exportações brutas e relatórios de semanas anteriores arquivados
 │   └── [Nome]-[DataInicio]-[DataFim].pdf/.csv # Relatórios de tarefas e atendimentos do Voalle
 ├── 2.autotickets/                             # Dados tratados e relatórios gerados via AutoTickets
 │   ├── README.md                              # Guia para leitura de relatórios e inspeção de commits
+│   ├── old/                                   # CSVs e relatórios tratados de semanas anteriores arquivados
 │   └── [arquivos_exportados].csv              # CSVs tratados (chamados ativos, concluídos, tarefas, etc.)
 ├── 3.whatsapp_histories/                      # Harness de comunicações e históricos do WhatsApp Business
 │   ├── README.md                              # Manual completo do harness, rotina semanal e queries
