@@ -1,0 +1,1 @@
+Neste diretório contém arquivos .md com as considerações do Supervisor de Tecnologia da Informação Isvi Neemias, sobre cada relatório semanal consolidado gerado e armazenado em 4.weekly_reports, sempre com o período do relatório que foi analisado no nome do arquivo.
