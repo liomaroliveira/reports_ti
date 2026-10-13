@@ -7,8 +7,8 @@
 > [!NOTE]
 > Altere os campos abaixo a cada nova semana antes de solicitar a execução da IA.
 
-* **Data Inicial:** `2026-09-28`
-* **Data Final:** `2026-10-04`
+* **Data Inicial:** `2026-10-04`
+* **Data Final:** `2026-10-10`
 * **Colaborador Principal (Responsável pela Consolidação):** Liomar Antonio de Oliveira
 
 ### 📝 Instruções e Focos Específicos Desta Semana (Customizável):
