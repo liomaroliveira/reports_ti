@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Executivo - Automação de Vouchers WiFeed</title>
+    <style>    @page {
+        size: A4 portrait;
+        margin: 12mm 10mm;
+    }
+    :root {
+        --bg: #f8fafc;
+        --card-bg: #ffffff;
+        --border: #e2e8f0;
+        --border-light: #f1f5f9;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --primary: #2563eb;
+        --primary-light: #eff6ff;
+        --success: #10b981;
+        --success-light: #ecfdf5;
+        --danger: #ef4444;
+        --danger-light: #fef2f2;
+        --warning: #f59e0b;
+        --warning-light: #fffbeb;
+    }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg);
+        color: var(--text-main);
+        font-size: 13px;
+        line-height: 1.5;
+        padding: 24px;
+    }
+    .report-container {
+        max-width: 1040px;
+        margin: 0 auto;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 32px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .report-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 2px solid var(--border-light);
+        padding-bottom: 20px;
+        margin-bottom: 24px;
+    }
+    .header-title h1 {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--text-main);
+        letter-spacing: -0.02em;
+    }
+    .header-title p {
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+    .header-badge {
+        display: inline-block;
+        background: var(--primary-light);
+        color: var(--primary);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 6px;
+        border: 1px solid rgba(37, 99, 235, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .meta-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 24px;
+    }
+    .meta-item {
+        font-size: 12px;
+    }
+    .meta-item-label {
+        color: var(--text-muted);
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+    .meta-item-value {
+        font-weight: 600;
+        color: var(--text-main);
+        margin-top: 2px;
+    }
+    .section-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-bottom: 24px;
+    }
+    .stat-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px 16px;
+        border-left: 4px solid var(--primary);
+    }
+    .stat-card.success { border-left-color: var(--success); }
+    .stat-card.warning { border-left-color: var(--warning); }
+    .stat-card.danger { border-left-color: var(--danger); }
+    .stat-label {
+        font-size: 11px;
+        color: var(--text-muted);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+    .stat-value {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-top: 4px;
+        letter-spacing: -0.02em;
+    }
+    .stat-sub {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .stat-badge {
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 600;
+    }
+    .stat-badge.pos { background: var(--success-light); color: var(--success); }
+    .stat-badge.neg { background: var(--danger-light); color: var(--danger); }
+    .stat-badge.neutral { background: var(--border-light); color: var(--text-muted); }
+    .chart-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 24px;
+    }
+    .chart-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    .chart-card-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-main);
+    }
+    .chart-card-legend {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 11px;
+        color: var(--text-muted);
+    }
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .legend-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        background: var(--primary);
+    }
+    .table-container {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 24px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 12px;
+        text-align: left;
+    }
+    th {
+        background: #f1f5f9;
+        color: #334155;
+        font-weight: 600;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 0.04em;
+    }
+    td {
+        padding: 9px 12px;
+        border-bottom: 1px solid var(--border-light);
+        color: var(--text-main);
+    }
+    tr:nth-child(even) td {
+        background-color: #fafafa;
+    }
+    tr:last-child td {
+        border-bottom: none;
+    }
+    .badge-status {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+    .badge-status.success { background: var(--success-light); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.2); }
+    .badge-status.failed { background: var(--danger-light); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.2); }
+    .badge-status.partial { background: var(--warning-light); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.2); }
+    .report-footer {
+        margin-top: 28px;
+        border-top: 1px solid var(--border);
+        padding-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        color: var(--text-muted);
+    }
+    @media print {
+        body {
+            background: #ffffff;
+            padding: 0;
+        }
+        .report-container {
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            max-width: 100%;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+        tr {
+            page-break-inside: avoid;
+        }
+    }</style>
+</head>
+<body>
+    <div class="report-container">
+        <!-- Cabeçalho Executivo -->
+        <div class="report-header">
+            <div class="header-title">
+                <h1>Relatório Executivo - Vouchers WiFeed</h1>
+                <p>Auditoria de clientes ativos e automação de vouchers para os Captive Portals da rede pública</p>
+            </div>
+            <div class="header-badge">
+                Escopo Completo            </div>
+        </div>
+
+        <!-- Metadados de Auditoria -->
+        <div class="meta-grid">
+            <div class="meta-item">
+                <div class="meta-item-label">Período Analisado</div>
+                <div class="meta-item-value">de 04/10/2026 até 10/10/2026</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item-label">Duração</div>
+                <div class="meta-item-value">7 dias</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item-label">Gerado em</div>
+                <div class="meta-item-value">14/10/2026 às 16:10:27</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-item-label">Responsável</div>
+                <div class="meta-item-value">Liomar Oliveira</div>
+            </div>
+        </div>
+
+                <!-- Seção 1: Indicadores Executivos (StatCards) -->
+        <div class="section-title">
+            <span>📊</span>
+            <span>Indicadores Consolidados de Clientes e Vouchers</span>
+        </div>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-label">Clientes Ativos (Fim)</div>
+                <div class="stat-value">32.600</div>
+                <div class="stat-sub">
+                    <span class="stat-badge pos">
+                        +88 (0.27%)
+                    </span>
+                    <span>no período</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Clientes Ativos (Início)</div>
+                <div class="stat-value">32.512</div>
+                <div class="stat-sub">Posição de abertura</div>
+            </div>
+            <div class="stat-card success">
+                <div class="stat-label">Taxa Média de Sucesso</div>
+                <div class="stat-value">100%</div>
+                <div class="stat-sub">3 de 7 envios bem-sucedidos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Vouchers Transmitidos</div>
+                <div class="stat-value">227.483</div>
+                <div class="stat-sub">Registros processados</div>
+            </div>
+        </div>
+
+        <!-- Seção 2: Gráfico Vetorial de Evolução Histórica -->
+        <div class="chart-card">
+            <div class="chart-card-header">
+                <div class="chart-card-title">Evolução Diária da Base de Clientes Ativos</div>
+                <div class="chart-card-legend">
+                    <div class="legend-item"><span class="legend-dot"></span> Clientes Ativos Vigentes</div>
+                </div>
+            </div>
+            <div class="chart-body">
+                <svg viewBox="0 0 960 240" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+                <defs>
+                    <linearGradient id="voucherAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#2563eb" stop-opacity="0.25" />
+                        <stop offset="100%" stop-color="#2563eb" stop-opacity="0.0" />
+                    </linearGradient>
+                </defs>
+                <line x1="65" y1="200" x2="935" y2="200" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" /><text x="57" y="203.5" font-size="10" fill="#64748b" text-anchor="end" font-family="Inter, sans-serif">32.312</text><line x1="65" y1="155" x2="935" y2="155" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" /><text x="57" y="158.5" font-size="10" fill="#64748b" text-anchor="end" font-family="Inter, sans-serif">32.390</text><line x1="65" y1="110" x2="935" y2="110" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" /><text x="57" y="113.5" font-size="10" fill="#64748b" text-anchor="end" font-family="Inter, sans-serif">32.467</text><line x1="65" y1="65" x2="935" y2="65" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" /><text x="57" y="68.5" font-size="10" fill="#64748b" text-anchor="end" font-family="Inter, sans-serif">32.545</text><line x1="65" y1="20" x2="935" y2="20" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" /><text x="57" y="23.5" font-size="10" fill="#64748b" text-anchor="end" font-family="Inter, sans-serif">32.622</text>
+                <path d="M 65 83.9 L 210 187.2 L 355 132.1 L 500 96.1 L 645 67.6 L 790 46.1 L 935 32.8 L 935 200 L 65 200 Z" fill="url(#voucherAreaGrad)" />
+                <path d="M 65 83.9 L 210 187.2 L 355 132.1 L 500 96.1 L 645 67.6 L 790 46.1 L 935 32.8" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="65" cy="83.9" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="210" cy="187.2" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="355" cy="132.1" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="500" cy="96.1" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="645" cy="67.6" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="790" cy="46.1" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="935" cy="32.8" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" />
+                <text x="65" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">04/10</text><line x1="65" y1="200" x2="65" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="210" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">05/10</text><line x1="210" y1="200" x2="210" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="355" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">06/10</text><line x1="355" y1="200" x2="355" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="500" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">07/10</text><line x1="500" y1="200" x2="500" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="645" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">08/10</text><line x1="645" y1="200" x2="645" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="790" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">09/10</text><line x1="790" y1="200" x2="790" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="935" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">10/10</text><line x1="935" y1="200" x2="935" y2="204" stroke="#cbd5e1" stroke-width="1" />
+            </svg>            </div>
+        </div>
+        
+                <!-- Seção 3: Tabela Detalhada de Histórico de Envios -->
+        <div class="section-title page-break">
+            <span>⚡</span>
+            <span>Histórico de Envios e Validações de Vouchers</span>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data / Hora</th>
+                        <th>Operador</th>
+                        <th>Segmento</th>
+                        <th style="text-align: right;">Base ERP</th>
+                        <th style="text-align: right;">Vouchers Transmitidos</th>
+                        <th style="text-align: center;">Taxa de Sucesso</th>
+                        <th style="text-align: center;">Status</th>
+                        <th>Observação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                                    <tr>
+                            <td><strong>10/10/2026 11:01</strong></td>
+                            <td>Raimara</td>
+                            <td>Clientes TEN CPF-CNPJ</td>
+                            <td style="text-align: right;">32.600</td>
+                            <td style="text-align: right; font-weight: 600;">32.600</td>
+                            <td style="text-align: center;">
+                                <span class="badge-status success">
+                                    100%
+                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="badge-status deleted">
+                                    Excluído                                </span>
+                            </td>
+                            <td>Executado automaticamente em 10/10/2026 11:00</td>
+                        </tr>
+                                                <tr>
+                            <td><strong>09/10/2026 11:01</strong></td>
+                            <td>Raimara</td>
+                            <td>Clientes TEN CPF-CNPJ</td>
+                            <td style="text-align: right;">32.577</td>
+                            <td style="text-align: right; font-weight: 600;">32.577</td>
+                            <td style="text-align: center;">
+                                <span class="badge-status success">
+                                    100%
+                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="badge-status deleted">
+                                    Excluído                                </span>
+                            </td>
+                            <td>Executado automaticamente em 09/10/2026 11:00</td>
+                        </tr>
+                                                <tr>
+                            <td><strong>08/10/2026 11:01</strong></td>
+                            <td>Liomar Oliveira</td>
+                            <td>Clientes TEN CPF-CNPJ</td>
+                            <td style="text-align: right;">32.540</td>
+                            <td style="text-align: right; font-weight: 600;">32.540</td>
+                            <td style="text-align: center;">
+                                <span class="badge-status success">
+                                    100%
+                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="badge-status success">
+                                    Sucesso                                </span>
+                            </td>
+                            <td>Executado automaticamente em 08/10/2026 11:00</td>
+                        </tr>
+                                                <tr>
+                            <td><strong>07/10/2026 11:01</strong></td>
+                            <td>Raimara</td>
+                            <td>Clientes TEN CPF-CNPJ</td>
+                            <td style="text-align: right;">32.491</td>
+                            <td style="text-align: right; font-weight: 600;">32.491</td>
+                            <td style="text-align: center;">
+                                <span class="badge-status success">
+                                    100%
+                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="badge-status success">
+                                    Sucesso                                </span>
+                            </td>
+                            <td>Executado automaticamente em 07/10/2026 11:00</td>
+                        </tr>
+                                                <tr>
+                            <td><strong>06/10/2026 11:01</strong></td>
+                            <td>Raimara</td>
+                            <td>Clientes TEN CPF-CNPJ</td>
+                            <td style="text-align: right;">32.429</td>
+                            <td style="text-align: right; font-weight: 600;">32.429</td>
+                            <td style="text-align: center;">
+                                <span class="badge-status success">
+                                    100%
+                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="badge-status success">
+                                    Sucesso                                </span>
+                            </td>
+                            <td>Executado automaticamente em 06/10/2026 11:00</td>
+                        </tr>
+                                                <tr>
+                            <td><strong>05/10/2026 11:01</strong></td>
+                            <td>Raimara</td>
+                            <td>Clientes TEN CPF-CNPJ</td>
+                            <td style="text-align: right;">32.334</td>
+                            <td style="text-align: right; font-weight: 600;">32.334</td>
+                            <td style="text-align: center;">
+                                <span class="badge-status success">
+                                    100%
+                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="badge-status deleted">
+                                    Excluído                                </span>
+                            </td>
+                            <td>Executado automaticamente em 05/10/2026 11:00</td>
+                        </tr>
+                                                <tr>
+                            <td><strong>04/10/2026 11:01</strong></td>
+                            <td>Raimara</td>
+                            <td>Clientes TEN CPF-CNPJ</td>
+                            <td style="text-align: right;">32.512</td>
+                            <td style="text-align: right; font-weight: 600;">32.512</td>
+                            <td style="text-align: center;">
+                                <span class="badge-status success">
+                                    100%
+                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="badge-status deleted">
+                                    Excluído                                </span>
+                            </td>
+                            <td>Executado automaticamente em 04/10/2026 11:00</td>
+                        </tr>
+                                                            </tbody>
+            </table>
+        </div>
+        
+        <!-- Rodapé do Relatório -->
+        <div class="report-footer">
+            <div>AutoTickets v2 • Sistema de Gestão Operacional e Automações</div>
+            <div>Documento de Auditoria e Governança • Página 1 de 1</div>
+        </div>
+    </div>
+</body>
+</html>
+        
