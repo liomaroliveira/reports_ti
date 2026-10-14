@@ -43,13 +43,14 @@
    - Plataforma de automação e integração de sistemas desenvolvida e mantida por Liomar Oliveira.
    - **Repositório e Commits Locais:** `/home/liomarti/dev/autotickets-v2` (inspecionar commits no período para mapear entregas técnicas, novas features, correções e manutenções).
    - **Subdiretórios Estruturados de Relatórios de Produtividade (`2.autotickets/`):**
-     - `colaborador_x_ticket/`: Cruzamento de produtividade individual e volumetria por colaborador.
+     - `colaborador_x_ticket/`: Cruzamento analítico de produtividade individual e volumetria por colaborador. **Regra de Leitura:** Como se baseia em dados do ERP Voalle, deve ser lido de forma estritamente complementar com as exportações em `1.voalle/`.
      - `fullcam_automacao_inadimplencia/`: Relatórios de suspensão/reativação automática por inadimplência no Fullcam.
      - `fullcam_automacao_instalacao_camera/`: Automação da esteira de ativação e instalação de câmeras.
-     - `fullcam_lucros_prejuizos/`: Impacto financeiro e análise de perdas/ganhos das automações.
+     - `fullcam_lucros_prejuizos/`: Impacto financeiro, custos de licenças/storage, equipamentos perdidos e análise pericial de lucros/prejuízos.
      - `problemas_recorrentes/`: Mineração de padrões de falhas e reincidências no parque.
      - `produtividade_geral/`: Métricas consolidadas de esforço técnico humano economizado.
-     - `wifeed_daily_update_voucher/`: Automação diária de sincronização de vouchers WiFeed (clientes adimplentes, cálculo de churn e ganho operacional).
+     - `wifeed_daily_update_voucher/`: Automação diária de sincronização de vouchers WiFeed (clientes adimplentes, evolução diária e histórico).
+   - **Regra de Arquivos Multi-Formato:** Arquivos que compartilham o mesmo nome base em formatos diferentes (ex.: `.md`, `.html`, `.csv`, `.pdf`) são o mesmo relatório consolidado sobre os mesmos dados brutos. A IA deve avaliar apenas particularidades estruturais (como gráficos interativos/SVG no HTML ou colunas adicionais no CSV) e tratá-los de forma unificada, sem duplicar cálculos ou considerá-los fontes conflitantes.
 
 3. **Investigações Especiais e Segurança (`2.1.others/`):**
    - Diretório dedicado a estudos de infraestrutura, testes de intrusão, mapeamento de vulnerabilidades em sistemas internos e análises periciais pontuais organizadas por data (`2.1.others/[YYYY-MM-DD]/...`). Quando houver pasta correspondente à semana do relatório, integrar seus achados nos tópicos de Projetos, Segurança e Riscos Tecnológicos.
@@ -195,21 +196,35 @@ Cada relatório semanal consolidado deve respeitar a estrutura oficial:
   - **Regra de Auditoria:** Havendo divergência de horas (ex.: horas apontadas maiores que o ponto), é **obrigatório explicar a causa** (tickets sobrepostos deixados em execução, cronômetros abertos fora do expediente, tempo de deslocamento intermunicipal ou atendimento em almoço/interjornada).
 
 ### 3. Projetos e Entregas
-- Status dos projetos em andamento (AutoTickets, integração WiFeed, telefonia Native PBX / ZEUS, etc.).
-- **3.1.4 Impacto Operacional e Métricas de Produtividade das Automações (AutoTickets):**
-  - Horas técnicas de esforço humano economizadas pelas automações ativas.
-  - Automação WiFeed Voucher: clientes adimplentes sincronizados, cálculo de churn/crescimento e rotina de validação sem intervenção manual.
-  - Automação Fullcam Inadimplência/Instalação: volume de câmeras tratadas, suspensões/reativações e prevenção de perdas.
-- Painéis de BI com parceiros: Esclarecer o status real de Analítica 3M (Perfil Master, acesso estratégico) e EasyBI (fora do escopo direto, descontinuação).
-- Entregas colocadas em produção na semana e resultados práticos observados.
-- Mudanças de escopo e prioridade: Quando houver alteração de cronograma ou prioridade (ex.: SIEM Wazuh focando em RBs locais em vez de filiais), **justificar formalmente o motivo técnico e registrar o novo prazo**.
+- Status dos projetos de conectividade, infraestrutura de rede e parcerias estratégicas.
+- **Projetos de Redes e Conectividade:** Túneis WireGuard, MikroTik, hardening de portas e SIEM Wazuh. Justificar qualquer desvio de prioridade ou replanejamento de cronograma (ex.: foco em RBs locais da sede e chácara em vez das filiais), fixando novo prazo.
+- **Telefonia Fixa e Comunicação Corporativa (Native PBX / ZEUS):** Diagnóstico operacional, ramais corporativos e chamadas.
+- **Painéis de BI com Parceiros:** Esclarecer formalmente a situação real de **Analítica 3M** (Perfil Master para gestão de acessos, foco em dashboards estratégicos) e **EasyBI / MW Solutions** (fora do escopo direto de manutenção do TI, processo de descontinuação).
 
-### 4. Incidentes Tratados
+### 4. Plataforma e Automações AutoTickets
+Macro-tópico de governança de software e automações do TI, detalhado em subtópicos específicos:
+- **4.1 Desenvolvimento e Engenharia de Software AutoTickets v2:**
+  - Histórico de commits no período (`autotickets-v2`), relação de sprints entregues (Sprints 315 a 332), volume de adições/exclusões e governança com `DatabaseTransactions`.
+  - Evolução da arquitetura Local-First (Duplo Cursor), orquestrador de IA multi-provedor (LiteLLM, Ollama GPU e cotas Gemini) e Servidor MCP Oficial (`laravel/mcp`).
+- **4.2 Automação WiFeed – Hotspots e Sincronização Diária de Vouchers:**
+  - Contextualização do Captive Portal (TEN_Wi-Fi), fluxo de clientes (CPF/voucher) e não clientes (cadastro por celular).
+  - Problema anterior (upload manual de CSV, risco de erro e tempo perdido) e arquitetura da automação diária às 11h conectando ao Voalle.
+  - Resumo executivo da base (32.512 a 32.600 clientes ativos, +88 no período, 100% sucesso, 227.483 vouchers transmitidos).
+  - **Gráfico SVG de evolução diária de clientes ativos** e histórico detalhado de envios e validações na íntegra.
+- **4.3 Módulo Fullcam – Auditoria Financeira de Lucros e Prejuízos:**
+  - Resumo executivo financeiro inicial com statcards: Total Faturado (R$ 10.612,36), Custo de Licenças (R$ 1.875,00), Custo de Storage (R$ 334,00), Prejuízo com Equipamentos Perdidos (R$ 1.350,00) e Saldo Líquido (+R$ 7.053,36). Análise dos 51 contratos deficitários vs 34 superavitários.
+  - **Tabela Completa de Auditoria de todos os 85 clientes na íntegra**, estilizada em formato compacto com quebras de página otimizadas para PDF e cores semânticas no saldo líquido.
+- **4.4 Módulo Fullcam – Produção Operacional das Automações:**
+  - Painel consolidado com statcards da esteira horária (553 rotinas processadas, 32 câmeras tratadas, 99,2% sucesso) + tabela destacando as ações operacionais efetivas (BLOCK, UNBLOCK e INSTALL).
+- **4.5 Impacto Operacional e Métricas de Produtividade das Automações:**
+  - Quantificação de horas técnicas de esforço humano economizadas pelas automações ativas.
+
+### 5. Incidentes Tratados
 - Relação dos incidentes da semana (sistema/serviço afetado, severidade, data/hora, duração e impacto).
 - Causa raiz identificada e correção aplicada (definitiva ou paliativa).
 - **Regra de Reincidência Pericial:** É **proibido** afirmar "100% de precisão" ou "sem reincidência" com base em apenas uma semana. A métrica de reincidência deve adotar **janela móvel mínima de observação de 30 dias**.
 
-### 5. Suporte Interno (Informática)
+### 6. Suporte Interno (Informática)
 - Quantidade de solicitações recebidas e atendidas (computadores, acessos, e-mails, impressoras).
 - Tempo médio de atendimento e pendências em aberto.
 - **Setores que mais demandaram suporte do TI:** Ranking e estatísticas.
@@ -217,13 +232,13 @@ Cada relatório semanal consolidado deve respeitar a estrutura oficial:
 - **Relatório de Visitas Técnicas Presenciais e Gestão de Veículos:** Detalhamento de deslocamentos operacionais, quilometragem, veículos utilizados e **dificuldades/atrasos gerados pela frota** (horário combinado vs. horário de entrega do carro e impacto na agenda de visitas).
 - **Política de Sistemas Operacionais (Windows 10 x Windows 11):** Justificativa técnica para novas instalações de Windows 10 considerando o fim do suporte oficial da Microsoft, situação das licenças e limitações de hardware.
 
-### 6. Suporte ao Técnico de Campo
+### 7. Suporte ao Técnico de Campo
 - Quantidade de apoios prestados a equipes de campo (provisionamento de ONTs, liberações, consultas, troca de estrutura).
 - **Rigor Matemático e Formalização:** Todo apoio precisa de protocolo formal sempre que envolver atuação técnica, abertura de telas ou sistemas. A volumetria descrita no texto deve somar exatamente o total das tabelas categorizadas.
 - Tipos de apoio mais frequentes e tempo médio de resposta.
 - Oportunidades de automação ou capacitação para redução de dependência do TI.
 
-### 7. Infraestrutura e Sistemas Críticos
+### 8. Infraestrutura e Sistemas Críticos
 - **Disponibilidade dos Sistemas Críticos (Acabou o "achismo" de 99,8% ou 100%):**
   - Caso não haja ferramenta de monitoramento externo medindo o tempo real de atividade/queda, declarar expressamente **"Sem indisponibilidade de rede registrada"**.
   - Falhas de aplicação, instabilidades funcionais ou quedas de sessão (ex.: bug de sessão Voalle) **não devem ser calculadas como percentual de indisponibilidade**, mas sim registradas à parte como **Ocorrências Operacionais de Sistemas**, com severidade e impacto.
@@ -236,7 +251,7 @@ Cada relatório semanal consolidado deve respeitar a estrutura oficial:
 - Ações de modernização e manutenção preventiva (servidores, nobreaks senoidais, cabeamento).
 - Atualizações de segurança e vulnerabilidades identificadas (integrar dados de `2.1.others/` quando aplicável).
 
-### 8. Pontos de Atenção e Próximas Ações
+### 9. Pontos de Atenção e Próximas Ações
 - Riscos tecnológicos para a operação e segurança da informação (LGPD, retenção de dados, senhas e portas).
 - Necessidades de investimento ou aquisição de equipamentos/licenças.
 - Ações planejadas para a semana seguinte com responsáveis e prazos alinhados.
@@ -250,6 +265,8 @@ Cada relatório semanal consolidado deve respeitar a estrutura oficial:
 3. **Consistência do Índice:** Toda seção listada no Índice Geral de Navegação DEVE existir exatamente com o mesmo título e âncora funcional no corpo do texto.
 4. **Ausência Justificada:** É permitido não preencher conteúdo em um subtópico caso não tenham ocorrido demandas compatíveis na semana, desde que acompanhado de justificativa formal clara.
 5. **Sem Distorções:** Não alterar o sentido original das informações, manutenções ou incidentes relatados pelas equipes.
+6. **Regra de Arquivos Multi-Formato:** Arquivos com o mesmo nome base em formatos diferentes (`.md`, `.html`, `.csv`, `.pdf`) são o mesmo relatório consolidado sob os mesmos dados brutos; avaliar apenas particularidades estruturais (como SVG ou colunas extras no CSV) e tratá-los de forma unificada.
+7. **Cruzamento Voalle + AutoTickets:** O relatório `colaborador_x_ticket` fornece as métricas oficiais consolidadas de vazão, produtividade, TMA e TMR, enquanto `1.voalle/` provê o detalhamento qualitativo de cada protocolo e apontamento.
 
 ---
 
