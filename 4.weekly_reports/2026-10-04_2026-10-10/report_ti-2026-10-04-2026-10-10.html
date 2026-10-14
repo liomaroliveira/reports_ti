@@ -1,0 +1,2619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório Semanal Consolidado — Setor TI (04/10/2026 a 10/10/2026)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+    @page {
+      size: A4;
+      margin: 12mm 12mm 12mm 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.42;
+      font-size: 8.4pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page-section {
+      width: 100%;
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    /* BANNER E IDENTIFICAÇÃO */
+    .header-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #0284c7 100%);
+      color: #ffffff;
+      padding: 16px 22px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 3px 12px;
+      border-radius: 14px;
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      color: #e0f2fe;
+    }
+
+    .header-banner h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16pt;
+      font-weight: 800;
+      margin-bottom: 3px;
+      letter-spacing: -0.4px;
+      color: #ffffff;
+    }
+
+    .header-banner p.subtitle {
+      font-size: 8.6pt;
+      color: #cbd5e1;
+      font-weight: 400;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-item .label {
+      font-size: 6.8pt;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.4px;
+      margin-bottom: 2px;
+    }
+
+    .meta-item .val {
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .meta-item .val-sub {
+      font-size: 7pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* TÍTULOS */
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      border-left: 4px solid #0284c7;
+      padding-left: 9px;
+      margin-top: 16px;
+      margin-bottom: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sub-section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: #1e293b;
+      margin-top: 11px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+
+    .badge-count {
+      font-size: 7pt;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    /* STATCARDS */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+
+    .kpi-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #0284c7;
+    }
+
+    .kpi-card.emerald::before { background: #10b981; }
+    .kpi-card.purple::before { background: #8b5cf6; }
+    .kpi-card.amber::before { background: #f59e0b; }
+    .kpi-card.rose::before { background: #f43f5e; }
+
+    .kpi-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    .kpi-label {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 3px;
+    }
+
+    .kpi-desc {
+      font-size: 6.6pt;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    /* TABELAS */
+    .table-container {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.5pt;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 6px 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-size: 6.7pt;
+      border: none;
+    }
+
+    td {
+      padding: 5.5px 9px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* BADGES */
+    .badge {
+      display: inline-block;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-success { background: #dcfce7; color: #166534; }
+    .badge-warning { background: #fef3c7; color: #92400e; }
+    .badge-info { background: #e0f2fe; color: #075985; }
+    .badge-danger { background: #fee2e2; color: #991b1b; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+
+    /* CARDS DE NARRATIVA E BOXES */
+    .card-narrative {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 8px;
+      font-size: 7.6pt;
+      color: #334155;
+      line-height: 1.45;
+    }
+
+    .card-narrative h4 {
+      font-size: 8.3pt;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-narrative ul {
+      margin-left: 16px;
+      margin-top: 3px;
+      font-size: 7.5pt;
+    }
+
+    .card-narrative li {
+      margin-bottom: 2px;
+    }
+
+    .anomalia-card {
+      border-left: 4px solid #f59e0b;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left-width: 4px;
+      border-radius: 7px;
+      padding: 9px 12px;
+      margin-bottom: 9px;
+      font-size: 7.6pt;
+    }
+
+    .anomalia-card.critical {
+      border-left-color: #ef4444;
+      background: #fef2f2;
+      border-color: #fecaca;
+      border-left-width: 4px;
+    }
+
+    .anomalia-card.success {
+      border-left-color: #10b981;
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+      border-left-width: 4px;
+    }
+
+    .anomalia-card h4 {
+      font-size: 8.4pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .anomalia-card p {
+      margin-bottom: 2px;
+      line-height: 1.4;
+      color: #334155;
+    }
+
+    .anomalia-card strong {
+      color: #0f172a;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      background: #e2e8f0;
+      border-radius: 4px;
+      height: 6px;
+      overflow: hidden;
+      margin-top: 3px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: #0284c7;
+      border-radius: 4px;
+    }
+
+    .progress-bar.green { background: #10b981; }
+    .progress-bar.amber { background: #f59e0b; }
+
+    .time-dist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 7px;
+      margin-bottom: 10px;
+    }
+
+    .time-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 7px 10px;
+    }
+
+    .time-item-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.3pt;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .time-item-top .pct {
+      color: #0284c7;
+    }
+
+    .toc-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 11px 16px;
+      margin-bottom: 14px;
+      column-count: 2;
+      column-gap: 20px;
+      font-size: 7.4pt;
+      line-height: 1.5;
+    }
+
+    .toc-box a {
+      color: #0369a1;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toc-box a:hover {
+      text-decoration: underline;
+    }
+
+    .toc-box ul {
+      list-style-type: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .toc-box li {
+      margin-bottom: 2px;
+      break-inside: avoid;
+    }
+
+    .toc-box li.toc-h2 {
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 4px;
+    }
+
+    .toc-box li.toc-h3 {
+      padding-left: 10px;
+    }
+
+    .toc-box li.toc-h4 {
+      padding-left: 18px;
+      color: #64748b;
+    }
+
+    .footer {
+      margin-top: 14px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 6.8pt;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-section">
+    <div class="header-banner">
+      <span class="header-badge">Relatório Semanal Consolidado — Setor de TI</span>
+      <h1>Relatório Semanal Consolidado - Setor TI</h1>
+      <p class="subtitle">Panorama Operacional, Gestão de Demandas, Incidentes, Infraestrutura Crítica e Outros</p>
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="label">Período Oficial (Diretoria)</span>
+        <span class="val">04/10 a 10/10/2026</span>
+        <span class="val-sub">Semana 41 / 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Período Efetivo TI</span>
+        <span class="val">05/10 a 09/10/2026</span>
+        <span class="val-sub">Expediente Útil do Setor</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Coordenação de TI</span>
+        <span class="val">Isvi Neemias</span>
+        <span class="val-sub">Coordenador de TI</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Consolidação</span>
+        <span class="val">Liomar Antonio de Oliveira</span>
+        <span class="val-sub">Analista TI Sênior (#107184)</span>
+      </div>
+    </div>
+
+    <div class="meta-grid" style="grid-template-columns: 1fr; margin-top: -6px; margin-bottom: 12px; padding: 7px 14px;">
+      <div class="meta-item">
+        <span class="label">Equipe Integrada do Setor</span>
+        <span class="val" style="font-size: 7.8pt;">Liomar Antonio de Oliveira (Analista Sr), Isac Costa Silva (Assistente Pl) e David Brasil Fernandes (Auxiliar Jr)</span>
+      </div>
+    </div>
+
+    <div class="section-title" id="indice-geral">
+      <span>Índice Geral de Navegação</span>
+      <span class="badge-count">Estrutura Oficial</span>
+    </div>
+
+    <div class="toc-box">
+      <ul>
+        <li class="toc-h2"><a href="#resumo-executivo">Resumo Executivo</a></li>
+        <li class="toc-h2"><a href="#-fatos-notáveis-e-anomalias-da-semana">⭐ Fatos Notáveis e Anomalias da Semana</a></li>
+        <li class="toc-h2"><a href="#1-gestão-de-demandas">1. Gestão de Demandas</a></li>
+        <li class="toc-h3"><a href="#11-demandas-pendentes">1.1 Demandas Pendentes</a></li>
+        <li class="toc-h3"><a href="#12-demandas-em-andamento">1.2 Demandas em Andamento</a></li>
+        <li class="toc-h3"><a href="#13-demandas-concluídas">1.3 Demandas Concluídas</a></li>
+        <li class="toc-h3"><a href="#14-demandas-novas">1.4 Demandas Novas</a></li>
+        <li class="toc-h4"><a href="#141-comparativo-entradas--saídas-balanço-da-fila">1.4.1 Comparativo Entradas × Saídas (Balanço da Fila)</a></li>
+        <li class="toc-h2"><a href="#2-registro-de-atividades-por-membro-da-equipe">2. Registro de Atividades por Membro da Equipe</a></li>
+        <li class="toc-h3"><a href="#21-david-brasil-fernandes">2.1 David Brasil Fernandes</a></li>
+        <li class="toc-h3"><a href="#22-isac-costa-silva">2.2 Isac Costa Silva</a></li>
+        <li class="toc-h3"><a href="#23-liomar-antonio-de-oliveira">2.3 Liomar Antonio de Oliveira</a></li>
+        <li class="toc-h3"><a href="#24-desempenho-no-voalle-e-confronto-com-jornada-real-pontomais">2.4 Desempenho no Voalle e Confronto com Jornada Real (Pontomais)</a></li>
+        <li class="toc-h2"><a href="#3-projetos-e-entregas">3. Projetos e Entregas</a></li>
+        <li class="toc-h3"><a href="#31-projetos-de-conectividade-e-redes">3.1 Projetos de Conectividade e Redes (WireGuard, SSH e Hardening)</a></li>
+        <li class="toc-h3"><a href="#32-telefonia-fixa-e-comunicação-corporativa">3.2 Telefonia Fixa e Comunicação Corporativa (Native PBX / ZEUS)</a></li>
+        <li class="toc-h3"><a href="#33-painéis-de-bi-com-parceiros">3.3 Painéis de BI com Parceiros (Analítica 3M e EasyBI)</a></li>
+        <li class="toc-h2"><a href="#4-plataforma-e-automações-autotickets">4. Plataforma e Automações AutoTickets</a></li>
+        <li class="toc-h3"><a href="#41-desenvolvimento-e-engenharia-de-software-autotickets-v2">4.1 Desenvolvimento e Engenharia de Software AutoTickets v2</a></li>
+        <li class="toc-h3"><a href="#42-automação-wifeed--hotspots-e-sincronização-diária-de-vouchers">4.2 Automação WiFeed – Hotspots e Sincronização Diária de Vouchers</a></li>
+        <li class="toc-h3"><a href="#43-módulo-fullcam--auditoria-financeira-de-lucros-e-prejuízos">4.3 Módulo Fullcam – Auditoria Financeira de Lucros e Prejuízos</a></li>
+        <li class="toc-h3"><a href="#44-módulo-fullcam--produção-operacional-das-automações">4.4 Módulo Fullcam – Produção Operacional das Automações</a></li>
+        <li class="toc-h3"><a href="#45-impacto-operacional-e-métricas-de-produtividade-das-automações">4.5 Impacto Operacional e Produtividade das Automações</a></li>
+        <li class="toc-h2"><a href="#5-incidentes-tratados">5. Incidentes Tratados</a></li>
+        <li class="toc-h2"><a href="#6-suporte-interno-informática">6. Suporte Interno (Informática)</a></li>
+        <li class="toc-h3"><a href="#61-relação-de-atendimentos-e-chamados-da-semana">6.1 Relação de Atendimentos e Chamados da Semana</a></li>
+        <li class="toc-h3"><a href="#62-setores-que-mais-demandaram-atendimento">6.2 Setores que mais Demandaram Atendimento</a></li>
+        <li class="toc-h3"><a href="#63-colaboradores-solicitantes-mais-frequentes">6.3 Colaboradores Solicitantes Mais Frequentes</a></li>
+        <li class="toc-h3"><a href="#64-relatório-de-visitas-técnicas-presenciais-e-gestão-de-veículos">6.4 Visitas Técnicas, Frota e Política Windows 10 x 11</a></li>
+        <li class="toc-h2"><a href="#7-suporte-ao-técnico-de-campo">7. Suporte ao Técnico de Campo</a></li>
+        <li class="toc-h2"><a href="#8-infraestrutura-e-sistemas-críticos">8. Infraestrutura e Sistemas Críticos</a></li>
+        <li class="toc-h3"><a href="#81-disponibilidade-de-serviços-e-incidentes-em-sistemas">8.1 Disponibilidade de Serviços e Incidentes</a></li>
+        <li class="toc-h3"><a href="#82-execução-e-validação-de-backups">8.2 Execução e Validação de Backups</a></li>
+        <li class="toc-h3"><a href="#83-atualizações-melhorias-e-ações-de-modernização">8.3 Atualizações, Melhorias e Modernização</a></li>
+        <li class="toc-h2"><a href="#9-pontos-de-atenção-e-próximas-ações">9. Pontos de Atenção e Próximas Ações</a></li>
+      </ul>
+    </div>
+
+    <div class="section-title" id="resumo-executivo">
+      <span>Resumo Executivo</span>
+      <span class="badge-count">Visão Geral da Semana 41</span>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card emerald">
+        <div class="kpi-value">120.5%</div>
+        <div class="kpi-label">Balanço da Fila</div>
+        <div class="kpi-desc">88 saídas ÷ 73 entradas (-15 backlog)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">84</div>
+        <div class="kpi-label">Commits Git</div>
+        <div class="kpi-desc">32 sprints entregues no AutoTickets</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">ONLINE</div>
+        <div class="kpi-label">Servidor IA GPU</div>
+        <div class="kpi-desc">Rack DC Chácara com Proxmox VE</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-value">45h 45m</div>
+        <div class="kpi-label">Horas Economizadas</div>
+        <div class="kpi-desc">Automações WiFeed & Fullcam ativas</div>
+      </div>
+    </div>
+
+    <div class="card-narrative">
+      <p>
+        A semana de <strong>04/10/2026 a 10/10/2026</strong> foi marcada por marcos técnicos de alto impacto institucional: o comissionamento físico e lógico do <strong>Servidor de IA com GPU local</strong> no Data Center Chácara (#3212215 e #3214172), garantindo independência de APIs externas de inteligência artificial; resposta pericial ágil a incidente de segurança com detecção e contenção de falha no portal de compras Supabase (#3218766); entrega maciça de 84 commits no AutoTickets v2 com novo módulo de IP Firewall e Playwright Exporter; mais de 12 horas dedicadas ao projeto de Telefonia Fixa ZEUS/TIP Brasil (#3137037); e sustentação resolutiva do suporte interno e CFTV com 88 demandas concluídas no período.
+      </p>
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Consolidado — Setor de TI</span>
+      <span>Semana 41 / 2026 — Ten Internet</span>
+      <span>Página 1</span>
+    </div>
+  </div>
+
+  <div class="page-section page-break">
+    <div class="section-title" id="-fatos-notáveis-e-anomalias-da-semana">
+      <span>⭐ Fatos Notáveis e Anomalias da Semana</span>
+      <span class="badge-count">4 Ocorrências Auditadas</span>
+    </div>
+
+    <div class="anomalia-card success">
+      <h4>1. Comissionamento e Instalação Física do Servidor de IA Local (GPU) no Data Center Chácara (#3212215 / #3214172)</h4>
+      <p><strong>Identificação do Fato:</strong> Instalação física e homologação lógica do servidor dedicado de Inteligência Artificial com GPU no rack principal do Data Center Chácara em Capim Grosso.</p>
+      <p><strong>Contexto e Causa Raiz:</strong> A necessidade de processar grandes volumes de dados determinísticos, logs de chamados, sumarizações e embeddings vetoriais com soberania de dados, sigilo corporativo e custo zero de nuvem demandou a criação de um nó on-premise de inferência.</p>
+      <p><strong>Impacto Operacional:</strong> Redução imediata do tempo de resposta para modelos locais, absorção de rotinas pesadas de processamento de texto e mitigação de risco de vazamento de dados em APIs públicas.</p>
+      <p><strong>Ação Imediata e Mitigação:</strong> Acomodação na parte inferior traseira do rack de servidores, cabeamento CAT-6 na porta 23 de switch gerenciável, conexão ao banco de baterias senoidais, parametrização de BIOS para auto-ligamento (<em>AC Power Loss: Power On</em>) e inicialização automática da VM Proxmox.</p>
+      <p><strong>Lição Aprendida e Próximo Passo:</strong> Integrar os endpoints do Ollama GPU local ao orquestrador do AutoTickets v2 para execução das rotinas diárias.</p>
+    </div>
+
+    <div class="anomalia-card critical">
+      <h4>2. Resposta Pericial a Incidente Cibernético — Detecção de Falha Crítica em Supabase Compras (#3218766)</h4>
+      <p><strong>Identificação do Fato:</strong> Abordagem via WhatsApp do TI por indivíduo (<code>~Reis</code> / Discord <code>felipi090090</code>) afirmando ter obtido credenciais administrativas de sistemas internos da TEN Internet.</p>
+      <p><strong>Contexto e Causa Raiz:</strong> O atacante utilizou o botão público de 'Esqueci minha senha' do sistema <em>Mundiale History</em> apenas para abrir a conversa de WhatsApp do TI. Paralelamente, localizou e explorou a aplicação <code>compras.teninternet.com.br</code>, onde o backend Supabase Auth estava com cadastro aberto (<em>disable_signup: false</em>) e tabelas PostgreSQL (<code>companies</code>, <code>users</code>, <code>purchase_orders</code>) operando sem políticas de Row Level Security (RLS) restritivas.</p>
+      <p><strong>Impacto Operacional:</strong> Exposição indevida de dados cadastrais de pedidos de compra e empresas do grupo. Nenhuma invasão à rede corporativa, servidores locais, ERP Voalle ou MikroTiks ocorreu.</p>
+      <p><strong>Ação Imediata e Mitigação:</strong> Varredura técnica por Liomar e David, descarte de vulnerabilidade no Mundiale History, criação de script Python para mapeamento de subdomínios, auditoria via Postman e emissão de laudo técnico de 242 linhas com orientação formal de fechamento do cadastro e ativação de RLS restrito.</p>
+      <p><strong>Lição Aprendida e Próximo Passo:</strong> Instituir política mandatória de homologação prévia pelo setor de TI antes da publicação de qualquer aplicação web conectada a serviços BaaS ou bancos em nuvem.</p>
+    </div>
+
+    <div class="anomalia-card">
+      <h4>3. Anomalia Metrológica de Ponto: Distorção de 234h por Cronômetros Contínuos em Compilação de IA e Fim de Semana</h4>
+      <p><strong>Identificação do Fato:</strong> Registro de 274h 17m de horas apontadas no Voalle pelo colaborador Liomar Oliveira frente a 40h regulares de jornada cumpridas no Pontomais.</p>
+      <p><strong>Contexto e Causa Raiz:</strong> Manutenção de cronômetros abertos ininterruptamente no ERP em demandas que demandaram processamento contínuo: protocolos #3210518 e #3210508 (174h 55m deixados ativos no fim de semana pós-retorno de férias), protocolo #3212215 (52h 01m mantido aberto durante a compilação, download de pesos e testes de estresse do Servidor IA GPU) e timers noturnos #3171518 e #3218069 (35h 54m).</p>
+      <p><strong>Impacto Operacional:</strong> Apresentação de volumetria aparente desproporcional que poderia distorcer os indicadores do setor se não auditada metrologicamente.</p>
+      <p><strong>Ação Imediata e Mitigação:</strong> Auditoria detalhada que expurgou 262h 50m de cronômetros sobrepostos contínuos, demonstrando que o tempo trabalhado em apontamentos pontuais foi de ~11h 27m, perfeitamente compatível com a jornada real de 40h e a intensa produção de 84 commits no Git.</p>
+      <p><strong>Lição Aprendida e Próximo Passo:</strong> Estabelecer disciplina operacional de pausar cronômetros no Voalle ao término do expediente de trabalho.</p>
+    </div>
+
+    <div class="anomalia-card">
+      <h4>4. Gargalos Operacionais na Liberação de Veículos da Frota Corporativa</h4>
+      <p><strong>Identificação do Fato:</strong> Atrasos frequentes e indefinição no atendimento às requisições de veículos corporativos para saídas a campo do setor de TI.</p>
+      <p><strong>Contexto e Causa Raiz:</strong> Mesmo com protocolos de requisição abertos com antecedência no sistema, na chegada ao pátio para retirada da chave a equipe técnica é recebida com a justificativa de que o setor de transporte 'vai verificar qual carro pode disponibilizar', sem pré-alocação definida.</p>
+      <p><strong>Impacto Operacional:</strong> Atrasos na saída para visitas técnicas a POPs e manutenções de CFTV em Jacobina e filiais, gerando ociosidade involuntária e retrabalho na agenda externa.</p>
+      <p><strong>Ação Imediata e Mitigação:</strong> Abertura de canal de comunicação com a Coordenação de TI para registro das ocorrências e envio de relatório específico com horários combinados x liberados.</p>
+      <p><strong>Lição Aprendida e Próximo Passo:</strong> Estabelecer SLA formal junto ao setor de transportes para liberação de chaves com no mínimo 1 hora de antecedência em relação ao horário pactuado.</p>
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Consolidado — Setor de TI</span>
+      <span>Semana 41 / 2026 — Ten Internet</span>
+      <span>Página 2</span>
+    </div>
+  </div>
+
+  <div class="page-section page-break">
+    <div class="section-title" id="1-gestão-de-demandas">
+      <span>1. Gestão de Demandas</span>
+      <span class="badge-count">Balanço da Fila: 120.5%</span>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card emerald">
+        <div class="kpi-value">88</div>
+        <div class="kpi-label">Demandas Concluídas</div>
+        <div class="kpi-desc">72 solicitações + 16 tarefas/OS</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">73</div>
+        <div class="kpi-label">Demandas Novas</div>
+        <div class="kpi-desc">64 solicitações + 9 tarefas/OS</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">-15</div>
+        <div class="kpi-label">Variação do Backlog</div>
+        <div class="kpi-desc">Redução líquida de pendências</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-value">120.5%</div>
+        <div class="kpi-label">Balanço da Fila</div>
+        <div class="kpi-desc">Saídas ÷ Entradas (Deflacionário)</div>
+      </div>
+    </div>
+
+    <div class="sub-section-title" id="11-demandas-pendentes">1.1 Demandas Pendentes (Fila de Início)</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 15%;">Protocolo / ID</th>
+            <th style="width: 25%;">Solicitante / Setor</th>
+            <th style="width: 15%;">Responsável</th>
+            <th style="width: 12%;">Prioridade</th>
+            <th style="width: 33%;">Descrição Técnica & Motivo da Espera</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#3218356</strong></td>
+            <td>Liomar Oliveira / TI</td>
+            <td>Liomar Oliveira</td>
+            <td><span class="badge badge-info">Média</span></td>
+            <td>Requerimento de documentos normativos e regulatórios da empresa.</td>
+          </tr>
+          <tr>
+            <td><strong>#3216254</strong></td>
+            <td>Liomar Oliveira / TI</td>
+            <td>Liomar Oliveira</td>
+            <td><span class="badge badge-info">Baixa</span></td>
+            <td>Levantamento físico de estoque de objetos internos do setor de TI.</td>
+          </tr>
+          <tr>
+            <td><strong>#3216259</strong></td>
+            <td>Liomar Oliveira / TI</td>
+            <td>Liomar Oliveira</td>
+            <td><span class="badge badge-info">Média</span></td>
+            <td>Atualização das categorias de solicitações internas/externas do setor.</td>
+          </tr>
+          <tr>
+            <td><strong>#3214592</strong></td>
+            <td>David Brasil / TI</td>
+            <td>David Brasil</td>
+            <td><span class="badge badge-danger">Alta</span></td>
+            <td>Câmera offline na Torre do Cruzeiro (aguarda escala de equipe externa).</td>
+          </tr>
+          <tr>
+            <td><strong>#3214608</strong></td>
+            <td>David Brasil / TI</td>
+            <td>David Brasil</td>
+            <td><span class="badge badge-danger">Alta</span></td>
+            <td>Câmera offline no POP Pedras Altas (aguarda substituição de fonte PoE).</td>
+          </tr>
+          <tr>
+            <td><strong>#3214616</strong></td>
+            <td>David Brasil / TI</td>
+            <td>David Brasil</td>
+            <td><span class="badge badge-danger">Alta</span></td>
+            <td>Câmera offline no POP Angico (aguarda intervenção em torre).</td>
+          </tr>
+          <tr>
+            <td><strong>#3202572</strong></td>
+            <td>Compras / TI</td>
+            <td>David Brasil</td>
+            <td><span class="badge badge-danger">Alta</span></td>
+            <td>Substituição de tela do notebook de Felipe Nere (aguarda compras).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-section-title" id="12-demandas-em-andamento">1.2 Demandas em Andamento</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 15%;">Protocolo / ID</th>
+            <th style="width: 18%;">Responsável</th>
+            <th style="width: 15%;">% Avanço</th>
+            <th style="width: 38%;">Bloqueios / Dependências Técnicas</th>
+            <th style="width: 14%;">Previsão</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#3218766</strong></td>
+            <td>Liomar Oliveira</td>
+            <td>85% <div class="progress-bar-container"><div class="progress-bar green" style="width:85%;"></div></div></td>
+            <td>Aplicação de RLS e travamento de signup no Supabase pelo mantenedor.</td>
+            <td>16/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3217119</strong></td>
+            <td>Liomar Oliveira</td>
+            <td>75% <div class="progress-bar-container"><div class="progress-bar green" style="width:75%;"></div></div></td>
+            <td>Ajustes em views determinísticas e deduplicação no banco local.</td>
+            <td>17/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3137037</strong></td>
+            <td>Isac Costa Silva</td>
+            <td>65% <div class="progress-bar-container"><div class="progress-bar green" style="width:65%;"></div></div></td>
+            <td>Validação de troncos SIP no ZEUS junto à operadora TIP Brasil.</td>
+            <td>23/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3213875</strong></td>
+            <td>Isac Costa Silva</td>
+            <td>50% <div class="progress-bar-container"><div class="progress-bar amber" style="width:50%;"></div></div></td>
+            <td>Aguardando chegada de novos roteadores comprados para hotspots.</td>
+            <td>20/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3216735</strong></td>
+            <td>David Brasil</td>
+            <td>70% <div class="progress-bar-container"><div class="progress-bar green" style="width:70%;"></div></div></td>
+            <td>Customização de dashboards no Zabbix e Grafana do TI.</td>
+            <td>19/10/2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-section-title" id="13-demandas-concluídas">1.3 Demandas Concluídas (Destaques da Semana)</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 20%;">Protocolo / Ref.</th>
+            <th style="width: 18%;">Responsável</th>
+            <th style="width: 32%;">Descrição Técnica da Entrega</th>
+            <th style="width: 30%;">Resultado Obtido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AutoTickets v2</strong></td>
+            <td>Liomar Oliveira</td>
+            <td>84 commits / 32 sprints (IP Firewall, Write-Only Secrets, Playwright PDF).</td>
+            <td><span class="badge badge-success">Em Produção</span> Segurança e relatórios instantâneos.</td>
+          </tr>
+          <tr>
+            <td><strong>#3212215 / #3214172</strong></td>
+            <td>Liomar Oliveira</td>
+            <td>Comissionamento do Servidor IA GPU no Data Center Chácara.</td>
+            <td><span class="badge badge-success">Concluído</span> Inferência local sem custo de tokens.</td>
+          </tr>
+          <tr>
+            <td><strong>#3213644 / #3216016</strong></td>
+            <td>Liomar e Isac</td>
+            <td>Correção DNS e restabelecimento de acessos Universidade Ten.</td>
+            <td><span class="badge badge-success">Concluído</span> Acesso dos colaboradores normalizado.</td>
+          </tr>
+          <tr>
+            <td><strong>#3215693 / #3213869</strong></td>
+            <td>Isac Costa</td>
+            <td>Reajuste de locais WiFeed e auditoria financeira de cobrança.</td>
+            <td><span class="badge badge-success">Concluído</span> Segmentação e tarifação alinhadas.</td>
+          </tr>
+          <tr>
+            <td><strong>#3211961</strong></td>
+            <td>David Brasil</td>
+            <td>Manutenção emergencial no computador do caixa da loja Jacobina.</td>
+            <td><span class="badge badge-success">Concluído</span> Rede e operação do caixa restauradas.</td>
+          </tr>
+          <tr>
+            <td><strong>CFTV & Câmeras</strong></td>
+            <td>David Brasil</td>
+            <td>6 O.S. de câmeras (Loja Jacobina, Alojamento, POP Umburanas).</td>
+            <td><span class="badge badge-success">Concluído</span> Videomonitoramento restabelecido.</td>
+          </tr>
+          <tr>
+            <td><strong>Saneamento Voalle</strong></td>
+            <td>Liomar Oliveira</td>
+            <td>Encerramento formal de 10 chamados legados antigos.</td>
+            <td><span class="badge badge-success">Concluído</span> Fila histórica higienizada no ERP.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-section-title" id="14-demandas-novas">1.4 Demandas Novas & Balanço da Fila</div>
+    <div id="141-comparativo-entradas--saídas-balanço-da-fila" style="font-size: 7.7pt; color: #475569; margin-top: 4px;">
+      O setor registrou <strong>73 novas demandas</strong> e concluiu <strong>88 demandas</strong>. O <strong>Balanço da Fila foi de 120,5%</strong>, configurando redução real de 15 chamados no backlog pendente.
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Consolidado — Setor de TI</span>
+      <span>Semana 41 / 2026 — Ten Internet</span>
+      <span>Página 3</span>
+    </div>
+  </div>
+
+  <div class="page-section page-break">
+    <div class="section-title" id="2-registro-de-atividades-por-membro-da-equipe">
+      <span>2. Registro de Atividades por Membro da Equipe</span>
+      <span class="badge-count">Desempenho Individual & Produtividade</span>
+    </div>
+
+    <!-- 2.1 David Brasil -->
+    <div class="sub-section-title" id="21-david-brasil-fernandes">2.1 David Brasil Fernandes (Auxiliar de TI Junior — #116367)</div>
+    <div class="card-narrative" id="211-resumo-das-atividades">
+      <h4>2.1.1 Resumo das Atividades Executadas</h4>
+      <p>David registrou a maior movimentação operacional do setor com <strong>62 ações no Voalle</strong> e <strong>94,7% de resolubilidade</strong> em 38 chamados atuados. Atuou fortemente em manutenção de hardware e estações de trabalho (#3211961 caixa de Jacobina, #3216232 Marilucia, #3215232 formatação de máquinas, #3213404 e #3216171 computadores e impressoras), gestão de CFTV/Fullcam (vistoria geral #3214467, reativação de câmeras da Loja Jacobina #3214581, Alojamento #3214600 e POP Umburanas #3216056), criação e inativação de usuários no Voalle (#3446400, #3447670, #3447139, #3450031) e apoio pericial em cibersegurança junto a Liomar (#3218766).</p>
+    </div>
+    <div class="time-dist-grid" id="212-distribuição-do-tempo">
+      <div class="time-item">
+        <div class="time-item-top"><span>Suporte ao Usuário & Hardware</span><span class="pct">40%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar" style="width:40%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top"><span>CFTV, Câmeras Fullcam & POPs</span><span class="pct">30%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar green" style="width:30%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top"><span>Gestão de Acessos & Permissões</span><span class="pct">15%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar amber" style="width:15%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top"><span>Segurança & Zabbix/Grafana</span><span class="pct">15%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar" style="width:15%;"></div></div>
+      </div>
+    </div>
+    <div id="213-desenvolvimento-e-capacitação" style="font-size: 7.4pt; color: #64748b; margin-bottom: 8px;">
+      <strong>Desenvolvimento:</strong> Aperfeiçoamento em diagnóstico de redes Windows corporativas, comutação PoE e noções práticas de cibersegurança investigativa.
+    </div>
+
+    <!-- 2.2 Isac Costa -->
+    <div class="sub-section-title" id="22-isac-costa-silva">2.2 Isac Costa Silva (Assistente de TI Pleno — #94562)</div>
+    <div class="card-narrative" id="221-resumo-das-atividades">
+      <h4>2.2.1 Resumo das Atividades Executadas</h4>
+      <p>Isac movimentou <strong>59 ações no Voalle</strong> com <strong>100% de resolubilidade</strong> em 31 chamados atuados (TMA 1h05m). Liderou o projeto estratégico de <strong>Telefonia Fixa Corporativa</strong> (#3137037), dedicando mais de 12 horas ao levantamento do sistema ZEUS e integração com a TIP Brasil; realizou o reajuste de locais e auditoria de cobrança do WiFeed (#3215693 e #3213869); conduziu com rigor técnico a perícia de 8 solicitações de desconto por problemas de conexão (#3212788, #3212979, #3213275, #3215188, #3216561, #3216845, #3218807, #3219086); e atuou com Liomar no restabelecimento de acessos à Universidade Ten (#3216016).</p>
+    </div>
+    <div class="time-dist-grid" id="222-distribuição-do-tempo">
+      <div class="time-item">
+        <div class="time-item-top"><span>Telefonia Fixa (ZEUS / TIP Brasil)</span><span class="pct">45%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar" style="width:45%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top"><span>Suporte N2 & Perícias de Desconto</span><span class="pct">25%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar green" style="width:25%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top"><span>Hotspots, WiFeed & Conectividade</span><span class="pct">20%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar amber" style="width:20%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top"><span>Rotinas Operacionais & Estoque</span><span class="pct">10%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar" style="width:10%;"></div></div>
+      </div>
+    </div>
+    <div id="223-desenvolvimento-e-capacitação" style="font-size: 7.4pt; color: #64748b; margin-bottom: 8px;">
+      <strong>Desenvolvimento:</strong> Aprofundamento em troncos SIP e codecs VoIP no ZEUS, governança de captive portals e auditoria de tráfego de assinantes.
+    </div>
+
+    <!-- 2.3 Liomar Oliveira -->
+    <div class="sub-section-title" id="23-liomar-antonio-de-oliveira">2.3 Liomar Antonio de Oliveira (Analista de TI Sênior — #107184)</div>
+    <div class="card-narrative" id="231-resumo-das-atividades">
+      <h4>2.3.1 Resumo das Atividades Executadas</h4>
+      <p>Liomar liderou a arquitetura e engenharia do ecossistema com <strong>84 commits no AutoTickets v2</strong> (Sprints 321 a 352: IP Firewall, Write-Only Secrets, exportador Playwright e relatórios Fullcam/WiFeed). Conduziu o comissionamento físico e lógico do <strong>Servidor IA Local com GPU</strong> no Data Center Chácara (#3212215 e #3214172); atuou com máxima prioridade na investigação do incidente cibernético no portal de compras (#3218766), emitindo laudo pericial de 242 linhas; e procedeu ao saneamento de 10 chamados legados no ERP Voalle (#3187496, #3187490, #3182310, #3168670, #3171518, #3152430, #3112382, #3103374 e #3083979).</p>
+    </div>
+    <div class="time-dist-grid" id="232-distribuição-do-tempo">
+      <div class="time-item">
+        <div class="time-item-top"><span>Engenharia de Software (AutoTickets v2)</span><span class="pct">55%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar" style="width:55%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top"><span>Infraestrutura IA & Data Center</span><span class="pct">25%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar green" style="width:25%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top"><span>Segurança da Informação & Perícia</span><span class="pct">15%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar amber" style="width:15%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top"><span>Gestão Operacional & Suporte</span><span class="pct">5%</span></div>
+        <div class="progress-bar-container"><div class="progress-bar" style="width:5%;"></div></div>
+      </div>
+    </div>
+    <div id="233-desenvolvimento-e-capacitação" style="font-size: 7.4pt; color: #64748b; margin-bottom: 8px;">
+      <strong>Desenvolvimento:</strong> Proxmox com PCIe Passthrough para IA local, auditoria de segurança em APIs PostgREST/Supabase e hardening por IP Firewall.
+    </div>
+
+    <!-- 2.4 Metrologia de Ponto -->
+    <div class="sub-section-title" id="24-desempenho-no-voalle-e-confronto-com-jornada-real-pontomais">2.4 Desempenho no Voalle e Confronto com Jornada Real (Pontomais)</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 20%;">Colaborador</th>
+            <th style="width: 15%;">Horas Voalle</th>
+            <th style="width: 15%;">Horas Pontomais</th>
+            <th style="width: 15%;">Variação</th>
+            <th style="width: 35%;">Justificativa Técnica Obrigatória da Auditoria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>David Brasil Fernandes</strong></td>
+            <td><strong>29h 14m</strong></td>
+            <td><strong>40h 00m</strong></td>
+            <td><span class="badge badge-info">-10h 46m</span></td>
+            <td>Horas de relatos diretos em O.S. A diferença reflete deslocamentos entre prédios da sede e lojas, atendimentos rápidos de balcão e montagem física de cabos de CFTV.</td>
+          </tr>
+          <tr>
+            <td><strong>Isac Costa Silva</strong></td>
+            <td><strong>33h 39m</strong></td>
+            <td><strong>40h 00m</strong></td>
+            <td><span class="badge badge-info">-6h 21m</span></td>
+            <td>Horas registradas com alta fidelidade de tela. A diferença reflete transições entre atendimentos, organização do laboratório de bancada e rotinas internas de telefonia.</td>
+          </tr>
+          <tr>
+            <td><strong>Liomar Antonio de Oliveira</strong></td>
+            <td><strong>274h 17m</strong></td>
+            <td><strong>40h 00m</strong></td>
+            <td><span class="badge badge-warning">+234h 17m</span></td>
+            <td>Divergência decorrente estritamente de 5 cronômetros contínuos deixados em execução no ERP (#3210518/#3210508 de volta de férias, #3212215 de compilação contínua do Servidor IA e timers noturnos). Expurga-se 262h 50m de sobreposição, restando tempo líquido pontual de ~11h 27m, alinhado aos 84 commits no Git fora do ERP.</td>
+          </tr>
+          <tr style="background:#f1f5f9;font-weight:700;">
+            <td><strong>TOTAL CONSOLIDADO</strong></td>
+            <td><strong>337h 10m</strong></td>
+            <td><strong>120h 00m</strong></td>
+            <td><span class="badge badge-purple">+217h 10m</span></td>
+            <td><strong>Metrologia auditada e justificada conforme governança setorial.</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Consolidado — Setor de TI</span>
+      <span>Semana 41 / 2026 — Ten Internet</span>
+      <span>Página 4</span>
+    </div>
+  </div>
+
+  <div class="page-section page-break">
+    <div class="section-title" id="3-projetos-e-entregas">
+      <span>3. Projetos e Entregas</span>
+      <span class="badge-count">Infraestrutura & Redes</span>
+    </div>
+
+    <div class="sub-section-title" id="31-projetos-de-conectividade-e-redes">3.1 Projetos de Conectividade e Redes (WireGuard, SSH e Hardening)</div>
+    <div class="card-narrative">
+      <p>
+        <strong>Readequação Estratégica de Cronograma:</strong> O plano inicial de expansão automática dos túneis WireGuard nas filiais foi temporariamente postergado para priorizar o <strong>hardening estrito das RBs locais de maior criticidade (RB TI e RB Chácara)</strong>, onde foram identificadas tentativas persistentes de acesso externo. Foram desativados os acessos via SSH em roteadores legados com RouterOS 6 (#3103374), mantendo integração exclusiva via API no RouterOS 7 com o Zabbix TI. O novo prazo para início da implantação nas 5 filiais prioritárias (Quixabeira, Campo Formoso, Serrolândia, Várzea do Poço e Mairi) foi pactuado para <strong>26/10/2026</strong>.
+      </p>
+    </div>
+
+    <div class="sub-section-title" id="32-telefonia-fixa-e-comunicação-corporativa">3.2 Telefonia Fixa e Comunicação Corporativa (Native PBX / ZEUS)</div>
+    <div class="card-narrative">
+      <p>
+        Avanço substancial no protocolo <strong>#3137037</strong> liderado por Isac Costa, com mais de 12 horas dedicadas ao levantamento técnico das telas do <strong>ZEUS</strong> e validação de rotas SIP com a operadora TIP Brasil. O serviço legado ChatSeguro encontra-se em aviso prévio de cancelamento solicitado em 30/09/2026 (prazo de 30 dias), com migração definitiva para os ramais corporativos do Native PBX prevista para o final do mês.
+      </p>
+    </div>
+
+    <div class="sub-section-title" id="33-painéis-de-bi-com-parceiros">3.3 Painéis de BI com Parceiros (Analítica 3M e EasyBI / MW Solutions)</div>
+    <div class="card-narrative">
+      <p>
+        <strong>Declaração Formal de Status:</strong> Em consonância com a governança da Coordenação, registra-se:<br>
+        1. <strong>Analítica 3M:</strong> Concedido perfil Master ao analista Liomar Oliveira para gestão de usuários. Acesso mantido restrito à gestão técnica devido à criticidade dos dados operacionais; perfis com escopo delimitado serão gerados para a equipe conforme necessidade.<br>
+        2. <strong>EasyBI (MW Solutions):</strong> Plataforma com acesso limitado e escasso valor operacional para a rotina do TI, estando fora do escopo direto de manutenção da equipe e em processo de descontinuação contratual pela empresa.
+      </p>
+    </div>
+
+    <div class="section-title" id="4-plataforma-e-automações-autotickets">
+      <span>4. Plataforma e Automações AutoTickets</span>
+      <span class="badge-count">Macro-Tópico Estratégico</span>
+    </div>
+
+    <div class="sub-section-title" id="41-desenvolvimento-e-engenharia-de-software-autotickets-v2">4.1 Desenvolvimento e Engenharia de Software AutoTickets v2</div>
+    <div id="411-entregas-em-produção-commits-e-sprints" style="font-size: 7.7pt; color: #334155; margin-bottom: 6px;">
+      Foram concluídos <strong>84 commits</strong> no período (Sprints 321 a 352), impactando <strong>587 arquivos</strong> (+50.026 / -179.578 linhas). Destacam-se o <strong>IP Firewall de Aplicação</strong>, o padrão <strong>Write-Only Secrets</strong>, o motor <strong>Playwright Headless PDF</strong> e a governança 100% transacional com <code>DatabaseTransactions</code>.
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 15%;">Sprint</th>
+            <th style="width: 35%;">Título & Componentes</th>
+            <th style="width: 50%;">Impacto e Resultado Prático</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sprint 352</strong></td>
+            <td>IP Firewall, Write-Only Secrets e Auditoria PostgreSQL</td>
+            <td>Proteção ativa contra acessos não autorizados por IP e ocultação de chaves criptográficas.</td>
+          </tr>
+          <tr>
+            <td><strong>Sprint 350</strong></td>
+            <td>Módulo Fullcam & Rastreabilidade de Logs</td>
+            <td>3 sub-abas analíticas e histórico completo de checagens horárias de câmeras.</td>
+          </tr>
+          <tr>
+            <td><strong>Sprint 349</strong></td>
+            <td>Sanitização HTML e Limpeza de Estilos Inline</td>
+            <td>Visualização elegante e padronizada de relatos de chamados em modais.</td>
+          </tr>
+          <tr>
+            <td><strong>Sprint 347</strong></td>
+            <td>Métricas de Vazão e Resolubilidade Individual</td>
+            <td>Cálculo dinâmico de TMA, TMR, resolubilidade e classificação de tarefas.</td>
+          </tr>
+          <tr>
+            <td><strong>Sprint 340-346</strong></td>
+            <td>Exportador Playwright e Layout Mobile de KPIs</td>
+            <td>PDFs gerados em escala 0.67 via DevTools sem travamentos e layout mobile responsivo.</td>
+          </tr>
+          <tr>
+            <td><strong>Sprint 208</strong></td>
+            <td>Gateway SMTP Dinâmico com Failover</td>
+            <td>Disparo resiliente de e-mails transacionais e relatórios executivos agendados.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="412-evolução-arquitetural-ia-e-governança-de-software" style="font-size: 7.4pt; color: #64748b;">
+      <strong>Arquitetura & IA:</strong> O AutoTickets v2 consolidou suporte híbrido multi-provedor (LiteLLM em nuvem + Ollama GPU local), combinando alta velocidade de inferência com soberania de dados.
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Consolidado — Setor de TI</span>
+      <span>Semana 41 / 2026 — Ten Internet</span>
+      <span>Página 5</span>
+    </div>
+  </div>
+
+  <div class="page-section page-break">
+    <div class="sub-section-title" id="42-automação-wifeed--hotspots-e-sincronização-diária-de-vouchers">4.2 Automação WiFeed – Hotspots e Sincronização Diária de Vouchers</div>
+    
+    <div class="card-narrative" id="421-contexto-institucional-e-problema-operacional-do-captive-portal">
+      <h4>4.2.1 Contexto Institucional e Problema Operacional Anterior</h4>
+      <p>
+        A rede <strong>TEN_Wi-Fi</strong> opera com Captive Portal WiFeed para captar leads de visitantes (cadastro por celular) e oferecer conexão de alta velocidade imediata aos clientes assinantes (autenticação por CPF). Antes da automação, a sincronização manual semanal via CSV exigia mais de 3 horas técnicas de formatação no Excel, causava falhas de digitação e gerava sensação de 'propaganda enganosa' para assinantes recém-ativados que não conseguiam navegar até a semana seguinte.
+      </p>
+    </div>
+
+    <div class="card-narrative" id="422-solução-automatizada-desenvolvida-no-autotickets">
+      <h4>4.2.2 Solução Automatizada Desenvolvida no AutoTickets</h4>
+      <p>
+        Rotina diária agendada pontualmente às <strong>11h00</strong>: conecta diretamente ao banco Voalle, filtra contratos ativos/adimplentes, sanitiza CPFs, cria lote segmentado na API do WiFeed, transmite a base com integridade linha por linha, comuta o segmento ativo sem interrupção e descarta o lote antigo com total segurança.
+      </p>
+    </div>
+
+    <div class="kpi-grid" id="423-resumo-executivo-e-métricas-da-base-de-clientes">
+      <div class="kpi-card">
+        <div class="kpi-value">32.600</div>
+        <div class="kpi-label">Clientes Ativos Final</div>
+        <div class="kpi-desc">Início: 32.512 (+88 líquido)</div>
+      </div>
+      <div class="kpi-card emerald">
+        <div class="kpi-value">100%</div>
+        <div class="kpi-label">Taxa de Sucesso</div>
+        <div class="kpi-desc">7 sincronizações executadas</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">227.483</div>
+        <div class="kpi-label">Vouchers Transmitidos</div>
+        <div class="kpi-desc">Volume total processado no período</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-value">32.600</div>
+        <div class="kpi-label">Pico Máximo</div>
+        <div class="kpi-desc">Mínimo: 32.334 clientes</div>
+      </div>
+    </div>
+
+    <div class="sub-section-title" id="424-evolução-diária-da-base-de-clientes-ativos-gráfico-svg">4.2.4 Evolução Diária da Base de Clientes Ativos (Gráfico SVG)</div>
+    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin-bottom:12px;">
+      <svg viewBox="0 0 960 240" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+    <defs>
+        <linearGradient id="voucherAreaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2563eb" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#2563eb" stop-opacity="0.0" />
+        </linearGradient>
+    </defs>
+    <line x1="65" y1="200" x2="935" y2="200" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" /><text x="57" y="203.5" font-size="10" fill="#64748b" text-anchor="end" font-family="Inter, sans-serif">32.312</text><line x1="65" y1="155" x2="935" y2="155" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" /><text x="57" y="158.5" font-size="10" fill="#64748b" text-anchor="end" font-family="Inter, sans-serif">32.390</text><line x1="65" y1="110" x2="935" y2="110" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" /><text x="57" y="113.5" font-size="10" fill="#64748b" text-anchor="end" font-family="Inter, sans-serif">32.467</text><line x1="65" y1="65" x2="935" y2="65" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" /><text x="57" y="68.5" font-size="10" fill="#64748b" text-anchor="end" font-family="Inter, sans-serif">32.545</text><line x1="65" y1="20" x2="935" y2="20" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3" /><text x="57" y="23.5" font-size="10" fill="#64748b" text-anchor="end" font-family="Inter, sans-serif">32.622</text>
+    <path d="M 65 83.9 L 210 187.2 L 355 132.1 L 500 96.1 L 645 67.6 L 790 46.1 L 935 32.8 L 935 200 L 65 200 Z" fill="url(#voucherAreaGrad)" />
+    <path d="M 65 83.9 L 210 187.2 L 355 132.1 L 500 96.1 L 645 67.6 L 790 46.1 L 935 32.8" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="65" cy="83.9" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="210" cy="187.2" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="355" cy="132.1" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="500" cy="96.1" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="645" cy="67.6" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="790" cy="46.1" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" /><circle cx="935" cy="32.8" r="3.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" />
+    <text x="65" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">04/10</text><line x1="65" y1="200" x2="65" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="210" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">05/10</text><line x1="210" y1="200" x2="210" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="355" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">06/10</text><line x1="355" y1="200" x2="355" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="500" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">07/10</text><line x1="500" y1="200" x2="500" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="645" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">08/10</text><line x1="645" y1="200" x2="645" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="790" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">09/10</text><line x1="790" y1="200" x2="790" y2="204" stroke="#cbd5e1" stroke-width="1" /><text x="935" y="228" font-size="10" fill="#64748b" text-anchor="middle" font-family="Inter, sans-serif">10/10</text><line x1="935" y1="200" x2="935" y2="204" stroke="#cbd5e1" stroke-width="1" />
+</svg>
+    </div>
+
+    <div class="sub-section-title" id="425-histórico-detalhado-de-envios-e-validações-de-vouchers">4.2.5 Histórico Detalhado de Envios e Validações de Vouchers</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 18%;">Data / Hora</th>
+            <th style="width: 15%;">Operador / Trigger</th>
+            <th style="width: 20%;">Segmento Alvo</th>
+            <th style="width: 12%;">Base ERP</th>
+            <th style="width: 15%;">Vouchers Transmitidos</th>
+            <th style="width: 10%;">Sucesso</th>
+            <th style="width: 10%;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10/10/2026 11:01</td>
+            <td>Raimara (Agendado)</td>
+            <td>Clientes TEN CPF-CNPJ</td>
+            <td>32.600</td>
+            <td>32.600</td>
+            <td>100%</td>
+            <td><span class="badge badge-info">Excluído</span></td>
+          </tr>
+          <tr>
+            <td>09/10/2026 11:01</td>
+            <td>Raimara (Agendado)</td>
+            <td>Clientes TEN CPF-CNPJ</td>
+            <td>32.577</td>
+            <td>32.577</td>
+            <td>100%</td>
+            <td><span class="badge badge-info">Excluído</span></td>
+          </tr>
+          <tr>
+            <td>08/10/2026 11:01</td>
+            <td>Liomar Oliveira</td>
+            <td>Clientes TEN CPF-CNPJ</td>
+            <td>32.540</td>
+            <td>32.540</td>
+            <td>100%</td>
+            <td><span class="badge badge-success">Sucesso</span></td>
+          </tr>
+          <tr>
+            <td>07/10/2026 11:01</td>
+            <td>Raimara (Agendado)</td>
+            <td>Clientes TEN CPF-CNPJ</td>
+            <td>32.491</td>
+            <td>32.491</td>
+            <td>100%</td>
+            <td><span class="badge badge-success">Sucesso</span></td>
+          </tr>
+          <tr>
+            <td>06/10/2026 11:01</td>
+            <td>Raimara (Agendado)</td>
+            <td>Clientes TEN CPF-CNPJ</td>
+            <td>32.429</td>
+            <td>32.429</td>
+            <td>100%</td>
+            <td><span class="badge badge-success">Sucesso</span></td>
+          </tr>
+          <tr>
+            <td>05/10/2026 11:01</td>
+            <td>Raimara (Agendado)</td>
+            <td>Clientes TEN CPF-CNPJ</td>
+            <td>32.334</td>
+            <td>32.334</td>
+            <td>100%</td>
+            <td><span class="badge badge-info">Excluído</span></td>
+          </tr>
+          <tr>
+            <td>04/10/2026 11:01</td>
+            <td>Raimara (Agendado)</td>
+            <td>Clientes TEN CPF-CNPJ</td>
+            <td>32.512</td>
+            <td>32.512</td>
+            <td>100%</td>
+            <td><span class="badge badge-info">Excluído</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Consolidado — Setor de TI</span>
+      <span>Semana 41 / 2026 — Ten Internet</span>
+      <span>Página 6</span>
+    </div>
+  </div>
+
+  <div class="page-section page-break">
+    <div class="sub-section-title" id="43-módulo-fullcam--auditoria-financeira-de-lucros-e-prejuízos">4.3 Módulo Fullcam – Auditoria Financeira de Lucros e Prejuízos</div>
+    
+    <div class="kpi-grid" id="431-diagnóstico-financeiro-executivo-e-indicadores-chave">
+      <div class="kpi-card emerald">
+        <div class="kpi-value">R$ 10.612,36</div>
+        <div class="kpi-label">Faturamento Total</div>
+        <div class="kpi-desc">Faturas pagas de videomonitoramento</div>
+      </div>
+      <div class="kpi-card rose">
+        <div class="kpi-value">R$ 2.209,00</div>
+        <div class="kpi-label">Custos Licença + Storage</div>
+        <div class="kpi-desc">Licenças R$ 1.875 + Storage R$ 334</div>
+      </div>
+      <div class="kpi-card rose">
+        <div class="kpi-value">R$ 1.350,00</div>
+        <div class="kpi-label">Equipamentos Perdidos</div>
+        <div class="kpi-desc">Hardware em contratos cancelados</div>
+      </div>
+      <div class="kpi-card emerald">
+        <div class="kpi-value">+R$ 7.053,36</div>
+        <div class="kpi-label">Saldo Líquido Consolidado</div>
+        <div class="kpi-desc">Margem operacional positiva de 66.5%</div>
+      </div>
+    </div>
+
+    <div class="card-narrative" style="border-left: 4px solid #ef4444; background: #fef2f2; margin-bottom: 10px;">
+      <strong style="color:#991b1b;">Diagnóstico Crítico de Risco:</strong> Embora o saldo global seja superavitário em +R$ 7.053,36, <strong>51 contratos operam com saldo negativo</strong> (gerando prejuízo residual decorrente de licenças ativas em clientes cancelados ou equipamentos não recolhidos) contra <strong>apenas 34 clientes superavitários</strong>. Ação comercial e jurídica é recomendada para expurgo de contas inativas.
+    </div>
+
+    <div class="sub-section-title" id="432-tabela-completa-de-auditoria-de-contratos-e-saldo-líquido-na-íntegra">4.3.2 Tabela Completa de Auditoria de Contratos e Saldo Líquido na Íntegra (85 Registros)</div>
+    <div class="table-container" style="max-height: none; overflow: visible;">
+      <table style="font-size: 6.8pt;">
+        <thead>
+          <tr>
+            <th style="width: 22%;">Cliente</th>
+            <th style="width: 12%;">CPF/CNPJ</th>
+            <th style="width: 24%;">Contratos Voalle</th>
+            <th style="width: 6%;">Fat.</th>
+            <th style="width: 6%;">GB</th>
+            <th style="width: 10%;">Faturado</th>
+            <th style="width: 10%;">Licença+St.</th>
+            <th style="width: 10%;">Saldo Líquido</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td><strong>ESTER LIMA MOREIRA</strong></td>
+            <td>***.889.297-**</td>
+            <td>Nº 101900 (Normal)  /  Nº 96009 (Cancelado)</td>
+            <td>5</td>
+            <td>0.00</td>
+            <td>R$ 459.04</td>
+            <td>R$ 930.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -470.96</span></td>
+          </tr>
+          <tr>
+            <td><strong>JACICLEIDE RIOS NERI</strong></td>
+            <td>***.857.755-**</td>
+            <td>Nº 95516 (Cancelado)  /  Nº 95517 (Cancelado)</td>
+            <td>2</td>
+            <td>26.00</td>
+            <td>R$ 77.80</td>
+            <td>R$ 481.30</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -403.50</span></td>
+          </tr>
+          <tr>
+            <td><strong>SAULO EMERSON DE OLIVEIRA SOUSA</strong></td>
+            <td>***.162.005-**</td>
+            <td>Nº 102825 (Normal)</td>
+            <td>0</td>
+            <td>1347.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 112.35</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -112.35</span></td>
+          </tr>
+          <tr>
+            <td><strong>DIOGO SILVA NASCIMENTO</strong></td>
+            <td>***.279.605-**</td>
+            <td>Nº 96337 (Cancelado)  /  Nº 96359 (Cancelado)</td>
+            <td>0</td>
+            <td>937.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 91.85</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -91.85</span></td>
+          </tr>
+          <tr>
+            <td><strong>LIDIA NEVES DE OLIVEIRA</strong></td>
+            <td>***.889.665-**</td>
+            <td>Nº 102722 (Normal)</td>
+            <td>0</td>
+            <td>177.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 68.85</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -68.85</span></td>
+          </tr>
+          <tr>
+            <td><strong>LAILENE SOUZA ASSUNÇÃO</strong></td>
+            <td>***.208.045-**</td>
+            <td>Nº 103629 (Normal)</td>
+            <td>0</td>
+            <td>652.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 62.60</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -62.60</span></td>
+          </tr>
+          <tr>
+            <td><strong>HYAGO CABRAL SILVA</strong></td>
+            <td>***.807.105-**</td>
+            <td>Nº 101585 (Normal)  /  Nº 101635 (Normal)</td>
+            <td>0</td>
+            <td>57.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 47.85</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -47.85</span></td>
+          </tr>
+          <tr>
+            <td><strong>VINICIUS FRANÇA FERREIRA</strong></td>
+            <td>***.508.448-**</td>
+            <td>Nº 103377 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 45.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -45.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>EINA CAMILLY REIS SANTOS BATISTA</strong></td>
+            <td>***.604.575-**</td>
+            <td>Nº 99583 (Bloqueio Financeiro)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 45.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -45.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>EDILEIDE SANTOS DE MIRANDA</strong></td>
+            <td>***.903.855-**</td>
+            <td>Nº 102212 (Normal)</td>
+            <td>0</td>
+            <td>259.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 42.95</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -42.95</span></td>
+          </tr>
+          <tr>
+            <td><strong>CLEIDIVAM CARNEIRO QUINTILIANO</strong></td>
+            <td>***.805.255-**</td>
+            <td>Nº 99699 (Cancelado)  /  Nº 99755 (Bloqueio Financeiro)</td>
+            <td>0</td>
+            <td>235.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 41.75</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -41.75</span></td>
+          </tr>
+          <tr>
+            <td><strong>GABRIELLE BARBOSA SILVA</strong></td>
+            <td>***.837.995-**</td>
+            <td>Nº 102419 (Normal)  /  Nº 102507 (Normal)</td>
+            <td>0</td>
+            <td>78.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 33.90</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -33.90</span></td>
+          </tr>
+          <tr>
+            <td><strong>GEANE JESUS SANTOS</strong></td>
+            <td>***.073.645-**</td>
+            <td>Nº 103352 (Normal)  /  Nº 103087 (Normal)</td>
+            <td>0</td>
+            <td>12.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 30.60</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -30.60</span></td>
+          </tr>
+          <tr>
+            <td><strong>TATIELE OLIVEIRA DOS SANTOS</strong></td>
+            <td>***.016.815-**</td>
+            <td>Nº 95887 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 30.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -30.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>GÊLSA DE OLIVEIRA</strong></td>
+            <td>***.973.175-**</td>
+            <td>Nº 104155 (Normal)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 30.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -30.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>IÊDA JESUS DE OLIVEIRA</strong></td>
+            <td>***.617.205-**</td>
+            <td>Nº 94908 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 30.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -30.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>CARINA DE JESUS SILVA</strong></td>
+            <td>***.602.925-**</td>
+            <td>Nº 101302 (Normal)</td>
+            <td>0</td>
+            <td>202.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 25.10</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -25.10</span></td>
+          </tr>
+          <tr>
+            <td><strong>THIARA BISPO SACRAMENTO</strong></td>
+            <td>***.288.815-**</td>
+            <td>Nº 103417 (Normal)</td>
+            <td>0</td>
+            <td>188.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 24.40</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -24.40</span></td>
+          </tr>
+          <tr>
+            <td><strong>LEONIDIA DOMINGAS DA SILVA</strong></td>
+            <td>***.125.665-**</td>
+            <td>Nº 101970 (Normal)</td>
+            <td>0</td>
+            <td>134.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 21.70</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -21.70</span></td>
+          </tr>
+          <tr>
+            <td><strong>JESSICA GOMES DA SILVA LIMA</strong></td>
+            <td>***.327.585-**</td>
+            <td>Nº 101075 (Normal)</td>
+            <td>0</td>
+            <td>74.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 18.70</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -18.70</span></td>
+          </tr>
+          <tr>
+            <td><strong>NILDETE DOS SANTOS CARDOSO</strong></td>
+            <td>***.039.325-**</td>
+            <td>Nº 102117 (Normal)</td>
+            <td>0</td>
+            <td>49.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 17.45</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -17.45</span></td>
+          </tr>
+          <tr>
+            <td><strong>GILSON JESUS DOS SANTOS</strong></td>
+            <td>***.806.948-**</td>
+            <td>Nº 103167 (Normal)</td>
+            <td>0</td>
+            <td>44.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 17.20</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -17.20</span></td>
+          </tr>
+          <tr>
+            <td><strong>CÁSSIA SIRLENE BARBOSA BASTOS</strong></td>
+            <td>***.328.345-**</td>
+            <td>Nº 102329 (Normal)</td>
+            <td>0</td>
+            <td>44.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 17.20</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -17.20</span></td>
+          </tr>
+          <tr>
+            <td><strong>ANDREZA DE JESUS GAMA</strong></td>
+            <td>***.447.695-**</td>
+            <td>Nº 102425 (Normal)</td>
+            <td>0</td>
+            <td>44.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 17.20</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -17.20</span></td>
+          </tr>
+          <tr>
+            <td><strong>MARILUCIA FERREIRA DA SILVA</strong></td>
+            <td>***.832.865-**</td>
+            <td>Nº 103107 (Normal)</td>
+            <td>0</td>
+            <td>42.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 17.10</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -17.10</span></td>
+          </tr>
+          <tr>
+            <td><strong>JONATHAN DA SILVA MIRANDA</strong></td>
+            <td>***.446.265-**</td>
+            <td>Nº 103382 (Normal)</td>
+            <td>0</td>
+            <td>33.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 16.65</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -16.65</span></td>
+          </tr>
+          <tr>
+            <td><strong>THAIS NUNES FREGNANI</strong></td>
+            <td>***.660.758-**</td>
+            <td>Nº 102256 (Normal)</td>
+            <td>0</td>
+            <td>29.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 16.45</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -16.45</span></td>
+          </tr>
+          <tr>
+            <td><strong>AGATHA ANDRESSA MARTINS DA PAIXAO LIMA</strong></td>
+            <td>***.066.595-**</td>
+            <td>Nº 99672 (Bloqueio Financeiro)</td>
+            <td>0</td>
+            <td>27.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 16.35</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -16.35</span></td>
+          </tr>
+          <tr>
+            <td><strong>DANIELE DOS SANTOS COSTA</strong></td>
+            <td>***.932.648-**</td>
+            <td>Nº 101577 (Normal)</td>
+            <td>0</td>
+            <td>16.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.80</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.80</span></td>
+          </tr>
+          <tr>
+            <td><strong>ANA BEATRIZ LIMA DOS SANTOS</strong></td>
+            <td>***.271.129-**</td>
+            <td>Nº 103570 (Normal)</td>
+            <td>0</td>
+            <td>6.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.30</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.30</span></td>
+          </tr>
+          <tr>
+            <td><strong>JORDANIA CRUZ DE JESUS</strong></td>
+            <td>***.374.865-**</td>
+            <td>Nº 102033 (Normal)</td>
+            <td>0</td>
+            <td>6.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.30</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.30</span></td>
+          </tr>
+          <tr>
+            <td><strong>GILDENE SOUSA DE OLIVEIRA</strong></td>
+            <td>***.936.224-**</td>
+            <td>Nº 102651 (Normal)</td>
+            <td>0</td>
+            <td>6.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.30</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.30</span></td>
+          </tr>
+          <tr>
+            <td><strong>GIVALDO JESUS DE LIMA</strong></td>
+            <td>***.269.018-**</td>
+            <td>Nº 103093 (Normal)</td>
+            <td>0</td>
+            <td>6.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.30</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.30</span></td>
+          </tr>
+          <tr>
+            <td><strong>ALESSANDRO DE JESUS SILVA</strong></td>
+            <td>***.086.457-**</td>
+            <td>Nº 103123 (Normal)</td>
+            <td>0</td>
+            <td>6.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.30</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.30</span></td>
+          </tr>
+          <tr>
+            <td><strong>KLEBERSON SOUZA DOS SANTOS</strong></td>
+            <td>***.900.075-**</td>
+            <td>Nº 101761 (Normal)</td>
+            <td>0</td>
+            <td>6.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.30</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.30</span></td>
+          </tr>
+          <tr>
+            <td><strong>SUZY ALINE RIOS DE OLIVEIRA</strong></td>
+            <td>***.035.745-**</td>
+            <td>Nº 100729 (Normal)</td>
+            <td>0</td>
+            <td>1.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.05</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.05</span></td>
+          </tr>
+          <tr>
+            <td><strong>CLAUDIANE SILVA DOS SANTOS</strong></td>
+            <td>***.835.255-**</td>
+            <td>Nº 95138 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>ALBA CRISTINA NERI DE ALMEIDA</strong></td>
+            <td>***.684.085-**</td>
+            <td>Nº 95895 (Encerrado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>JOSEILSON DOS SANTOS ARAÚJO</strong></td>
+            <td>***.034.655-**</td>
+            <td>Nº 104091 (Normal)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>MARCOS DE SOUZA CAMPOS</strong></td>
+            <td>***.970.154-**</td>
+            <td>Nº 104128 (Normal)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>GESSILDA CAVALCANTE MARTINS LUZ</strong></td>
+            <td>***.211.995-**</td>
+            <td>Nº 95431 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>PONTO DAS CAMERAS CFTV LTDA</strong></td>
+            <td>39.726.068/0001-98</td>
+            <td>Nº 95579 (Normal)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>CRISTINA DE SOUZA BRITO</strong></td>
+            <td>***.373.845-**</td>
+            <td>Nº 97929 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>OLIMPIO MOREIRA MAIA</strong></td>
+            <td>***.045.005-**</td>
+            <td>Nº 95000 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>Maria Telma Conceição Sobreira</strong></td>
+            <td>***.013.635-**</td>
+            <td>Nº 98711 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>MARIA INEZ SAMPAIO DA SILVA</strong></td>
+            <td>***.123.895-**</td>
+            <td>Nº 95798 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>FELIPE LIMA SANTOS</strong></td>
+            <td>***.809.215-**</td>
+            <td>Nº 96056 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>JUSIAN D ARC MACIEL DE ALMEIDA</strong></td>
+            <td>***.123.518-**</td>
+            <td>Nº 102056 (Normal)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>CAMILLA ANDRADE DE FARIAS SILVA</strong></td>
+            <td>***.686.715-**</td>
+            <td>Nº 102242 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>IATAN SILVA SANTANA</strong></td>
+            <td>***.441.815-**</td>
+            <td>Nº 100609 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>NILZA DA SILVA SOUZA DIAS</strong></td>
+            <td>***.807.585-**</td>
+            <td>Nº 101174 (Cancelado)</td>
+            <td>0</td>
+            <td>0.00</td>
+            <td>R$ 0.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#dc2626;font-weight:700;'>R$ -15.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>LAILA GLECIA AZEVEDO DE MENEZES</strong></td>
+            <td>***.357.985-**</td>
+            <td>Nº 100265 (Bloqueio Financeiro)</td>
+            <td>1</td>
+            <td>39.00</td>
+            <td>R$ 50.00</td>
+            <td>R$ 46.95</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 3.05</span></td>
+          </tr>
+          <tr>
+            <td><strong>LAIS BOLOS E CONGELADOS LTDA</strong></td>
+            <td>09.291.567/0001-39</td>
+            <td>Nº 97089 (Normal)</td>
+            <td>1</td>
+            <td>188.00</td>
+            <td>R$ 40.00</td>
+            <td>R$ 24.40</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 15.60</span></td>
+          </tr>
+          <tr>
+            <td><strong>MARLA IVANA SOUZA DA SILVA</strong></td>
+            <td>***.637.065-**</td>
+            <td>Nº 100050 (Normal)</td>
+            <td>1</td>
+            <td>44.00</td>
+            <td>R$ 49.90</td>
+            <td>R$ 17.20</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 32.70</span></td>
+          </tr>
+          <tr>
+            <td><strong>LEANDRA RIBEIRO DOS SANTOS</strong></td>
+            <td>***.299.295-**</td>
+            <td>Nº 99987 (Normal)</td>
+            <td>1</td>
+            <td>14.00</td>
+            <td>R$ 49.90</td>
+            <td>R$ 15.70</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 34.20</span></td>
+          </tr>
+          <tr>
+            <td><strong>JORGE KELNER PEREIRA DA SILVA</strong></td>
+            <td>***.767.774-**</td>
+            <td>Nº 95900 (Cancelado)</td>
+            <td>1</td>
+            <td>39.00</td>
+            <td>R$ 53.22</td>
+            <td>R$ 16.95</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 36.27</span></td>
+          </tr>
+          <tr>
+            <td><strong>MARIA DO CARMO LIMA ROSENO</strong></td>
+            <td>***.909.965-**</td>
+            <td>Nº 100100 (Bloqueio Financeiro)</td>
+            <td>1</td>
+            <td>109.00</td>
+            <td>R$ 69.90</td>
+            <td>R$ 20.45</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 49.45</span></td>
+          </tr>
+          <tr>
+            <td><strong>IRLANDE PEREIRA SOUZA</strong></td>
+            <td>***.234.695-**</td>
+            <td>Nº 99320 (Bloqueio Financeiro)</td>
+            <td>1</td>
+            <td>69.00</td>
+            <td>R$ 69.90</td>
+            <td>R$ 18.45</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 51.45</span></td>
+          </tr>
+          <tr>
+            <td><strong>EDIVANIA CERQUEIRA DOS SANTOS</strong></td>
+            <td>***.137.635-**</td>
+            <td>Nº 95904 (Cancelado)</td>
+            <td>1</td>
+            <td>0.00</td>
+            <td>R$ 69.90</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 54.90</span></td>
+          </tr>
+          <tr>
+            <td><strong>JUAREZ LAURINDO VIANA JUNIOR</strong></td>
+            <td>***.945.135-**</td>
+            <td>Nº 99666 (Normal)</td>
+            <td>2</td>
+            <td>16.00</td>
+            <td>R$ 79.80</td>
+            <td>R$ 15.80</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 64.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>MARIA TANIA CERQUEIRA DA SILVA</strong></td>
+            <td>***.548.675-**</td>
+            <td>Nº 100785 (Normal)</td>
+            <td>2</td>
+            <td>6.00</td>
+            <td>R$ 79.80</td>
+            <td>R$ 15.30</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 64.50</span></td>
+          </tr>
+          <tr>
+            <td><strong>WILLIAM VASCONCELOS AVELAR</strong></td>
+            <td>***.746.788-**</td>
+            <td>Nº 101404 (Normal)</td>
+            <td>2</td>
+            <td>33.00</td>
+            <td>R$ 99.73</td>
+            <td>R$ 16.65</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 83.08</span></td>
+          </tr>
+          <tr>
+            <td><strong>KELLY LAYANNI DA SILVA ALENCAR</strong></td>
+            <td>***.282.045-**</td>
+            <td>Nº 96634 (Cancelado)</td>
+            <td>2</td>
+            <td>15.00</td>
+            <td>R$ 99.80</td>
+            <td>R$ 15.75</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 84.05</span></td>
+          </tr>
+          <tr>
+            <td><strong>KÁTIA REJANE SOUSA DA SILVA</strong></td>
+            <td>***.866.405-**</td>
+            <td>Nº 99402 (Normal)</td>
+            <td>3</td>
+            <td>1.00</td>
+            <td>R$ 119.70</td>
+            <td>R$ 15.05</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 104.65</span></td>
+          </tr>
+          <tr>
+            <td><strong>DEIZE GOES PEREIRA</strong></td>
+            <td>***.931.385-**</td>
+            <td>Nº 102803 (Normal)  /  Nº 99087 (Normal)</td>
+            <td>3</td>
+            <td>90.00</td>
+            <td>R$ 149.70</td>
+            <td>R$ 34.50</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 115.20</span></td>
+          </tr>
+          <tr>
+            <td><strong>JOAO CARLOS EVANGELISTA</strong></td>
+            <td>***.544.255-**</td>
+            <td>Nº 95472 (Cancelado)  /  Nº 95471 (Bloqueio Financeiro)</td>
+            <td>4</td>
+            <td>0.00</td>
+            <td>R$ 179.02</td>
+            <td>R$ 30.00</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 149.02</span></td>
+          </tr>
+          <tr>
+            <td><strong>LUIZ FERREIRA DE CARVALHO</strong></td>
+            <td>***.580.278-**</td>
+            <td>Nº 99732 (Normal)</td>
+            <td>3</td>
+            <td>508.00</td>
+            <td>R$ 209.70</td>
+            <td>R$ 40.40</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 169.30</span></td>
+          </tr>
+          <tr>
+            <td><strong>CARLOS HENRIQUE GOMES ABRAHAO</strong></td>
+            <td>***.667.428-**</td>
+            <td>Nº 97866 (Normal)</td>
+            <td>5</td>
+            <td>5.00</td>
+            <td>R$ 199.50</td>
+            <td>R$ 15.25</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 184.25</span></td>
+          </tr>
+          <tr>
+            <td><strong>MARON AMBIENTAL LTDA</strong></td>
+            <td>35.030.383/0001-25</td>
+            <td>Nº 100929 (Normal)</td>
+            <td>4</td>
+            <td>0.00</td>
+            <td>R$ 207.90</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 192.90</span></td>
+          </tr>
+          <tr>
+            <td><strong>ROSILENE CUNHA GUIMARÃES</strong></td>
+            <td>***.689.265-**</td>
+            <td>Nº 95123 (Bloqueio Financeiro)</td>
+            <td>7</td>
+            <td>8.00</td>
+            <td>R$ 279.30</td>
+            <td>R$ 15.40</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 263.90</span></td>
+          </tr>
+          <tr>
+            <td><strong>RAMISLA TRABUCO OLIVEIRA DA SILVA SANTOS</strong></td>
+            <td>***.845.625-**</td>
+            <td>Nº 59051 (Cortesia)</td>
+            <td>6</td>
+            <td>0.00</td>
+            <td>R$ 289.00</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 274.00</span></td>
+          </tr>
+          <tr>
+            <td><strong>WEFFLIN DE SOUZA PORTO</strong></td>
+            <td>***.044.808-**</td>
+            <td>Nº 101190 (Normal)</td>
+            <td>2</td>
+            <td>37.00</td>
+            <td>R$ 378.38</td>
+            <td>R$ 76.85</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 301.53</span></td>
+          </tr>
+          <tr>
+            <td><strong>PABLO PEREIRA BROTAS</strong></td>
+            <td>***.296.145-**</td>
+            <td>Nº 96490 (Normal)</td>
+            <td>7</td>
+            <td>12.00</td>
+            <td>R$ 349.30</td>
+            <td>R$ 15.60</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 333.70</span></td>
+          </tr>
+          <tr>
+            <td><strong>PRIMEIRA IGREJA BATISTA CANAA</strong></td>
+            <td>32.228.372/0001-66</td>
+            <td>Nº 101835 (Normal)  /  Nº 103506 (Normal)</td>
+            <td>4</td>
+            <td>121.00</td>
+            <td>R$ 405.90</td>
+            <td>R$ 66.05</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 339.85</span></td>
+          </tr>
+          <tr>
+            <td><strong>MARIA LUSIMEIRE GRANGEIRO OLIVEIRA</strong></td>
+            <td>***.111.873-**</td>
+            <td>Nº 95252 (Normal)</td>
+            <td>9</td>
+            <td>21.00</td>
+            <td>R$ 409.18</td>
+            <td>R$ 16.05</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 393.13</span></td>
+          </tr>
+          <tr>
+            <td><strong>ANDRE ROGERIO OLIVEIRA SOUSA</strong></td>
+            <td>***.960.705-**</td>
+            <td>Nº 95245 (Normal)</td>
+            <td>9</td>
+            <td>25.00</td>
+            <td>R$ 449.10</td>
+            <td>R$ 16.25</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 432.85</span></td>
+          </tr>
+          <tr>
+            <td><strong>DAVID BRASIL FERNANDES</strong></td>
+            <td>***.899.744-**</td>
+            <td>Nº 96660 (Normal)</td>
+            <td>15</td>
+            <td>0.00</td>
+            <td>R$ 455.61</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 440.61</span></td>
+          </tr>
+          <tr>
+            <td><strong>JOSÉ JORGE FIGUEIREDO DOS SANTOS</strong></td>
+            <td>***.876.475-**</td>
+            <td>Nº 97710 (Normal)</td>
+            <td>5</td>
+            <td>68.00</td>
+            <td>R$ 486.50</td>
+            <td>R$ 33.40</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 453.10</span></td>
+          </tr>
+          <tr>
+            <td><strong>63.568.006 FERNANDO ARAUJO DOS SANTOS</strong></td>
+            <td>63.568.006/0001-80</td>
+            <td>Nº 96905 (Bloqueio Financeiro)</td>
+            <td>4</td>
+            <td>150.00</td>
+            <td>R$ 494.26</td>
+            <td>R$ 37.50</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 456.76</span></td>
+          </tr>
+          <tr>
+            <td><strong>BENEDITO SOARES DOS SANTOS</strong></td>
+            <td>***.080.875-**</td>
+            <td>Nº 97353 (Normal)</td>
+            <td>7</td>
+            <td>0.00</td>
+            <td>R$ 544.60</td>
+            <td>R$ 30.00</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 514.60</span></td>
+          </tr>
+          <tr>
+            <td><strong>LUZINETE ANA CARNEIRO ROCHA</strong></td>
+            <td>***.846.847-**</td>
+            <td>Nº 95888 (Normal)</td>
+            <td>11</td>
+            <td>0.00</td>
+            <td>R$ 555.54</td>
+            <td>R$ 15.00</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 540.54</span></td>
+          </tr>
+          <tr>
+            <td><strong>RISONEI DA SILVA SANTOS LIMA</strong></td>
+            <td>***.257.375-**</td>
+            <td>Nº 96867 (Cancelado)</td>
+            <td>10</td>
+            <td>101.00</td>
+            <td>R$ 562.20</td>
+            <td>R$ 20.05</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 542.15</span></td>
+          </tr>
+          <tr>
+            <td><strong>GILBERTO DE JESUS SANTOS</strong></td>
+            <td>***.581.085-**</td>
+            <td>Nº 100897 (Cancelado)</td>
+            <td>3</td>
+            <td>0.00</td>
+            <td>R$ 612.80</td>
+            <td>R$ 30.00</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 582.80</span></td>
+          </tr>
+          <tr>
+            <td><strong>IVANILDO SOARES DO NASCIMENTO</strong></td>
+            <td>***.822.785-**</td>
+            <td>Nº 95682 (Cancelado)</td>
+            <td>10</td>
+            <td>45.00</td>
+            <td>R$ 639.15</td>
+            <td>R$ 17.25</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 621.90</span></td>
+          </tr>
+          <tr>
+            <td><strong>Paulo Joao Da silva</strong></td>
+            <td>***.118.295-**</td>
+            <td>Nº 95511 (Normal)  /  Nº 95510 (Normal)</td>
+            <td>18</td>
+            <td>173.00</td>
+            <td>R$ 1,287.33</td>
+            <td>R$ 53.65</td>
+            <td><span style='color:#16a34a;font-weight:700;'>+R$ 1,233.68</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Consolidado — Setor de TI</span>
+      <span>Semana 41 / 2026 — Ten Internet</span>
+      <span>Página 7</span>
+    </div>
+  </div>
+
+  <div class="page-section page-break">
+    <div class="sub-section-title" id="44-módulo-fullcam--produção-operacional-das-automações">4.4 Módulo Fullcam – Produção Operacional das Automações</div>
+    
+    <div class="kpi-grid" id="441-painel-consolidado-de-execução-e-disponibilidade-da-esteira">
+      <div class="kpi-card emerald">
+        <div class="kpi-value">553</div>
+        <div class="kpi-label">Checagens Processadas</div>
+        <div class="kpi-desc">475 inadimplência + 78 instalações</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">32</div>
+        <div class="kpi-label">Câmeras Monitoradas</div>
+        <div class="kpi-desc">Tratamento de esteira contínua</div>
+      </div>
+      <div class="kpi-card emerald">
+        <div class="kpi-value">99.2%</div>
+        <div class="kpi-label">Taxa de Sucesso</div>
+        <div class="kpi-desc">471 sucessos em 475 rotinas</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">100%</div>
+        <div class="kpi-label">Uptime Esteira Instalação</div>
+        <div class="kpi-desc">Disponibilidade ininterrupta</div>
+      </div>
+    </div>
+
+    <div class="sub-section-title" id="442-ações-efetivas-de-inadimplência-e-instalações-de-câmeras">4.4.2 Ações Efetivas de Inadimplência e Instalações de Câmeras</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 10%;">ID</th>
+            <th style="width: 18%;">Data / Hora</th>
+            <th style="width: 25%;">Cliente</th>
+            <th style="width: 12%;">Contrato</th>
+            <th style="width: 12%;">Protocolo</th>
+            <th style="width: 13%;">Ação Efetiva</th>
+            <th style="width: 10%;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#692</strong></td>
+            <td>05/10/2026 10:21</td>
+            <td>MARIA DO CARMO LIMA ROSENO</td>
+            <td>100100</td>
+            <td>—</td>
+            <td><span class="badge badge-danger">BLOCK (1 cam)</span></td>
+            <td><span class="badge badge-success">Sucesso</span></td>
+          </tr>
+          <tr>
+            <td><strong>#736</strong></td>
+            <td>06/10/2026 15:42</td>
+            <td>CLEIDIVAM CARNEIRO QUINTILIANO</td>
+            <td>99755</td>
+            <td>—</td>
+            <td><span class="badge badge-success">UNBLOCK (2 cams)</span></td>
+            <td><span class="badge badge-success">Sucesso</span></td>
+          </tr>
+          <tr>
+            <td><strong>#746</strong></td>
+            <td>08/10/2026 08:39</td>
+            <td>JOSEILSON DOS SANTOS ARAÚJO</td>
+            <td>104091</td>
+            <td>3217025</td>
+            <td><span class="badge badge-info">INSTALL (1 cam)</span></td>
+            <td><span class="badge badge-success">Sucesso</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-section-title" id="45-impacto-operacional-e-métricas-de-produtividade-das-automações">4.5 Impacto Operacional e Produtividade das Automações</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%;">Automação Ativa</th>
+            <th style="width: 18%;">Frequência</th>
+            <th style="width: 26%;">Esforço Manual Anterior</th>
+            <th style="width: 26%;">Horas Economizadas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sincronização Diária Vouchers WiFeed</td>
+            <td>Diária (11h)</td>
+            <td>45 min diários (Excel, upload)</td>
+            <td><strong>5h 15m / semana</strong></td>
+          </tr>
+          <tr>
+            <td>Esteira Bloqueio/Desbloqueio Fullcam</td>
+            <td>Horária (24/7)</td>
+            <td>15 min por evento + 1h conferência</td>
+            <td><strong>12h 30m / semana</strong></td>
+          </tr>
+          <tr>
+            <td>Auditoria Financeira Lucros/Prejuízos</td>
+            <td>Semanal</td>
+            <td>8h semanais de conferência</td>
+            <td><strong>8h 00m / semana</strong></td>
+          </tr>
+          <tr>
+            <td>Ingestão Local-First AutoTickets</td>
+            <td>Contínua</td>
+            <td>4h semanais de extração no ERP</td>
+            <td><strong>20h 00m / semana</strong></td>
+          </tr>
+          <tr style="background:#f0fdf4;font-weight:700;">
+            <td colspan="3">TOTAL CONSOLIDADO DE ESFORÇO TÉCNICO POUPADO</td>
+            <td style="color:#16a34a;">45h 45m / semana</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-title" id="5-incidentes-tratados">
+      <span>5. Incidentes Tratados</span>
+      <span class="badge-count">Janela Móvel: 30 Dias</span>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 10%;">ID</th>
+            <th style="width: 22%;">Sistema Afetado</th>
+            <th style="width: 12%;">Severidade</th>
+            <th style="width: 38%;">Causa Raiz & Solução Adotada</th>
+            <th style="width: 18%;">Status / Reincidência</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>INC-01</strong></td>
+            <td>Portal Compras Supabase</td>
+            <td><span class="badge badge-danger">Crítica</span></td>
+            <td>Signup aberto e ausência de RLS. Perícia reversa (#3218766) e laudo técnico para fechamento.</td>
+            <td>Em Observação (1º dia)</td>
+          </tr>
+          <tr>
+            <td><strong>INC-02</strong></td>
+            <td>Universidade Ten</td>
+            <td><span class="badge badge-warning">Média</span></td>
+            <td>Falha de rota DNS. Revalidação de registros e sincronização de credenciais (#3213644/#3216016).</td>
+            <td>Em Observação (6 dias)</td>
+          </tr>
+          <tr>
+            <td><strong>INC-03</strong></td>
+            <td>Caixa Loja Jacobina</td>
+            <td><span class="badge badge-danger">Alta</span></td>
+            <td>Falha de sincronismo na interface de rede. Reconfiguração de IP/DNS (#3211961).</td>
+            <td>Em Observação (5 dias)</td>
+          </tr>
+          <tr>
+            <td><strong>INC-04</strong></td>
+            <td>Câmeras Loja Jacobina</td>
+            <td><span class="badge badge-danger">Alta</span></td>
+            <td>Perda de comunicação PoE em switch. Reinicialização e reaperto de conectores (#3214581).</td>
+            <td>Em Observação (5 dias)</td>
+          </tr>
+          <tr>
+            <td><strong>INC-05</strong></td>
+            <td>Sessão Voalle ERP</td>
+            <td><span class="badge badge-danger">Alta</span></td>
+            <td>Bug de expiração de token Synsuite deslogando colaboradores. Escalonado para N3 da Voalle (#3209683).</td>
+            <td>Em Monitoramento Voalle</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Consolidado — Setor de TI</span>
+      <span>Semana 41 / 2026 — Ten Internet</span>
+      <span>Página 8</span>
+    </div>
+  </div>
+
+  <div class="page-section page-break">
+    <div class="section-title" id="6-suporte-interno-informática">
+      <span>6. Suporte Interno (Informática)</span>
+      <span class="badge-count">35 Chamados Internos</span>
+    </div>
+
+    <div class="sub-section-title" id="61-relação-de-atendimentos-e-chamados-da-semana">6.1 Relação de Atendimentos e Chamados da Semana</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 14%;">Protocolo</th>
+            <th style="width: 22%;">Solicitante</th>
+            <th style="width: 24%;">Departamento</th>
+            <th style="width: 28%;">Descrição do Atendimento</th>
+            <th style="width: 12%;">Responsável</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#3211961</strong></td>
+            <td>Caixa Jacobina</td>
+            <td>Comercial / Lojas</td>
+            <td>Recuperação de rede da estação do caixa de Jacobina.</td>
+            <td>David Brasil</td>
+          </tr>
+          <tr>
+            <td><strong>#3216232</strong></td>
+            <td>Marilucia</td>
+            <td>Financeiro / Cobrança</td>
+            <td>Manutenção corretiva e otimização de SO da estação.</td>
+            <td>David Brasil</td>
+          </tr>
+          <tr>
+            <td><strong>#3215232</strong></td>
+            <td>TI Estoque</td>
+            <td>TI / Patrimônio</td>
+            <td>Formatação limpa e instalação de Windows corporativo.</td>
+            <td>David Brasil</td>
+          </tr>
+          <tr>
+            <td><strong>#3213404</strong></td>
+            <td>Larissa Roza</td>
+            <td>Atendimento Interno</td>
+            <td>Manutenção em computador e impressora de atendimento.</td>
+            <td>David Brasil</td>
+          </tr>
+          <tr>
+            <td><strong>#3214918</strong></td>
+            <td>Daiane Cardoso</td>
+            <td>Atendimento Comercial</td>
+            <td>Configuração e liberação de equipamento de TI.</td>
+            <td>Isac Costa</td>
+          </tr>
+          <tr>
+            <td><strong>#3218029</strong></td>
+            <td>Iasmin San'galo</td>
+            <td>Atendimento</td>
+            <td>Tratativa de instabilidade recorrente de rede local.</td>
+            <td>Isac Costa</td>
+          </tr>
+          <tr>
+            <td><strong>#3216016</strong></td>
+            <td>Raimara Santos</td>
+            <td>RH / Treinamento</td>
+            <td>Mutirão de redefinição de acessos Universidade Ten.</td>
+            <td>Isac e Liomar</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; margin-bottom:10px;">
+      <div>
+        <div class="sub-section-title" id="62-setores-que-mais-demandaram-atendimento">6.2 Setores que mais Demandaram</div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr><th>Setor</th><th style="width:20%;">Qtd</th><th style="width:25%;">%</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Atendimento / Comercial</td><td>12</td><td>34.3%</td></tr>
+              <tr><td>Financeiro / Cobrança</td><td>8</td><td>22.9%</td></tr>
+              <tr><td>Operações de Lojas</td><td>6</td><td>17.1%</td></tr>
+              <tr><td>RH / Treinamento</td><td>5</td><td>14.3%</td></tr>
+              <tr><td>Logística / Patrimônio</td><td>4</td><td>11.4%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="sub-section-title" id="63-colaboradores-solicitantes-mais-frequentes">6.3 Solicitantes Mais Frequentes</div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr><th>Solicitante</th><th style="width:20%;">Qtd</th><th style="width:45%;">Departamento</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Larissa Roza</td><td>5</td><td>Atendimento Interno</td></tr>
+              <tr><td>Raimara Santos</td><td>3</td><td>RH / Treinamento</td></tr>
+              <tr><td>Daiane Cardoso</td><td>3</td><td>Atendimento Comercial</td></tr>
+              <tr><td>Marilucia</td><td>2</td><td>Cobrança / Financeiro</td></tr>
+              <tr><td>Iasmin San'galo</td><td>2</td><td>Atendimento</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-narrative" id="64-relatório-de-visitas-técnicas-presenciais-e-gestão-de-veículos">
+      <h4>6.4 Visitas Técnicas, Gestão de Frota e Política Windows 10 x Windows 11</h4>
+      <p>
+        • <strong>Deslocamentos Operacionais:</strong> Visita de Liomar ao DC Chácara em Capim Grosso (#3214172) para instalação do Servidor IA GPU e deslocamentos de David às dependências de Jacobina.<br>
+        • <strong>Dificuldades com Veículos:</strong> Atrasos na entrega de veículos pelo transporte ('vou verificar qual carro posso disponibilizar') geraram esperas de até 1h na saída para campo.<br>
+        • <strong>Política Windows 10 x Windows 11:</strong> Máquinas antigas (Core i3/i5 de 3ª a 6ª geração sem TPM 2.0 e licença OEM Win 10) mantêm Windows 10 temporariamente até substituição de hardware. Novas aquisições recebem obrigatoriamente <strong>Windows 11 Pro 64-bit</strong>.
+      </p>
+    </div>
+
+    <div class="section-title" id="7-suporte-ao-técnico-de-campo">
+      <span>7. Suporte ao Técnico de Campo</span>
+      <span class="badge-count">16 Atendimentos Formais</span>
+    </div>
+
+    <div class="card-narrative" id="71-volumetria-de-solicitações-com-e-sem-protocolo">
+      <h4>7.1 Volumetria de Solicitações e Rigor de Formalização</h4>
+      <p>
+        Cumprindo a diretriz mandatória de registrar todo apoio com protocolo, o setor realizou <strong>16 atendimentos técnicos com protocolo no Voalle</strong> (TMA de 37 minutos e 9h 54m dedicadas), com 100% de resolubilidade.
+      </p>
+    </div>
+
+    <div class="table-container" id="72-tipos-de-apoio-mais-frequentes-e-tempo-de-resposta">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 45%;">Categoria de Apoio Técnico ao Campo</th>
+            <th style="width: 15%;">Quantidade</th>
+            <th style="width: 15%;">Proporção (%)</th>
+            <th style="width: 25%;">TMA Médio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Provisionamento e Autorização de ONTs (Datacom / Parks)</td>
+            <td>7</td>
+            <td>43.8%</td>
+            <td>32 min</td>
+          </tr>
+          <tr>
+            <td>Consulta Cadastral e Manobra de CTO / Porta Óptica</td>
+            <td>4</td>
+            <td>25.0%</td>
+            <td>40 min</td>
+          </tr>
+          <tr>
+            <td>Troca de Estrutura e Migração de Porta PON</td>
+            <td>3</td>
+            <td>18.7%</td>
+            <td>45 min</td>
+          </tr>
+          <tr>
+            <td>Diagnóstico de Sinal Óptico e Validação de Potência</td>
+            <td>2</td>
+            <td>12.5%</td>
+            <td>37 min</td>
+          </tr>
+          <tr style="background:#f1f5f9;font-weight:700;">
+            <td>SOMA EXATA DA VOLUMETRIA CATEGORIZADA</td>
+            <td>16</td>
+            <td>100%</td>
+            <td>37 min</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="73-oportunidades-de-automação-e-redução-de-dependência" style="font-size: 7.4pt; color: #64748b;">
+      <strong>Oportunidades de Automação:</strong> Módulo de auto-provisionamento de ONTs via WhatsApp no AutoTickets para permitir liberação autônoma pelo técnico de campo.
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Consolidado — Setor de TI</span>
+      <span>Semana 41 / 2026 — Ten Internet</span>
+      <span>Página 9</span>
+    </div>
+  </div>
+
+  <div class="page-section page-break">
+    <div class="section-title" id="8-infraestrutura-e-sistemas-críticos">
+      <span>8. Infraestrutura e Sistemas Críticos</span>
+      <span class="badge-count">Monitoramento & Governança</span>
+    </div>
+
+    <div class="card-narrative" id="81-disponibilidade-de-serviços-e-incidentes-em-sistemas">
+      <h4>8.1 Disponibilidade de Serviços e Incidentes em Sistemas</h4>
+      <p>
+        <strong>Declaração Formal de Uptime de Rede:</strong> Em conformidade com a diretriz da Coordenação, declara-se: <strong>Sem indisponibilidade de rede registrada no período</strong>.<br>
+        <em>Ocorrência Operacional de Sistema:</em> Protocolo #3209683 (Voalle ERP) com bug intermitente de expiração de sessão em tela de atendimento, escalonado para N3 da Synsuite.
+      </p>
+    </div>
+
+    <div class="sub-section-title" id="82-execução-e-validação-de-backups">8.2 Execução e Validação de Backups (Quadrante de Governança)</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 25%;">Dimensão do Quadrante</th>
+            <th style="width: 20%;">Métrica Auditada</th>
+            <th style="width: 55%;">Detalhamento Técnico da Auditoria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Instâncias na Rotina Diária</strong></td>
+            <td><strong>24 instâncias</strong></td>
+            <td>18 Máquinas Virtuais (VMs) e 6 Contêineres (CTs) no Proxmox VE.</td>
+          </tr>
+          <tr>
+            <td><strong>2. Jobs x Falhas na Semana</strong></td>
+            <td><strong>168 jobs / 2 falhas</strong></td>
+            <td>166 rotinas com sucesso (taxa de sucesso de 98.8%).</td>
+          </tr>
+          <tr>
+            <td><strong>3. VMs Refeitas Manualmente</strong></td>
+            <td><strong>2 VMs refeitas</strong></td>
+            <td>VM Gerenet e VM Zabbix-Proxy refeitas após oscilação de link noturno.</td>
+          </tr>
+          <tr>
+            <td><strong>4. Teste Disaster Recovery (DR)</strong></td>
+            <td><strong>15/09/2026 (100% OK)</strong></td>
+            <td>Restauração em sandbox isolado com 100% integridade. Próximo teste final de outubro.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-narrative" id="83-atualizações-melhorias-e-ações-de-modernização">
+      <h4>8.3 Atualizações, Melhorias e Ações de Modernização</h4>
+      <p>
+        • Comissionamento e partida do Servidor IA GPU no Data Center Chácara.<br>
+        • Hardening de SSH nos MikroTiks RouterOS 6 (#3103374) com coleta via API RouterOS 7 no Zabbix.<br>
+        • Monitoramento térmico estável do Dell PowerEdge R910 (redução de 12°C após manutenção preventiva).
+      </p>
+    </div>
+
+    <div class="section-title" id="9-pontos-de-atenção-e-próximas-ações">
+      <span>9. Pontos de Atenção e Próximas Ações</span>
+      <span class="badge-count">Riscos, Investimentos & Roadmap</span>
+    </div>
+
+    <div class="card-narrative" id="91-riscos-tecnológicos-e-vulnerabilidades-identificadas">
+      <h4>9.1 Riscos Tecnológicos e Vulnerabilidades</h4>
+      <p>
+        • <strong>Supabase Compras:</strong> Urgência na aplicação de RLS e travamento de signup público conforme relatório pericial #3218766.<br>
+        • <strong>LGPD e Slack:</strong> Alinhar formalmente com Isvi Neemias a política de retenção da integração Slack x AutoTickets (#3210508).
+      </p>
+    </div>
+
+    <div class="card-narrative" id="92-necessidades-de-investimentos-e-aquisições">
+      <h4>9.2 Necessidades de Investimentos e Aquisições</h4>
+      <p>
+        • Aquisição de tela para o notebook do técnico Felipe Nere (#3202572).<br>
+        • Compra de mais 2 nobreaks senoidais NHS 1500VA para racks de distribuição.<br>
+        • Novos roteadores para expansão física da esteira de Hotspots WiFeed (#3213875).
+      </p>
+    </div>
+
+    <div class="sub-section-title" id="93-ações-planejadas-para-as-próximas-semanas">9.3 Ações Planejadas para as Próximas Semanas</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 32%;">Ação Planejada</th>
+            <th style="width: 20%;">Responsável</th>
+            <th style="width: 18%;">Prazo Estimado</th>
+            <th style="width: 30%;">Meta Operacional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Conexão AutoTickets × Ollama GPU Local</td>
+            <td>Liomar Oliveira</td>
+            <td>20/10/2026</td>
+            <td>Processamento local sem custo de tokens em nuvem.</td>
+          </tr>
+          <tr>
+            <td>Homologação Final Telefonia ZEUS</td>
+            <td>Isac Costa Silva</td>
+            <td>23/10/2026</td>
+            <td>Validação de troncos SIP com operadora TIP Brasil.</td>
+          </tr>
+          <tr>
+            <td>Manutenção Câmeras em Torre e POPs</td>
+            <td>David Brasil</td>
+            <td>22/10/2026</td>
+            <td>Religamento das câmeras da Torre do Cruzeiro e POPs.</td>
+          </tr>
+          <tr>
+            <td>Script Implantação WireGuard Filiais</td>
+            <td>David Brasil</td>
+            <td>26/10/2026</td>
+            <td>Início da expansão nas 5 primeiras filiais.</td>
+          </tr>
+          <tr>
+            <td>Teste Mensal de Restauração Backup</td>
+            <td>Isac e Liomar</td>
+            <td>30/10/2026</td>
+            <td>Restauração prática de VM em sandbox (DR).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Consolidado — Setor de TI</span>
+      <span>Semana 41 / 2026 — Ten Internet</span>
+      <span>Página 10</span>
+    </div>
+  </div>
+</body>
+</html>
