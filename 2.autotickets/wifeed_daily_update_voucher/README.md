@@ -29,3 +29,11 @@ Desenvolvi uma automação em AutoTickets que faz o seguinte:
 - Um endpoint específico para exportação do arquivo CSV já pronto para upload na plataforma;
 - Um job automático que já gera o csv e faz o trabalho "sujo" dentro da plataforma WiFeed em passos sequenciais:
     - Em horário agendado diariamente (11h da manhã), o AutoTickets executa a automação que navega para os endpoints de segmentos de voucher (com as bases de dados dos clientes em csv), remove o segmento atualmente utilizado, cria um novo segmento, faz o upload e lança uma paginação em um endpoint específico para contar se todas as linhas do csv foram salvas no sistema WiFeed. Após validar que os dados estão íntegros, o sistema efetua a troca do segmento padrão para o novo segmento criado, totalmente atualizado.
+
+# O relatório
+Este diretório armazena o relatório gerado por AutoTickets, que contém os dados coletados através da demanda executada automaticamente diariamente, como:
+- Total clientes ativos no dia no ERP
+    - Variação diária
+    - Variação semanal
+    - Crescimento acumulado
+- Sucesso ou falha na atualização de vouchers, incluindo progresso em porcentagem da validação dos dados após upload
