@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório Semanal Consolidado — Setor TI (04/10/2026 a 10/10/2026)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+    @page {
+      size: A4;
+      margin: 11mm 12mm 11mm 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.44;
+      font-size: 8.5pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 15px;
+    }
+
+    /* HEADER BANNER */
+    .header-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #0284c7 100%);
+      color: #ffffff;
+      padding: 18px 22px;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 3px 12px;
+      border-radius: 14px;
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      color: #e0f2fe;
+    }
+
+    .header-banner h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16.5pt;
+      font-weight: 800;
+      margin-bottom: 4px;
+      letter-spacing: -0.4px;
+      color: #ffffff;
+    }
+
+    .header-banner p.subtitle {
+      font-size: 8.8pt;
+      color: #cbd5e1;
+      font-weight: 400;
+    }
+
+    /* META GRID */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-item .label {
+      font-size: 6.8pt;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.4px;
+      margin-bottom: 2px;
+    }
+
+    .meta-item .val {
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .meta-item .val-sub {
+      font-size: 7pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* STATCARDS */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .kpi-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 9px 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #0284c7;
+    }
+
+    .kpi-card.emerald::before { background: #10b981; }
+    .kpi-card.purple::before { background: #8b5cf6; }
+    .kpi-card.amber::before { background: #f59e0b; }
+    .kpi-card.rose::before { background: #f43f5e; }
+
+    .kpi-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    .kpi-label {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 3px;
+    }
+
+    .kpi-desc {
+      font-size: 6.6pt;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    /* TOC CONTAINER */
+    .toc-container {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin-bottom: 16px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      font-size: 7.6pt;
+    }
+
+    .toc-item a {
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .toc-item a:hover {
+      text-decoration: underline;
+    }
+
+    .toc-subitem {
+      padding-left: 10px;
+      font-size: 7.2pt;
+      color: #64748b;
+      margin-top: 1px;
+      margin-bottom: 3px;
+    }
+
+    .toc-subitem a {
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toc-subitem a:hover {
+      color: #0284c7;
+      text-decoration: underline;
+    }
+
+    /* SECTIONS */
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11pt;
+      font-weight: 800;
+      color: #0f172a;
+      border-left: 4px solid #0284c7;
+      padding-left: 10px;
+      margin-top: 16px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
+    .sub-section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9.3pt;
+      font-weight: 700;
+      color: #1e293b;
+      margin-top: 13px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
+    .item-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.6pt;
+      font-weight: 700;
+      color: #334155;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
+    p {
+      margin-bottom: 7px;
+      color: #334155;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 9px;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+
+    strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    code {
+      background: #f1f5f9;
+      color: #0284c7;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 7.8pt;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #e2e8f0;
+      margin: 14px 0;
+    }
+
+    /* TABLES */
+    .table-container {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 6px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.8pt;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 7px 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-size: 6.8pt;
+      border: none;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* CALLOUTS */
+    .callout {
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin: 10px 0 12px 0;
+      font-size: 8pt;
+      line-height: 1.45;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .callout-important {
+      background-color: #fef2f2;
+      border-left: 4px solid #ef4444;
+      color: #991b1b;
+    }
+
+    .callout-warning {
+      background-color: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      color: #92400e;
+    }
+
+    .callout-note {
+      background-color: #f0fdf4;
+      border-left: 4px solid #10b981;
+      color: #166534;
+    }
+
+    .callout-info {
+      background-color: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      color: #075985;
+    }
+
+    /* BADGES */
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 6.7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .badge-concluido { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+    .badge-andamento { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+    .badge-pendente { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+    .badge-alta { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+    .badge-media { background: #fef3c7; color: #d97706; border: 1px solid #fde68a; }
+    .badge-baixa { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+
+    /* FOOTER */
+    .report-footer {
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 7.2pt;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- BANNER INSTITUCIONAL -->
+    <div class="header-banner">
+      <div class="header-badge">Governança Setorial • Semana 41 / 2026</div>
+      <h1>Relatório Semanal Consolidado — Setor TI</h1>
+      <p class="subtitle">Panorama Operacional, Gestão de Demandas, Incidentes, Infraestrutura Crítica e Produtividade das Automações</p>
+    </div>
+
+    <!-- CARDS DE IDENTIFICAÇÃO EXECUTIVA -->
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="label">Período Oficial Diretoria</span>
+        <span class="val">04/10/2026 a 10/10/2026</span>
+        <span class="val-sub">Semana 41 / 2026 (Dom a Sáb)</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Expediente Útil do TI</span>
+        <span class="val">05/10/2026 a 09/10/2026</span>
+        <span class="val-sub">Segunda a Sexta (Operacional)</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Coordenador de TI</span>
+        <span class="val">Isvi Neemias</span>
+        <span class="val-sub">Tecnologia TEN Internet</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Responsável Consolidação</span>
+        <span class="val">Liomar Antonio de Oliveira</span>
+        <span class="val-sub">Analista TI Sênior (#107184)</span>
+      </div>
+    </div>
+
+    <!-- STATCARDS GLOBAIS -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-value">161 / 88</div>
+        <div class="kpi-label">Ações / Entregas Concluídas</div>
+        <div class="kpi-desc">72 solicitações + 16 tarefas de bancada</div>
+      </div>
+      <div class="kpi-card emerald">
+        <div class="kpi-value">120,5%</div>
+        <div class="kpi-label">Taxa de Vazão da Fila</div>
+        <div class="kpi-desc">88 saídas ÷ 73 entradas (-15 backlog)</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">32 Sprints</div>
+        <div class="kpi-label">Sprints Git AutoTickets</div>
+        <div class="kpi-desc">Sprints 321 a 352 no repositório</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-value">32.600</div>
+        <div class="kpi-label">Base WiFeed / Vouchers</div>
+        <div class="kpi-desc">227.483 vouchers (+88 adimplentes)</div>
+      </div>
+    </div>
+
+    <!-- ÍNDICE DE NAVEGAÇÃO -->
+    <div class="toc-container">
+      <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 8.4pt; font-weight: 700; color: #0f172a; margin-bottom: 6px;">
+        📑 Índice Geral de Navegação
+      </h4>
+      <div class="toc-grid">
+        <div>
+          <div class="toc-item"><a href="#resumo-executivo">• Resumo Executivo</a></div>
+          <div class="toc-item"><a href="#-fatos-notáveis-e-anomalias-da-semana">• ⭐ Fatos Notáveis e Anomalias da Semana</a></div>
+          <div class="toc-item"><a href="#1-gestão-de-demandas">• 1. Gestão de Demandas</a></div>
+          <div class="toc-subitem"><a href="#11-demandas-pendentes">1.1 Pendentes</a> | <a href="#12-demandas-em-andamento">1.2 Em Andamento</a> | <a href="#13-demandas-concluídas">1.3 Concluídas</a> | <a href="#14-demandas-novas">1.4 Balanço</a></div>
+          <div class="toc-item"><a href="#2-registro-de-atividades-por-membro-da-equipe">• 2. Atividades por Membro da Equipe</a></div>
+          <div class="toc-subitem"><a href="#21-david-brasil-fernandes">2.1 David Brasil</a> | <a href="#22-isac-costa-silva">2.2 Isac Costa</a> | <a href="#23-liomar-antonio-de-oliveira">2.3 Liomar Oliveira</a></div>
+          <div class="toc-subitem"><a href="#24-desempenho-no-voalle-e-confronto-com-jornada-real-pontomais">2.4 Auditoria Voalle × Pontomais</a></div>
+        </div>
+        <div>
+          <div class="toc-item"><a href="#3-projetos-e-entregas">• 3. Projetos e Entregas</a></div>
+          <div class="toc-subitem"><a href="#31-projeto-autotickets-v2">3.1 AutoTickets v2 & Automações</a> | <a href="#32-projetos-de-conectividade-e-redes">3.2 Redes & Hardening</a> | <a href="#33-painéis-de-bi-com-parceiros">3.3 Painéis BI</a></div>
+          <div class="toc-item"><a href="#4-incidentes-tratados">• 4. Incidentes Tratados</a></div>
+          <div class="toc-item"><a href="#5-suporte-interno-informática">• 5. Suporte Interno (Informática)</a></div>
+          <div class="toc-subitem"><a href="#51-relação-de-atendimentos-e-chamados-da-semana">5.1 Chamados</a> | <a href="#52-setores-que-mais-demandaram-atendimento">5.2 Setores</a> | <a href="#53-colaboradores-solicitantes-mais-frequentes">5.3 Solicitantes</a> | <a href="#54-relatório-de-visitas-técnicas-presenciais-e-gestão-de-veículos">5.4 Veículos & Frota</a></div>
+          <div class="toc-item"><a href="#6-suporte-ao-técnico-de-campo">• 6. Suporte ao Técnico de Campo</a></div>
+          <div class="toc-subitem"><a href="#61-volumetria-de-solicitações-com-e-sem-protocolo">6.1 Volumetria</a> | <a href="#62-tipos-de-apoio-mais-frequentes-e-tempo-de-resposta">6.2 Tipos & Tempo</a> | <a href="#63-oportunidades-de-automação-e-redução-de-dependência">6.3 Oportunidades</a></div>
+          <div class="toc-item"><a href="#7-infraestrutura-e-sistemas-críticos">• 7. Infraestrutura e Sistemas Críticos</a></div>
+          <div class="toc-subitem"><a href="#71-disponibilidade-de-serviços-e-incidentes-em-sistemas">7.1 Disponibilidade</a> | <a href="#72-execução-e-validação-de-backups">7.2 Backups</a> | <a href="#73-atualizações-melhorias-e-ações-de-modernização">7.3 Modernização</a></div>
+          <div class="toc-item"><a href="#8-pontos-de-atenção-e-próximas-ações">• 8. Pontos de Atenção & Próximas Ações</a></div>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="resumo-executivo" class="section-title">Resumo Executivo</h2>
+<p>O período avaliado (Semana 41 / 2026, com expediente operacional útil de <strong>05/10/2026 a 09/10/2026</strong>) consolidou resultados de alta relevância estratégica para a governança técnica, segurança da informação e eficiência operacional da TEN Internet:</p>
+<ol>
+<li><strong>Eficiência e Vazão da Fila Operacional:</strong> A equipe de TI realizou <strong>161 ações registradas</strong>, finalizando <strong>88 demandas</strong> (72 solicitações e 16 tarefas de bancada) contra <strong>73 entradas</strong> (64 solicitações e 9 tarefas). O setor obteve um <strong>Balanço da Fila com Taxa de Vazão Operacional de 120,5%</strong>, promovendo a redução líquida de <strong>15 demandas represadas</strong> no backlog.</li>
+<li><strong>Engenharia de Software e Módulos do AutoTickets v2:</strong> Liomar Oliveira liderou a entrega massiva de <strong>32 sprints</strong> (Sprints 321 a 352) e dezenas de commits no repositório <code>autotickets-v2</code>. A plataforma expandiu suas capacidades com o motor determinístico <code>Colaborador x Ticket</code>, módulo de detecção de <code>Problemas Recorrentes</code> (Sprint 348), esteiras de <code>Fullcam Inadimplência/Instalações</code> (Sprint 350) e rotina diária automatizada de <code>WiFeed Vouchers</code>.</li>
+<li><strong>Cibersegurança e Resposta a Incidentes (Protocolo #3218766):</strong> Atuação pericial imediata em incidente de segurança após abordagem externa informando suposta posse de credenciais administrativas. Foi comprovada a robustez e inviolabilidade do sistema <code>mundialehistory.teninternet.com.br</code>, identificada a vulnerabilidade no sistema legado <code>compras.teninternet.com.br</code> (open signup e RLS no Supabase), emitido laudo forense com análise visual de evidências e mapeados 22 subdomínios ativos da Ten Internet.</li>
+<li><strong>Infraestrutura Crítica e IA GPU Local:</strong> Conclusão da configuração do servidor Proxmox VE com GPU dedicada e modelos de IA offline via Ollama (#3212215), com posterior transporte e instalação física no rack do Data Center da Chácara em Capim Grosso (#3214172).</li>
+<li><strong>Telefonia Fixa ZEUS (TIP Brasil):</strong> Isac Costa dedicou mais de <strong>12 horas</strong> em reuniões técnicas, mapeamento de troncos SIP e parametrização do sistema ZEUS (#3137037) para viabilizar a transição definitiva da telefonia.</li>
+<li><strong>CFTV, Parque de Câmeras &amp; Nobreaks Senoidais:</strong> David Brasil realizou a vistoria e restabelecimento de 8 pontos de câmeras no Fullcam (Jacobina, Pedras Altas, Cabaças, Umburanas) e concluiu a defesa técnica de Custo × Benefício (#3210625) recomendando a aquisição de Nobreaks Senoidais NHS junto a Compras.</li>
+</ol>
+<hr>
+<div class="page-break"></div><h2 id="-fatos-notáveis-e-anomalias-da-semana" class="section-title">⭐ Fatos Notáveis e Anomalias da Semana</h2>
+<p>Esta seção tem como objetivo dar transparência imediata a ocorrências atípicas, desvios operacionais ou incidentes críticos identificados durante o período avaliado:</p>
+<h3 id="fato-notável-1-investigação-pericial-de-cibersegurança-amp-alerta-de-suposta-invasão-protocolo-3218766" class="sub-section-title">Fato Notável 1: Investigação Pericial de Cibersegurança &amp; Alerta de Suposta Invasão (Protocolo #3218766)</h3>
+<ul>
+<li><strong>Ocorrência e Ativos Envolvidos:</strong> Em 09/10/2026, um terceiro contatou o WhatsApp corporativo do TI alegando possuir credenciais administrativas de sistemas da Ten Internet e enviou fotos de tela exibindo dados de empresas e ordens de compra.</li>
+<li><strong>Contexto e Causa Raiz:</strong> A perícia técnica conduzida por Liomar Oliveira (com apoio de David Brasil) isolou os sistemas. O sistema <code>mundialehistory.teninternet.com.br</code> (Laravel 12/Fortify) mostrou-se 100% seguro; o atacante apenas clicou no botão público de suporte via WhatsApp na tela de esqueci senha. A vulnerabilidade real residia na aplicação <code>compras.teninternet.com.br</code>, que consumia um backend Supabase com auto-cadastro liberado (<code>disable_signup: false</code>) e políticas de Row Level Security (RLS) permissivas nas tabelas <code>companies</code> e <code>purchase_orders</code>.</li>
+<li><strong>Impacto Operacional:</strong> Risco de exfiltração de dados cadastrais e comerciais de pedidos de compra da empresa.</li>
+<li><strong>Ação Imediata e Mitigação:</strong> Solicitação de bloqueio imediato de novos signups no Supabase, revisão de RLS no PostgreSQL, mapeamento de 22 subdomínios ativos e implementação do IP Access Firewall com middleware de bloqueio na aplicação (Sprint 352).</li>
+<li><strong>Lição Aprendida e Próximo Passo:</strong> Mesmo aplicações estáticas ou em nuvem PaaS/SaaS devem passar por homologação de segurança do TI antes de entrar em produção. Foi emitida recomendação formal para auditoria contínua de borda (Cloudflare/Envoy).</li>
+</ul>
+<h3 id="fato-notável-2-anomalia-heurística-no-relatório-de-perdas-fullcam-caso-diogo-silva-nascimento-protocolos-3100486-e-3201838" class="sub-section-title">Fato Notável 2: Anomalia Heurística no Relatório de Perdas Fullcam (Caso Diogo Silva Nascimento — Protocolos #3100486 e #3201838)</h3>
+<ul>
+<li><strong>Ocorrência e Ativos Envolvidos:</strong> No relatório analítico financeiro do AutoTickets (<code>fullcam_lucros_prejuizos</code>), o cliente Diogo Silva Nascimento (Contratos cancelados Nº 96337 e 96359) constava com <strong>Equipamento Perdido = R$ 0,00</strong>, apesar de cancelado e inadimplente.</li>
+<li><strong>Contexto e Causa Raiz:</strong> O motor do AutoTickets adota a heurística de verificar se a Ordem de Serviço de retirada de equipamentos está encerrada no Voalle. O protocolo #3100486 foi de fato encerrado no sistema, porém o relato da operadora (Lanna Fagundes — Cobrança) esclarece: <em>&quot;Realizei vários contatos sem retorno, por esse motivo estarei encerrando este protocolo. Abri solicitação para gerar NF para o equipamento (#3201838)&quot;</em>. Ou seja, o chamado foi encerrado <strong>sem que a retirada física tenha ocorrido</strong>, gerando uma falsa impressão de ausência de perda.</li>
+<li><strong>Impacto Operacional:</strong> Distorção de métricas financeiras automáticas se não houver auditoria humana ou análise de sentimento/conteúdo nos relatos do ERP.</li>
+<li><strong>Ação Imediata e Mitigação:</strong> Correção manual do dado no relatório consolidado, registrando a retenção indevida do ativo (R$ 450,00 por câmera/equipamento retido).</li>
+<li><strong>Lição Aprendida e Próximo Passo:</strong> O desenvolvimento do AutoTickets incluirá filtro semântico para verificar se o encerramento da OS de recolhimento foi concluído com sucesso ou por evasão/insucesso de contato com emissão de fatura/NF compensatória.</li>
+</ul>
+<h3 id="fato-notável-3-auditoria-de-apontamentos-de-horas-no-voalle-274h-30m-vs-44h-do-pontomais" class="sub-section-title">Fato Notável 3: Auditoria de Apontamentos de Horas no Voalle (274h 30m vs. 44h do Pontomais)</h3>
+<ul>
+<li><strong>Ocorrência e Ativos Envolvidos:</strong> A extração do Voalle de Liomar Oliveira totalizou 274h 30m em Horas Trabalhadas (HT).</li>
+<li><strong>Contexto e Causa Raiz:</strong> O volume foi inflado por cronômetros de atendimentos deixados em execução ininterrupta de um dia para o outro fora do expediente útil, especialmente no Protocolo #3212215 (Servidor IA GPU — 52h 01m ininterruptas de 05/10 a 07/10), Protocolo #3171518 (19h 39m) e Protocolo #3218069 (16h 15m).</li>
+<li><strong>Impacto Operacional:</strong> Distorção em relatórios brutos do ERP, aparentando sobrecarga irreal ou inconsistência de controle.</li>
+<li><strong>Ação Imediata e Mitigação:</strong> Higienização completa dos tickets e encerramento com justificativa. O espelho de ponto no Pontomais comprova o cumprimento estrito da jornada regular de 44h semanais.</li>
+<li><strong>Lição Aprendida e Próximo Passo:</strong> Reforço na equipe sobre a necessidade de pausar tarefas ao final do expediente útil e uso de validação automática de timers abertos no AutoTickets.</li>
+</ul>
+<hr>
+<div class="page-break"></div><h2 id="1-gestão-de-demandas" class="section-title">1. Gestão de Demandas</h2>
+<h3 id="11-demandas-pendentes" class="sub-section-title">1.1 Demandas Pendentes</h3>
+<p>Demandas na fila de trabalho aguardando início, alocação de insumos ou autorizações externas:</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">Protocolo / ID</th>
+<th align="left">Solicitante / Setor</th>
+<th align="center">Responsável</th>
+<th align="center">Prioridade</th>
+<th align="left">Descrição Técnica &amp; Bloqueio</th>
+<th align="center">Previsão</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>#3209322</strong></td>
+<td align="left">David Brasil / TI</td>
+<td align="center">David Brasil</td>
+<td align="center">Alta</td>
+<td align="left">Expedição da impressora Epson L395 de Sisalândia com laudo técnico para assistência especializada externa.</td>
+<td align="center">16/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>#3202572</strong></td>
+<td align="left">Compras / TI</td>
+<td align="center">David Brasil</td>
+<td align="center">Alta</td>
+<td align="left">Troca de tela do notebook Dell Vostro 15 3510 (aguarda entrega física da peça pelo fornecedor).</td>
+<td align="center">Conforme Entrega</td>
+</tr>
+<tr>
+<td align="center"><strong>#3217070</strong></td>
+<td align="left">Liomar Oliveira / TI</td>
+<td align="center">Liomar Oliveira</td>
+<td align="center">Média</td>
+<td align="left">Auditoria e reparo da VM Gerenet para verificação de dependências de outros sistemas.</td>
+<td align="center">17/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>#3217077</strong></td>
+<td align="left">Liomar Oliveira / TI</td>
+<td align="center">Liomar Oliveira</td>
+<td align="center">Alta</td>
+<td align="left">Levantamento de uso real do software Gerenet para formalizar solicitação de cancelamento contratual.</td>
+<td align="center">17/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>#3218356</strong></td>
+<td align="left">Liomar Oliveira / TI</td>
+<td align="center">Liomar Oliveira</td>
+<td align="center">Baixa</td>
+<td align="left">Requerimento e catalogação de Documentos Normativos e Políticas Regulares da Empresa.</td>
+<td align="center">20/10/2026</td>
+</tr>
+</tbody></table></div>
+<h3 id="12-demandas-em-andamento" class="sub-section-title">1.2 Demandas em Andamento</h3>
+<p>Demandas ativas com execução em curso durante a semana:</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">Protocolo / ID</th>
+<th align="center">Responsável</th>
+<th align="center">% Avanço</th>
+<th align="left">Bloqueios / Dependências Técnicas</th>
+<th align="center">Previsão</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>#3137037</strong></td>
+<td align="center">Isac Costa</td>
+<td align="center">75%</td>
+<td align="left">Homologação do sistema de telefonia fixa ZEUS (TIP Brasil). Aguarda validação final de rota SIP.</td>
+<td align="center">16/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>#3210508</strong></td>
+<td align="center">Liomar Oliveira</td>
+<td align="center">50%</td>
+<td align="left">Integração AutoTickets × Slack para retenção segura de dados e conformidade com a LGPD.</td>
+<td align="center">17/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>#3213875</strong></td>
+<td align="center">Isac Costa</td>
+<td align="center">60%</td>
+<td align="left">Implantação e parametrização de novos Hotspots Wi-Fi (WiFeed) em praças públicas e parceiros.</td>
+<td align="center">18/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>#3216735</strong></td>
+<td align="center">David Brasil</td>
+<td align="center">50%</td>
+<td align="left">Verificação e reestruturação dos dashboards de monitoramento do Zabbix e Grafana do Setor de TI.</td>
+<td align="center">17/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>#3217119</strong></td>
+<td align="center">Liomar Oliveira</td>
+<td align="center">85%</td>
+<td align="left">Aprimoramento da esteira de dados determinísticos no AutoTickets para alimentação dos relatórios.</td>
+<td align="center">15/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>#3216259</strong></td>
+<td align="center">Liomar Oliveira</td>
+<td align="center">40%</td>
+<td align="left">Atualização e saneamento das categorias de solicitações internas, externas e tarefas do TI no Voalle.</td>
+<td align="center">16/10/2026</td>
+</tr>
+</tbody></table></div>
+<h3 id="13-demandas-concluídas" class="sub-section-title">1.3 Demandas Concluídas</h3>
+<p>Principais entregas finalizadas na semana e resultados práticos obtidos:</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">Protocolo / Ref.</th>
+<th align="center">Responsável</th>
+<th align="center">Categoria</th>
+<th align="left">Descrição da Entrega &amp; Solução Aplicada</th>
+<th align="left">Resultado Obtido</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>AutoTickets v2</strong></td>
+<td align="center">Liomar</td>
+<td align="center">Software</td>
+<td align="left">Entrega de 32 sprints (Sprints 321 a 352): relatórios executivos com sub-abas, motor colaborador x ticket, problemas recorrentes, esteira Fullcam e IP Access Firewall.</td>
+<td align="left">Plataforma integradora modernizada, latência de relatórios reduzida e governança automatizada.</td>
+</tr>
+<tr>
+<td align="center"><strong>#3212215 / #3214172</strong></td>
+<td align="center">Liomar</td>
+<td align="center">Infra/IA</td>
+<td align="left">Instalação do Proxmox VE com GPU e modelos de IA offline via Ollama; transporte e instalação física no rack da Chácara em Capim Grosso.</td>
+<td align="left">Infraestrutura de IA local implementada e operacional para inferências seguras.</td>
+</tr>
+<tr>
+<td align="center"><strong>#3218766</strong></td>
+<td align="center">Liomar / David</td>
+<td align="center">Cibersegurança</td>
+<td align="left">Investigação pericial de suposto vazamento; isolamento do Mundiale History, diagnóstico de falha no compras.teninternet.com.br e mapeamento de 22 subdomínios.</td>
+<td align="left">Vulnerabilidade no Supabase mitigada, integridade corporativa assegurada e laudo emitido.</td>
+</tr>
+<tr>
+<td align="center"><strong>#3210625</strong></td>
+<td align="center">David Brasil</td>
+<td align="center">Elétrica/Compras</td>
+<td align="left">Estudo comparativo e defesa técnica de Nobreaks Senoidais NHS junto ao setor de Compras (Michel Carvalho).</td>
+<td align="left">Emissão de parecer comprovando risco de danos em fontes PFC Ativo com nobreaks não senoidais.</td>
+</tr>
+<tr>
+<td align="center"><strong>#3214467 / #3214581</strong></td>
+<td align="center">David Brasil</td>
+<td align="center">CFTV/Câmeras</td>
+<td align="left">Vistoria técnica Fullcam e restabelecimento de câmeras da Loja Jacobina, Pedras Altas (#3142833), Cabaças (#3142822) e Umburanas (#3216056).</td>
+<td align="left">Parque de CFTV monitorado e regularizado nas unidades remotas.</td>
+</tr>
+<tr>
+<td align="center"><strong>#3215693 / #3213869</strong></td>
+<td align="center">Isac Costa</td>
+<td align="center">Sistemas/WiFeed</td>
+<td align="left">Reajuste de locais de autenticação no WiFeed e auditoria das regras de faturamento e cobrança da plataforma.</td>
+<td align="left">Mapeamento de custos e consistência de autenticação em praças e lojas.</td>
+</tr>
+<tr>
+<td align="center"><strong>#3216016</strong></td>
+<td align="center">Isac Costa</td>
+<td align="center">Sistemas</td>
+<td align="left">Diagnóstico e restabelecimento de acesso de colaboradores à plataforma Universidade Ten.</td>
+<td align="left">Acesso educacional e treinamentos corporativos normalizados.</td>
+</tr>
+<tr>
+<td align="center"><strong>Perícias N2 de Fatura</strong></td>
+<td align="center">Isac / David</td>
+<td align="center">Perícia N2</td>
+<td align="left">Auditoria pericial em 11 contestações de fatura no Voalle (Marinalva, Jailda, Aelson, Salomão, Claudia, Roque, Nilzete, Luis Mario).</td>
+<td align="left">11 pareceres técnicos fundamentados com cálculo de uptime real e logs de conexão.</td>
+</tr>
+<tr>
+<td align="center"><strong>Suporte Interno &amp; PCs</strong></td>
+<td align="center">David / Isac</td>
+<td align="center">Hardware</td>
+<td align="left">Manutenção e restabelecimento de PCs: Marilúcia (#3216232), Larissa Roza (#3216171), Caixa Jacobina (#3211961) e formatação com Win 10 (#3215232).</td>
+<td align="left">Estações de trabalho restauradas em plena capacidade operacional.</td>
+</tr>
+<tr>
+<td align="center"><strong>#3209683</strong></td>
+<td align="center">Liomar</td>
+<td align="center">Sistemas</td>
+<td align="left">Acompanhamento do chamado com suporte Voalle (Eduardo Aguiar / Sander Migotto) sobre deslogamentos involuntários de tela.</td>
+<td align="left">Bug em acompanhamento com estabilização relatada no período.</td>
+</tr>
+<tr>
+<td align="center"><strong>Saneamento Voalle</strong></td>
+<td align="center">Liomar</td>
+<td align="center">Governança</td>
+<td align="left">Encerramento com laudo de tarefas antigas: MailCow (#3187496), Slack (#3187490), ONT AX30 (#3182310), Zabbix (#3103374) e Flashman (#3083979).</td>
+<td align="left">Higienização completa da base de dados e conformidade cadastral do ERP.</td>
+</tr>
+</tbody></table></div>
+<h3 id="14-demandas-novas" class="sub-section-title">1.4 Demandas Novas</h3>
+<p>Durante a Semana 41, deram entrada no setor de TI <strong>73 novas demandas</strong> (64 solicitações formais no Voalle e 9 tarefas internas de bancada/projetos).</p>
+<h4 id="141-comparativo-entradas--saídas-balanço-da-fila" class="item-title">1.4.1 Comparativo Entradas × Saídas (Balanço da Fila)</h4>
+<ul>
+<li><strong>Demandas Concluídas / Entregues (Saídas):</strong> <strong>88 demandas</strong> (72 solicitações encerradas + 16 tarefas técnicas finalizadas).</li>
+<li><strong>Demandas Novas Recebidas (Entradas):</strong> <strong>73 demandas</strong> (64 solicitações + 9 tarefas abertas).</li>
+<li><strong>Balanço Líquido do Setor:</strong> <strong>+15 demandas líquidas resolvidas</strong>.</li>
+<li><strong>Balanço da Fila (Saídas ÷ Entradas):</strong> <strong>120,5% de Vazão Operacional</strong>.</li>
+<li><strong>Diagnóstico Operacional:</strong> O setor manteve taxa deflacionária na fila, processando mais demandas do que o volume recebido no período e absorvendo pendências legadas herdadas de semanas anteriores.</li>
+</ul>
+<hr>
+<div class="page-break"></div><h2 id="2-registro-de-atividades-por-membro-da-equipe" class="section-title">2. Registro de Atividades por Membro da Equipe</h2>
+<h3 id="21-david-brasil-fernandes" class="sub-section-title">2.1 David Brasil Fernandes</h3>
+<p><em>Cargo: Auxiliar de TI Junior (#116367)</em></p>
+<h4 id="211-resumo-das-atividades" class="item-title">2.1.1 Resumo das Atividades</h4>
+<p>David Brasil concluiu <strong>27 solicitações e 9 tarefas</strong> (totalizando 38 demandas tratadas e 62 ações registradas no Voalle), acumulando 29h 30m de apontamentos líquidos. Destacou-se na <strong>gestão e manutenção do parque de CFTV</strong>, realizando vistoria geral no Fullcam (#3214467) e restabelecendo o fluxo de vídeo de câmeras offline na Loja Jacobina (#3214581), Torre do Cruzeiro (#3214592), Alojamento (#3214600), POP Pedras Altas (#3142833), POP Cabaças (#3142822) e POP Umburanas (#3216056). Finalizou o estudo técnico de Custo × Benefício de <strong>Nobreaks Senoidais NHS</strong> (#3210625), realizou a manutenção corretiva na máquina de Marilúcia da Cobrança (#3216232) e de Larissa Roza (#3216171), resolveu problema de rede no Caixa de Jacobina (#3211961), atuou em auditorias periciais de fatura (Luis Mario e Nilzete Reis) e prestou apoio direto a Liomar na resposta ao incidente de cibersegurança (#3218766).</p>
+<h4 id="212-distribuição-do-tempo" class="item-title">2.1.2 Distribuição do Tempo</h4>
+<ul>
+<li><strong>CFTV, Câmeras Fullcam &amp; POPs:</strong> 40% (11h 48m)</li>
+<li><strong>Suporte Interno &amp; Manutenção de Hardware:</strong> 25% (07h 23m)</li>
+<li><strong>Elétrica, Nobreaks &amp; Defesa Técnica:</strong> 15% (04h 25m)</li>
+<li><strong>Monitoramento (Zabbix/Grafana) &amp; Governança:</strong> 12% (03h 32m)</li>
+<li><strong>Apoio a Cibersegurança &amp; Perícias:</strong> 8% (02h 22m)</li>
+</ul>
+<h4 id="213-desenvolvimento-e-capacitação" class="item-title">2.1.3 Desenvolvimento e Capacitação</h4>
+<ul>
+<li><strong>Pontos Fortes Demonstrados:</strong> Alta agilidade no diagnóstico e recuperação de câmeras de segurança IP e enlaces de POPs; rigor técnico na fundamentação de compras de nobreaks senoidais; iniciativa no apoio pericial de incidentes.</li>
+<li><strong>Necessidades de Treinamento Identificadas:</strong> Aperfeiçoamento na criação de triggers e templates customizados no Zabbix 7.0 para monitoramento automatizado de nobreaks via SNMP.</li>
+</ul>
+<hr>
+<div class="page-break"></div><h3 id="22-isac-costa-silva" class="sub-section-title">2.2 Isac Costa Silva</h3>
+<p><em>Cargo: Assistente de TI Pleno (#94562)</em></p>
+<h4 id="221-resumo-das-atividades" class="item-title">2.2.1 Resumo das Atividades</h4>
+<p>Isac Costa encerrou <strong>25 solicitações e 6 tarefas</strong> (totalizando 31 demandas tratadas e 59 ações no Voalle), registrando 33h 56m no período. Dedicou foco prioritário ao <strong>Projeto de Telefonia Fixa ZEUS (TIP Brasil - Protocolo #3137037)</strong>, somando mais de 12 horas dedicadas a alinhamentos técnicos, reuniões de integração e mapeamento de troncos SIP. Na frente de redes públicas e WiFeed, investigou o modelo de cobrança da plataforma (#3213869), apoiou a implantação de novos hotspots (#3213875) e executou o reajuste de locais de autenticação (#3215693). Realizou 6 perícias técnicas de contestação de fatura por queda de conexão (Marinalva, Jailda, Aelson, Salomão, Claudia, Roque), restabeleceu o acesso dos colaboradores à Universidade Ten (#3216016) e prestou apoio N2 a técnicos de campo em configurações de bancada e hotspots (Edilson Ferreira #3218929, Victor Oliveira #3215164 e Daiane Cardoso #3214918).</p>
+<h4 id="222-distribuição-do-tempo" class="item-title">2.2.2 Distribuição do Tempo</h4>
+<ul>
+<li><strong>Projetos Especiais &amp; Telefonia ZEUS (TIP Brasil):</strong> 38% (12h 54m)</li>
+<li><strong>WiFeed, Captive Portal &amp; Hotspots:</strong> 22% (07h 28m)</li>
+<li><strong>Apoio N2 a Técnicos de Campo &amp; Bancada:</strong> 20% (06h 47m)</li>
+<li><strong>Perícias Técnicas de Desconto N2:</strong> 12% (04h 04m)</li>
+<li><strong>Suporte Interno &amp; Sistemas Corporativos:</strong> 8% (02h 43m)</li>
+</ul>
+<h4 id="223-desenvolvimento-e-capacitação" class="item-title">2.2.3 Desenvolvimento e Capacitação</h4>
+<ul>
+<li><strong>Pontos Fortes Demonstrados:</strong> Domínio técnico na arquitetura e protocolos de telefonia IP (SIP/RTP) e integração com a TIP Brasil; precisão no cálculo de logs de queda para indeferimento ou deferimento proporcional de contestações; agilidade no suporte N2.</li>
+<li><strong>Necessidades de Treinamento Identificadas:</strong> Aprofundamento na parametrização de QoS (Quality of Service) e priorização de pacotes VoIP em roteadores MikroTik sob congestionamento.</li>
+</ul>
+<hr>
+<div class="page-break"></div><h3 id="23-liomar-antonio-de-oliveira" class="sub-section-title">2.3 Liomar Antonio de Oliveira</h3>
+<p><em>Cargo: Analista de TI Sênior (#107184)</em></p>
+<h4 id="231-resumo-das-atividades" class="item-title">2.3.1 Resumo das Atividades</h4>
+<p>Liomar Oliveira atuou na vanguarda técnica do setor com foco em <strong>Engenharia de Software (AutoTickets v2)</strong>, <strong>Cibersegurança Pericial</strong> e <strong>Infraestrutura Crítica</strong>. Concluiu 32 sprints (Sprints 321 a 352) e dezenas de commits no AutoTickets, entregando os motores de relatórios parametrizados, relatórios analíticos <code>Colaborador x Ticket</code>, mineração de <code>Problemas Recorrentes</code>, automações de <code>Fullcam</code> e rotina diária 100% automatizada de <code>WiFeed Vouchers</code> (+88 adimplentes líquidos monitorados). Conduziu a investigação pericial do Protocolo #3218766, comprovando a integridade do Mundiale History, identificando a brecha no sistema de compras no Supabase e gerando script com mapeamento de 22 subdomínios da empresa. Parametrizou o servidor Proxmox VE com GPU dedicada e modelos de IA offline via Ollama (#3212215) e executou a montagem física no rack do Data Center da Chácara (#3214172). Encerrou 20 demandas e higienizou tickets pendentes de períodos anteriores no ERP Voalle.</p>
+<h4 id="232-distribuição-do-tempo" class="item-title">2.3.2 Distribuição do Tempo</h4>
+<ul>
+<li><strong>Engenharia de Software &amp; Arquitetura (AutoTickets v2):</strong> 60% (26h 24m)</li>
+<li><strong>Cibersegurança, Perícia &amp; Resposta a Incidentes:</strong> 20% (08h 48m)</li>
+<li><strong>Infraestrutura Física, Proxmox &amp; Servidor IA:</strong> 15% (06h 36m)</li>
+<li><strong>Governança de Fila &amp; Alinhamento Voalle:</strong> 5% (02h 12m)</li>
+</ul>
+<h4 id="233-desenvolvimento-e-capacitação" class="item-title">2.3.3 Desenvolvimento e Capacitação</h4>
+<ul>
+<li><strong>Pontos Fortes Demonstrados:</strong> Capacidade pericial avançada em cibersegurança e análise forense visual; liderança ágil no desenvolvimento de software de alta performance; implementação de computação heterogênea com GPU para IA local; visão de governança corporativa.</li>
+<li><strong>Necessidades de Treinamento Identificadas:</strong> Aperfeiçoamento em pipelines de fine-tuning e técnicas de Quantização (GGUF/AWQ) para rodar modelos LLM de 14B a 32B com menor consumo de VRAM.</li>
+</ul>
+<hr>
+<h3 id="24-desempenho-no-voalle-e-confronto-com-jornada-real-pontomais" class="sub-section-title">2.4 Desempenho no Voalle e Confronto com Jornada Real (Pontomais)</h3>
+<p>Em cumprimento às diretrizes de governança da Coordenação, apresenta-se o confronto estrito entre os apontamentos de ordens/tarefas no ERP Voalle e o espelho de ponto eletrônico:</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">Colaborador</th>
+<th align="left">Cargo</th>
+<th align="center">Total Horas Voalle (HT)</th>
+<th align="center">Horas Jornada Real (Pontomais)</th>
+<th align="center">Demandas Concluídas / Tratadas</th>
+<th align="center">Taxa de Vazão Individual</th>
+<th align="left">Foco Operacional Primário</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>David Brasil Fernandes</strong></td>
+<td align="left">Auxiliar TI Jr.</td>
+<td align="center"><strong>29h 30m</strong></td>
+<td align="center"><strong>44h 00m</strong></td>
+<td align="center">36 concluídas (38 tratadas)</td>
+<td align="center">94,7%</td>
+<td align="left">CFTV Fullcam, Nobreaks NHS, Suporte Físico e Hardware</td>
+</tr>
+<tr>
+<td align="left"><strong>Isac Costa Silva</strong></td>
+<td align="left">Assistente TI Pl.</td>
+<td align="center"><strong>33h 56m</strong></td>
+<td align="center"><strong>44h 00m</strong></td>
+<td align="center">31 concluídas (31 tratadas)</td>
+<td align="center">100,0%</td>
+<td align="left">Telefonia Fixa ZEUS, WiFeed, Apoio N2 e Perícias de Fatura</td>
+</tr>
+<tr>
+<td align="left"><strong>Liomar Antonio de Oliveira</strong></td>
+<td align="left">Analista TI Sr.</td>
+<td align="center"><strong>274h 30m</strong> <em>(Auditado)</em></td>
+<td align="center"><strong>44h 00m</strong></td>
+<td align="center">21 concluídas (26 tratadas)</td>
+<td align="center">80,8%</td>
+<td align="left">Engenharia AutoTickets, Cibersegurança e Proxmox IA</td>
+</tr>
+<tr>
+<td align="left"><strong>Total Consolidado do Setor</strong></td>
+<td align="left">—</td>
+<td align="center"><strong>337h 56m</strong></td>
+<td align="center"><strong>132h 00m</strong></td>
+<td align="center"><strong>88 concluídas (95 tratadas)</strong></td>
+<td align="center"><strong>120,5%</strong> <em>(Backlog)</em></td>
+<td align="left"><strong>Balanço da Fila: +15 demandas resolvidas</strong></td>
+</tr>
+</tbody></table></div>
+<div class="callout callout-info"><p>[!IMPORTANT]
+<strong>Explicação Mandatória da Auditoria de Horas:</strong></p>
+<ol>
+<li><strong>Horas de Liomar Oliveira (274h 30m vs. 44h):</strong> Conforme registrado no Fato Notável 3, a divergência decorreu exclusivamente de chamados que permaneceram com cronômetro em execução ininterrupta de um dia para outro fora do horário comercial (ex.: Protocolo #3212215 com 52:01, Protocolo #3171518 com 19:39 e Protocolo #3218069 com 16:15). A jornada real de 44h no Pontomais foi rigorosamente cumprida, e os tickets foram higienizados.</li>
+<li><strong>Horas de Isac (33h56) e David (29h30):</strong> Apresentam aderência típica ao expediente, onde o saldo não apontado em tickets (cerca de 10h a 14h na semana) corresponde a reuniões de alinhamento, atendimento a dúvidas rápidas de balcão sem abertura de tela e deslocamentos externos.</li>
+</ol></div>
+<hr>
+<div class="page-break"></div><h2 id="3-projetos-e-entregas" class="section-title">3. Projetos e Entregas</h2>
+<div class="page-break"></div><h3 id="31-projeto-autotickets-v2" class="sub-section-title">3.1 Projeto AutoTickets v2 (RADIUS, Automações e Provisionamento)</h3>
+<p>O <strong>AutoTickets v2</strong> atingiu estágio de maturidade técnica como espinha dorsal analítica e operacional da TEN Internet.</p>
+<h4 id="311-status-e-andamento" class="item-title">3.1.1 Status e Andamento</h4>
+<ul>
+<li><strong>Status:</strong> Em Produção e Desenvolvimento Ativo contínuo (Sprint 352 finalizada).</li>
+<li><strong>Repositório / Branch:</strong> <code>/home/liomarti/dev/autotickets-v2</code> (<code>dev</code>).</li>
+<li><strong>Volume Produzido na Semana:</strong> 32 sprints concluídas (Sprints 321 a 352), mais de 45 commits diretos, cobrindo backend Laravel, frontend React 19, componentes atômicos e suíte de testes transacionais.</li>
+</ul>
+<h4 id="312-entregas-em-produção-e-resultados" class="item-title">3.1.2 Entregas em Produção e Resultados</h4>
+<ol>
+<li><strong>Motor de Relatórios Executivos &amp; Persistência (Sprints 324, 331 e 336):</strong><ul>
+<li>Sub-abas especializadas com suporte a modelos dinâmicos, fork de relatórios, seções customizáveis e exportação tripla (PDF A4 nativo, HTML responsivo e Markdown universal).</li>
+<li>Persistência de filtros e preferências por usuário mesmo após reload (F5).</li>
+</ul>
+</li>
+<li><strong>Relatório Analítico Colaborador × Ticket (Sprint 337):</strong><ul>
+<li>Cruzamento automatizado de produtividade individual, volume de solicitações abertas/encerradas, tarefas e cálculo instantâneo da Taxa de Vazão Operacional.</li>
+</ul>
+</li>
+<li><strong>Módulo de Detecção de Problemas Recorrentes (Sprint 348):</strong><ul>
+<li>Algoritmo de classificação determinística de falhas repetitivas por tipo de chamado e localidade, facilitando a identificação de causas raízes no parque.</li>
+</ul>
+</li>
+<li><strong>Esteiras de Automação Fullcam (Sprint 350):</strong><ul>
+<li>3 sub-abas operacionais: Inadimplência, Instalações e Análise de Lucros/Prejuízos com rastreabilidade completa de logs e auditoria de deploy.</li>
+</ul>
+</li>
+<li><strong>Hardening de Segurança e IP Access Firewall (Sprint 352):</strong><ul>
+<li>Camada de proteção de rede integrada à aplicação com middleware de IP Firewall, suporte a blacklist, tela 403 personalizada, credenciais de integração com padrão <em>write-only</em> e auditoria de conexões diretas do PostgreSQL.</li>
+</ul>
+</li>
+</ol>
+<h4 id="313-distribuição-do-tempo-do-projeto" class="item-title">3.1.3 Distribuição do Tempo do Projeto</h4>
+<ul>
+<li>Dedicação estimada de <strong>26 horas e 24 minutos</strong> de engenharia de software pura por Liomar Oliveira no período.</li>
+</ul>
+<h4 id="314-impacto-operacional-e-métricas-de-produtividade-das-automações" class="item-title">3.1.4 Impacto Operacional e Métricas de Produtividade das Automações</h4>
+<p>A consolidação dos dados minerados pelo AutoTickets comprova o expressivo ganho de escala e redução de trabalho braçal proporcionados pelas automações ativas:</p>
+<h5>A. Automação Diária de Vouchers WiFeed (Captive Portal)</h5>
+<ul>
+<li><strong>Rotina:</strong> Executada diariamente às 11h de forma 100% autônoma, conectando ao banco Voalle, filtrando contratos adimplentes, sanitizando documentos e sincronizando com a API do WiFeed.</li>
+<li><strong>Evolução da Base Adimplente:</strong><ul>
+<li>Início da Semana (04/10): <strong>32.512 clientes ativos</strong></li>
+<li>Final da Semana (10/10): <strong>32.600 clientes ativos</strong></li>
+<li>Variação Líquida: <strong>▲ +88 clientes adimplentes adicionados à base</strong></li>
+</ul>
+</li>
+<li><strong>Sincronizações Realizadas:</strong> <strong>7 execuções com 100% de sucesso</strong>.</li>
+<li><strong>Volume Transmitido:</strong> <strong>227.483 vouchers transmitidos e validados</strong> no Captive Portal no período.</li>
+<li><strong>Ganho Operacional:</strong> Se realizada manualmente, a rotina diária exigiria cerca de 30 a 40 minutos por dia (extração, higienização de planilha, upload e conferência de paginação). <strong>A automação poupou ~4 horas semanais de esforço técnico humano direto.</strong></li>
+</ul>
+<h5>B. Automação de Inadimplência Fullcam</h5>
+<ul>
+<li><strong>Volume de Ações Processadas:</strong> <strong>475 ações</strong> analisadas no período.</li>
+<li><strong>Câmeras Tratadas:</strong> <strong>31 câmeras de assinantes inadimplentes</strong> tratadas automaticamente com suspensão de stream (<em>BLOCK</em>) ou reativação (<em>UNBLOCK</em>) após pagamento.</li>
+<li><strong>Taxa de Efetividade da Automação:</strong> <strong>99,1% de sucesso</strong> nas chamadas de API (471 sucessos / 475 ações).</li>
+</ul>
+<h5>C. Esteira de Ativação e Instalação de Câmeras Fullcam</h5>
+<ul>
+<li><strong>Volume de Execuções:</strong> 78 registros processados na esteira automática.</li>
+<li><strong>Ativação Realizada:</strong> Instalação e provisionamento automático concluído para o cliente Joseilson dos Santos Araújo (Contrato #104091 / Protocolo #3217025).</li>
+</ul>
+<h5>D. Análise de Lucros, Prejuízos e Prevenção de Perdas (Fullcam)</h5>
+<ul>
+<li><strong>Base Auditada:</strong> 86 contratos de câmeras cancelados ou inadimplentes auditados pelo motor financeiro.</li>
+<li><strong>Prevenção de Custos de Armazenamento:</strong> A suspensão automática imediata de clientes inadimplentes impede o consumo indevido de armazenamento em nuvem (storage) e licenciamento mensal.</li>
+<li><strong>Alerta Pericial de Equipamentos:</strong> Conforme identificado na auditoria humana do caso Diogo Silva Nascimento (Protocolo #3100486), o setor estabeleceu que chamados de recolhimento encerrados sem a devida recuperação física do ativo devem ser classificados como perda real (R$ 450,00 por câmera), subsidiando ações de cobrança judicial/extrajudicial pelo Financeiro.</li>
+</ul>
+<div class="callout callout-info"><p>[!TIP]
+<strong>Total Consolidado de Esforço Economizado:</strong> As automações ativas do AutoTickets v2 proporcionaram uma <strong>economia combinada de aproximadamente 12 horas semanais de esforço técnico humano</strong>, permitindo que a equipe de TI concentrasse seu tempo em projetos de infraestrutura, segurança pericial e suporte a campo.</p></div>
+<hr>
+<h3 id="32-projetos-de-conectividade-e-redes" class="sub-section-title">3.2 Projetos de Conectividade e Redes (WireGuard, SSH e Hardening)</h3>
+<ul>
+<li><strong>Servidor IA GPU no Data Center da Chácara (#3212215 e #3214172):</strong><ul>
+<li>Concluída a parametrização de ambiente Proxmox VE com GPU NVIDIA dedicada para processamento de inferência de IA local (Ollama).</li>
+<li>Transporte e montagem física no rack do Data Center da Chácara em Capim Grosso, conectando o servidor à rede local corporativa com proteção elétrica garantida pelo nobreak senoidal puro NHS instalado recentemente.</li>
+</ul>
+</li>
+<li><strong>Coleta Zabbix em Roteadores MikroTik (#3103374):</strong><ul>
+<li>Concluída a validação de regras e scripts para coleta de hosts ativos e leases DHCP em MikroTiks dos escritórios da empresa, permitindo monitoramento de parque via SNMP/Script.</li>
+</ul>
+</li>
+<li><strong>Telefonia Fixa ZEUS - TIP Brasil (#3137037):</strong><ul>
+<li>Isac Costa avançou na etapa de testes e homologação dos troncos SIP e discadores da plataforma ZEUS, anexando parecer técnico ao ERP e preparando o setor para o corte definitivo do sistema antigo.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="33-painéis-de-bi-com-parceiros" class="sub-section-title">3.3 Painéis de BI com Parceiros (Analítica 3M e EasyBI / MW Solutions)</h3>
+<p>Em conformidade estrita com o princípio da transparência factual:</p>
+<ol>
+<li><strong>Analítica 3M:</strong> Conforme informado pela Coordenação, o perfil de Liomar Oliveira foi elevado para Master para gestão interna de acessos. O sistema permanece como ferramenta de inteligência estratégica da gerência; o TI utiliza o acesso estritamente para visualização de relatórios operacionais consolidados e administração de permissões sob demanda.</li>
+<li><strong>EasyBI (MW Solutions):</strong> Conforme confirmado pelo Coordenador Isvi Neemias, a plataforma possui baixa aderência às necessidades da operação e encontra-se em processo de descontinuação contratual. O setor de TI não despende esforços de manutenção no módulo.</li>
+</ol>
+<hr>
+<div class="page-break"></div><h2 id="4-incidentes-tratados" class="section-title">4. Incidentes Tratados</h2>
+<p>Relação dos incidentes tratados e resolvidos pela equipe de TI na Semana 41:</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">ID Incidente</th>
+<th align="left">Ativo / Ambiente Afetado</th>
+<th align="center">Severidade</th>
+<th align="left">Diagnóstico &amp; Causa Raiz</th>
+<th align="left">Ação Corretiva Executada</th>
+<th align="center">Classificação</th>
+<th align="center">Responsável</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>INC-01</strong></td>
+<td align="left">Sistema de Compras (#3218766)</td>
+<td align="center">CRÍTICA</td>
+<td align="left">Backend Supabase com cadastro público liberado e ausência de RLS em tabelas confidenciais.</td>
+<td align="left">Desativação de signups abertos, auditoria de borda Cloudflare e proposta de RLS restritivo.</td>
+<td align="center">Incidente Novo (Contido)</td>
+<td align="center">Liomar / David</td>
+</tr>
+<tr>
+<td align="center"><strong>INC-02</strong></td>
+<td align="left">CFTV Loja Jacobina (#3214581)</td>
+<td align="center">ALTA</td>
+<td align="left">Desconexão de câmeras na recepção por oscilação de switch POE secundário e conector oxidado.</td>
+<td align="left">Reinicialização física de portas, nova crimpagem e validação de stream RTSP no Fullcam.</td>
+<td align="center">Incidente Físico (Resolvido)</td>
+<td align="center">David Brasil</td>
+</tr>
+<tr>
+<td align="center"><strong>INC-03</strong></td>
+<td align="left">Caixa Jacobina (#3211961)</td>
+<td align="center">ALTA</td>
+<td align="left">Perda de conectividade da estação de atendimento por cabo de rede danificado.</td>
+<td align="left">Passagem e conectorização de cabeamento definitivo entre switch e máquina do caixa.</td>
+<td align="center">Incidente Físico (Resolvido)</td>
+<td align="center">David Brasil</td>
+</tr>
+<tr>
+<td align="center"><strong>INC-04</strong></td>
+<td align="left">PC Cobrança Marilúcia (#3216232)</td>
+<td align="center">MÉDIA</td>
+<td align="left">Lentidão severa e travamento do sistema operacional por corrupção de registro e arquivos temporários.</td>
+<td align="left">Otimização de inicialização, limpeza de cache do Chrome e higienização de serviços em segundo plano.</td>
+<td align="center">Incidente de SO (Resolvido)</td>
+<td align="center">David Brasil</td>
+</tr>
+<tr>
+<td align="center"><strong>INC-05</strong></td>
+<td align="left">POP Umburanas (#3216056)</td>
+<td align="center">MÉDIA</td>
+<td align="left">Queda de comunicação da câmera de segurança do POP por timeout de rota na rede local.</td>
+<td align="left">Reconfiguração de IP estático, ajuste de máscara e gateway na câmera e validação no NVR.</td>
+<td align="center">Incidente de Rede (Resolvido)</td>
+<td align="center">David Brasil</td>
+</tr>
+<tr>
+<td align="center"><strong>INC-06</strong></td>
+<td align="left">Universidade Ten (#3216016)</td>
+<td align="center">MÉDIA</td>
+<td align="left">Erro de sessão impedindo autenticação de novos colaboradores na plataforma educacional.</td>
+<td align="left">Reset de tokens de autenticação e revalidação de sincronização de usuários no banco.</td>
+<td align="center">Incidente Lógico (Resolvido)</td>
+<td align="center">Isac Costa</td>
+</tr>
+</tbody></table></div>
+<div class="callout callout-info"><p>[!NOTE]
+<strong>Janela Móvel de Reincidência (Regra dos 30 Dias):</strong> Em respeito à diretriz da Coordenação, nenhum dos incidentes acima foi rotulado como &quot;definitivamente extinto sem reincidência&quot;. Todos permanecerão sob janela móvel de observação mínima de 30 dias nos painéis do AutoTickets e Voalle.</p></div>
+<hr>
+<div class="page-break"></div><h2 id="5-suporte-interno-informática" class="section-title">5. Suporte Interno (Informática)</h2>
+<h3 id="51-relação-de-atendimentos-e-chamados-da-semana" class="sub-section-title">5.1 Relação de Atendimentos e Chamados da Semana</h3>
+<p>O suporte interno concentrou 27 chamados de manutenção e configurações em estações de trabalho e periféricos:</p>
+<ul>
+<li><strong>Estações de Trabalho &amp; Hardware:</strong> Reparo e otimização na máquina de Marilúcia da Cobrança (#3216232), manutenção corretiva no PC de Larissa Roza (#3216171), formatação de máquina e instalação de SO (#3215232), e encaminhamento de notebook para assistência especializada (#3215209).</li>
+<li><strong>Periféricos &amp; Impressão:</strong> Acompanhamento do envio da impressora Epson L395 de Sisalândia (#3208869) e testes de comunicação em equipamentos de rede.</li>
+<li><strong>Governança de Acessos e Usuários:</strong> Inativação de usuários desligados (Camila Santos Ferreira), criação de novos acessos de colaboradores e saneamento de canais do Slack corporativo (#3214092).</li>
+</ul>
+<h3 id="52-setores-que-mais-demandaram-atendimento" class="sub-section-title">5.2 Setores que mais Demandaram Atendimento</h3>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">Setor Solicitante</th>
+<th align="center">Total de Solicitações</th>
+<th align="center">% do Volume</th>
+<th align="left">Natureza Típica dos Chamados</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>NOC / Redes Internas</strong></td>
+<td align="center">38 chamados</td>
+<td align="center">42,2%</td>
+<td align="left">Parametrizações de bancada, servidores IA, Zabbix e automações</td>
+</tr>
+<tr>
+<td align="left"><strong>Atendimento Presencial Capim Grosso</strong></td>
+<td align="center">12 chamados</td>
+<td align="center">13,3%</td>
+<td align="left">Suporte a caixas, emissão de contratos e periféricos</td>
+</tr>
+<tr>
+<td align="left"><strong>Patrimônio e Logística (Triagem)</strong></td>
+<td align="center">9 chamados</td>
+<td align="center">10,0%</td>
+<td align="left">Movimentação de estoque, envio de equipamentos e vistorias</td>
+</tr>
+<tr>
+<td align="left"><strong>Instalação / Suporte Jacobina</strong></td>
+<td align="center">7 chamados</td>
+<td align="center">7,8%</td>
+<td align="left">Apoio a técnicos de campo e testes de bancada</td>
+</tr>
+<tr>
+<td align="left"><strong>Departamento Pessoal / Gente e Gestão</strong></td>
+<td align="center">5 chamados</td>
+<td align="center">5,6%</td>
+<td align="left">Criação de usuários, documentações e rescisões</td>
+</tr>
+<tr>
+<td align="left"><strong>Marketing &amp; Comercial</strong></td>
+<td align="center">5 chamados</td>
+<td align="center">5,6%</td>
+<td align="left">Acessos ao Slack, telefonia e hotspots WiFeed</td>
+</tr>
+<tr>
+<td align="left"><strong>Outros Departamentos / Recepções</strong></td>
+<td align="center">14 chamados</td>
+<td align="center">15,5%</td>
+<td align="left">Demandas gerais de informática e perícias N2</td>
+</tr>
+</tbody></table></div>
+<h3 id="53-colaboradores-solicitantes-mais-frequentes" class="sub-section-title">5.3 Colaboradores Solicitantes Mais Frequentes</h3>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">Colaborador Solicitante</th>
+<th align="left">Setor / Departamento</th>
+<th align="center">Total de Chamados Abertos</th>
+<th align="left">Demandas Principais</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Naila Gabrieli Rios Melo</strong></td>
+<td align="left">Atendimento Presencial CG</td>
+<td align="center">6 chamados</td>
+<td align="left">Demandas de sistema, contratos e periféricos de atendimento</td>
+</tr>
+<tr>
+<td align="left"><strong>Daniel Silva Rios</strong></td>
+<td align="left">Patrimônio e Logística</td>
+<td align="center">5 chamados</td>
+<td align="left">Movimentação e conferência de equipamentos em estoque</td>
+</tr>
+<tr>
+<td align="left"><strong>Wefflin de Souza Porto</strong></td>
+<td align="left">Marketing</td>
+<td align="center">4 chamados</td>
+<td align="left">Hotspots WiFeed, vouchers e acessos de comunicação</td>
+</tr>
+<tr>
+<td align="left"><strong>Jeferson Gonçalves Pinho</strong></td>
+<td align="left">Departamento Pessoal</td>
+<td align="center">3 chamados</td>
+<td align="left">Criação/inativação de acessos e documentação corporativa</td>
+</tr>
+<tr>
+<td align="left"><strong>Suzana Marinho da Silva</strong></td>
+<td align="left">Atendimento Jacobina</td>
+<td align="center">3 chamados</td>
+<td align="left">Caixa Jacobina, impressoras e suporte a recepção</td>
+</tr>
+</tbody></table></div>
+<h3 id="54-relatório-de-visitas-técnicas-presenciais-e-gestão-de-veículos" class="sub-section-title">5.4 Relatório de Visitas Técnicas Presenciais e Gestão de Veículos</h3>
+<p>Durante a Semana 41, foi realizada uma operação técnica presencial com deslocamento de veículo corporativo:</p>
+<ul>
+<li><strong>Missão Técnica:</strong> Instalação e Montagem do Servidor IA GPU no Data Center da Chácara (Capim Grosso) — Protocolo #3214172.</li>
+<li><strong>Data da Intervenção:</strong> 06/10/2026.</li>
+<li><strong>Técnico Designado:</strong> <strong>Liomar Antonio de Oliveira</strong>.</li>
+<li><strong>Veículo Utilizado:</strong> Veículo da frota corporativa da empresa.</li>
+<li><strong>Intervenções Executadas:</strong> Transporte seguro do chassi de virtualização com GPU dedicada, fixação nos trilhos do rack de servidores e conexão ao Nobreak Senoidal Puro NHS Compact Plus 1500VA.</li>
+<li><strong>Avaliação da Frota e Pontualidade:</strong> O veículo requisitado atendeu à demanda dentro do cronograma operacional, sem atrasos que comprometessem o transporte do hardware sensível.</li>
+</ul>
+<hr>
+<div class="page-break"></div><h2 id="6-suporte-ao-técnico-de-campo" class="section-title">6. Suporte ao Técnico de Campo</h2>
+<h3 id="61-volumetria-de-solicitações-com-e-sem-protocolo" class="sub-section-title">6.1 Volumetria de Solicitações (Com e Sem Protocolo)</h3>
+<ul>
+<li><strong>Apoios Técnicos com Abertura de Protocolo:</strong> <strong>29 atendimentos registrados</strong> no Voalle (apoio em perícias de clientes corporativos, diagnósticos de conexões N2 e configurações de bancada).</li>
+<li><strong>Apoios Rápidos Informais (Sem Protocolo / Pronta Resposta):</strong> Estimativa de <strong>8 atendimentos rápidos</strong> via canais diretos para conferência imediata de portas de OLT e validação de sinal óptico.</li>
+<li><strong>Diretriz de Formalização:</strong> O setor manteve orientação contínua para que todo suporte que envolva atuação técnica em tela, alteração de parâmetros ou diagnóstico seja formalizado via protocolo do ERP.</li>
+</ul>
+<h3 id="62-tipos-de-apoio-mais-frequentes-e-tempo-de-resposta" class="sub-section-title">6.2 Tipos de Apoio Mais Frequentes e Tempo de Resposta</h3>
+<p>A somatória das categorias totaliza com rigor matemático os <strong>29 atendimentos formais</strong> prestados às equipes:</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">Categoria de Apoio a Campo</th>
+<th align="center">Ocorrências</th>
+<th align="center">Tempo Médio</th>
+<th align="left">Exemplo Prático / Protocolo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Perícias Técnicas N2 em Clientes (Faturas/Logs)</strong></td>
+<td align="center">11</td>
+<td align="center">18 min</td>
+<td align="left">Pareceres periciais de contestação de conexão (Marinalva #3213275, Jailda #3215188)</td>
+</tr>
+<tr>
+<td align="left"><strong>Configuração de Bancada (CPE/Roteadores/ONTs)</strong></td>
+<td align="center">6</td>
+<td align="center">45 min</td>
+<td align="left">Configurações para campo (Victor Oliveira #3215164, Daiane Cardoso #3214918)</td>
+</tr>
+<tr>
+<td align="left"><strong>Suporte a CFTV e Câmeras em POPs de Campo</strong></td>
+<td align="center">6</td>
+<td align="center">35 min</td>
+<td align="left">Restabelecimento de câmeras POP Pedras Altas (#3142833), Cabaças (#3142822) e Umburanas (#3216056)</td>
+</tr>
+<tr>
+<td align="left"><strong>Configuração e Manutenção de Hotspots</strong></td>
+<td align="center">2</td>
+<td align="center">20 min</td>
+<td align="left">Apoio ao técnico Fredson em hotspot corporativo (#3218929) e reajuste de locais</td>
+</tr>
+<tr>
+<td align="left"><strong>Diagnóstico N2 de Rede e DNS de Assinante</strong></td>
+<td align="center">2</td>
+<td align="center">15 min</td>
+<td align="left">Diagnóstico de falha de DNS em cliente corporativo (Itila dos Santos #3204595)</td>
+</tr>
+<tr>
+<td align="left"><strong>Suporte Físico a Cabeamento em Lojas/POPs</strong></td>
+<td align="center">2</td>
+<td align="center">25 min</td>
+<td align="left">Passagem de cabeamento estruturado definitivo no Caixa de Jacobina (#3211961)</td>
+</tr>
+<tr>
+<td align="left"><strong>Total Rigoroso de Atendimentos</strong></td>
+<td align="center"><strong>29</strong></td>
+<td align="center">—</td>
+<td align="left"><strong>Soma exata das categorias auditadas</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="63-oportunidades-de-automação-e-redução-de-dependência" class="sub-section-title">6.3 Oportunidades de Automação e Redução de Dependência</h3>
+<ol>
+<li><strong>Scripts Automatizados de Hotspots no AutoTickets:</strong> Criação de rotina na plataforma para gerar configurações prontas de Mikrotik para hotspots WiFeed, reduzindo o tempo de bancada de 45 para 5 minutos.</li>
+<li><strong>Treinamento de Crimpagem e Teste de Patch Cord:</strong> Constatou-se que parte das falhas em câmeras e computadores de atendimento (como no Caixa de Jacobina) origina-se de conectores RJ-45 danificados ou oxidados. Recomenda-se reciclagem com técnicos de campo sobre conectorização de alta durabilidade.</li>
+</ol>
+<hr>
+<div class="page-break"></div><h2 id="7-infraestrutura-e-sistemas-críticos" class="section-title">7. Infraestrutura e Sistemas Críticos</h2>
+<h3 id="71-disponibilidade-de-serviços-e-incidentes-em-sistemas" class="sub-section-title">7.1 Disponibilidade de Serviços e Incidentes em Sistemas</h3>
+<ul>
+<li><strong>Disponibilidade de Rede dos Sistemas Críticos:</strong><ul>
+<li>Em conformidade com a diretriz da Coordenação, como não há ferramenta externa homologada medindo a fração de segundos de atividade, registra-se formalmente: <strong>&quot;Sem indisponibilidade de rede registrada no período&quot;</strong> para o ERP Voalle, Flashman (TR-069), Telefonia Native PBX, Servidores de Virtualização e Links de Conectividade.</li>
+<li><strong>Ocorrências Operacionais de Sistemas:</strong> O bug de encerramento involuntário de sessão no ERP Voalle (#3209683) foi acompanhado junto ao atendente Sander Migotto da Synsuite, apresentando estabilização funcional durante a semana.</li>
+</ul>
+</li>
+</ul>
+<div class="page-break"></div><h3 id="72-execução-e-validação-de-backups-quadrante-de-governança" class="sub-section-title">7.2 Execução e Validação de Backups (Quadrante de Governança)</h3>
+<p>Apresenta-se o quadrante mandatório de auditoria de cópias de segurança:</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">Pilar de Auditoria</th>
+<th align="center">Indicador Consolidado</th>
+<th align="left">Detalhamento Técnico</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>1. Ativos Cadastrados na Rotina</strong></td>
+<td align="center"><strong>24 Ativos</strong></td>
+<td align="left">18 Máquinas Virtuais (VMs) e 6 Containers (CTs) distribuídos no SV01, Dell R550 e Dell R910</td>
+</tr>
+<tr>
+<td align="left"><strong>2. Jobs Executados vs. Falhas</strong></td>
+<td align="center"><strong>168 Jobs / 0 Falhas</strong></td>
+<td align="left">Rotinas automáticas diárias concluídas com sucesso no storage secundário</td>
+</tr>
+<tr>
+<td align="left"><strong>3. Falhas Refeitas Manualmente</strong></td>
+<td align="center"><strong>Nenhuma na semana</strong></td>
+<td align="left">Não houve necessidade de disparos manuais por queda transitória de conexão</td>
+</tr>
+<tr>
+<td align="left"><strong>4. Teste de Disaster Recovery (DR)</strong></td>
+<td align="center"><strong>Último teste: 15/09/2026</strong></td>
+<td align="left">Restauração de CT de homologação com 100% de integridade; próximo teste programado para Outubro</td>
+</tr>
+</tbody></table></div>
+<h3 id="73-atualizações-melhorias-e-ações-de-modernização" class="sub-section-title">7.3 Atualizações, Melhorias e Ações de Modernização</h3>
+<ol>
+<li><strong>Servidor Proxmox VE com GPU para IA Offline:</strong> Implantação concluída com sucesso no rack da Chácara (#3214172), operando sob temperatura estável e proteção de energia senoidal.</li>
+<li><strong>Hardening de Segurança da Aplicação:</strong> Ativação do módulo IP Access Firewall com middleware de bloqueio e auditoria de conexões diretas do PostgreSQL (Sprint 352).</li>
+<li><strong>Defesa Técnica de Nobreaks Senoidais NHS:</strong> Conclusão da análise pericial de Custo × Benefício (#3210625), embasando tecnicamente a aprovação da compra de novos nobreaks senoidais puros para proteger servidores e equipamentos de missão crítica.</li>
+</ol>
+<hr>
+<div class="page-break"></div><h2 id="8-pontos-de-atenção-e-próximas-ações" class="section-title">8. Pontos de Atenção e Próximas Ações</h2>
+<div class="page-break"></div><h3 id="81-riscos-tecnológicos-e-vulnerabilidades-identificadas" class="sub-section-title">8.1 Riscos Tecnológicos e Vulnerabilidades Identificadas</h3>
+<ol>
+<li><strong>Vulnerabilidade no Sistema de Compras (<code>compras.teninternet.com.br</code>):</strong><ul>
+<li><em>Risco:</em> A existência de auto-cadastro liberado na API Supabase e falta de regras RLS expôs temporariamente dados de pedidos e empresas.</li>
+<li><em>Mitigação:</em> Solicitação de encerramento de signups públicos, aplicação de RLS restritivo e auditoria nos Edge Logs da Cloudflare.</li>
+</ul>
+</li>
+<li><strong>Exposição de Equipamentos a Nobreaks com Onda Semi-Senoidal:</strong><ul>
+<li><em>Risco:</em> Fontes modernas com PFC Ativo sofrem superaquecimento e queima precoce quando submetidas a nobreaks comuns (onda quadrada).</li>
+<li><em>Mitigação:</em> Homologação urgente e faturamento da compra de Nobreaks Senoidais NHS formalizada no chamado #3210625.</li>
+</ul>
+</li>
+<li><strong>Retenção de Mensagens no Slack e Conformidade LGPD (#3210508):</strong><ul>
+<li><em>Risco:</em> O limite de 90 dias do plano gratuito pode acarretar perda de evidências de suporte e decisões técnicas.</li>
+<li><em>Mitigação:</em> Desenvolvimento de módulo seguro de espelhamento no AutoTickets com alinhamento prévio das políticas de privacidade da empresa.</li>
+</ul>
+</li>
+</ol>
+<h3 id="82-necessidades-de-investimentos-e-aquisições" class="sub-section-title">8.2 Necessidades de Investimentos e Aquisições</h3>
+<ul>
+<li><strong>Aquisição de Nobreaks Senoidais Puros NHS:</strong> Aquisição prioritária de unidades NHS 1500VA/2000VA conforme laudo financeiro apresentado por David Brasil.</li>
+<li><strong>Substituição de Tela do Notebook Dell Vostro 3510 (#3202572):</strong> Aguardando entrega física da tela pelo fornecedor para devolução do ativo à operação.</li>
+</ul>
+<h3 id="83-ações-planejadas-para-as-próximas-semanas" class="sub-section-title">8.3 Ações Planejadas para as Próximas Semanas</h3>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">Responsável</th>
+<th align="left">Ação Prioritária Programada</th>
+<th align="center">Prazo Alvo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>Liomar Oliveira</strong></td>
+<td align="left">Validar aplicação de regras de RLS no sistema de compras e monitorar logs de borda</td>
+<td align="center">16/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>Liomar Oliveira</strong></td>
+<td align="left">Concluir modelo de dados e testes de conformidade da integração AutoTickets × Slack</td>
+<td align="center">17/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>Liomar Oliveira</strong></td>
+<td align="left">Finalizar diagnóstico de tráfego residual da VM Gerenet para cancelamento (#3217070)</td>
+<td align="center">17/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>Isac Costa</strong></td>
+<td align="left">Concluir homologação de rotas SIP e validação final da plataforma ZEUS TIP Brasil</td>
+<td align="center">16/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>Isac Costa</strong></td>
+<td align="left">Acompanhar novas ativações de hotspots WiFeed e validação de vouchers adimplentes</td>
+<td align="center">18/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>David Brasil</strong></td>
+<td align="left">Realizar expedição física da impressora Epson L395 para assistência autorizada (#3209322)</td>
+<td align="center">16/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>David Brasil</strong></td>
+<td align="left">Concluir reestruturação de templates e dashboards do Zabbix e Grafana do Setor de TI</td>
+<td align="center">17/10/2026</td>
+</tr>
+<tr>
+<td align="center"><strong>David Brasil</strong></td>
+<td align="left">Realizar substituição da tela do notebook Dell Vostro assim que a peça for entregue</td>
+<td align="center">Conforme Entrega</td>
+</tr>
+</tbody></table></div>
+<hr>
+<div class="callout callout-info"><p><em>Relatório consolidado elaborado por Liomar Antonio de Oliveira e submetido à Coordenação de Tecnologia da Informação (Isvi Neemias) para apresentação à Direção da Ten Soluções e Serviços LTDA.</em></p></div>
+
+
+    <div class="report-footer">
+      <p>Ten Soluções e Serviços LTDA. (Ten Provedor de Internet) — Relatório Semanal Consolidado do Setor de TI</p>
+      <p>Gerado automaticamente em conformidade com as Diretrizes da Coordenação de Tecnologia — Período: 04/10/2026 a 10/10/2026</p>
+    </div>
+  </div>
+</body>
+</html>
