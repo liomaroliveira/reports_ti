@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório Semanal Individual de Atividades — David Brasil Fernandes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+    @page {
+      size: A4;
+      margin: 10mm 12mm 10mm 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.4;
+      font-size: 8.6pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 100%;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    .header-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #334155 100%);
+      color: #ffffff;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 2px 10px;
+      border-radius: 14px;
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      color: #e0f2fe;
+    }
+
+    .header-banner h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15pt;
+      font-weight: 800;
+      margin-bottom: 3px;
+      letter-spacing: -0.4px;
+      color: #ffffff;
+    }
+
+    .header-banner p.subtitle {
+      font-size: 8.5pt;
+      color: #cbd5e1;
+      font-weight: 400;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-item .label {
+      font-size: 6.8pt;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.4px;
+      margin-bottom: 2px;
+    }
+
+    .meta-item .val {
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .meta-item .val-sub {
+      font-size: 7pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .context-box {
+      background: #f0fdf4;
+      border-left: 4px solid #16a34a;
+      border: 1px solid #bbf7d0;
+      border-left-width: 4px;
+      border-radius: 6px;
+      padding: 9px 12px;
+      margin-bottom: 12px;
+      font-size: 7.8pt;
+      color: #166534;
+      line-height: 1.45;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+
+    .kpi-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #0284c7;
+    }
+
+    .kpi-card.emerald::before { background: #10b981; }
+    .kpi-card.purple::before { background: #8b5cf6; }
+    .kpi-card.amber::before { background: #f59e0b; }
+
+    .kpi-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    .kpi-label {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 3px;
+    }
+
+    .kpi-desc {
+      font-size: 6.6pt;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: #0f172a;
+      border-left: 3.5px solid #0284c7;
+      padding-left: 9px;
+      margin-top: 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-title .badge-count {
+      font-size: 7pt;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .table-container {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.6pt;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 7px 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-size: 6.8pt;
+      border: none;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-success { background: #dcfce7; color: #166534; }
+    .badge-warning { background: #fef3c7; color: #92400e; }
+    .badge-info { background: #e0f2fe; color: #075985; }
+
+    .progress-bar-container {
+      width: 100%;
+      background: #e2e8f0;
+      border-radius: 4px;
+      height: 7px;
+      overflow: hidden;
+      margin-top: 3px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: #0284c7;
+      border-radius: 4px;
+    }
+
+    .progress-bar.green { background: #10b981; }
+    .progress-bar.amber { background: #f59e0b; }
+
+    .card-narrative {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+
+    .card-narrative h4 {
+      font-size: 8.4pt;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-narrative p {
+      font-size: 7.7pt;
+      color: #475569;
+      line-height: 1.42;
+    }
+
+    .time-dist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .time-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+
+    .time-item-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.4pt;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .time-item-top .pct {
+      color: #0284c7;
+    }
+
+    .footer {
+      margin-top: 15px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 6.8pt;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PÁGINA 1 -->
+  <div class="page">
+    <div class="header-banner">
+      <span class="header-badge">Relatório Semanal Individual</span>
+      <h1>David Brasil Fernandes</h1>
+      <p class="subtitle">Auxiliar de TI Junior (#116367) — Suporte Interno, CFTV, Câmeras Fullcam & Acessos</p>
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="label">Período Avaliado</span>
+        <span class="val">04/10 a 10/10/2026</span>
+        <span class="val-sub">Semana 41 / 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Período Efetivo TI</span>
+        <span class="val">05/10 a 09/10/2026</span>
+        <span class="val-sub">Expediente Útil do Setor</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Coordenação</span>
+        <span class="val">Isvi Neemias</span>
+        <span class="val-sub">Coordenador de TI</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Horas Apontadas</span>
+        <span class="val">29h 14m</span>
+        <span class="val-sub">Pontomais: 40h 00m</span>
+      </div>
+    </div>
+
+    <div class="context-box">
+      <strong>Contexto Operacional:</strong> Alta produtividade em suporte de hardware e informática (computador do caixa de Jacobina #3211961, formatação e entrega de máquinas #3215232, reparo da máquina de Marilucia #3216232), gestão ativa do parque CFTV e Fullcam (vistoria geral #3214467, recuperação de câmeras em Jacobina e POPs), criação e inativação de usuários no Voalle e cooperação técnica em segurança cibernética com Liomar (#3218766).
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-value">62</div>
+        <div class="kpi-label">Ações no Voalle</div>
+        <div class="kpi-desc">38 chamados atuados</div>
+      </div>
+      <div class="kpi-card emerald">
+        <div class="kpi-value">94.7%</div>
+        <div class="kpi-label">Resolubilidade</div>
+        <div class="kpi-desc">36 conclusões no período</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">46m</div>
+        <div class="kpi-label">TMA Médio</div>
+        <div class="kpi-desc">Atendimento ágil em suporte</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-value">6d 4h</div>
+        <div class="kpi-label">TMR Médio</div>
+        <div class="kpi-desc">Inclui baixas de câmeras legadas</div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <span>1. Gestão de Demandas — Principais Entregas da Semana</span>
+      <span class="badge-count">12 Conclusões</span>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 20%;">Protocolo / Ref.</th>
+            <th style="width: 48%;">Descrição Técnica da Entrega</th>
+            <th style="width: 32%;">Resultado Obtido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#3211961</strong><br><span style="font-size:6.8pt;color:#64748b;">Caixa Jacobina</span></td>
+            <td>Atendimento emergencial na estação de trabalho do caixa da Loja Jacobina que estava sem internet. Reconfiguração de rede e DNS.</td>
+            <td><span class="badge badge-success">Concluído</span> Operação do caixa normalizada sem perda de atendimentos.</td>
+          </tr>
+          <tr>
+            <td><strong>#3216232</strong><br><span style="font-size:6.8pt;color:#64748b;">Marilucia</span></td>
+            <td>Manutenção corretiva e otimização do sistema operacional na estação de trabalho da colaboradora Marilucia.</td>
+            <td><span class="badge badge-success">Concluído</span> Desempenho restaurado e máquina entregue.</td>
+          </tr>
+          <tr>
+            <td><strong>#3215232 & #3215241</strong><br><span style="font-size:6.8pt;color:#64748b;">Formatação / Entrega</span></td>
+            <td>Formatação completa, instalação de drivers e retorno formal de computador ao estoque da TI.</td>
+            <td><span class="badge badge-success">Concluído</span> Equipamento testado e disponível para redistribuição.</td>
+          </tr>
+          <tr>
+            <td><strong>CFTV & Fullcam</strong><br><span style="font-size:6.8pt;color:#64748b;">6 Protocolos</span></td>
+            <td>Vistoria geral de câmeras (#3214467); restabelecimento de câmeras na Loja Jacobina (#3214581) e Alojamento (#3214600); configuração POP Umburanas (#3216056); encerramento de OS nos POPs Pedras Altas e Cabaças.</td>
+            <td><span class="badge badge-success">Concluído</span> Monitoramento patrimonial e de POPs restabelecido.</td>
+          </tr>
+          <tr>
+            <td><strong>Gestão de Usuários</strong><br><span style="font-size:6.8pt;color:#64748b;">5 Ordens de Serviço</span></td>
+            <td>Criação de novos usuários (#3446400 e #3447670); inativação de ex-colaboradores (#3447139 Camila Ferreira e #3450031); concessão de acessos a Anderson Carneiro (#3216483).</td>
+            <td><span class="badge badge-success">Concluído</span> Governança de acessos no ERP 100% atualizada.</td>
+          </tr>
+          <tr>
+            <td><strong>Descontos N2-TI</strong><br><span style="font-size:6.8pt;color:#64748b;">3 Protocolos</span></td>
+            <td>Análise técnica de histórico de tráfego nos protocolos #3213740 (Francisco Valdeci), #3212907 (Luis Mario) e #3211448 (Nilzete Bandeira).</td>
+            <td><span class="badge badge-success">Concluído</span> Pareceres periciais encaminhados ao financeiro.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Individual — David Brasil Fernandes</span>
+      <span>Semana 41 / 2026 — Ten Internet TI</span>
+      <span>Página 1 de 2</span>
+    </div>
+  </div>
+
+  <!-- PÁGINA 2 -->
+  <div class="page page-break">
+    <div class="section-title">
+      <span>2. Demandas em Andamento e Projetos</span>
+      <span class="badge-count">5 Demandas Ativas</span>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 22%;">Demanda / Protocolo</th>
+            <th style="width: 15%;">Responsável</th>
+            <th style="width: 15%;">% Avanço</th>
+            <th style="width: 33%;">Bloqueios / Dependências</th>
+            <th style="width: 15%;">Previsão</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#3216735</strong><br><span style="font-size:6.8pt;color:#64748b;">Zabbix e Grafana do TI</span></td>
+            <td>David Brasil</td>
+            <td>
+              70%
+              <div class="progress-bar-container"><div class="progress-bar green" style="width: 70%;"></div></div>
+            </td>
+            <td>Customização de dashboards de monitoramento de estações e switches internos.</td>
+            <td>19/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3214592 / #3214608 / #3214616</strong><br><span style="font-size:6.8pt;color:#64748b;">Câmeras em POPs / Torre</span></td>
+            <td>David Brasil</td>
+            <td>
+              50%
+              <div class="progress-bar-container"><div class="progress-bar amber" style="width: 50%;"></div></div>
+            </td>
+            <td>Torre do Cruzeiro, POP Pedras Altas e POP Angico aguardando escala de equipe externa.</td>
+            <td>22/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3216300</strong><br><span style="font-size:6.8pt;color:#64748b;">Estoque de TI</span></td>
+            <td>David Brasil</td>
+            <td>
+              60%
+              <div class="progress-bar-container"><div class="progress-bar green" style="width: 60%;"></div></div>
+            </td>
+            <td>Alinhamento com Isvi Neemias sobre baixas e fluxo de inventário.</td>
+            <td>18/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3215209</strong><br><span style="font-size:6.8pt;color:#64748b;">Assistência Especializada</span></td>
+            <td>David Brasil</td>
+            <td>
+              40%
+              <div class="progress-bar-container"><div class="progress-bar amber" style="width: 40%;"></div></div>
+            </td>
+            <td>Envio de notebook para assistência técnica credenciada.</td>
+            <td>26/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3202572</strong><br><span style="font-size:6.8pt;color:#64748b;">Tela Notebook Felipe Nere</span></td>
+            <td>David Brasil</td>
+            <td>
+              30%
+              <div class="progress-bar-container"><div class="progress-bar amber" style="width: 30%;"></div></div>
+            </td>
+            <td>Aguardando chegada da tela comprada para substituição física.</td>
+            <td>21/10/2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-title">
+      <span>3. Distribuição do Tempo por Frente de Trabalho</span>
+      <span class="badge-count">Foco Operacional</span>
+    </div>
+
+    <div class="time-dist-grid">
+      <div class="time-item">
+        <div class="time-item-top">
+          <span>Suporte ao Usuário Interno & Hardware</span>
+          <span class="pct">40%</span>
+        </div>
+        <div class="progress-bar-container"><div class="progress-bar" style="width: 40%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top">
+          <span>CFTV, Câmeras Fullcam & POPs</span>
+          <span class="pct">30%</span>
+        </div>
+        <div class="progress-bar-container"><div class="progress-bar green" style="width: 30%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top">
+          <span>Gestão de Acessos, Usuários & Permissões</span>
+          <span class="pct">15%</span>
+        </div>
+        <div class="progress-bar-container"><div class="progress-bar amber" style="width: 15%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top">
+          <span>Segurança da Informação & Zabbix/Grafana</span>
+          <span class="pct">15%</span>
+        </div>
+        <div class="progress-bar-container"><div class="progress-bar" style="width: 15%;"></div></div>
+      </div>
+    </div>
+
+    <div class="card-narrative">
+      <h4>🛡️ Atuação Conjunta em Segurança (#3218766)</h4>
+      <p>
+        David atuou em suporte imediato a Liomar Oliveira na investigação de abordagem maliciosa via WhatsApp. David realizou cruzamento pericial de dados (número telefônico e CPF parcial) na base Voalle para verificação de vínculos com clientes ou colaboradores, e estruturou arquivo PDF com telemetria para tentativa de rastreamento do IP externo do atacante.
+      </p>
+    </div>
+
+    <div class="section-title">
+      <span>4. Auditoria de Ponto e Metrologia de Horas</span>
+      <span class="badge-count">Conformidade</span>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 22%;">Horas Apontadas (Voalle)</th>
+            <th style="width: 22%;">Jornada Real (Pontomais)</th>
+            <th style="width: 16%;">Divergência</th>
+            <th style="width: 40%;">Justificativa Técnica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:#0284c7;font-size:9.5pt;">29h 14m</strong></td>
+            <td><strong style="color:#16a34a;font-size:9.5pt;">40h 00m</strong></td>
+            <td><span class="badge badge-info">-10h 46m</span></td>
+            <td>
+              Horas líquidas de relatos formais em O.S. A diferença reflete deslocamentos presenciais entre os prédios da sede e lojas, atendimentos rápidos de balcão sem abertura de chamado e montagem física de cabeamento de CFTV em bancada.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-title">
+      <span>5. Pontos de Atenção e Próximas Ações</span>
+      <span class="badge-count">Prioridades</span>
+    </div>
+
+    <div class="card-narrative">
+      <p>
+        • <strong>Câmeras em Torre:</strong> Alinhar com coordenação de campo visita para manutenção nas câmeras da Torre do Cruzeiro e POPs.<br>
+        • <strong>Peças em Compras:</strong> Acompanhar a entrega da tela do notebook (#3202572) para montagem imediata.<br>
+        • <strong>Monitoramento:</strong> Finalizar os painéis do Grafana para visualização dos links e estações do TI.
+      </p>
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Individual — David Brasil Fernandes</span>
+      <span>Semana 41 / 2026 — Ten Internet TI</span>
+      <span>Página 2 de 2</span>
+    </div>
+  </div>
+
+</body>
+</html>

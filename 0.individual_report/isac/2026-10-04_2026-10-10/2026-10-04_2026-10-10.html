@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório Semanal Individual de Atividades — Isac Costa Silva</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+    @page {
+      size: A4;
+      margin: 10mm 12mm 10mm 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.4;
+      font-size: 8.6pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 100%;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    .header-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #0369a1 55%, #0284c7 100%);
+      color: #ffffff;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 2px 10px;
+      border-radius: 14px;
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      color: #e0f2fe;
+    }
+
+    .header-banner h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15pt;
+      font-weight: 800;
+      margin-bottom: 3px;
+      letter-spacing: -0.4px;
+      color: #ffffff;
+    }
+
+    .header-banner p.subtitle {
+      font-size: 8.5pt;
+      color: #cbd5e1;
+      font-weight: 400;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-item .label {
+      font-size: 6.8pt;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.4px;
+      margin-bottom: 2px;
+    }
+
+    .meta-item .val {
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .meta-item .val-sub {
+      font-size: 7pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .context-box {
+      background: #f0fdf4;
+      border-left: 4px solid #16a34a;
+      border: 1px solid #bbf7d0;
+      border-left-width: 4px;
+      border-radius: 6px;
+      padding: 9px 12px;
+      margin-bottom: 12px;
+      font-size: 7.8pt;
+      color: #166534;
+      line-height: 1.45;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+
+    .kpi-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #0284c7;
+    }
+
+    .kpi-card.emerald::before { background: #10b981; }
+    .kpi-card.purple::before { background: #8b5cf6; }
+    .kpi-card.amber::before { background: #f59e0b; }
+
+    .kpi-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    .kpi-label {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 3px;
+    }
+
+    .kpi-desc {
+      font-size: 6.6pt;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: #0f172a;
+      border-left: 3.5px solid #0284c7;
+      padding-left: 9px;
+      margin-top: 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-title .badge-count {
+      font-size: 7pt;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .table-container {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.6pt;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 7px 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-size: 6.8pt;
+      border: none;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-success { background: #dcfce7; color: #166534; }
+    .badge-warning { background: #fef3c7; color: #92400e; }
+    .badge-info { background: #e0f2fe; color: #075985; }
+
+    .progress-bar-container {
+      width: 100%;
+      background: #e2e8f0;
+      border-radius: 4px;
+      height: 7px;
+      overflow: hidden;
+      margin-top: 3px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: #0284c7;
+      border-radius: 4px;
+    }
+
+    .progress-bar.green { background: #10b981; }
+    .progress-bar.amber { background: #f59e0b; }
+
+    .card-narrative {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+
+    .card-narrative h4 {
+      font-size: 8.4pt;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-narrative p {
+      font-size: 7.7pt;
+      color: #475569;
+      line-height: 1.42;
+    }
+
+    .time-dist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .time-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+
+    .time-item-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.4pt;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .time-item-top .pct {
+      color: #0284c7;
+    }
+
+    .footer {
+      margin-top: 15px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 6.8pt;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PÁGINA 1 -->
+  <div class="page">
+    <div class="header-banner">
+      <span class="header-badge">Relatório Semanal Individual</span>
+      <h1>Isac Costa Silva</h1>
+      <p class="subtitle">Assistente de TI Pleno (#94562) — Telefonia Fixa, Redes, Suporte N2 & WiFeed</p>
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="label">Período Avaliado</span>
+        <span class="val">04/10 a 10/10/2026</span>
+        <span class="val-sub">Semana 41 / 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Período Efetivo TI</span>
+        <span class="val">05/10 a 09/10/2026</span>
+        <span class="val-sub">Expediente Útil do Setor</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Coordenação</span>
+        <span class="val">Isvi Neemias</span>
+        <span class="val-sub">Coordenador de TI</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Horas Apontadas</span>
+        <span class="val">33h 39m</span>
+        <span class="val-sub">Pontomais: 40h 00m</span>
+      </div>
+    </div>
+
+    <div class="context-box">
+      <strong>Contexto Operacional:</strong> Foco de atuação centrado no avanço do projeto estruturante de <strong>Telefonia Fixa Corporativa</strong> (#3137037 — sistema ZEUS e integração TIP Brasil, com mais de 12 horas dedicadas), reajuste e auditoria de cobrança do <strong>WiFeed</strong> (#3215693 e #3213869), apoio conjunto à Universidade Ten (#3216016) e processamento pericial de 8 chamados de solicitação de desconto por instabilidade de rede.
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-value">59</div>
+        <div class="kpi-label">Ações no Voalle</div>
+        <div class="kpi-desc">Atuação em 31 chamados</div>
+      </div>
+      <div class="kpi-card emerald">
+        <div class="kpi-value">100%</div>
+        <div class="kpi-label">Resolubilidade</div>
+        <div class="kpi-desc">25 solicitações concluídas</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">1h 05m</div>
+        <div class="kpi-label">TMA Médio</div>
+        <div class="kpi-desc">Tempo médio por atendimento</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-value">2 dias</div>
+        <div class="kpi-label">TMR Médio</div>
+        <div class="kpi-desc">Tempo médio de resolução</div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <span>1. Gestão de Demandas — Principais Entregas da Semana</span>
+      <span class="badge-count">10 Entregas Concluídas</span>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 20%;">Protocolo / Ref.</th>
+            <th style="width: 48%;">Descrição Técnica da Entrega</th>
+            <th style="width: 32%;">Resultado Obtido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#3215693</strong><br><span style="font-size:6.8pt;color:#64748b;">WiFeed Locais</span></td>
+            <td>Reajuste dos locais, regras de agrupamento de pontos de acesso e parâmetros do WiFeed sob alinhamento da Coordenação.</td>
+            <td><span class="badge badge-success">Concluído</span> Base segmentada e atualizada para operação dos hotspots.</td>
+          </tr>
+          <tr>
+            <td><strong>#3213869</strong><br><span style="font-size:6.8pt;color:#64748b;">Cobrança WiFeed</span></td>
+            <td>Levantamento detalhado do modelo tarifário, regras de cobrança por voucher e métricas de faturamento do portal.</td>
+            <td><span class="badge badge-success">Concluído</span> Diagnóstico financeiro apresentado à gestão técnica.</td>
+          </tr>
+          <tr>
+            <td><strong>#3216016</strong><br><span style="font-size:6.8pt;color:#64748b;">Universidade Ten</span></td>
+            <td>Apoio direto a Liomar Oliveira para redefinição de senhas e restauração de acessos de colaboradores.</td>
+            <td><span class="badge badge-success">Concluído</span> Acesso de treinamento integralmente normalizado.</td>
+          </tr>
+          <tr>
+            <td><strong>#3217052</strong><br><span style="font-size:6.8pt;color:#64748b;">Equipamentos TI</span></td>
+            <td>Configuração física e lógica de novos equipamentos de rede e terminais de trabalho para setores internos.</td>
+            <td><span class="badge badge-success">Concluído</span> Terminais liberados para uso operacional.</td>
+          </tr>
+          <tr>
+            <td><strong>#3218929</strong><br><span style="font-size:6.8pt;color:#64748b;">Hotspot Manutenção</span></td>
+            <td>Configuração e correção de falha em hotspot corporativo solicitada por Edilson Ferreira da Silva Filho.</td>
+            <td><span class="badge badge-success">Concluído</span> Captive portal operando com autenticação fluida.</td>
+          </tr>
+          <tr>
+            <td><strong>Descontos N2-TI</strong><br><span style="font-size:6.8pt;color:#64748b;">8 Chamados</span></td>
+            <td>Análise pericial de tráfego, quedas de link e logs de autenticação (#3212788, #3212979, #3213275, #3215188, #3216561, #3216845, #3218807, #3219086).</td>
+            <td><span class="badge badge-success">Concluído</span> Pareceres técnicos objetivos respaldando o setor financeiro.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Individual — Isac Costa Silva</span>
+      <span>Semana 41 / 2026 — Ten Internet TI</span>
+      <span>Página 1 de 2</span>
+    </div>
+  </div>
+
+  <!-- PÁGINA 2 -->
+  <div class="page page-break">
+    <div class="section-title">
+      <span>2. Demandas em Andamento e Projetos</span>
+      <span class="badge-count">5 Demandas Ativas</span>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 22%;">Demanda / Protocolo</th>
+            <th style="width: 15%;">Responsável</th>
+            <th style="width: 15%;">% Avanço</th>
+            <th style="width: 33%;">Bloqueios / Dependências</th>
+            <th style="width: 15%;">Previsão</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#3137037</strong><br><span style="font-size:6.8pt;color:#64748b;">Telefonia ZEUS / TIP Brasil</span></td>
+            <td>Isac Costa Silva</td>
+            <td>
+              65%
+              <div class="progress-bar-container"><div class="progress-bar green" style="width: 65%;"></div></div>
+            </td>
+            <td>Testes de roteamento de troncos SIP e parametrização com a TIP Brasil.</td>
+            <td>23/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3213875</strong><br><span style="font-size:6.8pt;color:#64748b;">Implantação de Hotspots</span></td>
+            <td>Isac Costa Silva</td>
+            <td>
+              50%
+              <div class="progress-bar-container"><div class="progress-bar amber" style="width: 50%;"></div></div>
+            </td>
+            <td>Aguardando chegada de novos roteadores e pontos de fixação.</td>
+            <td>20/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3078726</strong><br><span style="font-size:6.8pt;color:#64748b;">Documentação MikroTiks</span></td>
+            <td>Isac Costa Silva</td>
+            <td>
+              45%
+              <div class="progress-bar-container"><div class="progress-bar amber" style="width: 45%;"></div></div>
+            </td>
+            <td>Mapeamento sistemático de IPs, credenciais e topologias das filiais.</td>
+            <td>27/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3069558</strong><br><span style="font-size:6.8pt;color:#64748b;">Levantamento Equipamentos</span></td>
+            <td>Isac Costa Silva</td>
+            <td>
+              60%
+              <div class="progress-bar-container"><div class="progress-bar green" style="width: 60%;"></div></div>
+            </td>
+            <td>Consolidação dos inventários enviados pelas lojas regionais.</td>
+            <td>22/10/2026</td>
+          </tr>
+          <tr>
+            <td><strong>#3215164</strong><br><span style="font-size:6.8pt;color:#64748b;">Configuração Equipamentos</span></td>
+            <td>Isac Costa Silva</td>
+            <td>
+              70%
+              <div class="progress-bar-container"><div class="progress-bar green" style="width: 70%;"></div></div>
+            </td>
+            <td>Finalização dos testes de carga em bancada para Victor Oliveira.</td>
+            <td>16/10/2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-title">
+      <span>3. Distribuição do Tempo por Frente de Trabalho</span>
+      <span class="badge-count">Foco Operacional</span>
+    </div>
+
+    <div class="time-dist-grid">
+      <div class="time-item">
+        <div class="time-item-top">
+          <span>Telefonia Fixa Corporativa (ZEUS)</span>
+          <span class="pct">45%</span>
+        </div>
+        <div class="progress-bar-container"><div class="progress-bar" style="width: 45%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top">
+          <span>Suporte N2 & Pareceres de Desconto</span>
+          <span class="pct">25%</span>
+        </div>
+        <div class="progress-bar-container"><div class="progress-bar green" style="width: 25%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top">
+          <span>Hotspots, WiFeed & Conectividade</span>
+          <span class="pct">20%</span>
+        </div>
+        <div class="progress-bar-container"><div class="progress-bar amber" style="width: 20%;"></div></div>
+      </div>
+      <div class="time-item">
+        <div class="time-item-top">
+          <span>Rotinas Operacionais & Gestão de Estoque</span>
+          <span class="pct">10%</span>
+        </div>
+        <div class="progress-bar-container"><div class="progress-bar" style="width: 10%;"></div></div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <span>4. Auditoria de Ponto e Metrologia de Horas</span>
+      <span class="badge-count">Conformidade</span>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 22%;">Horas Apontadas (Voalle)</th>
+            <th style="width: 22%;">Jornada Real (Pontomais)</th>
+            <th style="width: 16%;">Divergência</th>
+            <th style="width: 40%;">Justificativa Técnica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:#0284c7;font-size:9.5pt;">33h 39m</strong></td>
+            <td><strong style="color:#16a34a;font-size:9.5pt;">40h 00m</strong></td>
+            <td><span class="badge badge-info">-6h 21m</span></td>
+            <td>
+              Horas de tela e relatos fidedignos no ERP. A diferença em relação às 40h decorre de transições entre atendimentos, organização do laboratório de bancada, alinhamentos diários de equipe e rotinas administrativas sem abertura de chamados específicos.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-title">
+      <span>5. Pontos de Atenção e Próximas Ações</span>
+      <span class="badge-count">Prioridades</span>
+    </div>
+
+    <div class="card-narrative">
+      <p>
+        • <strong>Telefonia ZEUS:</strong> Finalizar a validação dos troncos SIP junto ao suporte TIP Brasil para liberar homologação dos primeiros ramais corporativos.<br>
+        • <strong>Hotspots e WiFeed:</strong> Instalar os pontos pendentes da implantação corporativa assim que os roteadores forem liberados pelo compras.<br>
+        • <strong>Documentação de Rede:</strong> Manter atualizada a topologia e configurações dos MikroTiks das filiais.
+      </p>
+    </div>
+
+    <div class="footer">
+      <span>Relatório Semanal Individual — Isac Costa Silva</span>
+      <span>Semana 41 / 2026 — Ten Internet TI</span>
+      <span>Página 2 de 2</span>
+    </div>
+  </div>
+
+</body>
+</html>
