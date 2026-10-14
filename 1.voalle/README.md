@@ -1,13 +1,28 @@
 # 📁 1. Dados e Exportações do ERP Voalle (1.voalle)
 
-Este diretório contém relatórios de tarefas, chamados, solicitações internas, ordens de serviço e apontamentos de tempo exportados do ERP Voalle para cada colaborador de TI.
+Este diretório armazena os relatórios de tarefas, chamados, solicitações internas, ordens de serviço e apontamentos de tempo exportados do ERP Voalle, organizados por colaborador de TI.
 
 ---
 
-## 📄 Padrão de Nomenclatura dos Arquivos de Entrada
+## 👥 Estrutura de Subdiretórios por Colaborador
 
-- `[Nome]_[Data-Inicio]-[Data-Fim].pdf` (ex.: `Liomar_2026-09-01_2026-09-15.pdf`)
-- `[Nome]-[Data-Inicio]-[Data-Fim].csv`
+```text
+1.voalle/
+├── liomar/    # Exportações de Liomar Antonio de Oliveira (#107184)
+├── isac/      # Exportações de Isac Costa Silva (#94562)
+├── david/     # Exportações de David Brasil Fernandes (#116367)
+└── 2026-06/   # Históricos e exportações legadas arquivadas
+```
+
+---
+
+## 📄 Padrão de Nomenclatura e Formatos Suportados
+
+Os arquivos exportados pelo ERP Voalle devem ser salvos dentro da pasta de cada colaborador, podendo estar nos formatos **HTML**, **PDF** ou **CSV**:
+
+- `[Nome]-[Data-Inicio]_[Data-Fim].html` (ex.: `Liomar-2026-10-04_2026-10-10.html`)
+- `[Nome]-[Data-Inicio]_[Data-Fim].pdf` (ex.: `David-2026-10-04_2026-10-10.pdf`)
+- `[Nome]-[Data-Inicio]_[Data-Fim].csv`
 
 ---
 
@@ -18,8 +33,8 @@ Ao processar os arquivos do Voalle, a IA deve extrair:
 - **Número do Protocolo e Título da Tarefa:** Identificação e escopo do atendimento.
 - **Tipo de Solicitação:** (TI) Sol. Interna, (NOC), (N2-TI), Manutenção Programada, Infraestrutura, etc.
 - **Datas e Horários:** Data de lançamento (DT), Hora de início e fim.
-- **Horas Trabalhadas (HT):** Tempo total dedicado à demanda.
+- **Horas Trabalhadas (HT):** Tempo total dedicado à demanda para consolidação de produtividade.
 - **Progresso (%):** Percentual de conclusão da tarefa (0% a 100%).
-- **Descrição e Relato Técnico:** Detalhamento da solução aplicada, peças substituídas (ex.: SSDs, cabos CAT6, switches, roteadores ONT Datacom) e configurações de rede (IPs, VLANs, interfaces).
+- **Descrição e Relato Técnico:** Detalhamento da solução aplicada, peças substituídas (ex.: SSDs, fontes, switches, roteadores ONT Datacom) e configurações de rede (IPs, VLANs, interfaces).
+- **Confronto com Ponto:** Cruzar o somatório de HT com o registro de ponto real no Pontomais, justificando qualquer divergência identificada.
 
-Obs.: Incluído arquivo de preenchimento manual pra primeira análise: `Relatório de Visita Técnica Presencial - Setor TI.md`

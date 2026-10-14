@@ -14,8 +14,27 @@ Este diretório gerencia os dados de desenvolvimento, sprints, integrações e e
 
 ---
 
+## 📊 Subdiretórios de Relatórios Analíticos de Automação
+
+O AutoTickets gera relatórios automáticos especializados que devem ser analisados para compor o **Subtópico 3.1.4 (Impacto Operacional e Métricas de Produtividade das Automações)**:
+
+```text
+2.autotickets/
+├── colaborador_x_ticket/                  # Cruzamento analítico de produtividade: volume de tickets por colaborador
+├── fullcam_automacao_inadimplencia/       # Relatórios de suspensão/reativação automática por inadimplência no Fullcam (.md, .csv, .html)
+├── fullcam_automacao_instalacao_camera/   # Relatórios da esteira automática de provisionamento e instalação de câmeras
+├── fullcam_lucros_prejuizos/              # Indicadores de perdas financeiras evitadas e faturamento garantido por automações
+├── problemas_recorrentes/                 # Mineração de falhas crônicas e apontamentos repetitivos no parque
+├── produtividade_geral/                   # Horas técnicas de esforço humano economizadas e ganhos de escala
+├── wifeed_daily_update_voucher/           # Auditoria da automação diária de sincronização de vouchers WiFeed (clientes adimplentes, variação diária e churn)
+└── old/                                   # Arquivos tratados e exportações de semanas anteriores
+```
+
+---
+
 ## 🎯 Principais Frentes e Módulos do AutoTickets
+- **Métricas de Produtividade & ROI de Software:** Quantificação em horas humanas do trabalho manual eliminado por automações (ex.: rotina diária do WiFeed poupando intervenção humana do TI e mantendo a base 100% adimplente).
 - **Integrações de Rede e NOC:** Telemetria óptica, RADIUS logs em tempo real, sync de IPs CGNAT, monitoramento ping e alertas.
 - **Módulo de Atendimento e Tickets:** Desacoplamento e otimização de modais do Voalle, busca de clientes, filtros avançados e chat omnichannel.
-- **Arquitetura e Frontend:** Modernização de stack (React 19, Tailwind v4, componentes atômicos, design system Apple Bento Grid e temas acessíveis).
-- **Testes e Qualidade:** Suíte de testes E2E com Playwright e auditoria visual automatizada.
+- **Arquitetura e Qualidade:** Arquitetura Local-First (Duplo Cursor Monotônico), Orquestrador Multi-Provedor com telemetria de tokens de IA, Servidor MCP Oficial (`laravel/mcp`) e design Glassmorphism.
+

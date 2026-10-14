@@ -36,32 +36,38 @@
 ## 🖥️ Sistemas e Fontes de Dados em Escopo
 
 1. **ERP Voalle (`1.voalle/`):**
-
    - ERP principal da empresa (Módulos de Atendimento, Service Desk, O.S., Projetos, Infraestrutura e Apontamentos).
-   - Exportações brutas e relatórios de tarefas e atendimentos em PDF/CSV.
-2. **AutoTickets (`2.autotickets/` e Repositório Local):**
+   - Exportações brutas e relatórios organizados em subpastas por colaborador (`1.voalle/liomar/`, `1.voalle/isac/`, `1.voalle/david/`), nos formatos `.html`, `.pdf` ou `.csv`.
 
+2. **AutoTickets (`2.autotickets/` e Repositório Local):**
    - Plataforma de automação e integração de sistemas desenvolvida e mantida por Liomar Oliveira.
    - **Repositório e Commits Locais:** `/home/liomarti/dev/autotickets-v2` (inspecionar commits no período para mapear entregas técnicas, novas features, correções e manutenções).
-   - **Exportações Tratadas em CSV (`2.autotickets/*.csv`):** Arquivos contendo dados tratados, filtrados e estruturados pelo AutoTickets integrando a base de dados do Voalle (chamados ativos, chamados concluídos, tarefas ativas e protocolos de acompanhamento). Os dados têm mérito do próprio sistema AutoTickets em tratá-los e prepará-los para auditoria.
-3. **Históricos e Comunicações de WhatsApp (`3.whatsapp_histories/`):**
+   - **Subdiretórios Estruturados de Relatórios de Produtividade (`2.autotickets/`):**
+     - `colaborador_x_ticket/`: Cruzamento de produtividade individual e volumetria por colaborador.
+     - `fullcam_automacao_inadimplencia/`: Relatórios de suspensão/reativação automática por inadimplência no Fullcam.
+     - `fullcam_automacao_instalacao_camera/`: Automação da esteira de ativação e instalação de câmeras.
+     - `fullcam_lucros_prejuizos/`: Impacto financeiro e análise de perdas/ganhos das automações.
+     - `problemas_recorrentes/`: Mineração de padrões de falhas e reincidências no parque.
+     - `produtividade_geral/`: Métricas consolidadas de esforço técnico humano economizado.
+     - `wifeed_daily_update_voucher/`: Automação diária de sincronização de vouchers WiFeed (clientes adimplentes, cálculo de churn e ganho operacional).
 
-   - **Banco SQLite Mestre (`database/msgstore.db`):** Base de dados relacional com o histórico completo de mensagens (mais de 340 conversas e quase 40.000 mensagens), atualizada semanalmente a partir do backup com chave de 64 dígitos (`input/msgstore.db.crypt15`).
-   - **Exportações Manuais (`manual_exports/`):** Conversas estratégicas exportadas separadamente e de forma manual pelo WhatsApp Business (*Isvi TI Ten.txt*, *Tecnologia TEN.txt*, *Tudo Incluso - TEN.txt*, *[Made4NOC] TEN INTERNET LTDA PREMIUM.txt*).
-   - **Conversas Exportadas em Lote (`conversas_exportadas/`):** Histórico completo de chats individuais extraídos em formato `.txt` puro e catálogo geral indexado em `indice_conversas.json`.
-   - **Harness de Scripts (`scripts/`):**
-     - `sync_backup.py`: Descriptografa o novo backup em `input/` e atualiza `database/msgstore.db`.
-     - `query_history.py`: Utilitário de consulta relacional por período (`--start`, `--end`) e categoria (`campo`, `interno`, `coordenacao`, `incidentes`).
-     - `export_all_chats.py`: Utilitário para re-exportar todas as conversas para `.txt`.
-   - **Extratos Temporais (`exports/`):** Relatórios filtrados por período em Markdown (`extrato-campo.md`, etc.).
-4. **Infraestrutura e Plataformas Integradas:**
+3. **Investigações Especiais e Segurança (`2.1.others/`):**
+   - Diretório dedicado a estudos de infraestrutura, testes de intrusão, mapeamento de vulnerabilidades em sistemas internos e análises periciais pontuais organizadas por data (`2.1.others/[YYYY-MM-DD]/...`). Quando houver pasta correspondente à semana do relatório, integrar seus achados nos tópicos de Projetos, Segurança e Riscos Tecnológicos.
 
-   - Flashman, Native PBX (telefonia), Made4NOC / Grafana, FullCam, MailCow, Servidores Datacom (SV01), Dell PowerEdge (R550) e SuperMicro, Mikrotik e Switches Gerenciáveis.
-5. **Painéis de BI com Parceiros (Analítica 3M e EasyBI / MW Solutions) - Contexto Real:**
+4. **Pareceres da Coordenação (`5.feedback/`):**
+   - Pareceres, feedbacks semanais e alinhamentos emitidos pelo Coordenador de TI Isvi Neemias (`feedback_[YYYY-MM-DD]_[YYYY-MM-DD].md`). Devem ser lidos como referência mandatória de governança e calibração contínua das diretrizes do setor.
 
-   - **Analítica 3M:** Acesso limitado de Liomar Oliveira. O setor de TI não gerencia, não costuma utilizar e não realiza acompanhamento direto da integração.
-   - **EasyBI (MW Solutions):** Acesso nunca recebido, link direto (`https://easybi.teninternet.com.br`) inacessível (DNS), sem participação em grupos e fora do escopo direto de atuação da equipe.
-   - *Diretriz:* Caso citado no relatório, justificar formalmente o status real acima, sem simular atividades inexistentes.
+5. **Infraestrutura e Plataformas Integradas:**
+   - Flashman (TR-069), Native PBX (telefonia), Made4NOC / Grafana, FullCam, MailCow, Servidores Datacom (SV01), Dell PowerEdge (R550, R910) e SuperMicro, MikroTik e Switches Gerenciáveis.
+
+6. **Painéis de BI com Parceiros (Analítica 3M e EasyBI / MW Solutions) - Contexto Real:**
+   - **Analítica 3M:** Perfil Master concedido a Liomar Oliveira para gestão de usuários. Acesso focado em telas estratégicas, sem administração técnica do backend pela equipe do TI.
+   - **EasyBI (MW Solutions):** Acesso limitado com pouco valor agregado para a operação, fora do escopo direto de manutenção do TI e em processo de descontinuação contratual.
+   - *Diretriz:* Informar formalmente o status real acima, sem simular atividades inexistentes.
+
+7. **Repositório Frio e Dados Legados (`miscelaneous/`):**
+   - Armazena históricos legados de mensagens de WhatsApp (`miscelaneous/whatsapp_histories/`), configurações do LiteLLM (`miscelaneous/litellm_gateway/`) e arquivos de apoio arquivados.
+   - **REGRA MANDATÓRIA:** Este diretório **NÃO DEVE SER LIDO AUTOMATICAMENTE** durante a geração do relatório semanal pelo `PROMPT.md`. É um repositório frio de consulta sob demanda, devendo ser acessado **apenas se expressamente solicitado** pelo usuário.
 
 ---
 
@@ -70,6 +76,15 @@
 - **Alimentação da Dashboard Executiva:** Fornecer à Coordenação de TI (Isvi Neemias) um panorama fidedigno, métricas de desempenho e status das demandas do setor para apresentação semanal à Direção toda terça-feira pela manhã.
 - **Transparência e Rastreabilidade Operacional:** Mapear entregas, projetos em andamento, suporte a usuários internos, suporte a técnicos de campo e saúde da infraestrutura de telecom/TI.
 - **Padrão de Saída Multi-formato:** Todos os relatórios (semanais consolidados e individuais) devem ser gerados em **Markdown (.md)**, **HTML estilizado (.html)** e **PDF executivo (.pdf)** com diagramação profissional em formato A4.
+- **Propósito Institucional do Relatório (As 8 Regras da Coordenação):**
+  1. Registrar fatos com precisão (o que, quando, onde e envolvidos).
+  2. Apresentar resultados e métricas reais.
+  3. Analisar situações e causas raízes.
+  4. Dar visibilidade para a tomada de decisão da gestão.
+  5. Apoiar decisões estratégicas e alocação de recursos.
+  6. Acompanhar evolução comparativa entre períodos.
+  7. Criar histórico fidedigno para auditoria.
+  8. Recomendar ações concretas de melhoria contínua.
 
 ---
 
@@ -95,36 +110,37 @@ reports_ti/
 │   └── david/                                 # Relatórios individuais de David Brasil Fernandes
 │       ├── old/                               # Relatórios e documentos de semanas anteriores arquivados
 │       └── [YYYY-MM-DD]_[YYYY-MM-DD].[ext]    # Relatório individual gerado no período
-├── 1.voalle/                                  # Exportações e dados brutos do ERP Voalle
+├── 1.voalle/                                  # Exportações do ERP Voalle organizadas por colaborador
 │   ├── README.md                              # Guia de interpretação de chamados, OS e apontamentos
-│   ├── old/                                   # Exportações brutas e relatórios de semanas anteriores arquivados
-│   └── [Nome]-[DataInicio]-[DataFim].pdf/.csv # Relatórios de tarefas e atendimentos do Voalle
+│   ├── liomar/                                # Arquivos de Liomar ([Nome]-[DataInicio]-[DataFim].html/.pdf/.csv)
+│   ├── isac/                                  # Arquivos de Isac ([Nome]-[DataInicio]-[DataFim].html/.pdf/.csv)
+│   └── david/                                 # Arquivos de David ([Nome]-[DataInicio]-[DataFim].html/.pdf/.csv)
 ├── 2.autotickets/                             # Dados tratados e relatórios gerados via AutoTickets
 │   ├── README.md                              # Guia para leitura de relatórios e inspeção de commits
-│   ├── old/                                   # CSVs e relatórios tratados de semanas anteriores arquivados
-│   └── [arquivos_exportados].csv              # CSVs tratados (chamados ativos, concluídos, tarefas, etc.)
-├── 3.whatsapp_histories/                      # Harness de comunicações e históricos do WhatsApp Business
-│   ├── README.md                              # Manual completo do harness, rotina semanal e queries
-│   ├── key_64digits.txt                       # Chave de 64 dígitos para descriptografia automática
-│   ├── input/                                 # Onde o usuário insere o novo msgstore.db.crypt15 semanal
-│   ├── database/                              # Banco SQLite mestre (msgstore.db) descriptografado
-│   ├── manual_exports/                        # Conversas estratégicas exportadas manualmente no celular
-│   │   ├── Conversa do WhatsApp com Isvi TI Ten.txt
-│   │   ├── Conversa do WhatsApp com Tecnologia TEN.txt
-│   │   ├── Conversa do WhatsApp com Tudo Incluso - TEN.txt
-│   │   └── Conversa do WhatsApp com [Made4NOC] TEN INTERNET LTDA  PREMIUM.txt
-│   ├── conversas_exportadas/                  # 340+ arquivos .txt individuais e indice_conversas.json
-│   ├── scripts/                               # Automação de sincronização e queries da IA
-│   │   ├── sync_backup.py                     # Sincroniza input/ com database/msgstore.db
-│   │   ├── query_history.py                   # Utilitário CLI para filtros temporais e categorização
-│   │   └── export_all_chats.py                # Utilitário de exportação sob demanda para TXT
-│   └── exports/                               # Extratos semanais gerados em Markdown/JSON
-└── 4.weekly_reports/                          # Relatórios semanais consolidados do setor de TI
-    ├── README.md                              # Padrão de saída consolidado
-    └── [YYYY-MM-DD]_[YYYY-MM-DD]/             # Subdiretório dedicado por período avaliado
-        ├── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].md
-        ├── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].html
-        └── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].pdf
+│   ├── colaborador_x_ticket/                  # Produtividade cruzada colaborador x tickets
+│   ├── fullcam_automacao_inadimplencia/       # Relatórios de automação de inadimplência Fullcam
+│   ├── fullcam_automacao_instalacao_camera/   # Automação de esteira de instalação de câmeras
+│   ├── fullcam_lucros_prejuizos/              # Análise financeira e perdas evitadas por automação
+│   ├── problemas_recorrentes/                 # Padrões e recorrências de falhas no parque
+│   ├── produtividade_geral/                   # Horas técnicas economizadas e eficiência operacional
+│   ├── wifeed_daily_update_voucher/           # Atualizações diárias de vouchers e base WiFeed
+│   └── old/                                   # Arquivos legados arquivados
+├── 2.1.others/                                # Estudos de segurança, perícias e investigações pontuais
+│   ├── README.md                              # Guia de investigações especiais e vulnerabilidades
+│   └── [YYYY-MM-DD]/...                       # Relatórios técnicos datados de segurança/infraestrutura
+├── 4.weekly_reports/                          # Relatórios semanais consolidados do setor de TI
+│   ├── README.md                              # Padrão de saída consolidado
+│   └── [YYYY-MM-DD]_[YYYY-MM-DD]/             # Subdiretório dedicado por período avaliado (Dom a Sáb)
+│       ├── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].md
+│       ├── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].html
+│       └── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].pdf
+├── 5.feedback/                                # Feedbacks e pareceres da Coordenação de TI
+│   ├── README.md                              # Descrição do diretório de feedback
+│   └── feedback_[YYYY-MM-DD]_[YYYY-MM-DD].md  # Considerações semanais de Isvi Neemias
+└── miscelaneous/                              # REPOSITÓRIO FRIO / BACKUP (NÃO LER NO PROMPT SEMANAL)
+    ├── README.md                              # Manual de arquivos legados e sob demanda
+    ├── litellm_gateway/                       # Configurações e documentação do gateway LiteLLM
+    └── whatsapp_histories/                    # Histórico e scripts de WhatsApp (acessar só sob demanda)
 ```
 
 ---
@@ -140,9 +156,10 @@ Quando for gerar o relatório individual ou consolidado de um período (`YYYY-MM
 
 2. **Mineração Multi-Fonte (para colaboradores sem relatório pré-existente):**
    - **AutoTickets Commits (`/home/liomarti/dev/autotickets-v2`):** Histórico de commits no git no período da semana (sprints entregues, refatorações, novas features, correções).
-   - **AutoTickets CSVs (`2.autotickets/`):** Tarefas, chamados ativos e concluídos tratados e consolidados.
-   - **Voalle (`1.voalle/`):** Atendimentos, OS, relatos avulsos e horas apontadas.
-   - **WhatsApp (`3.whatsapp_histories/`):** Executar (apenas se os arquivos forem criados/modificados dentro do período solicitado) `query_history.py --start YYYY-MM-DD --end YYYY-MM-DD` para extrair mensagens de suporte ao campo, suporte interno, coordenação e Made4NOC, cruzando também com `manual_exports/` quando aplicável. Caso não hajam modificações, o diretório deve ser ignorado na análise.
+   - **AutoTickets Relatórios (`2.autotickets/`):** Relatórios de produtividade de automações, tickets por colaborador, WiFeed e Fullcam.
+   - **Voalle (`1.voalle/[colaborador]/`):** Atendimentos, OS, relatos avulsos e horas apontadas em `.html`, `.pdf` ou `.csv`.
+   - **Investigações Pontuais (`2.1.others/`):** Relatórios e estudos de vulnerabilidades datados no período da semana.
+   - **Nota sobre WhatsApp:** O diretório `miscelaneous/whatsapp_histories/` é frio e **não deve ser lido no fallback padrão**, a menos que expressamente determinado pelo usuário.
 3. **Geração do Relatório Individual (se necessário):** Compilar e salvar o relatório individual nas extensões `.md`, `.html` e `.pdf` em `0.individual_report/[nome_colaborador]/[data-inicio]_[data-fim].[ext]`.
 4. **Consolidação do Setor:** Integrar as entregas de Liomar, Isac e David no relatório semanal consolidado, criando e salvando no subdiretório dedicado em `4.weekly_reports/[data_inicio]_[data_fim]/report_ti-[data_inicio]-[data_fim].[ext]`.
 
@@ -150,71 +167,100 @@ Quando for gerar o relatório individual ou consolidado de um período (`YYYY-MM
 
 ## 📋 Tópicos Obrigatórios do Relatório (Conforme Modelo da Coordenação)
 
-Cada relatório (individual ou consolidado) deve respeitar a estrutura oficial:
+Cada relatório semanal consolidado deve respeitar a estrutura oficial:
 
-1. **Gestão de Demandas:**
+### ⭐ Seção de Abertura: Fatos Notáveis e Anomalias da Semana
+*(Localizada logo após o Resumo Executivo e antes do Tópico 1)*
+- **Objetivo:** Dar visibilidade imediata a eventos atípicos, desvios de planejamento, incidentes incomuns, anomalias de hardware/redes ou bloqueios operacionais críticos.
+- **Estrutura Obrigatória por Ocorrência:**
+  - **Identificação do Fato:** O que ocorreu e ativos envolvidos.
+  - **Contexto e Causa Raiz:** Por que aconteceu e quais fatores desencadearam a situação.
+  - **Impacto Operacional:** Consequências para a equipe, usuários ou clientes.
+  - **Ação Imediata e Mitigação:** Solução paliativa ou definitiva aplicada.
+  - **Lição Aprendida e Próximo Passo:** Ajuste de processo, aquisição ou mudança de rota.
 
-   - Demandas pendentes (descrição resumida, solicitante, prioridade e previsão de início).
-   - Demandas em andamento (responsável, % de avanço, bloqueios/dependências e previsão de conclusão).
-   - Demandas concluídas na semana (entrega realizada e resultado obtido).
-   - Demandas novas abertas e comparativo entradas × saídas (fila crescendo ou reduzindo).
-2. **Registro de Atividades por Membro da Equipe:**
+### 1. Gestão de Demandas
+- Demandas pendentes (descrição resumida, solicitante, prioridade e previsão de início).
+- Demandas em andamento (responsável, % de avanço, bloqueios/dependências e previsão de conclusão).
+- Demandas concluídas na semana (entrega realizada e resultado obtido).
+- Demandas novas abertas e comparativo entradas × saídas.
+- **MÉTRICA OBRIGATÓRIA:** Utilizar **"Balanço da fila (saídas ÷ entradas)"** ou **"Variação do Backlog"**. É **TERMINANTEMENTE PROIBIDO** utilizar o termo "resolutividade" para este indicador.
 
-   - Resumo das atividades executadas por integrante no período.
-   - Distribuição do tempo por frentes de trabalho (Projetos, Suporte Interno, Suporte ao Campo, Infraestrutura).
-   - Pontos de desenvolvimento e necessidades de treinamento identificadas.
-   - **Colaborador do TI mais ativo no Voalle:** Gráfico/estatística comparativa de apontamentos.
-3. **Projetos e Entregas:**
+### 2. Registro de Atividades por Membro da Equipe
+- Resumo das atividades executadas por integrante no período.
+- Distribuição do tempo por frentes de trabalho (Projetos, Suporte Interno, Suporte ao Campo, Infraestrutura).
+- Pontos de desenvolvimento e necessidades de treinamento identificadas.
+- **Desempenho no Voalle e Confronto com Jornada de Ponto (Pontomais):**
+  - Tabela comparativa com total de horas apontadas no Voalle vs. total de horas da jornada real no Pontomais.
+  - **Regra de Auditoria:** Havendo divergência de horas (ex.: horas apontadas maiores que o ponto), é **obrigatório explicar a causa** (tickets sobrepostos deixados em execução, cronômetros abertos fora do expediente, tempo de deslocamento intermunicipal ou atendimento em almoço/interjornada).
 
-   - Status dos projetos em andamento (AutoTickets, integrações Voalle x Flashman, telefonia Native PBX, WiFeed, etc.).
-   - Painéis de BI com parceiros: Esclarecer o status real de Analítica 3M e EasyBI (MW Solutions).
-   - Entregas colocadas em produção na semana e resultados observados.
-   - Dependências de terceiros ou outros setores que estejam travando entregas.
-4. **Incidentes Tratados:**
+### 3. Projetos e Entregas
+- Status dos projetos em andamento (AutoTickets, integração WiFeed, telefonia Native PBX / ZEUS, etc.).
+- **3.1.4 Impacto Operacional e Métricas de Produtividade das Automações (AutoTickets):**
+  - Horas técnicas de esforço humano economizadas pelas automações ativas.
+  - Automação WiFeed Voucher: clientes adimplentes sincronizados, cálculo de churn/crescimento e rotina de validação sem intervenção manual.
+  - Automação Fullcam Inadimplência/Instalação: volume de câmeras tratadas, suspensões/reativações e prevenção de perdas.
+- Painéis de BI com parceiros: Esclarecer o status real de Analítica 3M (Perfil Master, acesso estratégico) e EasyBI (fora do escopo direto, descontinuação).
+- Entregas colocadas em produção na semana e resultados práticos observados.
+- Mudanças de escopo e prioridade: Quando houver alteração de cronograma ou prioridade (ex.: SIEM Wazuh focando em RBs locais em vez de filiais), **justificar formalmente o motivo técnico e registrar o novo prazo**.
 
-   - Relação dos incidentes da semana (sistema/serviço afetado, severidade, data/hora, duração e impacto).
-   - Causa raiz identificada e correção aplicada (definitiva ou paliativa).
-   - Incidentes recorrentes e planos de mitigação (com base nas tratativas da Made4NOC e monitoramento).
-5. **Suporte Interno (Informática):**
+### 4. Incidentes Tratados
+- Relação dos incidentes da semana (sistema/serviço afetado, severidade, data/hora, duração e impacto).
+- Causa raiz identificada e correção aplicada (definitiva ou paliativa).
+- **Regra de Reincidência Pericial:** É **proibido** afirmar "100% de precisão" ou "sem reincidência" com base em apenas uma semana. A métrica de reincidência deve adotar **janela móvel mínima de observação de 30 dias**.
 
-   - Quantidade de solicitações recebidas e atendidas (computadores, acessos, e-mails, impressoras).
-   - Tempo médio de atendimento e pendências em aberto.
-   - **Setores que mais demandaram suporte do TI:** Lista e estatísticas de interações.
-   - **Colaboradores que mais abriram chamados:** Informando equipe e setor.
-   - **Relatório de Visitas Presenciais:** Deslocamentos operacionais com veículos da empresa.
-6. **Suporte ao Técnico de Campo:**
+### 5. Suporte Interno (Informática)
+- Quantidade de solicitações recebidas e atendidas (computadores, acessos, e-mails, impressoras).
+- Tempo médio de atendimento e pendências em aberto.
+- **Setores que mais demandaram suporte do TI:** Ranking e estatísticas.
+- **Colaboradores que mais abriram chamados:** Informando equipe e departamento.
+- **Relatório de Visitas Técnicas Presenciais e Gestão de Veículos:** Detalhamento de deslocamentos operacionais, quilometragem, veículos utilizados e **dificuldades/atrasos gerados pela frota** (horário combinado vs. horário de entrega do carro e impacto na agenda de visitas).
+- **Política de Sistemas Operacionais (Windows 10 x Windows 11):** Justificativa técnica para novas instalações de Windows 10 considerando o fim do suporte oficial da Microsoft, situação das licenças e limitações de hardware.
 
-   - Quantidade de apoios prestados a equipes de campo (provisionamento de ONTs, liberações, consultas, troca de estrutura).
-   - Tipos de apoio mais frequentes e tempo médio de resposta (extraídos de *ServiceDesk Suporte ao técnico* e Voalle).
-   - Oportunidades de automação ou capacitação para redução de dependência do TI.
-7. **Infraestrutura e Sistemas Críticos:**
+### 6. Suporte ao Técnico de Campo
+- Quantidade de apoios prestados a equipes de campo (provisionamento de ONTs, liberações, consultas, troca de estrutura).
+- **Rigor Matemático e Formalização:** Todo apoio precisa de protocolo formal sempre que envolver atuação técnica, abertura de telas ou sistemas. A volumetria descrita no texto deve somar exatamente o total das tabelas categorizadas.
+- Tipos de apoio mais frequentes e tempo médio de resposta.
+- Oportunidades de automação ou capacitação para redução de dependência do TI.
 
-   - Disponibilidade dos sistemas críticos (Voalle, Flashman, servidores, telefonia, links).
-   - Execução e validação de backups (sucessos × falhas).
-   - Capacidade de armazenamento, memória e processamento dos servidores (alertas de esgotamento).
-   - Ações de modernização (cluster, SSDs, migração de VMs, cabeamento estruturado).
-   - Atualizações de segurança e vulnerabilidades identificadas.
-8. **Pontos de Atenção e Próximas Ações:**
+### 7. Infraestrutura e Sistemas Críticos
+- **Disponibilidade dos Sistemas Críticos (Acabou o "achismo" de 99,8% ou 100%):**
+  - Caso não haja ferramenta de monitoramento externo medindo o tempo real de atividade/queda, declarar expressamente **"Sem indisponibilidade de rede registrada"**.
+  - Falhas de aplicação, instabilidades funcionais ou quedas de sessão (ex.: bug de sessão Voalle) **não devem ser calculadas como percentual de indisponibilidade**, mas sim registradas à parte como **Ocorrências Operacionais de Sistemas**, com severidade e impacto.
+- **Execução e Validação de Backups (Rigor de Governança):**
+  - Apresentar o quadrante mandatório:
+    1. Quantidade de VMs e Containers (CTs) cadastrados na rotina diária;
+    2. Total de jobs executados na semana vs. total de falhas registradas;
+    3. Relação das VMs refeitas manualmente e causa da falha pontual (ex.: instabilidade transitória de link);
+    4. Data e resultado do último teste prático de restauração (Disaster Recovery).
+- Ações de modernização e manutenção preventiva (servidores, nobreaks senoidais, cabeamento).
+- Atualizações de segurança e vulnerabilidades identificadas (integrar dados de `2.1.others/` quando aplicável).
 
-   - Riscos tecnológicos para a operação.
-   - Necessidades de investimento ou aquisição de equipamentos/licenças.
-   - Ações planejadas para a semana seguinte.
+### 8. Pontos de Atenção e Próximas Ações
+- Riscos tecnológicos para a operação e segurança da informação (LGPD, retenção de dados, senhas e portas).
+- Necessidades de investimento ou aquisição de equipamentos/licenças.
+- Ações planejadas para a semana seguinte com responsáveis e prazos alinhados.
 
 ---
 
 ## ⚖️ Regras Explícitas de Fidedignidade e Auditoria
 
 1. **Nunca inventar dados:** O relatório deve ser 100% baseado em fatos, números e evidências comprovadas.
-2. **Fontes Auditáveis:** Toda afirmação ou número citado deve ter sua origem rastreável (ex.: número do protocolo Voalle, ID de tarefa, hash de commit no repositório `autotickets-v2`, data e hora da mensagem no WhatsApp).
-3. **Ausência Justificada:** É permitido não preencher conteúdo em um tópico obrigatório caso não tenham ocorrido demandas compatíveis na semana, desde que acompanhado de justificativa formal clara.
-4. **Sem Distorções:** Não alterar o sentido original das informações, manutenções ou incidentes relatados pelas equipes.
+2. **Fontes Auditáveis:** Toda afirmação ou número citado deve ter sua origem rastreável (ex.: número do protocolo Voalle, ID de tarefa, hash de commit no repositório `autotickets-v2`).
+3. **Consistência do Índice:** Toda seção listada no Índice Geral de Navegação DEVE existir exatamente com o mesmo título e âncora funcional no corpo do texto.
+4. **Ausência Justificada:** É permitido não preencher conteúdo em um subtópico caso não tenham ocorrido demandas compatíveis na semana, desde que acompanhado de justificativa formal clara.
+5. **Sem Distorções:** Não alterar o sentido original das informações, manutenções ou incidentes relatados pelas equipes.
 
 ---
 
-## ⏰ Prazos e Convenção de Nomes
+## ⏰ Prazos e Convenção de Datas e Nomes
 
-- **Período de Referência:** Segunda-feira a Domingo.
-- **Padrão de Datas em Arquivos:** `YYYY-MM-DD_YYYY-MM-DD` (ex.: `2026-09-07_2026-09-13`).
+- **Período Oficial da Diretoria:** **Domingo a Sábado** (`YYYY-MM-DD` a `YYYY-MM-DD`).
+- **Período Operacional Efetivo do TI:** **Segunda a Sexta** (expediente útil de trabalho do setor).
+- **Cabeçalho Institucional do Relatório:**
+  - *Período Oficial:* `DD/MM/AAAA a DD/MM/AAAA (Semana XX / AAAA)`
+  - *Período Operacional Efetivo do TI:* `DD/MM/AAAA a DD/MM/AAAA (Segunda a Sexta)`
+- **Padrão de Pastas e Arquivos:** `[Data_Inicio_Domingo]_[Data_Fim_Sabado]` (ex.: `2026-10-04_2026-10-10`).
 - **Prazo Limite de Entrega:** Toda segunda-feira até as 14h.
 
 ---
@@ -222,5 +268,6 @@ Cada relatório (individual ou consolidado) deve respeitar a estrutura oficial:
 ## 🔄 Controle de Versão e Commits Obrigatórios (Git)
 
 - **Regra Fundamental:** **TODA E QUALQUER ALTERAÇÃO** realizada no repositório (atualização de dados, novos relatórios em `0.individual_report/` ou `4.weekly_reports/`, inclusão de READMEs de harness ou alterações no `GEMINI.md`) **DEVE SER OBRIGATORIAMENTE COMMITADA NO GIT**.
-- **Padrão de Mensagens de Commit:** Devem ser descritivas e claras, utilizando boas práticas (ex.: `docs: atualiza GEMINI.md com novas fontes e harness`, `feat: gera relatorio individual liomar 2026-09-07 a 2026-09-13`).
+- **Padrão de Mensagens de Commit:** Devem ser descritivas e claras, utilizando boas práticas (ex.: `docs: atualiza GEMINI.md com novas fontes e harness`, `feat: gera relatorio individual liomar 2026-10-04 a 2026-10-10`).
 - **Automação:** A IA deve executar os commits no repositório imediatamente após concluir as modificações.
+
