@@ -5,7 +5,7 @@ Mascara CPFs (LGPD) em arquivos de texto antes de versionar exportações brutas
 Formato aplicado: AAA.BBB.CCC-DD -> ***.BBB.CCC-**
 
 Uso:
-    python3 scripts/mascarar_dados.py 1.voalle/david/David-2026-10-11_2026-10-17.html 2.autotickets/**/*.csv
+    python3 scripts/mascarar_dados.py semanas/2026-10-11_2026-10-17/fontes/voalle/* semanas/2026-10-11_2026-10-17/fontes/autotickets/*/*
 
 PDFs não são alterados: para PDFs, gere a partir do HTML/CSV já mascarado.
 """

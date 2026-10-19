@@ -1,67 +1,67 @@
-# 📊 Repositório de Relatórios Semanais do Setor de TI
+# 📊 Relatórios Semanais do Setor de TI — Ten Internet
 
-Este repositório centraliza o processo de governança, coleta de métricas, consolidação de dados e geração automatizada dos relatórios semanais de desempenho do **Setor de Tecnologia da Informação** da **Ten Soluções e Serviços LTDA (Ten Provedor de Internet)**.
+Repositório do processo de coleta, consolidação e geração dos relatórios semanais do **Setor de TI** da **Ten Soluções e Serviços LTDA (Ten Provedor de Internet)**, entregues toda segunda-feira até as 14h ao Coordenador de TI (**Isvi Neemias**) para a Dashboard Executiva da Direção.
 
-Os relatórios alimentam semanalmente a Dashboard Executiva apresentada pelo Coordenador de TI (**Isvi Neemias**) à Direção da empresa.
-
----
-
-## 👥 Equipe do Setor de TI
-
-* **Liomar Antonio de Oliveira:** Analista de TI Sênior (Responsável pelo AutoTickets v2, Arquitetura e Consolidação dos Relatórios) — ID #107184
-* **Isac Costa Silva:** Assistente de TI Pleno (Atendimento N2, Infraestrutura, Telefonia ZEUS) — ID #94562
-* **David Brasil Fernandes:** Auxiliar de TI Junior (Suporte Interno, Operações Presenciais, Hardware, SIEM Wazuh) — ID #116367
+**Equipe:** Liomar Antonio de Oliveira (Analista Sr — consolidação e AutoTickets) · Isac Costa Silva (Assistente Pl) · David Brasil Fernandes (Auxiliar Jr).
 
 ---
 
-## 📁 Arquitetura do Repositório
+## 🗓️ Rotina semanal
 
-```text
-reports_ti/
-├── GEMINI.md                                  # Contexto mestre, diretrizes institucionais e regras de governança (Antigravity)
-├── CLAUDE.md                                  # Ponte para o Claude Code (importa GEMINI.md e PARAMETROS_SEMANA.md)
-├── PARAMETROS_SEMANA.md                       # ÚNICO arquivo editado toda semana (datas e focos)
-├── PROMPT.md                                  # Especificação permanente do fluxo e da estrutura do relatório
-├── PONTOS_A_MELHORAR.md                       # Lições aprendidas, calibrações de métricas e alinhamentos
-├── modelo_coordenador/                        # Padrão visual e modelo oficial de referência
-├── 0.individual_report/                       # Relatórios individuais por membro da equipe
-│   ├── liomar/                                # Relatórios semanais de Liomar Oliveira (.md, .html, .pdf)
-│   ├── isac/                                  # Relatórios semanais de Isac Costa Silva
-│   └── david/                                 # Relatórios semanais de David Brasil Fernandes
-├── 1.voalle/                                  # Dados brutos e exportações do ERP Voalle por colaborador
-│   ├── liomar/                                # Exportações de Liomar (.html, .pdf, .csv)
-│   ├── isac/                                  # Exportações de Isac (.html, .pdf, .csv)
-│   └── david/                                 # Exportações de David (.html, .pdf, .csv)
-├── 2.autotickets/                             # Relatórios analíticos e métricas geradas pelo AutoTickets v2
-│   ├── colaborador_x_ticket/                  # Análise de produtividade e tickets por colaborador
-│   ├── fullcam_automacao_inadimplencia/       # Suspensões e reativações automáticas Fullcam
-│   ├── fullcam_automacao_instalacao_camera/   # Ativações e instalações de câmeras automatizadas
-│   ├── fullcam_lucros_prejuizos/              # Prevenção de perdas e impacto financeiro
-│   ├── problemas_recorrentes/                 # Padrões de incidentes e recorrências no parque
-│   ├── produtividade_geral/                   # Esforço técnico humano economizado pelas automações
-│   └── wifeed_daily_update_voucher/           # Atualizações diárias de vouchers e base de clientes WiFeed
-├── 2.1.others/                                # Estudos de segurança, perícias e investigações técnicas datadas
-│   └── [YYYY-MM-DD]/...                       # Relatórios técnicos pontuais de segurança/redes
-├── 4.weekly_reports/                          # Relatórios semanais consolidados do setor de TI
-│   └── [YYYY-MM-DD]_[YYYY-MM-DD]/             # Subdiretório por semana oficial (Dom a Sáb)
-│       ├── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].md
-│       ├── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].html
-│       └── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].pdf
-├── 5.feedback/                                # Pareceres e feedbacks semanais da Coordenação
-│   └── feedback_[YYYY-MM-DD]_[YYYY-MM-DD].md  # Apontamentos de Isvi Neemias
-└── miscelaneous/                              # FORA DO ESCOPO DOS RELATÓRIOS (não lido pela IA)
-    └── whatsapp_histories/                    # Apenas conhecimento: scripts e tutorial de extração do WhatsApp
+```bash
+# 1. Criar a pasta da semana (por padrão, a última semana Dom–Sáb completa)
+bash scripts/nova_semana.sh
+
+# 2. Editar semanas/<semana>/PARAMETROS.md (focos, feriados)
+
+# 3. Copiar as entradas
+#    semanas/<semana>/fontes/voalle/liomar.html | isac.pdf | david.csv
+#    semanas/<semana>/fontes/autotickets/<modulo>/...
+#    semanas/<semana>/individuais/<pessoa>.*   (se os colegas enviarem)
+
+# 4. Mascarar CPFs das exportações brutas
+python3 scripts/mascarar_dados.py semanas/<semana>/fontes/voalle/* semanas/<semana>/fontes/autotickets/*/*
+
+# 5. Conferir as entradas
+python3 scripts/checar_entradas.py
+
+# 6. Pedir à IA (Antigravity ou Claude Code): "Execute o PROMPT.md"
+
+# 7. Conferir índice e gerar PDFs (a IA também faz isso no fim do fluxo)
+python3 scripts/validar_indice.py semanas/<semana>/report_ti_*.{md,html}
+bash scripts/renderizar_pdf.sh semanas/<semana>/report_ti_<semana>.html
+
+# 8. Quando chegar o parecer: salvar em semanas/<semana>/feedback.md
 ```
 
 ---
 
-## 🔄 Fluxo de Geração do Relatório Semanal
+## 📁 Estrutura
 
-A geração semanal é orquestrada pelo [PROMPT.md](PROMPT.md) em duas etapas com **Gatekeeper**:
+```text
+reports_ti/
+├── AGENTS.md            # Regras permanentes para as IAs (fonte única)
+├── GEMINI.md            # → link para AGENTS.md (Antigravity)
+├── CLAUDE.md            # Importa AGENTS.md (Claude Code)
+├── PROMPT.md            # Comando de execução semanal
+├── docs/                # Fluxo, especificação, métricas, fontes, glossário, lições, referências
+├── semanas/             # Uma pasta por semana: PARAMETROS.md, fontes/, individuais/, report_ti_*, feedback.md
+├── templates/           # report.css (visual oficial) e report.html (esqueleto)
+├── scripts/             # nova_semana, checar_entradas, mascarar_dados, validar_indice, renderizar_pdf
+├── .githooks/           # pre-commit contra CPF sem máscara, chaves e dados do WhatsApp
+└── miscelaneous/        # Fora do escopo: conhecimento de extração do WhatsApp
+```
 
-1. **Parâmetros da Semana:** Definir `Data Inicial` (domingo), `Data Final` (sábado) e os focos em `PARAMETROS_SEMANA.md`.
-2. **Fase 0 (Validação de Pré-requisitos):** A IA valida a existência das exportações ativas em `1.voalle/`, relatórios analíticos em `2.autotickets/` e dados locais do `/home/liomarti/dev/autotickets-v2`.
-3. **Etapa 1 (Relatório Individual de Liomar):** Se ainda não existir relatório em `0.individual_report/liomar/`, a IA gera os arquivos `.md`, `.html` e `.pdf`.
-4. **Fase 1.5 (Checagem dos Colegas):** Se já existirem relatórios para Isac e David em `0.individual_report/`, eles são integrados diretamente; caso contrário, a IA executa o fallback nos dados do Voalle.
-5. **Etapa 2 (Consolidação Semanal):** Geração do relatório executivo denso em `4.weekly_reports/[periodo]/`, abrangendo a seção de **Fatos Notáveis e Anomalias**, Gestão de Demandas (Balanço da Fila), Projetos de Rede, o Macro-Tópico 4 dedicado à **Plataforma e Automações AutoTickets** (Engenharia de Software, WiFeed com gráfico SVG, Auditoria Financeira Fullcam na íntegra e Esteira Operacional), Incidentes, Suporte Interno/Campo e Infraestrutura Crítica.
-6. **Controle de Versão (Git):** Toda alteração realizada no repositório é obrigatoriamente commitada com mensagem descritiva.
+Detalhes de cada pasta e regra: [AGENTS.md](AGENTS.md).
+
+---
+
+## ⚙️ Configuração (uma vez por clone)
+
+```bash
+git config core.hooksPath .githooks   # ativa o bloqueio de dados sensíveis
+```
+
+Requisitos: Python 3, Google Chrome/Chromium (PDF) e `pdftotext` (opcional, checagem de CPF em PDFs pelo hook).
+
+> ⚠️ O histórico do Git foi reescrito em 2026-10-19 para remover dados sensíveis. Clones anteriores a essa data devem ser apagados e clonados de novo — não faça pull/merge deles.

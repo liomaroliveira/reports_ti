@@ -1,0 +1,65 @@
+# 🖥️ Fontes de Dados
+
+Todas as entradas de uma semana ficam em `semanas/<semana>/fontes/`. O que não estiver lá (ou no repositório `autotickets-v2`) não é fonte do relatório.
+
+| Fonte | Onde colocar | Alimenta |
+| :--- | :--- | :--- |
+| Voalle (exportação por colaborador) | `fontes/voalle/<pessoa>.<html\|pdf\|csv>` | Tópicos 1, 2, 5, 6, 7 (narrativas, protocolos, horas) |
+| AutoTickets — colaborador × ticket | `fontes/autotickets/colaborador_x_ticket/` | Tópico 1 (balanço da fila) e 2 (TMA, TMR, produtividade) |
+| AutoTickets — acompanhamento de protocolos | `fontes/autotickets/acompanhamento_protocolos/` | Tópico 1 (pendentes, parados 15+ dias, andamento) |
+| AutoTickets — WiFeed | `fontes/autotickets/wifeed_daily_update_voucher/` | 4.2 (na íntegra, com SVG do HTML) |
+| AutoTickets — Fullcam financeiro | `fontes/autotickets/fullcam_lucros_prejuizos/` | 4.3 (tabela completa) |
+| AutoTickets — Fullcam inadimplência | `fontes/autotickets/fullcam_automacao_inadimplencia/` | 4.4 |
+| AutoTickets — Fullcam instalação | `fontes/autotickets/fullcam_automacao_instalacao_camera/` | 4.4 |
+| AutoTickets — problemas recorrentes | `fontes/autotickets/problemas_recorrentes/` | 5 e 8 |
+| AutoTickets — produtividade geral | `fontes/autotickets/produtividade_geral/` | 4.5 |
+| AutoTickets — desenvolvimento | commits em `/home/liomarti/dev/autotickets-v2` ou `fontes/autotickets/desenvolvimento/` | 4.1 |
+| Investigações / segurança | `fontes/investigacoes/AAAA-MM-DD_<tema>/` | 3, 8.3, 9.1 |
+| Individuais dos colegas | `individuais/<pessoa>.<ext>` | Tópico 2 e consolidação |
+
+> Exportações brutas: rodar `python3 scripts/mascarar_dados.py <arquivos>` antes do commit (CPF de clientes).
+
+---
+
+## 1. ERP Voalle
+
+ERP principal (Atendimento, Service Desk, O.S., Projetos, Infraestrutura e Apontamentos). Extrair de cada exportação:
+
+- **Protocolo e título** da tarefa;
+- **Tipo de solicitação:** (TI) Sol. Interna, (NOC), (N2-TI), Manutenção Programada, Infraestrutura etc. — ver `docs/classificacao_protocolos.md`;
+- **Datas e horários** (lançamento, início, fim) e **horas trabalhadas (HT)**;
+- **Progresso (%)**;
+- **Relato técnico:** solução aplicada, peças substituídas (SSDs, fontes, switches, ONTs Datacom), configurações de rede (IPs, VLANs, interfaces);
+- **Confronto com o Pontomais:** somatório de HT × ponto real, justificando divergências (`docs/regras_metricas.md` §3).
+
+## 2. AutoTickets
+
+Plataforma de automação desenvolvida e mantida por Liomar Oliveira. Repositório local: `/home/liomarti/dev/autotickets-v2`.
+
+**Mineração de commits** (quando não houver relatório em `fontes/autotickets/desenvolvimento/`):
+
+```bash
+git -C /home/liomarti/dev/autotickets-v2 log --since="AAAA-MM-DD 00:00:00" --until="AAAA-MM-DD 23:59:59" \
+  --pretty=format:"%h - %an, %ad : %s" --date=iso --shortstat
+```
+
+- **Arquivos multi-formato:** mesmo nome base em `.md`, `.html`, `.csv`, `.pdf` = mesmo relatório. Os nomes trazem a **data de geração**, não o período: confirmar dentro do arquivo que o período coberto é a semana corrente.
+- **colaborador_x_ticket** é gerado a partir do banco do Voalle: é a fonte métrica primária; `fontes/voalle/` complementa com o qualitativo.
+- **WiFeed:** contexto institucional do Captive Portal em `docs/referencias/wifeed_contexto.md`.
+- Frentes do AutoTickets: ROI de automações (horas humanas economizadas), integrações de rede/NOC (telemetria óptica, RADIUS, CGNAT, ping), módulo de atendimento (modais do Voalle, busca de clientes, omnichannel), arquitetura (Local-First com Duplo Cursor Monotônico, orquestrador multi-provedor de IA, servidor MCP `laravel/mcp`, design Glassmorphism).
+
+## 3. Investigações especiais e segurança
+
+Estudos pontuais, testes de intrusão, mapeamento de vulnerabilidades e perícias, em `fontes/investigacoes/AAAA-MM-DD_<tema>/` (data de conclusão). Quando houver na semana:
+
+1. **Tópico 3:** registrar o estudo como entrega técnica;
+2. **Tópico 8.3:** resumir testes executados e superfície avaliada;
+3. **Tópico 9.1:** riscos, falhas de controle e plano de mitigação.
+
+## 4. Infraestrutura e plataformas (contexto)
+
+Flashman (TR-069), Native PBX / ZEUS (telefonia), Made4NOC / Grafana, FullCam, MailCow, servidores Datacom (SV01), Dell PowerEdge (R550, R910), SuperMicro, MikroTik e switches gerenciáveis.
+
+## 5. Fora do escopo
+
+- **WhatsApp** (`miscelaneous/whatsapp_histories/`): apenas conhecimento técnico guardado; não é fonte.
