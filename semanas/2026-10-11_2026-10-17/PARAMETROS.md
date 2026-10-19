@@ -21,9 +21,15 @@
 
 ## 📥 Entradas esperadas
 
-- `fontes/voalle/`: liomar.*, isac.*, david.* — **pendente**
-- `fontes/autotickets/<modulo>/`: relatórios cobrindo 2026-10-11 a 2026-10-17 — **pendente** (já existe `acompanhamento_protocolos/`, gerado em 2026-10-16: conferir se cobre a semana inteira ou gerar de novo)
-- `fontes/investigacoes/`: estudos datados da semana (se houver)
-- `individuais/`: relatórios dos colegas (se enviados)
+- [ ] `fontes/voalle/`: `liomar.*`, `isac.*`, `david.*`
+- [ ] `fontes/autotickets/colaborador_x_ticket/`
+- [ ] `fontes/autotickets/wifeed_daily_update_voucher/` (`.md` + `.html` com o SVG)
+- [ ] `fontes/autotickets/fullcam_lucros_prejuizos/`
+- [ ] `fontes/autotickets/fullcam_automacao_inadimplencia/`
+- [ ] `fontes/autotickets/fullcam_automacao_instalacao_camera/`
+- [ ] `fontes/autotickets/acompanhamento_protocolos/`: os CSVs atuais foram gerados em 2026-10-16 — conferir se cobrem a semana inteira; se não, gerar de novo
+- [ ] `fontes/investigacoes/`: estudos datados da semana (se houver)
+- [ ] `individuais/`: relatórios de Isac e David (se enviarem; senão, fallback)
+- [ ] Decidir o feriado de 12/10 (acima)
 
 Depois de copiar: `python3 scripts/mascarar_dados.py <arquivos>` e `python3 scripts/checar_entradas.py`.

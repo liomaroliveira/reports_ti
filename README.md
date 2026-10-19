@@ -56,12 +56,21 @@ Detalhes de cada pasta e regra: [AGENTS.md](AGENTS.md).
 
 ---
 
-## ⚙️ Configuração (uma vez por clone)
+## ⚙️ Configuração de um novo PC
 
 ```bash
-git config core.hooksPath .githooks   # ativa o bloqueio de dados sensíveis
+git clone https://github.com/liomaroliveira/reports_ti.git ~/dev/reports_ti
+cd ~/dev/reports_ti
+git config core.hooksPath .githooks          # ativa o bloqueio de dados sensíveis
+
+# AutoTickets no caminho esperado por scripts/checar_entradas.py e docs/fontes_de_dados.md
+git clone <url-do-autotickets-v2> /home/liomarti/dev/autotickets-v2
+
+python3 scripts/checar_entradas.py           # teste: deve exibir a tabela da semana corrente
 ```
 
-Requisitos: Python 3, Google Chrome/Chromium (PDF) e `pdftotext` (opcional, checagem de CPF em PDFs pelo hook).
+- **Requisitos:** Python 3, Google Chrome/Chromium (`scripts/renderizar_pdf.sh`) e `pdftotext`/poppler (opcional: checagem de CPF em PDFs pelo hook).
+- **Antigravity:** `GEMINI.md` é um link simbólico para `AGENTS.md`. Se o Antigravity não carregar as regras, substitua o link por um `GEMINI.md` com a linha `Leia e siga integralmente o AGENTS.md.`
+- **Caminho diferente para o AutoTickets:** ajuste `AUTOTICKETS_REPO` em `scripts/checar_entradas.py` e o caminho em `docs/fontes_de_dados.md`.
 
-> ⚠️ O histórico do Git foi reescrito em 2026-10-19 para remover dados sensíveis. Clones anteriores a essa data devem ser apagados e clonados de novo — não faça pull/merge deles.
+> ⚠️ O histórico foi reescrito e o repositório do GitHub recriado em 2026-10-19 para remover dados sensíveis. Clones anteriores a essa data devem ser apagados; nunca faça push, pull ou merge a partir deles.

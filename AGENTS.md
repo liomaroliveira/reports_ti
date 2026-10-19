@@ -2,9 +2,8 @@
 
 > [!IMPORTANT]
 > **Fonte única de regras** para todas as IAs. `GEMINI.md` (Antigravity) é um link simbólico para este arquivo e `CLAUDE.md` (Claude Code) o importa. Edite **somente** este arquivo.
-
-> [!WARNING]
-> **Trabalho em andamento:** leia [`CONTINUIDADE.md`](CONTINUIDADE.md) no início da sessão — lista o que já foi feito, as decisões tomadas e as pendências. Quando estiver tudo concluído, apague o arquivo e este aviso.
+>
+> **Ao iniciar uma sessão:** leia o `PARAMETROS.md` da semana corrente (status e pendências da semana) e `docs/pontos_a_melhorar.md` (backlog do harness e problemas conhecidos).
 
 ## 🏢 Contexto
 
@@ -59,7 +58,7 @@ reports_ti/
 
 **Semana corrente** = a pasta mais recente em `semanas/` (ordem alfabética). Leia sempre o `PARAMETROS.md` dela antes de qualquer geração.
 
-> As duas primeiras semanas (`2026-09-01_2026-09-13` e `2026-09-28_2026-10-04`) são legadas e não seguem o padrão Domingo a Sábado; arquivos com período diferente do da pasta carregam o período original no nome (ex.: `isac_2026-09-28_2026-10-02.pdf`).
+> As duas primeiras semanas (`2026-09-01_2026-09-13` e `2026-09-28_2026-10-04`) são legadas e não seguem o padrão Domingo a Sábado; arquivos com período diferente do da pasta carregam o período original no nome (ex.: `isac_2026-09-28_2026-10-02.pdf`). Relatórios já entregues não são editados (exceto para mascarar dados pessoais).
 
 ---
 
@@ -95,4 +94,4 @@ Siga `docs/fluxo_geracao.md` (Fase 0 com `scripts/checar_entradas.py`, Etapa 1 i
 
 - Toda alteração no repositório deve ser commitada, com mensagens descritivas (ex.: `feat(report): gera relatorio semana 42 (2026-10-11 a 2026-10-17)`).
 - Ativar o hook uma vez por clone: `git config core.hooksPath .githooks`. Não usar `--no-verify` para contornar bloqueio de dados sensíveis.
-- O histórico foi reescrito em 2026-10-19 para remover dados sensíveis: clones anteriores a essa data devem ser descartados (não fazer merge/pull deles).
+- O histórico foi reescrito e o repositório do GitHub recriado em 2026-10-19 para remover dados sensíveis: clones anteriores a essa data devem ser descartados (nunca fazer push, pull ou merge a partir deles).
