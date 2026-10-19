@@ -3,6 +3,9 @@
 > [!IMPORTANT]
 > **Fonte única de regras** para todas as IAs. `GEMINI.md` (Antigravity) é um link simbólico para este arquivo e `CLAUDE.md` (Claude Code) o importa. Edite **somente** este arquivo.
 
+> [!WARNING]
+> **Trabalho em andamento:** leia [`CONTINUIDADE.md`](CONTINUIDADE.md) no início da sessão — lista o que já foi feito, as decisões tomadas e as pendências. Quando estiver tudo concluído, apague o arquivo e este aviso.
+
 ## 🏢 Contexto
 
 - **Empresa:** Ten Soluções e Serviços LTDA. (Ten Provedor de Internet) — https://teninternet.com.br/
