@@ -107,6 +107,9 @@ O relatório deve conter um **Índice Completo** no início, com links internos 
 #### Resumo Executivo
 Visão geral analítica da semana: síntese das principais entregas de engenharia de software e infraestrutura, quantitativo global de chamados e suportes a técnicos, principais conquistas e prioridades operacionais para a próxima semana.
 
+- **Evolução em relação à semana anterior:** statcards ou tabela curta com os indicadores-chave da semana ao lado dos valores da semana anterior (fonte: `semanas/<anterior>/report_ti_*.md`), sempre rotulados como "semana anterior".
+- **Acompanhamento das observações da semana anterior:** quando existir `semanas/<anterior>/feedback.md`, incluir no fim do Resumo Executivo uma tabela com **todas** as observações (do Isvi e do Liomar): *Observação · Autor · Como foi tratada · Onde (tópico) · Status*. Esta tabela fica dentro do Resumo Executivo e **não** ganha entrada própria no índice.
+
 #### ⭐ Fatos Notáveis e Anomalias da Semana
 Seção obrigatória dedicada ao aprofundamento de ocorrências incomuns. Para cada fato notável identificado no período (desvio de planejamento, atraso de frota, falha física atípica, contestação indevida de cliente ou incidente de segurança):
 - **Ocorrência e Ativos Envolvidos:** O que aconteceu, data e equipamentos/sistemas impactados.

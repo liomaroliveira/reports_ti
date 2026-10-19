@@ -3,7 +3,7 @@
 Fase 0 do fluxo (docs/fluxo_geracao.md): checklist das entradas de uma semana.
 
 Uso:
-    python3 scripts/checar_entradas.py                      # semana corrente (pasta mais recente em semanas/)
+    python3 scripts/checar_entradas.py                      # semana a gerar (última semana encerrada em semanas/)
     python3 scripts/checar_entradas.py semanas/2026-10-11_2026-10-17
 
 Imprime uma tabela Markdown com o status de cada fonte. Sai com código 1 se faltar fonte essencial.
@@ -13,6 +13,7 @@ import os
 import re
 import subprocess
 import sys
+from datetime import date
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUTOTICKETS_REPO = "/home/liomarti/dev/autotickets-v2"
@@ -37,10 +38,39 @@ def arquivos(pasta, prefixo=""):
     return sorted(f for f in os.listdir(pasta) if not f.startswith(".") and f.startswith(prefixo))
 
 
+def individuais_pedidos(parametros):
+    """Lê o campo 'Relatórios individuais a gerar' do PARAMETROS.md."""
+    if not os.path.isfile(parametros):
+        return set()
+    with open(parametros, encoding="utf-8") as f:
+        for linha in f:
+            if "Relatórios individuais a gerar" in linha:
+                valor = re.sub(r"<!--.*?-->", "", linha.split(":", 1)[-1]).lower()
+                return {p for p in PESSOAS if p in valor}
+    return set()
+
+
+def feedback_preenchido(path):
+    """True se o feedback.md tem algum conteúdo além de títulos, comentários e itens vazios."""
+    if not os.path.isfile(path):
+        return False
+    with open(path, encoding="utf-8") as f:
+        texto = re.sub(r"<!--.*?-->", "", f.read(), flags=re.S)
+    for linha in texto.splitlines():
+        linha = linha.strip()
+        if linha and not linha.startswith("#") and linha not in ("-", "*"):
+            return True
+    return False
+
+
 def semana_corrente():
+    """Semana a gerar: a mais recente cujo sábado já passou (ignora pastas de semanas futuras)."""
     base = os.path.join(RAIZ, "semanas")
     semanas = sorted(d for d in os.listdir(base) if PERIODO.match(d))
-    return os.path.join(base, semanas[-1]), semanas
+    hoje = date.today().isoformat()
+    encerradas = [d for d in semanas if PERIODO.match(d).group(2) < hoje]
+    escolhida = encerradas[-1] if encerradas else semanas[-1]
+    return os.path.join(base, escolhida), semanas
 
 
 def commits_autotickets(inicio, fim):
@@ -95,15 +125,26 @@ def main():
     inv = arquivos(os.path.join(pasta, "fontes", "investigacoes"))
     add("Investigações", bool(inv), ", ".join(inv) or "nenhuma na semana", essencial=False)
 
+    pedidos = individuais_pedidos(os.path.join(pasta, "PARAMETROS.md"))
     for p in PESSOAS:
         fs = arquivos(os.path.join(pasta, "individuais"), p)
-        add(f"Individual — {p}", bool(fs), ", ".join(fs) or "ausente (gerar ou fallback)", essencial=False)
+        detalhe = ", ".join(fs) if fs else "não existe (usado só como fonte complementar)"
+        if p in pedidos:
+            detalhe += " — GERAR (pedido em PARAMETROS.md)"
+        add(f"Individual — {p}", bool(fs), detalhe, essencial=False)
 
     anteriores = [s for s in semanas if s < nome]
     if anteriores:
-        fb = os.path.join(RAIZ, "semanas", anteriores[-1], "feedback.md")
-        add("Feedback da semana anterior", os.path.isfile(fb),
-            f"semanas/{anteriores[-1]}/feedback.md" if os.path.isfile(fb) else f"sem feedback em semanas/{anteriores[-1]}/",
+        ant = os.path.join(RAIZ, "semanas", anteriores[-1])
+        rel = arquivos(ant, "report_ti_")
+        rel_md = [f for f in rel if f.endswith(".md")]
+        add("Relatório da semana anterior", bool(rel_md),
+            f"semanas/{anteriores[-1]}/{rel_md[0]}" if rel_md else f"sem report_ti_*.md em semanas/{anteriores[-1]}/",
+            essencial=False)
+        fb = os.path.join(ant, "feedback.md")
+        preenchido = feedback_preenchido(fb)
+        add("Feedback/observações da semana anterior", preenchido,
+            f"semanas/{anteriores[-1]}/feedback.md" + ("" if preenchido else " (vazio ou inexistente)"),
             essencial=False)
 
     sem_mascara = []

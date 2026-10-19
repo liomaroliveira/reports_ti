@@ -17,7 +17,10 @@ bash scripts/nova_semana.sh
 # 3. Copiar as entradas
 #    semanas/<semana>/fontes/voalle/liomar.html | isac.pdf | david.csv
 #    semanas/<semana>/fontes/autotickets/<modulo>/...
-#    semanas/<semana>/individuais/<pessoa>.*   (se os colegas enviarem)
+#    semanas/<semana>/individuais/<pessoa>.*   (opcional: se os colegas enviarem)
+#
+#    (Opcional) Observações suas e do Isvi sobre o relatório ANTERIOR:
+#    cp templates/feedback.md semanas/<semana-anterior>/feedback.md   # e preencher
 
 # 4. Mascarar CPFs das exportações brutas
 python3 scripts/mascarar_dados.py semanas/<semana>/fontes/voalle/* semanas/<semana>/fontes/autotickets/*/*
@@ -26,12 +29,14 @@ python3 scripts/mascarar_dados.py semanas/<semana>/fontes/voalle/* semanas/<sema
 python3 scripts/checar_entradas.py
 
 # 6. Pedir à IA (Antigravity ou Claude Code): "Execute o PROMPT.md"
+#    → gera só o consolidado. Individuais: "Execute o PROMPT.md e gere também os individuais de Liomar e Isac"
+#    (outros exemplos no fim do PROMPT.md)
 
 # 7. Conferir índice e gerar PDFs (a IA também faz isso no fim do fluxo)
 python3 scripts/validar_indice.py semanas/<semana>/report_ti_*.{md,html}
 bash scripts/renderizar_pdf.sh semanas/<semana>/report_ti_<semana>.html
 
-# 8. Quando chegar o parecer: salvar em semanas/<semana>/feedback.md
+# 8. Quando chegar o parecer do Isvi: registrar em semanas/<semana>/feedback.md (template: templates/feedback.md)
 ```
 
 ---

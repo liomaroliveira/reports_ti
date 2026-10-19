@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > **Fonte única de regras** para todas as IAs. `GEMINI.md` (Antigravity) é um link simbólico para este arquivo e `CLAUDE.md` (Claude Code) o importa. Edite **somente** este arquivo.
 >
-> **Ao iniciar uma sessão:** leia o `PARAMETROS.md` da semana corrente (status e pendências da semana) e `docs/pontos_a_melhorar.md` (backlog do harness e problemas conhecidos).
+> **Ao iniciar uma sessão:** leia o `PARAMETROS.md` da semana a gerar (status e pendências da semana) e `docs/pontos_a_melhorar.md` (backlog do harness e problemas conhecidos).
 
 ## 🏢 Contexto
 
@@ -47,16 +47,16 @@ reports_ti/
 │       │   ├── voalle/               # liomar.html | isac.pdf | david.csv ...
 │       │   ├── autotickets/<modulo>/ # relatórios gerados pelo AutoTickets
 │       │   └── investigacoes/        # AAAA-MM-DD_<tema>/ (segurança, perícias)
-│       ├── individuais/          # liomar.* | isac.* | david.*  (md/html/pdf)
+│       ├── individuais/          # liomar.* | isac.* | david.* — só quando pedido, ou enviados pelos colegas
 │       ├── report_ti_AAAA-MM-DD_AAAA-MM-DD.{md,html,pdf}   # SAÍDA consolidada
-│       └── feedback.md           # Parecer da Coordenação sobre o relatório desta semana
-├── templates/                # report.css (visual oficial) e report.html (esqueleto)
+│       └── feedback.md           # Parecer do Isvi + observações do Liomar sobre o relatório desta semana (templates/feedback.md)
+├── templates/                # report.css (visual oficial), report.html (esqueleto) e feedback.md (observações)
 ├── scripts/                  # nova_semana.sh, checar_entradas.py, renderizar_pdf.sh, validar_indice.py, mascarar_dados.py
 ├── .githooks/pre-commit      # Bloqueia CPF sem máscara, chaves e dados do WhatsApp
 └── miscelaneous/             # FORA DO ESCOPO — não ler (conhecimento de extração do WhatsApp)
 ```
 
-**Semana corrente** = a pasta mais recente em `semanas/` (ordem alfabética). Leia sempre o `PARAMETROS.md` dela antes de qualquer geração.
+**Semana a gerar** = a pasta mais recente em `semanas/` cujo sábado já passou (pastas de semanas futuras são ignoradas), salvo se o usuário indicar outra. Leia sempre o `PARAMETROS.md` dela antes de qualquer geração.
 
 > As duas primeiras semanas (`2026-09-01_2026-09-13` e `2026-09-28_2026-10-04`) são legadas e não seguem o padrão Domingo a Sábado; arquivos com período diferente do da pasta carregam o período original no nome (ex.: `isac_2026-09-28_2026-10-02.pdf`). Relatórios já entregues não são editados (exceto para mascarar dados pessoais).
 
@@ -64,14 +64,16 @@ reports_ti/
 
 ## 🧭 Como gerar o relatório
 
-Siga `docs/fluxo_geracao.md` (Fase 0 com `scripts/checar_entradas.py`, Etapa 1 individual, Fase 1.5 colegas, Etapa 2 consolidado). Estrutura e visual em `docs/especificacao_relatorio.md`; métricas em `docs/regras_metricas.md`; fontes em `docs/fontes_de_dados.md`. Leia também `docs/licoes_aprendidas.md` e o `feedback.md` da semana anterior.
+Siga `docs/fluxo_geracao.md`: Fase 0 (`scripts/checar_entradas.py`) → Fase 1 (contexto da semana anterior: relatório consolidado e `feedback.md`) → relatório consolidado → individuais **somente se pedidos**. Estrutura e visual em `docs/especificacao_relatorio.md`; métricas em `docs/regras_metricas.md`; fontes em `docs/fontes_de_dados.md`; lições em `docs/licoes_aprendidas.md`.
+
+- **Padrão:** gerar **somente o relatório semanal consolidado**. Relatórios individuais apenas quando o usuário pedir no prompt ou em `PARAMETROS.md` ("Relatórios individuais a gerar").
 
 ---
 
 ## ⚖️ Regras Invioláveis
 
 1. **Nunca inventar dados.** Todo número e afirmação vem de evidência rastreável: protocolo Voalle (`#3183637`), hash de commit do `autotickets-v2`, ou caminho do relatório em `fontes/`.
-2. **Somente dados da semana corrente.** Nenhum valor de semanas anteriores pode ser reaproveitado. Se a fonte da semana não existir, registrar a ausência justificada.
+2. **Somente dados da semana corrente.** Nenhum valor de semanas anteriores pode ser reaproveitado como dado atual. Valores da semana anterior só aparecem como **comparação explícita** (rotulados "semana anterior", com a fonte). Se a fonte da semana não existir, registrar a ausência justificada.
 3. **Ausência justificada:** subtópico sem demanda compatível recebe justificativa formal — nunca é omitido nem preenchido com atividade simulada.
 4. **Sem distorções:** não alterar o sentido do que as equipes relataram.
 5. **Consistência do índice:** toda entrada do índice existe no corpo com o mesmo título e âncora funcional (`scripts/validar_indice.py`).

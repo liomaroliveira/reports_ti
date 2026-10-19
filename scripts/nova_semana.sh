@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Cria a pasta de uma semana (Domingo a Sábado) em semanas/ com PARAMETROS.md e subpastas.
+# Cria (ou completa) a pasta de uma semana (Domingo a Sábado) em semanas/ com PARAMETROS.md e subpastas.
+# Pode ser executado de novo sobre uma pasta existente: só cria o que falta e nunca sobrescreve o PARAMETROS.md.
 #
 # Uso:
 #   bash scripts/nova_semana.sh               # última semana completa (Dom–Sáb anterior a hoje)
@@ -24,13 +25,19 @@ semana=$(date -d "$segunda" +%V)
 ano=$(date -d "$segunda" +%G)
 
 pasta="semanas/${domingo}_${sabado}"
-if [ -e "$pasta" ]; then
-  echo "[ERRO] $pasta já existe." >&2
-  exit 1
-fi
+modulos="colaborador_x_ticket wifeed_daily_update_voucher fullcam_lucros_prejuizos fullcam_automacao_inadimplencia fullcam_automacao_instalacao_camera acompanhamento_protocolos"
 
-mkdir -p "$pasta"/fontes/{voalle,autotickets,investigacoes} "$pasta"/individuais
-touch "$pasta"/fontes/voalle/.gitkeep "$pasta"/fontes/autotickets/.gitkeep "$pasta"/fontes/investigacoes/.gitkeep "$pasta"/individuais/.gitkeep
+for d in fontes/voalle fontes/investigacoes individuais; do
+  mkdir -p "$pasta/$d" && touch "$pasta/$d/.gitkeep"
+done
+for m in $modulos; do
+  mkdir -p "$pasta/fontes/autotickets/$m" && touch "$pasta/fontes/autotickets/$m/.gitkeep"
+done
+
+if [ -f "$pasta/PARAMETROS.md" ]; then
+  echo "[OK] $pasta já existia: subpastas conferidas, PARAMETROS.md mantido."
+  exit 0
+fi
 
 cat > "$pasta/PARAMETROS.md" <<EOF
 # ⚙️ Parâmetros da Semana ${semana} / ${ano}
@@ -44,6 +51,7 @@ cat > "$pasta/PARAMETROS.md" <<EOF
 - **Semana do Ano:** Semana ${semana} / ${ano}
 - **Colaborador Principal (Responsável pela Consolidação):** Liomar Antonio de Oliveira
 - **Prazo de Entrega:** \`${prazo}\` (segunda-feira) até as 14h
+- **Relatórios individuais a gerar:** nenhum <!-- padrão: só o consolidado. Para gerar, liste: liomar, isac, david -->
 
 ## 📝 Instruções e Focos Específicos Desta Semana
 
@@ -57,7 +65,8 @@ cat > "$pasta/PARAMETROS.md" <<EOF
 - \`fontes/voalle/\`: liomar.*, isac.*, david.*
 - \`fontes/autotickets/<modulo>/\`: relatórios do AutoTickets cobrindo ${domingo} a ${sabado}
 - \`fontes/investigacoes/\`: estudos datados da semana (se houver)
-- \`individuais/\`: relatórios dos colegas (se enviados)
+- \`individuais/\`: relatórios dos colegas (se enviados; usados como fonte complementar)
+- Observações sobre o relatório anterior (opcional): \`semanas/<anterior>/feedback.md\` a partir de \`templates/feedback.md\`
 
 Depois de copiar: \`python3 scripts/mascarar_dados.py <arquivos>\` e \`python3 scripts/checar_entradas.py\`.
 EOF

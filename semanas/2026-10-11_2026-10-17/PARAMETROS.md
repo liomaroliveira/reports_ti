@@ -9,6 +9,7 @@
 - **Semana do Ano:** Semana 42 / 2026
 - **Colaborador Principal (Responsável pela Consolidação):** Liomar Antonio de Oliveira
 - **Prazo de Entrega:** `2026-10-19` (segunda-feira) até as 14h — **entrega adiada** (dados ainda não gerados)
+- **Relatórios individuais a gerar:** nenhum <!-- padrão: só o consolidado. Para gerar, liste: liomar, isac, david -->
 
 ## 📝 Instruções e Focos Específicos Desta Semana
 
@@ -27,9 +28,10 @@
 - [ ] `fontes/autotickets/fullcam_lucros_prejuizos/`
 - [ ] `fontes/autotickets/fullcam_automacao_inadimplencia/`
 - [ ] `fontes/autotickets/fullcam_automacao_instalacao_camera/`
-- [ ] `fontes/autotickets/acompanhamento_protocolos/`: os CSVs atuais foram gerados em 2026-10-16 — conferir se cobrem a semana inteira; se não, gerar de novo
+- [ ] `fontes/autotickets/acompanhamento_protocolos/` (os CSVs de 2026-10-16 foram removidos no commit `0de3892`: gerar de novo cobrindo a semana inteira)
 - [ ] `fontes/investigacoes/`: estudos datados da semana (se houver)
-- [ ] `individuais/`: relatórios de Isac e David (se enviarem; senão, fallback)
+- [ ] `individuais/`: relatórios que Isac e David enviarem (opcional; usados como fonte complementar)
+- [ ] *(Opcional)* Observações suas e do Isvi sobre o relatório da semana 41 em `semanas/2026-10-04_2026-10-10/feedback.md` (arquivo já criado a partir do template)
 - [ ] Decidir o feriado de 12/10 (acima)
 
 Depois de copiar: `python3 scripts/mascarar_dados.py <arquivos>` e `python3 scripts/checar_entradas.py`.

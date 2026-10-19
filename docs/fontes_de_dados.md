@@ -15,7 +15,9 @@ Todas as entradas de uma semana ficam em `semanas/<semana>/fontes/`. O que não 
 | AutoTickets — produtividade geral | `fontes/autotickets/produtividade_geral/` | 4.5 |
 | AutoTickets — desenvolvimento | commits em `/home/liomarti/dev/autotickets-v2` ou `fontes/autotickets/desenvolvimento/` | 4.1 |
 | Investigações / segurança | `fontes/investigacoes/AAAA-MM-DD_<tema>/` | 3, 8.3, 9.1 |
-| Individuais dos colegas | `individuais/<pessoa>.<ext>` | Tópico 2 e consolidação |
+| Individuais enviados pelos colegas (opcional) | `individuais/<pessoa>.<ext>` | Fonte complementar do Tópico 2 |
+| Relatório consolidado da semana anterior | `semanas/<anterior>/report_ti_*.md` | Continuidade (1.1, 1.2, 9.3) e comparação |
+| Feedback/observações da semana anterior | `semanas/<anterior>/feedback.md` | Resumo Executivo (acompanhamento) e tópicos citados |
 
 > Exportações brutas: rodar `python3 scripts/mascarar_dados.py <arquivos>` antes do commit (CPF de clientes).
 
