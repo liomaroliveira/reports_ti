@@ -1,127 +1,88 @@
-# 📱 Harness de Comunicações e Históricos do WhatsApp (3.whatsapp_histories)
-
-Este diretório gerencia a extração, sincronização semanal e análise inteligente das comunicações do **WhatsApp Business** do setor de TI da **Ten Internet**.
-
----
-
-## 🏛️ Decisão Arquitetural: Banco de Dados SQLite (`.db`) vs. Extração Massiva em `.txt`
-
-### 💡 Por que manter a base em SQLite (`database/msgstore.db`) é a melhor abordagem?
-
-Após a análise do volume de dados (mais de **340 conversas ativas** e quase **40.000 mensagens**), a abordagem ideal para uso de Inteligência Artificial e geração dos relatórios executivos de TI é manter o banco SQLite como **Fonte Única da Verdade (Single Source of Truth)** em vez de re-exportar centenas de arquivos `.txt` toda semana.
-
-| Critério | Manter em SQLite (`msgstore.db`) 🏆 | Ficar extraindo 340+ arquivos `.txt` ❌ |
-| :--- | :--- | :--- |
-| **Precisão Temporal** | **Cirúrgica:** Filtra via SQL com precisão de segundos (`WHERE timestamp BETWEEN start AND end`). | **Lenta e Imprecisa:** Requer percorrer e fazer parsing de 340 arquivos linha por linha. |
-| **Consumo de Contexto (IA)** | **Mínimo:** Carrega apenas as mensagens da semana solicitada para a memória da IA. | **Excessivo:** Pode estourar limites de tokens e saturar buscas contextuais. |
-| **Integridade do Git** | **Limpa:** O banco SQLite fica local (ignorado no `.gitignore`), evitando commits pesados. | **Poluída:** Diffs massivos no Git toda semana alterando centenas de arquivos de texto. |
-| **Categorização Dinâmica** | **Instantânea:** Agrupa por tópicos (Campo, TI Interno, NOC, Coordenação) via query. | **Rígida:** Mistura assuntos e dificulta triagem de atendimentos operacionais. |
-| **Sob Demanda** | Gera arquivos `.txt` ou `.md` apenas quando você ou a IA precisarem inspecionar um chat. | Gera cópias estáticas repetidas de conversas arquivadas há anos. |
-
----
-
-## 📁 Estrutura do Diretório
-
-```text
-3.whatsapp_histories/
-├── README.md                      # Este tutorial e manual de operações
-├── key_64digits.txt               # Chave de 64 dígitos para descriptografia automática
-├── input/                         # 📥 Onde você cola o novo backup semanal do celular
-│   └── msgstore.db.crypt15        # (Arquivo mais recente gerado no celular)
-├── database/                      # 🗄️ Banco de dados mestre SQLite descriptografado
-│   └── msgstore.db                # (Atualizado automaticamente pelo script de sincronização)
-├── scripts/                       # 🛠️ Harness de scripts de automação
-│   ├── sync_backup.py             # Sincroniza o backup da pasta input/ para o database/
-│   ├── query_history.py           # Consulta conversas por período semanal e por categoria
-│   └── export_all_chats.py        # Exportador completo para .txt (caso queira auditar tudo)
-├── exports/                       # 📄 Extratos gerados por semana (.md ou .json)
-└── conversas_exportadas/          # 🗂️ Histórico inicial de conversas individuais em .txt
-```
-
----
-
-## 🔄 Rotina Semanal de Atualização (Passo a Passo para o Usuário)
-
-Toda segunda-feira de manhã (ou quando desejar atualizar os dados para a IA), siga estes 3 passos simples:
-
-### Passo 1: Gerar o Backup no Celular
-1. No celular (WhatsApp Business), toque em **⋮ (três pontinhos)** > **Configurações**;
-2. Vá em **Conversas** > **Backup de conversas**;
-3. Toque no botão verde **Fazer backup**;
-4. Aguarde a barra de progresso terminar (cerca de 30 a 60 segundos).
+# 📱 Extração do Banco de Dados do WhatsApp (msgstore.db)
 
 > [!NOTE]
-> Como a criptografia de ponta a ponta com a chave de 64 dígitos já foi ativada uma vez, todos os backups futuros já serão gerados automaticamente com essa mesma chave. Você não precisa digitar a chave novamente no celular.
-
-### Passo 2: Copiar o Arquivo para o Computador
-1. Conecte o celular via cabo USB (ou envie o arquivo via Google Drive / Compartilhamento local);
-2. No celular, acesse a pasta:
-   ```text
-   Armazenamento Principal > Android > media > com.whatsapp.w4b > WhatsApp > Databases
-   ```
-3. Copie o arquivo mais recente (geralmente chamado `msgstore.db.crypt15`) e cole dentro da pasta:
-   ```text
-   /home/liomarti/dev/reports_ti/3.whatsapp_histories/input/
-   ```
-
-### Passo 3: Executar a Sincronização
-No terminal do projeto, execute o script de sincronização:
-```bash
-python3 3.whatsapp_histories/scripts/sync_backup.py
-```
-*(Ou simplesmente diga para a IA: **"Atualizei o backup do WhatsApp, sincronize os dados"**).*
-
-O script irá:
-1. Detectar o backup mais recente em `input/`;
-2. Descriptografar automaticamente usando a chave de 64 dígitos;
-3. Atualizar o banco SQLite mestre em `database/msgstore.db`;
-4. Exibir o resumo de mensagens e última atividade dos canais de TI.
+> **Guardado apenas como conhecimento.** Este diretório documenta como extrair todas as conversas do WhatsApp diretamente do backup criptografado do aparelho, sem os limites da exportação manual do aplicativo (que exporta uma conversa por vez e corta o histórico).
+>
+> **Não é fonte de dados dos relatórios semanais** e não deve ser lido pela IA durante a geração deles.
 
 ---
 
-## 🔍 Como a IA e o Usuário Consultam os Dados da Semana
+## 💡 Por que extrair o banco em vez de exportar conversas pelo app?
 
-O utilitário `query_history.py` permite extrair exatamente o que o setor de TI precisa para cada tópico do relatório semanal:
+| Critério | Banco SQLite (`msgstore.db`) 🏆 | Exportação manual pelo app ❌ |
+| :--- | :--- | :--- |
+| **Cobertura** | Todas as conversas e grupos de uma vez (testado com 340+ conversas e ~40.000 mensagens). | Uma conversa por vez, com limite de mensagens. |
+| **Precisão temporal** | Filtro por SQL com precisão de segundos (`WHERE timestamp BETWEEN ...`). | Parsing de arquivos `.txt` linha por linha. |
+| **Consumo de contexto (IA)** | Carrega só o período e as categorias pedidas. | Arquivos inteiros, estoura limite de tokens. |
+| **Categorização** | Agrupamento por grupo/categoria via query. | Assuntos misturados. |
 
-### 1. Resumo Executivo da Semana (Métricas Gerais)
-Gera o panorama com total de atendimentos por categoria e volume de mensagens:
-```bash
-python3 3.whatsapp_histories/scripts/query_history.py --start 2026-09-07 --end 2026-09-13 --format summary
-```
+---
 
-### 2. Suporte ao Técnico de Campo (Tópico 6 do Relatório)
-Filtra apenas os grupos operacionais de campo (*ServiceDesk Suporte ao técnico*, *Projetos TEN - Apoio ao Técnico*, *Ativações Rede Megas*, equipes volantes):
-```bash
-python3 3.whatsapp_histories/scripts/query_history.py --start 2026-09-07 --end 2026-09-13 --category campo --format md --output 3.whatsapp_histories/exports/extrato-campo.md
-```
+## 📁 Estrutura
 
-### 3. Suporte Interno / Informática e Setores (Tópico 5 do Relatório)
-Filtra as demandas de hardware, acessos, manutenção e solicitações dos setores da empresa (*Tecnologia TEN*, *Manutenção de computadores*, Marketing, Cobrança, Financeiro, Estoque):
-```bash
-python3 3.whatsapp_histories/scripts/query_history.py --start 2026-09-07 --end 2026-09-13 --category interno --format md --output 3.whatsapp_histories/exports/extrato-interno.md
-```
-
-### 4. Incidentes de Rede e Infraestrutura (Tópico 4 do Relatório)
-Filtra tratativas com parceiros de engenharia de rede (*Made4NOC*, *Consultoria*, *PliQCX*):
-```bash
-python3 3.whatsapp_histories/scripts/query_history.py --start 2026-09-07 --end 2026-09-13 --category incidentes --format md --output 3.whatsapp_histories/exports/extrato-incidentes.md
-```
-
-### 5. Alinhamentos Estratégicos com a Coordenação
-Filtra as decisões e orientações diretas trocadas com o Coordenador de TI (*Isvi Neemias*):
-```bash
-python3 3.whatsapp_histories/scripts/query_history.py --start 2026-09-07 --end 2026-09-13 --category coordenacao --format md
+```text
+whatsapp_histories/
+├── README.md                  # Este tutorial (versionado)
+├── scripts/                   # Versionados
+│   ├── sync_backup.py         # Descriptografa o .crypt15 de input/ para database/msgstore.db
+│   ├── query_history.py       # Consulta mensagens por período e categoria
+│   └── export_all_chats.py    # Exporta todas as conversas para .txt
+│
+│   # ↓ Somente locais — bloqueados pelo .gitignore (dados pessoais e chave)
+├── key_64digits.txt           # Chave de 64 dígitos do backup criptografado
+├── contatos_conhecidos.json   # Mapa opcional {"55DDDNUMERO": "Nome"} para nomear remetentes
+├── input/                     # Onde se coloca o msgstore.db.crypt15 copiado do celular
+├── database/                  # msgstore.db descriptografado
+├── vcards/                    # (opcional) .vcf para enriquecer nomes de contatos
+├── exports/                   # Saídas do query_history.py
+└── conversas_exportadas/      # Saídas do export_all_chats.py
 ```
 
 ---
 
-## 🤖 Regras Obrigatórias para a IA (Consolidação de Relatórios)
+## 🔑 Pré-requisitos (uma única vez)
 
-Ao elaborar os relatórios semanais (`0.individual_report/` e `4.weekly_reports/`):
-1. **Verificação de Base:** A IA deve checar se a data máxima de `message.timestamp` em `database/msgstore.db` cobre o período semanal a ser reportado. Caso o banco esteja desatualizado e exista um novo arquivo em `input/`, executar `sync_backup.py`.
-2. **Uso de Queries Cirúrgicas:** A IA não deve ler arquivos de texto completos de semanas anteriores; deve sempre invocar `query_history.py` com o intervalo semanal exato (`--start YYYY-MM-DD --end YYYY-MM-DD`).
-3. **Alimentação Direta dos Tópicos:**
-   - As mensagens de `--category campo` alimentam o **Tópico 6 (Suporte ao Técnico de Campo)** (contabilizando protocolos de provisionamento de ONT, suporte a CTOs e trocas de estrutura).
-   - As mensagens de `--category interno` alimentam o **Tópico 5 (Suporte Interno)** (manutenções de notebooks, e-mails, acessos, impressoras).
-   - As mensagens de `--category incidentes` alimentam o **Tópico 4 (Incidentes Tratados)** (rompimentos de rota, falhas de energia, mitigação Made4NOC).
-   - As orientações de Liomar ao time ou decisões de Isvi alimentam os **Tópicos 1, 2 e 8**.
+1. **Ativar o backup criptografado de ponta a ponta com chave de 64 dígitos** no celular:
+   WhatsApp ▸ ⋮ ▸ Configurações ▸ Conversas ▸ Backup de conversas ▸ Backup criptografado de ponta a ponta ▸ *Usar chave de criptografia de 64 dígitos*.
+   Anote a chave e salve-a em `key_64digits.txt` (uma linha, 64 caracteres hexadecimais). **Nunca versione este arquivo.**
+2. **Instalar o descriptografador** `wadecrypt` (pacote `wa-crypt-tools`) no `.venv` da raiz do repositório:
+   ```bash
+   python3 -m venv .venv
+   .venv/bin/pip install wa-crypt-tools
+   ```
+
+---
+
+## 🔄 Passo a passo da extração
+
+### 1. Gerar o backup no celular
+WhatsApp ▸ ⋮ ▸ Configurações ▸ Conversas ▸ Backup de conversas ▸ **Fazer backup**. Com a chave de 64 dígitos ativada, todo backup novo já sai criptografado com ela.
+
+### 2. Copiar o arquivo para o computador
+No celular, copie o arquivo mais recente de:
+```text
+Armazenamento interno > Android > media > com.whatsapp.w4b > WhatsApp > Databases > msgstore.db.crypt15
+```
+(`com.whatsapp.w4b` é o WhatsApp Business; no WhatsApp comum é `com.whatsapp`.)
+Cole em `miscelaneous/whatsapp_histories/input/`.
+
+### 3. Descriptografar
+```bash
+python3 miscelaneous/whatsapp_histories/scripts/sync_backup.py
+```
+O script pega o `.crypt15` mais recente de `input/`, descriptografa com a chave e grava `database/msgstore.db`, exibindo um resumo das mensagens.
+
+### 4. Consultar
+```bash
+# Panorama de um período
+python3 miscelaneous/whatsapp_histories/scripts/query_history.py --start 2026-09-07 --end 2026-09-13 --format summary
+
+# Uma categoria em Markdown (campo | interno | coordenacao | incidentes | all)
+python3 miscelaneous/whatsapp_histories/scripts/query_history.py --start 2026-09-07 --end 2026-09-13 \
+  --category campo --format md --output miscelaneous/whatsapp_histories/exports/extrato-campo.md
+
+# Exportar todas as conversas para .txt
+python3 miscelaneous/whatsapp_histories/scripts/export_all_chats.py
+```
+
+As categorias são definidas por regras de nome de grupo em `CATEGORY_RULES` dentro de `query_history.py`.

@@ -18,8 +18,10 @@ Os relatórios alimentam semanalmente a Dashboard Executiva apresentada pelo Coo
 
 ```text
 reports_ti/
-├── GEMINI.md                                  # Contexto mestre, diretrizes institucionais e regras de governança
-├── PROMPT.md                                  # Orquestrador semanal e parâmetros executáveis pela IA
+├── GEMINI.md                                  # Contexto mestre, diretrizes institucionais e regras de governança (Antigravity)
+├── CLAUDE.md                                  # Ponte para o Claude Code (importa GEMINI.md e PARAMETROS_SEMANA.md)
+├── PARAMETROS_SEMANA.md                       # ÚNICO arquivo editado toda semana (datas e focos)
+├── PROMPT.md                                  # Especificação permanente do fluxo e da estrutura do relatório
 ├── PONTOS_A_MELHORAR.md                       # Lições aprendidas, calibrações de métricas e alinhamentos
 ├── modelo_coordenador/                        # Padrão visual e modelo oficial de referência
 ├── 0.individual_report/                       # Relatórios individuais por membro da equipe
@@ -47,18 +49,17 @@ reports_ti/
 │       └── report_ti-[YYYY-MM-DD]-[YYYY-MM-DD].pdf
 ├── 5.feedback/                                # Pareceres e feedbacks semanais da Coordenação
 │   └── feedback_[YYYY-MM-DD]_[YYYY-MM-DD].md  # Apontamentos de Isvi Neemias
-└── miscelaneous/                              # REPOSITÓRIO FRIO / BACKUP (NÃO lido na rotina padrão do PROMPT.md)
-    ├── litellm_gateway/                       # Configurações e documentação do gateway LiteLLM
-    └── whatsapp_histories/                    # Histórico e scripts de WhatsApp (acesso apenas sob demanda)
+└── miscelaneous/                              # FORA DO ESCOPO DOS RELATÓRIOS (não lido pela IA)
+    └── whatsapp_histories/                    # Apenas conhecimento: scripts e tutorial de extração do WhatsApp
 ```
 
 ---
 
 ## 🔄 Fluxo de Geração do Relatório Semanal
 
-A geração semanal é orquestrada através do arquivo [PROMPT.md](file:///home/liomarti/dev/reports_ti/PROMPT.md) em duas etapas com **Gatekeeper**:
+A geração semanal é orquestrada pelo [PROMPT.md](PROMPT.md) em duas etapas com **Gatekeeper**:
 
-1. **Parâmetros da Semana:** Definir `Data Inicial` (domingo) e `Data Final` (sábado) no topo do `PROMPT.md`.
+1. **Parâmetros da Semana:** Definir `Data Inicial` (domingo), `Data Final` (sábado) e os focos em `PARAMETROS_SEMANA.md`.
 2. **Fase 0 (Validação de Pré-requisitos):** A IA valida a existência das exportações ativas em `1.voalle/`, relatórios analíticos em `2.autotickets/` e dados locais do `/home/liomarti/dev/autotickets-v2`.
 3. **Etapa 1 (Relatório Individual de Liomar):** Se ainda não existir relatório em `0.individual_report/liomar/`, a IA gera os arquivos `.md`, `.html` e `.pdf`.
 4. **Fase 1.5 (Checagem dos Colegas):** Se já existirem relatórios para Isac e David em `0.individual_report/`, eles são integrados diretamente; caso contrário, a IA executa o fallback nos dados do Voalle.

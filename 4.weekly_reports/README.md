@@ -8,13 +8,13 @@ Este diretório armazena os relatórios consolidados finais de todo o setor de T
 
 Cada período avaliado deve ser organizado em seu próprio subdiretório dedicado:
 
-- Subdiretório semanal: `4.weekly_reports/[data-inicio]_[data-fim]/` (ex.: `4.weekly_reports/2026-09-01_2026-09-13/`)
+- Subdiretório semanal: `4.weekly_reports/[data-inicio]_[data-fim]/` (ex.: `4.weekly_reports/2026-10-04_2026-10-10/`), sempre de Domingo a Sábado
 
 Dentro de cada diretório semanal, os relatórios consolidados devem ser gerados nas três extensões:
 
-- `report_ti_[data-inicio]_[data-fim].md` (ex.: `report_ti_2026-09-01_2026-09-13.md`)
-- `report_ti_[data-inicio]_[data-fim].html` (ex.: `report_ti_2026-09-01_2026-09-13.html`)
-- `report_ti_[data-inicio]_[data-fim].pdf` (ex.: `report_ti_2026-09-01_2026-09-13.pdf`)
+- `report_ti-[data-inicio]-[data-fim].md` (ex.: `report_ti-2026-10-04-2026-10-10.md`)
+- `report_ti-[data-inicio]-[data-fim].html` (ex.: `report_ti-2026-10-04-2026-10-10.html`)
+- `report_ti-[data-inicio]-[data-fim].pdf` (ex.: `report_ti-2026-10-04-2026-10-10.pdf`)
 
 ---
 

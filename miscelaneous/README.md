@@ -1,10 +1,8 @@
-# 📦 Repositório Frio e Arquivos Legados (miscelaneous)
+# 📦 Base de Conhecimento Fora do Escopo dos Relatórios (miscelaneous)
 
 > [!WARNING]
 > **REGRA MANDATÓRIA DO HARNESS:**
-> Os arquivos e subdiretórios contidos neste diretório **NÃO DEVEM SER LIDOS AUTOMATICAMENTE** durante a execução do fluxo semanal de geração de relatórios pelo `PROMPT.md`.
->
-> Este diretório funciona como um backup frio de ferramentas, documentações legadas e históricos que só devem ser consultados **quando o usuário solicitar expressamente** nas instruções contextuais da semana.
+> Nada neste diretório é fonte de dados dos relatórios semanais. A IA **NÃO DEVE LER** este diretório durante a geração dos relatórios (individuais ou consolidados), nem no fallback.
 
 ---
 
@@ -12,19 +10,14 @@
 
 ```text
 miscelaneous/
-├── README.md              # Este manual de diretrizes
-├── litellm_gateway/       # Documentação operacional, scripts, compose e backups do gateway LiteLLM
-└── whatsapp_histories/    # Harness legado de comunicações de WhatsApp (banco SQLite msgstore.db, backups crypt15, chaves e scripts de extração)
+├── README.md              # Este documento
+└── whatsapp_histories/    # Conhecimento técnico: como extrair o banco do WhatsApp (msgstore.db) direto do aparelho
 ```
 
 ---
 
-## 🔍 Descrição dos Subdiretórios
+## 🔍 Descrição
 
-1. **`litellm_gateway/`:**
-   - Contém manuais de operação (`LITELLM_OPERATIONS_MANUAL.md`), configurações de modelos YAML, scripts de sincronização para VM e rotinas de backup da base PostgreSQL do LiteLLM.
-   - Serve para consulta sob demanda quando houver manutenção no gateway de Inteligência Artificial.
-
-2. **`whatsapp_histories/`:**
-   - Base histórica de mensagens exportadas e banco relacional descriptografado de comunicações com clientes internos, coordenação e fornecedores (Made4NOC, PliQ).
-   - Movido para este repositório frio para evitar sobrecarga de contexto e tokens na execução rotineira do modelo de IA.
+1. **`whatsapp_histories/`:**
+   - Guardado **apenas a título de conhecimento**: tutorial e scripts que descriptografam o backup `msgstore.db.crypt15` exportado do celular e consultam as mensagens via SQLite, sem os limites da exportação manual do aplicativo.
+   - Não contém conversas, backups, bancos ou chaves — esses arquivos ficam somente na máquina local e são bloqueados pelo `.gitignore`.

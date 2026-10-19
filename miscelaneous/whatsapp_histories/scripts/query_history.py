@@ -23,18 +23,12 @@ EXPORTS_DIR = os.path.join(BASE_DIR, "exports")
 
 os.makedirs(EXPORTS_DIR, exist_ok=True)
 
-# Mapeamento de contatos conhecidos
-KNOWN_CONTACTS = {
-    "[telefone removido]": "Isvi Neemias (Coordenação TI)",
-    "[telefone removido]": "Liomar Oliveira",
-    "[telefone removido]": "Liomar Oliveira",
-    "[telefone removido]": "Isac Costa",
-    "[telefone removido]": "Isac Costa",
-    "[telefone removido]": "David Brasil",
-    "[telefone removido]": "David Brasil",
-    "[telefone removido]": "Setor TI Ten",
-    "[telefone removido]": "Setor TI Ten",
-}
+# Mapeamento de contatos conhecidos (telefone -> nome), mantido fora do Git
+CONTACTS_FILE = os.path.join(BASE_DIR, "contatos_conhecidos.json")
+KNOWN_CONTACTS = {}
+if os.path.isfile(CONTACTS_FILE):
+    with open(CONTACTS_FILE, "r", encoding="utf-8") as f:
+        KNOWN_CONTACTS = json.load(f)
 
 # Categorização de canais
 CATEGORY_RULES = {

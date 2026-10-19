@@ -12,9 +12,8 @@ import json
 import sqlite3
 from datetime import datetime
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-BKP_DIR = os.path.join(BASE_DIR, "bkp_64digits")
-DB_PATH = os.path.join(BKP_DIR, "msgstore.db")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DB_PATH = os.path.join(BASE_DIR, "database", "msgstore.db")
 OUTPUT_DIR = os.path.join(BASE_DIR, "conversas_exportadas")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -26,21 +25,15 @@ if not os.path.isfile(DB_PATH):
 conn = sqlite3.connect(DB_PATH)
 c = conn.cursor()
 
-# Mapeamento de contatos conhecidos (Diretrizes do Setor de TI)
-known = {
-    "[telefone removido]": "Isvi Neemias (Coordenação TI)",
-    "[telefone removido]": "Liomar Oliveira",
-    "[telefone removido]": "Liomar Oliveira",
-    "[telefone removido]": "Isac Costa",
-    "[telefone removido]": "Isac Costa",
-    "[telefone removido]": "David Brasil",
-    "[telefone removido]": "David Brasil",
-    "[telefone removido]": "Setor TI Ten",
-    "[telefone removido]": "Setor TI Ten",
-}
+# Mapeamento de contatos conhecidos (telefone -> nome), mantido fora do Git
+CONTACTS_FILE = os.path.join(BASE_DIR, "contatos_conhecidos.json")
+known = {}
+if os.path.isfile(CONTACTS_FILE):
+    with open(CONTACTS_FILE, "r", encoding="utf-8") as f:
+        known = json.load(f)
 
 # Enriquecimento com vCards extraídos
-vcard_dir = os.path.join(BKP_DIR, "exported_txt", "WhatsApp", "vCards")
+vcard_dir = os.path.join(BASE_DIR, "vcards")
 if os.path.isdir(vcard_dir):
     for f in os.listdir(vcard_dir):
         if f.endswith(".vcf"):

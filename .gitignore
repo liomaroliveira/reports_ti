@@ -1,13 +1,23 @@
-# WhatsApp raw database backups
+# Python Virtual Environment
+.venv/
+__pycache__/
+
+# Bancos e backups (qualquer pasta)
+*.crypt12
 *.crypt14
 *.crypt15
 *.db
 *.db-shm
 *.db-wal
 *.sqlite
+*.sql.gz
 
-# Temporary extraction artifacts
-3.whatsapp_histories/bkp_64digits/exported_txt/
+# Segredos (nunca versionar)
+.env
+*.key
+*key_64digits*
 
-# Python Virtual Environment
-.venv/
+# WhatsApp: somente README.md e scripts/ são versionados
+miscelaneous/whatsapp_histories/*
+!miscelaneous/whatsapp_histories/README.md
+!miscelaneous/whatsapp_histories/scripts/

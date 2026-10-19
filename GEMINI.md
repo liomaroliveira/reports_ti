@@ -1,12 +1,16 @@
 # Diretrizes e Contexto do Projeto: Relatório Semanal do Setor de TI
 
+> [!IMPORTANT]
+> **Arquivos do harness:** este `GEMINI.md` (regras permanentes, fonte única para Antigravity e Claude Code via `CLAUDE.md`) · [`PARAMETROS_SEMANA.md`](PARAMETROS_SEMANA.md) (datas e focos da semana corrente — ler sempre antes de gerar relatórios) · [`PROMPT.md`](PROMPT.md) (fluxo e estrutura permanentes do relatório).
+
 ## 🏢 Informações Institucionais e Gestão
 
 - **Empresa:** Ten Soluções e Serviços LTDA. (Ten Provedor de Internet)
 - **Site da empresa:** https://teninternet.com.br/
 - **Coordenador de Tecnologia:** Isvi Neemias
-- **WhatsApp Coordenador:** [telefone removido]
-- **WhatsApp Setor TI:** [telefone removido]
+
+> [!IMPORTANT]
+> **Dados pessoais fora do repositório (LGPD):** CPF, telefones, senhas e chaves de API **nunca** devem ser escritos em arquivos versionados. O repositório tem remote no GitHub.
 
 ---
 
@@ -14,22 +18,16 @@
 
 1. **Liomar Antonio de Oliveira**
 
-   - **CPF:** ***.848.515-**
    - **Cargo:** Analista de TI Sênior (Responsável pelo desenvolvimento de automações, gestão técnica e consolidação dos relatórios semanais do setor)
-   - **WhatsApp:** [telefone removido]
-   - **ID Colaborador Voalle:**#107184
+   - **ID Colaborador Voalle:** #107184
 2. **Isac Costa Silva**
 
-   - **CPF:** ***.404.875-**
    - **Cargo:** Assistente de TI Pleno
-   - **WhatsApp:** [telefone removido]
-   - **ID Colaborador Voalle:**#94562
+   - **ID Colaborador Voalle:** #94562
 3. **David Brasil Fernandes**
 
-   - **CPF:** ***.899.744-**
    - **Cargo:** Auxiliar de TI Junior
-   - **WhatsApp:** [telefone removido]
-   - **ID Colaborador Voalle:**#116367
+   - **ID Colaborador Voalle:** #116367
 
 ---
 
@@ -66,9 +64,9 @@
    - **EasyBI (MW Solutions):** Acesso limitado com pouco valor agregado para a operação, fora do escopo direto de manutenção do TI e em processo de descontinuação contratual.
    - *Diretriz:* Informar formalmente o status real acima, sem simular atividades inexistentes.
 
-7. **Repositório Frio e Dados Legados (`miscelaneous/`):**
-   - Armazena históricos legados de mensagens de WhatsApp (`miscelaneous/whatsapp_histories/`), configurações do LiteLLM (`miscelaneous/litellm_gateway/`) e arquivos de apoio arquivados.
-   - **REGRA MANDATÓRIA:** Este diretório **NÃO DEVE SER LIDO AUTOMATICAMENTE** durante a geração do relatório semanal pelo `PROMPT.md`. É um repositório frio de consulta sob demanda, devendo ser acessado **apenas se expressamente solicitado** pelo usuário.
+7. **Base de Conhecimento Fora do Escopo (`miscelaneous/`):**
+   - Guarda apenas o conhecimento técnico de extração do banco de dados do WhatsApp (`miscelaneous/whatsapp_histories/`: scripts e tutorial). Nenhuma conversa, backup ou chave é versionada.
+   - **REGRA MANDATÓRIA:** O WhatsApp **NÃO é fonte de dados** dos relatórios semanais. Este diretório **NÃO DEVE SER LIDO** durante a geração dos relatórios, nem mesmo no fallback.
 
 ---
 
@@ -93,29 +91,23 @@
 
 ```text
 reports_ti/
-├── GEMINI.md                                  # Contexto principal, diretrizes e regras obrigatórias para a IA
-├── PROMPT.md                                  # Especificação das tarefas, direcionamento e regras do usuário
+├── GEMINI.md                                  # Contexto principal, diretrizes e regras obrigatórias para a IA (Antigravity)
+├── CLAUDE.md                                  # Ponte para o Claude Code (importa GEMINI.md e PARAMETROS_SEMANA.md)
+├── PARAMETROS_SEMANA.md                       # ÚNICO arquivo editado a cada semana (datas e focos)
+├── PROMPT.md                                  # Especificação permanente do fluxo e da estrutura do relatório
 ├── PONTOS_A_MELHORAR.md                       # Registro de oportunidades de melhoria e ajustes identificados
-├── .gitignore                                 # Controle de exclusão de arquivos binários pesados e venv
+├── .gitignore                                 # Exclusão de venv, bancos e qualquer dado sensível
 ├── modelo_coordenador/                        # Documento oficial de padronização do Coordenador de TI
 │   ├── modelo_relatorio_setor_ti.pdf          # PDF de referência emitido por Isvi Neemias
 │   └── README.md                              # Resumo dos tópicos e critérios de avaliação
 ├── 0.individual_report/                       # Relatórios individuais dos membros da equipe
 │   ├── README.md                              # Diretrizes para relatórios individuais e regras de fallback
-│   ├── liomar/                                # Relatórios individuais de Liomar Oliveira
-│   │   ├── old/                               # Versões legadas e relatórios de semanas anteriores arquivados
-│   │   └── [YYYY-MM-DD]_[YYYY-MM-DD].[ext]    # Novo relatório individual gerado
-│   ├── isac/                                  # Relatórios individuais de Isac Costa Silva
-│   │   ├── old/                               # Relatórios e documentos de semanas anteriores arquivados
-│   │   └── [YYYY-MM-DD]_[YYYY-MM-DD].[ext]    # Relatório individual gerado no período
-│   └── david/                                 # Relatórios individuais de David Brasil Fernandes
-│       ├── old/                               # Relatórios e documentos de semanas anteriores arquivados
-│       └── [YYYY-MM-DD]_[YYYY-MM-DD].[ext]    # Relatório individual gerado no período
+│   └── [liomar|isac|david]/
+│       └── [YYYY-MM-DD]_[YYYY-MM-DD]/         # Uma pasta por semana (Dom a Sáb)
+│           └── [YYYY-MM-DD]_[YYYY-MM-DD].[md|html|pdf]
 ├── 1.voalle/                                  # Exportações do ERP Voalle organizadas por colaborador
 │   ├── README.md                              # Guia de interpretação de chamados, OS e apontamentos
-│   ├── liomar/                                # Arquivos de Liomar ([Nome]-[DataInicio]-[DataFim].html/.pdf/.csv)
-│   ├── isac/                                  # Arquivos de Isac ([Nome]-[DataInicio]-[DataFim].html/.pdf/.csv)
-│   └── david/                                 # Arquivos de David ([Nome]-[DataInicio]-[DataFim].html/.pdf/.csv)
+│   └── [liomar|isac|david]/                   # [Nome]-[YYYY-MM-DD]_[YYYY-MM-DD].[html|pdf|csv]
 ├── 2.autotickets/                             # Dados tratados e relatórios gerados via AutoTickets
 │   ├── README.md                              # Guia para leitura de relatórios e inspeção de commits
 │   ├── colaborador_x_ticket/                  # Produtividade cruzada colaborador x tickets
@@ -138,10 +130,9 @@ reports_ti/
 ├── 5.feedback/                                # Feedbacks e pareceres da Coordenação de TI
 │   ├── README.md                              # Descrição do diretório de feedback
 │   └── feedback_[YYYY-MM-DD]_[YYYY-MM-DD].md  # Considerações semanais de Isvi Neemias
-└── miscelaneous/                              # REPOSITÓRIO FRIO / BACKUP (NÃO LER NO PROMPT SEMANAL)
-    ├── README.md                              # Manual de arquivos legados e sob demanda
-    ├── litellm_gateway/                       # Configurações e documentação do gateway LiteLLM
-    └── whatsapp_histories/                    # Histórico e scripts de WhatsApp (acessar só sob demanda)
+└── miscelaneous/                              # FORA DO ESCOPO DOS RELATÓRIOS (NÃO LER)
+    ├── README.md
+    └── whatsapp_histories/                    # Apenas conhecimento: scripts e tutorial de extração do msgstore.db
 ```
 
 ---
@@ -160,8 +151,8 @@ Quando for gerar o relatório individual ou consolidado de um período (`YYYY-MM
    - **AutoTickets Relatórios (`2.autotickets/`):** Relatórios de produtividade de automações, tickets por colaborador, WiFeed e Fullcam.
    - **Voalle (`1.voalle/[colaborador]/`):** Atendimentos, OS, relatos avulsos e horas apontadas em `.html`, `.pdf` ou `.csv`.
    - **Investigações Pontuais (`2.1.others/`):** Relatórios e estudos de vulnerabilidades datados no período da semana.
-   - **Nota sobre WhatsApp:** O diretório `miscelaneous/whatsapp_histories/` é frio e **não deve ser lido no fallback padrão**, a menos que expressamente determinado pelo usuário.
-3. **Geração do Relatório Individual (se necessário):** Compilar e salvar o relatório individual nas extensões `.md`, `.html` e `.pdf` em `0.individual_report/[nome_colaborador]/[data-inicio]_[data-fim].[ext]`.
+   - **Nota sobre WhatsApp:** O WhatsApp **não é fonte de dados** dos relatórios. O diretório `miscelaneous/whatsapp_histories/` não deve ser lido, nem no fallback.
+3. **Geração do Relatório Individual (se necessário):** Compilar e salvar o relatório individual nas extensões `.md`, `.html` e `.pdf` em `0.individual_report/[nome_colaborador]/[data-inicio]_[data-fim]/[data-inicio]_[data-fim].[ext]`.
 4. **Consolidação do Setor:** Integrar as entregas de Liomar, Isac e David no relatório semanal consolidado, criando e salvando no subdiretório dedicado em `4.weekly_reports/[data_inicio]_[data_fim]/report_ti-[data_inicio]-[data_fim].[ext]`.
 
 ---
@@ -202,20 +193,20 @@ Cada relatório semanal consolidado deve respeitar a estrutura oficial:
 - **Painéis de BI com Parceiros:** Esclarecer formalmente a situação real de **Analítica 3M** (Perfil Master para gestão de acessos, foco em dashboards estratégicos) e **EasyBI / MW Solutions** (fora do escopo direto de manutenção do TI, processo de descontinuação).
 
 ### 4. Plataforma e Automações AutoTickets
-Macro-tópico de governança de software e automações do TI, detalhado em subtópicos específicos:
+Macro-tópico de governança de software e automações do TI, detalhado em subtópicos específicos. **Todos os números vêm dos arquivos da semana corrente** — nenhum valor de semanas anteriores pode ser reaproveitado:
 - **4.1 Desenvolvimento e Engenharia de Software AutoTickets v2:**
-  - Histórico de commits no período (`autotickets-v2`), relação de sprints entregues (Sprints 315 a 332), volume de adições/exclusões e governança com `DatabaseTransactions`.
+  - Histórico de commits no período (`autotickets-v2`), relação de sprints entregues no período (extraídas das mensagens de commit), volume de adições/exclusões e governança com `DatabaseTransactions`.
   - Evolução da arquitetura Local-First (Duplo Cursor), orquestrador de IA multi-provedor (LiteLLM, Ollama GPU e cotas Gemini) e Servidor MCP Oficial (`laravel/mcp`).
 - **4.2 Automação WiFeed – Hotspots e Sincronização Diária de Vouchers:**
   - Contextualização do Captive Portal (TEN_Wi-Fi), fluxo de clientes (CPF/voucher) e não clientes (cadastro por celular).
   - Problema anterior (upload manual de CSV, risco de erro e tempo perdido) e arquitetura da automação diária às 11h conectando ao Voalle.
-  - Resumo executivo da base (32.512 a 32.600 clientes ativos, +88 no período, 100% sucesso, 227.483 vouchers transmitidos).
+  - Resumo executivo da base (clientes ativos no início e no fim, variação líquida, taxa de sucesso e vouchers transmitidos no período).
   - **Gráfico SVG de evolução diária de clientes ativos** e histórico detalhado de envios e validações na íntegra.
 - **4.3 Módulo Fullcam – Auditoria Financeira de Lucros e Prejuízos:**
-  - Resumo executivo financeiro inicial com statcards: Total Faturado (R$ 10.612,36), Custo de Licenças (R$ 1.875,00), Custo de Storage (R$ 334,00), Prejuízo com Equipamentos Perdidos (R$ 1.350,00) e Saldo Líquido (+R$ 7.053,36). Análise dos 51 contratos deficitários vs 34 superavitários.
-  - **Tabela Completa de Auditoria de todos os 85 clientes na íntegra**, estilizada em formato compacto com quebras de página otimizadas para PDF e cores semânticas no saldo líquido.
+  - Resumo executivo financeiro inicial com statcards: Total Faturado, Custo de Licenças, Custo de Storage, Prejuízo com Equipamentos Perdidos e Saldo Líquido. Análise de contratos deficitários vs superavitários.
+  - **Tabela Completa de Auditoria de todos os clientes na íntegra**, estilizada em formato compacto com quebras de página otimizadas para PDF e cores semânticas no saldo líquido.
 - **4.4 Módulo Fullcam – Produção Operacional das Automações:**
-  - Painel consolidado com statcards da esteira horária (553 rotinas processadas, 32 câmeras tratadas, 99,2% sucesso) + tabela destacando as ações operacionais efetivas (BLOCK, UNBLOCK e INSTALL).
+  - Painel consolidado com statcards da esteira horária (rotinas processadas, câmeras tratadas, taxa de sucesso) + tabela destacando as ações operacionais efetivas (BLOCK, UNBLOCK e INSTALL).
 - **4.5 Impacto Operacional e Métricas de Produtividade das Automações:**
   - Quantificação de horas técnicas de esforço humano economizadas pelas automações ativas.
 
@@ -267,6 +258,8 @@ Macro-tópico de governança de software e automações do TI, detalhado em subt
 5. **Sem Distorções:** Não alterar o sentido original das informações, manutenções ou incidentes relatados pelas equipes.
 6. **Regra de Arquivos Multi-Formato:** Arquivos com o mesmo nome base em formatos diferentes (`.md`, `.html`, `.csv`, `.pdf`) são o mesmo relatório consolidado sob os mesmos dados brutos; avaliar apenas particularidades estruturais (como SVG ou colunas extras no CSV) e tratá-los de forma unificada.
 7. **Cruzamento Voalle + AutoTickets:** O relatório `colaborador_x_ticket` fornece as métricas oficiais consolidadas de vazão, produtividade, TMA e TMR, enquanto `1.voalle/` provê o detalhamento qualitativo de cada protocolo e apontamento.
+8. **Proteção de Dados (LGPD):** CPFs de clientes e colaboradores aparecem sempre mascarados (`***.456.789-**`) em qualquer arquivo versionado — entradas e relatórios. Antes de commitar exportações brutas (Voalle, AutoTickets), executar `python3 scripts/mascarar_dados.py <arquivos>`. O hook `.githooks/pre-commit` bloqueia commits com CPF sem máscara, chaves de API ou dados do WhatsApp.
+9. **Números da Semana Corrente:** nenhum valor numérico de semanas anteriores pode ser reaproveitado; todo número vem das fontes do período em `PARAMETROS_SEMANA.md`.
 
 ---
 

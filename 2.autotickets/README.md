@@ -39,7 +39,7 @@ O AutoTickets gera relatórios automáticos especializados que devem ser analisa
    - A IA deve verificar apenas as particularidades entre eles (como gráficos SVG no HTML ou colunas adicionais no CSV) e tratá-los de forma unificada, sem duplicar o processamento ou considerá-los fontes conflitantes.
 
 2. **Cruzamento `colaborador_x_ticket` com `1.voalle/`:**
-   - O relatório `colaborador_x_ticket/` é gerado com base no banco de dados do Voalle e serve como **fonte métrica primária** para o Tópico 1 (Balanço da fila de 120,5%) e Tópico 2 (produtividade por colaborador, TMA, TMR e taxa de resolubilidade).
+   - O relatório `colaborador_x_ticket/` é gerado com base no banco de dados do Voalle e serve como **fonte métrica primária** para o Tópico 1 (Balanço da fila: saídas ÷ entradas) e Tópico 2 (produtividade por colaborador, TMA, TMR e taxa de resolubilidade).
    - O diretório `1.voalle/[colaborador]/` complementa com os relatos narrativos detalhados, justificativas de tempo e apontamentos individuais de cada protocolo.
 
 ---

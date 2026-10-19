@@ -2,35 +2,20 @@
 
 ---
 
-## ⚙️ 1. PARÂMETROS DA SEMANA (CAMPOS EDITÁVEIS PELO USUÁRIO)
+## ⚙️ 1. PARÂMETROS DA SEMANA
 
-> [!NOTE]
-> Altere os campos abaixo a cada nova semana antes de solicitar a execução da IA.
+> [!IMPORTANT]
+> As datas e os focos da semana ficam **exclusivamente** em [`PARAMETROS_SEMANA.md`](PARAMETROS_SEMANA.md). Este `PROMPT.md` é a especificação permanente e **não deve ser editado a cada semana**.
 
-* **Data Inicial (Domingo Oficial):** `2026-10-04`
-* **Data Final (Sábado Oficial):** `2026-10-10`
-* **Período Operacional Efetivo do TI (Segunda a Sexta):** `2026-10-05` a `2026-10-09`
-* **Semana do Ano:** Semana 41 / 2026
-* **Colaborador Principal (Responsável pela Consolidação):** Liomar Antonio de Oliveira
+> [!CAUTION]
+> **Proibido reaproveitar números de semanas anteriores.** Todo valor numérico do relatório (balanço da fila, base WiFeed, valores Fullcam, sprints, horas) deve ser extraído dos arquivos do período corrente. Se a fonte da semana não existir, registrar a ausência justificada — nunca repetir o valor da semana anterior.
 
-### 📝 Instruções e Focos Específicos Desta Semana (Customizável):
+Regras permanentes de leitura das fontes (válidas em toda semana):
 
-<!-- Digite aqui orientações contextuais ou pontos de atenção para a execução corrente -->
-
-1. **Macro-Tópico 4 Dedicado à Plataforma e Automações AutoTickets:**
-   - **4.1 Desenvolvimento e Engenharia de Software AutoTickets v2:** Mapear os commits no repositório local `/home/liomarti/dev/autotickets-v2` no período de 04/10 a 10/10/2026 (Sprints 315 a 332: Motor de Glassmorphism, Design System Showcase, integração Ollama GPU com RAG vetorial, governança de cotas Gemini, gateway LiteLLM, gateway SMTP dinâmico na Sprint 208, simplificação executiva na Sprint 331 e busca inteligente por equipes na Sprint 332).
-   - **4.2 Automação WiFeed – Hotspots e Sincronização Diária de Vouchers:** Dedicar seção exclusiva com contextualização institucional do Captive Portal TEN_Wi-Fi (para que serve, como funciona a autenticação por voucher/CPF para clientes e por celular para não-clientes), problema operacional anterior (upload manual de CSV, risco de propaganda enganosa/desalinhamento, tempo perdido), solução implementada pelo AutoTickets, resumo executivo da base (32.512 a 32.600 clientes ativos, +88 no período, 100% sucesso, 227.483 vouchers transmitidos), **gráfico SVG de evolução diária da base** (extraído do arquivo HTML) e histórico detalhado de envios e validações na íntegra.
-   - **4.3 Módulo Fullcam – Auditoria Financeira de Lucros e Prejuízos:** Incluir diagnóstico financeiro executivo inicial com statcards consolidados (Faturamento: R$ 10.612,36, Custo de Licenças/Storage: R$ 2.209,00, Prejuízo de Equipamentos Perdidos: R$ 1.350,00, Saldo Líquido: +R$ 7.053,36, análise de 51 clientes deficitários vs 34 superavitários) e a **Tabela Completa de Auditoria de 85 clientes na íntegra** com formatação compacta estilizada, quebras de página limpas e cores semânticas no saldo líquido.
-   - **4.4 Módulo Fullcam – Produção Operacional das Automações:** Painel Consolidado de Produção com statcards das checagens horárias de esteira (inadimplência e instalação) + tabela detalhada com todas as ações operacionais efetivas (bloqueios, desbloqueios e instalações com cliente, contrato e protocolo), sintetizando as centenas de checagens horárias automáticas (NOTIFY) em indicadores de estabilidade da esteira.
-   - **4.5 Impacto Operacional e Produtividade:** Quantificação em horas humanas economizadas pelas rotinas automatizadas.
-2. **Cruzamento Analítico de Tickets (`colaborador_x_ticket` + `1.voalle/`):**
-   - O relatório analítico `2.autotickets/colaborador_x_ticket/` deve ser lido complementarmente com os dados de `1.voalle/`.
-   - Utilizar `colaborador_x_ticket` como fonte primária consolidada para as métricas do Tópico 1 (Balanço da fila de 120,5% — 73 entradas × 88 saídas) e para o resumo sintético do Tópico 2 (produtividade por colaborador, TMA, TMR e taxa de resolubilidade).
-   - Utilizar as exportações brutas em `1.voalle/` para extrair as narrativas detalhadas, protocolos individuais, justificativas técnicas de tempo e apontamentos de cada integrante.
-3. **Regra Multi-Formato de Arquivos:**
-   - Arquivos com o mesmo nome e formatos diferentes em `2.autotickets/` (ex.: `.md`, `.html`, `.csv`, `.pdf`) são o mesmo relatório consolidado sobre os mesmos dados. A IA deve verificar apenas as particularidades entre eles (como gráficos SVG no HTML ou colunas adicionais no CSV) e tratá-los de forma unificada, sem duplicar o processamento.
-4. **Relatório de Visitas Presenciais e Veículos (Tópico 6):** Identificar nos apontamentos do Voalle os deslocamentos operacionais, quilometragem, veículos utilizados e registrar formalmente as dificuldades e atrasos gerados pela frota.
-5. **Investigações de Segurança e Vulnerabilidades:** Mapear estudos técnicos pontuais em `2.1.others/` datados no período da semana para integrar aos tópicos de projetos, segurança e infraestrutura.
+1. **Cruzamento Analítico de Tickets (`colaborador_x_ticket` + `1.voalle/`):** `2.autotickets/colaborador_x_ticket/` é a fonte primária das métricas do Tópico 1 (balanço da fila: saídas ÷ entradas) e do resumo sintético do Tópico 2 (produtividade, TMA, TMR). As exportações em `1.voalle/` fornecem as narrativas, protocolos, justificativas de tempo e apontamentos de cada integrante.
+2. **Regra Multi-Formato de Arquivos:** ver `GEMINI.md` (Regras de Fidedignidade, item 6).
+3. **Visitas Presenciais e Veículos (Tópico 6):** identificar nos apontamentos do Voalle deslocamentos, quilometragem, veículos e dificuldades/atrasos gerados pela frota.
+4. **Investigações de Segurança (`2.1.others/`):** integrar as pastas datadas dentro do período aos tópicos de projetos, segurança e infraestrutura.
 
 ---
 
@@ -56,8 +41,8 @@ graph TD
 
 Antes de gerar o relatório individual de Liomar (caso ainda não exista para o período), a IA deve validar:
 
-- [ ] **Voalle (`1.voalle/liomar/`):** Arquivo de apontamentos e atendimentos no período em formato `.html`, `.pdf` ou `.csv` (ex.: `Liomar-2026-10-04_2026-10-10.html`).
-- [ ] **AutoTickets Local (`/home/liomarti/dev/autotickets-v2`):** Commits no período de 04/10 a 10/10/2026 ou relatório de engenharia de software.
+- [ ] **Voalle (`1.voalle/liomar/`):** Arquivo de apontamentos e atendimentos no período em formato `.html`, `.pdf` ou `.csv` (ex.: `Liomar-[data_inicio]_[data_fim].html`).
+- [ ] **AutoTickets Local (`/home/liomarti/dev/autotickets-v2`):** Commits no período definido em `PARAMETROS_SEMANA.md` ou relatório de engenharia de software.
 - [ ] **AutoTickets Relatórios Analíticos (`2.autotickets/`):**
   - [ ] `2.autotickets/colaborador_x_ticket/`: Cruzamento de produtividade e tickets por colaborador no período.
   - [ ] `2.autotickets/wifeed_daily_update_voucher/`: Relatório de vouchers WiFeed (.md e .html com gráfico SVG).
@@ -68,7 +53,7 @@ Antes de gerar o relatório individual de Liomar (caso ainda não exista para o 
 - [ ] **Feedbacks Anteriores (`5.feedback/`):** Leitura de apontamentos do Coordenador Isvi Neemias para garantir aderência às diretrizes de governança.
 
 > [!IMPORTANT]
-> **Regra sobre `miscelaneous/`:** O diretório `miscelaneous/` (históricos de WhatsApp, gateway LiteLLM) é um repositório frio de apoio e **NÃO DEVE SER LIDO AUTOMATICAMENTE** nesta fase, exceto se solicitado expressamente nas instruções da semana.
+> **Regra sobre `miscelaneous/`:** O diretório `miscelaneous/` guarda apenas conhecimento técnico (extração do WhatsApp) e **NÃO É FONTE DE DADOS** dos relatórios. Não deve ser lido em nenhuma fase.
 
 > [!WARNING]
 > **Ponto de Interrupção 1:** Caso falte qualquer uma das fontes ativas essenciais para Liomar (e ele não possua relatório existente no período), a IA **DEVE INTERROMPER** a execução imediatamente, listar em tabela o status de cada fonte e perguntar se o usuário deseja prosseguir com dados parciais ou aguardar atualização.
@@ -81,7 +66,7 @@ Antes de gerar o relatório individual de Liomar (caso ainda não exista para o 
 
 1. **Mineração:** Cruzar os dados de Voalle, commits do AutoTickets, tarefas de banco de dados e investigações.
 2. **Estrutura:** Seguir rigorosamente o padrão analítico e o modelo de tópicos oficiais.
-3. **Formatos de Saída:** Salvar os 3 arquivos em `0.individual_report/liomar/[data_inicio]_[data_fim].[ext]` (`.md`, `.html` estilizado e `.pdf` executivo A4).
+3. **Formatos de Saída:** Salvar os 3 arquivos em `0.individual_report/liomar/[data_inicio]_[data_fim]/[data_inicio]_[data_fim].[ext]` (`.md`, `.html` estilizado e `.pdf` executivo A4).
 
 ---
 
@@ -89,8 +74,8 @@ Antes de gerar o relatório individual de Liomar (caso ainda não exista para o 
 
 Antes de gerar o consolidado, a IA deve verificar se os colegas já possuem relatórios para o período:
 
-- [ ] Relatório de **Isac Costa Silva** em `0.individual_report/isac/[data_inicio]_[data_fim].[ext]`.
-- [ ] Relatório de **David Brasil Fernandes** em `0.individual_report/david/[data_inicio]_[data_fim].[ext]`.
+- [ ] Relatório de **Isac Costa Silva** em `0.individual_report/isac/[data_inicio]_[data_fim]/[data_inicio]_[data_fim].[ext]`.
+- [ ] Relatório de **David Brasil Fernandes** em `0.individual_report/david/[data_inicio]_[data_fim]/[data_inicio]_[data_fim].[ext]`.
 
 > [!TIP]
 > Se o arquivo de Isac ou David já existir (seja `.pdf`, `.md` ou `.html`), ele é considerado pronto: **não é gerado novo relatório** e suas informações são integradas diretamente ao consolidado semanal.
@@ -230,7 +215,7 @@ Seção obrigatória dedicada ao aprofundamento de ocorrências incomuns. Para c
 - **1.2 Demandas em Andamento:** Atividades em execução, indicando responsável direto, percentual de avanço estimado, bloqueios técnicos ou dependências de terceiros e previsão de conclusão.
 - **1.3 Demandas Concluídas:** Todas as entregas finalizadas na semana com detalhamento do resultado prático obtido. Demandas de rotina repetitiva de mesma natureza (ex.: análises periciais de desconto de fatura ou atribuições de IP público) podem ser sintetizadas com contagem total e amostragem de protocolos.
 - **1.4 Demandas Novas:** Demandas abertas durante o período avaliado.
-  - **1.4.1 Comparativo Entradas × Saídas (Balanço da Fila):** Análise quantitativa demonstrando se a fila de trabalho do setor está crescendo ou reduzindo (com statcards e balanço líquido). **PROIBIDO usar o termo "resolutividade".** A fonte primária de vazão deve ser respaldada por `2.autotickets/colaborador_x_ticket/` (ex.: 73 entradas × 88 saídas = 120,5% de vazão).
+  - **1.4.1 Comparativo Entradas × Saídas (Balanço da Fila):** Análise quantitativa demonstrando se a fila de trabalho do setor está crescendo ou reduzindo (com statcards e balanço líquido). **PROIBIDO usar o termo "resolutividade".** A fonte primária de vazão deve ser respaldada por `2.autotickets/colaborador_x_ticket/` (saídas ÷ entradas do período, calculado sobre os dados da semana corrente).
 
 #### 2. Registro de Atividades por Membro da Equipe
 Para cada colaborador (**2.1 David Brasil Fernandes**, **2.2 Isac Costa Silva** e **2.3 Liomar Antonio de Oliveira**), detalhar:
@@ -249,19 +234,19 @@ Para cada colaborador (**2.1 David Brasil Fernandes**, **2.2 Isac Costa Silva** 
 #### 4. Plataforma e Automações AutoTickets
 Macro-tópico de alto valor estratégico para a empresa, detalhando em subtópicos dedicados na íntegra:
 - **4.1 Desenvolvimento e Engenharia de Software AutoTickets v2:**
-  - **4.1.1 Entregas em Produção, Commits e Sprints:** Mapeamento minucioso dos commits no git (`autotickets-v2`) no período avaliado. Relação de sprints entregues (Sprints 315 a 332), volume de adições/remoções de código, arquivos impactados e testes executados com `DatabaseTransactions`.
+  - **4.1.1 Entregas em Produção, Commits e Sprints:** Mapeamento minucioso dos commits no git (`autotickets-v2`) no período avaliado. Relação das sprints entregues no período (extraídas das mensagens de commit), volume de adições/remoções de código, arquivos impactados e testes executados com `DatabaseTransactions`.
   - **4.1.2 Evolução Arquitetural, IA e Governança de Software:** Detalhamento do motor de Glassmorphism, Design System corporativo, integração Ollama GPU com RAG vetorial, governança de cotas Gemini, gateway LiteLLM e servidor oficial MCP (`laravel/mcp`).
 - **4.2 Automação WiFeed – Hotspots e Sincronização Diária de Vouchers:**
   - **4.2.1 Contexto Institucional e Problema Operacional do Captive Portal:** Explicar a função do WiFeed como Captive Portal da Ten Internet para captura de leads e fidelização (rede "TEN_Wi-Fi"), diferenciando o fluxo de não-clientes (cadastro por celular) e clientes (validação via CPF do titular com base de vouchers). Detalhar o problema operacional anterior (geração e upload 100% manual de arquivos CSV de CPFs sanitizados, risco de sensação de "propaganda enganosa" para assinantes recentes e perda de tempo técnico do TI).
   - **4.2.2 Solução Automatizada Desenvolvida no AutoTickets:** Descrever a arquitetura da automação: conexão direta ao banco Voalle, filtro exclusivo de clientes adimplentes em qualquer plano, sanitização estrita de CPFs/CNPJs, rotina agendada diária às 11h, exclusão do segmento antigo, upload do novo lote, paginação de integridade linha por linha e comutação segura para o segmento ativo.
-  - **4.2.3 Resumo Executivo e Métricas da Base de Clientes:** Statcards com Clientes Ativos Início (32.512), Clientes Ativos Fim (32.600), Variação Líquida (+88 / +0.27%), Pico (32.600), Mínimo (32.334), Sincronizações Executadas (7), Taxa de Sucesso (100%) e Vouchers Transmitidos (227.483).
-  - **4.2.4 Evolução Diária da Base de Clientes Ativos (Gráfico SVG):** Reprodução fiel do gráfico visual de área e linhas em SVG puro, com escala de clientes (32.312 a 32.622), curva de crescimento e marcação dos dias do período avaliado.
+  - **4.2.3 Resumo Executivo e Métricas da Base de Clientes:** Statcards com Clientes Ativos Início, Clientes Ativos Fim, Variação Líquida (absoluta e %), Pico, Mínimo, Sincronizações Executadas, Taxa de Sucesso e Vouchers Transmitidos — todos extraídos do relatório WiFeed do período.
+  - **4.2.4 Evolução Diária da Base de Clientes Ativos (Gráfico SVG):** Reprodução fiel do gráfico visual de área e linhas em SVG puro, com escala de clientes ajustada aos valores do período, curva de crescimento e marcação dos dias do período avaliado.
   - **4.2.5 Histórico Detalhado de Envios e Validações de Vouchers:** Tabela completa na íntegra registrando Data/Hora, Operador, Segmento, Base ERP, Vouchers Transmitidos, Taxa de Sucesso (100%), Status e Observações.
 - **4.3 Módulo Fullcam – Auditoria Financeira de Lucros e Prejuízos:**
-  - **4.3.1 Diagnóstico Financeiro Executivo e Indicadores-Chave:** Síntese executiva com statcards do parque auditado: Total Faturado (R$ 10.612,36), Custo de Licenças Fullcam (R$ 1.875,00), Custo de Storage em Nuvem (R$ 334,00), Prejuízo com Equipamentos Perdidos (R$ 1.350,00) e Saldo Líquido Consolidado (+R$ 7.053,36). Análise crítica de risco evidenciando que 51 clientes operam com saldo negativo (contratos cancelados/bloqueados gerando custos residuais de licença/storage ou perda de hardware) contra 34 clientes superavitários.
-  - **4.3.2 Tabela Completa de Auditoria de Contratos e Saldo Líquido na Íntegra:** Transcrição completa e sem omissões de todos os 85 registros auditados em tabela compacta estilizada (Cliente, CPF/CNPJ mascarado, Contratos Voalle, Faturas Pagas, GB Consumido, Valor Faturado, Custo de Licenças, Custo de Storage, Equip. Perdido e Saldo Líquido). Aplicar cores semânticas (verde para saldos positivos, vermelho para negativos) e diagramação limpa para paginação A4.
+  - **4.3.1 Diagnóstico Financeiro Executivo e Indicadores-Chave:** Síntese executiva com statcards do parque auditado: Total Faturado, Custo de Licenças Fullcam, Custo de Storage em Nuvem, Prejuízo com Equipamentos Perdidos e Saldo Líquido Consolidado. Análise crítica de risco comparando a quantidade de clientes com saldo negativo (contratos cancelados/bloqueados gerando custos residuais de licença/storage ou perda de hardware) contra os superavitários.
+  - **4.3.2 Tabela Completa de Auditoria de Contratos e Saldo Líquido na Íntegra:** Transcrição completa e sem omissões de todos os registros auditados em tabela compacta estilizada (Cliente, CPF/CNPJ **obrigatoriamente mascarado** no formato `***.456.789-**`, Contratos Voalle, Faturas Pagas, GB Consumido, Valor Faturado, Custo de Licenças, Custo de Storage, Equip. Perdido e Saldo Líquido). Aplicar cores semânticas (verde para saldos positivos, vermelho para negativos) e diagramação limpa para paginação A4.
 - **4.4 Módulo Fullcam – Produção Operacional das Automações:**
-  - **4.4.1 Painel Consolidado de Execução e Disponibilidade da Esteira:** Statcards globais sintetizando a volumetria da esteira automatizada (Total de 553 checagens e rotinas processadas no período, 32 câmeras tratadas, taxa de sucesso operacional de 99,2% na esteira de inadimplência e disponibilidade ininterrupta das rotinas de instalação).
+  - **4.4.1 Painel Consolidado de Execução e Disponibilidade da Esteira:** Statcards globais sintetizando a volumetria da esteira automatizada (total de checagens e rotinas processadas no período, câmeras tratadas, taxa de sucesso da esteira de inadimplência e disponibilidade das rotinas de instalação).
   - **4.4.2 Ações Efetivas de Inadimplência e Instalações de Câmeras:** Tabela analítica estruturada destacando todos os eventos operacionais com impacto direto em clientes (ações de BLOCK, UNBLOCK e INSTALL, indicando ID, Data/Hora, Cliente, Contrato Voalle, Protocolo/OS, Quantidade de Câmeras e Status), informando que as centenas de checagens horárias automáticas (NOTIFY) operaram com êxito sem requisições manuais pendentes.
 - **4.5 Impacto Operacional e Métricas de Produtividade das Automações:**
   - Total consolidado de horas técnicas de esforço humano economizadas no período (rotinas diárias de vouchers WiFeed, auditorias automáticas Fullcam e esteira de provisionamento).
@@ -306,7 +291,7 @@ Detalhamento de cada incidente ocorrido na semana:
    - Hash de commit do Git no AutoTickets (ex.: `commit a1b2c3d`);
    - Identificação precisa de relatório analítico (ex.: `2.autotickets/wifeed_daily_update_voucher/`, `2.autotickets/fullcam_lucros_prejuizos/`).
 3. **Regra de Arquivos Multi-Formato:** Relatórios em `2.autotickets/` que compartilhem o mesmo nome base em extensões diferentes (ex.: `.md`, `.html`, `.csv`, `.pdf`) originam-se do mesmo conjunto de dados consolidado. A IA deve verificar apenas as particularidades entre eles (como gráficos SVG no HTML ou colunas adicionais no CSV) e tratá-los de forma unificada, sem duplicar o processamento ou considerá-los fontes conflitantes.
-4. **Cruzamento Metrológico Voalle + AutoTickets:** O relatório `colaborador_x_ticket` fornece as métricas oficiais de vazão (Balanço da Fila de 120,5%), TMA e TMR, enquanto `1.voalle/` provê a rastreabilidade qualitativa e apontamentos individuais de cada protocolo.
+4. **Cruzamento Metrológico Voalle + AutoTickets:** O relatório `colaborador_x_ticket` fornece as métricas oficiais de vazão (Balanço da Fila), TMA e TMR, enquanto `1.voalle/` provê a rastreabilidade qualitativa e apontamentos individuais de cada protocolo.
 5. **Consistência do Índice:** Toda seção listada no Índice Geral de Navegação DEVE existir exatamente com o mesmo título e âncora funcional no corpo do texto.
 6. **Ausência Justificada:** Caso não hajam demandas compatíveis em um subtópico, registrar formalmente a justificativa técnica em vez de omitir o tópico ou simular atividades inexistentes.
 7. **Preservação da Visão Individual:** O relatório semanal consolidado não deve canibalizar as entregas técnicas do relatório individual de Liomar, mas sim incorporá-las integralmente e enriquecê-las com a visão macro do setor.
