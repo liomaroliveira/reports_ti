@@ -124,8 +124,8 @@ A moldura de abertura do documento deve seguir estritamente o padrão corporativ
 * **Título Principal:** Relatório Semanal Consolidado - Setor TI
 * **Subtítulo:** Panorama Operacional, Gestão de Demandas, Incidentes, Infraestrutura Crítica e Outros
 * **Bloco de Identificação Executiva (Grid Corporativo em Tabela):**
-  - **Período Oficial (Diretoria):** `[Data Inicial Domingo] a [Data Final Sábado] (Semana XX / AAAA)`
-  - **Período Operacional Efetivo do TI:** `[Segunda-feira] a [Sexta-feira] (Expediente Útil do Setor)`
+  - **Período Analisado:** `[Data Inicial Domingo] a [Data Final Sábado] (Semana XX / AAAA)`
+  - **Período Operacional Efetivo:** `[Segunda-feira] a [Sexta-feira] (Expediente Útil do Setor)`
   - **Coordenador de TI:** `Isvi Neemias`
   - **Responsável pela Consolidação:** `Liomar Antonio de Oliveira (Analista de TI Sênior — ID #107184)`
   - **Equipe Integrada:** `Liomar Oliveira, Isac Costa Silva e David Brasil Fernandes`
