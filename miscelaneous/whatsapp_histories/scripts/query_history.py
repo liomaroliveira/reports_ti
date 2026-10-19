@@ -58,7 +58,6 @@ CATEGORY_RULES = {
         "comercial"
     ],
     "coordenacao": [
-        "[telefone removido]",
         "isvi"
     ],
     "incidentes": [
@@ -106,7 +105,8 @@ def classify_chat(subject, raw_jid):
     sub = (subject or "").lower()
     raw = (raw_jid or "").lower()
     
-    if "[telefone removido]" in raw or "isvi" in sub:
+    coord_numbers = [num for num, nome in KNOWN_CONTACTS.items() if "coordena" in nome.lower()]
+    if any(num in raw for num in coord_numbers) or "isvi" in sub:
         return "coordenacao"
     if any(k in sub for k in ["made4noc", "consultoria", "pliqcx"]):
         return "incidentes"
