@@ -10,7 +10,8 @@ Depois: bash scripts/renderizar_pdf.sh <saida.html>  (embute o CSS e gera o PDF 
 O Markdown é a fonte única; o HTML sai dele. O script:
   - monta a moldura (cabeçalho, bloco de identificação, convenções e índice) a partir do próprio .md
     (linhas "**Período Analisado**" e "**Período Operacional Efetivo**" do bloco de identificação);
-  - cada "## " vira tópico com quebra de página; os "### " de 📈 Destaques e ⭐ Fatos Notáveis viram cards;
+  - cada "# " (Parte I, II, III…) vira faixa de grande seção com quebra de página; cada "## " vira tópico com quebra
+    de página (o primeiro tópico de uma parte fica na mesma página da faixa); os "### " de 📈 Destaques e ⭐ Fatos Notáveis viram cards;
   - ids iguais às âncoras do índice (mesmo algoritmo de scripts/validar_indice.py);
   - tabelas com td.nowrap em números, protocolos, datas, valores e CPF mascarado; tabela-densa quando houver
     coluna CPF/CNPJ; CPF mascarado deve vir escapado no .md (\*\*\*.456.789-\*\*);
@@ -116,8 +117,8 @@ def lista(linhas):
 
 
 def converter(md, css_href):
-    global corpo, vistos, secao_atual, card_aberto, pagina
-    corpo, vistos, secao_atual, card_aberto, pagina = [], {}, "", None, 0
+    global corpo, vistos, secao_atual, card_aberto, pagina, parte_aberta
+    corpo, vistos, secao_atual, card_aberto, pagina, parte_aberta = [], {}, "", None, 0, False
     indice = []
 
     def fechar_card():
@@ -182,11 +183,24 @@ def converter(md, css_href):
             corpo.append('<div class="card-narrative" style="padding:10px">' + "\n".join(linhas[i:j + 1]) + "</div>")
             i = j + 1
             continue
-        m = re.match(r"^(#{2,4})\s+(.*)$", l)
+        m = re.match(r"^(#{1,4})\s+(.*)$", l)
         if m:
             nivel, titulo = len(m.group(1)), m.group(2).strip()
             aid = anchor(titulo)
-            if nivel == 2:
+            if nivel == 1:
+                # Grande seção (Parte I, II, III, Encerramento): abre página com faixa; o primeiro "## " segue na mesma página
+                fechar_card()
+                if corpo:
+                    corpo.append("</div>")
+                pagina += 1
+                corpo.append(f'<div class="page-section page-break"><div class="part-banner" id="{aid}">{inline(titulo)}</div>')
+                parte_aberta = True
+            elif nivel == 2 and parte_aberta:
+                fechar_card()
+                secao_atual = titulo
+                parte_aberta = False
+                corpo.append(f'<div class="section-title" id="{aid}"><span>{inline(titulo)}</span></div>')
+            elif nivel == 2:
                 fechar_card()
                 if corpo:
                     corpo.append("</div>")

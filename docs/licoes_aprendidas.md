@@ -6,6 +6,19 @@ Consolidado dos pareceres de Isvi Neemias. Os pareceres completos ficam em `sema
 
 ---
 
+## Semana 2026-10-11 a 2026-10-17 (observações de Liomar e Isac sobre o relatório da semana 42)
+
+### Correções e orientações
+- **Base de clientes:** o número diário vem do **ERP Voalle** (clientes adimplentes de toda a empresa); o AutoTickets o apura na automação de vouchers do WiFeed. Não chamar de "base WiFeed". Ganhou tópico próprio (8.1) com os indicadores do Voalle.
+- **Estrutura em grandes seções:** Parte I — O Setor de TI, Parte II — A Empresa, Parte III — Sistemas e Encerramento (`docs/especificacao_relatorio.md`, "Grandes Seções"). Será refinada nas próximas semanas.
+- **AutoTickets como integrador:** dados da empresa (Voalle, Fullcam, WiFeed, NOC) chegam consolidados pelo AutoTickets, desenvolvido por Liomar; dizer isso na abertura da Parte II.
+- **Automações Fullcam:** o registro de toda execução periódica era só para acompanhar o desenvolvimento e foi desativado após 06/10. O relatório mostra só as execuções com ação; ausência de registro não é parada da automação.
+- **Pessoas sem artigo:** "David atribui…", "Liomar registrou…", "Raimara confirmou…", nunca "o David", "a Raimara".
+- **Contexto antes de cobrar:** ZEUS (#3137037) estava aguardando os telefones, conforme o último relato do protocolo; a configuração MikroTik fora do padrão (#3221689) era de cerca de 3 anos atrás, feita por terceiro antes de existir o Setor de TI (o setor já tem padrão e scripts testados); o erro de câmera de 16/10 foi de digitação/colagem do link RTMP na câmera, não da automação, que entregou os links corretos.
+- **AutoTickets corrigido:** o "Tempo de Atendimento" de 20.670 dias (#3217119) foi corrigido em 20/10 no relatório Colaborador × Ticket.
+
+---
+
 ## Semana 2026-10-04 a 2026-10-10 (feedback em `semanas/2026-10-04_2026-10-10/feedback.md`)
 
 ### Correções e orientações

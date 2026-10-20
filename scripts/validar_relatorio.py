@@ -7,7 +7,8 @@ Uso:
 
 Confere:
   1. Termos proibidos ("resolutividade", "resolubilidade").
-  2. Seções obrigatórias: Resumo Executivo, 📈 Destaques Analíticos, ⭐ Fatos Notáveis e tópicos 1 a 9.
+  2. Seções obrigatórias: Resumo Executivo, 📈 Destaques Analíticos, ⭐ Fatos Notáveis, tópicos 1 a 13 e as grandes
+     seções (# Parte I — O Setor de TI, # Parte II — A Empresa, # Parte III — Sistemas, # Encerramento).
   3. Destaques Analíticos com 3 a 5 itens (ou a declaração "Semana sem desvios relevantes").
   4. Feedback da semana anterior: tabela "Acompanhamento das observações" com ao menos uma linha por observação.
   5. Tópico condicional 8.4: presente se houver fonte em fontes/autotickets/anomalias_pppoe/; ausente (e citado no
@@ -27,6 +28,9 @@ sys.path.insert(0, os.path.join(RAIZ, "scripts"))
 from mascarar_dados import CNPJ_FMT, CPF_FMT, DIGITOS, RTMP, SENHA, cnpj_valido, cpf_valido  # noqa: E402
 
 PERIODO = re.compile(r"^\d{4}-\d{2}-\d{2}_\d{4}-\d{2}-\d{2}$")
+# Espinha do relatório (docs/especificacao_relatorio.md): tópicos 1 a 13 agrupados em grandes seções
+TOPICOS = 13
+PARTES = ("Parte I", "Parte II", "Parte III", "Encerramento")
 PROIBIDOS = re.compile(r"\b(resolutividade|resolubilidade)\b", re.I)
 # Regra 1: fonte citada pelo nome descritivo, nunca pelo arquivo
 ARQUIVOS = re.compile(r"(?:\bfontes/|\bdocs/|\bsemanas/|_ANALISE_|_FORMATO_ESPERADO|report_ti_|autotickets[-_]v2\b"
@@ -75,10 +79,13 @@ def validar(path):
     obrigatorias = [("Resumo Executivo", r"Resumo Executivo"),
                     ("📈 Destaques Analíticos da Semana", r"\W*Destaques Analíticos"),
                     ("⭐ Fatos Notáveis e Anomalias da Semana", r"\W*Fatos Notáveis")]
-    obrigatorias += [(f"Tópico {n}", rf"{n}\.\s") for n in range(1, 10)]
+    obrigatorias += [(f"Tópico {n}", rf"{n}\.\s") for n in range(1, TOPICOS + 1)]
     for nome, rx in obrigatorias:
         if secao(texto, rx) is None:
             erros.append(f"seção obrigatória ausente: {nome}")
+    for parte in PARTES:
+        if not re.search(r"^#\s+" + re.escape(parte), texto, re.M):
+            erros.append(f"grande seção ausente: # {parte} …")
 
     # 3. Destaques Analíticos
     dest = secao(texto, r"\W*Destaques Analíticos")

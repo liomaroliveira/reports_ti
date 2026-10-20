@@ -40,7 +40,7 @@ FORMATOS = {
     "fontes/autotickets/wifeed_daily_update_voucher": (
         "**MD** (ou CSV — um dos dois basta).",
         DOM_SAB,
-        "O gráfico do 4.2.4 é redesenhado a partir da tabela diária; HTML e PDF não são necessários.",
+        "O gráfico do 8.1 (base de clientes adimplentes do Voalle) é redesenhado a partir da tabela diária; HTML e PDF não são necessários.",
     ),
     "fontes/autotickets/fullcam_lucros_prejuizos": (
         "**CSV**.",
@@ -76,9 +76,9 @@ FORMATOS = {
         "Subpasta `todas_equipes/` (se existir): versão anterior de 30 dias, só referência.",
     ),
     "fontes/autotickets/produtividade_geral": (
-        "A definir (alimenta o 4.5).",
+        "A definir (alimenta o 11.3).",
         DOM_SAB,
-        "Sem exportação definida ainda; o 4.5 usa as premissas das automações.",
+        "Sem exportação definida ainda; o 11.3 usa as premissas das automações.",
     ),
     "fontes/autotickets/desenvolvimento": (
         "Nenhum arquivo é necessário: os commits são minerados do repositório `autotickets_v2` (`AUTOTICKETS_REPO`).",
@@ -94,7 +94,7 @@ FORMATOS = {
         "**MD ou CSV** (exportação/print do Proxmox/PBS) com: VMs/CTs na rotina, jobs executados × falhas, "
         "refeitos manualmente (causa) e data do último teste de restauração.",
         DOM_SAB,
-        "Sem este arquivo, o 8.2 declara ausência de fonte (nunca estimar).",
+        "Sem este arquivo, o 6.3 declara ausência de fonte (nunca estimar).",
     ),
     "individuais": (
         "Qualquer formato (MD, HTML ou PDF) enviado pelos colegas.",

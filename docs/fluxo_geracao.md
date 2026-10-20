@@ -43,7 +43,7 @@ Rodar `python3 scripts/checar_entradas.py` e mostrar a tabela ao usuário. São 
 Ler, antes de escrever qualquer seção:
 
 1. **`semanas/<anterior>/report_ti_*.md`** — o relatório consolidado anterior. Usar para:
-   - **Continuidade:** cada item de *1.2 Demandas em andamento*, *1.1 Pendentes* e *9.3 Ações planejadas* do relatório anterior precisa ter **desfecho** no novo (concluído, em andamento com novo %, replanejado com motivo e novo prazo, ou cancelado com motivo).
+   - **Continuidade:** cada item de *1.2 Demandas em andamento*, *1.1 Pendentes* e *13.3 Ações planejadas* (*9.3* nos relatórios até a semana 41) do relatório anterior precisa ter **desfecho** no novo (concluído, em andamento com novo %, replanejado com motivo e novo prazo, ou cancelado com motivo).
    - **Comparação:** indicadores-chave da semana (balanço da fila, volumes, base WiFeed etc.) podem ser comparados com os da semana anterior. O valor anterior aparece sempre **identificado como "semana anterior"** e com a fonte citada como "relatório da semana NN" (nunca pelo caminho do arquivo); nunca substitui o dado atual.
    - **Mudanças de plano:** desvio em relação ao que foi prometido entra com o motivo (`docs/regras_metricas.md` §8).
 2. **`semanas/<anterior>/feedback.md`** *(se existir)* — parecer do Isvi e observações do Liomar. **Toda observação precisa ser tratada** no novo relatório: no tópico correspondente e na tabela *Acompanhamento das observações da semana anterior* do Resumo Executivo (`docs/especificacao_relatorio.md`).

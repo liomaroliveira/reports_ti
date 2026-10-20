@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--
   Esqueleto oficial do Relatório Semanal Consolidado — Setor de TI.
-  Uso:
+  O HTML oficial é gerado a partir do .md por scripts/md_para_html.py (moldura, índice e componentes abaixo).
+  Este arquivo é a referência visual dos componentes. Uso manual (excepcional):
     1. Copiar para semanas/<semana>/report_ti_<Domingo>_<Sábado>.html
        (para individuais: semanas/<semana>/individuais/<pessoa>.html e trocar o href do CSS por ../../../templates/report.css)
     2. Substituir todos os {{...}}; duplicar/remover blocos de exemplo conforme os dados REAIS da semana.
@@ -57,58 +58,15 @@
       </div>
     </div>
 
-    <div class="section-title" id="indice-geral">
-      <span>Índice Geral de Navegação</span>
-      <span class="badge-count">Estrutura Oficial</span>
-    </div>
-
-    <div class="toc-box">
-      <ul>
-        <li class="toc-h2"><a href="#resumo-executivo">Resumo Executivo</a></li>
-        <li class="toc-h2"><a href="#-destaques-analíticos-da-semana">📈 Destaques Analíticos da Semana</a></li>
-        <li class="toc-h2"><a href="#-fatos-notáveis-e-anomalias-da-semana">⭐ Fatos Notáveis e Anomalias da Semana</a></li>
-        <li class="toc-h2"><a href="#1-gestão-de-demandas">1. Gestão de Demandas</a></li>
-        <li class="toc-h3"><a href="#11-demandas-pendentes">1.1 Demandas Pendentes</a></li>
-        <li class="toc-h3"><a href="#12-demandas-em-andamento">1.2 Demandas em Andamento</a></li>
-        <li class="toc-h3"><a href="#13-demandas-concluídas">1.3 Demandas Concluídas</a></li>
-        <li class="toc-h3"><a href="#14-demandas-novas">1.4 Demandas Novas</a></li>
-        <li class="toc-h4"><a href="#141-comparativo-entradas--saídas-balanço-da-fila">1.4.1 Comparativo Entradas × Saídas (Balanço da Fila)</a></li>
-        <li class="toc-h2"><a href="#2-registro-de-atividades-por-membro-da-equipe">2. Registro de Atividades por Membro da Equipe</a></li>
-        <li class="toc-h3"><a href="#21-david-brasil-fernandes">2.1 David Brasil Fernandes</a></li>
-        <li class="toc-h3"><a href="#22-isac-costa-silva">2.2 Isac Costa Silva</a></li>
-        <li class="toc-h3"><a href="#23-liomar-antonio-de-oliveira">2.3 Liomar Antonio de Oliveira</a></li>
-        <li class="toc-h3"><a href="#24-desempenho-no-voalle-e-confronto-com-jornada-real-pontomais">2.4 Desempenho no Voalle e Confronto com Jornada Real (Pontomais)</a></li>
-        <li class="toc-h2"><a href="#3-projetos-e-entregas">3. Projetos e Entregas</a></li>
-        <li class="toc-h3"><a href="#31-projetos-de-conectividade-e-redes">3.1 Projetos de Conectividade e Redes</a></li>
-        <li class="toc-h3"><a href="#32-telefonia-fixa-e-comunicação-corporativa">3.2 Telefonia Fixa e Comunicação Corporativa (Native PBX / ZEUS)</a></li>
-        <li class="toc-h3"><a href="#33-painéis-de-bi-com-parceiros">3.3 Painéis de BI com Parceiros</a></li>
-        <li class="toc-h2"><a href="#4-plataforma-e-automações-autotickets">4. Plataforma e Automações AutoTickets</a></li>
-        <li class="toc-h3"><a href="#41-desenvolvimento-e-engenharia-de-software-autotickets-v2">4.1 Desenvolvimento e Engenharia de Software AutoTickets v2</a></li>
-        <li class="toc-h3"><a href="#42-automação-wifeed--hotspots-e-sincronização-diária-de-vouchers">4.2 Automação WiFeed – Hotspots e Sincronização Diária de Vouchers</a></li>
-        <li class="toc-h3"><a href="#43-módulo-fullcam--auditoria-financeira-de-lucros-e-prejuízos">4.3 Módulo Fullcam – Auditoria Financeira de Lucros e Prejuízos</a></li>
-        <li class="toc-h3"><a href="#44-módulo-fullcam--produção-operacional-das-automações">4.4 Módulo Fullcam – Produção Operacional das Automações</a></li>
-        <li class="toc-h3"><a href="#45-impacto-operacional-e-métricas-de-produtividade-das-automações">4.5 Impacto Operacional e Métricas de Produtividade das Automações</a></li>
-        <li class="toc-h2"><a href="#5-incidentes-tratados">5. Incidentes Tratados</a></li>
-        <li class="toc-h2"><a href="#6-suporte-interno-informática">6. Suporte Interno (Informática)</a></li>
-        <li class="toc-h3"><a href="#61-relação-de-atendimentos-e-chamados-da-semana">6.1 Relação de Atendimentos e Chamados da Semana</a></li>
-        <li class="toc-h3"><a href="#62-setores-que-mais-demandaram-atendimento">6.2 Setores que mais Demandaram Atendimento</a></li>
-        <li class="toc-h3"><a href="#63-colaboradores-solicitantes-mais-frequentes">6.3 Colaboradores Solicitantes Mais Frequentes</a></li>
-        <li class="toc-h3"><a href="#64-relatório-de-visitas-técnicas-presenciais-e-gestão-de-veículos">6.4 Relatório de Visitas Técnicas Presenciais e Gestão de Veículos</a></li>
-        <li class="toc-h2"><a href="#7-suporte-ao-técnico-de-campo">7. Suporte ao Técnico de Campo</a></li>
-        <li class="toc-h3"><a href="#71-volumetria-de-solicitações-com-e-sem-protocolo">7.1 Volumetria de Solicitações (Com e Sem Protocolo)</a></li>
-        <li class="toc-h3"><a href="#72-tipos-de-apoio-mais-frequentes-e-tempo-de-resposta">7.2 Tipos de Apoio Mais Frequentes e Tempo de Resposta</a></li>
-        <li class="toc-h3"><a href="#73-oportunidades-de-automação-e-redução-de-dependência">7.3 Oportunidades de Automação e Redução de Dependência</a></li>
-        <li class="toc-h2"><a href="#8-infraestrutura-e-sistemas-críticos">8. Infraestrutura e Sistemas Críticos</a></li>
-        <li class="toc-h3"><a href="#81-disponibilidade-de-serviços-e-incidentes-em-sistemas">8.1 Disponibilidade de Serviços e Incidentes em Sistemas</a></li>
-        <li class="toc-h3"><a href="#82-execução-e-validação-de-backups">8.2 Execução e Validação de Backups</a></li>
-        <li class="toc-h3"><a href="#83-atualizações-melhorias-e-ações-de-modernização">8.3 Atualizações, Melhorias e Ações de Modernização</a></li>
-        <li class="toc-h3"><a href="#84-anomalias-de-tráfego-pppoe-e-ações-proativas-para-o-service-desk">8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk</a></li>
-        <li class="toc-h2"><a href="#9-pontos-de-atenção-e-próximas-ações">9. Pontos de Atenção e Próximas Ações</a></li>
-        <li class="toc-h3"><a href="#91-riscos-tecnológicos-e-vulnerabilidades-identificadas">9.1 Riscos Tecnológicos e Vulnerabilidades Identificadas</a></li>
-        <li class="toc-h3"><a href="#92-necessidades-de-investimentos-e-aquisições">9.2 Necessidades de Investimentos e Aquisições</a></li>
-        <li class="toc-h3"><a href="#93-ações-planejadas-para-as-próximas-semanas">9.3 Ações Planejadas para as Próximas Semanas</a></li>
-      </ul>
-    </div>
+    <div class="section-title" id="indice-geral"><span>Índice Geral de Navegação</span></div>
+    <!-- Índice: gerado por scripts/md_para_html.py a partir do índice do .md (estrutura vigente em docs/especificacao_relatorio.md).
+         Classes: toc-h2 (Resumo/Destaques/Fatos/Partes), toc-h3 (tópicos), toc-h4 (subtópicos), toc-h5 (sub-subtópicos). -->
+    <div class="toc-box"><ul>
+      <li class="toc-h2"><a href="#resumo-executivo">Resumo Executivo</a></li>
+      <li class="toc-h2"><a href="#parte-i--o-setor-de-ti">Parte I — O Setor de TI</a></li>
+      <li class="toc-h3"><a href="#1-gestão-de-demandas">1. Gestão de Demandas</a></li>
+      <li class="toc-h4"><a href="#11-demandas-pendentes">1.1 Demandas Pendentes</a></li>
+    </ul></div>
 
     <div class="section-title" id="resumo-executivo">
       <span>Resumo Executivo</span>
@@ -174,151 +132,20 @@
     </div>
   </div>
 
+  <!-- Grande seção: faixa .part-banner; o primeiro tópico da parte fica na mesma página -->
   <div class="page-section page-break">
-    <div class="section-title" id="1-gestão-de-demandas">
-      <span>1. Gestão de Demandas</span>
-      <span class="badge-count">{{resumo}}</span>
-    </div>
-
+    <div class="part-banner" id="parte-i--o-setor-de-ti">Parte I — O Setor de TI</div>
+    <p>{{Frase de abertura da grande seção.}}</p>
+    <div class="section-title" id="1-gestão-de-demandas"><span>1. Gestão de Demandas</span></div>
     <div class="sub-section-title" id="11-demandas-pendentes">1.1 Demandas Pendentes</div>
-    <!-- EXEMPLO: tabela -->
+    <!-- EXEMPLO: tabela (td.nowrap para protocolos, números, datas, valores e CPF mascarado) -->
     <div class="table-container">
       <table>
-        <thead>
-          <tr>
-            <th style="width: 15%;">Protocolo / ID</th>
-            <th style="width: 25%;">Solicitante / Setor</th>
-            <th style="width: 15%;">Responsável</th>
-            <th style="width: 12%;">Prioridade</th>
-            <th style="width: 33%;">Descrição Técnica &amp; Motivo da Espera</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>#{{protocolo}}</strong></td>
-            <td>{{solicitante}} / {{setor}}</td>
-            <td>{{responsável}}</td>
-            <td><span class="badge badge-info">{{prioridade}}</span></td>
-            <td>{{descrição}}</td>
-          </tr>
-        </tbody>
+        <thead><tr><th>Protocolo</th><th>Solicitante / Setor</th><th>Responsável</th><th>Prioridade</th><th>Situação</th></tr></thead>
+        <tbody><tr><td class="nowrap">#{{protocolo}}</td><td>{{solicitante}} / {{setor}}</td><td>{{responsável}}</td><td><span class="badge badge-info">{{prioridade}}</span></td><td>{{situação}}</td></tr></tbody>
       </table>
     </div>
-
-    <div class="sub-section-title" id="12-demandas-em-andamento">1.2 Demandas em Andamento</div>
-    <!-- Progresso: 75% <div class="progress-bar-container"><div class="progress-bar green" style="width:75%;"></div></div> -->
-
-    <div class="sub-section-title" id="13-demandas-concluídas">1.3 Demandas Concluídas</div>
-    <div class="sub-section-title" id="14-demandas-novas">1.4 Demandas Novas</div>
-    <div class="sub-section-title" id="141-comparativo-entradas--saídas-balanço-da-fila">1.4.1 Comparativo Entradas × Saídas (Balanço da Fila)</div>
-  </div>
-
-  <div class="page-section page-break">
-    <div class="section-title" id="2-registro-de-atividades-por-membro-da-equipe"><span>2. Registro de Atividades por Membro da Equipe</span></div>
-    <div class="sub-section-title" id="21-david-brasil-fernandes">2.1 David Brasil Fernandes</div>
-    <!-- EXEMPLO: distribuição do tempo -->
-    <div class="time-dist-grid">
-      <div class="time-item">
-        <div class="time-item-top"><span>{{frente de trabalho}}</span><span class="pct">{{40}}%</span></div>
-        <div class="progress-bar-container"><div class="progress-bar" style="width:{{40}}%;"></div></div>
-      </div>
-    </div>
-    <div class="sub-section-title" id="22-isac-costa-silva">2.2 Isac Costa Silva</div>
-    <div class="sub-section-title" id="23-liomar-antonio-de-oliveira">2.3 Liomar Antonio de Oliveira</div>
-    <div class="sub-section-title" id="24-desempenho-no-voalle-e-confronto-com-jornada-real-pontomais">2.4 Desempenho no Voalle e Confronto com Jornada Real (Pontomais)</div>
-  </div>
-
-  <div class="page-section page-break">
-    <div class="section-title" id="3-projetos-e-entregas"><span>3. Projetos e Entregas</span></div>
-    <div class="sub-section-title" id="31-projetos-de-conectividade-e-redes">3.1 Projetos de Conectividade e Redes</div>
-    <div class="sub-section-title" id="32-telefonia-fixa-e-comunicação-corporativa">3.2 Telefonia Fixa e Comunicação Corporativa (Native PBX / ZEUS)</div>
-    <div class="sub-section-title" id="33-painéis-de-bi-com-parceiros">3.3 Painéis de BI com Parceiros</div>
-  </div>
-
-  <div class="page-section page-break">
-    <div class="section-title" id="4-plataforma-e-automações-autotickets"><span>4. Plataforma e Automações AutoTickets</span></div>
-    <div class="sub-section-title" id="41-desenvolvimento-e-engenharia-de-software-autotickets-v2">4.1 Desenvolvimento e Engenharia de Software AutoTickets v2</div>
-    <div class="sub-section-title" id="42-automação-wifeed--hotspots-e-sincronização-diária-de-vouchers">4.2 Automação WiFeed – Hotspots e Sincronização Diária de Vouchers</div>
-    <div class="sub-section-title" id="43-módulo-fullcam--auditoria-financeira-de-lucros-e-prejuízos">4.3 Módulo Fullcam – Auditoria Financeira de Lucros e Prejuízos</div>
-    <div class="sub-section-title" id="44-módulo-fullcam--produção-operacional-das-automações">4.4 Módulo Fullcam – Produção Operacional das Automações</div>
-    <div class="sub-section-title" id="45-impacto-operacional-e-métricas-de-produtividade-das-automações">4.5 Impacto Operacional e Métricas de Produtividade das Automações</div>
-  </div>
-
-  <div class="page-section page-break">
-    <div class="section-title" id="5-incidentes-tratados"><span>5. Incidentes Tratados</span></div>
-  </div>
-
-  <div class="page-section page-break">
-    <div class="section-title" id="6-suporte-interno-informática"><span>6. Suporte Interno (Informática)</span></div>
-    <div class="sub-section-title" id="61-relação-de-atendimentos-e-chamados-da-semana">6.1 Relação de Atendimentos e Chamados da Semana</div>
-    <div class="sub-section-title" id="62-setores-que-mais-demandaram-atendimento">6.2 Setores que mais Demandaram Atendimento</div>
-    <div class="sub-section-title" id="63-colaboradores-solicitantes-mais-frequentes">6.3 Colaboradores Solicitantes Mais Frequentes</div>
-    <div class="sub-section-title" id="64-relatório-de-visitas-técnicas-presenciais-e-gestão-de-veículos">6.4 Relatório de Visitas Técnicas Presenciais e Gestão de Veículos</div>
-  </div>
-
-  <div class="page-section page-break">
-    <div class="section-title" id="7-suporte-ao-técnico-de-campo"><span>7. Suporte ao Técnico de Campo</span></div>
-    <div class="sub-section-title" id="71-volumetria-de-solicitações-com-e-sem-protocolo">7.1 Volumetria de Solicitações (Com e Sem Protocolo)</div>
-    <div class="sub-section-title" id="72-tipos-de-apoio-mais-frequentes-e-tempo-de-resposta">7.2 Tipos de Apoio Mais Frequentes e Tempo de Resposta</div>
-    <div class="sub-section-title" id="73-oportunidades-de-automação-e-redução-de-dependência">7.3 Oportunidades de Automação e Redução de Dependência</div>
-  </div>
-
-  <div class="page-section page-break">
-    <div class="section-title" id="8-infraestrutura-e-sistemas-críticos"><span>8. Infraestrutura e Sistemas Críticos</span></div>
-    <div class="sub-section-title" id="81-disponibilidade-de-serviços-e-incidentes-em-sistemas">8.1 Disponibilidade de Serviços e Incidentes em Sistemas</div>
-    <div class="sub-section-title" id="82-execução-e-validação-de-backups">8.2 Execução e Validação de Backups</div>
-    <div class="sub-section-title" id="83-atualizações-melhorias-e-ações-de-modernização">8.3 Atualizações, Melhorias e Ações de Modernização</div>
-    <div class="sub-section-title" id="84-anomalias-de-tráfego-pppoe-e-ações-proativas-para-o-service-desk">8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk</div>
-    <!-- Tópico CONDICIONAL: só existe se houver fontes/autotickets/anomalias_pppoe/; sem fonte, remover esta seção e a entrada do índice
-         e citar a ausência em uma linha no fim do Resumo Executivo. -->
-    <!-- Retrato ATUAL (gerado no dia da emissão): informar a data/hora do retrato; não aplicar o recorte da semana. -->
-    <div class="kpi-grid">
-      <div class="kpi-card rose">
-        <div class="kpi-value">{{27}}</div>
-        <div class="kpi-label">Anomalias</div>
-        <div class="kpi-desc">{{8}} críticas · retrato de {{DD/MM/AAAA HH:MM}}</div>
-      </div>
-      <div class="kpi-card amber">
-        <div class="kpi-value">{{23}}</div>
-        <div class="kpi-label">Inversões Up &gt; Down</div>
-        <div class="kpi-desc">razão ≥ 1,5x</div>
-      </div>
-      <div class="kpi-card purple">
-        <div class="kpi-value">{{5,66 TB}}</div>
-        <div class="kpi-label">Upload acumulado</div>
-        <div class="kpi-desc">download {{1,52 TB}}</div>
-      </div>
-      <div class="kpi-card emerald">
-        <div class="kpi-value">{{0}}</div>
-        <div class="kpi-label">Com ticket/OS aberto</div>
-        <div class="kpi-desc">encaminhados ao Service Desk</div>
-      </div>
-    </div>
-    <!-- Tabela ordenada por razão Upload/Download (desc.), com os dados para localizar o caso nos sistemas. CPF/CNPJ mascarado. -->
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>#</th><th>Cliente / Login / Contrato</th><th>CPF/CNPJ</th><th>Cidade / Bairro / POP</th><th>IP / MAC / CPE</th><th>Plano / RX</th>
-            <th>Up / Down</th><th>Razão</th><th>Quedas</th><th>Severidade</th><th>Hipótese → Ação proativa</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{1}}</td><td>{{nome}}<br>{{login}} · {{contrato}}</td><td>{{***.456.789-**}}</td><td>{{cidade}} / {{bairro}} / {{POP}}</td>
-            <td>{{IP}}<br>{{MAC}} · {{fabricante}}</td><td>{{plano}} / {{RX}}</td><td>{{up}} / {{down}}</td><td><strong>{{47,2x}}</strong></td><td>{{3}}</td>
-            <td><span class="badge badge-danger">{{CRITICAL 80}}</span></td><td>{{CPE possivelmente comprometida → verificar CPE, firmware e senha}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="page-section page-break">
-    <div class="section-title" id="9-pontos-de-atenção-e-próximas-ações"><span>9. Pontos de Atenção e Próximas Ações</span></div>
-    <div class="sub-section-title" id="91-riscos-tecnológicos-e-vulnerabilidades-identificadas">9.1 Riscos Tecnológicos e Vulnerabilidades Identificadas</div>
-    <div class="sub-section-title" id="92-necessidades-de-investimentos-e-aquisições">9.2 Necessidades de Investimentos e Aquisições</div>
-    <div class="sub-section-title" id="93-ações-planejadas-para-as-próximas-semanas">9.3 Ações Planejadas para as Próximas Semanas</div>
+    <!-- Demais tópicos (1 a 13) e o condicional 8.4: ver docs/especificacao_relatorio.md -->
   </div>
 
 </body>
