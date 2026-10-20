@@ -43,10 +43,10 @@ Rodar `python3 scripts/checar_entradas.py` e mostrar a tabela ao usuário. São 
 Ler, antes de escrever qualquer seção:
 
 1. **`semanas/<anterior>/report_ti_*.md`** — o relatório consolidado anterior. Usar para:
-   - **Continuidade:** cada item de *1.2 Demandas em andamento*, *1.1 Pendentes* e *13.3 Ações planejadas* (*9.3* nos relatórios até a semana 41) do relatório anterior precisa ter **desfecho** no novo (concluído, em andamento com novo %, replanejado com motivo e novo prazo, ou cancelado com motivo).
-   - **Comparação:** indicadores-chave da semana (balanço da fila, volumes, base WiFeed etc.) podem ser comparados com os da semana anterior. O valor anterior aparece sempre **identificado como "semana anterior"** e com a fonte citada como "relatório da semana NN" (nunca pelo caminho do arquivo); nunca substitui o dado atual.
+   - **Continuidade:** cada item de *1.2 Demandas em andamento*, *1.1 Pendentes* e *14.3 Ações planejadas* (*13.3* na semana 42; *9.3* até a semana 41) do relatório anterior precisa ter **desfecho** no novo (as ações planejadas, no *14.4 Cumprimento das Ações da Semana Anterior*) (concluído, em andamento com novo %, replanejado com motivo e novo prazo, ou cancelado com motivo).
+   - **Comparação:** indicadores-chave da semana (balanço da fila, volumes, base de clientes adimplentes do Voalle, saldo Fullcam etc.); os valores das semanas anteriores (até 6) alimentam o histórico do 📊 Painel da Semana podem ser comparados com os da semana anterior. O valor anterior aparece sempre **identificado como "semana anterior"** e com a fonte citada como "relatório da semana NN" (nunca pelo caminho do arquivo); nunca substitui o dado atual.
    - **Mudanças de plano:** desvio em relação ao que foi prometido entra com o motivo (`docs/regras_metricas.md` §8).
-2. **`semanas/<anterior>/feedback.md`** *(se existir)* — parecer do Isvi e observações do Liomar. **Toda observação precisa ser tratada** no novo relatório: no tópico correspondente e na tabela *Acompanhamento das observações da semana anterior* do Resumo Executivo (`docs/especificacao_relatorio.md`).
+2. **`semanas/<anterior>/feedback.md`** *(se existir)* — parecer do Isvi e observações do Liomar. **Toda observação precisa ser tratada** no novo relatório: no tópico correspondente e no *Anexo A — Acompanhamento das Observações da Semana Anterior* (`docs/especificacao_relatorio.md`).
 3. **`docs/licoes_aprendidas.md`** — regras e pendências acumuladas da Coordenação.
 
 ---
@@ -54,11 +54,11 @@ Ler, antes de escrever qualquer seção:
 ## Etapa principal: Relatório consolidado do setor
 
 1. **Fontes:** minerar diretamente `fontes/voalle/` (Liomar, Isac e David), `fontes/autotickets/`, os commits do `autotickets-v2` e `fontes/investigacoes/`. Se existir `individuais/<pessoa>.*` (enviado pelo colega ou gerado antes), usar como fonte complementar daquela pessoa.
-2. **Tópicos dinâmicos e condicionais:** antes de escrever, aplicar os critérios de "Classes de Tópicos" (`docs/especificacao_relatorio.md`) às fontes da semana e à semana anterior: escolher os 3 a 5 **Destaques Analíticos**, separar os **Fatos Notáveis**, decidir os **subtópicos livres** e incluir os **tópicos condicionais** que tiverem fonte (8.4). Ler os `_ANALISE_*.md` das pastas de fontes e respeitar as ressalvas.
-3. **Profundidade analítica (proibido resumir excessivamente):** cada tópico e subtópico com métricas, causas raízes, soluções, tabelas e contexto técnico.
-4. **Detalhamento por pessoa:** o Tópico 2 traz a visão completa de cada colaborador (atividades, distribuição do tempo, capacitação, Voalle × Pontomais), sem depender de relatório individual.
+2. **Tópicos dinâmicos e condicionais:** antes de escrever, aplicar os critérios de "Classes de Tópicos" (`docs/especificacao_relatorio.md`) às fontes da semana e à semana anterior: escolher os 3 a 5 **Destaques Analíticos**, separar os **Fatos Notáveis**, decidir os **subtópicos livres** e incluir os **tópicos condicionais** que tiverem fonte (12.3 e Anexo C; 11.2). Definir o **lugar canônico** de cada fato antes de escrever (tabela em "Visão geral" da especificação). Ler os `_ANALISE_*.md` das pastas de fontes e respeitar as ressalvas.
+3. **Profundidade analítica no lugar certo:** no lugar canônico, cada fato vem com métricas, causa raiz, solução e contexto técnico (proibido resumir excessivamente). Nos demais tópicos, só uma linha com a remissão. Tabelas completas vão para os Anexos e as ressalvas das fontes, para o Anexo E.
+4. **Detalhamento por pessoa:** o Tópico 2 traz a visão de cada colaborador por frente de trabalho (horas e protocolos, distribuição do tempo, capacitação, Voalle × Pontomais), sem depender de relatório individual e sem reescrever o detalhe dos tópicos 1.3, 3, 4, 6 e 7.
 5. **Ações conjuntas:** demanda com mais de um colaborador vira relato unificado, indicando a participação de cada um.
-6. **Saída:** escrever **só o `.md`** (`semanas/<semana>/report_ti_<Domingo>_<Sábado>.md`) e gerar o `.html` com `python3 scripts/md_para_html.py <arquivo.md>`; o `.pdf` sai na finalização. Statcards e barras entram no `.md` como marcadores `<!-- KPI: … -->` e `<!-- BARS: … -->` (sintaxe na docstring do script); CPF mascarado vai escapado (`\*\*\*.456.789-\*\*`). Não editar o `.html` à mão: corrigir o `.md` e gerar de novo.
+6. **Saída:** escrever **só o `.md`** (`semanas/<semana>/report_ti_<Domingo>_<Sábado>.md`) e gerar o `.html` com `python3 scripts/md_para_html.py <arquivo.md>`; o `.pdf` sai na finalização. A capa-painel, os statcards e os gráficos entram no `.md` como marcadores `<!-- PAINEL: … -->`, `<!-- KPI: … -->`, `<!-- BARS: … -->` e `<!-- STACK: … -->` (sintaxe na docstring do script); CPF mascarado vai escapado (`\*\*\*.456.789-\*\*`). Não editar o `.html` à mão: corrigir o `.md` e gerar de novo.
 
 ---
 
@@ -75,8 +75,8 @@ Executar **apenas** para as pessoas pedidas no prompt ou em `PARAMETROS.md`. Sem
 ## Finalização
 
 1. `python3 scripts/validar_indice.py semanas/<semana>/report_ti_*.md semanas/<semana>/report_ti_*.html` — corrigir qualquer âncora quebrada.
-   `python3 scripts/validar_relatorio.py semanas/<semana>/report_ti_*.md` — nomes/caminhos de arquivo citados no texto, termos técnicos ou negativos sobre o AutoTickets (aviso), termos proibidos, seções obrigatórias, Destaques Analíticos (3 a 5), tabela de acompanhamento com uma linha por observação do `feedback.md` anterior, tópico condicional 8.4 e dados que nunca podem aparecer (CPF/CNPJ sem máscara, senhas, RTMP).
-2. `python3 scripts/md_para_html.py semanas/<semana>/report_ti_<...>.md` e depois `bash scripts/renderizar_pdf.sh semanas/<semana>/report_ti_<...>.html` (e para cada individual gerado). Conferir o PDF visualmente (tabelas, quebras de página, cards).
+   `python3 scripts/validar_relatorio.py semanas/<semana>/report_ti_*.md` — nomes/caminhos de arquivo citados no texto, termos técnicos ou negativos sobre o AutoTickets (aviso), termos proibidos, seções obrigatórias, Destaques Analíticos (3 a 5), Painel da Semana com o marcador PAINEL, Anexo A com uma linha por observação do `feedback.md` anterior, tópico condicional 12.3 e Anexo C, avisos para "Decisões solicitadas" e "Cumprimento das ações", e dados que nunca podem aparecer (CPF/CNPJ sem máscara, senhas, RTMP).
+2. `python3 scripts/md_para_html.py semanas/<semana>/report_ti_<...>.md` e depois `bash scripts/renderizar_pdf.sh semanas/<semana>/report_ti_<...>.html` (e para cada individual gerado). Conferir o PDF visualmente (capa-painel na página 1, tabelas, quebras de página só por Parte, cards; meta de 15 a 18 páginas de corpo).
 3. Atualizar a seção de status do `PARAMETROS.md` da semana (o que foi gerado e o que ficou pendente).
 4. Commitar (o hook bloqueia apenas chaves de API e dados do WhatsApp).
 5. Quando chegar o parecer da Coordenação: salvar em `semanas/<semana>/feedback.md` e registrar as lições novas em `docs/licoes_aprendidas.md`.

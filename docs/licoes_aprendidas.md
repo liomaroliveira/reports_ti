@@ -6,12 +6,27 @@ Consolidado dos pareceres de Isvi Neemias. Os pareceres completos ficam em `sema
 
 ---
 
+## Estrutura final do relatório (análise crítica da semana 42, 2026-10-20, a partir da semana 43)
+
+- **3 Partes, nesta ordem:** **I — O Setor de TI** (só dados do setor, tópicos 1 a 6) → **II — Sistemas e Desenvolvimento** (AutoTickets, automações operadas pelo TI, sistemas sustentados e contratados, segurança da informação; 7 a 10) → **III — A Empresa** (base de clientes, qualidade do atendimento e da rede, PPPoE, resultado da Fullcam; 11 a 13). Depois vêm o Encerramento (14) e os Anexos A a E. A estrutura da semana 42 (Empresa antes de Sistemas) era um rascunho enviado sem querer.
+- **Automação: a execução é do TI e o dado é da empresa.** As cargas do WiFeed e as ações da Fullcam ficam no tópico 8. A base adimplente e o saldo Fullcam ficam na Parte III. A reincidência geral fica no 12.1, e os casos do TI, no 4.3.
+- **Lugar canônico único:** na semana 42, o mesmo fato aparecia de 8 a 11 vezes (DC-Chácara, cronômetros, *perfctl*). Agora cada fato é detalhado uma vez, com remissões de uma linha.
+- **Capa-painel** na página 1 (8 cards com farol e tendência + as 3 perguntas), pensada para a Dashboard Executiva. **Decisões solicitadas à Coordenação** no Resumo. **Cumprimento das ações da semana anterior** no 14.4.
+- **Visual:**
+  - quebra de página só por Parte (a semana 42 tinha 36 páginas, muitas meio vazias);
+  - índice em 2 níveis;
+  - cores semânticas nos statcards e chips de status sem emoji;
+  - tabelas completas e ressalvas das fontes nos Anexos.
+- **Lacunas do modelo da Coordenação** que passaram a ter lugar: capacidade dos servidores (5.3), disponibilidade de links e servidores (5.2), tempo de atendimento do suporte interno (3.3), dependências de terceiros (1.5) e incidentes recorrentes com plano (5.1).
+
+---
+
 ## Semana 2026-10-11 a 2026-10-17 (observações de Liomar e Isac sobre o relatório da semana 42)
 
 ### Correções e orientações
-- **Base de clientes:** o número diário vem do **ERP Voalle** (clientes adimplentes de toda a empresa); o AutoTickets o apura na automação de vouchers do WiFeed. Não chamar de "base WiFeed". Ganhou tópico próprio (8.1) com os indicadores do Voalle.
-- **Estrutura em grandes seções:** Parte I — O Setor de TI, Parte II — A Empresa, Parte III — Sistemas e Encerramento (`docs/especificacao_relatorio.md`, "Grandes Seções"). Será refinada nas próximas semanas.
-- **AutoTickets como integrador:** dados da empresa (Voalle, Fullcam, WiFeed, NOC) chegam consolidados pelo AutoTickets, desenvolvido por Liomar; dizer isso na abertura da Parte II.
+- **Base de clientes:** o número diário vem do **ERP Voalle** (clientes adimplentes de toda a empresa); o AutoTickets o apura na automação de vouchers do WiFeed. Não chamar de "base WiFeed". Ganhou tópico próprio com os indicadores do Voalle (8.1 na semana 42; 11.1 na estrutura final).
+- **Estrutura em grandes seções:** rascunho aplicado na semana 42 (Parte I — O Setor de TI, Parte II — A Empresa, Parte III — Sistemas). Substituído pela estrutura final acima.
+- **AutoTickets como integrador:** dados da empresa (Voalle, Fullcam, WiFeed, NOC) chegam consolidados pelo AutoTickets, desenvolvido por Liomar; dizer isso na abertura da Parte da Empresa (Parte III na estrutura final).
 - **Automações Fullcam:** o registro de toda execução periódica era só para acompanhar o desenvolvimento e foi desativado após 06/10. O relatório mostra só as execuções com ação; ausência de registro não é parada da automação.
 - **Pessoas sem artigo:** "David atribui…", "Liomar registrou…", "Raimara confirmou…", nunca "o David", "a Raimara".
 - **Contexto antes de cobrar:** ZEUS (#3137037) estava aguardando os telefones, conforme o último relato do protocolo; a configuração MikroTik fora do padrão (#3221689) era de cerca de 3 anos atrás, feita por terceiro antes de existir o Setor de TI (o setor já tem padrão e scripts testados); o erro de câmera de 16/10 foi de digitação/colagem do link RTMP na câmera, não da automação, que entregou os links corretos.

@@ -1,285 +1,423 @@
 # 📐 Especificação do Relatório Semanal Consolidado
 
-> Estrutura oficial (modelo da Coordenação — ver `docs/referencias/modelo_relatorio_setor_ti.pdf`), diagramação, índice e conteúdo obrigatório por tópico.
+> Estrutura oficial (conteúdo exigido pelo modelo da Coordenação — ver `docs/referencias/modelo_relatorio_setor_ti.pdf`), diagramação, índice e conteúdo obrigatório por tópico.
 > Regras de cálculo das métricas: `docs/regras_metricas.md`. Fluxo de geração: `docs/fluxo_geracao.md`.
 > **CSS oficial:** `templates/report.css` (não reinventar o visual a cada semana). Esqueleto HTML: `templates/report.html`.
+> **Estrutura em vigor desde a semana 43 (18 a 24/10/2026).** Relatórios até a semana 42 seguem a estrutura antiga e não são editados.
 
-## Estrutura hierárquica e diretrizes visuais
+## Visão geral
 
-### 🎨 1. Moldura do Topo e Bloco Institucional
+| Bloco | Conteúdo | Leitor principal |
+| :--- | :--- | :--- |
+| **Capa-painel** (página 1) | Identificação, 📊 Painel da Semana (8 cards com farol e tendência + as 3 perguntas) e índice | Isvi → Dashboard Executiva |
+| **Abertura** | Resumo Executivo (evolução e decisões solicitadas), 📈 Destaques Analíticos, ⭐ Fatos Notáveis | Coordenação |
+| **Parte I — O Setor de TI** (1 a 6) | Somente os dados do setor: demandas, equipe, suporte interno, suporte ao campo, infraestrutura e projetos | Coordenação |
+| **Parte II — Sistemas e Desenvolvimento** (7 a 10) | Sistemas que o TI desenvolve (AutoTickets e suas automações) e que sustenta (Voalle, Flashman, telefonia, Compras etc.), e a segurança da informação | Coordenação |
+| **Parte III — A Empresa** (11 a 13) | Dados de interesse da empresa toda, consolidados pelo AutoTickets: base de clientes, qualidade do atendimento e da rede, PPPoE e o resultado da Fullcam | Coordenação, Direção e setores |
+| **Encerramento** (14) | Riscos, investimentos, ações planejadas e o cumprimento das ações da semana anterior | Coordenação |
+| **Anexos** (A a E) | Tabelas completas e notas metodológicas, para consulta | Quem precisa localizar o caso |
 
-A moldura de abertura do documento deve seguir estritamente o padrão corporativo:
+**Princípios:**
 
-* **Título Principal:** Relatório Semanal Consolidado - Setor TI
-* **Subtítulo:** Panorama Operacional, Gestão de Demandas, Incidentes, Infraestrutura Crítica e Outros
-* **Bloco de Identificação Executiva (Grid Corporativo em Tabela):**
-  - **Período Analisado:** `[Data Inicial Domingo] a [Data Final Sábado] (Semana XX / AAAA)`
-  - **Período Operacional Efetivo:** `[Segunda-feira] a [Sexta-feira] (Expediente Útil do Setor)`
-  - **Coordenador de TI:** `Isvi Neemias`
-  - **Responsável pela Consolidação:** `Liomar Antonio de Oliveira (Analista de TI Sênior — ID #107184)`
-  - **Equipe Integrada:** `Liomar Oliveira, Isac Costa Silva e David Brasil Fernandes`
+1. **Lugar canônico único.** Cada fato é detalhado em **um** lugar (tabela abaixo). Nos demais, aparece no máximo em uma linha com a remissão "(ver 5.1)". Nunca reescrever a mesma narrativa em vários tópicos.
+2. **Corpo para decisão, anexo para consulta.** No corpo ficam a síntese, o top N e o que pede ação. Tabelas completas (Fullcam, PPPoE, logs das automações) vão para os Anexos.
+3. **Recorte do TI na Parte I, dado geral na Parte III.** Exemplo: a reincidência geral fica no 12.1, e os casos que passaram pelo TI ficam no 4.3.
+4. **Automação: a execução é do TI e o dado é da empresa.** Como a automação rodou (cargas, bloqueios, instalações) fica no 8. O que o dado diz sobre o negócio (base adimplente, saldo Fullcam) fica na Parte III.
+5. **Metodologia fora do corpo.** Ressalvas das fontes, recálculos e divergências entre formatos do AutoTickets vão para o Anexo E. No corpo fica só o número oficial e, se mudar a leitura, uma frase com "(ver Anexo E)".
+6. **Contexto estático não se repete.** Textos institucionais que não mudam (o que é o WiFeed, a arquitetura da automação, a situação dos BI sem atividade) ficam em `docs/referencias/` ou no glossário. O relatório traz uma linha.
 
-### 📑 2. Paginação, Diagramação e Renderização PDF
+### Lugar canônico de cada fato
 
-0. **Ferramentas oficiais:** o `.md` é a fonte única; o HTML sai de `python3 scripts/md_para_html.py <arquivo.md>` (moldura do template, ids do índice, statcards pelos marcadores `<!-- KPI: … -->`, barras por `<!-- BARS: … -->`, células sem quebra para números/protocolos/CPF e tabela densa quando há CPF/CNPJ) e o PDF de `bash scripts/renderizar_pdf.sh <arquivo.html>` (embute `templates/report.css` e já aplica `--no-pdf-header-footer`).
-1. **Remoção de Cabeçalho/Rodapé do Navegador no PDF:**
-   - Na geração do PDF via Chromium/Playwright, utilizar obrigatoriamente o parâmetro `--no-pdf-header-footer` (ou equivalente no CSS com `@page { margin: 15mm 12mm 15mm 12mm; }`), evitando que datas automáticas e caminhos locais (`file:///...` ou numerações `1/2`) poluam o cabeçalho e rodapé.
-   - O próprio design HTML/CSS deve gerenciar cabeçalhos e numeração de página de forma interna e elegante.
-2. **Quebra de Página por Tópico Principal:**
-   - Cada tópico principal deve iniciar em uma nova página através de quebras de página explícitas (`page-break-before: always;` / `break-before: page;`).
-3. **Recursos Visuais Obrigatórios:**
-   - **Statcards:** No início de cada seção quantitativa, exibir cards com métricas-chave destacadas (números totais, balanço de fila, horas economizadas).
-   - **Gráficos Visuais (CSS/SVG nativos):** Gráficos de barras proporcionais e distribuição setorial (pizza/donut em SVG puro ou CSS flex/grid).
-   - **Tabelas Completas e Ricas:** Listagens estruturadas contendo Protocolo/ID, Solicitante/Setor, Descrição Técnica, Responsável e Status.
+| Fato | Detalhe completo em | Nos demais lugares |
+| :--- | :--- | :--- |
+| Ocorrência incomum (incidente, falha, desvio) | ⭐ Fatos Notáveis | Uma linha nas tabelas 5.1 ou 10.1 com "(ver ⭐ N)"; ação no 14.3 |
+| Incidente de infraestrutura rotineiro | 5.1 | Ação no 14.3, se houver |
+| Incidente ou alerta de segurança | 10.1 (ou ⭐, se incomum) | Risco em uma linha no 14.1 |
+| Horas, apontamentos longos, Voalle × Pontomais | 2.4 | Destaque em 📈 só com evidência e recomendação, remetendo ao 2.4 |
+| Atendimento de suporte interno | 3.1 | 1.3 agrupa: "Suporte interno (N atendimentos) — ver 3.1" |
+| Apoio ao técnico de campo | 4.1/4.2 | 1.3 agrupa: "Apoio ao campo (N) — ver 4" |
+| Projeto do setor (redes, monitoramento, telefonia) | 6 | 1.2 lista o protocolo com uma linha de situação |
+| Entrega do AutoTickets | 7 | Uma linha no 2.3 (frente de trabalho de Liomar) |
+| Execução de automação (WiFeed, Fullcam) | 8 | Parte III usa o dado, sem repetir a execução |
+| Situação de sistema sustentado ou contratado | 9.1 | — |
+| Compras, aquisições e requisições | 14.2 | 1.1 lista o protocolo pendente |
+| Conquista de destaque | Painel/Resumo ou 📈 Destaques | Nada de seção própria de conquistas |
 
 ---
 
-### 🗂️ Grandes Seções (organização do relatório)
+## 🎨 1. Capa-painel e bloco institucional
 
-Depois do Resumo Executivo, dos 📈 Destaques e dos ⭐ Fatos Notáveis, o corpo é dividido em grandes seções, cada uma com um título `#` (nível 1), uma frase de abertura e os seus tópicos numerados em sequência:
+A página 1 é a **capa-painel**. Ela é pensada para Isvi levar direto à Dashboard Executiva de terça-feira.
 
-| Grande seção | Tópicos | O que entra |
-| :--- | :--- | :--- |
-| **Parte I — O Setor de TI** | 1 a 7 | Operação do setor e dos colaboradores analisados: demandas, atividades por pessoa, projetos, suporte interno, suporte ao campo, infraestrutura/incidentes/backups e as **iniciativas, desafios e conquistas** detectados nas atividades (gincanas, estudos, resultados que se destacaram). |
-| **Parte II — A Empresa** | 8 a 10 | Dados da empresa como um todo: indicadores do ERP Voalle e da rede (base de clientes adimplentes, reincidência, ocorrências sistêmicas, PPPoE), WiFeed e Fullcam. Abrir dizendo que os relatórios vêm do **AutoTickets**, plataforma integradora desenvolvida por Liomar que consolida dados do Voalle, da Fullcam, do WiFeed e do NOC: os números são dos sistemas de origem, consolidados por ele. |
-| **Parte III — Sistemas** | 11 e 12 | Os sistemas em si: desenvolvimento do AutoTickets (regra 9 do `AGENTS.md`) e situação dos demais sistemas internos ou contratados (BI, Compras, Mundiale History, Flashman, Slack etc.). |
-| **Encerramento** | 13 | Pontos de atenção, investimentos e ações planejadas. |
+* **Título principal:** Relatório Semanal Consolidado - Setor TI
+* **Subtítulo:** O Setor de TI · Sistemas e Desenvolvimento · A Empresa
+* **Bloco de Identificação Executiva** (tabela no `.md`, grade na capa):
+  - **Período Analisado:** `[Domingo] a [Sábado] (Semana XX / AAAA)`
+  - **Período Operacional Efetivo:** `[Segunda] a [Sexta] (Segunda a Sexta; feriados descontados)`
+  - **Coordenador de TI:** `Isvi Neemias`
+  - **Responsável pela Consolidação:** `Liomar Antonio de Oliveira (Analista de TI Sênior — ID #107184)`
+  - **Equipe Integrada:** `Liomar Oliveira, Isac Costa Silva e David Brasil Fernandes`
+* **`## 📊 Painel da Semana`**, antes do índice:
+  - marcador `<!-- PAINEL: área | farol | valor | rótulo | detalhe | histórico ; … -->` com **8 cards**, um por área, nesta ordem:
 
-> A organização em grandes seções foi adotada na semana 42 e ainda será refinada ao longo das próximas semanas.
+    | Área | Indicador sugerido |
+    | :--- | :--- |
+    | Demandas | Balanço da fila (saídas ÷ entradas) |
+    | Equipe | Horas no Voalle (critério Lançamento) e apontamentos longos |
+    | Suporte | Atendimentos internos + apoios ao campo |
+    | Infraestrutura | Incidentes da semana e situação dos backups |
+    | Sistemas | Entregas do AutoTickets e ocorrências de sistemas |
+    | Segurança | Alertas e incidentes de segurança abertos |
+    | Empresa | Clientes adimplentes no ERP Voalle (fim do período) |
+    | Fullcam | Saldo líquido |
 
-### ✍️ Estilo de escrita
+  - **Farol** (verde, amarelo, vermelho ou neutro) sempre justificado pelo dado da semana. Critérios de referência:
+    - Demandas: ≥ 100% verde, 90–99% amarelo, < 90% vermelho;
+    - Segurança: alerta de criticidade alta sem tratativa = vermelho;
+    - Infraestrutura: incidente sem causa ou backups sem fonte = amarelo;
+    - na dúvida, **neutro**.
+  - **Histórico:** os valores das semanas anteriores, **até 6**, seguidos do atual, separados por ` · `. Saem dos relatórios consolidados anteriores e só entram quando o método for o mesmo. Sem histórico comparável, deixar vazio.
+  - **As 3 perguntas da Coordenação** em lista, uma ou duas linhas cada: **Foi boa?** · **Para onde estamos apontando?** · **O que precisa mudar?**
+* **Índice** logo abaixo, em 2 níveis (seção 3).
 
-- **Pessoas sem artigo:** "David atribui as falhas…", "Liomar registrou…", "Raimara confirmou no equipamento", "Isac apurou 995 quedas…"; nunca "o David", "a Raimara", "do Liomar" (usar "de Liomar", "por Isvi").
-- **Base de clientes:** a base diária vem do **ERP Voalle** (clientes adimplentes em qualquer produto, de toda a empresa). O AutoTickets a apura na automação que atualiza os vouchers do WiFeed; não chamar de "base WiFeed".
-- **Automações Fullcam:** o relatório registra só as execuções em que a automação agiu (bloqueio, desbloqueio, instalação). Execução sem pendência não gera registro; ausência de registro **não** significa que a automação parou.
+## 📑 2. Paginação, diagramação e renderização PDF
+
+0. **Ferramentas oficiais:**
+   - o `.md` é a fonte única;
+   - o HTML sai de `python3 scripts/md_para_html.py <arquivo.md>` (capa-painel, ids do índice, marcadores, chips de status, células sem quebra e tabela densa quando há CPF/CNPJ);
+   - o PDF sai de `bash scripts/renderizar_pdf.sh <arquivo.html>` (embute `templates/report.css` e aplica `--no-pdf-header-footer`).
+1. **Sem cabeçalho/rodapé do navegador** no PDF (`--no-pdf-header-footer`).
+2. **Quebra de página só por grande seção.**
+   - Página 1 = capa-painel; o Resumo Executivo abre a página 2; Destaques e Fatos Notáveis seguem corridos.
+   - Cada `#` (Parte I, II, III, Encerramento, Anexos) começa em nova página. Os tópicos `##` seguem corridos, sem página meio vazia.
+   - Títulos não ficam órfãos no pé da página, e linhas de tabela, cards e statcards não se partem.
+   - **Meta: cerca de 15 a 18 páginas de corpo** mais os anexos.
+3. **Recursos visuais:**
+   - **Abertura de Parte:** frase de abertura e, quando houver dado, uma linha de 3 a 4 statcards da Parte.
+   - **Statcards com cor semântica:** `verde` = bom, `amarelo` = atenção, `vermelho` = ruim, vazio = informativo. Não usar cor para identificar sistema ou pessoa.
+   - **Gráficos** (marcadores ou SVG nativo):
+
+     | Tópico | Gráfico | Como |
+     | :--- | :--- | :--- |
+     | 2 | Distribuição do tempo por pessoa e frente | `<!-- STACK -->` |
+     | 3.2 | Setores que mais demandaram | `<!-- BARS -->` |
+     | 11.1 | Evolução diária da base | SVG de área/linha |
+     | 12.1 | Reincidência por tipo | `<!-- BARS -->` com a taxa |
+     | 12.3 | Anomalias por POP | `<!-- BARS -->` |
+     | 13.1 | Clientes com saldo positivo × negativo | `<!-- BARS -->` |
+
+   - **Chips de status:** colunas `Status`, `Severidade`, `Criticidade` e `Prioridade` viram chips coloridos automaticamente. Escrever o status em texto, **sem emoji** (ex.: "Concluído", "Pendente — aguardando RH").
+   - **Tabelas:** no máximo 6 ou 7 colunas no corpo. Tabelas mais largas vão para os Anexos.
+   - **Emojis só nos títulos fixos** 📊, 📈 e ⭐. Nos demais títulos e no texto, não usar.
+
+---
+
+## ✍️ Estilo de escrita
+
+- **Pessoas sem artigo:** "David atribui as falhas…", "Liomar registrou…", "Raimara confirmou no equipamento", "Isac apurou 995 quedas…". Nunca "o David", "a Raimara", "do Liomar" (usar "de Liomar", "por Isvi").
+- **Base de clientes:** a base diária vem do **ERP Voalle** (clientes adimplentes em qualquer produto, de toda a empresa). O AutoTickets a apura na automação que atualiza os vouchers do WiFeed. Não chamar de "base WiFeed".
+- **Automações Fullcam:** o relatório registra só as execuções em que a automação agiu (bloqueio, desbloqueio, instalação). Execução sem pendência não gera registro, e ausência de registro **não** significa que a automação parou.
 - **Contexto antes de cobrar:** antes de apontar falta de registro ou desvio, conferir o último relato do protocolo (ex.: projeto aguardando equipamento) e o histórico do caso (ex.: configuração feita por terceiros antes de existir o setor).
+- **Parte III:** abrir dizendo que os dados vêm do **AutoTickets**, plataforma integradora desenvolvida por Liomar, que consolida dados do Voalle, da Fullcam, do WiFeed e do NOC. Os números são dos sistemas de origem, consolidados por ele.
 
-### 🧩 Classes de Tópicos: Fixos, Condicionais e Dinâmicos
+---
+
+## 🧩 Classes de tópicos: fixos, condicionais e dinâmicos
 
 O relatório **não é um formulário igual toda semana**: a estrutura tem uma espinha fixa (para comparação e histórico) e partes que mudam com os dados.
 
 | Classe | Quais | Regra |
 | :--- | :--- | :--- |
-| **Fixos** | Resumo Executivo, as grandes seções (Parte I, II, III e Encerramento), os tópicos 1 a 13 e seus subtópicos numerados (exceto os condicionais) | Sempre presentes. Sem demanda na semana: **ausência justificada** (nunca omitir, nunca simular). |
-| **Condicionais** | **8.4** Anomalias PPPoE (fonte `fontes/autotickets/anomalias_pppoe/`). Novos módulos do AutoTickets entram nesta classe ao serem criados. | Só existem no índice e no corpo **se houver fonte**. Sem fonte: não criar a seção; registrar em uma linha no fim do Resumo Executivo: *"Tópicos condicionais sem fonte nesta semana: 8.4 …"*. |
+| **Fixos** | Painel da Semana, Resumo Executivo, as grandes seções, os tópicos 1 a 14 e seus subtópicos numerados (exceto os condicionais) e os Anexos A, B, D e E | Sempre presentes. Sem demanda na semana: **ausência justificada** em uma linha (nunca omitir, nunca simular). Anexo sem conteúdo: uma linha "Sem registros nesta semana". |
+| **Condicionais** | **12.3** Anomalias PPPoE e **Anexo C** (fonte `fontes/autotickets/anomalias_pppoe/`); **11.2** Vendas e Cancelamentos (fonte do painel executivo do AutoTickets, quando exportada). Novos módulos do AutoTickets entram nesta classe ao serem criados. | Só existem no índice e no corpo **se houver fonte**. Sem fonte: não criar a seção e registrar em uma linha no fim do Resumo Executivo: *"Tópicos condicionais sem fonte nesta semana: 12.3 …"*. |
 | **Dinâmicos** | **📈 Destaques Analíticos da Semana** e **⭐ Fatos Notáveis e Anomalias da Semana** | O **título de cada item é o próprio achado** (ex.: "Fila do TI cresceu 18% puxada por Patrimônio e Logística"). Quantidade e assunto dependem dos dados da semana. Os itens são `###` não numerados e **não entram no índice** (só a seção). |
-| **Subtópicos livres** | Dentro de qualquer tópico fixo | Quando os dados revelarem um padrão relevante (concentração, outlier, recorrência), criar `####` **sem número** com o achado no título (ex.: "#### Concentração de chamados no setor Financeiro"). Não entram no índice. |
+| **Subtópicos livres** | Dentro de qualquer tópico fixo | Quando os dados revelarem um padrão relevante (concentração, outlier, recorrência), criar `####` **sem número** com o achado no título. Não entram no índice. |
 
 **Como decidir o que vira tópico dinâmico** (critérios objetivos, aplicados às fontes da semana e à semana anterior):
 
 1. Variação de indicador-chave ≥ 20% em relação à semana anterior (fila, volume por setor, horas, base de clientes adimplentes do Voalle, saldo Fullcam).
-2. Picos e outliers (ex.: apontamento > 8h ou atravessando noite/fim de semana; tempo de atendimento absurdo; um setor ou solicitante concentrando > 30% da demanda).
+2. Picos e outliers: apontamento > 8h ou atravessando noite/fim de semana; tempo de atendimento absurdo; um setor ou solicitante concentrando > 30% da demanda.
 3. Novos tipos de demanda, setores ou sistemas que não apareciam antes.
-4. Recorrências (mesmo problema, cliente, equipamento ou POP em semanas consecutivas; janela de 30 dias para reincidência).
-5. Desvios de plano (prazo, escopo ou prioridade diferente do registrado no relatório anterior).
-6. Inconsistências relevantes nas próprias fontes (dados do AutoTickets/Voalle que mudam a leitura de um indicador — ver `_ANALISE_*.md`).
+4. Recorrências: mesmo problema, cliente, equipamento ou POP em semanas consecutivas (janela de 30 dias para reincidência).
+5. Desvios de plano: prazo, escopo ou prioridade diferente do registrado no relatório anterior.
+6. Inconsistências relevantes nas próprias fontes que mudem a leitura de um indicador. Vira destaque só se mudar a decisão; o detalhe vai para o Anexo E.
 
-**Onde encaixar:** padrão de dados/indicadores → **📈 Destaques Analíticos**; ocorrência/evento incomum (incidente, falha, atraso, desvio) → **⭐ Fatos Notáveis**; padrão restrito a um tema → **subtópico livre** dentro do tópico fixo correspondente. **Entregas normais** (projetos concluídos, equipamentos instalados) vão para os Tópicos 1.3, 3, 7 ou 11, nunca para Fatos Notáveis.
+**Onde encaixar:**
+- padrão de dados ou indicadores → **📈 Destaques Analíticos**;
+- ocorrência ou evento incomum (incidente, falha, atraso, desvio) → **⭐ Fatos Notáveis**;
+- padrão restrito a um tema → **subtópico livre** dentro do tópico fixo correspondente.
 
-### 📂 3. Índice Geral de Navegação (com Links Âncoras 100% Funcionais)
+**Entregas normais** (projetos concluídos, equipamentos instalados) vão para os tópicos 1.3, 6 ou 7, nunca para Fatos Notáveis.
 
-O relatório deve conter um **Índice Completo** no início, com links internos rigorosamente correspondentes aos títulos do corpo do texto. **O título no corpo deve ser idêntico ao do índice** (sem acrescentar parênteses ou complementos — eles mudam a âncora). Conferir com `python3 scripts/validar_indice.py`:
+---
+
+## 📑 3. Índice geral de navegação (2 níveis, âncoras 100% funcionais)
+
+O índice lista **só as grandes seções e os tópicos** (e os Anexos). Os subtópicos ficam só no corpo. **O título no corpo deve ser idêntico ao do índice** (sem parênteses ou complementos a mais, que mudam a âncora). Conferir com `python3 scripts/validar_indice.py`:
 
 * [Resumo Executivo](#resumo-executivo)
 * [📈 Destaques Analíticos da Semana](#-destaques-analíticos-da-semana)
 * [⭐ Fatos Notáveis e Anomalias da Semana](#-fatos-notáveis-e-anomalias-da-semana)
 * [Parte I — O Setor de TI](#parte-i--o-setor-de-ti)
   * [1. Gestão de Demandas](#1-gestão-de-demandas)
-    * [1.1 Demandas Pendentes](#11-demandas-pendentes)
-    * [1.2 Demandas em Andamento](#12-demandas-em-andamento)
-    * [1.3 Demandas Concluídas](#13-demandas-concluídas)
-    * [1.4 Demandas Novas](#14-demandas-novas)
-      * [1.4.1 Comparativo Entradas × Saídas (Balanço da Fila)](#141-comparativo-entradas--saídas-balanço-da-fila)
   * [2. Registro de Atividades por Membro da Equipe](#2-registro-de-atividades-por-membro-da-equipe)
-    * [2.1 David Brasil Fernandes](#21-david-brasil-fernandes)
-      * [2.1.1 Resumo das Atividades](#211-resumo-das-atividades)
-      * [2.1.2 Distribuição do Tempo](#212-distribuição-do-tempo)
-      * [2.1.3 Desenvolvimento e Capacitação](#213-desenvolvimento-e-capacitação)
-    * [2.2 Isac Costa Silva](#22-isac-costa-silva)
-      * [2.2.1 Resumo das Atividades](#221-resumo-das-atividades)
-      * [2.2.2 Distribuição do Tempo](#222-distribuição-do-tempo)
-      * [2.2.3 Desenvolvimento e Capacitação](#223-desenvolvimento-e-capacitação)
-    * [2.3 Liomar Antonio de Oliveira](#23-liomar-antonio-de-oliveira)
-      * [2.3.1 Resumo das Atividades](#231-resumo-das-atividades)
-      * [2.3.2 Distribuição do Tempo](#232-distribuição-do-tempo)
-      * [2.3.3 Desenvolvimento e Capacitação](#233-desenvolvimento-e-capacitação)
-    * [2.4 Desempenho no Voalle e Confronto com Jornada Real (Pontomais)](#24-desempenho-no-voalle-e-confronto-com-jornada-real-pontomais)
-  * [3. Projetos e Entregas do Setor](#3-projetos-e-entregas-do-setor)
-    * [3.1 Projetos de Conectividade e Redes](#31-projetos-de-conectividade-e-redes)
-    * [3.2 Telefonia Fixa e Comunicação Corporativa](#32-telefonia-fixa-e-comunicação-corporativa)
-  * [4. Suporte Interno (Informática)](#4-suporte-interno-informática)
-    * [4.1 Relação de Atendimentos e Chamados da Semana](#41-relação-de-atendimentos-e-chamados-da-semana)
-    * [4.2 Setores que mais Demandaram Atendimento](#42-setores-que-mais-demandaram-atendimento)
-    * [4.3 Colaboradores Solicitantes Mais Frequentes](#43-colaboradores-solicitantes-mais-frequentes)
-    * [4.4 Relatório de Visitas Técnicas Presenciais e Gestão de Veículos](#44-relatório-de-visitas-técnicas-presenciais-e-gestão-de-veículos)
-  * [5. Suporte ao Técnico de Campo](#5-suporte-ao-técnico-de-campo)
-    * [5.1 Volumetria de Solicitações (Com e Sem Protocolo)](#51-volumetria-de-solicitações-com-e-sem-protocolo)
-    * [5.2 Tipos de Apoio Mais Frequentes e Tempo de Resposta](#52-tipos-de-apoio-mais-frequentes-e-tempo-de-resposta)
-    * [5.3 Oportunidades de Automação e Redução de Dependência](#53-oportunidades-de-automação-e-redução-de-dependência)
-  * [6. Infraestrutura, Incidentes e Backups](#6-infraestrutura-incidentes-e-backups)
-    * [6.1 Incidentes Tratados](#61-incidentes-tratados)
-    * [6.2 Disponibilidade de Serviços e Incidentes em Sistemas](#62-disponibilidade-de-serviços-e-incidentes-em-sistemas)
-    * [6.3 Execução e Validação de Backups](#63-execução-e-validação-de-backups)
-    * [6.4 Atualizações, Melhorias e Ações de Modernização](#64-atualizações-melhorias-e-ações-de-modernização)
-  * [7. Iniciativas, Desafios e Conquistas da Semana](#7-iniciativas-desafios-e-conquistas-da-semana)
-    * [7.1 Conquistas e Resultados de Destaque](#71-conquistas-e-resultados-de-destaque)
-    * [7.2 Desafios e Iniciativas do Setor](#72-desafios-e-iniciativas-do-setor)
-* [Parte II — A Empresa](#parte-ii--a-empresa)
-  * [8. Indicadores da Empresa: ERP Voalle e Rede](#8-indicadores-da-empresa-erp-voalle-e-rede)
-    * [8.1 Base de Clientes Adimplentes no ERP Voalle](#81-base-de-clientes-adimplentes-no-erp-voalle)
-    * [8.2 Reincidência de Problemas no Atendimento](#82-reincidência-de-problemas-no-atendimento)
-    * [8.3 Ocorrências Sistêmicas na Rede de Distribuição](#83-ocorrências-sistêmicas-na-rede-de-distribuição)
-    * [8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk](#84-anomalias-de-tráfego-pppoe-e-ações-proativas-para-o-service-desk) *(condicional)*
-  * [9. WiFeed – Captive Portal e Sincronização Diária de Vouchers](#9-wifeed--captive-portal-e-sincronização-diária-de-vouchers)
-    * [9.1 Contexto Institucional e Problema Operacional do Captive Portal](#91-contexto-institucional-e-problema-operacional-do-captive-portal)
-    * [9.2 Solução Automatizada Desenvolvida no AutoTickets](#92-solução-automatizada-desenvolvida-no-autotickets)
-    * [9.3 Histórico Detalhado de Envios e Validações de Vouchers](#93-histórico-detalhado-de-envios-e-validações-de-vouchers)
-  * [10. Fullcam – Videomonitoramento em Nuvem](#10-fullcam--videomonitoramento-em-nuvem)
-    * [10.1 Diagnóstico Financeiro Executivo e Indicadores-Chave](#101-diagnóstico-financeiro-executivo-e-indicadores-chave)
-    * [10.2 Tabela Completa de Auditoria de Contratos e Saldo Líquido na Íntegra](#102-tabela-completa-de-auditoria-de-contratos-e-saldo-líquido-na-íntegra)
-    * [10.3 Painel Consolidado de Execução das Automações](#103-painel-consolidado-de-execução-das-automações)
-    * [10.4 Ações Efetivas de Inadimplência e Instalações de Câmeras](#104-ações-efetivas-de-inadimplência-e-instalações-de-câmeras)
-* [Parte III — Sistemas](#parte-iii--sistemas)
-  * [11. AutoTickets – Plataforma de Automação e Integração](#11-autotickets--plataforma-de-automação-e-integração)
-    * [11.1 Entregas da Semana](#111-entregas-da-semana)
-    * [11.2 Evolução da Plataforma, IA e Governança](#112-evolução-da-plataforma-ia-e-governança)
-    * [11.3 Impacto Operacional e Métricas de Produtividade das Automações](#113-impacto-operacional-e-métricas-de-produtividade-das-automações)
-  * [12. Outros Sistemas Internos e Contratados](#12-outros-sistemas-internos-e-contratados)
-    * [12.1 Painéis de BI com Parceiros](#121-painéis-de-bi-com-parceiros)
-    * [12.2 Sistemas Internos e de Terceiros](#122-sistemas-internos-e-de-terceiros)
+  * [3. Suporte Interno (Informática)](#3-suporte-interno-informática)
+  * [4. Suporte ao Técnico de Campo](#4-suporte-ao-técnico-de-campo)
+  * [5. Infraestrutura, Incidentes e Backups](#5-infraestrutura-incidentes-e-backups)
+  * [6. Projetos e Iniciativas do Setor](#6-projetos-e-iniciativas-do-setor)
+* [Parte II — Sistemas e Desenvolvimento](#parte-ii--sistemas-e-desenvolvimento)
+  * [7. AutoTickets – Desenvolvimento da Plataforma](#7-autotickets--desenvolvimento-da-plataforma)
+  * [8. Automações Operadas pelo TI](#8-automações-operadas-pelo-ti)
+  * [9. Sistemas Sustentados e Contratados](#9-sistemas-sustentados-e-contratados)
+  * [10. Segurança da Informação](#10-segurança-da-informação)
+* [Parte III — A Empresa](#parte-iii--a-empresa)
+  * [11. Base de Clientes no ERP Voalle](#11-base-de-clientes-no-erp-voalle)
+  * [12. Qualidade do Atendimento e da Rede](#12-qualidade-do-atendimento-e-da-rede)
+  * [13. Fullcam – Resultado do Negócio](#13-fullcam--resultado-do-negócio)
 * [Encerramento](#encerramento)
-  * [13. Pontos de Atenção e Próximas Ações](#13-pontos-de-atenção-e-próximas-ações)
-    * [13.1 Riscos Tecnológicos e Vulnerabilidades Identificadas](#131-riscos-tecnológicos-e-vulnerabilidades-identificadas)
-    * [13.2 Necessidades de Investimentos e Aquisições](#132-necessidades-de-investimentos-e-aquisições)
-    * [13.3 Ações Planejadas para as Próximas Semanas](#133-ações-planejadas-para-as-próximas-semanas)
+  * [14. Pontos de Atenção e Próximas Ações](#14-pontos-de-atenção-e-próximas-ações)
+* [Anexos](#anexos)
+  * [Anexo A — Acompanhamento das Observações da Semana Anterior](#anexo-a--acompanhamento-das-observações-da-semana-anterior)
+  * [Anexo B — Auditoria Financeira Fullcam Completa](#anexo-b--auditoria-financeira-fullcam-completa)
+  * [Anexo C — Anomalias PPPoE: Lista Completa](#anexo-c--anomalias-pppoe-lista-completa) *(condicional)*
+  * [Anexo D — Registros das Automações](#anexo-d--registros-das-automações)
+  * [Anexo E — Notas Metodológicas e Qualidade das Fontes](#anexo-e--notas-metodológicas-e-qualidade-das-fontes)
 
 ---
 
-### 📝 4. Conteúdo Detalhado por Tópico
+## 📝 4. Conteúdo detalhado por tópico
 
-#### Resumo Executivo
-Visão geral analítica da semana: síntese das principais entregas de engenharia de software e infraestrutura, quantitativo global de chamados e suportes a técnicos, principais conquistas e prioridades operacionais para a próxima semana.
+### 📊 Painel da Semana
+Ver seção 1. Nada de texto corrido além das 3 perguntas.
 
-- **Evolução em relação à semana anterior:** statcards ou tabela curta com os indicadores-chave da semana ao lado dos valores da semana anterior (citar como "relatório da semana NN"), sempre rotulados como "semana anterior".
-- **Tópicos condicionais ausentes:** quando algum tópico condicional não tiver fonte, uma linha no fim do Resumo Executivo listando-os (ver "Classes de Tópicos").
-- **Acompanhamento das observações da semana anterior:** quando existir `semanas/<anterior>/feedback.md`, incluir no fim do Resumo Executivo uma tabela com **todas** as observações (do Isvi e do Liomar): *Observação · Autor · Como foi tratada · Onde (tópico) · Status*. Esta tabela fica dentro do Resumo Executivo e **não** ganha entrada própria no índice.
+### Resumo Executivo
+No máximo uma página. Não repete as 3 perguntas do painel.
+- **Evolução em relação à semana anterior:** tabela curta com os indicadores-chave da semana ao lado dos valores da semana anterior (citar como "relatório da semana NN"), sempre rotulados "semana anterior".
+- **Decisões solicitadas à Coordenação:** tabela *Decisão · Contexto · Opções / valor · Prazo · Onde*. Exemplos: aprovar uma compra, escolher entre alternativas, definir um plano, autorizar um acesso. Sem decisão pendente: "Nenhuma decisão pendente nesta semana". É o que atende à função "apoiar decisões".
+- **Tópicos condicionais ausentes:** uma linha no fim (ver "Classes de Tópicos").
 
-#### 📈 Destaques Analíticos da Semana
-Seção dinâmica obrigatória, logo após o Resumo Executivo. Responde "foi bom?", "para onde estamos apontando?" e "o que precisa mudar?" a partir dos **dados** (critérios em "Classes de Tópicos"). De **3 a 5 destaques**, cada um como `###` sem número cujo título é o próprio achado, contendo:
-- **Evidência:** número(s) da semana com a fonte (nome descritivo do relatório, protocolo ou commit — nunca nome ou caminho de arquivo) e, quando houver, o valor da semana anterior rotulado.
+### 📈 Destaques Analíticos da Semana
+Seção dinâmica obrigatória. Responde "foi bom?", "para onde estamos apontando?" e "o que precisa mudar?" a partir dos **dados** (critérios em "Classes de Tópicos"). De **3 a 5 destaques**, cada um como `###` sem número cujo título é o próprio achado:
+- **Evidência:** número(s) da semana com a fonte (nome descritivo do relatório, protocolo ou commit, nunca nome ou caminho de arquivo) e, quando houver, o valor da semana anterior rotulado.
 - **Leitura:** o que o dado significa para a operação (bom, ruim, neutro, e por quê).
-- **Recomendação:** ação concreta, responsável sugerido e onde será acompanhada (ex.: "13.3", "próximo relatório").
+- **Recomendação:** ação concreta, responsável sugerido e onde será acompanhada.
 Se nenhum critério for atingido, declarar "Semana sem desvios relevantes nos indicadores" e citar os indicadores verificados.
 
-#### ⭐ Fatos Notáveis e Anomalias da Semana
-Seção obrigatória dedicada ao aprofundamento de ocorrências incomuns (incidentes, falhas, atrasos, desvios). Entregas normais não entram aqui (vão para os Tópicos 1.3, 3, 7 ou 11). Para cada fato notável identificado no período (desvio de planejamento, atraso de frota, falha física atípica, contestação indevida de cliente ou incidente de segurança):
-- **Ocorrência e Ativos Envolvidos:** O que aconteceu, data e equipamentos/sistemas impactados.
-- **Causa Raiz Técnica e Contexto:** Por que ocorreu e fatores determinantes.
-- **Impacto Operacional:** Horas perdidas, retrabalho ou risco gerado.
-- **Tratativa Aplicada:** Medida de contenção imediata ou definitiva.
-- **Recomendação e Próximo Passo:** Ação estruturante recomendada para evitar repetição.
+### ⭐ Fatos Notáveis e Anomalias da Semana
+Lugar canônico das ocorrências incomuns: incidentes, falhas físicas atípicas, atrasos, desvios, contestação indevida de cliente e incidentes de segurança. Entregas normais não entram aqui. Para cada fato:
+- **Ocorrência e Ativos Envolvidos:** o que aconteceu, a data e os equipamentos ou sistemas impactados.
+- **Causa Raiz Técnica e Contexto:** por que ocorreu e os fatores determinantes.
+- **Impacto Operacional:** horas perdidas, retrabalho ou risco gerado.
+- **Tratativa Aplicada:** medida de contenção imediata ou definitiva.
+- **Recomendação e Próximo Passo:** ação estruturante para evitar repetição.
 
-#### Parte I — O Setor de TI
-Título `#` com uma frase de abertura; agrupa os tópicos 1 a 7.
+---
+
+### Parte I — O Setor de TI
+Título `#` com uma frase de abertura e, se houver dado, statcards da Parte. Somente dados do setor. Agrupa os tópicos 1 a 6.
 
 #### 1. Gestão de Demandas
-- **1.1 Demandas Pendentes:** Demandas paradas ou na fila aguardando início, informando ID/Protocolo, solicitante, prioridade técnica e data prevista.
-- **1.2 Demandas em Andamento:** Atividades em execução, indicando responsável direto, percentual de avanço estimado, bloqueios técnicos ou dependências de terceiros e previsão de conclusão.
-- **1.3 Demandas Concluídas:** Todas as entregas finalizadas na semana com detalhamento do resultado prático obtido. Demandas de rotina repetitiva de mesma natureza (ex.: análises periciais de desconto de fatura ou atribuições de IP público) podem ser sintetizadas com contagem total e amostragem de protocolos.
-- **1.4 Demandas Novas:** Demandas abertas durante o período avaliado.
-  - **1.4.1 Comparativo Entradas × Saídas (Balanço da Fila):** Análise quantitativa demonstrando se a fila de trabalho do setor está crescendo ou reduzindo (com statcards e balanço líquido). **PROIBIDO usar o termo "resolutividade".** A fonte primária de vazão deve ser respaldada por `fontes/autotickets/colaborador_x_ticket/` (saídas ÷ entradas do período, calculado sobre os dados da semana corrente).
+- **1.1 Demandas Pendentes:** paradas ou aguardando início: protocolo, solicitante/setor, responsável, prioridade, motivo da espera e previsão. Fechar com o **desfecho** das pendências do relatório anterior.
+- **1.2 Demandas em Andamento:** responsável, avanço, bloqueios e previsão. Para projetos, só uma linha de situação com a remissão ao 6.
+- **1.3 Demandas Concluídas:** entregas finalizadas e o resultado prático.
+  - Rotinas repetitivas (perícias de desconto, IP público) ficam numa linha agrupada com a quantidade.
+  - Suporte interno e apoio ao campo também ficam agrupados, com a remissão ao 3 e ao 4.
+- **1.4 Demandas Novas e Balanço da Fila:**
+  - entradas (por tipo), saídas e variação do backlog;
+  - statcards e balanço líquido (**saídas ÷ entradas**, por protocolo único, a partir de `fontes/autotickets/colaborador_x_ticket/`);
+  - **PROIBIDO usar o termo "resolutividade".**
+
+  Divergência entre o recálculo e o indicador do AutoTickets: uma frase no corpo e o detalhe no Anexo E.
+- **1.5 Dependências de Terceiros e de Outros Setores:** tabela única *Protocolo · Depende de · O quê · Desde · Impacto*. Exemplos: Compras, RH, manutenção, fornecedor, outro setor. Atende ao modelo da Coordenação: "dependências que estejam travando entregas".
 
 #### 2. Registro de Atividades por Membro da Equipe
-Para cada colaborador (**2.1 David Brasil Fernandes**, **2.2 Isac Costa Silva** e **2.3 Liomar Antonio de Oliveira**), detalhar:
-- **Resumo das Atividades:** Narrativa aprofundada dos chamados, projetos e intervenções técnicas realizadas, integrando os dados de `fontes/voalle/[colaborador].*` enriquecidos pelos indicadores sintéticos de `fontes/autotickets/colaborador_x_ticket/` (total de ações, chamados atuados, TMA, TMR e resolubilidade).
-- **Distribuição do Tempo:** Percentual de alocação entre frentes (Projetos, Suporte Interno, Suporte ao Campo, Infraestrutura e Rotinas Administrativas).
-- **Desenvolvimento e Capacitação:** Dificuldades observadas, pontos fortes demonstrados e necessidades de treinamento identificadas.
-- **2.4 Desempenho no Voalle e Confronto com Jornada Real (Pontomais):**
-  - Tabela comparando Horas no Voalle x Horas no Pontomais.
-  - Justificativa técnica obrigatória para divergências (cronômetros de tickets abertos, sobreposição de demandas em paralelo, deslocamentos ou atendimentos em intervalos).
+Abrir com:
+- a tabela-síntese por colaborador: tarefas e apontamentos (Voalle), HT (Lançamento), atuadas, ações, TMA, TMR e % concluídas (AutoTickets);
+- o gráfico `<!-- STACK -->` da distribuição do tempo por frente: Projetos, Suporte Interno, Suporte ao Campo, Infraestrutura e Rotinas Administrativas.
 
-#### 3. Projetos e Entregas do Setor
-- **3.1 Projetos de Conectividade e Redes:** WireGuard, MikroTik, hardening e SIEM Wazuh. Justificar formalmente qualquer alteração de cronograma ou prioridade técnica (ex.: foco em RBs locais em vez de filiais) e registrar o novo prazo pactuado.
-- **3.2 Telefonia Fixa e Comunicação Corporativa (Native PBX / ZEUS):** Diagnóstico de estabilidade, migrações de ramais e suporte telefônico corporativo.
+Para cada colaborador (**2.1 David Brasil Fernandes**, **2.2 Isac Costa Silva** e **2.3 Liomar Antonio de Oliveira**), em parágrafos com rótulo em negrito (sem subtópicos numerados):
+- **Atividades por frente:** horas e protocolos de cada frente, em uma ou duas linhas por frente. Não reescrever o detalhe que já está em 1.3, 3, 4, 6 ou 7.
+- **Desenvolvimento e capacitação:** pontos fortes, pontos de atenção e necessidade de treinamento.
 
-#### 4. Suporte Interno (Informática)
-- **4.1 Relação de Atendimentos e Chamados:** Análise dos atendimentos a usuários internos (estações de trabalho, acessos, e-mails, sistemas operacionais e periféricos), com tabela e detalhamento técnico.
-- **4.2 Setores que mais Demandaram:** Ranking e gráfico visual dos departamentos mais demandantes.
-- **4.3 Colaboradores Solicitantes Mais Frequentes:** Ranking nominal identificando setor e tipo de demanda.
-- **4.4 Relatório de Visitas Técnicas Presenciais e Gestão de Veículos:** Detalhamento de deslocamentos operacionais, quilometragem, veículos utilizados e **avaliação da frota** (atrasos na liberação, impactos no cumprimento de cronogramas e tempo perdido). Justificar instalações de Windows 10 considerando o fim do suporte oficial.
+**2.4 Desempenho no Voalle e Confronto com Jornada Real (Pontomais):**
+- tabela Horas no Voalle × Pontomais;
+- lista dos apontamentos longos (> 8h ou atravessando noite, fim de semana ou feriado), com a justificativa ou o encaminhamento;
+- é o lugar canônico do tema.
 
-#### 5. Suporte ao Técnico de Campo
-- **5.1 Volumetria de Solicitações:** Quantidade total de apoios prestados via ServiceDesk e Voalle, reforçando a diretriz de abertura de protocolo formal para todo suporte com atuação em sistema ou análise.
-- **5.2 Tipos de Apoio Mais Frequentes e Tempo Médio de Resposta:** Provisionamento de ONTs Datacom/Parks, manobras de CTO, consultas cadastrais, liberação de portas e trocas de estrutura. A soma da tabela de categorias deve corresponder exatamente ao total relatado.
-- **5.3 Oportunidades de Automação e Capacitação:** Propostas de melhorias no AutoTickets ou capacitação para os técnicos reduzirem a dependência do TI.
+#### 3. Suporte Interno (Informática)
+- **3.1 Atendimentos da Semana:** tabela *Protocolo/registro · Solicitante · Setor · Atendimento · Responsável · Status*.
+- **3.2 Setores e Solicitantes que mais Demandaram:**
+  - ranking por setor com `<!-- BARS -->`;
+  - solicitantes só quando alguém concentrar ≥ 3 atendimentos ou > 30%. Se não, declarar "sem concentração por solicitante".
+- **3.3 Tempo de Atendimento e Pendências:** tempo médio de atendimento do suporte interno (modelo da Coordenação 2.5) e os atendimentos em aberto com previsão. Sem fonte de tempo: declarar.
+- **3.4 Visitas Presenciais, Frota e Estações:**
+  - deslocamentos (data, quem, destino, motivo, veículo);
+  - **avaliação da frota**: horário combinado × liberado e o impacto;
+  - padrão **Windows 10 × 11** nas formatações, com a justificativa de cada Windows 10 e a situação das licenças.
 
-#### 6. Infraestrutura, Incidentes e Backups
-- **6.1 Incidentes Tratados:** Detalhamento de cada incidente ocorrido na semana:
-  - Identificação, sistema afetado, severidade, data/hora e impacto.
-  - Causa raiz técnica identificada e solução adotada (definitiva ou paliativa).
-  - **Janela de Reincidência:** Adotar janela móvel de **30 dias de observação** antes de declarar ausência de reincidência.
-- **6.2 Disponibilidade de Serviços e Incidentes em Sistemas:**
-  - Sem ferramenta de monitoramento externo medindo o tempo fora do ar, declarar expressamente **"Sem indisponibilidade de rede registrada"**.
-  - Registrar falhas funcionais (como bugs de sessão no Voalle) como **Ocorrências Operacionais de Sistemas**, sem distorcer o uptime de rede.
-- **6.3 Execução e Validação de Backups:**
-  - Apresentar o quadrante de governança: total de VMs/CTs na rotina, jobs executados x falhas na semana, falhas refeitas manualmente com justificativa e data do último teste de Disaster Recovery.
-- **6.4 Atualizações, Melhorias e Ações de Modernização:** Aplicações de patches, manutenção física preventiva (ex.: Dell R910, nobreaks NHS) e estudos de segurança (integrar dados de `fontes/investigacoes/`).
+#### 4. Suporte ao Técnico de Campo
+- **4.1 Volumetria de Solicitações (Com e Sem Protocolo):**
+  - total de apoios, com e sem protocolo;
+  - reforçar a diretriz de protocolo formal para todo suporte com atuação em sistema ou análise;
+  - perícias e IP público não entram aqui (estão no 1.3).
+- **4.2 Tipos de Apoio e Tempo de Resposta:**
+  - exemplos: provisionamento de ONTs, configuração de equipamentos de cliente, manobras de CTO, consultas cadastrais, liberações;
+  - a soma da tabela deve bater exatamente com o total do 4.1;
+  - tempo de resposta quando a fonte trouxer; se não trouxer, o tempo de resolução declarado como tal.
+- **4.3 Reincidências com Envolvimento do TI:** recorte do relatório de Reincidência de Problemas: os protocolos que voltaram e passaram pelo TI (cliente, protocolo de origem → retorno, intervalo, situação). A reincidência geral fica no 12.1.
+- **4.4 Oportunidades de Automação e Redução de Dependência:** propostas de melhoria no AutoTickets ou de capacitação para os técnicos dependerem menos do TI.
 
-#### 7. Iniciativas, Desafios e Conquistas da Semana
-Tópicos detectados nas atividades da semana que merecem visibilidade além da rotina.
-- **7.1 Conquistas e Resultados de Destaque:** resultados que se destacaram (problema evitado, entrega com impacto, meta atingida), com o protocolo e quem fez.
-- **7.2 Desafios e Iniciativas do Setor:** gincanas e desafios propostos pela Coordenação, estudos e provas de conceito, iniciativas extras e desafios internos da equipe, com situação e próximo passo.
+#### 5. Infraestrutura, Incidentes e Backups
+- **5.1 Incidentes Tratados e Recorrentes:**
+  - tabela *ID · Ativo · Severidade · Data/hora · Impacto · Causa raiz · Solução (definitiva/paliativa) · Reincidência (janela de 30 dias)*;
+  - incidente detalhado em ⭐ entra com uma linha e a remissão;
+  - incidentes de **sistemas e de segurança** ficam no 9.1 e no 10.1;
+  - fechar com os **incidentes recorrentes e o plano para eliminar a recorrência** (modelo da Coordenação 2.4).
+- **5.2 Disponibilidade da Rede, Links e Servidores:**
+  - sem ferramenta que meça o tempo fora do ar, declarar expressamente **"Sem indisponibilidade de rede registrada"**;
+  - com Zabbix/Grafana ou outra fonte de medição, informar a disponibilidade e a duração das quedas por link e por servidor, com a fonte.
+- **5.3 Capacidade dos Servidores:** armazenamento, memória e processamento dos servidores e hosts de virtualização, com os alertas de esgotamento (modelo da Coordenação 2.7). Sem fonte, ausência justificada. Fonte prevista: Zabbix/Grafana ou exportação do Proxmox.
+- **5.4 Execução e Validação de Backups:** o quadrante de governança:
+  - total de VMs/CTs na rotina;
+  - jobs executados × falhas;
+  - falhas refeitas manualmente, com a causa;
+  - data do último teste de restauração.
 
-#### Parte II — A Empresa
-Título `#` com uma frase de abertura dizendo que os dados vêm do AutoTickets, plataforma integradora desenvolvida por Liomar, consolidados a partir dos sistemas de origem (Voalle, Fullcam, WiFeed, NOC). Agrupa os tópicos 8 a 10.
+  Sem fonte: os 4 pilares "sem fonte", nunca estimados.
+- **5.5 Manutenção e Modernização:** patches, manutenção física preventiva (climatização, nobreaks, Dell R910) e ações de modernização (cluster, SSDs, balanceamento, migração de VMs).
 
-#### 8. Indicadores da Empresa: ERP Voalle e Rede
-- **8.1 Base de Clientes Adimplentes no ERP Voalle:** quantidade diária de clientes adimplentes em qualquer produto no Voalle, de toda a empresa, apurada pelo AutoTickets na automação de vouchers do WiFeed (fonte: Relatório de Vouchers WiFeed). Statcards com início, fim, variação líquida (absoluta e %), pico, mínimo e apurações diárias; gráfico SVG de área e linhas com a evolução diária e a tabela diária.
-- **8.2 Reincidência de Problemas no Atendimento:** indicadores do relatório de Reincidência de Problemas (protocolos analisados, retornos, taxa, mediana até voltar, clientes reincidentes), taxa por tipo de protocolo e os casos que passaram pelo Setor de TI. Janela de retorno de até 60 dias.
-- **8.3 Ocorrências Sistêmicas na Rede de Distribuição:** dias em que um tipo de protocolo atingiu muitos clientes acima da mediana diária (informação para NOC e Campo, não indisponibilidade do TI).
-- **8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk** *(tópico condicional — ver "Classes de Tópicos"; fonte `fontes/autotickets/anomalias_pppoe/`)*. Objetivo: entregar ao Service Desk, com todos os dados necessários para localizar cada caso nos sistemas, a lista priorizada de clientes com comportamento anômalo **para investigação e ação proativa imediata**.
-  - **Natureza da fonte:** é um **retrato atual**, gerado no dia da emissão do relatório consolidado, com problemas a serem tratados **agora**. **Não se aplica o recorte do período da semana**: informar apenas a data/hora do retrato (ex.: "retrato de 19/10/2026 22:07").
-  - **Statcards:** total de anomalias, críticas, inversões de tráfego (upload > download), volume de upload × download e quantos casos já têm ticket/OS aberto (quando a fonte informar).
-  - **Tabela completa, ordenada por razão Upload/Download (decrescente)**, com os dados de identificação: **cliente (nome), login PPPoE, contrato, CPF/CNPJ mascarado, cidade/bairro, POP/concentrador, IP, MAC, fabricante da CPE, plano**, sinal RX, upload/download, razão, throughput, quedas, severidade/score e **hipótese → ação proativa**. Até 30 casos na íntegra; acima disso, os 30 primeiros e a contagem do restante.
-  - **Hipóteses e ações por perfil** (a confirmar pelo Service Desk, nunca afirmadas como fato):
-    - razão muito alta (> 15x) com download baixo → CPE possivelmente comprometida (botnet/proxy residencial) → verificar a CPE, atualizar firmware, trocar senha e checar portas expostas;
-    - upload alto e constante em sessão longa → DVR/câmeras, backup em nuvem ou servidor → confirmar o uso com o cliente e oferecer plano corporativo/IP fixo;
-    - cliente que é provedor ou empresa de telecom → possível revenda → encaminhar ao Comercial;
-    - contrato interno/cortesia → rotular como interno (manter na tabela, fora do ranking de prioridade);
-    - muitas quedas (flapping), rajadas ou sinal óptico ruim (RX < −27 dBm ou −40 dBm/LOS) → problema físico → abrir OS de campo.
-  - **Concentração por POP/concentrador** e **recorrência** (casos que já constavam no retrato do relatório anterior, quando houver).
-  - **Encaminhamento:** fechar com a lista de ações sugeridas ao Service Desk e, no relatório seguinte, o desfecho dos casos encaminhados.
-  - **Ressalvas de cálculo:** enquanto o AutoTickets não corrigir, declarar que o volume é acumulado por sessão (não "últimas 24h"), que o throughput pode estar inflado pelo número de quedas e que a severidade não segue uma regra única de score (`fontes/autotickets/anomalias_pppoe/_ANALISE_FONTE.md`).
+#### 6. Projetos e Iniciativas do Setor
+- **6.1 Conectividade, Redes e Monitoramento:** WireGuard/VPN, Wazuh, padronização MikroTik, TACACS+, Zabbix/Grafana e energia de reserva. Justificar qualquer mudança de cronograma ou prioridade e registrar o novo prazo.
+- **6.2 Telefonia Fixa e Comunicação Corporativa:** Native PBX e ZEUS (prioridade da Coordenação), Slack (operação e contas) e ChatSeguro. Diagnóstico, migrações de ramais e suporte telefônico.
+- **6.3 Iniciativas, Estudos e Desafios da Equipe:** gincanas e desafios da Coordenação, estudos e provas de conceito, e iniciativas extras, com a situação e o próximo passo. O resultado de testes de segurança vai para o 10.2.
 
-#### 9. WiFeed – Captive Portal e Sincronização Diária de Vouchers
-- **9.1 Contexto Institucional e Problema Operacional do Captive Portal:** Explicar a função do WiFeed como Captive Portal da Ten Internet para captura de leads e fidelização (rede "TEN_Wi-Fi"), diferenciando o fluxo de não-clientes (cadastro por celular) e clientes (validação via CPF do titular com base de vouchers). Detalhar o problema operacional anterior (geração e upload 100% manual de arquivos CSV de CPFs sanitizados, risco de sensação de "propaganda enganosa" para assinantes recentes e perda de tempo técnico do TI).
-- **9.2 Solução Automatizada Desenvolvida no AutoTickets:** Descrever a arquitetura da automação: conexão direta ao banco Voalle, filtro exclusivo de clientes adimplentes em qualquer plano, sanitização estrita de CPFs/CNPJs, rotina agendada diária às 11h, exclusão do segmento antigo, upload do novo lote, paginação de integridade linha por linha e comutação segura para o segmento ativo.
-- **9.3 Histórico Detalhado de Envios e Validações de Vouchers:** Tabela completa na íntegra registrando Data/Hora, Operador, Segmento, Base ERP, Vouchers Transmitidos, Taxa de Sucesso (100%), Status e Observações.
+---
 
-#### 10. Fullcam – Videomonitoramento em Nuvem
-- **10.1 Diagnóstico Financeiro Executivo e Indicadores-Chave:** Síntese executiva com statcards do parque auditado: Total Faturado, Custo de Licenças Fullcam, Custo de Storage em Nuvem, Prejuízo com Equipamentos Perdidos e Saldo Líquido Consolidado. Análise crítica de risco comparando a quantidade de clientes com saldo negativo (contratos cancelados/bloqueados gerando custos residuais de licença/storage ou perda de hardware) contra os superavitários.
-- **10.2 Tabela Completa de Auditoria de Contratos e Saldo Líquido na Íntegra:** Transcrição completa e sem omissões de todos os registros auditados em tabela compacta estilizada (Cliente, CPF/CNPJ **obrigatoriamente mascarado** no formato `***.456.789-**`, Contratos Voalle, Faturas Pagas, GB Consumido, Valor Faturado, Custo de Licenças, Custo de Storage, Equip. Perdido e Saldo Líquido). Aplicar cores semânticas (verde para saldos positivos, vermelho para negativos) e diagramação limpa para paginação A4.
-- **10.3 Painel Consolidado de Execução das Automações:** statcards com as ações da semana (bloqueios, desbloqueios, instalações e câmeras), ações com sucesso e a forma de registro: a automação registra só as execuções em que agiu.
-- **10.4 Ações Efetivas de Inadimplência e Instalações de Câmeras:** Tabela analítica estruturada destacando todos os eventos operacionais com impacto direto em clientes (ações de BLOCK, UNBLOCK e INSTALL, indicando ID, Data/Hora, Cliente, Contrato Voalle, Protocolo/OS, Quantidade de Câmeras e Status). Execuções sem pendência não geram registro e não devem ser tratadas como falha.
+### Parte II — Sistemas e Desenvolvimento
+Título `#` com uma frase de abertura. Trata dos sistemas que o TI **desenvolve** (AutoTickets e suas automações) e que **sustenta ou contrata**, e da segurança da informação. Agrupa os tópicos 7 a 10.
 
-#### Parte III — Sistemas
-Título `#` com uma frase de abertura; agrupa os tópicos 11 e 12.
+#### 7. AutoTickets – Desenvolvimento da Plataforma
+**Confidencialidade (`AGENTS.md`, regra 9):**
+- o AutoTickets é desenvolvimento interno;
+- texto genérico, humanizado e profissional, pelo valor para a operação;
+- sem rotas, bibliotecas, frameworks, modelos de IA, comandos, linhas de código ou tipos de commit;
+- segurança sempre como **reforço**, nunca como exposição ou falha.
 
-#### 11. AutoTickets – Plataforma de Automação e Integração
-**Confidencialidade (`AGENTS.md`, regra 9):** o AutoTickets é desenvolvimento interno. Texto genérico, humanizado e profissional, pelo valor para a operação; sem rotas, bibliotecas, frameworks, modelos de IA, comandos, linhas de código ou tipos de commit. Segurança sempre como **reforço** (firewall, análise de vulnerabilidades, proteção de integrações), nunca como exposição ou falha.
-- **11.1 Entregas da Semana:** statcards (atualizações publicadas, ciclos de entrega concluídos, novos testes automatizados) e uma tabela por **frente de evolução** (ex.: segurança da plataforma, painel executivo, relatórios, módulos novos, desempenho): o que foi entregue, o valor para a operação e os hashes de commit só como referência.
-- **11.2 Evolução da Plataforma, IA e Governança:** síntese em poucos itens do que muda para a empresa (segurança, IA local, confiabilidade dos dados, qualidade e publicação), sem detalhes de implementação.
-- **11.3 Impacto Operacional e Métricas de Produtividade das Automações:**
-  - Total consolidado de horas técnicas de esforço humano economizadas no período (rotinas diárias de vouchers WiFeed, auditorias automáticas Fullcam e esteira de provisionamento).
+Subtópicos:
+- **7.1 Entregas da Semana:** statcards (atualizações publicadas, ciclos de entrega concluídos, novos testes) e a tabela por **frente de evolução**: o que foi entregue, o valor para a operação e os hashes de commit só como referência.
+- **7.2 Evolução da Plataforma, IA e Governança:** síntese em poucos itens do que muda para a empresa.
+- **7.3 Impacto Operacional das Automações:**
+  - horas de esforço humano economizadas **só com fonte** (relatório Produtividade Geral e tempos manuais de referência validados pela Coordenação);
+  - sem fonte: ausência justificada e o volume executado (remissão ao 8).
 
-#### 12. Outros Sistemas Internos e Contratados
-- **12.1 Painéis de BI com Parceiros:** Esclarecimento formal do status real de **Analítica 3M** (Perfil Master para gestão de usuários, escopo estratégico) e **EasyBI / MW Solutions** (fora do escopo direto, descontinuação contratual).
-- **12.2 Sistemas Internos e de Terceiros:** tabela Sistema · Tipo (interno/contratado) · Situação na semana · Onde, para os sistemas citados no período (ex.: Compras, Mundiale History, Flashman, Slack, Native PBX/ZEUS, integrações bancárias), apontando para os tópicos com o detalhe.
+#### 8. Automações Operadas pelo TI
+Lugar canônico da **execução** das automações. O que os dados dizem sobre o negócio fica na Parte III.
+- **8.1 Sincronização Diária de Vouchers WiFeed:**
+  - uma linha de contexto (o detalhe fica em `docs/referencias/wifeed_contexto.md`);
+  - statcards: cargas na semana, vouchers transmitidos e taxa de validação;
+  - falhas ou divergências, se houver;
+  - o log completo vai para o Anexo D.
+- **8.2 Automações Fullcam: Inadimplência e Instalação:**
+  - statcards de bloqueios, desbloqueios, instalações, câmeras afetadas e ações com sucesso;
+  - os casos que pedem atenção (ex.: ciclo repetido de bloqueio e desbloqueio);
+  - a tabela completa vai para o Anexo D;
+  - execuções sem pendência não geram registro e não são falha.
+- **8.3 Ocorrências das Automações:** avisos repetidos, itens travados ou divergências que pedem correção de cadastro ou do sistema, com severidade e situação.
 
-#### Encerramento
-Título `#` que antecede o tópico 13.
+#### 9. Sistemas Sustentados e Contratados
+- **9.1 Situação dos Sistemas na Semana:**
+  - tabela *Sistema · Tipo (interno/contratado) · Situação na semana · Disponibilidade/ocorrências · Onde*;
+  - exemplos: Voalle, Flashman, Native PBX/ZEUS, Slack, Compras, Mundiale History, integrações bancárias e Bemobi, MailCow;
+  - falhas funcionais (ex.: sessão do Voalle) entram como **Ocorrências Operacionais de Sistemas**, sem distorcer o uptime de rede;
+  - incluir o andamento de integrações citadas no modelo da Coordenação (ex.: Voalle × Flashman) quando houver registro.
+- **9.2 Painéis de BI com Parceiros:** Analítica 3M e EasyBI (MW Solutions). Sem atividade, uma linha: "Sem atividade; situação inalterada (ver `docs/regras_metricas.md` §9)". Citar no relatório a situação, não o arquivo.
 
-#### 13. Pontos de Atenção e Próximas Ações
-- **13.1 Riscos Tecnológicos e Vulnerabilidades Identificadas:** Registro aprofundado de vulnerabilidades críticas, riscos de conformidade (LGPD, planos gratuitos de ferramentas) e segurança.
-- **13.2 Necessidades de Investimentos e Aquisições:** Equipamentos, licenças, nobreaks senoidais e peças de reposição.
-- **13.3 Ações Planejadas para as Próximas Semanas:** Roadmap de entregas e cronograma de prioridades com prazos alinhados.
+#### 10. Segurança da Informação
+Lugar canônico de segurança. Os riscos vão em uma linha para o 14.1.
+- **10.1 Incidentes e Alertas de Segurança:** tabela *Protocolo · Sistema · Criticidade · Data · Situação · Próximo passo*. Inclui incidentes em sistemas internos, alertas externos sobre fornecedores e tentativas bloqueadas relevantes. Incidente detalhado em ⭐ entra com uma linha e a remissão.
+- **10.2 Testes, Estudos e Reforços:**
+  - gincanas de pentest: o resumo no semanal e o relatório completo à parte;
+  - investigações (`fontes/investigacoes/`);
+  - reforços aplicados nos sistemas, inclusive o AutoTickets, narrado como reforço (regra 9).
+- **10.3 Conformidade e Dados Pessoais (LGPD):** retenção e armazenamento (ex.: histórico do Slack), credenciais registradas em relatos, acessos e MFA. Pendências com a marca ⚠️ até serem concluídas.
+
+---
+
+### Parte III — A Empresa
+Título `#` com a frase de abertura sobre o AutoTickets como integrador (ver "Estilo de escrita") e os statcards da Parte. Dados de interesse da empresa toda, que o TI consolida. Agrupa os tópicos 11 a 13.
+
+#### 11. Base de Clientes no ERP Voalle
+- **11.1 Clientes Adimplentes no ERP Voalle:**
+  - quantidade diária de clientes adimplentes em qualquer produto, apurada pelo AutoTickets na automação de vouchers do WiFeed;
+  - statcards: início, fim, variação líquida (absoluta e %), pico e mínimo;
+  - SVG de área/linha com a evolução diária e a tabela diária.
+- **11.2 Vendas e Cancelamentos** *(condicional)*: novas adesões, cancelamentos e adições líquidas por categoria, do painel executivo do AutoTickets, quando exportado.
+
+#### 12. Qualidade do Atendimento e da Rede
+- **12.1 Reincidência de Problemas no Atendimento:**
+  - statcards: protocolos analisados, retornos, taxa, mediana até voltar e clientes reincidentes;
+  - taxa por tipo de protocolo (`<!-- BARS -->` ou tabela) e por cidade/POP quando a fonte trouxer;
+  - janela de retorno de até 60 dias;
+  - os casos do TI ficam no 4.3.
+- **12.2 Ocorrências Sistêmicas na Rede de Distribuição:** dias em que um tipo de protocolo atingiu muitos clientes acima da mediana diária. É informação para o NOC e o Campo, não indisponibilidade do TI.
+- **12.3 Anomalias de Tráfego PPPoE para o Service Desk** *(condicional; fonte `fontes/autotickets/anomalias_pppoe/`)*. Entrega ao Service Desk a lista priorizada de clientes com comportamento anômalo, **para ação proativa imediata**.
+  - **Natureza da fonte:** **retrato atual**, gerado no dia da emissão. **Não se aplica o recorte da semana**: informar só a data e hora do retrato.
+  - **Statcards:** total de anomalias, críticas, inversões de tráfego, volume de upload × download e casos com ticket/OS aberto (quando a fonte informar).
+  - **No corpo:** os casos **agrupados por ação sugerida**, com cliente, login, POP e o indicador que justifica, e a concentração por POP (`<!-- BARS -->`). As hipóteses abaixo são a confirmar pelo Service Desk, nunca afirmadas como fato:
+
+    | Perfil | Hipótese | Ação |
+    | :--- | :--- | :--- |
+    | Razão > 15x com download baixo | CPE possivelmente comprometida | Verificar a CPE, atualizar o firmware, trocar a senha e checar portas |
+    | Upload alto e constante | DVR, câmeras, backup ou servidor | Confirmar o uso e oferecer plano corporativo/IP fixo |
+    | Provedor ou empresa de telecom | Possível revenda | Encaminhar ao Comercial |
+    | Contrato interno ou cortesia | — | Rotular como interno, fora do ranking |
+    | Muitas quedas ou RX ruim (< −27 dBm ou −40 dBm/LOS) | Problema físico | Abrir OS de campo |
+
+  - **Recorrência:** marcar os casos que já constavam no retrato anterior.
+  - **Desfecho:** no relatório seguinte, os casos encaminhados voltam com o ticket/OS e o resultado.
+  - **Tabela completa** com os dados de identificação no **Anexo C**. Ressalvas de cálculo no Anexo E.
+
+#### 13. Fullcam – Resultado do Negócio
+- **13.1 Diagnóstico Financeiro e Indicadores-Chave:**
+  - statcards: total faturado, licenças, storage, equipamentos perdidos e saldo líquido;
+  - clientes com saldo positivo × negativo (`<!-- BARS -->`) e clientes sem fatura paga;
+  - quando houver dado: **ROI e payback** (custo do equipamento e da instalação × receita);
+  - análise de risco e recomendação ao Comercial e ao Financeiro;
+  - recalculado a partir do CSV, com os registros excluídos por regra (`docs/regras_metricas.md` §11).
+- **13.2 Clientes de Maior e Menor Saldo:** os 5 maiores e os 5 menores saldos e os casos que pedem ação (equipamento perdido, contrato sem fatura com consumo). A tabela completa fica no **Anexo B**.
+
+---
+
+### Encerramento
+Título `#` que antecede o tópico 14.
+
+#### 14. Pontos de Atenção e Próximas Ações
+- **14.1 Riscos Tecnológicos e Vulnerabilidades:** tabela *Risco · Evidência · Criticidade · Mitigação · Responsável*, uma linha por risco, com remissão ao tópico canônico.
+- **14.2 Necessidades de Investimentos e Aquisições:** equipamentos, licenças e peças, com quantidade, destino e protocolo. Itens que dependem de aprovação também entram em "Decisões solicitadas" no Resumo.
+- **14.3 Ações Planejadas para as Próximas Semanas:** *Ação · Responsável · Prazo · Origem*.
+- **14.4 Cumprimento das Ações da Semana Anterior:**
+  - linha-resumo "X de Y ações concluídas no prazo";
+  - tabela das ações do 14.3 anterior (ou do 13.3, até a semana 42) que **não** foram concluídas, com a situação e o novo prazo.
+
+---
+
+### Anexos
+Título `#` (renderizado em tom neutro e fonte menor). Material de consulta; o corpo não depende dele para ser entendido.
+- **Anexo A — Acompanhamento das Observações da Semana Anterior:** quando existir `semanas/<anterior>/feedback.md`, a tabela com **todas** as observações (de Isvi, Liomar e equipe): *Observação · Autor · Como foi tratada · Onde (tópico) · Status*. Sem feedback: "Sem observações registradas sobre o relatório anterior".
+- **Anexo B — Auditoria Financeira Fullcam Completa:**
+  - transcrição completa de todos os registros auditados: Cliente, CPF/CNPJ **mascarado** (`***.456.789-**`), Contratos, Faturas Pagas, GB, Faturado, Licenças, Storage, Equip. Perdido e Saldo;
+  - cores semânticas (verde para positivo, vermelho para negativo).
+- **Anexo C — Anomalias PPPoE: Lista Completa** *(condicional, com o 12.3)*:
+  - tabela ordenada pela razão Upload/Download (decrescente);
+  - colunas: cliente, login PPPoE, contrato, CPF/CNPJ mascarado, cidade/bairro, POP, IP, MAC, CPE, plano, RX, upload/download, razão, throughput, quedas, severidade e hipótese → ação;
+  - até 30 casos na íntegra; acima disso, os 30 primeiros e a contagem do restante.
+- **Anexo D — Registros das Automações:**
+  - log das cargas do WiFeed: data/hora, operador, segmento, base ERP, vouchers, taxa e status;
+  - ações Fullcam: ID, data/hora, cliente, contrato, protocolo/OS, ação, câmeras e status.
+- **Anexo E — Notas Metodológicas e Qualidade das Fontes:**
+  - convenções da semana (critério Lançamento do Voalle, recálculos por protocolo único, registros excluídos);
+  - ressalvas de cada fonte que afetaram números (divergências entre formatos, totais que não fecham, campos não confiáveis);
+  - fontes ausentes na semana;
+  - correções de relatórios anteriores.
+
+  Sempre pelo nome descritivo da fonte, nunca pelo caminho do arquivo.

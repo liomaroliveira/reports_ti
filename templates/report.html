@@ -10,8 +10,12 @@
     4. Gerar o PDF: bash scripts/renderizar_pdf.sh <arquivo.html>  (embute o CSS e imprime A4 sem cabeçalho do navegador)
   Selos (badge-count) só com informação útil (ex.: "5 destaques"); não repetir a semana em toda seção.
   Diagramação: td.nowrap para números/protocolos/datas/CPF; table.tabela-densa para tabelas largas; kpi-grid.cols-3/cols-5 conforme a quantidade de cards.
-  Componentes disponíveis em templates/report.css: kpi-grid/kpi-card (emerald|purple|amber|rose), table-container,
-  badge (badge-success|info|warning|danger), card-narrative, anomalia-card, time-dist-grid/progress-bar (green|amber), footer.
+  Componentes disponíveis em templates/report.css: painel-grid/painel-card (verde|amarelo|vermelho|neutro, com .spark),
+  kpi-grid/kpi-card (cor semântica: emerald = bom, amber = atenção, rose = ruim, sem classe = informativo), table-container,
+  badge (badge-success|info|warning|danger — chips de status), card-narrative, anomalia-card, time-dist-grid/progress-bar,
+  stack-chart (barras empilhadas), page-section.anexos, footer.
+  Paginação: página 1 = capa-painel; o Resumo abre a página 2; só as grandes seções (# Parte…, # Encerramento, # Anexos)
+  começam em nova página — os tópicos seguem corridos.
 -->
 <html lang="pt-BR">
 <head>
@@ -25,7 +29,7 @@
     <div class="header-banner">
       <span class="header-badge">Uso interno · Semana {{XX}} / {{AAAA}}</span>  <!-- não repetir o título no selo -->
       <h1>Relatório Semanal Consolidado - Setor TI</h1>
-      <p class="subtitle">Panorama Operacional, Gestão de Demandas, Incidentes, Infraestrutura Crítica e Outros</p>
+      <p class="subtitle">O Setor de TI · Sistemas e Desenvolvimento · A Empresa</p>
     </div>
 
     <div class="meta-grid">
@@ -58,49 +62,53 @@
       </div>
     </div>
 
+    <!-- Capa-painel: 8 cards (Demandas, Equipe, Suporte, Infraestrutura, Sistemas, Segurança, Empresa, Fullcam) + as 3 perguntas -->
+    <div class="section-title" id="-painel-da-semana"><span>Painel da Semana</span></div>
+    <div class="painel-grid">
+      <div class="painel-card verde">
+        <div class="painel-area"><span class="farol"></span>Demandas</div>
+        <div class="kpi-value">{{valor}}</div>
+        <div class="kpi-label">Balanço da fila</div>
+        <div class="kpi-desc">{{saídas}} ÷ {{entradas}}</div>
+        <!-- minigráfico (svg.spark) e histórico (div.painel-hist) gerados a partir do campo "histórico" do marcador PAINEL -->
+      </div>
+    </div>
+    <div class="painel-leitura"><ul>
+      <li><strong>Foi boa?</strong> {{uma ou duas linhas}}</li>
+      <li><strong>Para onde estamos apontando?</strong> {{uma ou duas linhas}}</li>
+      <li><strong>O que precisa mudar?</strong> {{uma ou duas linhas}}</li>
+    </ul></div>
+
     <div class="section-title" id="indice-geral"><span>Índice Geral de Navegação</span></div>
-    <!-- Índice: gerado por scripts/md_para_html.py a partir do índice do .md (estrutura vigente em docs/especificacao_relatorio.md).
-         Classes: toc-h2 (Resumo/Destaques/Fatos/Partes), toc-h3 (tópicos), toc-h4 (subtópicos), toc-h5 (sub-subtópicos). -->
+    <!-- Índice em 2 níveis: toc-h2 (Resumo/Destaques/Fatos/Partes/Anexos) e toc-h3 (tópicos e anexos). -->
     <div class="toc-box"><ul>
       <li class="toc-h2"><a href="#resumo-executivo">Resumo Executivo</a></li>
       <li class="toc-h2"><a href="#parte-i--o-setor-de-ti">Parte I — O Setor de TI</a></li>
       <li class="toc-h3"><a href="#1-gestão-de-demandas">1. Gestão de Demandas</a></li>
-      <li class="toc-h4"><a href="#11-demandas-pendentes">1.1 Demandas Pendentes</a></li>
     </ul></div>
-
-    <div class="section-title" id="resumo-executivo">
-      <span>Resumo Executivo</span>
-      <span class="badge-count">Visão Geral da Semana {{XX}}</span>
-    </div>
-
-    <!-- EXEMPLO: statcards (kpi-card: padrão | emerald | purple | amber | rose) -->
-    <div class="kpi-grid">
-      <div class="kpi-card emerald">
-        <div class="kpi-value">{{valor}}</div>
-        <div class="kpi-label">Balanço da Fila</div>
-        <div class="kpi-desc">{{saídas}} saídas ÷ {{entradas}} entradas</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value">{{valor}}</div>
-        <div class="kpi-label">{{rótulo}}</div>
-        <div class="kpi-desc">{{descrição}}</div>
-      </div>
-    </div>
-
-    <div class="card-narrative">
-      <p>{{Síntese analítica da semana: principais entregas, quantitativos globais, conquistas e prioridades — com protocolos (#) e commits como evidência.}}</p>
-    </div>
-
-    <div class="footer">
-      <span>Relatório Semanal Consolidado — Setor de TI</span>
-      <span>Semana {{XX}} / {{AAAA}} — Ten Internet</span>
-      <span>Página 1</span>
-    </div>
   </div>
 
-  <!-- Cada tópico principal começa em nova página: class="page-section page-break" -->
-  <!-- Seção DINÂMICA (docs/especificacao_relatorio.md → Classes de Tópicos): 3 a 5 destaques; o título de cada um é o próprio achado. -->
   <div class="page-section page-break">
+    <div class="section-title" id="resumo-executivo"><span>Resumo Executivo</span></div>
+
+    <!-- Resumo Executivo (≤ 1 página): evolução × semana anterior e decisões solicitadas; as 3 perguntas ficam no painel -->
+    <div class="sub-section-title">Evolução em relação à semana anterior</div>
+    <div class="table-container">
+      <table>
+        <thead><tr><th>Indicador</th><th>Semana {{XX}}</th><th>Semana anterior</th><th>Observação</th></tr></thead>
+        <tbody><tr><td>{{indicador}}</td><td class="nowrap">{{valor}}</td><td class="nowrap">{{valor}}</td><td>{{observação}}</td></tr></tbody>
+      </table>
+    </div>
+    <div class="sub-section-title">Decisões solicitadas à Coordenação</div>
+    <div class="table-container">
+      <table>
+        <thead><tr><th>Decisão</th><th>Contexto</th><th>Opções / valor</th><th>Prazo</th><th>Onde</th></tr></thead>
+        <tbody><tr><td>{{decisão}}</td><td>{{contexto}}</td><td>{{opções}}</td><td class="nowrap">{{DD/MM}}</td><td class="nowrap">{{tópico}}</td></tr></tbody>
+      </table>
+    </div>
+
+    <!-- Seção DINÂMICA (docs/especificacao_relatorio.md → Classes de Tópicos): 3 a 5 destaques; o título de cada um é o próprio achado.
+         Destaques e Fatos seguem corridos depois do Resumo (sem quebra de página). -->
     <div class="section-title" id="-destaques-analíticos-da-semana">
       <span>📈 Destaques Analíticos da Semana</span>
       <span class="badge-count">{{N}} Destaques</span>
@@ -113,9 +121,7 @@
       <p><strong>Leitura:</strong> {{o que significa para a operação: bom, ruim, neutro e por quê}}</p>
       <p><strong>Recomendação:</strong> {{ação, responsável sugerido e onde será acompanhada}}</p>
     </div>
-  </div>
 
-  <div class="page-section page-break">
     <div class="section-title" id="-fatos-notáveis-e-anomalias-da-semana">
       <span>⭐ Fatos Notáveis e Anomalias da Semana</span>
       <span class="badge-count">{{N}} Ocorrências</span>
@@ -132,7 +138,7 @@
     </div>
   </div>
 
-  <!-- Grande seção: faixa .part-banner; o primeiro tópico da parte fica na mesma página -->
+  <!-- Grande seção: faixa .part-banner em nova página; os tópicos seguem corridos dentro da Parte -->
   <div class="page-section page-break">
     <div class="part-banner" id="parte-i--o-setor-de-ti">Parte I — O Setor de TI</div>
     <p>{{Frase de abertura da grande seção.}}</p>
@@ -145,7 +151,7 @@
         <tbody><tr><td class="nowrap">#{{protocolo}}</td><td>{{solicitante}} / {{setor}}</td><td>{{responsável}}</td><td><span class="badge badge-info">{{prioridade}}</span></td><td>{{situação}}</td></tr></tbody>
       </table>
     </div>
-    <!-- Demais tópicos (1 a 13) e o condicional 8.4: ver docs/especificacao_relatorio.md -->
+    <!-- Demais tópicos (1 a 14), os condicionais 11.2 e 12.3 e os Anexos A a E (page-section.anexos): ver docs/especificacao_relatorio.md -->
   </div>
 
 </body>

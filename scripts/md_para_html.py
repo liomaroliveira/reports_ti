@@ -10,8 +10,12 @@ Depois: bash scripts/renderizar_pdf.sh <saida.html>  (embute o CSS e gera o PDF 
 O Markdown é a fonte única; o HTML sai dele. O script:
   - monta a moldura (cabeçalho, bloco de identificação, convenções e índice) a partir do próprio .md
     (linhas "**Período Analisado**" e "**Período Operacional Efetivo**" do bloco de identificação);
-  - cada "# " (Parte I, II, III…) vira faixa de grande seção com quebra de página; cada "## " vira tópico com quebra
-    de página (o primeiro tópico de uma parte fica na mesma página da faixa); os "### " de 📈 Destaques e ⭐ Fatos Notáveis viram cards;
+  - página 1 = capa-painel: cabeçalho, bloco de identificação, "## 📊 Painel da Semana" (marcador PAINEL + as 3
+    perguntas) e o índice (2 níveis: Partes e tópicos);
+  - o Resumo Executivo abre a página 2; 📈 Destaques e ⭐ Fatos Notáveis seguem corridos (os "### " viram cards);
+  - cada "# " (Parte I, II, III, Encerramento, Anexos) vira faixa de grande seção e começa em nova página; os "## "
+    dentro de uma Parte seguem corridos, sem quebra de página;
+  - colunas Status, Severidade, Criticidade e Prioridade viram chips coloridos (emoji inicial descartado);
   - ids iguais às âncoras do índice (mesmo algoritmo de scripts/validar_indice.py);
   - tabelas com td.nowrap em números, protocolos, datas, valores e CPF mascarado; tabela-densa quando houver
     coluna CPF/CNPJ; CPF mascarado deve vir escapado no .md (\*\*\*.456.789-\*\*);
@@ -19,9 +23,15 @@ O Markdown é a fonte única; o HTML sai dele. O script:
 
 Marcadores (comentários HTML, invisíveis no .md renderizado):
   <!-- KPI: valor | rótulo | descrição | cor ; valor | rótulo | descrição | cor ; ... -->
-       statcards; cor = emerald | purple | amber | rose ou vazio; a grade se ajusta à quantidade (3, 4, 5 ou 6)
+       statcards; cor semântica = verde (bom) | amarelo (atenção) | vermelho (ruim) | vazio (informativo);
+       aceita também os nomes antigos emerald | amber | rose | purple; a grade se ajusta à quantidade (3, 4, 5 ou 6)
+  <!-- PAINEL: área | farol | valor | rótulo | detalhe | histórico ; ... -->
+       cards da capa-painel; farol = verde | amarelo | vermelho | neutro; histórico opcional = valores das semanas
+       anteriores até a atual separados por " · " (ex.: 32.600 · 32.596), desenhados como minigráfico
   <!-- BARS: Rótulo|12 ; Rótulo|3 ; ... -->
        barras horizontais proporcionais (ranking)
+  <!-- STACK: Pessoa | Frente=19:11, Frente=9:09 ; Pessoa | ... -->
+       barras empilhadas (ex.: distribuição do tempo por frente); valores em h:mm ou decimais; mesma cor por frente
 """
 import html
 import os
@@ -46,12 +56,102 @@ def inline(s):
     return s.replace("\x00", "*")
 
 
+CORES = {"verde": "emerald", "amarelo": "amber", "vermelho": "rose", "neutro": ""}
+SERIE = ["#0284c7", "#10b981", "#f59e0b", "#8b5cf6", "#f43f5e", "#64748b", "#14b8a6", "#a16207"]
+
+
+def numero(txt):
+    """Valor numérico de um texto em formato brasileiro (32.604 · R$ 6.725,27 · 100% · 19:11); None se não houver."""
+    t = txt.strip()
+    m = re.fullmatch(r"(\d+):(\d\d)", t)
+    if m:
+        return int(m.group(1)) + int(m.group(2)) / 60
+    t = re.sub(r"[^\d,.−-]", "", t).replace("−", "-")
+    if not re.search(r"\d", t):
+        return None
+    t = t.replace(".", "").replace(",", ".") if "," in t or re.fullmatch(r"-?\d{1,3}(\.\d{3})+", t) else t
+    try:
+        return float(t)
+    except ValueError:
+        return None
+
+
+def sparkline(valores):
+    nums = [numero(v) for v in valores]
+    nums = [n for n in nums if n is not None]
+    if len(nums) < 2:
+        return ""
+    lo, hi = min(nums), max(nums)
+    w, h, pad = 90, 22, 3
+    pts = [(pad + i * (w - 2 * pad) / (len(nums) - 1), h - pad - (0 if hi == lo else (n - lo) / (hi - lo)) * (h - 2 * pad))
+           for i, n in enumerate(nums)]
+    linha = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+    x, y = pts[-1]
+    return (f'<svg class="spark" viewBox="0 0 {w} {h}" width="{w}" height="{h}" aria-hidden="true">'
+            f'<polyline points="{linha}" fill="none" stroke="#64748b" stroke-width="1.5" stroke-linejoin="round"/>'
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.2" fill="#0f172a"/></svg>')
+
+
+def painel(spec):
+    cards = []
+    for item in spec.split(" ; "):
+        p = [x.strip() for x in item.split("|")] + [""] * 6
+        area, farol, val, lab, det, hist = p[:6]
+        farol = farol.lower() if farol.lower() in ("verde", "amarelo", "vermelho") else "neutro"
+        serie = [v for v in re.split(r"\s+·\s+", hist) if v] if hist else []
+        rot_hist = f'<div class="painel-hist">{" → ".join(html.escape(v) for v in serie)}</div>' if serie else ""
+        cards.append(f'<div class="painel-card {farol}"><div class="painel-area"><span class="farol"></span>{inline(area)}</div>'
+                     f'<div class="kpi-value">{inline(val)}</div><div class="kpi-label">{inline(lab)}</div>'
+                     f'<div class="kpi-desc">{inline(det)}</div>{sparkline(serie)}{rot_hist}</div>')
+    return '<div class="painel-grid">' + "".join(cards) + "</div>"
+
+
+def empilhado(spec):
+    pessoas, frentes = [], []
+    for item in spec.split(" ; "):
+        nome, resto = item.split("|", 1)
+        partes = []
+        for par in resto.split(","):
+            f, v = par.rsplit("=", 1)
+            f, v = f.strip(), v.strip()
+            if f not in frentes:
+                frentes.append(f)
+            partes.append((f, v, numero(v) or 0))
+        pessoas.append((nome.strip(), partes))
+    cor = {f: SERIE[i % len(SERIE)] for i, f in enumerate(frentes)}
+    out = ['<div class="stack-chart">']
+    for nome, partes in pessoas:
+        tot = sum(n for _, _, n in partes) or 1
+        segs = "".join(f'<div class="stack-seg" style="width:{100 * n / tot:.1f}%;background:{cor[f]}" title="{html.escape(f)}: {html.escape(v)}">'
+                       f'{html.escape(v) if n / tot >= 0.08 else ""}</div>' for f, v, n in partes if n)
+        out.append(f'<div class="stack-row"><span class="stack-name">{html.escape(nome)}</span><div class="stack-bar">{segs}</div></div>')
+    out.append('<div class="stack-legend">' + "".join(f'<span><i style="background:{cor[f]}"></i>{html.escape(f)}</span>' for f in frentes) + "</div></div>")
+    return "".join(out)
+
+
+CHIP_COLS = ("status", "severidade", "criticidade", "prioridade")
+CHIP = [("danger", r"não atendid|falh|crític|critical|\balta\b|vencid|atrasad"),
+        ("warning", r"pendent|aguard|paliativ|atenção|média|parcial|observação|\bhigh\b|não informad"),
+        ("success", r"conclu|encerrad|sucesso|aplicad|resolvid|atendid|normal|\bbaixa\b|\bok\b")]
+EMOJI = re.compile(r"^[\u2190-\u2BFF\u2600-\u27BF\U0001F000-\U0001FAFF\uFE0F\s]+")
+
+
+def chip(c):
+    texto = EMOJI.sub("", c.strip())
+    if not texto or len(texto) > 40:
+        return inline(c)
+    puro = re.sub(r"\*|<[^>]+>", "", texto).lower()
+    tipo = next((t for t, rx in CHIP if re.search(rx, puro)), "info")
+    return f'<span class="badge badge-{tipo}">{inline(texto)}</span>'
+
+
 def kpis(spec):
     cards = []
     for item in spec.split(" ; "):
         partes = [x.strip() for x in item.split("|")]
         val, lab, desc = partes[:3]
         cor = partes[3] if len(partes) > 3 and partes[3] else ""
+        cor = CORES.get(cor, cor)
         cards.append(f'<div class="kpi-card {cor}"><div class="kpi-value">{inline(val)}</div>'
                      f'<div class="kpi-label">{inline(lab)}</div><div class="kpi-desc">{inline(desc)}</div></div>')
     cols = {3: " cols-3", 5: " cols-5", 6: " cols-3"}.get(len(cards), "")
@@ -88,8 +188,10 @@ def tabela(linhas):
     out = [f'<div class="table-container"><table{densa}><thead><tr>']
     out += [f'<th style="text-align:{a}">{inline(c)}</th>' for c, a in zip(cab, alin)]
     out.append("</tr></thead><tbody>")
+    chips = {k for k, c in enumerate(cab) if re.sub(r"\*|<[^>]+>", "", c).strip().lower().startswith(CHIP_COLS)}
     for l in linhas[2:]:
-        out.append("<tr>" + "".join(f'<td{nowrap(c)} style="text-align:{a}">{inline(c)}</td>' for c, a in zip(cel(l), alin)) + "</tr>")
+        out.append("<tr>" + "".join(f'<td{nowrap(c)} style="text-align:{a}">{chip(c) if k in chips else inline(c)}</td>'
+                                    for k, (c, a) in enumerate(zip(cel(l), alin))) + "</tr>")
     out.append("</tbody></table></div>")
     return "".join(out)
 
@@ -117,8 +219,8 @@ def lista(linhas):
 
 
 def converter(md, css_href):
-    global corpo, vistos, secao_atual, card_aberto, pagina, parte_aberta
-    corpo, vistos, secao_atual, card_aberto, pagina, parte_aberta = [], {}, "", None, 0, False
+    global corpo, vistos, secao_atual, card_aberto, em_parte
+    corpo, vistos, secao_atual, card_aberto, em_parte = [], {}, "", None, False
     indice = []
 
     def fechar_card():
@@ -155,9 +257,26 @@ def converter(md, css_href):
     if not (p_datas and semana and o_datas):
         sys.exit("[ERRO] bloco de identificação sem 'Período Analisado' (com Semana XX / AAAA) ou 'Período Operacional Efetivo'")
     sem_txt = f"Semana {semana.group(1)} / {semana.group(2)}"
+    ms = re.search(r"^\*\*(.+?)\*\*\s*$", md[:inicio], re.M)
+    subtitulo = ms.group(1) if ms else "O Setor de TI · Sistemas e Desenvolvimento · A Empresa"
     periodo_curto = f"{p_datas.group(1)} a {p_datas.group(3)}"
-    conv = re.search(r"^> (Convenções:.*)$", md, re.M)
+    conv = re.search(r"^> (Convenções:.*)$", md[:inicio], re.M)
     conv_html = f'<div class="card-narrative note"><p>{inline(conv.group(1))}</p></div>' if conv else ""
+
+    # Capa-painel: "## 📊 Painel da Semana" (antes do índice) com o marcador PAINEL e as 3 perguntas em lista
+    painel_html = ""
+    mp = re.search(r"^##\s+\W*Painel da Semana\s*$(.*?)(?=^##\s)", md[:inicio], re.M | re.S)
+    if mp:
+        blocos = []
+        for bl in re.split(r"\n\s*\n", mp.group(1).strip()):
+            mk = re.match(r"^<!-- PAINEL: (.*) -->$", bl.strip())
+            if mk:
+                blocos.append(painel(mk.group(1)))
+            elif re.match(r"^\s*[-*]\s", bl):
+                blocos.append('<div class="painel-leitura">' + lista(bl.splitlines()) + "</div>")
+            elif bl.strip():
+                blocos.append("<p>" + inline(" ".join(bl.split())) + "</p>")
+        painel_html = '<div class="section-title" id="-painel-da-semana"><span>Painel da Semana</span></div>' + "".join(blocos)
 
     linhas = md[inicio:].split("\n")
     i = 0
@@ -176,6 +295,11 @@ def converter(md, css_href):
             corpo.append(barras(m.group(1)))
             i += 1
             continue
+        m = re.match(r"^<!-- STACK: (.*) -->$", l)
+        if m:
+            corpo.append(empilhado(m.group(1)))
+            i += 1
+            continue
         if l.startswith("<svg"):
             j = i
             while not linhas[j].startswith("</svg>"):
@@ -188,32 +312,26 @@ def converter(md, css_href):
             nivel, titulo = len(m.group(1)), m.group(2).strip()
             aid = anchor(titulo)
             if nivel == 1:
-                # Grande seção (Parte I, II, III, Encerramento): abre página com faixa; o primeiro "## " segue na mesma página
+                # Grande seção (Parte I, II, III, Encerramento, Anexos): nova página com faixa; os "## " seguem corridos
                 fechar_card()
                 if corpo:
                     corpo.append("</div>")
-                pagina += 1
-                corpo.append(f'<div class="page-section page-break"><div class="part-banner" id="{aid}">{inline(titulo)}</div>')
-                parte_aberta = True
-            elif nivel == 2 and parte_aberta:
-                fechar_card()
-                secao_atual = titulo
-                parte_aberta = False
-                corpo.append(f'<div class="section-title" id="{aid}"><span>{inline(titulo)}</span></div>')
+                anexos = " anexos" if titulo.startswith("Anexos") else ""
+                corpo.append(f'<div class="page-section page-break{anexos}"><div class="part-banner" id="{aid}">{inline(titulo)}</div>')
+                em_parte = True
             elif nivel == 2:
                 fechar_card()
-                if corpo:
-                    corpo.append("</div>")
                 secao_atual = titulo
-                classe = "page-section" + (" page-break" if pagina else "")
-                pagina += 1
                 resto = linhas[i + 1:]
-                fim = next((k for k, x in enumerate(resto) if x.startswith("## ")), len(resto))
+                fim = next((k for k, x in enumerate(resto) if re.match(r"^#{1,2} ", x)), len(resto))
                 n3 = sum(1 for x in resto[:fim] if x.startswith("### "))
                 selo = {"Destaques": f"{n3} destaques", "Fatos": f"{n3} ocorrências"}
                 selo = next((v for k, v in selo.items() if k in titulo), "")
                 selo = f'<span class="badge-count">{selo}</span>' if selo else ""
-                corpo.append(f'<div class="{classe}"><div class="section-title" id="{aid}"><span>{inline(titulo)}</span>{selo}</div>')
+                if not corpo:
+                    # Resumo Executivo abre a página 2 (a página 1 é a capa-painel)
+                    corpo.append('<div class="page-section page-break">')
+                corpo.append(f'<div class="section-title" id="{aid}"><span>{inline(titulo)}</span>{selo}</div>')
             elif nivel == 3 and ("Destaques" in secao_atual or "Fatos" in secao_atual):
                 fechar_card()
                 classe = "card-narrative" if "Destaques" in secao_atual else "anomalia-card"
@@ -268,7 +386,7 @@ def converter(md, css_href):
     <div class="header-banner">
       <span class="header-badge">Uso interno · {sem_txt}</span>
       <h1>Relatório Semanal Consolidado - Setor TI</h1>
-      <p class="subtitle">Panorama Operacional, Gestão de Demandas, Incidentes, Infraestrutura Crítica e Outros</p>
+      <p class="subtitle">{html.escape(subtitulo)}</p>
     </div>
     <div class="meta-grid">
       <div class="meta-item"><span class="label">Período Analisado</span><span class="val">{periodo_curto}</span><span class="val-sub">{sem_txt}</span></div>
@@ -279,12 +397,13 @@ def converter(md, css_href):
     <div class="meta-grid" style="grid-template-columns: 1fr; margin-top: -6px; margin-bottom: 12px; padding: 7px 14px;">
       <div class="meta-item"><span class="label">Equipe Integrada do Setor</span><span class="val" style="font-size: 7.8pt;">Liomar Antonio de Oliveira (Analista Sr), Isac Costa Silva (Assistente Pl) e David Brasil Fernandes (Auxiliar Jr)</span></div>
     </div>
+    {painel_html}
     {conv_html}
     <div class="section-title" id="indice-geral"><span>Índice Geral de Navegação</span></div>
     {"".join(toc)}
   </div>
 """
-    corpo_html = "".join(corpo).replace('<div class="page-section">', '<div class="page-section page-break">', 1)
+    corpo_html = "".join(corpo)
     return f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>

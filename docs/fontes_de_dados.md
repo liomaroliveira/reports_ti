@@ -4,24 +4,24 @@ Todas as entradas de uma semana ficam em `semanas/<semana>/fontes/`. O que não 
 
 | Fonte | Onde colocar | Alimenta |
 | :--- | :--- | :--- |
-| Voalle (exportação por colaborador) | `fontes/voalle/<pessoa>.<html\|pdf\|csv>` (**HTML, "Tipo de data: Lançamento"**) | Tópicos 1 a 7 (narrativas, protocolos, horas) |
+| Voalle (exportação por colaborador) | `fontes/voalle/<pessoa>.<html\|pdf\|csv>` (**HTML, "Tipo de data: Lançamento"**) | Tópicos 1 a 6 (narrativas, protocolos, horas) e 9 e 10 (sistemas e segurança) |
 | AutoTickets — colaborador × ticket | `fontes/autotickets/colaborador_x_ticket/` | Tópico 1 (balanço da fila) e 2 (TMA, TMR, produtividade) |
 | AutoTickets — acompanhamento de protocolos | `fontes/autotickets/acompanhamento_protocolos/` | Tópico 1 (pendentes, parados 15+ dias, andamento) |
-| AutoTickets — WiFeed | `fontes/autotickets/wifeed_daily_update_voucher/` | 8.1 (base de clientes adimplentes do Voalle) e 9 (sincronização de vouchers) |
-| AutoTickets — Fullcam financeiro | `fontes/autotickets/fullcam_lucros_prejuizos/` | 10.1 e 10.2 (tabela completa) |
-| AutoTickets — Fullcam inadimplência | `fontes/autotickets/fullcam_automacao_inadimplencia/` | 10.3 e 10.4 (só execuções com ação) |
-| AutoTickets — Fullcam instalação | `fontes/autotickets/fullcam_automacao_instalacao_camera/` | 10.3 e 10.4 (só execuções com ação) |
+| AutoTickets — WiFeed | `fontes/autotickets/wifeed_daily_update_voucher/` | 11.1 (base de clientes adimplentes do Voalle), 8.1 (execução da sincronização de vouchers) e Anexo D (log) |
+| AutoTickets — Fullcam financeiro | `fontes/autotickets/fullcam_lucros_prejuizos/` | 13 (resultado do negócio) e Anexo B (tabela completa) |
+| AutoTickets — Fullcam inadimplência | `fontes/autotickets/fullcam_automacao_inadimplencia/` | 8.2 e Anexo D (só execuções com ação) |
+| AutoTickets — Fullcam instalação | `fontes/autotickets/fullcam_automacao_instalacao_camera/` | 8.2 e Anexo D (só execuções com ação) |
 | AutoTickets — tarefas executadas | `fontes/autotickets/tarefas_executadas/` | Tópico 2 e 2.4 (produção bruta por colaborador; preferir o **CSV**, o PDF corta relatos) |
-| AutoTickets — anomalias PPPoE | `fontes/autotickets/anomalias_pppoe/` | 8.4, tópico condicional (CSV). **Retrato atual** gerado no dia da emissão: não aplicar o recorte da semana |
+| AutoTickets — anomalias PPPoE | `fontes/autotickets/anomalias_pppoe/` | 12.3 e Anexo C, tópicos condicionais (CSV). **Retrato atual** gerado no dia da emissão: não aplicar o recorte da semana |
 | AutoTickets — **pacote semanal** (proposto) | `fontes/autotickets/pacote_semanal/autotickets_semana_<inicio>_<fim>.json` | Todos os tópicos do AutoTickets: substitui os arquivos por módulo quando existir (`docs/formato_exportacao_autotickets.md`) |
-| AutoTickets — problemas recorrentes | `fontes/autotickets/problemas_recorrentes/` | Reincidência da semana (retorno até 60 dias) — **MD**; alimenta 8.2 e 8.3 e o cruzamento com o 8.4 |
-| AutoTickets — produtividade geral | `fontes/autotickets/produtividade_geral/` | 11.3 |
-| AutoTickets — desenvolvimento | commits no repositório `autotickets_v2` (`AUTOTICKETS_REPO`) ou `fontes/autotickets/desenvolvimento/` | 11 |
-| Infraestrutura — backups | `fontes/infraestrutura/backups/` | 6.3 (quadrante obrigatório: sem esta fonte, declarar ausência — nunca estimar) |
-| Investigações / segurança | `fontes/investigacoes/AAAA-MM-DD_<tema>/` | 3, 6.4, 7.2, 13.1 |
+| AutoTickets — problemas recorrentes | `fontes/autotickets/problemas_recorrentes/` | Reincidência da semana (retorno até 60 dias) — **MD**; alimenta 12.1 e 12.2 (geral), 4.3 (casos com envolvimento do TI) e o cruzamento com o 12.3 |
+| AutoTickets — produtividade geral | `fontes/autotickets/produtividade_geral/` | 7.3 |
+| AutoTickets — desenvolvimento | commits no repositório `autotickets_v2` (`AUTOTICKETS_REPO`) ou `fontes/autotickets/desenvolvimento/` | 7 |
+| Infraestrutura — backups | `fontes/infraestrutura/backups/` | 5.4 (quadrante obrigatório: sem esta fonte, declarar ausência — nunca estimar) |
+| Investigações / segurança | `fontes/investigacoes/AAAA-MM-DD_<tema>/` | 10.1 e 10.2 (e 6.3, quando for desafio/gincana), 14.1 |
 | Individuais enviados pelos colegas (opcional) | `individuais/<pessoa>.<ext>` | Fonte complementar do Tópico 2 |
-| Relatório consolidado da semana anterior | `semanas/<anterior>/report_ti_*.md` | Continuidade (1.1, 1.2, 13.3) e comparação |
-| Feedback/observações da semana anterior | `semanas/<anterior>/feedback.md` | Resumo Executivo (acompanhamento) e tópicos citados |
+| Relatório consolidado da semana anterior | `semanas/<anterior>/report_ti_*.md` | Continuidade (1.1, 1.2, 14.3 → 14.4), comparação e histórico do Painel da Semana |
+| Feedback/observações da semana anterior | `semanas/<anterior>/feedback.md` | Anexo A (acompanhamento) e tópicos citados |
 
 > Exportações brutas: máscara **opcional** (`python3 scripts/mascarar_dados.py <arquivos>`); o repositório é de uso interno e não há verificação automática. **Formato esperado de cada fonte:** `_FORMATO_ESPERADO.md` em cada pasta de `fontes/` (gerado por `scripts/formatos_esperados.py`).
 >
@@ -61,9 +61,9 @@ git -C "${AUTOTICKETS_REPO:-$HOME/dev/autotickets_v2}" log --since="AAAA-MM-DD 0
 
 Estudos pontuais, testes de intrusão, mapeamento de vulnerabilidades e perícias, em `fontes/investigacoes/AAAA-MM-DD_<tema>/` (data de conclusão). Quando houver na semana:
 
-1. **Tópico 3:** registrar o estudo como entrega técnica;
-2. **Tópico 6.4:** resumir testes executados e superfície avaliada (e 7.2, quando for desafio/gincana);
-3. **Tópico 13.1:** riscos, falhas de controle e plano de mitigação.
+1. **Tópico 10.2:** resumir os testes executados, a superfície avaliada e os reforços (e 6.3, quando for desafio/gincana da equipe);
+2. **Tópico 10.1:** incidentes ou alertas que o estudo revelar;
+3. **Tópico 14.1:** riscos, falhas de controle e plano de mitigação.
 
 ## 4. Infraestrutura e plataformas (contexto)
 

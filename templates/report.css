@@ -454,7 +454,7 @@ table.tabela-densa th, table.tabela-densa td { padding: 4px 5px; }
 .card-narrative.note { background: #f8fafc; }
 code { font-size: 0.92em; background: #f1f5f9; padding: 0 3px; border-radius: 3px; overflow-wrap: anywhere; }
 
-/* Grandes seções (Parte I — O Setor de TI, Parte II — A Empresa, Parte III — Sistemas, Encerramento) */
+/* Grandes seções (Parte I — O Setor de TI, Parte II — Sistemas e Desenvolvimento, Parte III — A Empresa, Encerramento, Anexos) */
 .part-banner {
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0284c7 100%);
   color: #ffffff;
@@ -471,3 +471,53 @@ code { font-size: 0.92em; background: #f1f5f9; padding: 0 3px; border-radius: 3p
 .toc-box { font-size: 7pt; line-height: 1.32; padding: 9px 14px; }
 .toc-box li { margin-bottom: 1px; }
 .toc-box li.toc-h2 { margin-top: 3px; }
+
+/* ===== Estrutura final (semana 43): capa-painel, fluxo corrido, chips, gráficos e anexos ===== */
+/* Títulos não ficam órfãos no pé da página; tópicos dentro de uma Parte seguem corridos */
+.part-banner, .section-title, .sub-section-title, .sub-sub-title { break-after: avoid; page-break-after: avoid; }
+.section-title { margin-top: 20px; }
+.part-banner + .section-title, .part-banner + p + .section-title { margin-top: 8px; }
+
+/* Capa-painel (página 1): cards por área com farol e minigráfico */
+.painel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin-bottom: 10px; }
+.painel-card {
+  background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #94a3b8;
+  border-radius: 8px; padding: 8px 10px; break-inside: avoid;
+}
+.painel-card.verde { border-left-color: #10b981; }
+.painel-card.amarelo { border-left-color: #f59e0b; }
+.painel-card.vermelho { border-left-color: #ef4444; }
+.painel-area { font-size: 6.6pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: #64748b; margin-bottom: 3px; display: flex; align-items: center; gap: 5px; }
+.farol { width: 7px; height: 7px; border-radius: 50%; background: #94a3b8; display: inline-block; }
+.painel-card.verde .farol { background: #10b981; }
+.painel-card.amarelo .farol { background: #f59e0b; }
+.painel-card.vermelho .farol { background: #ef4444; }
+.painel-card .spark { display: block; margin-top: 4px; }
+.painel-hist { font-size: 6.2pt; color: #94a3b8; margin-top: 1px; }
+.painel-leitura { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 12px 8px 26px; margin-bottom: 10px; font-size: 7.8pt; }
+.painel-leitura li { margin-bottom: 3px; }
+
+/* Cores semânticas dos statcards: verde = bom, âmbar = atenção, vermelho = ruim, azul = informativo */
+.kpi-card.emerald .kpi-value { color: #047857; }
+.kpi-card.rose .kpi-value { color: #be123c; }
+
+/* Chips de status nas tabelas */
+td .badge { white-space: nowrap; }
+
+/* Barras empilhadas (<!-- STACK -->) */
+.stack-chart { margin: 4px 0 12px; }
+.stack-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+.stack-name { width: 120px; flex: none; font-size: 7.3pt; font-weight: 700; color: #0f172a; }
+.stack-bar { flex: 1; display: flex; height: 15px; border-radius: 4px; overflow: hidden; background: #e2e8f0; }
+.stack-seg { color: #ffffff; font-size: 6.4pt; font-weight: 700; display: flex; align-items: center; justify-content: center; white-space: nowrap; overflow: hidden; }
+.stack-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 6px 0 0 128px; font-size: 6.8pt; color: #475569; }
+.stack-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+
+/* Anexos: consulta, não leitura corrida */
+.page-section.anexos .part-banner { background: linear-gradient(135deg, #334155 0%, #475569 100%); }
+.page-section.anexos table { font-size: 6.6pt; }
+.page-section.anexos th, .page-section.anexos td { padding: 4px 6px; }
+.page-section.anexos .section-title { font-size: 9.5pt; border-left-color: #64748b; }
+
+/* Índice em 2 níveis (Partes e tópicos) */
+.toc-box { font-size: 7.4pt; line-height: 1.45; }

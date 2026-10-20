@@ -4,6 +4,13 @@ Melhorias do próprio processo de geração e problemas conhecidos. Quando uma m
 
 ## Pendentes
 
+- [ ] **Novas fontes para a estrutura final (2026-10-20).** Os tópicos abaixo entram como ausência justificada até existir fonte:
+  - **5.3 Capacidade dos servidores:** exportação semanal do Zabbix/Grafana ou do Proxmox (armazenamento, memória e CPU por host, com alertas de esgotamento).
+  - **5.2 Disponibilidade de links e servidores:** tempo fora do ar medido pelo Zabbix/Grafana.
+  - **3.3 Tempo médio de atendimento do suporte interno:** recorte do Colaborador × Ticket só com o suporte interno, ou campo de categoria no Voalle.
+  - **11.2 Vendas e cancelamentos:** exportação do painel executivo do AutoTickets (já reconstruído com o histórico real do Voalle).
+  - **13.1 ROI e payback da Fullcam:** custo do equipamento e da instalação por contrato na auditoria financeira.
+  - **Histórico do Painel da Semana:** hoje sai dos relatórios anteriores. O pacote semanal em JSON (`docs/formato_exportacao_autotickets.md`) poderia trazer as séries prontas.
 - [ ] Completar o `docs/glossario.md` com termos e jargões internos (setores, siglas de equipes, nomes de grupos).
 - [ ] Criar `docs/empresa.md` descrevendo setores, filiais e estrutura, para dar contexto à IA.
 - [ ] Nomes dos relatórios do AutoTickets: incluir o **período coberto** no nome do arquivo (hoje trazem só a data de geração).
@@ -21,7 +28,7 @@ Origem: análise da semana 42 (`semanas/2026-10-11_2026-10-17/fontes/**/_ANALISE
     - Criar uma seção **"Destaques Analíticos da Semana"**, logo após o Resumo Executivo, com 3 a 5 achados gerados pelos dados: maiores variações em relação à semana anterior, picos, novos tipos de demanda, concentração por setor ou POP, recorrências.
     - Reservar "Fatos Notáveis" para anomalias e desvios. Entregas normais (ex.: servidor GPU na semana 41) vão para o Tópico 3.
   - **Por quê:** o relatório fica igual toda semana na forma e "esconde" o que mudou. O Isvi pediu que ele responda "foi bom?", "para onde estamos apontando?", "o que precisa mudar?".
-- [ ] **Reduzir texto fixo.**
+- [x] **Reduzir texto fixo** (implementado em 2026-10-20 na estrutura final: contexto estático fora do corpo, Fullcam com top 5 + Anexo B, logs das automações no Anexo D).
   - **O que fazer:**
     - Mover os textos institucionais (4.2.1, 4.2.2, 4.1.2, 3.3) para um anexo ou `docs/referencias/` e citá-los com uma linha.
     - Trocar a tabela integral da Fullcam (4.3.2, cerca de 19% do relatório da semana 41) por **top N + variação semanal + anexo**.

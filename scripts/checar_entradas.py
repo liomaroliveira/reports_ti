@@ -168,7 +168,7 @@ def main():
             ", ".join(fs) or ("coberto pelo pacote_semanal" if no_pacote else "ausente"), essencial)
 
     bkp = arquivos(os.path.join(pasta, "fontes", "infraestrutura", "backups"))
-    add("Infraestrutura — backups (6.3)", bool(bkp),
+    add("Infraestrutura — backups (5.4)", bool(bkp),
         ", ".join(bkp) or "ausente: o quadrante de backups deve declarar ausência de fonte (nunca estimar)", essencial=False)
 
     inv = arquivos(os.path.join(pasta, "fontes", "investigacoes"))
