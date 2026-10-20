@@ -131,13 +131,13 @@ O relatório deve conter um **Índice Completo** no início, com links internos 
 #### Resumo Executivo
 Visão geral analítica da semana: síntese das principais entregas de engenharia de software e infraestrutura, quantitativo global de chamados e suportes a técnicos, principais conquistas e prioridades operacionais para a próxima semana.
 
-- **Evolução em relação à semana anterior:** statcards ou tabela curta com os indicadores-chave da semana ao lado dos valores da semana anterior (fonte: `semanas/<anterior>/report_ti_*.md`), sempre rotulados como "semana anterior".
+- **Evolução em relação à semana anterior:** statcards ou tabela curta com os indicadores-chave da semana ao lado dos valores da semana anterior (citar como "relatório da semana NN"), sempre rotulados como "semana anterior".
 - **Tópicos condicionais ausentes:** quando algum tópico condicional não tiver fonte, uma linha no fim do Resumo Executivo listando-os (ver "Classes de Tópicos").
 - **Acompanhamento das observações da semana anterior:** quando existir `semanas/<anterior>/feedback.md`, incluir no fim do Resumo Executivo uma tabela com **todas** as observações (do Isvi e do Liomar): *Observação · Autor · Como foi tratada · Onde (tópico) · Status*. Esta tabela fica dentro do Resumo Executivo e **não** ganha entrada própria no índice.
 
 #### 📈 Destaques Analíticos da Semana
 Seção dinâmica obrigatória, logo após o Resumo Executivo. Responde "foi bom?", "para onde estamos apontando?" e "o que precisa mudar?" a partir dos **dados** (critérios em "Classes de Tópicos"). De **3 a 5 destaques**, cada um como `###` sem número cujo título é o próprio achado, contendo:
-- **Evidência:** número(s) da semana com a fonte (caminho, protocolo ou commit) e, quando houver, o valor da semana anterior rotulado.
+- **Evidência:** número(s) da semana com a fonte (nome descritivo do relatório, protocolo ou commit — nunca nome ou caminho de arquivo) e, quando houver, o valor da semana anterior rotulado.
 - **Leitura:** o que o dado significa para a operação (bom, ruim, neutro, e por quê).
 - **Recomendação:** ação concreta, responsável sugerido e onde será acompanhada (ex.: "9.3", "próximo relatório").
 Se nenhum critério for atingido, declarar "Semana sem desvios relevantes nos indicadores" e citar os indicadores verificados.
@@ -174,8 +174,9 @@ Para cada colaborador (**2.1 David Brasil Fernandes**, **2.2 Isac Costa Silva** 
 #### 4. Plataforma e Automações AutoTickets
 Macro-tópico de alto valor estratégico para a empresa, detalhando em subtópicos dedicados na íntegra:
 - **4.1 Desenvolvimento e Engenharia de Software AutoTickets v2:**
-  - **4.1.1 Entregas em Produção, Commits e Sprints:** Mapeamento minucioso dos commits no git (`autotickets-v2`) no período avaliado. Relação das sprints entregues no período (extraídas das mensagens de commit), volume de adições/remoções de código, arquivos impactados e testes executados com `DatabaseTransactions`.
-  - **4.1.2 Evolução Arquitetural, IA e Governança de Software:** Detalhamento do motor de Glassmorphism, Design System corporativo, integração Ollama GPU com RAG vetorial, governança de cotas Gemini, gateway LiteLLM e servidor oficial MCP (`laravel/mcp`).
+  > **Confidencialidade (`AGENTS.md`, regra 9):** o AutoTickets é desenvolvimento interno. Texto genérico, humanizado e profissional, pelo valor para a operação; sem rotas, bibliotecas, frameworks, modelos de IA, comandos, linhas de código ou tipos de commit. Segurança sempre como **reforço** (firewall, análise de vulnerabilidades, proteção de integrações), nunca como exposição ou falha.
+  - **4.1.1 Entregas em Produção, Commits e Sprints:** statcards (atualizações publicadas, ciclos de entrega concluídos, novos testes automatizados) e uma tabela por **frente de evolução** (ex.: segurança da plataforma, painel executivo, relatórios, módulos novos, desempenho): o que foi entregue, o valor para a operação e os hashes de commit só como referência.
+  - **4.1.2 Evolução Arquitetural, IA e Governança de Software:** síntese em poucos itens do que muda para a empresa (segurança, IA local, confiabilidade dos dados, qualidade e publicação), sem detalhes de implementação.
 - **4.2 Automação WiFeed – Hotspots e Sincronização Diária de Vouchers:**
   - **4.2.1 Contexto Institucional e Problema Operacional do Captive Portal:** Explicar a função do WiFeed como Captive Portal da Ten Internet para captura de leads e fidelização (rede "TEN_Wi-Fi"), diferenciando o fluxo de não-clientes (cadastro por celular) e clientes (validação via CPF do titular com base de vouchers). Detalhar o problema operacional anterior (geração e upload 100% manual de arquivos CSV de CPFs sanitizados, risco de sensação de "propaganda enganosa" para assinantes recentes e perda de tempo técnico do TI).
   - **4.2.2 Solução Automatizada Desenvolvida no AutoTickets:** Descrever a arquitetura da automação: conexão direta ao banco Voalle, filtro exclusivo de clientes adimplentes em qualquer plano, sanitização estrita de CPFs/CNPJs, rotina agendada diária às 11h, exclusão do segmento antigo, upload do novo lote, paginação de integridade linha por linha e comutação segura para o segmento ativo.

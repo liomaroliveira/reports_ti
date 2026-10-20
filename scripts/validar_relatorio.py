@@ -13,6 +13,8 @@ Confere:
   5. Tópico condicional 8.4: presente se houver fonte em fontes/autotickets/anomalias_pppoe/; ausente (e citado no
      Resumo Executivo) se não houver.
   6. CPF/CNPJ sem máscara, senhas e stream keys RTMP no relatório.
+  7. Fontes citadas por nome ou caminho de arquivo (AGENTS.md, regra 1) — erro.
+  8. Detalhes técnicos ou narrativa de exposição sobre o AutoTickets (AGENTS.md, regra 9) — aviso para revisão.
 Sai com código 1 se houver erro.
 """
 
@@ -26,6 +28,13 @@ from mascarar_dados import CNPJ_FMT, CPF_FMT, DIGITOS, RTMP, SENHA, cnpj_valido,
 
 PERIODO = re.compile(r"^\d{4}-\d{2}-\d{2}_\d{4}-\d{2}-\d{2}$")
 PROIBIDOS = re.compile(r"\b(resolutividade|resolubilidade)\b", re.I)
+# Regra 1: fonte citada pelo nome descritivo, nunca pelo arquivo
+ARQUIVOS = re.compile(r"(?:\bfontes/|\bdocs/|\bsemanas/|_ANALISE_|_FORMATO_ESPERADO|report_ti_|autotickets[-_]v2\b"
+                      r"|\b[\w.*…-]+\.(?:csv|md|html|pdf|py|sh)\b)")
+# Regra 9: AutoTickets genérico e segurança como reforço (lista de revisão, não exaustiva)
+AUTOTICKETS_TECNICO = re.compile(r"\b(endpoint|Sanctum|laravel|LiteLLM|Ollama|qwen|gemma|Glassmorphism|RefreshDatabase|"
+                                 r"DatabaseTransactions|PostgREST|middleware|seeder|refactor|chore|"
+                                 r"segredo do webhook|sem autenticação|dados (?:simulados|fabricados|inventados))\b", re.I)
 
 
 def itens_feedback(path):
@@ -115,6 +124,12 @@ def validar(path):
     docs += [m.group(1) for m in DIGITOS.finditer(texto) if cpf_valido(m.group(1)) or cnpj_valido(m.group(1))]
     if docs:
         avisos.append(f"{len(docs)} CPF/CNPJ sem máscara no relatório (usar ***.456.789-**)")
+    citados = sorted({m.group(0) for m in ARQUIVOS.finditer(re.sub(r"<svg.*?</svg>|\]\(#[^)]*\)|(?:id|href)=\"#?[^\"]*\"", "", texto, flags=re.S))})
+    if citados:
+        erros.append("fonte citada por nome/caminho de arquivo (usar o nome descritivo): " + ", ".join(citados[:8]))
+    tecnicos = sorted({m.group(0) for m in AUTOTICKETS_TECNICO.finditer(texto)}, key=str.lower)
+    if tecnicos:
+        avisos.append("revisar detalhes técnicos/negativos do AutoTickets (regra 9): " + ", ".join(tecnicos))
     if SENHA.search(texto) or RTMP.search(texto):
         avisos.append("senha ou stream key RTMP transcrita no relatório")
     return erros, avisos

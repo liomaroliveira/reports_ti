@@ -76,7 +76,7 @@ Siga `docs/fluxo_geracao.md`: Fase 0 (`scripts/checar_entradas.py`) → Fase 1 (
 
 ## ⚖️ Regras Invioláveis
 
-1. **Nunca inventar dados.** Todo número e afirmação vem de evidência rastreável: protocolo Voalle (`#3183637`), hash de commit do `autotickets-v2`, ou caminho do relatório em `fontes/`.
+1. **Nunca inventar dados.** Todo número e afirmação vem de evidência rastreável: protocolo Voalle (`#3183637`), hash de commit do AutoTickets ou um relatório de `fontes/`. **No texto do relatório, a fonte é citada pelo nome descritivo** (ex.: "Voalle — Tarefas Executadas, critério Lançamento", "AutoTickets — Colaborador × Ticket", "Auditoria Financeira Fullcam", "relatório da semana 41", "regra da Coordenação"), **nunca pelo nome ou caminho do arquivo** (`fontes/...`, `docs/...`, `_ANALISE_*.md`, `report_ti_*.md`, nome do repositório).
 2. **Somente dados da semana corrente.** Nenhum valor de semanas anteriores pode ser reaproveitado como dado atual. Valores da semana anterior só aparecem como **comparação explícita** (rotulados "semana anterior", com a fonte). Se a fonte da semana não existir, registrar a ausência justificada.
 3. **Ausência justificada:** subtópico sem demanda compatível recebe justificativa formal — nunca é omitido nem preenchido com atividade simulada.
 4. **Sem distorções:** não alterar o sentido do que as equipes relataram.
@@ -84,6 +84,7 @@ Siga `docs/fluxo_geracao.md`: Fase 0 (`scripts/checar_entradas.py`) → Fase 1 (
 6. **Multi-formato:** arquivos com o mesmo nome base em extensões diferentes (`.md`, `.html`, `.csv`, `.pdf`) são o mesmo relatório; tratar de forma unificada, observando só particularidades (SVG no HTML, colunas extras no CSV).
 7. **Dados pessoais — uso interno:** o relatório e o repositório são de **uso interno da empresa**. Não há verificação automática de dados pessoais (nem no pre-commit, nem na Fase 0); o pre-commit bloqueia só chaves de API e dados do WhatsApp. No **relatório**: CPF/CNPJ mascarado (`***.456.789-**`) quando aparecer e senhas nunca transcritas; os demais dados de identificação (nome, login PPPoE, contrato, protocolo, IP, MAC, POP, endereço) **devem** aparecer quando forem necessários para que os setores localizem o caso. `scripts/mascarar_dados.py` fica disponível para uso manual e opcional.
 8. **WhatsApp não é fonte de dados.** `miscelaneous/` não deve ser lido em nenhuma fase.
+9. **AutoTickets é desenvolvimento interno e confidencial.** No relatório, descrever as entregas do AutoTickets de forma **genérica e profissional**, pelo valor para a operação (o que mudou para quem usa), sem detalhes de implementação: nada de nomes de rotas/endpoints, bibliotecas, frameworks, modelos de IA, classes, comandos, estrutura de testes, contagem de linhas ou tipos de commit. Hashes de commit podem aparecer só como referência. **Segurança do AutoTickets** é narrada como **reforço** (barreiras do firewall aprimoradas, análise de vulnerabilidades, proteção reforçada de integrações como o servidor MCP e os webhooks), nunca como exposição, falha ou vulnerabilidade da plataforma; o mesmo vale para riscos, incidentes e ações planejadas. Detalhes técnicos ficam no repositório do AutoTickets.
 
 ---
 

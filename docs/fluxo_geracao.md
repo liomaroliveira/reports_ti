@@ -44,7 +44,7 @@ Ler, antes de escrever qualquer seção:
 
 1. **`semanas/<anterior>/report_ti_*.md`** — o relatório consolidado anterior. Usar para:
    - **Continuidade:** cada item de *1.2 Demandas em andamento*, *1.1 Pendentes* e *9.3 Ações planejadas* do relatório anterior precisa ter **desfecho** no novo (concluído, em andamento com novo %, replanejado com motivo e novo prazo, ou cancelado com motivo).
-   - **Comparação:** indicadores-chave da semana (balanço da fila, volumes, base WiFeed etc.) podem ser comparados com os da semana anterior. O valor anterior aparece sempre **identificado como "semana anterior"** e com a fonte (`semanas/<anterior>/report_ti_*.md`); nunca substitui o dado atual.
+   - **Comparação:** indicadores-chave da semana (balanço da fila, volumes, base WiFeed etc.) podem ser comparados com os da semana anterior. O valor anterior aparece sempre **identificado como "semana anterior"** e com a fonte citada como "relatório da semana NN" (nunca pelo caminho do arquivo); nunca substitui o dado atual.
    - **Mudanças de plano:** desvio em relação ao que foi prometido entra com o motivo (`docs/regras_metricas.md` §8).
 2. **`semanas/<anterior>/feedback.md`** *(se existir)* — parecer do Isvi e observações do Liomar. **Toda observação precisa ser tratada** no novo relatório: no tópico correspondente e na tabela *Acompanhamento das observações da semana anterior* do Resumo Executivo (`docs/especificacao_relatorio.md`).
 3. **`docs/licoes_aprendidas.md`** — regras e pendências acumuladas da Coordenação.
@@ -75,7 +75,7 @@ Executar **apenas** para as pessoas pedidas no prompt ou em `PARAMETROS.md`. Sem
 ## Finalização
 
 1. `python3 scripts/validar_indice.py semanas/<semana>/report_ti_*.md semanas/<semana>/report_ti_*.html` — corrigir qualquer âncora quebrada.
-   `python3 scripts/validar_relatorio.py semanas/<semana>/report_ti_*.md` — termos proibidos, seções obrigatórias, Destaques Analíticos (3 a 5), tabela de acompanhamento com uma linha por observação do `feedback.md` anterior, tópico condicional 8.4 e dados que nunca podem aparecer (CPF/CNPJ sem máscara, senhas, RTMP).
+   `python3 scripts/validar_relatorio.py semanas/<semana>/report_ti_*.md` — nomes/caminhos de arquivo citados no texto, termos técnicos ou negativos sobre o AutoTickets (aviso), termos proibidos, seções obrigatórias, Destaques Analíticos (3 a 5), tabela de acompanhamento com uma linha por observação do `feedback.md` anterior, tópico condicional 8.4 e dados que nunca podem aparecer (CPF/CNPJ sem máscara, senhas, RTMP).
 2. `bash scripts/renderizar_pdf.sh semanas/<semana>/report_ti_<...>.html` (e para cada individual gerado).
 3. Atualizar a seção de status do `PARAMETROS.md` da semana (o que foi gerado e o que ficou pendente).
 4. Commitar (o hook bloqueia apenas chaves de API e dados do WhatsApp).

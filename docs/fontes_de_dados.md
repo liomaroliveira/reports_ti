@@ -55,7 +55,7 @@ git -C "${AUTOTICKETS_REPO:-$HOME/dev/autotickets_v2}" log --since="AAAA-MM-DD 0
 - **Formatos não são equivalentes** (análise da semana 42, `fontes/autotickets/_ANALISE_GERAL.md`): usar o formato preferido de cada módulo. Resumo: colaborador × ticket → MD (+ CSV para colunas extras); WiFeed → CSV ou MD (o SVG do HTML é opcional); Fullcam inadimplência e instalação → CSV/MD filtrando NOTIFY e a semana; Fullcam lucros → CSV (KPIs do PDF não fecham); tarefas executadas → CSV; anomalias PPPoE → CSV; Voalle → **HTML**. Formato-alvo único: `docs/formato_exportacao_autotickets.md`.
 - **colaborador_x_ticket** é gerado a partir do banco do Voalle: é a fonte métrica primária; `fontes/voalle/` complementa com o qualitativo.
 - **WiFeed:** contexto institucional do Captive Portal em `docs/referencias/wifeed_contexto.md`.
-- Frentes do AutoTickets: ROI de automações (horas humanas economizadas), integrações de rede/NOC (telemetria óptica, RADIUS, CGNAT, ping), módulo de atendimento (modais do Voalle, busca de clientes, omnichannel), arquitetura (Local-First com Duplo Cursor Monotônico, orquestrador multi-provedor de IA, servidor MCP `laravel/mcp`, design Glassmorphism).
+- **Uso no relatório (`AGENTS.md`, regras 1 e 9):** os commits são minerados para entender o que foi entregue, mas o texto descreve as entregas de forma genérica, pelo valor para a operação (segurança da plataforma, painel executivo, relatórios, automações, desempenho), sem detalhes de implementação, e a segurança do AutoTickets como reforço. Fontes são citadas pelo nome descritivo, nunca pelo caminho do arquivo.
 
 ## 3. Investigações especiais e segurança
 
