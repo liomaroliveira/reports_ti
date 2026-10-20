@@ -14,7 +14,7 @@ Todas as entradas de uma semana ficam em `semanas/<semana>/fontes/`. O que não 
 | AutoTickets — tarefas executadas | `fontes/autotickets/tarefas_executadas/` | Tópico 2 e 2.4 (produção bruta por colaborador; preferir o **CSV**, o PDF corta relatos) |
 | AutoTickets — anomalias PPPoE | `fontes/autotickets/anomalias_pppoe/` | 8.4, tópico condicional (CSV). **Retrato atual** gerado no dia da emissão: não aplicar o recorte da semana |
 | AutoTickets — **pacote semanal** (proposto) | `fontes/autotickets/pacote_semanal/autotickets_semana_<inicio>_<fim>.json` | Todos os tópicos do AutoTickets: substitui os arquivos por módulo quando existir (`docs/formato_exportacao_autotickets.md`) |
-| AutoTickets — problemas recorrentes | `fontes/autotickets/problemas_recorrentes/` | 5, 6, 7 e 8.4 (operação inteira, janela de 30 dias: usar só os tipos ligados ao TI e o cruzamento com o PPPoE — HTML) |
+| AutoTickets — problemas recorrentes | `fontes/autotickets/problemas_recorrentes/` | Reincidência da semana (retorno até 60 dias) — **MD**; tópico dedicado a definir; hoje alimenta 5, 6, 7 e o cruzamento com o 8.4 |
 | AutoTickets — produtividade geral | `fontes/autotickets/produtividade_geral/` | 4.5 |
 | AutoTickets — desenvolvimento | commits no repositório `autotickets_v2` (`AUTOTICKETS_REPO`) ou `fontes/autotickets/desenvolvimento/` | 4.1 |
 | Infraestrutura — backups | `fontes/infraestrutura/backups/` | 8.2 (quadrante obrigatório: sem esta fonte, declarar ausência — nunca estimar) |
@@ -23,7 +23,7 @@ Todas as entradas de uma semana ficam em `semanas/<semana>/fontes/`. O que não 
 | Relatório consolidado da semana anterior | `semanas/<anterior>/report_ti_*.md` | Continuidade (1.1, 1.2, 9.3) e comparação |
 | Feedback/observações da semana anterior | `semanas/<anterior>/feedback.md` | Resumo Executivo (acompanhamento) e tópicos citados |
 
-> Exportações brutas: rodar `python3 scripts/mascarar_dados.py <arquivos>` antes do commit (CPF/CNPJ com ou sem pontuação, e-mails de clientes, URLs RTMP e senhas em relatos). PDFs não são mascarados: se tiverem dados sensíveis, não versionar.
+> Exportações brutas: máscara **opcional** (`python3 scripts/mascarar_dados.py <arquivos>`); o repositório é de uso interno e não há verificação automática. **Formato esperado de cada fonte:** `_FORMATO_ESPERADO.md` em cada pasta de `fontes/` (gerado por `scripts/formatos_esperados.py`).
 >
 > **Arquivos de análise (`_ANALISE_*.md`)** dentro das pastas de fontes são feedback sobre a qualidade das exportações (para o Liomar e o AutoTickets). **Não são fonte do relatório**, mas suas ressalvas devem ser respeitadas ao usar os dados (ex.: formato preferido, campos não confiáveis).
 

@@ -114,9 +114,9 @@ def validar(path):
     docs = [m.group(0) for m in CPF_FMT.finditer(texto)] + [m.group(0) for m in CNPJ_FMT.finditer(texto)]
     docs += [m.group(1) for m in DIGITOS.finditer(texto) if cpf_valido(m.group(1)) or cnpj_valido(m.group(1))]
     if docs:
-        erros.append(f"{len(docs)} CPF/CNPJ sem máscara (rodar scripts/mascarar_dados.py no relatório)")
+        avisos.append(f"{len(docs)} CPF/CNPJ sem máscara no relatório (usar ***.456.789-**)")
     if SENHA.search(texto) or RTMP.search(texto):
-        erros.append("senha ou stream key RTMP no relatório")
+        avisos.append("senha ou stream key RTMP transcrita no relatório")
     return erros, avisos
 
 

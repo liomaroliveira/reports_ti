@@ -18,7 +18,6 @@ from datetime import date
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(RAIZ, "scripts"))
-from mascarar_dados import pendencias  # noqa: E402  (mesma detecção do pre-commit)
 from validar_relatorio import itens_feedback  # noqa: E402
 
 # Repositório do AutoTickets: variável de ambiente AUTOTICKETS_REPO ou o primeiro caminho conhecido que existir.
@@ -198,18 +197,6 @@ def main():
             f"semanas/{anteriores[-1]}/feedback.md"
             + (f" — {len(itens)} observação(ões) a tratar no Resumo Executivo" if preenchido else " (vazio ou inexistente)"),
             essencial=False)
-
-    sem_mascara = []
-    for raiz, _, fs in os.walk(os.path.join(pasta, "fontes")):
-        for f in fs:
-            if f.lower().endswith((".md", ".html", ".htm", ".csv", ".txt", ".json")):
-                caminho = os.path.join(raiz, f)
-                with open(caminho, encoding="utf-8", errors="ignore") as h:
-                    if pendencias(h.read(), csv_mode=f.lower().endswith(".csv")):
-                        sem_mascara.append(os.path.relpath(caminho, pasta))
-    add("Dados sensíveis mascarados (CPF/CNPJ, e-mail, RTMP, senha)", not sem_mascara,
-        "ok" if not sem_mascara else "rodar scripts/mascarar_dados.py em: " + ", ".join(sem_mascara),
-        essencial=False)
 
     print(f"## Fase 0 — Checklist de entradas: {nome}\n")
     print("| Fonte | Status | Detalhe |")

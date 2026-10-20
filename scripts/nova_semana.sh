@@ -71,7 +71,8 @@ cat > "$pasta/PARAMETROS.md" <<EOF
 - \`individuais/\`: relatórios dos colegas (se enviados; usados como fonte complementar)
 - Observações sobre o relatório anterior (opcional): \`semanas/<anterior>/feedback.md\` a partir de \`templates/feedback.md\`
 
-Depois de copiar: \`python3 scripts/mascarar_dados.py <arquivos>\` e \`python3 scripts/checar_entradas.py\`.
+Depois de copiar: \`python3 scripts/checar_entradas.py\`. Formato esperado de cada fonte: \`_FORMATO_ESPERADO.md\` em cada pasta.
 EOF
 
+python3 "$(dirname "$0")/formatos_esperados.py" "$pasta" >/dev/null
 echo "[OK] Criado $pasta (Semana ${semana}/${ano}: ${domingo} a ${sabado})"

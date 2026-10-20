@@ -34,13 +34,13 @@
 - [ ] `fontes/autotickets/acompanhamento_protocolos/` (os CSVs de 2026-10-16 foram removidos no commit `0de3892`: gerar de novo cobrindo a semana inteira)
 - [ ] `fontes/autotickets/tarefas_executadas/` (CSV por colaborador; o PDF corta relatos — ver `_ANALISE_FONTE.md`)
 - [x] `fontes/autotickets/anomalias_pppoe/` (CSV + PDF → tópico condicional 8.4; **retrato atual** de 19/10 22:07, sem recorte da semana)
-- [x] `fontes/autotickets/problemas_recorrentes/` (reincidência da operação inteira, janela de 30 dias: usar só os tipos do TI e o cruzamento com o PPPoE)
+- [x] `fontes/autotickets/problemas_recorrentes/` (versão final `reincidencia_20261019_234621.md`: semana 11–17/10, retorno até 60 dias; `todas_equipes/` é só referência)
 - [ ] `fontes/infraestrutura/backups/` (quadrante do 8.2; sem fonte nesta semana → declarar ausência, nunca estimar)
 - [ ] `fontes/investigacoes/`: estudos datados da semana (se houver)
 - [ ] `individuais/`: relatórios que Isac e David enviarem (opcional; usados como fonte complementar)
 - [x] Observações suas e do Isvi sobre o relatório da semana 41 em `semanas/2026-10-04_2026-10-10/feedback.md`
 - [x] Decidir o feriado de 12/10 (sem expediente)
 
-Depois de copiar: `python3 scripts/mascarar_dados.py <arquivos>` e `python3 scripts/checar_entradas.py`.
+Depois de copiar: `python3 scripts/checar_entradas.py`. Formato esperado de cada fonte: `_FORMATO_ESPERADO.md` em cada pasta.
 
 > **Qualidade das fontes desta semana:** cada pasta de `fontes/` tem um `_ANALISE_FONTE.md` (e `fontes/autotickets/_ANALISE_GERAL.md`) com divergências entre formatos e campos não confiáveis. Respeitar as ressalvas ao gerar o relatório. Verificações da equipe: `_VERIFICAR_EQUIPE_TI.md` · Pendências do AutoTickets: `_PENDENCIAS_AUTOTICKETS.md` (nenhum dos dois é fonte).

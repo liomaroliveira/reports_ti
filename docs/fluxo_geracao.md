@@ -25,7 +25,7 @@ graph TD
 2. Preencher em `PARAMETROS.md` os focos da semana, os feriados e, se quiser, os relatórios individuais a gerar.
 3. Copiar as entradas para `fontes/` (nomes em `docs/fontes_de_dados.md`). Relatórios que os colegas enviarem vão para `individuais/` e servem como **fonte**.
 4. *(Opcional)* Escrever as observações sobre o relatório anterior (suas e do Isvi) em `semanas/<anterior>/feedback.md`, a partir de `templates/feedback.md` (**copiar** o template para a pasta da semana avaliada; não editar o próprio template).
-5. Mascarar dados pessoais e credenciais: `python3 scripts/mascarar_dados.py semanas/<semana>/fontes/voalle/* semanas/<semana>/fontes/autotickets/*/*`.
+5. *(Opcional)* Mascarar dados pessoais e credenciais: `python3 scripts/mascarar_dados.py semanas/<semana>/fontes/voalle/* semanas/<semana>/fontes/autotickets/*/*`.
 
 ---
 
@@ -78,5 +78,5 @@ Executar **apenas** para as pessoas pedidas no prompt ou em `PARAMETROS.md`. Sem
    `python3 scripts/validar_relatorio.py semanas/<semana>/report_ti_*.md` — termos proibidos, seções obrigatórias, Destaques Analíticos (3 a 5), tabela de acompanhamento com uma linha por observação do `feedback.md` anterior, tópico condicional 8.4 e dados que nunca podem aparecer (CPF/CNPJ sem máscara, senhas, RTMP).
 2. `bash scripts/renderizar_pdf.sh semanas/<semana>/report_ti_<...>.html` (e para cada individual gerado).
 3. Atualizar a seção de status do `PARAMETROS.md` da semana (o que foi gerado e o que ficou pendente).
-4. Commitar (o hook avisa sobre dados pessoais sem máscara e bloqueia apenas chaves de API e dados do WhatsApp).
+4. Commitar (o hook bloqueia apenas chaves de API e dados do WhatsApp).
 5. Quando chegar o parecer da Coordenação: salvar em `semanas/<semana>/feedback.md` e registrar as lições novas em `docs/licoes_aprendidas.md`.

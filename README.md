@@ -22,7 +22,7 @@ bash scripts/nova_semana.sh
 #    (Opcional) Observações suas e do Isvi sobre o relatório ANTERIOR:
 #    cp templates/feedback.md semanas/<semana-anterior>/feedback.md   # e preencher
 
-# 4. Mascarar CPFs das exportações brutas
+# 4. (Opcional) Mascarar CPF/CNPJ, e-mails e senhas nas exportações brutas — não é exigido (uso interno)
 python3 scripts/mascarar_dados.py semanas/<semana>/fontes/voalle/* semanas/<semana>/fontes/autotickets/*/*
 
 # 5. Conferir as entradas

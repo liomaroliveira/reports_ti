@@ -81,6 +81,6 @@
 | 3 | 1068.megapix | Megapix Provedor de Internet Ltda | 94549 | Pindobaçu | f4:1e:57:6b:9e:be | 7,99x | 1 | N/A | Provedor como cliente → **Comercial** (possível revenda) |
 | — | escritoriocaldeirao | Ten Internet Ltda (cortesia) | 00900 | Caldeirão Grande / SR-C2 | 64:d1:54:a9:93:36 | 5,97x | 1 | N/D | **Contrato interno**: confirmar o uso, não é cliente |
 
-**Cruzamento com a reincidência** (`fontes/autotickets/problemas_recorrentes/`; confirmar pelo contrato, porque o casamento foi feito por nome): **nelmasantos_3** voltou com "Alteração de Senha do Wi-Fi", o que reforça a hipótese de CPE comprometida. **mariafb** e **antoniogoncalves_2** voltaram com "Conexão Lenta".
+**Cruzamento com a reincidência** (versão final, `fontes/autotickets/problemas_recorrentes/`; confirmar pelo contrato, porque o casamento foi feito por nome): **mariafb** voltou com "Conexão Lenta" e **thiagonascimento_1** com "Usuário Não Conecta", o que reforça a necessidade de OS de campo.
 
 **Concentração:** o POP **SR-C2** (Serrolândia/Caldeirão Grande) tem 4 casos, e **JA-V1** (Jacobina) tem 3. Vale verificar se há causa comum no POP.
