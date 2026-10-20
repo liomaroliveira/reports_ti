@@ -11,15 +11,19 @@ Todas as entradas de uma semana ficam em `semanas/<semana>/fontes/`. O que não 
 | AutoTickets — Fullcam financeiro | `fontes/autotickets/fullcam_lucros_prejuizos/` | 4.3 (tabela completa) |
 | AutoTickets — Fullcam inadimplência | `fontes/autotickets/fullcam_automacao_inadimplencia/` | 4.4 |
 | AutoTickets — Fullcam instalação | `fontes/autotickets/fullcam_automacao_instalacao_camera/` | 4.4 |
+| AutoTickets — tarefas executadas | `fontes/autotickets/tarefas_executadas/` | Tópico 2 e 2.4 (produção bruta por colaborador; preferir o **CSV**, o PDF corta relatos) |
+| AutoTickets — anomalias PPPoE | `fontes/autotickets/anomalias_pppoe/` | 8.4 (preferir o **CSV mascarado**; o PDF tem nome e IP de clientes) |
 | AutoTickets — problemas recorrentes | `fontes/autotickets/problemas_recorrentes/` | 5 e 8 |
 | AutoTickets — produtividade geral | `fontes/autotickets/produtividade_geral/` | 4.5 |
-| AutoTickets — desenvolvimento | commits em `/home/liomarti/dev/autotickets-v2` ou `fontes/autotickets/desenvolvimento/` | 4.1 |
+| AutoTickets — desenvolvimento | commits no repositório `autotickets_v2` (`AUTOTICKETS_REPO`) ou `fontes/autotickets/desenvolvimento/` | 4.1 |
 | Investigações / segurança | `fontes/investigacoes/AAAA-MM-DD_<tema>/` | 3, 8.3, 9.1 |
 | Individuais enviados pelos colegas (opcional) | `individuais/<pessoa>.<ext>` | Fonte complementar do Tópico 2 |
 | Relatório consolidado da semana anterior | `semanas/<anterior>/report_ti_*.md` | Continuidade (1.1, 1.2, 9.3) e comparação |
 | Feedback/observações da semana anterior | `semanas/<anterior>/feedback.md` | Resumo Executivo (acompanhamento) e tópicos citados |
 
-> Exportações brutas: rodar `python3 scripts/mascarar_dados.py <arquivos>` antes do commit (CPF de clientes).
+> Exportações brutas: rodar `python3 scripts/mascarar_dados.py <arquivos>` antes do commit (CPF/CNPJ com ou sem pontuação, e-mails de clientes, URLs RTMP e senhas em relatos). PDFs não são mascarados: se tiverem dados sensíveis, não versionar.
+>
+> **Arquivos de análise (`_ANALISE_*.md`)** dentro das pastas de fontes são feedback sobre a qualidade das exportações (para o Liomar e o AutoTickets). **Não são fonte do relatório**, mas suas ressalvas devem ser respeitadas ao usar os dados (ex.: formato preferido, campos não confiáveis).
 
 ---
 
@@ -36,16 +40,17 @@ ERP principal (Atendimento, Service Desk, O.S., Projetos, Infraestrutura e Apont
 
 ## 2. AutoTickets
 
-Plataforma de automação desenvolvida e mantida por Liomar Oliveira. Repositório local: `/home/liomarti/dev/autotickets-v2`.
+Plataforma de automação desenvolvida e mantida por Liomar Oliveira. Repositório local: variável `AUTOTICKETS_REPO` ou, por padrão, `~/dev/autotickets_v2` (antigo: `/home/liomarti/dev/autotickets-v2`).
 
 **Mineração de commits** (quando não houver relatório em `fontes/autotickets/desenvolvimento/`):
 
 ```bash
-git -C /home/liomarti/dev/autotickets-v2 log --since="AAAA-MM-DD 00:00:00" --until="AAAA-MM-DD 23:59:59" \
+git -C "${AUTOTICKETS_REPO:-$HOME/dev/autotickets_v2}" log --since="AAAA-MM-DD 00:00:00" --until="AAAA-MM-DD 23:59:59" \
   --pretty=format:"%h - %an, %ad : %s" --date=iso --shortstat
 ```
 
 - **Arquivos multi-formato:** mesmo nome base em `.md`, `.html`, `.csv`, `.pdf` = mesmo relatório. Os nomes trazem a **data de geração**, não o período: confirmar dentro do arquivo que o período coberto é a semana corrente.
+- **Formatos não são equivalentes** (análise da semana 42, `fontes/autotickets/_ANALISE_GERAL.md`): usar o formato preferido de cada módulo. Resumo: colaborador × ticket → MD (+ CSV para colunas extras); WiFeed → CSV ou MD (o SVG do HTML é opcional); Fullcam inadimplência e instalação → CSV/MD filtrando NOTIFY e a semana; Fullcam lucros → CSV (KPIs do PDF não fecham); tarefas executadas → CSV; anomalias PPPoE → CSV; Voalle → **HTML**.
 - **colaborador_x_ticket** é gerado a partir do banco do Voalle: é a fonte métrica primária; `fontes/voalle/` complementa com o qualitativo.
 - **WiFeed:** contexto institucional do Captive Portal em `docs/referencias/wifeed_contexto.md`.
 - Frentes do AutoTickets: ROI de automações (horas humanas economizadas), integrações de rede/NOC (telemetria óptica, RADIUS, CGNAT, ping), módulo de atendimento (modais do Voalle, busca de clientes, omnichannel), arquitetura (Local-First com Duplo Cursor Monotônico, orquestrador multi-provedor de IA, servidor MCP `laravel/mcp`, design Glassmorphism).

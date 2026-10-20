@@ -95,6 +95,7 @@ O relatório deve conter um **Índice Completo** no início, com links internos 
   * [8.1 Disponibilidade de Serviços e Incidentes em Sistemas](#81-disponibilidade-de-serviços-e-incidentes-em-sistemas)
   * [8.2 Execução e Validação de Backups](#82-execução-e-validação-de-backups)
   * [8.3 Atualizações, Melhorias e Ações de Modernização](#83-atualizações-melhorias-e-ações-de-modernização)
+  * [8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk](#84-anomalias-de-tráfego-pppoe-e-ações-proativas-para-o-service-desk)
 * [9. Pontos de Atenção e Próximas Ações](#9-pontos-de-atenção-e-próximas-ações)
   * [9.1 Riscos Tecnológicos e Vulnerabilidades Identificadas](#91-riscos-tecnológicos-e-vulnerabilidades-identificadas)
   * [9.2 Necessidades de Investimentos e Aquisições](#92-necessidades-de-investimentos-e-aquisições)
@@ -183,6 +184,18 @@ Detalhamento de cada incidente ocorrido na semana:
 - **8.2 Execução e Validação de Backups:**
   - Apresentar o quadrante de governança: total de VMs/CTs na rotina, jobs executados x falhas na semana, falhas refeitas manualmente com justificativa e data do último teste de Disaster Recovery.
 - **8.3 Atualizações, Melhorias e Ações de Modernização:** Aplicações de patches, manutenção física preventiva (ex.: Dell R910, nobreaks NHS) e estudos de segurança (integrar dados de `fontes/investigacoes/`).
+- **8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk** *(tópico condicional: fonte `fontes/autotickets/anomalias_pppoe/`; sem a fonte, uma linha de ausência justificada)*. Objetivo: entregar ao Service Desk uma lista priorizada de clientes com comportamento anômalo para **investigação e ação proativa**, antes que virem reclamação, incidente de rede ou risco de segurança.
+  - **Janela do retrato:** informar o período real coberto pela fonte. Se o retrato for posterior à semana (ex.: gerado na segunda-feira), rotular como "retrato de DD/MM" e não somar aos indicadores da semana.
+  - **Statcards:** total de anomalias, críticas, inversões de tráfego (upload > download), volume de upload × download e quantos casos já têm ticket/OS aberto.
+  - **Ranking por razão Upload/Download (decrescente)**, top 10–15: login PPPoE, cidade/POP, plano, upload/download, razão, quedas, severidade/score e **hipótese → ação proativa**. **Proibido** exibir nome, CPF/CNPJ ou IP do cliente (o login basta para o Service Desk localizar o caso).
+  - **Hipóteses e ações por perfil** (a confirmar pelo Service Desk, nunca afirmadas como fato):
+    - razão muito alta (> 15x) com download baixo → CPE possivelmente comprometida (botnet/proxy residencial) → verificar a CPE, atualizar firmware, trocar senha e checar portas expostas;
+    - upload alto e constante em sessão longa → DVR/câmeras, backup em nuvem ou servidor → confirmar o uso com o cliente e oferecer plano corporativo/IP fixo;
+    - cliente que é provedor ou empresa de telecom → possível revenda → encaminhar ao Comercial;
+    - contrato interno/cortesia → rotular como interno e excluir do ranking;
+    - muitas quedas (flapping), rajadas ou sinal óptico ruim → problema físico → abrir OS de campo.
+  - **Concentração por POP/concentrador** e **recorrência** (casos que já apareciam na semana anterior, quando houver a fonte anterior).
+  - **Ressalvas de cálculo:** enquanto o AutoTickets não corrigir, declarar que o volume é acumulado por sessão (não "últimas 24h"), que o throughput pode estar inflado pelo número de quedas e que a severidade não segue uma regra única de score (`fontes/autotickets/anomalias_pppoe/_ANALISE_FONTE.md`).
 
 #### 9. Pontos de Atenção e Próximas Ações
 - **9.1 Riscos Tecnológicos e Vulnerabilidades Identificadas:** Registro aprofundado de vulnerabilidades críticas, riscos de conformidade (LGPD, planos gratuitos de ferramentas) e segurança.

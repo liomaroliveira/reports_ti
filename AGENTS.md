@@ -46,7 +46,8 @@ reports_ti/
 │       ├── fontes/               # ENTRADAS da semana
 │       │   ├── voalle/               # liomar.html | isac.pdf | david.csv ...
 │       │   ├── autotickets/<modulo>/ # relatórios gerados pelo AutoTickets
-│       │   └── investigacoes/        # AAAA-MM-DD_<tema>/ (segurança, perícias)
+│       │   ├── investigacoes/        # AAAA-MM-DD_<tema>/ (segurança, perícias)
+│       │   └── **/_ANALISE_*.md      # feedback sobre a qualidade das exportações (NÃO é fonte; respeitar as ressalvas)
 │       ├── individuais/          # liomar.* | isac.* | david.* — só quando pedido, ou enviados pelos colegas
 │       ├── report_ti_AAAA-MM-DD_AAAA-MM-DD.{md,html,pdf}   # SAÍDA consolidada
 │       └── feedback.md           # Parecer do Isvi + observações do Liomar sobre o relatório desta semana (templates/feedback.md)
@@ -78,7 +79,7 @@ Siga `docs/fluxo_geracao.md`: Fase 0 (`scripts/checar_entradas.py`) → Fase 1 (
 4. **Sem distorções:** não alterar o sentido do que as equipes relataram.
 5. **Consistência do índice:** toda entrada do índice existe no corpo com o mesmo título e âncora funcional (`scripts/validar_indice.py`).
 6. **Multi-formato:** arquivos com o mesmo nome base em extensões diferentes (`.md`, `.html`, `.csv`, `.pdf`) são o mesmo relatório; tratar de forma unificada, observando só particularidades (SVG no HTML, colunas extras no CSV).
-7. **Proteção de dados (LGPD):** CPF, telefones, senhas e chaves de API nunca em arquivos versionados. CPFs de clientes sempre mascarados (`***.456.789-**`) — rodar `python3 scripts/mascarar_dados.py <arquivos>` nas exportações brutas antes do commit. O repositório tem remote no GitHub.
+7. **Proteção de dados (LGPD):** CPF, CNPJ de pessoa física/MEI, telefones, e-mails de clientes, senhas, stream keys (RTMP) e chaves de API nunca em arquivos versionados. CPFs de clientes sempre mascarados (`***.456.789-**`) — rodar `python3 scripts/mascarar_dados.py <arquivos>` nas exportações brutas antes do commit (detecta CPF/CNPJ com ou sem pontuação). PDFs com dados sensíveis não são versionados. No relatório, clientes de PPPoE aparecem só pelo login. O repositório tem remote no GitHub.
 8. **WhatsApp não é fonte de dados.** `miscelaneous/` não deve ser lido em nenhuma fase.
 
 ---

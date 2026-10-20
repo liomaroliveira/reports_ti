@@ -14,27 +14,32 @@ if [ -n "$bad_paths" ]; then
   fail=1
 fi
 
-# 2. Conteúdo adicionado: CPF sem máscara, chaves de API e chave de 64 dígitos
-pattern='[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}|sk-[A-Za-z0-9_-]{16,}|\b[0-9a-f]{64}\b'
+# 2. Chaves de API e chave de 64 dígitos nas linhas adicionadas
+pattern='sk-[A-Za-z0-9_-]{16,}|\b[0-9a-f]{64}\b'
 hits=$(git diff --cached -U0 --diff-filter=AM -- . ':(exclude)*.pdf' \
   | grep -E '^\+[^+]' | grep -oE "$pattern" | sort -u | head -5)
 if [ -n "$hits" ]; then
-  echo "[BLOQUEADO] Conteúdo sensível encontrado nas linhas adicionadas (amostra):"
+  echo "[BLOQUEADO] Chave/segredo encontrado nas linhas adicionadas (amostra):"
   echo "$hits" | sed -E 's/^(.{6}).*/  \1…/'
-  echo "  CPFs: python3 scripts/mascarar_dados.py <arquivos>   |   Chaves: remova do arquivo."
   fail=1
 fi
 
-# 3. PDFs com CPF sem máscara (requer pdftotext)
-if command -v pdftotext >/dev/null 2>&1; then
-  while IFS= read -r pdf; do
-    [ -z "$pdf" ] && continue
-    if git show ":$pdf" | pdftotext -q - - 2>/dev/null | grep -qE '[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}'; then
-      echo "[BLOQUEADO] PDF com CPF sem máscara: $pdf (gere o PDF a partir do HTML/CSV mascarado)"
-      fail=1
-    fi
-  done < <(git diff --cached --name-only --diff-filter=AM -- '*.pdf')
-fi
+# 3. Dados pessoais e credenciais (CPF/CNPJ com ou sem pontuação, e-mail de cliente, RTMP, senha)
+#    nos arquivos de texto e PDFs adicionados/alterados. Mesma detecção de scripts/mascarar_dados.py.
+mascara="$(git rev-parse --show-toplevel)/scripts/mascarar_dados.py"
+while IFS= read -r f; do
+  [ -z "$f" ] && continue
+  case "$f" in
+    *.md|*.html|*.htm|*.csv|*.txt|*.json) conteudo=$(git show ":$f") ;;
+    *.pdf) command -v pdftotext >/dev/null 2>&1 || continue; conteudo=$(git show ":$f" | pdftotext -q - - 2>/dev/null) ;;
+    *) continue ;;
+  esac
+  if ! printf '%s' "$conteudo" | python3 "$mascara" --check - >/dev/null; then
+    echo "[BLOQUEADO] Dado sensível sem máscara: $f"
+    fail=1
+  fi
+done < <(git diff --cached --name-only --diff-filter=AM -- 'semanas/*' 'docs/*' 'templates/*')
+[ $fail -ne 0 ] && echo "  Texto: python3 scripts/mascarar_dados.py <arquivos>   |   PDF: gere a partir da versão mascarada ou não versione."
 
 if [ $fail -ne 0 ]; then
   echo "Commit cancelado. Para ignorar conscientemente: git commit --no-verify"

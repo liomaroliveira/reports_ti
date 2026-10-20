@@ -17,7 +17,7 @@
 <!-- Não escreva números esperados: todos os valores devem ser extraídos das fontes do período. -->
 
 1. **Feriado:** 2026-10-12 (segunda) é feriado nacional (Nossa Senhora Aparecida). Confirmar se houve expediente e ajustar o período operacional efetivo e o confronto Voalle × Pontomais.
-2. **AutoTickets (4.1):** minerar os commits de `/home/liomarti/dev/autotickets-v2` entre 2026-10-11 e 2026-10-17.
+2. **AutoTickets (4.1):** minerar os commits do `autotickets_v2` (`AUTOTICKETS_REPO`, padrão `~/dev/autotickets_v2`) entre 2026-10-11 e 2026-10-17.
 3. **Pendências do feedback anterior:** cobrir os itens listados em `docs/licoes_aprendidas.md` (Wazuh/filiais, telefonia fixa, backups, veículos, Windows 10 × 11).
 
 ## 📥 Entradas esperadas
@@ -29,9 +29,13 @@
 - [ ] `fontes/autotickets/fullcam_automacao_inadimplencia/`
 - [ ] `fontes/autotickets/fullcam_automacao_instalacao_camera/`
 - [ ] `fontes/autotickets/acompanhamento_protocolos/` (os CSVs de 2026-10-16 foram removidos no commit `0de3892`: gerar de novo cobrindo a semana inteira)
+- [ ] `fontes/autotickets/tarefas_executadas/` (CSV por colaborador; o PDF corta relatos — ver `_ANALISE_FONTE.md`)
+- [ ] `fontes/autotickets/anomalias_pppoe/` (CSV mascarado → tópico 8.4; retrato de 18–19/10, fora da semana: rotular)
 - [ ] `fontes/investigacoes/`: estudos datados da semana (se houver)
 - [ ] `individuais/`: relatórios que Isac e David enviarem (opcional; usados como fonte complementar)
 - [ ] *(Opcional)* Observações suas e do Isvi sobre o relatório da semana 41 em `semanas/2026-10-04_2026-10-10/feedback.md` (arquivo já criado a partir do template)
 - [ ] Decidir o feriado de 12/10 (acima)
 
 Depois de copiar: `python3 scripts/mascarar_dados.py <arquivos>` e `python3 scripts/checar_entradas.py`.
+
+> **Qualidade das fontes desta semana:** cada pasta de `fontes/` tem um `_ANALISE_FONTE.md` (e `fontes/autotickets/_ANALISE_GERAL.md`) com divergências entre formatos e campos não confiáveis. Respeitar as ressalvas ao gerar o relatório. PDFs com dados sensíveis estão no `.gitignore` (não versionados).

@@ -16,7 +16,18 @@ import sys
 from datetime import date
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-AUTOTICKETS_REPO = "/home/liomarti/dev/autotickets-v2"
+sys.path.insert(0, os.path.join(RAIZ, "scripts"))
+from mascarar_dados import pendencias  # noqa: E402  (mesma detecção do pre-commit)
+
+# Repositório do AutoTickets: variável de ambiente AUTOTICKETS_REPO ou o primeiro caminho conhecido que existir.
+AUTOTICKETS_REPO = os.environ.get("AUTOTICKETS_REPO") or next(
+    (c for c in (
+        os.path.expanduser("~/dev/autotickets_v2"),
+        os.path.expanduser("~/dev/autotickets-v2"),
+        "/home/liomarti/dev/autotickets-v2",
+    ) if os.path.isdir(c)),
+    "/home/liomarti/dev/autotickets-v2",
+)
 PESSOAS = ["liomar", "isac", "david"]
 MODULOS = [
     ("colaborador_x_ticket", True),
@@ -27,15 +38,17 @@ MODULOS = [
     ("acompanhamento_protocolos", False),
     ("problemas_recorrentes", False),
     ("produtividade_geral", False),
+    ("tarefas_executadas", False),
+    ("anomalias_pppoe", False),
 ]
-CPF = re.compile(r"\b\d{3}\.\d{3}\.\d{3}-\d{2}\b")
 PERIODO = re.compile(r"^(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2})$")
 
 
 def arquivos(pasta, prefixo=""):
     if not os.path.isdir(pasta):
         return []
-    return sorted(f for f in os.listdir(pasta) if not f.startswith(".") and f.startswith(prefixo))
+    # Arquivos iniciados por "." ou "_" (ex.: _ANALISE_FONTE.md) não são fontes do relatório.
+    return sorted(f for f in os.listdir(pasta) if not f.startswith((".", "_")) and f.startswith(prefixo))
 
 
 def individuais_pedidos(parametros):
@@ -153,9 +166,9 @@ def main():
             if f.lower().endswith((".md", ".html", ".htm", ".csv", ".txt", ".json")):
                 caminho = os.path.join(raiz, f)
                 with open(caminho, encoding="utf-8", errors="ignore") as h:
-                    if CPF.search(h.read()):
+                    if pendencias(h.read(), csv_mode=f.lower().endswith(".csv")):
                         sem_mascara.append(os.path.relpath(caminho, pasta))
-    add("CPFs mascarados", not sem_mascara,
+    add("Dados sensíveis mascarados (CPF/CNPJ, e-mail, RTMP, senha)", not sem_mascara,
         "ok" if not sem_mascara else "rodar scripts/mascarar_dados.py em: " + ", ".join(sem_mascara))
 
     print(f"## Fase 0 — Checklist de entradas: {nome}\n")

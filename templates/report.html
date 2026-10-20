@@ -99,6 +99,7 @@
         <li class="toc-h3"><a href="#81-disponibilidade-de-serviços-e-incidentes-em-sistemas">8.1 Disponibilidade de Serviços e Incidentes em Sistemas</a></li>
         <li class="toc-h3"><a href="#82-execução-e-validação-de-backups">8.2 Execução e Validação de Backups</a></li>
         <li class="toc-h3"><a href="#83-atualizações-melhorias-e-ações-de-modernização">8.3 Atualizações, Melhorias e Ações de Modernização</a></li>
+        <li class="toc-h3"><a href="#84-anomalias-de-tráfego-pppoe-e-ações-proativas-para-o-service-desk">8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk</a></li>
         <li class="toc-h2"><a href="#9-pontos-de-atenção-e-próximas-ações">9. Pontos de Atenção e Próximas Ações</a></li>
         <li class="toc-h3"><a href="#91-riscos-tecnológicos-e-vulnerabilidades-identificadas">9.1 Riscos Tecnológicos e Vulnerabilidades Identificadas</a></li>
         <li class="toc-h3"><a href="#92-necessidades-de-investimentos-e-aquisições">9.2 Necessidades de Investimentos e Aquisições</a></li>
@@ -248,6 +249,31 @@
     <div class="sub-section-title" id="81-disponibilidade-de-serviços-e-incidentes-em-sistemas">8.1 Disponibilidade de Serviços e Incidentes em Sistemas</div>
     <div class="sub-section-title" id="82-execução-e-validação-de-backups">8.2 Execução e Validação de Backups</div>
     <div class="sub-section-title" id="83-atualizações-melhorias-e-ações-de-modernização">8.3 Atualizações, Melhorias e Ações de Modernização</div>
+    <div class="sub-section-title" id="84-anomalias-de-tráfego-pppoe-e-ações-proativas-para-o-service-desk">8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk</div>
+    <!-- Fonte: fontes/autotickets/anomalias_pppoe/ (CSV mascarado). Sem fonte na semana: uma linha de ausência justificada. -->
+    <!-- Informar a janela real do retrato (ex.: "retrato de 18–19/10") e as ressalvas de cálculo vigentes. -->
+    <div class="kpi-grid">
+      <div class="kpi-card rose"><span class="kpi-label">Anomalias</span><span class="kpi-value">{{27}}</span><span class="kpi-sub">{{8}} críticas</span></div>
+      <div class="kpi-card amber"><span class="kpi-label">Inversões Up &gt; Down</span><span class="kpi-value">{{23}}</span><span class="kpi-sub">razão ≥ 1,5x</span></div>
+      <div class="kpi-card purple"><span class="kpi-label">Upload acumulado</span><span class="kpi-value">{{5,66 TB}}</span><span class="kpi-sub">download {{1,52 TB}}</span></div>
+      <div class="kpi-card emerald"><span class="kpi-label">Com ticket aberto</span><span class="kpi-value">{{0}}</span><span class="kpi-sub">encaminhados ao Service Desk</span></div>
+    </div>
+    <!-- Ranking por razão Upload/Download (desc.), top 10–15. Sem nome, CPF/CNPJ ou IP do cliente. -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Login PPPoE</th><th>Cidade / POP</th><th>Plano</th><th>Up / Down</th><th>Razão</th><th>Quedas</th><th>Severidade</th><th>Hipótese → Ação proativa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{1}}</td><td>{{login}}</td><td>{{cidade}} / {{POP}}</td><td>{{plano}}</td><td>{{up}} / {{down}}</td><td><strong>{{47,2x}}</strong></td><td>{{3}}</td>
+            <td><span class="badge badge-danger">{{CRITICAL 80}}</span></td><td>{{CPE possivelmente comprometida → verificar CPE, firmware e senha}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="page-section page-break">

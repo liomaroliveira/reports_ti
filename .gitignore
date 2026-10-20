@@ -21,3 +21,10 @@ __pycache__/
 miscelaneous/whatsapp_histories/*
 !miscelaneous/whatsapp_histories/README.md
 !miscelaneous/whatsapp_histories/scripts/
+
+# PDFs com dados pessoais/credenciais que não podem ser mascarados (regerar a partir da fonte mascarada).
+# Semana 42: senhas em relatos (Voalle e AutoTickets), CPF/CNPJ (Fullcam) e nome + IP de clientes (PPPoE).
+semanas/2026-10-11_2026-10-17/fontes/voalle/*_tarefas_executadas_*.pdf
+semanas/2026-10-11_2026-10-17/fontes/autotickets/tarefas_executadas/isac_tarefas_executadas_*.pdf
+semanas/2026-10-11_2026-10-17/fontes/autotickets/fullcam_lucros_prejuizos/Auditoria Financeira - FullCam.pdf
+semanas/2026-10-11_2026-10-17/fontes/autotickets/anomalias_pppoe/*.pdf

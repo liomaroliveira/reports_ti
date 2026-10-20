@@ -1,0 +1,2358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório - Colaboradores x Tickets</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <style>
+
+        :root {
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            --border-subtle: #f1f5f9;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --primary: #0284c7;
+            --primary-light: #e0f2fe;
+            --success: #10b981;
+            --success-light: #dcfce7;
+            --info: #0284c7;
+            --purple: #8b5cf6;
+            --purple-light: #ede9fe;
+            --indigo: #6366f1;
+            --indigo-light: #e0e7ff;
+            --amber: #f59e0b;
+        }
+        @page {
+            size: A4 portrait;
+            margin: 5mm 6mm 6mm 6mm;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            padding: 28px;
+            line-height: 1.35;
+            font-size: 11px;
+            zoom: 1;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        @media print {
+            body { background: #ffffff !important; color: #0f172a !important; zoom: 0.67; padding: 0 !important; }
+            .no-print { display: none !important; }
+            .card, .stat-card, .chart-card { background: #ffffff !important; border: 1px solid #cbd5e1 !important; box-shadow: none !important; }
+            th { background: #f8fafc !important; color: #334155 !important; }
+            td { color: #0f172a !important; border-bottom: 1px solid #e2e8f0 !important; }
+            .stat-value { color: #0f172a !important; }
+            tr { page-break-inside: avoid; }
+            thead { display: table-header-group; }
+        }
+        .container { max-width: 1240px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+        .header h1 { font-size: 18px; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 6px; letter-spacing: -0.3px; }
+        .header .meta { font-size: 10px; color: var(--text-muted); margin-top: 3px; }
+        .btn-print { background: var(--primary); color: #ffffff; border: none; padding: 6px 14px; border-radius: 6px; font-weight: 600; font-size: 11px; cursor: pointer; transition: opacity 0.2s; }
+        .btn-print:hover { opacity: 0.9; }
+        
+        /* Grid de KPIs Gerais com Densidade Compacta */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 6px; margin-bottom: 14px; }
+        @media (max-width: 1024px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media print { .stats-grid { grid-template-columns: repeat(9, 1fr) !important; gap: 4px !important; margin-bottom: 12px !important; } }
+        .stat-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 6px 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            page-break-inside: avoid;
+            min-width: 0;
+            overflow: hidden;
+        }
+        .stat-label {
+            font-size: 9.5px;
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.2;
+        }
+        .stat-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text);
+            margin-top: 2px;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Gráficos Executivos */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1.45fr 1fr;
+            gap: 12px;
+            margin-bottom: 14px;
+            page-break-inside: avoid;
+        }
+        @media screen and (max-width: 768px) {
+            .charts-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            .charts-grid { grid-template-columns: 1.45fr 1fr !important; }
+        }
+        .chart-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px 12px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .chart-header { margin-bottom: 8px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+        .chart-title { font-size: 12px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 6px; }
+        .chart-subtitle { font-size: 9.5px; color: var(--text-muted); margin-top: 1px; }
+
+        /* Gráfico de Barras: Produtividade por Colaborador */
+        .colab-bar-item { margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px dashed var(--border-subtle); }
+        .colab-bar-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .colab-bar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
+        .colab-bar-name { font-size: 10.5px; font-weight: 600; color: var(--text); }
+        .colab-bar-actions { font-size: 9.5px; font-weight: 600; color: var(--primary); background: var(--primary-light); padding: 1px 5px; border-radius: 4px; }
+        .bar-metric-row { display: grid; grid-template-columns: 55px 1fr 22px; align-items: center; gap: 5px; margin-bottom: 2px; }
+        .bar-metric-lbl { font-size: 9px; font-weight: 500; color: var(--text-muted); }
+        .bar-track { height: 5px; background: #f1f5f9; border-radius: 3px; overflow: hidden; position: relative; }
+        .bar-fill { height: 100%; border-radius: 3px; transition: width 0.3s ease; }
+        .bar-val { font-size: 9.5px; font-weight: 600; color: var(--text); text-align: right; }
+
+        /* Paleta Semântica das Barras */
+        .fill-sky { background: #0284c7; }
+        .fill-green { background: #10b981; }
+        .fill-purple { background: #8b5cf6; }
+        .fill-indigo { background: #6366f1; }
+        .legend-indicator { display: inline-block; width: 7px; height: 7px; border-radius: 2px; margin-right: 3px; }
+
+        /* Gráfico Donut de Demandas */
+        .donut-container { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2px 0; }
+        .donut-svg-wrap { width: 120px; height: 120px; margin: 0 auto 8px auto; }
+        .donut-legend-list { width: 100%; display: flex; flex-direction: column; gap: 4px; }
+        .donut-legend-item { display: flex; align-items: center; justify-content: space-between; font-size: 10px; padding: 3px 6px; background: #f8fafc; border: 1px solid var(--border-subtle); border-radius: 5px; }
+        .donut-legend-info { display: flex; align-items: center; gap: 5px; }
+        .donut-legend-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+        .donut-legend-val { font-weight: 700; color: var(--text); }
+        .donut-legend-pct { font-size: 9px; color: var(--text-muted); margin-left: 2px; }
+
+        /* Card Container Genérico */
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            page-break-inside: auto;
+        }
+        .card-title {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text);
+            page-break-after: avoid;
+        }
+
+        /* Tabelas com Layout Fixo e Quebra de Linha Estrita */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9.5px;
+            table-layout: fixed;
+        }
+        th {
+            text-align: left;
+            padding: 5px 3px;
+            background: #f8fafc;
+            color: #475569;
+            font-weight: 600;
+            border-bottom: 1px solid #cbd5e1;
+            font-size: 9px;
+            line-height: 1.2;
+            vertical-align: bottom;
+            word-break: normal;
+        }
+        td {
+            padding: 4px 3px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #1e293b;
+            font-size: 9.5px;
+            line-height: 1.25;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            vertical-align: middle;
+        }
+        tr:nth-child(even) td { background: #fafbfc; }
+        tr:hover td { background: #f1f5f9; }
+
+        /* Badges com White-Space No-Wrap Obrigatório */
+        .badge {
+            display: inline-block;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 9px;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap !important;
+            letter-spacing: -0.2px;
+        }
+        .badge-success { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+        .badge-info { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+        .badge-purple { background: #ede9fe; color: #6d28d9; border: 1px solid #ddd6fe; }
+        .text-right { text-align: right; }
+        .text-center { text-align: center; }
+
+        /* Accordions Interativos */
+        .card-accordion-header {
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.15s ease;
+        }
+        .card-accordion-header:hover {
+            opacity: 0.92;
+        }
+        .accordion-arrow {
+            display: inline-block;
+            transition: transform 0.2s ease;
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-left: 8px;
+        }
+        .accordion-body.collapsed {
+            display: none !important;
+        }
+        @media print {
+            .accordion-body, .accordion-body.collapsed {
+                display: block !important;
+            }
+            .accordion-arrow {
+                display: none !important;
+            }
+        }
+
+        /* Ordenação Interativa de Cabeçalhos de Tabela */
+        th.sortable {
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+        th.sortable:hover {
+            background-color: var(--primary-light) !important;
+            color: var(--primary) !important;
+        }
+        .sort-indicator {
+            display: inline-block;
+            margin-left: 4px;
+            font-size: 9px;
+            opacity: 0.4;
+        }
+        th.sortable:hover .sort-indicator, th.sorted-asc .sort-indicator, th.sorted-desc .sort-indicator {
+            opacity: 1;
+            color: var(--primary);
+        }
+            </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>📊 Relatório - Colaboradores x Tickets</h1>
+                <div class="meta">
+                    Período: <strong>11/10/2026 a 17/10/2026</strong> | Gerado em: 19/10/2026 às 21:37:59 | AutoTickets v2
+                </div>
+            </div>
+                        <div class="no-print">
+                <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
+            </div>
+                    </div>
+
+        <!-- KPIs Gerais -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Solicitações</div>
+                <div class="stat-value" style="color: var(--info);">
+                    31 <span style="font-size:11px; color:var(--success); font-weight:600;">44 concl.</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Tarefas / OS</div>
+                <div class="stat-value" style="color: var(--purple);">
+                    13 <span style="font-size:11px; color:var(--success); font-weight:600;">15 concl.</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Ações Registradas</div>
+                <div class="stat-value">102</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Tempo Dedicado</div>
+                <div class="stat-value" style="font-size: 15px;">6d 6h</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">TMA Médio</div>
+                <div class="stat-value" style="font-size: 15px; color: var(--info);">2h 20m</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">TMR Médio</div>
+                <div class="stat-value" style="font-size: 15px; color: var(--purple);">4d 3h</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Encaminhamentos</div>
+                <div class="stat-value">27</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Ativ. Internas</div>
+                <div class="stat-value" style="color: var(--amber);">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label" title="Taxa de Vazão Operacional: proporção de concluídas sobre abertas: (Total Concluídas ÷ Total Abertas) × 100. Valores > 100% indicam queima de passivo acumulado.">Taxa de Vazão ⓘ</div>
+                <div class="stat-value" style="color: var(--success);">134.1%</div>
+            </div>
+        </div>
+
+        <!-- Sessão de Gráficos: Produtividade por Colaborador & Distribuição de Demandas -->
+                <div class="charts-grid">
+            <!-- Gráfico 1: Solicitações e Tarefas por Colaborador -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div class="chart-title">📊 Solicitações e Tarefas por Colaborador</div>
+                    <div class="chart-subtitle">
+                        <span class="legend-indicator fill-sky"></span>Sol. Ab. &nbsp;
+                        <span class="legend-indicator fill-green"></span>Sol. Concl. &nbsp;
+                        <span class="legend-indicator fill-purple"></span>Tar. Ab. &nbsp;
+                        <span class="legend-indicator fill-indigo"></span>Tar. Concl.
+                    </div>
+                </div>
+
+                                                        <div class="colab-bar-item">
+                        <div class="colab-bar-header">
+                            <span class="colab-bar-name">DAVID BRASIL FERNANDES</span>
+                            <span class="colab-bar-actions">57 ações</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Sol. Abertas</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-sky" style="width: 67.9%;"></div>
+                            </div>
+                            <span class="bar-val">19</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Sol. Concl.</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-green" style="width: 100%;"></div>
+                            </div>
+                            <span class="bar-val" style="color: var(--success);">28</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Tar. Abertas</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-purple" style="width: 25%;"></div>
+                            </div>
+                            <span class="bar-val">7</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Tar. Concl.</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-indigo" style="width: 32.1%;"></div>
+                            </div>
+                            <span class="bar-val" style="color: var(--indigo);">9</span>
+                        </div>
+                    </div>
+                                        <div class="colab-bar-item">
+                        <div class="colab-bar-header">
+                            <span class="colab-bar-name">ISAC COSTA SILVA</span>
+                            <span class="colab-bar-actions">30 ações</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Sol. Abertas</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-sky" style="width: 3.6%;"></div>
+                            </div>
+                            <span class="bar-val">1</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Sol. Concl.</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-green" style="width: 39.3%;"></div>
+                            </div>
+                            <span class="bar-val" style="color: var(--success);">11</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Tar. Abertas</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-purple" style="width: 21.4%;"></div>
+                            </div>
+                            <span class="bar-val">6</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Tar. Concl.</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-indigo" style="width: 21.4%;"></div>
+                            </div>
+                            <span class="bar-val" style="color: var(--indigo);">6</span>
+                        </div>
+                    </div>
+                                        <div class="colab-bar-item">
+                        <div class="colab-bar-header">
+                            <span class="colab-bar-name">LIOMAR ANTONIO DE OLIVEIRA</span>
+                            <span class="colab-bar-actions">15 ações</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Sol. Abertas</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-sky" style="width: 39.3%;"></div>
+                            </div>
+                            <span class="bar-val">11</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Sol. Concl.</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-green" style="width: 17.9%;"></div>
+                            </div>
+                            <span class="bar-val" style="color: var(--success);">5</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Tar. Abertas</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-purple" style="width: 0%;"></div>
+                            </div>
+                            <span class="bar-val">0</span>
+                        </div>
+                        <div class="bar-metric-row">
+                            <span class="bar-metric-lbl">Tar. Concl.</span>
+                            <div class="bar-track">
+                                <div class="bar-fill fill-indigo" style="width: 0%;"></div>
+                            </div>
+                            <span class="bar-val" style="color: var(--indigo);">0</span>
+                        </div>
+                    </div>
+                                                </div>
+
+            <!-- Gráfico 2: Distribuição de Demandas (Donut SVG Nativo) -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div class="chart-title">🍩 Distribuição de Demandas</div>
+                    <div class="chart-subtitle">Proporção total de solicitações e tarefas no período</div>
+                </div>
+
+                <div class="donut-container">
+                    <div class="donut-svg-wrap">
+                                                <svg viewBox="0 0 170 170" width="100%" height="100%">
+                            <!-- Círculo de Fundo -->
+                            <circle cx="85" cy="85" r="62" fill="none" stroke="#f1f5f9" stroke-width="24"></circle>
+
+                                                                                                <circle
+                                        cx="85"
+                                        cy="85"
+                                        r="62"
+                                        fill="none"
+                                        stroke="#0284c7"
+                                        stroke-width="24"
+                                        stroke-dasharray="117.25 272.31"
+                                        stroke-dashoffset="0.00"
+                                        transform="rotate(-90 85 85)"
+                                    ></circle>
+                                                                    <circle
+                                        cx="85"
+                                        cy="85"
+                                        r="62"
+                                        fill="none"
+                                        stroke="#10b981"
+                                        stroke-width="24"
+                                        stroke-dasharray="166.41 223.14"
+                                        stroke-dashoffset="-117.25"
+                                        transform="rotate(-90 85 85)"
+                                    ></circle>
+                                                                    <circle
+                                        cx="85"
+                                        cy="85"
+                                        r="62"
+                                        fill="none"
+                                        stroke="#8b5cf6"
+                                        stroke-width="24"
+                                        stroke-dasharray="49.17 340.39"
+                                        stroke-dashoffset="-283.66"
+                                        transform="rotate(-90 85 85)"
+                                    ></circle>
+                                                                    <circle
+                                        cx="85"
+                                        cy="85"
+                                        r="62"
+                                        fill="none"
+                                        stroke="#6366f1"
+                                        stroke-width="24"
+                                        stroke-dasharray="56.73 332.83"
+                                        stroke-dashoffset="-332.83"
+                                        transform="rotate(-90 85 85)"
+                                    ></circle>
+                                                            
+                            <!-- Rótulo Central -->
+                            <text x="85" y="81" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">
+                                103                            </text>
+                            <text x="85" y="97" text-anchor="middle" font-size="10" font-weight="600" fill="#64748b">
+                                Demandas
+                            </text>
+                        </svg>
+                    </div>
+
+                    <!-- Legenda do Donut -->
+                    <div class="donut-legend-list">
+                                                    <div class="donut-legend-item">
+                                <div class="donut-legend-info">
+                                    <span class="donut-legend-dot" style="background: #0284c7;"></span>
+                                    <span>Solicitações Abertas</span>
+                                </div>
+                                <div>
+                                    <span class="donut-legend-val">31</span>
+                                    <span class="donut-legend-pct">(30.1%)</span>
+                                </div>
+                            </div>
+                                                    <div class="donut-legend-item">
+                                <div class="donut-legend-info">
+                                    <span class="donut-legend-dot" style="background: #10b981;"></span>
+                                    <span>Solicitações Encerradas</span>
+                                </div>
+                                <div>
+                                    <span class="donut-legend-val">44</span>
+                                    <span class="donut-legend-pct">(42.7%)</span>
+                                </div>
+                            </div>
+                                                    <div class="donut-legend-item">
+                                <div class="donut-legend-info">
+                                    <span class="donut-legend-dot" style="background: #8b5cf6;"></span>
+                                    <span>Tarefas Abertas</span>
+                                </div>
+                                <div>
+                                    <span class="donut-legend-val">13</span>
+                                    <span class="donut-legend-pct">(12.6%)</span>
+                                </div>
+                            </div>
+                                                    <div class="donut-legend-item">
+                                <div class="donut-legend-info">
+                                    <span class="donut-legend-dot" style="background: #6366f1;"></span>
+                                    <span>Tarefas Encerradas</span>
+                                </div>
+                                <div>
+                                    <span class="donut-legend-val">15</span>
+                                    <span class="donut-legend-pct">(14.6%)</span>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+        
+                <!-- Resumo Sintético por Colaborador -->
+        <div class="card report-accordion-card">
+            <div class="card-title card-accordion-header">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span>👥 Resumo Sintético por Colaborador</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <span style="font-size: 11px; color: var(--text-muted); font-weight: 500;">3 colaboradores avaliados</span>
+            </div>
+            <div class="accordion-body">
+                <table class="table-synthetic sortable-table">
+                    <colgroup>
+                        <col style="width: 16%;">
+                        <col style="width: 14%;">
+                        <col style="width: 6%;">
+                        <col style="width: 6%;">
+                        <col style="width: 6%;">
+                        <col style="width: 6%;">
+                        <col style="width: 6%;">
+                        <col style="width: 6%;">
+                        <col style="width: 10%;">
+                        <col style="width: 6%;">
+                        <col style="width: 8%;">
+                        <col style="width: 10%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="sortable">Colaborador <span class="sort-indicator">⇅</span></th>
+                            <th class="sortable">Equipe <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">Sol.<br>Abertas <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">Sol.<br>Concl. <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">Tar.<br>Abertas <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">Tar.<br>Concl. <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable" title="Chamados Atuados pelo colaborador no período">Atuadas ⓘ <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">Total<br>Ações <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">Duração<br>Atend. <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">TMA <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">TMR <span class="sort-indicator">⇅</span></th>
+                            <th class="text-right sortable" title="Resolubilidade da Atuação: chamados concluídos pelo colaborador sobre os chamados em que atuou: (Concluídas ÷ Atuadas) × 100">Resolubilidade ⓘ <span class="sort-indicator">⇅</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                <tr>
+                            <td style="font-weight: 600;">DAVID BRASIL FERNANDES</td>
+                            <td style="color: var(--text-muted);">Ativação e manutenção Câmeras Ten, Setor TI</td>
+                            <td class="text-center">19</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">28</td>
+                            <td class="text-center">7</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">9</td>
+                            <td class="text-center" style="font-weight: 600;">41</td>
+                            <td class="text-center">57</td>
+                            <td class="text-center">1d 7h</td>
+                            <td class="text-center">45m</td>
+                            <td class="text-center">5d 11h</td>
+                            <td class="text-right">
+                                <span class="badge badge-success">90.2%</span>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">ISAC COSTA SILVA</td>
+                            <td style="color: var(--text-muted);">Setor TI</td>
+                            <td class="text-center">1</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">11</td>
+                            <td class="text-center">6</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">6</td>
+                            <td class="text-center" style="font-weight: 600;">17</td>
+                            <td class="text-center">30</td>
+                            <td class="text-center">22h 43m</td>
+                            <td class="text-center">1h 20m</td>
+                            <td class="text-center">1d 7h</td>
+                            <td class="text-right">
+                                <span class="badge badge-success">100%</span>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">LIOMAR ANTONIO DE OLIVEIRA</td>
+                            <td style="color: var(--text-muted);">Ativação e manutenção Câmeras Ten, Infraestrutura e Manutenção, LIDERANÇAS, NOC, PROCESSOS GAMAVEL, Setor TI</td>
+                            <td class="text-center">11</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">5</td>
+                            <td class="text-center">0</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">0</td>
+                            <td class="text-center" style="font-weight: 600;">6</td>
+                            <td class="text-center">15</td>
+                            <td class="text-center">4d</td>
+                            <td class="text-center">16h 3m</td>
+                            <td class="text-center">3d 20h</td>
+                            <td class="text-right">
+                                <span class="badge badge-success">83.3%</span>
+                            </td>
+                        </tr>
+                                            </tbody>
+                </table>
+                <div style="margin-top: 12px; font-size: 11px; color: var(--text-muted); line-height: 1.5; border-top: 1px solid var(--border); padding-top: 8px;">
+                    <strong>Legenda das métricas:</strong><br>
+                    • <strong>Resolubilidade:</strong> Proporção de chamados concluídos pelo colaborador sobre os chamados em que atuou diretamente no período: (Concluídas ÷ Atuadas) × 100.<br>
+                    • <strong>Atuadas:</strong> Total de chamados únicos (solicitações e tarefas) com atuação direta, relato ou encerramento pelo colaborador no período.<br>
+                    • <strong>Duração Atendimento:</strong> Soma das horas de atuação registradas em relatos pelo colaborador.<br>
+                    • <strong>TMA (Tempo Médio de Atendimento):</strong> Duração média de atendimento por chamado atuado (Duração / Total de Atuações).<br>
+                    • <strong>TMR (Tempo Médio de Resolução):</strong> Tempo médio de resolução (abertura até encerramento), calculado estritamente para chamados concluídos.
+                </div>
+            </div>
+        </div>
+
+                <!-- Tipo de Protocolo por Tempo Médio de Resolução -->
+        <div class="card report-accordion-card">
+            <div class="card-title card-accordion-header">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span>🏷️ Tipo de Protocolo por Tempo Médio de Resolução</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <span style="font-size: 11px; color: var(--text-muted); font-weight: 500;">12 tipos avaliados (Maior TMR no topo)</span>
+            </div>
+            <div class="accordion-body">
+                <table class="table-protocol-types sortable-table">
+                    <colgroup>
+                        <col style="width: 25%;">
+                        <col style="width: 8%;">
+                        <col style="width: 9%;">
+                        <col style="width: 9%;">
+                        <col style="width: 11%;">
+                        <col style="width: 14%;">
+                        <col style="width: 11%;">
+                        <col style="width: 13%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="sortable">Tipo de Protocolo <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">Total <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">Concl. <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">Em Aberto <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">Taxa Res. ⓘ <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable" style="color: var(--purple);">TMR Médio ⓘ <span class="sort-indicator">⇅</span></th>
+                            <th class="text-center sortable">TMA Médio ⓘ <span class="sort-indicator">⇅</span></th>
+                            <th class="text-right sortable">Tempo Dedicado <span class="sort-indicator">⇅</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                <tr>
+                            <td style="font-weight: 600;">(N2-TI) Documentações e Projetos</td>
+                            <td class="text-center">7</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">2</td>
+                            <td class="text-center" style="color: var(--amber);">5</td>
+                            <td class="text-center"><span class="badge badge-success">28.6%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                26d 2h                                                                <div style="width: 100%; height: 3px; background: #ede9fe; border-radius: 2px; margin-top: 3px; overflow: hidden;">
+                                    <div style="width: 100%; height: 100%; background: var(--purple);"></div>
+                                </div>
+                                                            </td>
+                            <td class="text-center">16h 12m</td>
+                            <td class="text-right" style="font-weight: 500;">4d 17h</td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">(TI) PC/Note/Impressora/Rede Etc. - Manutenção/Reparo</td>
+                            <td class="text-center">20</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">15</td>
+                            <td class="text-center" style="color: var(--amber);">5</td>
+                            <td class="text-center"><span class="badge badge-success">75%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                7d 11h                                                                <div style="width: 100%; height: 3px; background: #ede9fe; border-radius: 2px; margin-top: 3px; overflow: hidden;">
+                                    <div style="width: 28.6%; height: 100%; background: var(--purple);"></div>
+                                </div>
+                                                            </td>
+                            <td class="text-center">1h 10m</td>
+                            <td class="text-right" style="font-weight: 500;">23h 25m</td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">MANUTENÇÃO PATRIMONIAL</td>
+                            <td class="text-center">1</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">1</td>
+                            <td class="text-center" style="color: var(--amber);">0</td>
+                            <td class="text-center"><span class="badge badge-success">100%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                4d 23h                                                                <div style="width: 100%; height: 3px; background: #ede9fe; border-radius: 2px; margin-top: 3px; overflow: hidden;">
+                                    <div style="width: 19%; height: 100%; background: var(--purple);"></div>
+                                </div>
+                                                            </td>
+                            <td class="text-center">0m</td>
+                            <td class="text-right" style="font-weight: 500;">0m</td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">(N2-TI) Configuração de Equipamentos</td>
+                            <td class="text-center">4</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">3</td>
+                            <td class="text-center" style="color: var(--amber);">1</td>
+                            <td class="text-center"><span class="badge badge-success">75%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                3d 8h                                                                <div style="width: 100%; height: 3px; background: #ede9fe; border-radius: 2px; margin-top: 3px; overflow: hidden;">
+                                    <div style="width: 12.8%; height: 100%; background: var(--purple);"></div>
+                                </div>
+                                                            </td>
+                            <td class="text-center">3h 26m</td>
+                            <td class="text-right" style="font-weight: 500;">13h 44m</td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">(NOC) SOLICITAÇÃO DE IP PUBLICO</td>
+                            <td class="text-center">2</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">2</td>
+                            <td class="text-center" style="color: var(--amber);">0</td>
+                            <td class="text-center"><span class="badge badge-success">100%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                1d 21h                                                                <div style="width: 100%; height: 3px; background: #ede9fe; border-radius: 2px; margin-top: 3px; overflow: hidden;">
+                                    <div style="width: 7.3%; height: 100%; background: var(--purple);"></div>
+                                </div>
+                                                            </td>
+                            <td class="text-center">1m</td>
+                            <td class="text-right" style="font-weight: 500;">3m</td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">(N2-TI) SOLICITAÇÃO DE DESCONTO (PROB. CONEXÃO)</td>
+                            <td class="text-center">8</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">8</td>
+                            <td class="text-center" style="color: var(--amber);">0</td>
+                            <td class="text-center"><span class="badge badge-success">100%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                1d 17h                                                                <div style="width: 100%; height: 3px; background: #ede9fe; border-radius: 2px; margin-top: 3px; overflow: hidden;">
+                                    <div style="width: 6.7%; height: 100%; background: var(--purple);"></div>
+                                </div>
+                                                            </td>
+                            <td class="text-center">18m</td>
+                            <td class="text-right" style="font-weight: 500;">2h 26m</td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">(Administrativo) Compra de Materiais, Serviços, Produtos</td>
+                            <td class="text-center">2</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">1</td>
+                            <td class="text-center" style="color: var(--amber);">1</td>
+                            <td class="text-center"><span class="badge badge-success">50%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                17h 5m                                                                <div style="width: 100%; height: 3px; background: #ede9fe; border-radius: 2px; margin-top: 3px; overflow: hidden;">
+                                    <div style="width: 4%; height: 100%; background: var(--purple);"></div>
+                                </div>
+                                                            </td>
+                            <td class="text-center">0m</td>
+                            <td class="text-right" style="font-weight: 500;">0m</td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">Atendimento Técnico</td>
+                            <td class="text-center">16</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">16</td>
+                            <td class="text-center" style="color: var(--amber);">0</td>
+                            <td class="text-center"><span class="badge badge-success">100%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                7h 29m                                                                <div style="width: 100%; height: 3px; background: #ede9fe; border-radius: 2px; margin-top: 3px; overflow: hidden;">
+                                    <div style="width: 4%; height: 100%; background: var(--purple);"></div>
+                                </div>
+                                                            </td>
+                            <td class="text-center">28m</td>
+                            <td class="text-right" style="font-weight: 500;">7h 43m</td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">(Comercial) Atendimento Comercial</td>
+                            <td class="text-center">1</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">1</td>
+                            <td class="text-center" style="color: var(--amber);">0</td>
+                            <td class="text-center"><span class="badge badge-success">100%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                1m                                                            </td>
+                            <td class="text-center">0m</td>
+                            <td class="text-right" style="font-weight: 500;">0m</td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">(Patrimônio e Logística) Requisição de Materiais e Equipamentos</td>
+                            <td class="text-center">2</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">0</td>
+                            <td class="text-center" style="color: var(--amber);">2</td>
+                            <td class="text-center"><span class="badge badge-success">0%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                —                                                            </td>
+                            <td class="text-center">0m</td>
+                            <td class="text-right" style="font-weight: 500;">0m</td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">(Técnica) Devolução para o Estoque Central</td>
+                            <td class="text-center">2</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">0</td>
+                            <td class="text-center" style="color: var(--amber);">2</td>
+                            <td class="text-center"><span class="badge badge-success">0%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                —                                                            </td>
+                            <td class="text-center">0m</td>
+                            <td class="text-right" style="font-weight: 500;">0m</td>
+                        </tr>
+                                                <tr>
+                            <td style="font-weight: 600;">(N2-TI) Análise de equipamentos Cliente (incidente)</td>
+                            <td class="text-center">1</td>
+                            <td class="text-center" style="color: var(--success); font-weight: 600;">0</td>
+                            <td class="text-center" style="color: var(--amber);">1</td>
+                            <td class="text-center"><span class="badge badge-success">0%</span></td>
+                            <td class="text-center" style="color: var(--purple); font-weight: 700;">
+                                —                                                            </td>
+                            <td class="text-center">18m</td>
+                            <td class="text-right" style="font-weight: 500;">18m</td>
+                        </tr>
+                                            </tbody>
+                </table>
+                <div style="margin-top: 12px; font-size: 11px; color: var(--text-muted); line-height: 1.5; border-top: 1px solid var(--border); padding-top: 8px;">
+                    <strong>Legenda:</strong> TMR = Tempo Médio decorrido da abertura à conclusão. TMA = Tempo Médio trabalhado em relatos por chamado.
+                </div>
+            </div>
+        </div>
+                
+                <!-- Detalhamento Analítico -->
+        <div class="card report-accordion-card">
+            <div class="card-title card-accordion-header">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span>📄 Detalhamento Analítico de Chamados e Tarefas</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <span style="font-size: 11px; color: var(--text-muted); font-weight: 500;">68 chamados detalhados</span>
+            </div>
+            <div class="accordion-body">
+                                <div style="margin-bottom: 20px;">
+                    <h3 style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">
+                        ISAC COSTA SILVA (18)
+                    </h3>
+                    <table class="table-analytical sortable-table">
+                        <colgroup>
+                            <col style="width: 7%;">
+                            <col style="width: 8.5%;">
+                            <col style="width: 22%;">
+                            <col style="width: 13.5%;">
+                            <col style="width: 7%;">
+                            <col style="width: 7%;">
+                            <col style="width: 4%;">
+                            <col style="width: 7.5%;">
+                            <col style="width: 7.5%;">
+                            <col style="width: 8.5%;">
+                            <col style="width: 7.5%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="sortable">Protocolo <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Tipo <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Título <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Colaborador <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Abertura <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Conclusão <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Ações <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Tempo<br>Atend. <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Duração<br>Atend. <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Tempo<br>Resolução <span class="sort-indicator">⇅</span></th>
+                                <th class="text-right sortable">Status <span class="sort-indicator">⇅</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3460213                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Atividade diária</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>16/10/2026 17:13</td>
+                                <td>16/10/2026 17:13</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">59m</td>
+                                <td class="text-center">56m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3459693                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Atividade diária</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>16/10/2026 11:58</td>
+                                <td>16/10/2026 11:58</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">18m</td>
+                                <td class="text-center">16m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3459413                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Atividade diária</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>16/10/2026 10:23</td>
+                                <td>16/10/2026 10:23</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">23m</td>
+                                <td class="text-center">20m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3458457                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Atividade diária</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>15/10/2026 14:53</td>
+                                <td>15/10/2026 14:53</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">8m</td>
+                                <td class="text-center">7m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221804                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221804 - (N2-TI) Configuração de Equipamentos / Instalação - DEIVIDE LEONEL DE ARAUJO FEITOSA</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>14/10/2026 13:16</td>
+                                <td>16/10/2026 08:18</td>
+                                <td class="text-center">4</td>
+                                <td class="text-center">1d 18h</td>
+                                <td class="text-center">1h 30m</td>
+                                <td class="text-center">1d 19h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221689                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221689 - (N2-TI) Configuração de Equipamentos / TI - EVANDRO DA SILVA ALMEIDA</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>14/10/2026 11:33</td>
+                                <td>15/10/2026 14:33</td>
+                                <td class="text-center">3</td>
+                                <td class="text-center">1d</td>
+                                <td class="text-center">7h 9m</td>
+                                <td class="text-center">1d 3h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3456394                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Atividade diária</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>14/10/2026 11:06</td>
+                                <td>14/10/2026 11:06</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">34m</td>
+                                <td class="text-center">30m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221254                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221254 - Realizar testagem de GWN Ap&#039;s - ERICK GOMES GONÇALVES</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>14/10/2026 08:42</td>
+                                <td>14/10/2026 09:33</td>
+                                <td class="text-center">5</td>
+                                <td class="text-center">13m</td>
+                                <td class="text-center">10m</td>
+                                <td class="text-center">51m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221254                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221254 - Realizar testagem de GWN Ap&#039;s - ERICK GOMES GONÇALVES</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>14/10/2026 08:42</td>
+                                <td>14/10/2026 09:33</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">51m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">51m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221233                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221233 - (N2-TI) SOLICITAÇÃO DE DESCONTO (PROB. CONEXÃO) / Padrão - VALTER JOAO DOS SANTOS</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>14/10/2026 08:33</td>
+                                <td>14/10/2026 15:30</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">4h 6m</td>
+                                <td class="text-center">18m</td>
+                                <td class="text-center">6h 57m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3220357                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3220357 - VERIFICAR RAMAL/NATIVE DE MYCHELE RODRIGUES - COMERCIAL - NAILA GABRIELI RIOS MELO</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>13/10/2026 12:19</td>
+                                <td>13/10/2026 16:53</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">37m</td>
+                                <td class="text-center">37m</td>
+                                <td class="text-center">4h 34m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3454848                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Atividade diária</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>13/10/2026 12:01</td>
+                                <td>13/10/2026 12:01</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">38m</td>
+                                <td class="text-center">36m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3220313                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3220313 - (N2-TI) SOLICITAÇÃO DE DESCONTO (PROB. CONEXÃO) / Padrão - MARIA SONIA JESUS DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>13/10/2026 11:56</td>
+                                <td>13/10/2026 15:44</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">1h 4m</td>
+                                <td class="text-center">6m</td>
+                                <td class="text-center">3h 47m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3219052                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3219052 - (NOC) SOLICITAÇÃO DE IP PUBLICO / TI - CASA DA CONTRUÇÃO VERDES MARES</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>09/10/2026 15:50</td>
+                                <td>13/10/2026 08:27</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">2m</td>
+                                <td class="text-center">2m</td>
+                                <td class="text-center">3d 16h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3217636                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3217636 - TESTAGEM DOS GRANDSTREANS - ERICK GOMES GONÇALVES</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>08/10/2026 11:53</td>
+                                <td>13/10/2026 16:10</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">28m</td>
+                                <td class="text-center">28m</td>
+                                <td class="text-center">5d 4h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3215164                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3215164 - (N2-TI) Configuração de Equipamentos / TI - VICTOR OLIVEIRA VILAS BOAS</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>06/10/2026 14:41</td>
+                                <td>13/10/2026 17:48</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">9h 43m</td>
+                                <td class="text-center">3m</td>
+                                <td class="text-center">7d 3h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3078726                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3078726 - Documentação dos Mikrotik&#039;s - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>22/05/2026 13:29</td>
+                                <td>N/D</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">3d 2h</td>
+                                <td class="text-center">8h 22m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3069558                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3069558 - Realizar Levantamento de Equipamentos de determinadas lojas - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">ISAC COSTA SILVA</td>
+                                <td>12/05/2026 12:39</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">1h 9m</td>
+                                <td class="text-center">1h 9m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+                                <div style="margin-bottom: 20px;">
+                    <h3 style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">
+                        DAVID BRASIL FERNANDES (47)
+                    </h3>
+                    <table class="table-analytical sortable-table">
+                        <colgroup>
+                            <col style="width: 7%;">
+                            <col style="width: 8.5%;">
+                            <col style="width: 22%;">
+                            <col style="width: 13.5%;">
+                            <col style="width: 7%;">
+                            <col style="width: 7%;">
+                            <col style="width: 4%;">
+                            <col style="width: 7.5%;">
+                            <col style="width: 7.5%;">
+                            <col style="width: 8.5%;">
+                            <col style="width: 7.5%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="sortable">Protocolo <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Tipo <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Título <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Colaborador <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Abertura <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Conclusão <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Ações <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Tempo<br>Atend. <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Duração<br>Atend. <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Tempo<br>Resolução <span class="sort-indicator">⇅</span></th>
+                                <th class="text-right sortable">Status <span class="sort-indicator">⇅</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3460205                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Configuração/teste Equipamento</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>16/10/2026 17:02</td>
+                                <td>16/10/2026 17:02</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">1h 2m</td>
+                                <td class="text-center">1h 2m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3460204                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Configuração/teste Equipamento</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>16/10/2026 17:01</td>
+                                <td>16/10/2026 17:01</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">2h 1m</td>
+                                <td class="text-center">1h 2m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3459394                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Configuração/Manut. PC/Note</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>16/10/2026 10:14</td>
+                                <td>16/10/2026 10:14</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">1h 49m</td>
+                                <td class="text-center">30m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3459365                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Configuração/teste Equipamento</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>16/10/2026 10:02</td>
+                                <td>16/10/2026 10:02</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">2h 22m</td>
+                                <td class="text-center">32m</td>
+                                <td class="text-center">&lt; 1m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3224039                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3224039 - Requisição de nobreak - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>16/10/2026 09:11</td>
+                                <td>N/D</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">41m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3223900                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3223900 - (TI) PC/Note/Impressora/Rede Etc. - Manutenção/Reparo / (TI) - Sol. Interna - GEISA MAIRA</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>16/10/2026 08:12</td>
+                                <td>16/10/2026 09:59</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">16m</td>
+                                <td class="text-center">16m</td>
+                                <td class="text-center">1h 46m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3223777                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3223777 - Braço articulado duplo</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>15/10/2026 19:02</td>
+                                <td>16/10/2026 12:08</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">—</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">17h 5m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3223577                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Protocolo 3223577 - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>15/10/2026 16:49</td>
+                                <td>16/10/2026 09:56</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">—</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">17h 6m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3223577                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3223577 - Braço articulado duplo - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>15/10/2026 16:45</td>
+                                <td>16/10/2026 12:10</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">19h 24m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">19h 24m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3223509                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3223509 - (N2-TI) SOLICITAÇÃO DE DESCONTO (PROB. CONEXÃO) / Padrão - NOELMA BATISTA DA SILVA</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>15/10/2026 16:11</td>
+                                <td>15/10/2026 18:10</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">44m</td>
+                                <td class="text-center">12m</td>
+                                <td class="text-center">1h 59m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3222998                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3222998 - (N2-TI) SOLICITAÇÃO DE DESCONTO (PROB. CONEXÃO) / Padrão - LUCIMEIRE ALVES ARAUJO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>15/10/2026 11:17</td>
+                                <td>15/10/2026 18:15</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">2h 5m</td>
+                                <td class="text-center">1h 16m</td>
+                                <td class="text-center">6h 57m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3222886                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3222886 - (Comercial) Atendimento Comercial - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>15/10/2026 10:38</td>
+                                <td>15/10/2026 10:40</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">—</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">1m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3457670                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Configuração/Instalação Impressora</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>15/10/2026 09:28</td>
+                                <td>15/10/2026 09:28</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">28m</td>
+                                <td class="text-center">22m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3203059                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Protocolo 3203059 - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>15/10/2026 09:26</td>
+                                <td>15/10/2026 16:08</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">2m</td>
+                                <td class="text-center">2m</td>
+                                <td class="text-center">6h 41m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3201861                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Protocolo 3201861 - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>15/10/2026 09:24</td>
+                                <td>15/10/2026 16:09</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">1m</td>
+                                <td class="text-center">1m</td>
+                                <td class="text-center">6h 44m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3200974                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Protocolo 3200974 - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>15/10/2026 09:13</td>
+                                <td>15/10/2026 16:08</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">&lt; 1m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">6h 54m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3222260                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3222260 - Requisição de notebook para Geisa Maira</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>14/10/2026 17:41</td>
+                                <td>N/D</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">—</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3222238                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3222238 - Realizar manutenção com urgência no ar-condicionado do DC-Chácara - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>14/10/2026 17:29</td>
+                                <td>19/10/2026 16:38</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">4d 23h</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">4d 23h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3222232                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3222232 - Verificar o Firewall de Capim Grosso - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>14/10/2026 17:24</td>
+                                <td>16/10/2026 11:47</td>
+                                <td class="text-center">6</td>
+                                <td class="text-center">1d 18h</td>
+                                <td class="text-center">37m</td>
+                                <td class="text-center">1d 18h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221925                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221925 - Estudo, Prova de Conceito (PoC) e Dimensionamento de VM para Servidor TACACS+ - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>14/10/2026 14:34</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221717                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221717 -  Avaliação e manutenção dos notebooks do Comercial – Capim Grosso - ANDERSON CARNEIRO DOS SANTOS</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>14/10/2026 11:49</td>
+                                <td>15/10/2026 16:02</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">5h 13m</td>
+                                <td class="text-center">4h 21m</td>
+                                <td class="text-center">1d 4h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221658                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221658 - (NOC) SOLICITAÇÃO DE IP PUBLICO / TI - BODYFIT ACADEMIAS LTDA</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>14/10/2026 11:20</td>
+                                <td>14/10/2026 14:41</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">1m</td>
+                                <td class="text-center">1m</td>
+                                <td class="text-center">3h 20m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221550                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221550 - (N2-TI) SOLICITAÇÃO DE DESCONTO (PROB. CONEXÃO) / Padrão - DIMAXIMA OLIVEIRA LIMA</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>14/10/2026 10:38</td>
+                                <td>14/10/2026 15:35</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">50m</td>
+                                <td class="text-center">16m</td>
+                                <td class="text-center">4h 57m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3456175                                </td>
+                                <td>
+                                    <span class="badge badge-purple">
+                                        Tarefa                                    </span>
+                                </td>
+                                <td>Configuração/Instalação Impressora</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>14/10/2026 09:58</td>
+                                <td>14/10/2026 09:58</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">1h 27m</td>
+                                <td class="text-center">1h 27m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221254                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221254 - Realizar testagem de GWN Ap&#039;s - ERICK GOMES GONÇALVES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>14/10/2026 08:42</td>
+                                <td>14/10/2026 09:33</td>
+                                <td class="text-center">5</td>
+                                <td class="text-center">13m</td>
+                                <td class="text-center">10m</td>
+                                <td class="text-center">51m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221254                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221254 - Realizar testagem de GWN Ap&#039;s - ERICK GOMES GONÇALVES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>14/10/2026 08:42</td>
+                                <td>14/10/2026 09:33</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">51m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">51m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221196                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221196 - Formatação dos notebooks da recepção – Capim Grosso - ANDERSON CARNEIRO DOS SANTOS</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>14/10/2026 08:13</td>
+                                <td>15/10/2026 15:55</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">5h 7m</td>
+                                <td class="text-center">4h 16m</td>
+                                <td class="text-center">1d 7h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221109                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221109 - (N2-TI) SOLICITAÇÃO DE DESCONTO (PROB. CONEXÃO) / Padrão - VALDEIR DOS SANTOS SILVA</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>13/10/2026 20:22</td>
+                                <td>14/10/2026 15:19</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">31m</td>
+                                <td class="text-center">4m</td>
+                                <td class="text-center">18h 57m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3220613                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3220613 - (TI) PC/Note/Impressora/Rede Etc. - Manutenção/Reparo / (TI) - Sol. Interna - Felipe Nere</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>13/10/2026 14:40</td>
+                                <td>13/10/2026 15:33</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">38m</td>
+                                <td class="text-center">38m</td>
+                                <td class="text-center">53m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3220356                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3220356 - Requisição de notebook para Geisa Maira - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>13/10/2026 12:17</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3220279                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3220279 - Devolução de Headset - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>13/10/2026 11:42</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3220273                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3220273 - Devolução de Ramal GrandStream GXP1610 - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>13/10/2026 11:40</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3219917                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3219917 - VERIFICAR NOTEBOOK - GEISA MAIRA - NAILA GABRIELI RIOS MELO</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>13/10/2026 09:55</td>
+                                <td>13/10/2026 12:19</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">35m</td>
+                                <td class="text-center">35m</td>
+                                <td class="text-center">2h 23m</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3219157                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3219157 - Reorganização Pcs Contas a Pagar - DANIELE CRISTINA DE SOUZA BARROS</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>09/10/2026 16:37</td>
+                                <td>13/10/2026 11:43</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">3h 48m</td>
+                                <td class="text-center">3h 48m</td>
+                                <td class="text-center">3d 19h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3218721                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3218721 - (N2-TI) SOLICITAÇÃO DE DESCONTO (PROB. CONEXÃO) / Padrão - ADEMILSON ALMEIDA DOS SANTOS</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>09/10/2026 11:50</td>
+                                <td>13/10/2026 17:06</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">47m</td>
+                                <td class="text-center">12m</td>
+                                <td class="text-center">4d 5h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3218626                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3218626 - (TI) PC/Note/Impressora/Rede Etc. - Manutenção/Reparo / (TI) - Sol. Interna - VITORIA FARIAS</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>09/10/2026 11:03</td>
+                                <td>14/10/2026 08:14</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">16h 40m</td>
+                                <td class="text-center">24m</td>
+                                <td class="text-center">4d 21h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3217418                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3217418 - (TI) PC/Note/Impressora/Rede Etc. - Manutenção/Reparo / (TI) - Sol. Interna - DANIEL RIOS</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>08/10/2026 10:01</td>
+                                <td>14/10/2026 08:43</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">28m</td>
+                                <td class="text-center">28m</td>
+                                <td class="text-center">5d 22h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3216735                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3216735 - Verificar e melhorar Zabbix e Grafana do TI - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>07/10/2026 16:07</td>
+                                <td>N/D</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">1d 3h</td>
+                                <td class="text-center">8h 4m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3216300                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3216300 - Validação de como movimentar os itens do estoque com Isvi - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>07/10/2026 12:48</td>
+                                <td>16/10/2026 09:31</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">2m</td>
+                                <td class="text-center">2m</td>
+                                <td class="text-center">8d 20h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3215368                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3215368 - Analisando a plataforma de comunicação interna SLACK - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>06/10/2026 16:07</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">4m</td>
+                                <td class="text-center">4m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3212907                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3212907 - (N2-TI) SOLICITAÇÃO DE DESCONTO (PROB. CONEXÃO) / Padrão - LUIS MARIO AZEVEDO DOS SANTOS</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>05/10/2026 10:35</td>
+                                <td>13/10/2026 08:44</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">50m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">7d 22h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3208869                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3208869 - Impressora do Escritório de Sisalândia - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>30/09/2026 16:20</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">&lt; 1m</td>
+                                <td class="text-center">&lt; 1m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3202572                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3202572 - (TI) PC/Note/Impressora/Rede Etc. - Manutenção/Reparo / (TI) - Sol. Interna - Felipe Neri</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>24/09/2026 10:55</td>
+                                <td>19/10/2026 08:42</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">2d 21h</td>
+                                <td class="text-center">2m</td>
+                                <td class="text-center">24d 21h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3196075                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3196075 - Acesso ao slack - DAVID BRASIL FERNANDES</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>16/09/2026 15:42</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">21m</td>
+                                <td class="text-center">21m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3181397                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3181397 - Realizar verificação de câmeras PPA junto com o FULLTIME - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>02/09/2026 08:50</td>
+                                <td>15/10/2026 17:41</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">1m</td>
+                                <td class="text-center">1m</td>
+                                <td class="text-center">43d 8h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3166028                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3166028 - ANALISE DE NOTBOOK DE EMERSON OLIVEIRA - EMERSON SOUSA DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>18/08/2026 17:29</td>
+                                <td>16/10/2026 11:20</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">1m</td>
+                                <td class="text-center">1m</td>
+                                <td class="text-center">58d 17h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3069558                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3069558 - Realizar Levantamento de Equipamentos de determinadas lojas - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">DAVID BRASIL FERNANDES</td>
+                                <td>12/05/2026 12:39</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">1h 9m</td>
+                                <td class="text-center">1h 9m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+                                <div style="margin-bottom: 20px;">
+                    <h3 style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">
+                        LIOMAR ANTONIO DE OLIVEIRA (11)
+                    </h3>
+                    <table class="table-analytical sortable-table">
+                        <colgroup>
+                            <col style="width: 7%;">
+                            <col style="width: 8.5%;">
+                            <col style="width: 22%;">
+                            <col style="width: 13.5%;">
+                            <col style="width: 7%;">
+                            <col style="width: 7%;">
+                            <col style="width: 4%;">
+                            <col style="width: 7.5%;">
+                            <col style="width: 7.5%;">
+                            <col style="width: 8.5%;">
+                            <col style="width: 7.5%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="sortable">Protocolo <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Tipo <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Título <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Colaborador <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Abertura <span class="sort-indicator">⇅</span></th>
+                                <th class="sortable">Conclusão <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Ações <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Tempo<br>Atend. <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Duração<br>Atend. <span class="sort-indicator">⇅</span></th>
+                                <th class="text-center sortable">Tempo<br>Resolução <span class="sort-indicator">⇅</span></th>
+                                <th class="text-right sortable">Status <span class="sort-indicator">⇅</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3224372                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3224372 - (N2-TI) Configuração de Equipamentos / Atendimento Presencial - DIEGO SOUZA DOS SANTOS</td>
+                                <td style="color: var(--text-muted);">LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td>16/10/2026 12:08</td>
+                                <td>N/D</td>
+                                <td class="text-center">4</td>
+                                <td class="text-center">5h</td>
+                                <td class="text-center">5h</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3223486                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3223486 - Auxiliar Larissa Roza na renovação do certificado Bradesco (Open APIs Bradesco) - LARISSA RIBEIRO ROZA</td>
+                                <td style="color: var(--text-muted);">LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td>15/10/2026 15:59</td>
+                                <td>19/10/2026 12:51</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">3d 20h</td>
+                                <td class="text-center">2h 40m</td>
+                                <td class="text-center">3d 20h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3221925                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3221925 - Estudo, Prova de Conceito (PoC) e Dimensionamento de VM para Servidor TACACS+ - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td>14/10/2026 14:34</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3220968                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3220968 - Produzir relatório semanal consolidado das atividades do Setor de TI - ISVI NEEMIAS SANTOS SILVA</td>
+                                <td style="color: var(--text-muted);">LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td>13/10/2026 17:06</td>
+                                <td>N/D</td>
+                                <td class="text-center">3</td>
+                                <td class="text-center">1d 14h</td>
+                                <td class="text-center">1d 14h</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3219879                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3219879 - Verificar possível malware &quot;perfctl&quot; no servidor Anlix Flashman - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td>13/10/2026 09:42</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">0m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3218766                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3218766 - Analisar contato informando ter obtido credenciais admin de sistemas internos da Ten Internet - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td>09/10/2026 12:15</td>
+                                <td>N/D</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">18m</td>
+                                <td class="text-center">18m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3217119                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3217119 - Aprimorar coleta de dados em AutoTickets para auxiliar na geração de relatórios com dados determinísticos - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td>08/10/2026 08:28</td>
+                                <td>N/D</td>
+                                <td class="text-center">3</td>
+                                <td class="text-center">20670d 17h</td>
+                                <td class="text-center">2d 1h</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Em Execução</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3215368                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3215368 - Analisando a plataforma de comunicação interna SLACK - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td>06/10/2026 16:07</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">4m</td>
+                                <td class="text-center">4m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3181397                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3181397 - Realizar verificação de câmeras PPA junto com o FULLTIME - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td>02/09/2026 08:50</td>
+                                <td>15/10/2026 17:41</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">1m</td>
+                                <td class="text-center">1m</td>
+                                <td class="text-center">43d 8h</td>
+                                <td class="text-right">Concluído</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3078726                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3078726 - Documentação dos Mikrotik&#039;s - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td>22/05/2026 13:29</td>
+                                <td>N/D</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center">3d 2h</td>
+                                <td class="text-center">8h 22m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                        <tr>
+                                <td style="font-family: monospace; font-weight: 600;">
+                                    3069558                                </td>
+                                <td>
+                                    <span class="badge badge-info">
+                                        Solicitação                                    </span>
+                                </td>
+                                <td>Protocolo 3069558 - Realizar Levantamento de Equipamentos de determinadas lojas - LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td style="color: var(--text-muted);">LIOMAR ANTONIO DE OLIVEIRA</td>
+                                <td>12/05/2026 12:39</td>
+                                <td>N/D</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">1h 9m</td>
+                                <td class="text-center">1h 9m</td>
+                                <td class="text-center">—</td>
+                                <td class="text-right">Aberto</td>
+                            </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+                                <div style="margin-top: 12px; font-size: 11px; color: var(--text-muted); line-height: 1.5; border-top: 1px solid var(--border); padding-top: 8px;">
+                    <strong>Legenda das métricas de tempo:</strong><br>
+                    • <strong>Tempo Atendimento:</strong> Do início do atendimento (ou 1º relato) até conclusão ou último relato se em aberto.<br>
+                    • <strong>Duração Atendimento:</strong> Total de horas de esforço registradas em relatos pelo colaborador neste chamado.<br>
+                    • <strong>Tempo Resolução:</strong> Tempo decorrido entre a abertura e a conclusão do chamado (exibe "—" se em aberto).
+                </div>
+            </div>
+        </div>
+        
+            </div>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Accordions Interativos
+    document.querySelectorAll('.card-accordion-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var card = this.closest('.card');
+            if (!card) return;
+            var body = card.querySelector('.accordion-body');
+            var arrow = this.querySelector('.accordion-arrow');
+            if (body) {
+                body.classList.toggle('collapsed');
+                if (arrow) {
+                    arrow.style.transform = body.classList.contains('collapsed') ? 'rotate(-90deg)' : 'rotate(0deg)';
+                }
+            }
+        });
+    });
+
+    // 2. Ordenação de Colunas das Tabelas
+    document.querySelectorAll('table.sortable-table th.sortable').forEach(function(th) {
+        th.addEventListener('click', function() {
+            var table = this.closest('table');
+            var tbody = table.querySelector('tbody');
+            if (!tbody) return;
+
+            var colIndex = Array.prototype.indexOf.call(this.parentNode.children, this);
+            var currentDir = this.getAttribute('data-sort-dir') || 'none';
+            var newDir = currentDir === 'asc' ? 'desc' : 'asc';
+
+            // Reset nos cabeçalhos irmãos
+            this.parentNode.querySelectorAll('th.sortable').forEach(function(sibling) {
+                sibling.removeAttribute('data-sort-dir');
+                sibling.classList.remove('sorted-asc', 'sorted-desc');
+                var ind = sibling.querySelector('.sort-indicator');
+                if (ind) ind.textContent = '⇅';
+            });
+
+            this.setAttribute('data-sort-dir', newDir);
+            this.classList.add(newDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+            var ind = this.querySelector('.sort-indicator');
+            if (ind) ind.textContent = newDir === 'asc' ? '▲' : '▼';
+
+            var rows = Array.from(tbody.querySelectorAll('tr'));
+            rows.sort(function(rowA, rowB) {
+                var cellA = rowA.children[colIndex];
+                var cellB = rowB.children[colIndex];
+                if (!cellA || !cellB) return 0;
+
+                var textA = (cellA.getAttribute('data-sort-value') || cellA.textContent || '').trim();
+                var textB = (cellB.getAttribute('data-sort-value') || cellB.textContent || '').trim();
+
+                var cleanA = textA.replace('%', '').replace('h', '').replace('m', '').replace('d', '').replace(/\./g, '').replace(',', '.').trim();
+                var cleanB = textB.replace('%', '').replace('h', '').replace('m', '').replace('d', '').replace(/\./g, '').replace(',', '.').trim();
+                var numA = parseFloat(cleanA);
+                var numB = parseFloat(cleanB);
+
+                if (!isNaN(numA) && !isNaN(numB) && !textA.includes('/') && !textA.includes(':')) {
+                    return newDir === 'asc' ? numA - numB : numB - numA;
+                }
+
+                return newDir === 'asc' ? textA.localeCompare(textB) : textB.localeCompare(textA);
+            });
+
+            rows.forEach(function(row) {
+                tbody.appendChild(row);
+            });
+        });
+    });
+});
+</script>    </body>
+</html>
+        
