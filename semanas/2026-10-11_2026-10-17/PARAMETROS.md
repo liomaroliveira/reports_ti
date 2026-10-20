@@ -51,3 +51,4 @@ Depois de copiar: `python3 scripts/checar_entradas.py`. Formato esperado de cada
 - **Ausências declaradas no relatório:** backups (8.2), Pontomais (2.4), `produtividade_geral` (4.5), investigações (8.3), pacote semanal.
 - **Correções feitas ao relatório da semana 41 (registradas no texto):** quadrante de backups sem fonte, 45h45m de economia sem fonte, "100% DatabaseTransactions" (62 arquivos ainda com RefreshDatabase), automação WiFeed diária (não semanal).
 - **Pendências para a semana 43:** ver 9.3 do relatório (perfctl/Flashman #3219879, apontamentos longos do Liomar, ZEUS #3137037, gincana de pentest, segredo do webhook Fullcam, quadrante de backups).
+- **Revisão final (2026-10-20):** observações de Liomar e Isac aplicadas: grandes seções (Parte I, II, III e Encerramento), tópico 8 com os indicadores do ERP Voalle, contexto do ZEUS, das automações Fullcam, do link RTMP e do padrão MikroTik, e TMA após a correção do AutoTickets.
