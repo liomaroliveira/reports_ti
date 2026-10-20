@@ -1,7 +1,7 @@
 # Relatório - Colaboradores x Tickets
 
 **Período:** 11/10/2026 a 17/10/2026  
-**Gerado em:** 19/10/2026 21:38:03  \n**Colaboradores Avaliados:** 3  
+**Gerado em:** 20/10/2026 12:06:05  \n**Colaboradores Avaliados:** 3  
 
 ## Resumo Geral de Produtividade
 
@@ -150,10 +150,10 @@
 | 3224372 | Solicitação | Protocolo 3224372 - (N2-TI) Configuração de Equipamentos / Atendimento Presencial - DIEGO SOUZA DOS SANTOS | LIOMAR ANTONIO DE OLIVEIRA | 16/10/2026 12:08 | N/D | 4 | 5h | 5h | — | Aberto |
 | 3223486 | Solicitação | Protocolo 3223486 - Auxiliar Larissa Roza na renovação do certificado Bradesco (Open APIs Bradesco) - LARISSA RIBEIRO ROZA | LIOMAR ANTONIO DE OLIVEIRA | 15/10/2026 15:59 | 19/10/2026 12:51 | 2 | 3d 20h | 2h 40m | 3d 20h | Concluído |
 | 3221925 | Solicitação | Protocolo 3221925 - Estudo, Prova de Conceito (PoC) e Dimensionamento de VM para Servidor TACACS+ - LIOMAR ANTONIO DE OLIVEIRA | LIOMAR ANTONIO DE OLIVEIRA | 14/10/2026 14:34 | N/D | 1 | 0m | 0m | — | Aberto |
-| 3220968 | Solicitação | Protocolo 3220968 - Produzir relatório semanal consolidado das atividades do Setor de TI - ISVI NEEMIAS SANTOS SILVA | LIOMAR ANTONIO DE OLIVEIRA | 13/10/2026 17:06 | N/D | 3 | 1d 14h | 1d 14h | — | Aberto |
+| 3220968 | Solicitação | Protocolo 3220968 - Produzir relatório semanal consolidado das atividades do Setor de TI - ISVI NEEMIAS SANTOS SILVA | LIOMAR ANTONIO DE OLIVEIRA | 13/10/2026 17:06 | N/D | 3 | 1d 14h | 1d 14h | — | Em Execução |
 | 3219879 | Solicitação | Protocolo 3219879 - Verificar possível malware "perfctl" no servidor Anlix Flashman - LIOMAR ANTONIO DE OLIVEIRA | LIOMAR ANTONIO DE OLIVEIRA | 13/10/2026 09:42 | N/D | 1 | 0m | 0m | — | Aberto |
 | 3218766 | Solicitação | Protocolo 3218766 - Analisar contato informando ter obtido credenciais admin de sistemas internos da Ten Internet - LIOMAR ANTONIO DE OLIVEIRA | LIOMAR ANTONIO DE OLIVEIRA | 09/10/2026 12:15 | N/D | 2 | 18m | 18m | — | Aberto |
-| 3217119 | Solicitação | Protocolo 3217119 - Aprimorar coleta de dados em AutoTickets para auxiliar na geração de relatórios com dados determinísticos - LIOMAR ANTONIO DE OLIVEIRA | LIOMAR ANTONIO DE OLIVEIRA | 08/10/2026 08:28 | N/D | 3 | 20670d 17h | 2d 1h | — | Em Execução |
+| 3217119 | Solicitação | Protocolo 3217119 - Aprimorar coleta de dados em AutoTickets para auxiliar na geração de relatórios com dados determinísticos - LIOMAR ANTONIO DE OLIVEIRA | LIOMAR ANTONIO DE OLIVEIRA | 08/10/2026 08:28 | N/D | 3 | 2d 5h | 2d 1h | — | Em Execução |
 | 3215368 | Solicitação | Protocolo 3215368 - Analisando a plataforma de comunicação interna SLACK - LIOMAR ANTONIO DE OLIVEIRA | LIOMAR ANTONIO DE OLIVEIRA | 06/10/2026 16:07 | N/D | 1 | 4m | 4m | — | Aberto |
 | 3181397 | Solicitação | Protocolo 3181397 - Realizar verificação de câmeras PPA junto com o FULLTIME - LIOMAR ANTONIO DE OLIVEIRA | LIOMAR ANTONIO DE OLIVEIRA | 02/09/2026 08:50 | 15/10/2026 17:41 | 1 | 1m | 1m | 43d 8h | Concluído |
 | 3078726 | Solicitação | Protocolo 3078726 - Documentação dos Mikrotik's - LIOMAR ANTONIO DE OLIVEIRA | LIOMAR ANTONIO DE OLIVEIRA | 22/05/2026 13:29 | N/D | 2 | 3d 2h | 8h 22m | — | Aberto |
