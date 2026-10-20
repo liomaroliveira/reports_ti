@@ -17,7 +17,7 @@ Gere o **relatório semanal consolidado** da semana a gerar (pasta mais recente 
 5. `docs/regras_metricas.md`, `docs/fontes_de_dados.md`, `docs/classificacao_protocolos.md`, `docs/glossario.md`.
 6. `docs/licoes_aprendidas.md`.
 
-Antes de concluir: `python3 scripts/validar_indice.py` e `python3 scripts/validar_relatorio.py` nos relatórios gerados, `bash scripts/renderizar_pdf.sh` para os PDFs e commit no Git.
+Antes de concluir: `python3 scripts/validar_indice.py` e `python3 scripts/validar_relatorio.py` nos relatórios gerados, `python3 scripts/md_para_html.py` para gerar o HTML a partir do `.md`, `bash scripts/renderizar_pdf.sh` para os PDFs, conferência visual do PDF e commit no Git.
 
 **Lembretes críticos:** Destaques Analíticos e tópicos condicionais conforme os dados (ver "Classes de Tópicos" na especificação) · ler os `_ANALISE_*.md` das fontes · nunca inventar dados nem usar números de semanas anteriores como dado atual (só como comparação rotulada) · toda afirmação com protocolo, commit ou fonte citada pelo **nome descritivo** (nunca nome ou caminho de arquivo) · AutoTickets descrito de forma genérica, pelo valor para a operação, e segurança dele narrada como reforço (`AGENTS.md`, regra 9) · WhatsApp (`miscelaneous/`) não é fonte.
 

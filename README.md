@@ -34,6 +34,7 @@ python3 scripts/checar_entradas.py
 
 # 7. Conferir índice e gerar PDFs (a IA também faz isso no fim do fluxo)
 python3 scripts/validar_indice.py semanas/<semana>/report_ti_*.{md,html}
+python3 scripts/md_para_html.py semanas/<semana>/report_ti_<semana>.md   # gera o .html a partir do .md
 bash scripts/renderizar_pdf.sh semanas/<semana>/report_ti_<semana>.html
 
 # 8. Quando chegar o parecer do Isvi: registrar em semanas/<semana>/feedback.md (template: templates/feedback.md)

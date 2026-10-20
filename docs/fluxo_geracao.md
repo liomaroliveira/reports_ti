@@ -58,7 +58,7 @@ Ler, antes de escrever qualquer seção:
 3. **Profundidade analítica (proibido resumir excessivamente):** cada tópico e subtópico com métricas, causas raízes, soluções, tabelas e contexto técnico.
 4. **Detalhamento por pessoa:** o Tópico 2 traz a visão completa de cada colaborador (atividades, distribuição do tempo, capacitação, Voalle × Pontomais), sem depender de relatório individual.
 5. **Ações conjuntas:** demanda com mais de um colaborador vira relato unificado, indicando a participação de cada um.
-6. **Saída:** `semanas/<semana>/report_ti_<Domingo>_<Sábado>.md`, `.html` (a partir de `templates/report.html`) e `.pdf`.
+6. **Saída:** escrever **só o `.md`** (`semanas/<semana>/report_ti_<Domingo>_<Sábado>.md`) e gerar o `.html` com `python3 scripts/md_para_html.py <arquivo.md>`; o `.pdf` sai na finalização. Statcards e barras entram no `.md` como marcadores `<!-- KPI: … -->` e `<!-- BARS: … -->` (sintaxe na docstring do script); CPF mascarado vai escapado (`\*\*\*.456.789-\*\*`). Não editar o `.html` à mão: corrigir o `.md` e gerar de novo.
 
 ---
 
@@ -76,7 +76,7 @@ Executar **apenas** para as pessoas pedidas no prompt ou em `PARAMETROS.md`. Sem
 
 1. `python3 scripts/validar_indice.py semanas/<semana>/report_ti_*.md semanas/<semana>/report_ti_*.html` — corrigir qualquer âncora quebrada.
    `python3 scripts/validar_relatorio.py semanas/<semana>/report_ti_*.md` — nomes/caminhos de arquivo citados no texto, termos técnicos ou negativos sobre o AutoTickets (aviso), termos proibidos, seções obrigatórias, Destaques Analíticos (3 a 5), tabela de acompanhamento com uma linha por observação do `feedback.md` anterior, tópico condicional 8.4 e dados que nunca podem aparecer (CPF/CNPJ sem máscara, senhas, RTMP).
-2. `bash scripts/renderizar_pdf.sh semanas/<semana>/report_ti_<...>.html` (e para cada individual gerado).
+2. `python3 scripts/md_para_html.py semanas/<semana>/report_ti_<...>.md` e depois `bash scripts/renderizar_pdf.sh semanas/<semana>/report_ti_<...>.html` (e para cada individual gerado). Conferir o PDF visualmente (tabelas, quebras de página, cards).
 3. Atualizar a seção de status do `PARAMETROS.md` da semana (o que foi gerado e o que ficou pendente).
 4. Commitar (o hook bloqueia apenas chaves de API e dados do WhatsApp).
 5. Quando chegar o parecer da Coordenação: salvar em `semanas/<semana>/feedback.md` e registrar as lições novas em `docs/licoes_aprendidas.md`.

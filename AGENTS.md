@@ -55,7 +55,7 @@ reports_ti/
 │       ├── _VERIFICAR_EQUIPE_TI.md    # O que a equipe precisa verificar durante a semana (não é fonte)
 │       └── _PENDENCIAS_AUTOTICKETS.md # Problemas das exportações do AutoTickets a corrigir (não é fonte)
 ├── templates/                # report.css (visual oficial), report.html (esqueleto) e feedback.md (observações)
-├── scripts/                  # nova_semana.sh, checar_entradas.py, renderizar_pdf.sh, validar_indice.py, validar_relatorio.py, mascarar_dados.py
+├── scripts/                  # nova_semana.sh, checar_entradas.py, md_para_html.py, renderizar_pdf.sh, validar_indice.py, validar_relatorio.py, mascarar_dados.py
 ├── .githooks/pre-commit      # Bloqueia CPF sem máscara, chaves e dados do WhatsApp
 └── miscelaneous/             # FORA DO ESCOPO — não ler (conhecimento de extração do WhatsApp)
 ```

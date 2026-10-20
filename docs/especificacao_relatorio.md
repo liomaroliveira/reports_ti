@@ -21,7 +21,7 @@ A moldura de abertura do documento deve seguir estritamente o padrão corporativ
 
 ### 📑 2. Paginação, Diagramação e Renderização PDF
 
-0. **Ferramenta oficial:** gerar o PDF com `bash scripts/renderizar_pdf.sh <arquivo.html>` (embute `templates/report.css` e já aplica `--no-pdf-header-footer`).
+0. **Ferramentas oficiais:** o `.md` é a fonte única; o HTML sai de `python3 scripts/md_para_html.py <arquivo.md>` (moldura do template, ids do índice, statcards pelos marcadores `<!-- KPI: … -->`, barras por `<!-- BARS: … -->`, células sem quebra para números/protocolos/CPF e tabela densa quando há CPF/CNPJ) e o PDF de `bash scripts/renderizar_pdf.sh <arquivo.html>` (embute `templates/report.css` e já aplica `--no-pdf-header-footer`).
 1. **Remoção de Cabeçalho/Rodapé do Navegador no PDF:**
    - Na geração do PDF via Chromium/Playwright, utilizar obrigatoriamente o parâmetro `--no-pdf-header-footer` (ou equivalente no CSS com `@page { margin: 15mm 12mm 15mm 12mm; }`), evitando que datas automáticas e caminhos locais (`file:///...` ou numerações `1/2`) poluam o cabeçalho e rodapé.
    - O próprio design HTML/CSS deve gerenciar cabeçalhos e numeração de página de forma interna e elegante.
