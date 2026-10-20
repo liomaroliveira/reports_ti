@@ -7,6 +7,8 @@
     2. Substituir todos os {{...}}; duplicar/remover blocos de exemplo conforme os dados REAIS da semana.
     3. Manter os ids das seções idênticos aos links do índice (scripts/validar_indice.py confere).
     4. Gerar o PDF: bash scripts/renderizar_pdf.sh <arquivo.html>  (embute o CSS e imprime A4 sem cabeçalho do navegador)
+  Selos (badge-count) só com informação útil (ex.: "5 destaques"); não repetir a semana em toda seção.
+  Diagramação: td.nowrap para números/protocolos/datas/CPF; table.tabela-densa para tabelas largas; kpi-grid.cols-3/cols-5 conforme a quantidade de cards.
   Componentes disponíveis em templates/report.css: kpi-grid/kpi-card (emerald|purple|amber|rose), table-container,
   badge (badge-success|info|warning|danger), card-narrative, anomalia-card, time-dist-grid/progress-bar (green|amber), footer.
 -->
@@ -20,7 +22,7 @@
 
   <div class="page-section">
     <div class="header-banner">
-      <span class="header-badge">Relatório Semanal Consolidado — Setor de TI</span>
+      <span class="header-badge">Uso interno · Semana {{XX}} / {{AAAA}}</span>  <!-- não repetir o título no selo -->
       <h1>Relatório Semanal Consolidado - Setor TI</h1>
       <p class="subtitle">Panorama Operacional, Gestão de Demandas, Incidentes, Infraestrutura Crítica e Outros</p>
     </div>

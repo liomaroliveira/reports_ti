@@ -431,3 +431,25 @@ tr:last-child td {
   font-size: 6.8pt;
   color: #94a3b8;
 }
+
+/* ===== Paginação e legibilidade (revisão da semana 42) ===== */
+/* Não partir linha de tabela, card nem statcard entre duas páginas */
+tr, .card-narrative, .anomalia-card, .kpi-card, .kpi-grid, .time-item { break-inside: avoid; page-break-inside: avoid; }
+thead { display: table-header-group; }
+/* Cabeçalhos não quebram no meio da palavra ("PROTO COLO") */
+th { hyphens: none; word-break: keep-all; overflow-wrap: normal; }
+/* Números, protocolos, datas, horas, valores e CPF mascarado ficam numa linha só */
+td.nowrap, th.nowrap { white-space: nowrap; }
+/* Tabelas largas (auditoria Fullcam, PPPoE) */
+table.tabela-densa { font-size: 6.6pt; }
+table.tabela-densa th, table.tabela-densa td { padding: 4px 5px; }
+/* Grade de statcards conforme a quantidade (evita card órfão em nova linha) */
+.kpi-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.kpi-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+/* Listas fora dos cards com marcador visível; dentro dos cards, sem vazar a borda */
+.page-section > ul, .page-section > ol { margin: 3px 0 7px 16px; }
+.page-section li { margin-bottom: 2px; }
+.anomalia-card ul, .card-narrative ul { margin-left: 14px; }
+.sub-sub-title { font-size: 8.6pt; color: #1e3a8a; margin: 10px 0 5px; }
+.card-narrative.note { background: #f8fafc; }
+code { font-size: 0.92em; background: #f1f5f9; padding: 0 3px; border-radius: 3px; overflow-wrap: anywhere; }
