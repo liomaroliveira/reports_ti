@@ -34,11 +34,34 @@ A moldura de abertura do documento deve seguir estritamente o padrão corporativ
 
 ---
 
+### 🧩 Classes de Tópicos: Fixos, Condicionais e Dinâmicos
+
+O relatório **não é um formulário igual toda semana**: a estrutura tem uma espinha fixa (para comparação e histórico) e partes que mudam com os dados.
+
+| Classe | Quais | Regra |
+| :--- | :--- | :--- |
+| **Fixos** | Resumo Executivo, 1 a 9 e seus subtópicos numerados (exceto os condicionais) | Sempre presentes. Sem demanda na semana: **ausência justificada** (nunca omitir, nunca simular). |
+| **Condicionais** | **8.4** Anomalias PPPoE (fonte `fontes/autotickets/anomalias_pppoe/`). Novos módulos do AutoTickets entram nesta classe ao serem criados. | Só existem no índice e no corpo **se houver fonte**. Sem fonte: não criar a seção; registrar em uma linha no fim do Resumo Executivo: *"Tópicos condicionais sem fonte nesta semana: 8.4 …"*. |
+| **Dinâmicos** | **📈 Destaques Analíticos da Semana** e **⭐ Fatos Notáveis e Anomalias da Semana** | O **título de cada item é o próprio achado** (ex.: "Fila do TI cresceu 18% puxada por Patrimônio e Logística"). Quantidade e assunto dependem dos dados da semana. Os itens são `###` não numerados e **não entram no índice** (só a seção). |
+| **Subtópicos livres** | Dentro de qualquer tópico fixo | Quando os dados revelarem um padrão relevante (concentração, outlier, recorrência), criar `####` **sem número** com o achado no título (ex.: "#### Concentração de chamados no setor Financeiro"). Não entram no índice. |
+
+**Como decidir o que vira tópico dinâmico** (critérios objetivos, aplicados às fontes da semana e à semana anterior):
+
+1. Variação de indicador-chave ≥ 20% em relação à semana anterior (fila, volume por setor, horas, base WiFeed, saldo Fullcam).
+2. Picos e outliers (ex.: apontamento > 8h ou atravessando noite/fim de semana; tempo de atendimento absurdo; um setor ou solicitante concentrando > 30% da demanda).
+3. Novos tipos de demanda, setores ou sistemas que não apareciam antes.
+4. Recorrências (mesmo problema, cliente, equipamento ou POP em semanas consecutivas; janela de 30 dias para reincidência).
+5. Desvios de plano (prazo, escopo ou prioridade diferente do registrado no relatório anterior).
+6. Inconsistências relevantes nas próprias fontes (dados do AutoTickets/Voalle que mudam a leitura de um indicador — ver `_ANALISE_*.md`).
+
+**Onde encaixar:** padrão de dados/indicadores → **📈 Destaques Analíticos**; ocorrência/evento incomum (incidente, falha, atraso, desvio) → **⭐ Fatos Notáveis**; padrão restrito a um tema → **subtópico livre** dentro do tópico fixo correspondente. **Entregas normais** (projetos concluídos, equipamentos instalados) vão para os Tópicos 3 ou 4, nunca para Fatos Notáveis.
+
 ### 📂 3. Índice Geral de Navegação (com Links Âncoras 100% Funcionais)
 
 O relatório deve conter um **Índice Completo** no início, com links internos rigorosamente correspondentes aos títulos do corpo do texto. **O título no corpo deve ser idêntico ao do índice** (sem acrescentar parênteses ou complementos — eles mudam a âncora). Conferir com `python3 scripts/validar_indice.py`:
 
 * [Resumo Executivo](#resumo-executivo)
+* [📈 Destaques Analíticos da Semana](#-destaques-analíticos-da-semana)
 * [⭐ Fatos Notáveis e Anomalias da Semana](#-fatos-notáveis-e-anomalias-da-semana)
 * [1. Gestão de Demandas](#1-gestão-de-demandas)
   * [1.1 Demandas Pendentes](#11-demandas-pendentes)
@@ -95,7 +118,7 @@ O relatório deve conter um **Índice Completo** no início, com links internos 
   * [8.1 Disponibilidade de Serviços e Incidentes em Sistemas](#81-disponibilidade-de-serviços-e-incidentes-em-sistemas)
   * [8.2 Execução e Validação de Backups](#82-execução-e-validação-de-backups)
   * [8.3 Atualizações, Melhorias e Ações de Modernização](#83-atualizações-melhorias-e-ações-de-modernização)
-  * [8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk](#84-anomalias-de-tráfego-pppoe-e-ações-proativas-para-o-service-desk)
+  * [8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk](#84-anomalias-de-tráfego-pppoe-e-ações-proativas-para-o-service-desk) *(condicional)*
 * [9. Pontos de Atenção e Próximas Ações](#9-pontos-de-atenção-e-próximas-ações)
   * [9.1 Riscos Tecnológicos e Vulnerabilidades Identificadas](#91-riscos-tecnológicos-e-vulnerabilidades-identificadas)
   * [9.2 Necessidades de Investimentos e Aquisições](#92-necessidades-de-investimentos-e-aquisições)
@@ -109,10 +132,18 @@ O relatório deve conter um **Índice Completo** no início, com links internos 
 Visão geral analítica da semana: síntese das principais entregas de engenharia de software e infraestrutura, quantitativo global de chamados e suportes a técnicos, principais conquistas e prioridades operacionais para a próxima semana.
 
 - **Evolução em relação à semana anterior:** statcards ou tabela curta com os indicadores-chave da semana ao lado dos valores da semana anterior (fonte: `semanas/<anterior>/report_ti_*.md`), sempre rotulados como "semana anterior".
+- **Tópicos condicionais ausentes:** quando algum tópico condicional não tiver fonte, uma linha no fim do Resumo Executivo listando-os (ver "Classes de Tópicos").
 - **Acompanhamento das observações da semana anterior:** quando existir `semanas/<anterior>/feedback.md`, incluir no fim do Resumo Executivo uma tabela com **todas** as observações (do Isvi e do Liomar): *Observação · Autor · Como foi tratada · Onde (tópico) · Status*. Esta tabela fica dentro do Resumo Executivo e **não** ganha entrada própria no índice.
 
+#### 📈 Destaques Analíticos da Semana
+Seção dinâmica obrigatória, logo após o Resumo Executivo. Responde "foi bom?", "para onde estamos apontando?" e "o que precisa mudar?" a partir dos **dados** (critérios em "Classes de Tópicos"). De **3 a 5 destaques**, cada um como `###` sem número cujo título é o próprio achado, contendo:
+- **Evidência:** número(s) da semana com a fonte (caminho, protocolo ou commit) e, quando houver, o valor da semana anterior rotulado.
+- **Leitura:** o que o dado significa para a operação (bom, ruim, neutro, e por quê).
+- **Recomendação:** ação concreta, responsável sugerido e onde será acompanhada (ex.: "9.3", "próximo relatório").
+Se nenhum critério for atingido, declarar "Semana sem desvios relevantes nos indicadores" e citar os indicadores verificados.
+
 #### ⭐ Fatos Notáveis e Anomalias da Semana
-Seção obrigatória dedicada ao aprofundamento de ocorrências incomuns. Para cada fato notável identificado no período (desvio de planejamento, atraso de frota, falha física atípica, contestação indevida de cliente ou incidente de segurança):
+Seção obrigatória dedicada ao aprofundamento de ocorrências incomuns (incidentes, falhas, atrasos, desvios). Entregas normais não entram aqui (vão para os Tópicos 3 ou 4). Para cada fato notável identificado no período (desvio de planejamento, atraso de frota, falha física atípica, contestação indevida de cliente ou incidente de segurança):
 - **Ocorrência e Ativos Envolvidos:** O que aconteceu, data e equipamentos/sistemas impactados.
 - **Causa Raiz Técnica e Contexto:** Por que ocorreu e fatores determinantes.
 - **Impacto Operacional:** Horas perdidas, retrabalho ou risco gerado.
@@ -184,17 +215,18 @@ Detalhamento de cada incidente ocorrido na semana:
 - **8.2 Execução e Validação de Backups:**
   - Apresentar o quadrante de governança: total de VMs/CTs na rotina, jobs executados x falhas na semana, falhas refeitas manualmente com justificativa e data do último teste de Disaster Recovery.
 - **8.3 Atualizações, Melhorias e Ações de Modernização:** Aplicações de patches, manutenção física preventiva (ex.: Dell R910, nobreaks NHS) e estudos de segurança (integrar dados de `fontes/investigacoes/`).
-- **8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk** *(tópico condicional: fonte `fontes/autotickets/anomalias_pppoe/`; sem a fonte, uma linha de ausência justificada)*. Objetivo: entregar ao Service Desk uma lista priorizada de clientes com comportamento anômalo para **investigação e ação proativa**, antes que virem reclamação, incidente de rede ou risco de segurança.
-  - **Janela do retrato:** informar o período real coberto pela fonte. Se o retrato for posterior à semana (ex.: gerado na segunda-feira), rotular como "retrato de DD/MM" e não somar aos indicadores da semana.
-  - **Statcards:** total de anomalias, críticas, inversões de tráfego (upload > download), volume de upload × download e quantos casos já têm ticket/OS aberto.
-  - **Ranking por razão Upload/Download (decrescente)**, top 10–15: login PPPoE, cidade/POP, plano, upload/download, razão, quedas, severidade/score e **hipótese → ação proativa**. **Proibido** exibir nome, CPF/CNPJ ou IP do cliente (o login basta para o Service Desk localizar o caso).
+- **8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk** *(tópico condicional — ver "Classes de Tópicos"; fonte `fontes/autotickets/anomalias_pppoe/`)*. Objetivo: entregar ao Service Desk, com todos os dados necessários para localizar cada caso nos sistemas, a lista priorizada de clientes com comportamento anômalo **para investigação e ação proativa imediata**.
+  - **Natureza da fonte:** é um **retrato atual**, gerado no dia da emissão do relatório consolidado, com problemas a serem tratados **agora**. **Não se aplica o recorte do período da semana**: informar apenas a data/hora do retrato (ex.: "retrato de 19/10/2026 22:07").
+  - **Statcards:** total de anomalias, críticas, inversões de tráfego (upload > download), volume de upload × download e quantos casos já têm ticket/OS aberto (quando a fonte informar).
+  - **Tabela completa, ordenada por razão Upload/Download (decrescente)**, com os dados de identificação: **cliente (nome), login PPPoE, contrato, CPF/CNPJ mascarado, cidade/bairro, POP/concentrador, IP, MAC, fabricante da CPE, plano**, sinal RX, upload/download, razão, throughput, quedas, severidade/score e **hipótese → ação proativa**. Até 30 casos na íntegra; acima disso, os 30 primeiros e a contagem do restante.
   - **Hipóteses e ações por perfil** (a confirmar pelo Service Desk, nunca afirmadas como fato):
     - razão muito alta (> 15x) com download baixo → CPE possivelmente comprometida (botnet/proxy residencial) → verificar a CPE, atualizar firmware, trocar senha e checar portas expostas;
     - upload alto e constante em sessão longa → DVR/câmeras, backup em nuvem ou servidor → confirmar o uso com o cliente e oferecer plano corporativo/IP fixo;
     - cliente que é provedor ou empresa de telecom → possível revenda → encaminhar ao Comercial;
-    - contrato interno/cortesia → rotular como interno e excluir do ranking;
-    - muitas quedas (flapping), rajadas ou sinal óptico ruim → problema físico → abrir OS de campo.
-  - **Concentração por POP/concentrador** e **recorrência** (casos que já apareciam na semana anterior, quando houver a fonte anterior).
+    - contrato interno/cortesia → rotular como interno (manter na tabela, fora do ranking de prioridade);
+    - muitas quedas (flapping), rajadas ou sinal óptico ruim (RX < −27 dBm ou −40 dBm/LOS) → problema físico → abrir OS de campo.
+  - **Concentração por POP/concentrador** e **recorrência** (casos que já constavam no retrato do relatório anterior, quando houver).
+  - **Encaminhamento:** fechar com a lista de ações sugeridas ao Service Desk e, no relatório seguinte, o desfecho dos casos encaminhados.
   - **Ressalvas de cálculo:** enquanto o AutoTickets não corrigir, declarar que o volume é acumulado por sessão (não "últimas 24h"), que o throughput pode estar inflado pelo número de quedas e que a severidade não segue uma regra única de score (`fontes/autotickets/anomalias_pppoe/_ANALISE_FONTE.md`).
 
 #### 9. Pontos de Atenção e Próximas Ações

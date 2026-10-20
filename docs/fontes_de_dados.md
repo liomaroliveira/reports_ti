@@ -4,7 +4,7 @@ Todas as entradas de uma semana ficam em `semanas/<semana>/fontes/`. O que não 
 
 | Fonte | Onde colocar | Alimenta |
 | :--- | :--- | :--- |
-| Voalle (exportação por colaborador) | `fontes/voalle/<pessoa>.<html\|pdf\|csv>` | Tópicos 1, 2, 5, 6, 7 (narrativas, protocolos, horas) |
+| Voalle (exportação por colaborador) | `fontes/voalle/<pessoa>.<html\|pdf\|csv>` (**HTML, "Tipo de data: Lançamento"**) | Tópicos 1, 2, 5, 6, 7 (narrativas, protocolos, horas) |
 | AutoTickets — colaborador × ticket | `fontes/autotickets/colaborador_x_ticket/` | Tópico 1 (balanço da fila) e 2 (TMA, TMR, produtividade) |
 | AutoTickets — acompanhamento de protocolos | `fontes/autotickets/acompanhamento_protocolos/` | Tópico 1 (pendentes, parados 15+ dias, andamento) |
 | AutoTickets — WiFeed | `fontes/autotickets/wifeed_daily_update_voucher/` | 4.2 (na íntegra, com SVG do HTML) |
@@ -12,10 +12,12 @@ Todas as entradas de uma semana ficam em `semanas/<semana>/fontes/`. O que não 
 | AutoTickets — Fullcam inadimplência | `fontes/autotickets/fullcam_automacao_inadimplencia/` | 4.4 |
 | AutoTickets — Fullcam instalação | `fontes/autotickets/fullcam_automacao_instalacao_camera/` | 4.4 |
 | AutoTickets — tarefas executadas | `fontes/autotickets/tarefas_executadas/` | Tópico 2 e 2.4 (produção bruta por colaborador; preferir o **CSV**, o PDF corta relatos) |
-| AutoTickets — anomalias PPPoE | `fontes/autotickets/anomalias_pppoe/` | 8.4 (preferir o **CSV mascarado**; o PDF tem nome e IP de clientes) |
-| AutoTickets — problemas recorrentes | `fontes/autotickets/problemas_recorrentes/` | 5 e 8 |
+| AutoTickets — anomalias PPPoE | `fontes/autotickets/anomalias_pppoe/` | 8.4, tópico condicional (CSV). **Retrato atual** gerado no dia da emissão: não aplicar o recorte da semana |
+| AutoTickets — **pacote semanal** (proposto) | `fontes/autotickets/pacote_semanal/autotickets_semana_<inicio>_<fim>.json` | Todos os tópicos do AutoTickets: substitui os arquivos por módulo quando existir (`docs/formato_exportacao_autotickets.md`) |
+| AutoTickets — problemas recorrentes | `fontes/autotickets/problemas_recorrentes/` | 5, 6, 7 e 8.4 (operação inteira, janela de 30 dias: usar só os tipos ligados ao TI e o cruzamento com o PPPoE — HTML) |
 | AutoTickets — produtividade geral | `fontes/autotickets/produtividade_geral/` | 4.5 |
 | AutoTickets — desenvolvimento | commits no repositório `autotickets_v2` (`AUTOTICKETS_REPO`) ou `fontes/autotickets/desenvolvimento/` | 4.1 |
+| Infraestrutura — backups | `fontes/infraestrutura/backups/` | 8.2 (quadrante obrigatório: sem esta fonte, declarar ausência — nunca estimar) |
 | Investigações / segurança | `fontes/investigacoes/AAAA-MM-DD_<tema>/` | 3, 8.3, 9.1 |
 | Individuais enviados pelos colegas (opcional) | `individuais/<pessoa>.<ext>` | Fonte complementar do Tópico 2 |
 | Relatório consolidado da semana anterior | `semanas/<anterior>/report_ti_*.md` | Continuidade (1.1, 1.2, 9.3) e comparação |
@@ -50,7 +52,7 @@ git -C "${AUTOTICKETS_REPO:-$HOME/dev/autotickets_v2}" log --since="AAAA-MM-DD 0
 ```
 
 - **Arquivos multi-formato:** mesmo nome base em `.md`, `.html`, `.csv`, `.pdf` = mesmo relatório. Os nomes trazem a **data de geração**, não o período: confirmar dentro do arquivo que o período coberto é a semana corrente.
-- **Formatos não são equivalentes** (análise da semana 42, `fontes/autotickets/_ANALISE_GERAL.md`): usar o formato preferido de cada módulo. Resumo: colaborador × ticket → MD (+ CSV para colunas extras); WiFeed → CSV ou MD (o SVG do HTML é opcional); Fullcam inadimplência e instalação → CSV/MD filtrando NOTIFY e a semana; Fullcam lucros → CSV (KPIs do PDF não fecham); tarefas executadas → CSV; anomalias PPPoE → CSV; Voalle → **HTML**.
+- **Formatos não são equivalentes** (análise da semana 42, `fontes/autotickets/_ANALISE_GERAL.md`): usar o formato preferido de cada módulo. Resumo: colaborador × ticket → MD (+ CSV para colunas extras); WiFeed → CSV ou MD (o SVG do HTML é opcional); Fullcam inadimplência e instalação → CSV/MD filtrando NOTIFY e a semana; Fullcam lucros → CSV (KPIs do PDF não fecham); tarefas executadas → CSV; anomalias PPPoE → CSV; Voalle → **HTML**. Formato-alvo único: `docs/formato_exportacao_autotickets.md`.
 - **colaborador_x_ticket** é gerado a partir do banco do Voalle: é a fonte métrica primária; `fontes/voalle/` complementa com o qualitativo.
 - **WiFeed:** contexto institucional do Captive Portal em `docs/referencias/wifeed_contexto.md`.
 - Frentes do AutoTickets: ROI de automações (horas humanas economizadas), integrações de rede/NOC (telemetria óptica, RADIUS, CGNAT, ping), módulo de atendimento (modais do Voalle, busca de clientes, omnichannel), arquitetura (Local-First com Duplo Cursor Monotônico, orquestrador multi-provedor de IA, servidor MCP `laravel/mcp`, design Glassmorphism).

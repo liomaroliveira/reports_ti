@@ -19,6 +19,8 @@ Correções conceituais exigidas pela Coordenação (feedback de 2026-09-28 a 20
 
 - Tabela por colaborador: horas apontadas no Voalle × horas trabalhadas no Pontomais.
 - Divergência é **obrigatoriamente explicada**: tickets deixados em execução, sobreposição de demandas, deslocamento intermunicipal, cronômetro ativo em almoço/interjornada — ou corrigida.
+- **Critério de data do Voalle:** exportar e citar por **"Lançamento"** (cada apontamento conta uma vez, na semana em que foi finalizado). Se a fonte for o AutoTickets, declarar o critério usado (hoje ele reproduz "Inclusão").
+- **Apontamentos longos:** todo apontamento > 8h ou que atravessa noite/fim de semana deve ser listado no 2.4 com o protocolo e a justificativa (ex.: 3217119 com 120:09 e 3218766 com 89:37 na semana 42). Orientação da Coordenação (feedback da semana 41): fechar os relatos no fim do expediente e pausar o play ao mudar de foco.
 
 ## 4. Apoio ao técnico de campo (Tópico 7)
 
@@ -59,3 +61,8 @@ Correções conceituais exigidas pela Coordenação (feedback de 2026-09-28 a 20
 ## 10. Dados pessoais em tabelas
 
 - CPF/CNPJ de clientes sempre mascarado (`***.456.789-**`), inclusive na tabela de auditoria Fullcam (4.3.2).
+- Relatório de uso interno: nome, contrato, login, IP, MAC e endereço **aparecem** quando o setor precisar localizar o caso (ex.: 8.4 PPPoE). Senhas e stream keys nunca.
+
+## 11. Fullcam — registros excluídos
+
+- **Contrato 96660 (DAVID BRASIL FERNANDES):** ignorar na auditoria financeira (4.3) até a correção da regra do módulo (não é contrato de câmera; feedback da semana 41).

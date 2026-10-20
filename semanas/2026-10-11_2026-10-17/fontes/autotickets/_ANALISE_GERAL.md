@@ -18,7 +18,7 @@
 - **Ruído:** 96% a 97% das linhas de inadimplência e de instalação são NOTIFY ou avisos repetidos.
   - Na inadimplência, os NOTIFY **pararam em 06/10**: verificar o agendador.
   - Na instalação, o protocolo 3198228 está preso na fila desde 20/09.
-- **Dados sensíveis:** CPF/CNPJ (lucros e PPPoE), stream keys RTMP e e-mails (instalação) e senhas em relatos (tarefas executadas) estavam sem máscara. **Os arquivos de texto foram mascarados em 19/10.** Os PDFs com esses dados ficaram fora do git.
+- **Dados sensíveis:** CPF/CNPJ (lucros e PPPoE), stream keys RTMP e e-mails (instalação) e senhas em relatos (tarefas executadas) estavam sem máscara. **Os arquivos de texto foram mascarados em 19/10.** Por decisão da mesma data, os PDFs também são versionados, porque o uso é interno, e o pre-commit apenas avisa.
 
 ## Formato recomendado por módulo
 
@@ -30,9 +30,9 @@
 | fullcam_automacao_instalacao_camera | **MD** (ou CSV mascarado) | Os avisos repetidos devem ser descartados. |
 | fullcam_lucros_prejuizos | **CSV mascarado** | Permite recalcular os KPIs. Os do PDF não são confiáveis. |
 | acompanhamento_protocolos | **MD** | É idêntico ao PDF, mas o texto é gerado por IA e precisa ser confirmado no Voalle. |
-| tarefas_executadas | **CSV** | O conteúdo bate 100% com o Voalle. O PDF corta relatos e perde registros. |
-| anomalias_pppoe | **CSV mascarado** (+ KPIs/filtros do cabeçalho do PDF) | O PDF expõe nome e IP. |
-| Voalle (ERP) | **HTML** | Está completo. O PDF do David não tem as horas. |
+| tarefas_executadas | **CSV** | Reproduz exatamente o Voalle por **Inclusão**, e o conteúdo bate 100%. O PDF corta relatos e perde registros. |
+| anomalias_pppoe | **CSV + PDF** (retrato atual) | O IP, os KPIs e os filtros só existem no PDF. |
+| Voalle (ERP) | **HTML, por Lançamento** | Está completo. O PDF do David não tem as horas. Lançamento conta cada apontamento uma única vez. |
 
 **Formatos que podem deixar de ser exportados para o relatório semanal:** os PDFs do AutoTickets e o HTML de quase todos os módulos.
 
@@ -50,4 +50,5 @@
    - protocolos citados que não existem;
    - linhas duplicadas;
    - status incoerente com o progresso.
-9. *(Ideal)* Uma exportação **"pacote da semana"** com todos os módulos em CSV + um `manifest.json` (período, contagens, somas, checksums). O `scripts/checar_entradas.py` poderia conferir esse pacote automaticamente.
+9. **Formato-alvo:** um único **pacote semanal em JSON**, especificado em [`docs/formato_exportacao_autotickets.md`](../../../../docs/formato_exportacao_autotickets.md). Ele substitui todos os arquivos acima. Pendências consolidadas: [`../../_PENDENCIAS_AUTOTICKETS.md`](../../_PENDENCIAS_AUTOTICKETS.md).
+10. *(Detalhe do item 9)* Uma exportação **"pacote da semana"** com todos os módulos em CSV + um `manifest.json` (período, contagens, somas, checksums). O `scripts/checar_entradas.py` poderia conferir esse pacote automaticamente.

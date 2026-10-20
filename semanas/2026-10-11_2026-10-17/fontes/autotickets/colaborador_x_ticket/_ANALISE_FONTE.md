@@ -41,6 +41,48 @@
 | Tempo de Atendimento de 3217119 | **20670d 17h** (cerca de 56 anos) | — | Data nula convertida em epoch (1970). Esse valor contamina TMA e TMR. |
 | "Equipe do Colaborador" (CSV) | Mostra a equipe do ticket | — | 17 linhas com "ADM Operacional", "COTAÇÕES", "Patrimônio e Logística" etc. |
 
+## Investigação: "Tempo Atendimento" de 20670 dias (3217119)
+
+**Evidência no arquivo:**
+
+| Campo | Valor |
+| :--- | :--- |
+| Protocolo | 3217119, "Aprimorar coleta de dados em AutoTickets…", LIOMAR |
+| Abertura / Encerramento | 08/10/2026 08:28 / **N/D** |
+| Status | **Em Execução**, o único chamado do relatório nesse status |
+| Tempo Atendimento | **20670d 17h** |
+| Duração Atendimento (soma dos relatos) | 2d 1h (coerente) |
+| Tempo Resolução | — |
+
+**Onde está o cálculo:** `autotickets_v2/app/Services/Reports/CollaboratorTicketReportService.php`, linhas 492–500.
+
+```php
+$serviceStart = $a['in_execution'] ?? $a['first_report_at'] ?? null;   // usa in_execution como DATA de início
+$serviceEnd   = $a['concluded_at'] ?? $a['last_report_at'] ?? null;
+$serviceSec   = abs((int) Carbon::parse($endPoint)->diffInSeconds(Carbon::parse($serviceStart)));
+```
+
+**Diagnóstico provável:**
+
+- **O campo usado como data de início:** `in_execution` vem de `assignments.in_execution` do Voalle. No resto do sistema, ele só é usado como **indicador** de "em execução" (`IS NOT NULL` em `TicketController.php:271-276` e na linha 274 do próprio serviço). O valor guardado ali provavelmente **não é um timestamp de início de atendimento**: pode ser um ID, um contador ou um horário sem data.
+- **Por que só este chamado foi afetado:** o 3217119 é o único do relatório com `in_execution` preenchido, porque o play estava aberto. Todos os outros caem no fallback `first_report_at` e saem coerentes.
+- **De onde vem o número:** com fim = último relato (13/10 08:38), o início implícito fica em **10/03/1970**, perto do epoch. Ou seja, o valor de `in_execution` foi interpretado como uma data de 1970.
+- **Por que o erro não apareceu antes:** o `abs()` esconde intervalos negativos, e não existe teste de sanidade (ex.: duração > 365 dias).
+
+**Como confirmar:**
+
+```sql
+SELECT id, in_execution, pg_typeof(in_execution), beginning_date, conclusion_date, status
+FROM assignments WHERE protocol = 3217119;   -- ajustar o nome da coluna de protocolo/tabela conforme o schema do Voalle
+```
+
+**Correção sugerida:**
+
+1. Não usar `in_execution` como início. Usar `first_report_at` (primeiro relato) ou a data de início do primeiro apontamento.
+2. Remover o `abs()` e tratar intervalo negativo como erro.
+3. Validar durações acima de 365 dias ou anteriores a 2000: registrar em `alertas` e excluir de TMA e TMR.
+4. Criar um teste em `tests/Feature/Reports/CollaboratorTicketReportTest.php` com um chamado em execução (`in_execution` preenchido e `concluded_at` nulo).
+
 ## Duplicidades
 
 São 66 protocolos únicos distribuídos em 76 linhas. Nenhuma linha é 100% idêntica a outra, mas há repetições sem explicação:

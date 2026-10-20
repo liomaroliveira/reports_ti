@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-# Bloqueia commits com dados sensíveis (LGPD e segredos).
+# Bloqueia commits com segredos de infraestrutura (chaves de API) e dados do WhatsApp.
+# Dados pessoais e credenciais em relatos (CPF/CNPJ, e-mail, RTMP, senha) geram apenas AVISO:
+# o repositório é de uso interno da empresa (decisão de 2026-10-19). Mascarar com scripts/mascarar_dados.py quando possível.
 # Ativação (uma vez por clone): git config core.hooksPath .githooks
 
 fail=0
+avisos=
 
 # 1. Arquivos do WhatsApp que não sejam README/scripts
 bad_paths=$(git diff --cached --name-only --diff-filter=AM \
@@ -24,8 +27,8 @@ if [ -n "$hits" ]; then
   fail=1
 fi
 
-# 3. Dados pessoais e credenciais (CPF/CNPJ com ou sem pontuação, e-mail de cliente, RTMP, senha)
-#    nos arquivos de texto e PDFs adicionados/alterados. Mesma detecção de scripts/mascarar_dados.py.
+# 3. AVISO (não bloqueia): dados pessoais e credenciais (CPF/CNPJ com ou sem pontuação, e-mail de cliente,
+#    RTMP, senha) nos arquivos de texto e PDFs adicionados/alterados. Mesma detecção de scripts/mascarar_dados.py.
 mascara="$(git rev-parse --show-toplevel)/scripts/mascarar_dados.py"
 while IFS= read -r f; do
   [ -z "$f" ] && continue
@@ -35,11 +38,11 @@ while IFS= read -r f; do
     *) continue ;;
   esac
   if ! printf '%s' "$conteudo" | python3 "$mascara" --check - >/dev/null; then
-    echo "[BLOQUEADO] Dado sensível sem máscara: $f"
-    fail=1
+    echo "[AVISO] Dado sensível sem máscara: $f"
+    avisos=1
   fi
 done < <(git diff --cached --name-only --diff-filter=AM -- 'semanas/*' 'docs/*' 'templates/*')
-[ $fail -ne 0 ] && echo "  Texto: python3 scripts/mascarar_dados.py <arquivos>   |   PDF: gere a partir da versão mascarada ou não versione."
+[ -n "$avisos" ] && echo "  Commit permitido. Para mascarar textos: python3 scripts/mascarar_dados.py <arquivos> (PDFs: regerar a partir da fonte mascarada)."
 
 if [ $fail -ne 0 ]; then
   echo "Commit cancelado. Para ignorar conscientemente: git commit --no-verify"

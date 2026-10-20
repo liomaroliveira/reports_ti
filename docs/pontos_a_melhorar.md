@@ -15,7 +15,7 @@ Melhorias do próprio processo de geração e problemas conhecidos. Quando uma m
 
 Origem: análise da semana 42 (`semanas/2026-10-11_2026-10-17/fontes/**/_ANALISE_*.md`). Registradas como recomendação; nenhuma foi implementada ainda.
 
-- [ ] **Tópicos dinâmicos e condicionais.** Hoje o índice é rígido: só "⭐ Fatos Notáveis" muda com os dados.
+- [x] **Tópicos dinâmicos e condicionais** (implementado em 2026-10-19: "Classes de Tópicos" na especificação, 📈 Destaques Analíticos, 8.4 condicional e subtópicos livres). Hoje o índice é rígido: só "⭐ Fatos Notáveis" muda com os dados.
   - **O que fazer:**
     - Formalizar na especificação uma classe de **tópicos condicionais** (8.4 PPPoE, investigações, módulos novos do AutoTickets): eles aparecem só se houver fonte; sem fonte, uma linha de ausência justificada.
     - Criar uma seção **"Destaques Analíticos da Semana"**, logo após o Resumo Executivo, com 3 a 5 achados gerados pelos dados: maiores variações em relação à semana anterior, picos, novos tipos de demanda, concentração por setor ou POP, recorrências.
@@ -27,7 +27,7 @@ Origem: análise da semana 42 (`semanas/2026-10-11_2026-10-17/fontes/**/_ANALISE
     - Trocar a tabela integral da Fullcam (4.3.2, cerca de 19% do relatório da semana 41) por **top N + variação semanal + anexo**.
     - Corrigir a contradição do WiFeed: o 4.2.1 diz "semanal / 3h semanais" e o 4.5 diz "45 min diários".
   - **Por quê:** de 30% a 35% do relatório da semana 41 se repete toda semana, o que dilui a análise e custa atenção da Direção.
-- [ ] **Feedback verificável.**
+- [x] **Feedback verificável** (implementado em 2026-10-19: `checar_entradas.py` conta as observações, e `validar_relatorio.py` confere a tabela de acompanhamento).
   - **O que fazer:**
     - `checar_entradas.py` passa a listar cada item do `feedback.md` anterior.
     - Um `scripts/validar_relatorio.py` confere se a tabela "Acompanhamento das observações" existe e se tem uma linha por item.
@@ -38,17 +38,17 @@ Origem: análise da semana 42 (`semanas/2026-10-11_2026-10-17/fontes/**/_ANALISE
     - o quadrante de backups trouxe números sem fonte (24 instâncias, 168 jobs = 24 × 7);
     - há uma citação atribuída ao Isvi que ele não fez.
     - Além disso, o `feedback.md` da semana 41 está vazio, então a semana 42 não terá observações a tratar.
-- [ ] **Validador de conteúdo** (`scripts/validar_relatorio.py`).
+- [x] **Validador de conteúdo** (`scripts/validar_relatorio.py`, 2026-10-19; títulos fora da especificação ainda não são conferidos).
   - **O que fazer:** conferir:
     - termos proibidos ("resolutividade", "resolubilidade");
     - títulos fora da especificação e parênteses que quebram âncoras (3.x na semana 41);
     - presença de fonte citada nos quadrantes obrigatórios (backups, disponibilidade);
     - CPF/IP/nome de cliente em tabelas.
   - **Por quê:** os erros da semana 41 eram todos detectáveis mecanicamente.
-- [ ] **Exigir fonte para o quadrante de backups (8.2).**
+- [x] **Exigir fonte para o quadrante de backups (8.2)** (pasta `fontes/infraestrutura/backups/` criada pelo `nova_semana.sh` e conferida pelo checklist, 2026-10-19).
   - **O que fazer:** criar `fontes/infraestrutura/backups/` (exportação do Proxmox Backup/PBS ou print dos jobs) e listar essa fonte no `checar_entradas.py`.
   - **Por quê:** sem fonte, o quadrante vira estimativa, que é exatamente o "achismo" que o Isvi apontou.
-- [ ] **AutoTickets como fonte única determinística.**
+- [ ] **AutoTickets como fonte única determinística** (formato especificado em `docs/formato_exportacao_autotickets.md`; pendências em `semanas/2026-10-11_2026-10-17/_PENDENCIAS_AUTOTICKETS.md`).
   - **O que fazer:**
     - Quando os 4 bloqueios do CSV de Tarefas Executadas forem corrigidos (`fontes/autotickets/tarefas_executadas/_ANALISE_FONTE.md`), substituir a exportação do Voalle pelo CSV do AutoTickets.
     - Pedir ao AutoTickets um "pacote da semana" (todos os módulos em CSV + `manifest.json` com período, contagens e somas) e fazer o `checar_entradas.py` conferir o manifest.
@@ -56,7 +56,7 @@ Origem: análise da semana 42 (`semanas/2026-10-11_2026-10-17/fontes/**/_ANALISE
 - [ ] **Apontamentos longos no Voalle.**
   - **O que fazer:** alerta automático para apontamentos acima de 8h ou que atravessam noite ou fim de semana, com correção antes da consolidação.
   - **Por quê:** os 3217119 (120h) e 3218766 (90h) do Liomar na semana 42 repetem a "distorção de 234h" da semana 41 e invalidam o confronto Voalle × Pontomais.
-- [ ] **Histórico já publicado com dados sensíveis.**
+- [ ] *(Rebaixado: repositório de uso interno — decisão de 2026-10-19; o pre-commit só avisa)* **Histórico já publicado com dados sensíveis.**
   - **O que fazer:** avaliar mascarar esses arquivos e reescrever o histórico, como foi feito em 2026-10-19.
   - **Por quê:** o `mascarar_dados.py --check` acusa dados sensíveis em arquivos já commitados e enviados ao GitHub:
     - semana 40: CSVs de `acompanhamento_protocolos` com stream keys RTMP e senha de Wi-Fi de cliente; PDFs do Voalle (David, Isac);

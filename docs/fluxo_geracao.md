@@ -24,8 +24,8 @@ graph TD
 1. `bash scripts/nova_semana.sh` — cria `semanas/<Domingo>_<Sábado>/` com `PARAMETROS.md` e as subpastas.
 2. Preencher em `PARAMETROS.md` os focos da semana, os feriados e, se quiser, os relatórios individuais a gerar.
 3. Copiar as entradas para `fontes/` (nomes em `docs/fontes_de_dados.md`). Relatórios que os colegas enviarem vão para `individuais/` e servem como **fonte**.
-4. *(Opcional)* Escrever as observações sobre o relatório anterior (suas e do Isvi) em `semanas/<anterior>/feedback.md`, a partir de `templates/feedback.md`.
-5. Mascarar CPFs: `python3 scripts/mascarar_dados.py semanas/<semana>/fontes/voalle/* semanas/<semana>/fontes/autotickets/*/*`.
+4. *(Opcional)* Escrever as observações sobre o relatório anterior (suas e do Isvi) em `semanas/<anterior>/feedback.md`, a partir de `templates/feedback.md` (**copiar** o template para a pasta da semana avaliada; não editar o próprio template).
+5. Mascarar dados pessoais e credenciais: `python3 scripts/mascarar_dados.py semanas/<semana>/fontes/voalle/* semanas/<semana>/fontes/autotickets/*/*`.
 
 ---
 
@@ -54,10 +54,11 @@ Ler, antes de escrever qualquer seção:
 ## Etapa principal: Relatório consolidado do setor
 
 1. **Fontes:** minerar diretamente `fontes/voalle/` (Liomar, Isac e David), `fontes/autotickets/`, os commits do `autotickets-v2` e `fontes/investigacoes/`. Se existir `individuais/<pessoa>.*` (enviado pelo colega ou gerado antes), usar como fonte complementar daquela pessoa.
-2. **Profundidade analítica (proibido resumir excessivamente):** cada tópico e subtópico com métricas, causas raízes, soluções, tabelas e contexto técnico.
-3. **Detalhamento por pessoa:** o Tópico 2 traz a visão completa de cada colaborador (atividades, distribuição do tempo, capacitação, Voalle × Pontomais), sem depender de relatório individual.
-4. **Ações conjuntas:** demanda com mais de um colaborador vira relato unificado, indicando a participação de cada um.
-5. **Saída:** `semanas/<semana>/report_ti_<Domingo>_<Sábado>.md`, `.html` (a partir de `templates/report.html`) e `.pdf`.
+2. **Tópicos dinâmicos e condicionais:** antes de escrever, aplicar os critérios de "Classes de Tópicos" (`docs/especificacao_relatorio.md`) às fontes da semana e à semana anterior: escolher os 3 a 5 **Destaques Analíticos**, separar os **Fatos Notáveis**, decidir os **subtópicos livres** e incluir os **tópicos condicionais** que tiverem fonte (8.4). Ler os `_ANALISE_*.md` das pastas de fontes e respeitar as ressalvas.
+3. **Profundidade analítica (proibido resumir excessivamente):** cada tópico e subtópico com métricas, causas raízes, soluções, tabelas e contexto técnico.
+4. **Detalhamento por pessoa:** o Tópico 2 traz a visão completa de cada colaborador (atividades, distribuição do tempo, capacitação, Voalle × Pontomais), sem depender de relatório individual.
+5. **Ações conjuntas:** demanda com mais de um colaborador vira relato unificado, indicando a participação de cada um.
+6. **Saída:** `semanas/<semana>/report_ti_<Domingo>_<Sábado>.md`, `.html` (a partir de `templates/report.html`) e `.pdf`.
 
 ---
 
@@ -74,7 +75,8 @@ Executar **apenas** para as pessoas pedidas no prompt ou em `PARAMETROS.md`. Sem
 ## Finalização
 
 1. `python3 scripts/validar_indice.py semanas/<semana>/report_ti_*.md semanas/<semana>/report_ti_*.html` — corrigir qualquer âncora quebrada.
+   `python3 scripts/validar_relatorio.py semanas/<semana>/report_ti_*.md` — termos proibidos, seções obrigatórias, Destaques Analíticos (3 a 5), tabela de acompanhamento com uma linha por observação do `feedback.md` anterior, tópico condicional 8.4 e dados que nunca podem aparecer (CPF/CNPJ sem máscara, senhas, RTMP).
 2. `bash scripts/renderizar_pdf.sh semanas/<semana>/report_ti_<...>.html` (e para cada individual gerado).
 3. Atualizar a seção de status do `PARAMETROS.md` da semana (o que foi gerado e o que ficou pendente).
-4. Commitar (o hook bloqueia dados sensíveis).
+4. Commitar (o hook avisa sobre dados pessoais sem máscara e bloqueia apenas chaves de API e dados do WhatsApp).
 5. Quando chegar o parecer da Coordenação: salvar em `semanas/<semana>/feedback.md` e registrar as lições novas em `docs/licoes_aprendidas.md`.

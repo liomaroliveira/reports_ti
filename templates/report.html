@@ -63,6 +63,7 @@
     <div class="toc-box">
       <ul>
         <li class="toc-h2"><a href="#resumo-executivo">Resumo Executivo</a></li>
+        <li class="toc-h2"><a href="#-destaques-analíticos-da-semana">📈 Destaques Analíticos da Semana</a></li>
         <li class="toc-h2"><a href="#-fatos-notáveis-e-anomalias-da-semana">⭐ Fatos Notáveis e Anomalias da Semana</a></li>
         <li class="toc-h2"><a href="#1-gestão-de-demandas">1. Gestão de Demandas</a></li>
         <li class="toc-h3"><a href="#11-demandas-pendentes">1.1 Demandas Pendentes</a></li>
@@ -138,6 +139,22 @@
   </div>
 
   <!-- Cada tópico principal começa em nova página: class="page-section page-break" -->
+  <!-- Seção DINÂMICA (docs/especificacao_relatorio.md → Classes de Tópicos): 3 a 5 destaques; o título de cada um é o próprio achado. -->
+  <div class="page-section page-break">
+    <div class="section-title" id="-destaques-analíticos-da-semana">
+      <span>📈 Destaques Analíticos da Semana</span>
+      <span class="badge-count">{{N}} Destaques</span>
+    </div>
+
+    <!-- EXEMPLO: um card-narrative por destaque (h4 sem número, não entra no índice) -->
+    <div class="card-narrative">
+      <h4>{{Achado em uma frase — ex.: Fila do TI cresceu 18% puxada por Patrimônio e Logística}}</h4>
+      <p><strong>Evidência:</strong> {{número da semana + fonte; semana anterior rotulada}}</p>
+      <p><strong>Leitura:</strong> {{o que significa para a operação: bom, ruim, neutro e por quê}}</p>
+      <p><strong>Recomendação:</strong> {{ação, responsável sugerido e onde será acompanhada}}</p>
+    </div>
+  </div>
+
   <div class="page-section page-break">
     <div class="section-title" id="-fatos-notáveis-e-anomalias-da-semana">
       <span>⭐ Fatos Notáveis e Anomalias da Semana</span>
@@ -250,25 +267,44 @@
     <div class="sub-section-title" id="82-execução-e-validação-de-backups">8.2 Execução e Validação de Backups</div>
     <div class="sub-section-title" id="83-atualizações-melhorias-e-ações-de-modernização">8.3 Atualizações, Melhorias e Ações de Modernização</div>
     <div class="sub-section-title" id="84-anomalias-de-tráfego-pppoe-e-ações-proativas-para-o-service-desk">8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk</div>
-    <!-- Fonte: fontes/autotickets/anomalias_pppoe/ (CSV mascarado). Sem fonte na semana: uma linha de ausência justificada. -->
-    <!-- Informar a janela real do retrato (ex.: "retrato de 18–19/10") e as ressalvas de cálculo vigentes. -->
+    <!-- Tópico CONDICIONAL: só existe se houver fontes/autotickets/anomalias_pppoe/; sem fonte, remover esta seção e a entrada do índice
+         e citar a ausência em uma linha no fim do Resumo Executivo. -->
+    <!-- Retrato ATUAL (gerado no dia da emissão): informar a data/hora do retrato; não aplicar o recorte da semana. -->
     <div class="kpi-grid">
-      <div class="kpi-card rose"><span class="kpi-label">Anomalias</span><span class="kpi-value">{{27}}</span><span class="kpi-sub">{{8}} críticas</span></div>
-      <div class="kpi-card amber"><span class="kpi-label">Inversões Up &gt; Down</span><span class="kpi-value">{{23}}</span><span class="kpi-sub">razão ≥ 1,5x</span></div>
-      <div class="kpi-card purple"><span class="kpi-label">Upload acumulado</span><span class="kpi-value">{{5,66 TB}}</span><span class="kpi-sub">download {{1,52 TB}}</span></div>
-      <div class="kpi-card emerald"><span class="kpi-label">Com ticket aberto</span><span class="kpi-value">{{0}}</span><span class="kpi-sub">encaminhados ao Service Desk</span></div>
+      <div class="kpi-card rose">
+        <div class="kpi-value">{{27}}</div>
+        <div class="kpi-label">Anomalias</div>
+        <div class="kpi-desc">{{8}} críticas · retrato de {{DD/MM/AAAA HH:MM}}</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-value">{{23}}</div>
+        <div class="kpi-label">Inversões Up &gt; Down</div>
+        <div class="kpi-desc">razão ≥ 1,5x</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-value">{{5,66 TB}}</div>
+        <div class="kpi-label">Upload acumulado</div>
+        <div class="kpi-desc">download {{1,52 TB}}</div>
+      </div>
+      <div class="kpi-card emerald">
+        <div class="kpi-value">{{0}}</div>
+        <div class="kpi-label">Com ticket/OS aberto</div>
+        <div class="kpi-desc">encaminhados ao Service Desk</div>
+      </div>
     </div>
-    <!-- Ranking por razão Upload/Download (desc.), top 10–15. Sem nome, CPF/CNPJ ou IP do cliente. -->
+    <!-- Tabela ordenada por razão Upload/Download (desc.), com os dados para localizar o caso nos sistemas. CPF/CNPJ mascarado. -->
     <div class="table-container">
       <table>
         <thead>
           <tr>
-            <th>#</th><th>Login PPPoE</th><th>Cidade / POP</th><th>Plano</th><th>Up / Down</th><th>Razão</th><th>Quedas</th><th>Severidade</th><th>Hipótese → Ação proativa</th>
+            <th>#</th><th>Cliente / Login / Contrato</th><th>CPF/CNPJ</th><th>Cidade / Bairro / POP</th><th>IP / MAC / CPE</th><th>Plano / RX</th>
+            <th>Up / Down</th><th>Razão</th><th>Quedas</th><th>Severidade</th><th>Hipótese → Ação proativa</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>{{1}}</td><td>{{login}}</td><td>{{cidade}} / {{POP}}</td><td>{{plano}}</td><td>{{up}} / {{down}}</td><td><strong>{{47,2x}}</strong></td><td>{{3}}</td>
+            <td>{{1}}</td><td>{{nome}}<br>{{login}} · {{contrato}}</td><td>{{***.456.789-**}}</td><td>{{cidade}} / {{bairro}} / {{POP}}</td>
+            <td>{{IP}}<br>{{MAC}} · {{fabricante}}</td><td>{{plano}} / {{RX}}</td><td>{{up}} / {{down}}</td><td><strong>{{47,2x}}</strong></td><td>{{3}}</td>
             <td><span class="badge badge-danger">{{CRITICAL 80}}</span></td><td>{{CPE possivelmente comprometida → verificar CPE, firmware e senha}}</td>
           </tr>
         </tbody>

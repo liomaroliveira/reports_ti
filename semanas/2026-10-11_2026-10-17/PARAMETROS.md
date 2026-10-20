@@ -19,10 +19,13 @@
 1. **Feriado:** 2026-10-12 (segunda) é feriado nacional (Nossa Senhora Aparecida). Não houve expediente do Setor de TI neste dia.
 2. **AutoTickets (4.1):** minerar os commits do `autotickets_v2` (`AUTOTICKETS_REPO`, padrão `~/dev/autotickets_v2`) entre 2026-10-11 e 2026-10-17.
 3. **Pendências do feedback anterior:** cobrir os itens listados em `docs/licoes_aprendidas.md` (Wazuh/filiais, telefonia fixa, backups, veículos, Windows 10 × 11).
+4. **Feedback da semana 41** (`semanas/2026-10-04_2026-10-10/feedback.md`, 8 observações): tratar todas na tabela de acompanhamento do Resumo Executivo. Destaques: Fullcam (ignorar o contrato 96660 de DAVID BRASIL FERNANDES), apontamentos deixados em play (fechar relatos no fim do expediente), frota escalada ao COO, Slack com MFA 3 de 6 (**pendência com marca de atenção**), descrição de cargos (3218356) e a gincana de pentest começando pelo sistema de Compras (3218766).
+5. **Primeira geração com tópicos dinâmicos:** aplicar "Classes de Tópicos" (`docs/especificacao_relatorio.md`): 📈 Destaques Analíticos, tópico condicional 8.4 PPPoE (retrato atual) e subtópicos livres. Ler os `_ANALISE_*.md` das fontes antes de usar os números (há KPIs do AutoTickets que não fecham).
+6. **Horas do Voalle:** usar a exportação por **Lançamento** (`fontes/voalle/<pessoa>_tarefas_executadas_20261019_221147.html`). As versões `_por_data_inclusao` servem só para a comparação. Listar no 2.4 os apontamentos longos (3217119 e 3218766).
 
 ## 📥 Entradas esperadas
 
-- [ ] `fontes/voalle/`: `liomar.*`, `isac.*`, `david.*`
+- [x] `fontes/voalle/`: HTML por Lançamento (Liomar, Isac, David). Também há as versões por Inclusão, usadas só para a comparação
 - [ ] `fontes/autotickets/colaborador_x_ticket/`
 - [ ] `fontes/autotickets/wifeed_daily_update_voucher/` (`.md` + `.html` com o SVG)
 - [ ] `fontes/autotickets/fullcam_lucros_prejuizos/`
@@ -30,12 +33,14 @@
 - [ ] `fontes/autotickets/fullcam_automacao_instalacao_camera/`
 - [ ] `fontes/autotickets/acompanhamento_protocolos/` (os CSVs de 2026-10-16 foram removidos no commit `0de3892`: gerar de novo cobrindo a semana inteira)
 - [ ] `fontes/autotickets/tarefas_executadas/` (CSV por colaborador; o PDF corta relatos — ver `_ANALISE_FONTE.md`)
-- [ ] `fontes/autotickets/anomalias_pppoe/` (CSV mascarado → tópico 8.4; retrato de 18–19/10, fora da semana: rotular)
+- [x] `fontes/autotickets/anomalias_pppoe/` (CSV + PDF → tópico condicional 8.4; **retrato atual** de 19/10 22:07, sem recorte da semana)
+- [x] `fontes/autotickets/problemas_recorrentes/` (reincidência da operação inteira, janela de 30 dias: usar só os tipos do TI e o cruzamento com o PPPoE)
+- [ ] `fontes/infraestrutura/backups/` (quadrante do 8.2; sem fonte nesta semana → declarar ausência, nunca estimar)
 - [ ] `fontes/investigacoes/`: estudos datados da semana (se houver)
 - [ ] `individuais/`: relatórios que Isac e David enviarem (opcional; usados como fonte complementar)
-- [ ] *(Opcional)* Observações suas e do Isvi sobre o relatório da semana 41 em `semanas/2026-10-04_2026-10-10/feedback.md` (arquivo já criado a partir do template)
-- [ ] Decidir o feriado de 12/10 (acima)
+- [x] Observações suas e do Isvi sobre o relatório da semana 41 em `semanas/2026-10-04_2026-10-10/feedback.md`
+- [x] Decidir o feriado de 12/10 (sem expediente)
 
 Depois de copiar: `python3 scripts/mascarar_dados.py <arquivos>` e `python3 scripts/checar_entradas.py`.
 
-> **Qualidade das fontes desta semana:** cada pasta de `fontes/` tem um `_ANALISE_FONTE.md` (e `fontes/autotickets/_ANALISE_GERAL.md`) com divergências entre formatos e campos não confiáveis. Respeitar as ressalvas ao gerar o relatório. PDFs com dados sensíveis estão no `.gitignore` (não versionados).
+> **Qualidade das fontes desta semana:** cada pasta de `fontes/` tem um `_ANALISE_FONTE.md` (e `fontes/autotickets/_ANALISE_GERAL.md`) com divergências entre formatos e campos não confiáveis. Respeitar as ressalvas ao gerar o relatório. Verificações da equipe: `_VERIFICAR_EQUIPE_TI.md` · Pendências do AutoTickets: `_PENDENCIAS_AUTOTICKETS.md` (nenhum dos dois é fonte).

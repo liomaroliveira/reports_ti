@@ -1,0 +1,996 @@
+﻿Visão;Origem;Tema;Termos;"Ocorrências no período";Retornos;"Retornos em até 7 dias";"Mediana até voltar";"Abertos em paralelo";Primeira;Última;"Em aberto";Confiança
+Cliente;"TALKD SOLUCOES EM ATENDIMENTO LTDA";Inventário;"onu, ont";11;10;10;"15 min";0;"16/10/2026 14:36";"19/10/2026 10:47";0;Alta
+Cliente;"NORMEIDE DA COSTA SANTOS";"Atendimento Comercial";"tentei, pendent, consegui, assinatur";8;7;6;"3 d";0;"22/09/2026 13:49";"13/10/2026 14:14";0;Alta
+Cliente;"STEIN TELECOM LTDA";Inventário;"ont, onu, roteador";7;6;6;"9 min";0;"02/10/2026 09:31";"02/10/2026 10:42";0;Alta
+Cliente;"MARCIO LUIS DA SILVA";"Troca De Titularidade";"radameri, coelh, marqu, titular";7;6;6;"15 h";0;"02/10/2026 10:27";"08/10/2026 07:56";0;Alta
+Cliente;"NORMEIDE DA COSTA SANTOS";"Atendimento Comercial";"pendent, assinatur, tentei, term";6;5;4;"4 d 6 h";0;"23/09/2026 15:09";"16/10/2026 08:44";0;Alta
+Cliente;"PREFEITURA MUNICIPIO DE JACOBINA";"Usuario Não Conecta";"pisc, line, pon, off";5;5;2;"7 d";0;"02/09/2026 09:10";"19/10/2026 16:47";1;Média
+Cliente;"ACLECIO DE JESUS";"Conexão Lenta";"story, visualizar, abrir, pedir";5;4;4;"7 h";0;"30/09/2026 16:24";"02/10/2026 07:40";0;Média
+Cliente;"BENEDITA SANTOS PEREIRA";"Atendimento Comercial";"postal, tentei, direcion, chamou";4;4;3;"3 d 14 h";0;"24/08/2026 08:03";"02/10/2026 14:45";0;Alta
+Cliente;"LUZINETE SANTOS DA SILVA";"Conexão Lenta";"lent, conex";4;4;2;"8 d";0;"14/09/2026 11:01";"07/10/2026 13:08";0;Média
+Cliente;"PREFEITURA MUNICIPIO DE JACOBINA";"Corporativo -- Usuário Não Conecta";"solicitant, danific, font, equip";7;3;2;"2 d 3 h";3;"05/10/2026 08:09";"19/10/2026 09:44";0;Média
+Cliente;"MARIA DE LOURDES DOS SANTOS";"Conexão Lenta";"lent, conex, instabil, flash";5;3;3;"1 d 22 h";1;"07/10/2026 14:23";"16/10/2026 12:14";0;Média
+Cliente;"TAINÁ QUEIROZ OLIVEIRA";"Conexão Lenta";"combinou, carre, leonard, voltass";4;3;3;"2 d 3 h";0;"01/10/2026 10:10";"08/10/2026 17:36";0;Média
+Cliente;"ALÍCIA CAMILA DE SOUZA NUNES";"Conexão Lenta";"feit, proced, reincidenci, estavam";4;3;3;"17 h";0;"30/09/2026 11:30";"08/10/2026 12:48";0;Alta
+Cliente;"EDVANIA SOUZA MENDES DE OLIVEIRA";"Conexão Lenta";"primari, secundari, imprimir, simpl";4;3;3;"2 d 4 h";0;"28/09/2026 12:30";"07/10/2026 18:48";0;Média
+Cliente;"VALDELICE MARIA DA SILVA";"Atendimento Comercial";"visualizou, deu, tentei, nenhum";3;3;2;"1 d 15 h";0;"21/08/2026 13:56";"24/09/2026 08:08";0;Média
+Cliente;"KELLY KAILANE DE JESUS";"Conexão Lenta";"primari, secundari, lent, problem";3;3;1;"11 d";0;"24/08/2026 11:14";"03/10/2026 12:57";0;Média
+Cliente;"Leandro Amorim Ferreira";"Alteração De Senha Do Wi-Fi";"senh, nome, rede, monitor";3;3;1;"10 d";0;"24/08/2026 17:07";"07/10/2026 11:37";0;Média
+Cliente;"ELIZANGELA SENA ALMEIDA RIBEIRO ";"Conexão Lenta";"ficou, inativ, lent";3;3;1;"12 d";0;"03/09/2026 15:07";"07/10/2026 21:55";0;Média
+Cliente;"RUTE SILVA BERTOLDO";"Atendimento Comercial";"visualizou, tentei, retorn, ofertar";3;3;1;"11 d";0;"04/09/2026 10:23";"08/10/2026 08:29";0;Média
+Cliente;"EDIVALDO FRANCISCO DA SILVA";"Conexão Lenta";"pedir, testar, ficou, inativ";3;3;0;"8 d";0;"06/09/2026 17:16";"08/10/2026 18:44";0;Média
+Cliente;"LUZINETE SANTOS BATISTA";"Conexão Lenta";"tiktok, utp, turn, desej";3;3;1;"13 d";0;"09/09/2026 16:02";"15/10/2026 16:12";0;Média
+Cliente;"NILZETE SANTANA DOS SANTOS";"Atendimento Comercial";"visualizou, nenhum, deu, retorn";3;3;2;"5 d 17 h";0;"18/09/2026 14:39";"06/10/2026 10:20";0;Alta
+Cliente;"Vanete Rosa Vieira";"Alteração De Senha Do Wi-Fi";"remot, acess, silvanet, senh";3;3;3;"18 h";0;"19/09/2026 13:34";"24/09/2026 10:14";0;Média
+Cliente;"Salomão Pinto dos Santos";"Usuario Não Conecta";"estar, conex, depoi, volt";4;2;2;"3 d 7 h";1;"04/10/2026 08:21";"11/10/2026 08:29";0;Média
+Cliente;"TAIANE CARNEIRO DE SOUSA";"Oscilação No Serviço De Internet";"clietn, tend, qued, conex";3;2;1;"7 d";0;"23/09/2026 17:21";"09/10/2026 16:04";0;Média
+Cliente;"PAULA VALDEVINO DOS SANTOS BARRETO";"Conexão Lenta";"entr, inteligent, lent, psk";3;2;1;"7 d";0;"03/10/2026 17:57";"18/10/2026 18:25";1;Média
+Cliente;"SITELBRA SISTEMA DE TELECOMUNICACOES DO BRASIL LTDA";"Corporativo -- Usuário Não Conecta";"pont, mandar, conex, los";3;2;0;"18 d";1;"28/08/2026 07:59";"13/10/2026 10:27";0;Média
+Cliente;"Walter Silva Reis Junior";"Conexão Lenta";"conex, lent, chegou, recorrenci";3;2;2;"4 d 13 h";0;"21/09/2026 08:35";"30/09/2026 19:58";0;Média
+Cliente;"RODRIGO JESUS DOS SANTOS";"Conexão Lenta";"remot, recent, atend, dois";3;2;2;"23 h";0;"13/10/2026 20:38";"15/10/2026 19:36";0;Média
+Cliente;"JUCILEIDE TEIXEIRA GAMA COSTA";"Conexão Lenta";"tentam, saberm, respeit, abre";3;2;2;"12 h";0;"30/09/2026 11:08";"01/10/2026 13:23";0;Média
+Cliente;"ANA KLECIA DE JESUS GÓIS";"Conexão Lenta";"lent, conex, diferent, afet";3;2;2;"2 d 18 h";0;"26/09/2026 15:15";"02/10/2026 08:30";0;Média
+Cliente;"ITHALA JORDANIA DE JESUS SILVA";"Resolução De Tickets";"aven, luzi, senh, santaluz";3;2;0;"11 d";0;"21/09/2026 00:37";"03/10/2026 19:27";0;Alta
+Cliente;"MURILO GABRIEL REIS DE ALMEIDA";"Usuario Não Conecta";"iternet, erro, torn, reclamou";3;2;2;"2 d 19 h";0;"05/10/2026 20:06";"11/10/2026 12:00";0;Média
+Cliente;"ANA PAULA PEREIRA TINEL";"Conexão Lenta";"reconfigur, orientei, interferenci, visand";3;2;2;"2 d 19 h";0;"30/09/2026 18:08";"06/10/2026 11:31";0;Média
+Cliente;"MARIVALDA ERONILDES FERREIRA";"Usuario Não Conecta";"liga, apresentou, substituic, energi";3;2;2;"4 d 9 h";0;"29/09/2026 09:27";"12/10/2026 08:48";0;Média
+Cliente;"SILVINO RODRIGUES DE SOUSA ";"Conexão Lenta";"perguntei, lent, travou, assist";3;2;1;"7 d";0;"21/09/2026 12:21";"06/10/2026 11:08";0;Média
+Cliente;"LUCAS CARNEIRO DA SILVA";"Conexão Lenta";"problem, lent, estar, netflix";3;2;2;"5 d 6 h";0;"04/10/2026 12:53";"18/10/2026 17:22";0;Média
+Cliente;"LEILA LAIZ BASTOS SILVA SANTOS";"Usuario Não Conecta";"pon, observ, pisc, onu";3;2;1;"5 d 3 h";1;"18/09/2026 12:12";"01/10/2026 18:26";0;Média
+Cliente;"ALEXANDRE ANDRADE DOS SANTOS";"Usuario Não Conecta";"queimou, indisponibil, execuc, brev";3;2;1;"10 d";0;"24/09/2026 14:07";"18/10/2026 12:16";0;Média
+Cliente;"MACIEL SANTOS DO NASCIMENTO";"Conexão Lenta";"evidenci, finalizar, afirmar, omitiu";3;2;1;"6 d 8 h";0;"22/09/2026 21:58";"05/10/2026 16:32";0;Média
+Cliente;"TAÍSE SILVA SOBRAL";"Conexão Lenta";"canal, normalizou, reinici, mudanc";3;2;1;"10 d";0;"23/09/2026 12:36";"15/10/2026 21:43";0;Média
+Cliente;"RAFAEL DE SOUZA DIAS";"Conexão Lenta";"estar, lent, andr, inteir";3;2;2;"23 h";0;"25/09/2026 15:44";"28/09/2026 16:45";0;Média
+Cliente;"ADILMA DOS SANTOS MOTA";"Usuario Não Conecta";"possivei, off, repar, identific";3;2;1;"3 d 14 h";0;"25/09/2026 15:50";"05/10/2026 15:54";0;Média
+Cliente;"OVIRLAINE DE OLIVEIRA DOS SANTOS ";"Conexão Lenta";"lent, instagram, instabil, carreg";3;2;1;"7 d";0;"28/09/2026 09:25";"14/10/2026 11:04";0;Média
+Cliente;"CLEITON RODRIGUES DOS SANTOS";"Conexão Lenta";"bastant, lent, reclamou, conex";3;2;1;"4 d 11 h";0;"29/09/2026 19:47";"08/10/2026 19:26";0;Média
+Cliente;"Ladio Barbosa Pinto";"Conexão Lenta";"kbps, algun, indic, apresentou";3;2;1;"5 d 3 h";0;"02/10/2026 09:25";"15/10/2026 16:51";0;Média
+Cliente;"JUCILÂNIA REIS DA SILVA";"Conexão Lenta";"proced, conteud, corretament, assistir";3;2;2;"2 d 6 h";0;"30/09/2026 17:31";"05/10/2026 14:09";0;Alta
+Cliente;"Raiane Araújo dos Santos Matos";"Conexão Lenta";lent;3;2;2;"11 h";0;"30/09/2026 21:17";"01/10/2026 21:11";0;Média
+Cliente;"ROMARIO SILVA DE ANDRADE";"Conexão Lenta";"lentis, problem, local";3;2;2;"2 d 10 h";0;"01/10/2026 12:30";"06/10/2026 10:10";0;Média
+Cliente;"Josilene Azevedo de Lucena";"Conexão Lenta";;3;2;2;"12 h";0;"01/10/2026 13:16";"02/10/2026 16:17";0;Média
+Cliente;"ELENILTON LOPES DE OLIVEIRA";"Conexão Lenta";;3;2;1;"5 d 9 h";0;"01/10/2026 15:57";"12/10/2026 13:14";0;Média
+Cliente;"WALLAN LIMA DE SOUZA";"Conexão Lenta";"muitt, lent, instabil, conex";3;2;2;"6 h";0;"01/10/2026 20:41";"02/10/2026 11:26";0;Média
+Cliente;"ADNOVAL ARAUJO DE SANTANA";"Usuario Não Conecta";"provision, piscav, turn, onu";3;2;2;"14 h";0;"02/10/2026 12:44";"03/10/2026 18:04";0;Média
+Cliente;"CINARA OLIVEIRA SANTOS SILVA";"Alteração De Senha Do Wi-Fi";"senh, antig, nova, nome";3;2;2;"3 d 20 h";0;"15/10/2026 19:09";"19/10/2026 18:53";0;Média
+Cliente;"IVAN RAFAEL DOS SANTOS";"Conexão Lenta";"lent, reclamou, conex, menagem";3;2;2;"11 h";0;"05/10/2026 11:23";"06/10/2026 11:06";0;Alta
+Cliente;"BRUNO SOUZA SANTOS";"Conexão Lenta";;3;2;2;"13 h";0;"06/10/2026 15:23";"07/10/2026 19:47";0;Média
+Cliente;"VALERIA SILVA DE OLIVEIRA";"Resolução De Tickets";"conferenci, normalizou, falt, reinici";3;2;2;"1 min";0;"07/10/2026 15:26";"07/10/2026 15:26";0;Média
+Cliente;"FERNANDA ALVES MONTENEGRO";"Conexão Lenta";;3;2;2;"3 d 23 h";0;"09/10/2026 12:38";"17/10/2026 12:05";0;Média
+Cliente;"SOLANGE MARIA DOS SANTOS OLIVEIRA";"Resolução De Tickets";"mara, abreu, melhorou, veloc";3;2;2;"1 min";0;"14/10/2026 07:24";"14/10/2026 07:26";0;Alta
+Cliente;"ANDRE NILSON RODRIGUES";"Conexão Lenta";"postar, statu, cgnat, enviar";2;2;0;"17 d";0;"03/09/2026 21:16";"09/10/2026 18:09";0;Média
+Cliente;"BENEDITA SANTOS PEREIRA";"Atendimento Comercial";"tentei, ofert, apresentar, moment";2;2;1;"7 d";0;"16/09/2026 10:35";"01/10/2026 09:11";0;Alta
+Cliente;"DEISIANE GONZAGA DA CRUZ";"Conexão Lenta";"lent, compareceu, relat, insatisfeit";2;2;1;"17 d";0;"24/08/2026 11:15";"28/09/2026 10:47";0;Média
+Cliente;"DIEGO SOUZA DOS SANTOS";"Conexão Lenta";"aqui, caia, gbps, ruim";2;2;0;"15 d";0;"24/08/2026 12:14";"01/10/2026 17:59";0;Média
+Cliente;"MARIA DAS VITORIAS RUFINO BELISIO";"Conexão Lenta";"largur, constatou, wireles, band";2;2;0;"28 d";0;"24/08/2026 12:35";"19/10/2026 15:15";0;Média
+Cliente;"ALINE SOUZA RAMOS";"Atendimento Comercial";"tentei, chamou, ofertar, atualiz";2;2;0;"21 d";0;"25/08/2026 10:23";"05/10/2026 16:49";0;Média
+Cliente;"LUDIMILLA VALENÇA DA CONCEIÇÃO";"Conexão Lenta";"lent, internet, conex, conteud";2;2;1;"6 d 11 h";0;"18/09/2026 09:13";"01/10/2026 10:17";0;Média
+Cliente;"ADETINA BEZERRA DO CARMO";"Atendimento Comercial";"visualizou, tentei, deu, retorn";2;2;1;"15 d";0;"31/08/2026 08:22";"01/10/2026 09:44";0;Média
+Cliente;"ADEVALDO SEVERINO DOS SANTOS";"Atendimento Comercial";"consegui, tentei, moment, atualiz";2;2;1;"9 d";0;"16/09/2026 15:20";"06/10/2026 08:13";0;Alta
+Cliente;"ITS TELECOMUNICAÇÕES LTDA";"Atendimento Fiscal";"bolet, envi, contrat, competenci";2;2;0;"25 d";0;"27/08/2026 08:01";"30/09/2026 23:00";0;Alta
+Cliente;"EMERSON RUDNEI REIS DO VALE";"Usuario Não Conecta";;2;2;0;"14 d";0;"08/09/2026 08:18";"07/10/2026 13:47";0;Média
+Cliente;"EDSON GOMES DA SILVA";"Conexão Lenta";"problem, you, tube, abril";2;2;0;"16 d";0;"27/08/2026 17:04";"29/09/2026 09:50";0;Média
+Cliente;"AUTOPOSTO SAUDE LTDA";"Conexão Lenta";;2;2;1;"16 d";0;"28/08/2026 08:35";"30/09/2026 16:37";0;Média
+Cliente;"ADRIANA ALVES CAJUEIRO";"Conexão Lenta";"lent, conex, acender, deixou";2;2;1;"11 d";0;"28/08/2026 10:29";"02/10/2026 14:14";0;Média
+Cliente;"JAMILE DOS SANTOS SILVA";"Conexão Lenta";"remot, realiz, proced, afirm";2;2;1;"14 d";0;"29/08/2026 15:59";"28/09/2026 15:27";0;Média
+Cliente;"SUZETE SANTOS RIBEIRO";"Conexão Lenta";"perceb, extremament, principalment, frequent";2;2;0;"17 d";0;"31/08/2026 08:02";"06/10/2026 16:27";0;Média
+Cliente;"YURI FERREIRA DA SILVA";"Conexão Lenta";"lent, conex";2;2;1;"14 d";0;"31/08/2026 08:24";"29/09/2026 10:14";0;Média
+Cliente;"DJANE NUNES OLIVEIRA MATOS";"Usuario Não Conecta";"fala, desalinh, caiu, radi";2;2;1;"14 d";0;"18/09/2026 10:18";"19/10/2026 19:30";1;Média
+Cliente;"EMPRESA BAIANA DE ÁGUAS E SANEAMENTO S/A";"Informação De Pgt° Em Banco";"concili, bancari, extrat, baix";2;2;1;"10 d";0;"15/09/2026 10:01";"05/10/2026 14:41";0;Média
+Cliente;"HELIANA JOSE DOS SANTOS";"Conexão Lenta";"afirm, szchat, box, lent";2;2;0;"17 d";0;"01/09/2026 12:05";"06/10/2026 14:23";0;Média
+Cliente;"MARIA SOCORRO SOUZA DE JESUS";"Conexão Lenta";"consegu, vizinh, conex, abrir";2;2;1;"17 d";0;"02/09/2026 07:56";"07/10/2026 14:00";0;Alta
+Cliente;"SUZANA LIMA ALMEIDA NASCIMENTO";"Usuario Não Conecta";;2;2;1;"15 d";0;"02/09/2026 09:23";"05/10/2026 09:17";0;Média
+Cliente;"MARIO HENRIQUE DA SILVA";"Conexão Lenta";"cheg, cach, modem, limpar";2;2;0;"13 d";0;"03/09/2026 18:18";"06/10/2026 13:48";0;Média
+Cliente;"DANILO DOS SANTOS";"Conexão Lenta";"problem, cclient, conex, baix";2;2;1;"10 d";0;"08/09/2026 10:53";"28/09/2026 19:21";0;Média
+Cliente;"LUX TELECOM LTDA";"Usuario Não Conecta";"conat, vers, relat, funcionar";2;2;1;"4 d 13 h";0;"14/09/2026 11:12";"23/09/2026 16:06";0;Média
+Cliente;"LUIZ ROBERTO SOUZA RIOS";"Conexão Lenta";"uso, durant, internet, lent";2;2;1;"7 d";0;"09/09/2026 09:27";"30/09/2026 08:07";0;Média
+Cliente;"JOELSON OLIVEIRA RIBEIRO";"Atendimento Comercial";"reativ, tentei, visualizou, servic";2;2;1;"4 d 22 h";0;"14/09/2026 16:56";"24/09/2026 14:23";0;Média
+Cliente;"MARIA SUELI SILVA NASCIMENTO";"Conexão Lenta";"comect, caiand, rede, reiniciaram";2;2;1;"6 d 22 h";0;"09/09/2026 11:39";"28/09/2026 09:34";0;Média
+Cliente;"CLÊUMA PEDROZA DA CRUZ VALOIS";"Oscilação No Serviço De Internet";"faz, resolv, assim, remot";2;2;1;"4 d 23 h";0;"15/09/2026 12:32";"25/09/2026 13:43";0;Média
+Cliente;"MONICA DE LIMA FELIPE";"Usuario Não Conecta";"novament, conex, conect, consum";2;2;1;"7 d";0;"14/09/2026 11:35";"02/10/2026 12:13";0;Média
+Cliente;"ANA BEATRIZ LIMA DOS SANTOS";"Instalação De Câmera";"saudad, enderec, camer, mercadinh";2;2;1;"9 d";0;"11/09/2026 16:06";"06/10/2026 10:18";0;Média
+Cliente;"ERICA SOUSA VIEIRA DOS ANJOS";"Conexão Lenta";"televis, principalment, conect, instant";2;2;1;"12 d";0;"14/09/2026 16:09";"09/10/2026 14:15";0;Média
+Cliente;"LUANA REIS SILVA";"Usuario Não Conecta";"conex, novament, estar";2;2;1;"7 d";0;"16/09/2026 07:53";"02/10/2026 14:54";0;Alta
+Cliente;"CRISTINA SANTOS DE SOUZA SILVA";"Usuario Não Conecta";"problem, conex";2;2;1;"14 d";0;"14/09/2026 13:54";"16/10/2026 11:31";1;Média
+Cliente;"ELISMÁRIA FIGUEREDO DE MELO ARAÚJO";"Conexão Lenta";"cleiten, lent, reclamou, trav";2;2;0;"14 d";0;"15/09/2026 19:58";"15/10/2026 19:35";0;Média
+Cliente;"NORMEIDE SANTOS ARAUJO";"Alteração De Senha Do Wi-Fi";"passaopix, senh, rede, antig";2;2;1;"8 d";0;"16/09/2026 07:55";"02/10/2026 08:49";0;Média
+Cliente;"EVANIO LIMA ROCHA";"Conexão Lenta";"percepc, suport, devid, lent";2;2;1;"11 d";0;"16/09/2026 08:26";"09/10/2026 16:32";0;Média
+Cliente;"MARIA SOLANGE SILVA DE FRANÇA";"Atendimento Comercial";"visualizou, apresentar, deu, tentei";2;2;2;"2 d 20 h";0;"18/09/2026 16:31";"24/09/2026 09:01";0;Alta
+Cliente;"VANESSA CORREIA DOS SANTOS";"Orientações Sobre Instalação/Funcionamento Dos App's";"playlist, acessar, look, logar";2;2;2;"1 d 10 h";0;"19/09/2026 16:22";"22/09/2026 14:20";0;Média
+Cliente;"PREFEITURA MUNICIPIO DE JACOBINA";"Atendimento Fiscal";contrat;6;1;0;"25 d";5;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"ORDEM DOS ADVOGADOS DO BRASIL SECAO DA BAHIA";"Atendimento Fiscal";contrat;6;1;0;"27 d";5;"15/09/2026 08:00";"15/10/2026 08:00";0;Alta
+Cliente;"ARIOSVALDO SOARES MAGALHAES EIRELI";"Atendimento Fiscal";"competenci, bolet, envi, contrat";5;1;0;"27 d";4;"31/08/2026 23:00";"30/09/2026 23:01";0;Alta
+Cliente;"SITELBRA SISTEMA DE TELECOMUNICACOES DO BRASIL LTDA";"Atendimento Fiscal";"junt, envi, contrat";4;1;0;"28 d";3;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"DJR Comercio de Moveis Ltda";"Atendimento Fiscal";contrat;4;1;0;"26 d";3;"29/08/2026 08:00";"01/10/2026 08:01";0;Alta
+Cliente;"INSTITUTO DE CIENCIA, EDUCACAO E TEOLOGIA REDIMERE LTDA";"Atendimento Fiscal";contrat;4;1;0;"21 d";3;"01/09/2026 08:00";"01/10/2026 08:01";0;Alta
+Cliente;"A N NET SERVICOS RESIDENCIAIS LTDA";"Atendimento Fiscal";"bolet, envi, venc, contrat";4;1;0;"22 d";3;"07/09/2026 08:00";"07/10/2026 08:00";0;Alta
+Cliente;"VELSIS SISTEMAS E TECNOLOGIA VIARIA S.A.";"Atendimento Comercial";"corporativ, fibr, ten";4;1;1;"3 h";2;"29/09/2026 16:43";"30/09/2026 15:09";0;Alta
+Cliente;"INGRID LUZIA ARCANJO DE OLIVEIRA";"Troca De Titularidade";"relat, diesel, bomb, peca";4;1;1;"6 d";2;"23/09/2026 17:57";"01/10/2026 15:37";0;Alta
+Cliente;"SEBASTIAO ROGERIO TORRES GUIMARAES LTDA";"Atendimento Fiscal";contrat;3;1;0;"21 d";2;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"DRILLGEO GEOLOGIA E SONDAGEM S/A";"Atendimento Fiscal";"competenci, bolet, envi, contrat";3;1;0;"29 d";2;"01/09/2026 08:00";"01/10/2026 08:01";0;Alta
+Cliente;"MURILO GABRIEL REIS DE ALMEIDA";"Conexão Lenta";"pedir, funcionam, testar, carregam";3;1;0;"10 d";1;"24/09/2026 14:05";"05/10/2026 10:35";0;Alta
+Cliente;"GILVANIA SILVA DA CRUZ ARAUJO";"Conexão Lenta";"ultimament, mencion, frequenci, turn";3;1;1;"2 d";1;"21/09/2026 15:25";"24/09/2026 07:43";0;Média
+Cliente;"OSVALDO SANTOS DA SILVA";"Conexão Lenta";"dispositiv, lent, abrem, ouvir";3;1;0;"14 d";1;"21/09/2026 15:57";"06/10/2026 08:56";0;Média
+Cliente;"ISABEL RIOS GONZAGA";"Retenção N2 (Não Utilizar)";"filh, provedor, motiv, optand";3;1;1;"1 min";1;"25/09/2026 09:15";"25/09/2026 10:48";0;Alta
+Cliente;"ELENILTON LOPES DE OLIVEIRA";"Oscilação No Serviço De Internet";"umbuzeir, solcit, audi, fabi";3;1;1;"5 d 20 h";1;"06/10/2026 14:23";"12/10/2026 14:31";0;Alta
+Cliente;"Cleonice Dos Reis Pinto";"Conexão Lenta";"concluem, mensagen, tiktok, constantement";3;1;1;"5 d 21 h";1;"06/10/2026 17:16";"13/10/2026 14:29";0;Média
+Cliente;"DIOGO SACRAMENTO SANTOS";"Usuario Não Conecta";"precis, dest, pisc, los";3;1;1;"1 d 1 h";1;"07/10/2026 06:43";"09/10/2026 15:28";0;Média
+Cliente;"MONICA CAMPOS SOUZA";"Oscilação No Serviço De Internet";"onlin, grand, frequent, aparelh";3;1;1;"1 min";1;"09/10/2026 14:00";"09/10/2026 15:40";0;Média
+Cliente;"NADIELLE CELLE DO NASCIMENTO CARNEIRO";"Conexão Lenta";"primari, secundari";2;1;0;"17 d";0;"24/09/2026 18:43";"12/10/2026 16:18";0;Alta
+Cliente;"HELENILDO NASCIMENTO DA SILVA";"Conexão Lenta";"preferencialment, ghz, dispositiv, dificuldad";2;1;1;"4 d 16 h";0;"26/09/2026 10:24";"01/10/2026 10:19";0;Média
+Cliente;"IRENE SOUZA DO NASCIMENTO";"Conexão Lenta";"tratativ, gilson, sido, filh";2;1;1;"5 d 20 h";0;"26/09/2026 17:22";"02/10/2026 14:10";0;Alta
+Cliente;"MARIA DE LOURDES NUNES DA SILVA";"Conexão Lenta";"utilizav, frent, afirm, szchat";2;1;1;"6 d 21 h";0;"08/10/2026 18:30";"15/10/2026 15:51";0;Média
+Cliente;"Jefferson Pereira Cardoso";"Usuario Não Conecta";"ticket, desk, resoluc, servic";2;1;1;"4 h";0;"20/09/2026 08:29";"20/09/2026 12:57";0;Média
+Cliente;"MARIA DE FATIMA BISPO";"Resolução De Tickets";"mbps, bren, ryan, rede";2;1;1;"1 min";0;"02/10/2026 21:27";"02/10/2026 21:29";0;Média
+Cliente;"MARIA DE FATIMA BISPO";"Conexão Lenta";"horrivel, quint, for, continuar";2;1;1;"1 d 18 h";0;"09/10/2026 19:13";"11/10/2026 13:47";0;Alta
+Cliente;"LUANA FELIX DOS SANTOS";"Resolução De Tickets";"conectav, wifi, normalizou, ghz";2;1;1;"2 min";0;"06/10/2026 11:34";"06/10/2026 11:36";0;Alta
+Cliente;"NILIANE DE JESUS";"Conexão Lenta";"abriu, tent, proced, lent";2;1;1;"4 d 15 h";0;"06/10/2026 15:35";"11/10/2026 08:15";0;Média
+Cliente;"MARIZETE PEREIRA DA SILVA";"Conexão Lenta";"extremament, mal, enviar, mensagen";2;1;0;"11 d";1;"14/09/2026 09:17";"25/09/2026 15:40";0;Média
+Cliente;"Daiane Cardoso dos Santos";"Correção/Cancelamento De Títulos/Lançamento";"correc, financeir";2;1;1;"9 h";0;"25/09/2026 07:48";"25/09/2026 16:54";0;Alta
+Cliente;"ELIANA SOUZA DE SANTANA";"Resolução De Tickets";"notebook, estabilizou, proxim, apen";2;1;1;"1 min";0;"05/10/2026 11:55";"05/10/2026 11:55";0;Média
+Cliente;"ISVI NEEMIAS SANTOS SILVA";"Resolução De Tickets";"conectou, tomad, defeit, estavam";2;1;1;"1 min";0;"16/10/2026 12:11";"16/10/2026 12:12";0;Alta
+Cliente;"GERALDO VIEIRA DOS SANTOS";"Usuario Não Conecta";"sabad, soub, aparec, energi";2;1;1;"5 d 6 h";0;"13/10/2026 08:11";"19/10/2026 15:01";0;Média
+Cliente;"REGINALDO SANTOS CRUZ BATISTA DA SILVA";"Oscilação No Serviço De Internet";"caind, afirm, szchat, todo";2;1;1;"1 d 21 h";0;"13/10/2026 18:45";"15/10/2026 17:03";0;Média
+Cliente;"PAULA VALDEVINO DOS SANTOS BARRETO";"Resolução De Tickets";"ghz, mbps, confirmou, proxim";2;1;1;"1 min";0;"03/10/2026 16:45";"03/10/2026 16:45";0;Média
+Cliente;"LUCIANA FREIRE OLIVEIRA DIAS";"Conexão Lenta";"persist, qued, solicit, realizou";2;1;1;"1 d 23 h";0;"14/10/2026 20:26";"16/10/2026 20:14";0;Alta
+Cliente;"FABIANA APARECIDA DE OLIVEIRA";"Conexão Lenta";"trav, desd, segund, registrar";2;1;1;"6 d";0;"30/09/2026 09:43";"07/10/2026 08:40";0;Alta
+Cliente;"WEDSON SANTANA MENEZES";"Conexão Lenta";"ficou, inativ, lent";2;1;1;"4 d 6 h";0;"03/10/2026 09:46";"07/10/2026 16:32";0;Média
+Cliente;"VANESSA SANTOS COSTA";"Usuario Não Conecta";conex;2;1;0;"11 d";0;"30/09/2026 11:10";"13/10/2026 10:15";0;Média
+Cliente;"ELITE ENGENHARIA LTDA";"Conexão Lenta";;2;1;1;"6 d 4 h";0;"29/09/2026 17:06";"06/10/2026 14:15";0;Média
+Cliente;"VIASAT BRASIL SERVICOS DE COMUNICACOES LTDA";"Atendimento Fiscal";contrat;2;1;0;"23 d";1;"08/09/2026 08:00";"08/10/2026 08:00";0;Alta
+Cliente;"DIEGO SOUZA DOS SANTOS";"Configuração De Equipamentos";"recomend, mikrotik, guart, central";2;1;0;"21 d";0;"21/09/2026 16:07";"16/10/2026 12:08";1;Média
+Cliente;"MARISTELA NOVAIS CARVALHO";"Conexão Lenta";"pega, pior, meno, lent";2;1;0;"16 d";0;"02/10/2026 10:46";"19/10/2026 09:51";0;Média
+Cliente;"FUNDO MUNICIPAL DE ASSISTENCIA SOCIAL - FMAS";"Informação De Pgt° Em Banco";"concili, bancari, extrat, baix";2;1;0;"7 d";0;"02/10/2026 09:20";"09/10/2026 16:27";0;Alta
+Cliente;"TACIANA CELIA DA SILVA FAUSTINO";"Conexão Lenta";"abre, primari, conteud, inici";2;1;1;"1 d 18 h";0;"30/09/2026 12:04";"02/10/2026 08:53";0;Média
+Cliente;"IORHANA LARISSA SANTANA COSTA";"Oscilação No Serviço De Internet";"observ, ficou, inativ";2;1;1;"1 d";0;"22/09/2026 10:45";"24/09/2026 13:21";0;Média
+Cliente;"JACIARA SILVA COSTA";"Conexão Lenta";"notass, sugeri, instabil, entrass";2;1;1;"1 d 7 h";0;"05/10/2026 14:36";"07/10/2026 18:13";0;Média
+Cliente;"OLAVIA SILVA SANTOS DE JESUS";"Atendimento Comercial";"visualizou, tentei, nenhum, retorn";2;1;0;"10 d";0;"25/09/2026 13:30";"05/10/2026 16:22";0;Alta
+Cliente;"ELOS GOLD SERVIÇOS E COMERCIO";"Oscilação No Serviço De Internet";"oscil, notebook, enviam, economiz";2;1;1;"16 h";0;"13/10/2026 08:46";"15/10/2026 10:34";1;Média
+Cliente;"MURILO CÉSAR SILVA";"Conexão Lenta";"finai, meno, seman";2;1;1;"3 d";0;"05/10/2026 13:21";"08/10/2026 13:48";0;Média
+Cliente;"MARCOS AURELIO ARAUJO DOS SANTOS";"Atendimento Fiscal";contrat;2;1;0;"29 d";1;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"EUGENIO OLIVEIRA MOTA";"Conexão Lenta";"lent, conex";2;1;1;"1 d 21 h";0;"06/10/2026 14:50";"08/10/2026 13:06";0;Média
+Cliente;"MARIA TEREZINHA ALVES DOS SANTOS";"Oscilação No Serviço De Internet";"modific, alcanc, qued, troc";2;1;0;"7 d";0;"24/09/2026 09:01";"02/10/2026 08:21";0;Média
+Cliente;"WESLEY JESIEL SILVA CARVALHO";"Conexão Lenta";"tard, muit, period, diss";2;1;1;"3 d 20 h";0;"21/09/2026 18:01";"25/09/2026 15:16";0;Média
+Cliente;"EDUARDO SOUZA OLIVEIRA";"Usuario Não Conecta";"agendar, solicitant";2;1;1;"3 d 13 h";0;"14/10/2026 19:58";"18/10/2026 10:16";0;Média
+Cliente;"ADETINA BEZERRA DO CARMO";"Atendimento Comercial";"consegui, tentei, moment, atualiz";2;1;0;"7 d";0;"25/09/2026 09:51";"02/10/2026 14:40";0;Média
+Cliente;"MARIA BETÂNIA DE JESUS RAMOS";"Conexão Lenta";"dispositiv, lent, internet";2;1;0;"24 d";0;"21/09/2026 15:41";"16/10/2026 09:56";1;Média
+Cliente;"TESLA IMAGEM MEDICINA DIAGNOSTICA LTDA";"Usuario Não Conecta";conex;2;1;1;"1 h";0;"24/09/2026 16:10";"24/09/2026 17:22";0;Média
+Cliente;"GUIDONI BRASIL S A";"Atendimento Fiscal";"xml, bolet, envi, venc";2;1;0;"26 d";1;"27/08/2026 08:01";"27/09/2026 08:01";0;Alta
+Cliente;"RODRIGO NUNES DA PAZ";"Resolução De Tickets";"varginh, melhorou, fazend, lica";2;1;1;"1 min";0;"03/10/2026 13:49";"03/10/2026 13:50";0;Média
+Cliente;"JOSEANE FREIRE DE SOUZA";"Conexão Lenta";;2;1;1;"5 d 14 h";0;"30/09/2026 15:50";"06/10/2026 08:31";0;Média
+Cliente;"RAIANE REIS REGO SANTANA";"Conexão Lenta";"bastant, estar, caind, ruim";2;1;1;"4 d 23 h";0;"02/10/2026 11:42";"07/10/2026 11:45";0;Alta
+Cliente;"GEANE BACELAR DA SILVA XAVIER";"Conexão Lenta";"entr, lent, continu, apresent";2;1;0;"10 d";0;"25/09/2026 09:21";"06/10/2026 14:12";0;Média
+Cliente;"RAUENIA ALVES DOS SANTOS SILVA";"Usuario Não Conecta";"relatabnd, cedo, pessoal, identifiquei";2;1;0;"9 d";0;"02/10/2026 15:57";"14/10/2026 13:36";0;Média
+Cliente;"RÍSIA LIMA DOS SANTOS";"Alteração De Senha Do Wi-Fi";"taylan, senh, confirm, configur";2;1;1;"2 d";0;"11/10/2026 08:24";"13/10/2026 11:11";0;Média
+Cliente;"VIVIA ALVES PEREIRA";"Usuario Não Conecta";"danific, font, conex";2;1;1;"6 h";0;"13/10/2026 08:19";"13/10/2026 18:05";0;Média
+Cliente;"KAILANE DOS SANTOS SANTANA";"Cancelar Titulo C/Nf";"exclus, seguint, titul";2;1;1;"3 d 4 h";0;"01/10/2026 09:31";"05/10/2026 15:56";0;Alta
+Cliente;"Francineide Pereira Souza";"Oscilação No Serviço De Internet";"pass, oscil, conex";2;1;1;"10 h";0;"30/09/2026 14:01";"01/10/2026 20:36";0;Média
+Cliente;"ADSON DE DEUS NASCIMENTO";"Reparo Na Rede Interna/Externa Do Assinante";"fio, baix, drop, rua";2;1;1;"1 min";0;"08/10/2026 15:44";"08/10/2026 15:52";0;Alta
+Cliente;"JUCELMA DOS SANTOS NASCIMENTO";"Conexão Lenta";"studi, perceb, conseguir, todo";2;1;0;"10 d";0;"05/10/2026 15:03";"16/10/2026 11:12";0;Alta
+Cliente;"Clara Santos Rodrigues";"Conexão Lenta";"ciet, acab, sair, avis";2;1;1;"2 h";0;"15/10/2026 16:07";"15/10/2026 18:28";0;Alta
+Cliente;"RAQUEL ARAUJO BRASIL";"Usuario Não Conecta";"conex, realizaram, retir, sido";2;1;0;"21 d";0;"22/09/2026 10:45";"13/10/2026 11:02";0;Média
+Cliente;"DANY DE SOUZA MACIEL";"Atendimento Fiscal";"bolet, envi, venc, contrat";2;1;0;"22 d";1;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"GCT - GERENCIAMENTO E CONTROLE DE TRANSITO S/A";"Atendimento Fiscal";"xml, competenci, bolet, envi";2;1;0;"26 d";1;"31/08/2026 23:00";"30/09/2026 23:01";0;Alta
+Cliente;"Auto Posto Itatiaia";"Conexão Lenta";"maquin, utiliz, cart, autopost";2;1;1;"2 d 2 h";0;"22/09/2026 11:19";"24/09/2026 15:49";0;Média
+Cliente;" IVANA MARIA SOARES TEIXEIRA LOPES OLIVEIRA";"Conexão Lenta";"conex, local, lent, havi";2;1;1;"2 d 21 h";0;"30/09/2026 11:59";"03/10/2026 11:49";0;Média
+Cliente;"EMPRESA BAIANA DE ÁGUAS E SANEAMENTO S/A";"Atendimento Comercial";"corporativ, fibr, ten";2;1;0;"9 d";0;"22/09/2026 11:52";"01/10/2026 15:04";0;Alta
+Cliente;"EMPRESA BAIANA DE ÁGUAS E SANEAMENTO S/A";"Pagamento Anual";"anual, mese, valor, nota";2;1;0;"9 d";0;"22/09/2026 11:53";"01/10/2026 16:44";1;Média
+Cliente;"EMPRESA BAIANA DE ÁGUAS E SANEAMENTO S/A";"Atendimento Comercial";"registr, relat, apen, fins";2;1;1;"1 min";0;"23/09/2026 17:18";"30/09/2026 17:16";0;Média
+Cliente;"ADENIR AUGUSTO GOMES";"Usuario Não Conecta";"mexeram, acha, telh, ligand";2;1;0;"9 d";0;"23/09/2026 08:25";"08/10/2026 08:28";0;Média
+Cliente;"DOT A DOT TELECOMUNICACAO LTDA";"Atendimento Fiscal";contrat;2;1;0;"22 d";1;"01/09/2026 10:00";"01/10/2026 10:00";0;Alta
+Cliente;"OSMARIO JESUS AMARO";"Conexão Lenta";"reclamou, local, lent, internet";2;1;1;"1 d";0;"05/10/2026 19:17";"06/10/2026 19:59";0;Média
+Cliente;"WESLEY ALEXANDRE COSTA DOS SANTOS SILVA";"Conexão Lenta";"fiz, wireles, pedir, testar";2;1;1;"23 h";0;"30/09/2026 11:02";"01/10/2026 10:53";0;Média
+Cliente;"RONALDO PAES MACHADO";"Conexão Lenta";"ultim, bastant, oscil, residenci";2;1;1;"3 d 20 h";0;"02/10/2026 11:40";"06/10/2026 08:46";0;Média
+Cliente;"FUNDO MUNICIPAL DE SAUDE - FUNSAUDE";"Oscilação/Lentidão Na Conexão-Corporativo";"eliab, abertur, pedid, observ";2;1;1;"6 d 2 h";0;"06/10/2026 09:03";"13/10/2026 10:11";0;Alta
+Cliente;"GILDEONE NUNES LIMA ";"Conexão Lenta";"afirm, imagen, estari, relatar";2;1;1;"1 h";0;"22/09/2026 16:33";"22/09/2026 19:25";0;Média
+Cliente;"LUANE RIOS DOS SANTOS MOTA";"Oscilação No Serviço De Internet";"repentinament, miquei, tao, midi";2;1;1;"14 min";0;"05/10/2026 10:04";"05/10/2026 20:34";0;Média
+Cliente;"JUMARA ABREU DOS SANTOS";"Conexão Lenta";"claudian, prestar, filh, pertencent";2;1;1;"1 d 3 h";0;"15/10/2026 08:44";"16/10/2026 15:07";0;Média
+Cliente;"KELLY GRAZIELE MIRANDA DE CERQUEIRA";"Correção/Cancelamento De Títulos/Lançamento";"decorrenci, compreens, technobox, event";2;1;1;"19 h";0;"21/09/2026 18:09";"22/09/2026 14:00";0;Média
+Cliente;"LORENA LUNA DOS SANTOS";"Usuario Não Conecta";"energi, ocorr, percebeu, eletric";2;1;1;"7 h";0;"16/10/2026 16:20";"19/10/2026 17:43";1;Alta
+Cliente;"ELIANA OLIVEIRA DE SOUZA";"Alteração De Senha Do Wi-Fi";"nova, senh";2;1;1;"3 d 3 h";0;"10/10/2026 12:00";"13/10/2026 15:20";0;Média
+Cliente;"ROSANGELA DE OLIVEIRA LIMA DA SILVA";"Atendimento Fiscal";"envi, junt, bolet, apen";2;1;0;"25 d";1;"06/09/2026 08:00";"06/10/2026 08:00";0;Alta
+Cliente;"JONATHAS DE JESUS ROZARIO";"Alteração De Senha Do Wi-Fi";"silvan, senh, nome, antig";2;1;1;"27 min";0;"01/10/2026 15:02";"01/10/2026 16:00";0;Média
+Cliente;"HAMILTON SANTOS SILVA";"Conexão Lenta";"modo, melhor, dess, novament";2;1;1;"1 d";0;"30/09/2026 11:44";"01/10/2026 12:14";0;Alta
+Cliente;"TEREZA CRISTINA DA SILVA SANTOS";"Oscilação No Serviço De Internet";"qued, tend, servic, oscil";2;1;1;"5 h";0;"22/09/2026 08:39";"23/09/2026 20:39";0;Média
+Cliente;"RAFAELA DE SOUZA";"Conexão Lenta";"lent, suport, problem, devid";2;1;1;"3 d 19 h";0;"29/09/2026 20:35";"03/10/2026 16:23";0;Média
+Cliente;"ANA PAULA SILVA MOREIRA";"Atendimento Comercial";"visualizou, tentei, nenhum, retorn";2;1;0;"7 d";0;"28/09/2026 10:53";"05/10/2026 13:39";0;Alta
+Cliente;"VALDOMIRO MACIEL DE SOUZA";"Alteração De Senha Do Wi-Fi";"arauj, senh, nome, nova";2;1;1;"27 min";0;"23/09/2026 11:31";"23/09/2026 12:22";0;Média
+Cliente;"Ivone Almeida Da Silva";"Conexão Lenta";"ligi, conect, filh, aparelh";2;1;1;"1 d 3 h";0;"24/09/2026 09:17";"25/09/2026 14:33";0;Média
+Cliente;"MARIA DE FÁTIMA COSTA LIMA";"Resolução De Tickets";"normalizou, durant, espontaneament, lent";2;1;1;"1 min";0;"05/10/2026 19:06";"05/10/2026 19:07";0;Alta
+Cliente;"VELSIS SISTEMAS E TECNOLOGIA VIARIA S.A.";"Atendimento Fiscal";contrat;2;1;0;"15 d";1;"15/09/2026 08:02";"15/10/2026 08:02";0;Alta
+Cliente;"ANDRESSA FERREIRA ROCHA";"Orientações Sobre Instalação/Funcionamento Dos App's";"deezer, acessar, cert, tentar";2;1;1;"17 min";0;"25/09/2026 18:36";"25/09/2026 19:00";0;Média
+Cliente;"GR MINERALS LTDA";"Atendimento Fiscal";contrat;2;1;0;"25 d";1;"10/09/2026 08:00";"10/10/2026 08:00";0;Alta
+Cliente;"CLAUDIANE SANTANA DA SILVA ALVES";"Conexão Lenta";;2;1;1;"6 d 1 h";0;"30/09/2026 12:29";"06/10/2026 14:08";0;Média
+Cliente;"FRANCISCO VALDECI TEIXEIRA DA SILVA";"Resolução De Tickets";"resetar, separ, reconex, funcionar";2;1;1;"1 min";0;"03/10/2026 20:44";"03/10/2026 20:45";0;Média
+Cliente;"JOSÉ RAMON REIS REGO";"Conexão Lenta";"dois, enderec, conex, preferencialment";2;1;1;"14 h";0;"25/09/2026 18:31";"26/09/2026 09:49";0;Média
+Cliente;"ASSOCIACAO JOVENS COM UMA MISSAO - JOCUM DESTINO";"Atendimento Fiscal";contrat;2;1;0;"26 d";1;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"IARA OLIVEIRA NUNES";"Resolução De Tickets";"congel, frequent, reinici, qued";2;1;1;"1 min";0;"06/10/2026 14:39";"06/10/2026 14:40";0;Média
+Cliente;"CARLOS HENRIQUE GOMES ABRAHAO";"Mudança De Data De Vencimento";"partir, mes, mudanc, venc";2;1;1;"17 min";0;"30/09/2026 15:04";"30/09/2026 15:29";0;Alta
+Cliente;"CARLOS HENRIQUE GOMES ABRAHAO";"Suporte Ao Técnico De Campo";"serial, trav, suport";2;1;1;"14 h";0;"03/10/2026 18:01";"04/10/2026 09:42";0;Média
+Cliente;"ANORAILTON SANTOS DAMASCENO";"Atualização Cadastral";"atualiz, email, novo";2;1;1;"4 min";0;"05/10/2026 09:50";"05/10/2026 09:58";0;Média
+Cliente;"HESLI LIMA SIMOES";"Resolução De Tickets";"reinici, vermelh, instabil, luz";2;1;1;"1 min";0;"15/10/2026 10:42";"15/10/2026 10:43";0;Alta
+Cliente;"OTICA CAROLINE";"Conexão Lenta";"lent, conex, roteador, acess";2;1;0;"19 d";1;"16/09/2026 08:32";"05/10/2026 16:26";0;Média
+Cliente;"GILDA GOMES RIOS";"Usuario Não Conecta";"deixou, zenaid, chav, avis";2;1;1;"33 min";0;"13/10/2026 08:54";"14/10/2026 09:10";0;Média
+Cliente;"MARIA NEUSA OLIVEIRA SILVA";"Conexão Lenta";"muit, carregam, interromp, conhec";2;1;1;"21 h";0;"05/10/2026 15:51";"07/10/2026 10:36";0;Alta
+Cliente;"MARIA MONICA OLIVEIRA DA SILVA";"Alteração De Senha Do Wi-Fi";;2;1;1;"53 min";0;"01/10/2026 13:03";"01/10/2026 14:05";0;Média
+Cliente;"EDIVÂNIA FERMINO DA SILVA";"Conexão Lenta";"ruim, apen, novo, internet";2;1;1;"1 d 23 h";0;"27/09/2026 13:40";"29/09/2026 13:11";0;Média
+Cliente;"KLEBER LIMA DO NASCIMENTO";"Conexão Lenta";"youtub, principalment, persist, vide";2;1;1;"2 d 3 h";0;"28/09/2026 07:57";"30/09/2026 11:58";0;Alta
+Cliente;"MARIA MADALENA DE JESUS NASCIMENTO";"Conexão Lenta";"visit, entr, combinar, lent";2;1;1;"2 d 1 h";0;"01/10/2026 10:42";"08/10/2026 13:06";0;Média
+Cliente;"BRENDA VIEIRA DA SILVA";"Usuario Não Conecta";"iform, algum, falt, conex";2;1;0;"13 d";1;"14/09/2026 19:28";"29/09/2026 10:48";0;Média
+Cliente;"LAPEC - LABORATÓRIO DE ANALISES E PESQ CLINICAS";"Oscilação No Serviço De Internet";"qued, conex";2;1;0;"8 d";0;"06/10/2026 09:49";"14/10/2026 15:24";0;Média
+Cliente;"JOCEMAR MARTINS DOS SANTOS";"Usuario Não Conecta";"setar, desprovisionar, provisionar, acendeu";2;1;1;"3 d 23 h";0;"03/10/2026 20:37";"09/10/2026 10:33";0;Média
+Cliente;"ALOISIO PEREIRA DE SANTANA NETO";"Correção/Cancelamento De Títulos/Lançamento";"avis, desbloquei, bloque, corrigir";2;1;1;"6 h";0;"24/09/2026 08:26";"24/09/2026 15:15";0;Média
+Cliente;"LUCICLEIDE NEVES DOS SANTOS CORREIA";"Devolução De Equipamento";"devoluc, potenci, pat, constatou";2;1;1;"26 min";0;"21/09/2026 07:38";"21/09/2026 08:28";0;Alta
+Cliente;"ELMA MARCLEY MARTA BATISTA";"Usuario Não Conecta";"veio, soub, const, gas";2;1;1;"16 h";0;"21/09/2026 08:41";"22/09/2026 09:10";0;Alta
+Cliente;"PEDRO FERREIRA DOS SANTOS";"Correção/Cancelamento De Títulos/Lançamento";"corrigir, bloquei, titul, financeir";2;1;1;"5 d 20 h";0;"07/10/2026 14:43";"13/10/2026 11:36";0;Média
+Cliente;"SAMUEL DE SOUZA CONCEIÇÃO LEITE";"Resolução De Tickets";"caeir, apag, normalizou, falt";2;1;1;"1 min";0;"07/10/2026 15:17";"07/10/2026 15:18";0;Alta
+Cliente;"DIVALDINA DE JESUS";"Alteração De Senha Do Wi-Fi";"senh, atual, nova, remotament";2;1;1;"3 h";0;"14/10/2026 10:50";"15/10/2026 14:13";0;Média
+Cliente;"IRAILDE SENA DA SILVA";"Conexão Lenta";;2;1;1;"20 h";0;"30/09/2026 15:19";"01/10/2026 12:30";0;Média
+Cliente;"PEDRO PAULO MACIEL DA CUNHA";"Usuario Não Conecta";;2;1;0;"26 d";0;"20/09/2026 10:47";"18/10/2026 09:52";0;Média
+Cliente;"ABIJAUDE E LOPES  LTDA";"Usuario Não Conecta";;2;1;1;"1 d 7 h";0;"20/09/2026 12:46";"22/09/2026 18:08";0;Média
+Cliente;"Gilza dos Santos Santana";"Conexão Intermitente";"fabinh, momentane, espos, voltou";2;1;0;"13 d";0;"30/09/2026 10:52";"15/10/2026 10:06";0;Média
+Cliente;"AGENARIO QUEIROZ DE ARGOLO";"Usuario Não Conecta";"restabelec, nora, compareceu, caiu";2;1;0;"27 d";0;"21/09/2026 09:17";"19/10/2026 11:44";1;Média
+Cliente;"MARINALVA CLOTILDES DOS SANTOS";"Conexão Lenta";"reclamou, turn, desej, acessar";2;1;1;"3 d 23 h";0;"21/09/2026 09:19";"25/09/2026 15:16";0;Alta
+Cliente;"RAFAEL PEREIRA DA SILVA";"Oscilação No Serviço De Internet";"caind, cada, minut, instabil";2;1;0;"9 d";0;"21/09/2026 10:01";"01/10/2026 10:43";0;Alta
+Cliente;"MARINALVA SILVA DA ANUNCIAÇÃO";"Usuario Não Conecta";"colocou, off, statu, removeu";2;1;0;"9 d";0;"21/09/2026 10:21";"01/10/2026 16:15";0;Média
+Cliente;"ANAILDE ALMEIDA DE ARAUJO";"Oscilação No Serviço De Internet";"mbr, fala, celular, instabiil";2;1;0;"16 d";0;"21/09/2026 10:34";"08/10/2026 11:50";0;Alta
+Cliente;"OLIMPIO BATISTA DOS SANTOS";"Atendimento Comercial";"pix, mesal, realizou, compareceu";2;1;0;"22 d";0;"21/09/2026 11:53";"14/10/2026 08:30";0;Média
+Cliente;"MANUEL CHAVES DE ANDRADE FILHO";"Conexão Lenta";;2;1;0;"7 d";0;"08/10/2026 14:43";"16/10/2026 13:52";0;Média
+Cliente;"NUBIA MASCARENHAS DE QUEIROZ ROCHA";"Conexão Lenta";"iniciarem, noturn, period, apresentam";2;1;0;"14 d";0;"21/09/2026 13:57";"05/10/2026 16:14";0;Média
+Cliente;"MARIA CONCEIÇAO PEREIRA SANTOS";"Atendimento Comercial";"consegui, tentei, encaminhar, moment";2;1;1;"17 h";0;"21/09/2026 14:18";"22/09/2026 09:07";0;Alta
+Cliente;"MAISA OLIVEIRA SILVA RIOS";"Orientações Sobre Instalação/Funcionamento Dos App's";"tentv, configurar, quart, confirmar";2;1;0;"9 d";0;"21/09/2026 14:39";"01/10/2026 09:50";0;Média
+Cliente;"ELDON MENDES DIAS";"Usuario Não Conecta";"trav, normalizou, proced, filh";2;1;1;"30 min";0;"21/09/2026 14:41";"21/09/2026 15:40";0;Alta
+Cliente;"MARISTELA LIMA DE FREITAS";"Agendamento De Fatura";;2;1;0;"15 d";0;"21/09/2026 15:48";"06/10/2026 16:52";0;Média
+Cliente;"MATEUS SILVA DOS SANTOS";"Usuario Não Conecta";"line, off, trocaram, queimou";2;1;1;"2 d 22 h";0;"21/09/2026 17:19";"25/09/2026 10:11";0;Alta
+Cliente;"ELELUIR DE JESUS OLIVEIRA";"Conexão Lenta";"conexai, lent, live, instabil";2;1;1;"17 h";0;"21/09/2026 17:22";"22/09/2026 11:06";0;Alta
+Cliente;"ELELUIR DE JESUS OLIVEIRA";"Oscilação No Serviço De Internet";;2;1;1;"20 h";0;"01/10/2026 10:58";"02/10/2026 14:13";0;Média
+Cliente;"MARIA DE LOURDES MOURA DE ARAUJO";"Conexão Lenta";"baixar, sociai, foto, audi";2;1;1;"16 h";0;"21/09/2026 18:38";"22/09/2026 11:04";0;Média
+Cliente;"BRUNO SOUZA CAJE DE OLIVEIRA";"Oscilação No Serviço De Internet";"afastar, identificou, ating, nova";2;1;1;"1 d";0;"23/09/2026 09:52";"24/09/2026 12:11";0;Média
+Cliente;"ALCIONE SANTOS DE MORAIS";"Usuario Não Conecta";;2;1;0;"13 d";0;"21/09/2026 19:39";"05/10/2026 14:11";0;Média
+Cliente;"Ginelza da Silva Oliveira";"Conexão Lenta";"vari, reclamou, ruim, comod";2;1;0;"10 d";0;"21/09/2026 20:11";"02/10/2026 12:48";0;Média
+Cliente;"JOAO LUCAS COIMBRA SOUSA";"Conexão Lenta";"abaix, veloc, novament, contrat";2;1;1;"17 h";0;"21/09/2026 20:21";"22/09/2026 14:23";0;Alta
+Cliente;"Carlos Pereira da Luz Junior";"Conexão Lenta";"problem, local, lent, conex";2;1;0;"13 d";0;"21/09/2026 20:25";"05/10/2026 18:35";0;Média
+Cliente;"Jorge Rodrigues da Silva Filho";"Conexão Lenta";"reclamou, local, lent, conex";2;1;0;"15 d";0;"21/09/2026 21:24";"07/10/2026 17:56";0;Média
+Cliente;"Jorge Rodrigues da Silva Filho";"Usuario Não Conecta";"termiu, erro, momen, apreset";2;1;1;"2 min";0;"10/10/2026 11:41";"10/10/2026 12:11";0;Média
+Cliente;"JAYNE DE OLIVEIRA SANTIAGO";"Conexão Lenta";;2;1;0;"14 d";0;"22/09/2026 07:40";"06/10/2026 08:10";0;Média
+Cliente;"JOÃO BISPO DA SILVA FILHO";"Conexão Lenta";"sugerid, agent, recentement, meno";2;1;1;"3 d 7 h";0;"22/09/2026 08:52";"25/09/2026 16:38";0;Alta
+Cliente;"JÉSSICA FRANCIS DA SILVA";"Correção/Cancelamento De Títulos/Lançamento";;2;1;0;"13 d";0;"22/09/2026 09:22";"05/10/2026 11:32";0;Média
+Cliente;"EDINALVA DA SILVA LOPES";"Atendimento Comercial";"visualizou, deu, tentei, nenhum";2;1;1;"1 d 22 h";0;"22/09/2026 09:35";"24/09/2026 08:06";0;Alta
+Cliente;"CLAUDIANE DE SOUZA SILVA";"Conexão Lenta";;2;1;0;"9 d";0;"22/09/2026 09:58";"02/10/2026 08:57";0;Média
+Cliente;"GARDENIA SANTOS DA SILVA CRUZ";"Usuario Não Conecta";"diss, local, conex";2;1;0;"8 d";0;"22/09/2026 10:07";"01/10/2026 15:58";0;Média
+Cliente;"EDILEUZA MIGUEL DE ARAUJO";"Oscilação No Serviço De Internet";"ficou, desconect, conteud, carreg";2;1;1;"30 min";0;"25/09/2026 09:12";"28/09/2026 08:24";0;Alta
+Cliente;"EDENILDA DOS SANTOS";"Conexão Lenta";"meio, lent, compartilhou, nunc";2;1;1;"3 d 2 h";0;"22/09/2026 10:24";"25/09/2026 16:12";0;Média
+Cliente;"LIS CARVALHO SOUZA BEZERRA";"Conexão Lenta";"vizinh, cabivei, detalhadament, informar";2;1;0;"10 d";0;"22/09/2026 10:38";"02/10/2026 14:11";0;Média
+Cliente;"TAINA SILVA OLIVEIRA";"Conexão Lenta";"lent, conex, consegu, baixar";2;1;1;"2 d 17 h";0;"02/10/2026 11:15";"05/10/2026 12:16";0;Média
+Cliente;"William Pereira dos Santos Almeida";"Conexão Lenta";"lent, conex, evidenci, instabil";2;1;1;"2 d 19 h";0;"22/09/2026 13:40";"25/09/2026 10:01";0;Média
+Cliente;"MARIA CONCEICAO SOUZA DOS SANTOS";"Conexão Lenta";"reclamou, muit, acess, lent";2;1;0;"13 d";0;"22/09/2026 13:49";"05/10/2026 19:52";0;Média
+Cliente;"ELISANGELA DOS SANTOS SILVA";"Usuario Não Conecta";conex;2;1;1;"1 h";0;"22/09/2026 14:54";"22/09/2026 16:42";0;Média
+Cliente;"TAISLAN DA CRUZ OLIVEIRA";"Atendimento Comercial";"vend, finaliz";2;1;1;"1 h";0;"22/09/2026 15:45";"22/09/2026 17:07";0;Alta
+Cliente;"Maria Luiza Silva Mota";"Conexão Lenta";"largur, constatou, wireles, band";2;1;0;"7 d";0;"22/09/2026 16:29";"30/09/2026 11:33";0;Média
+Cliente;"JOSE BISPO DOS SANTOS NETO";"Viabilidade Técnica - Serviço - Avulso";"maracuj, teco, netinh, vereador";2;1;1;"3 d 10 h";0;"22/09/2026 16:34";"28/09/2026 08:14";0;Média
+Cliente;"MANUELA SILVA LIMA";"Conexão Lenta";;2;1;0;"12 d";0;"22/09/2026 17:14";"05/10/2026 11:08";0;Média
+Cliente;"ALCIDES ALVES DA SILVA";"Conexão Lenta";"prestam, apen, tvbox, anormal";2;1;1;"1 h";0;"22/09/2026 19:02";"22/09/2026 20:26";0;Média
+Cliente;"MELIK FERREIRA GARCIA";"Conexão Lenta";;2;1;1;"1 d 21 h";0;"22/09/2026 19:46";"24/09/2026 17:58";0;Média
+Cliente;"ANTONIO GONÇALVES DA CRUZ NETO";"Alteração De Senha Do Wi-Fi";"senh, nome, pagu, antig";2;1;1;"1 h";0;"29/09/2026 11:22";"29/09/2026 13:20";0;Média
+Cliente;"OMERO PEREIRA DOS REIS";"Usuario Não Conecta";"usuari, normailzou, line, desligou";2;1;0;"15 d";0;"23/09/2026 08:21";"09/10/2026 08:11";0;Média
+Cliente;"Ady Lima Silva";"Informações Gerais";"idamar, pedid, senh, consultar";2;1;1;"4 h";0;"23/09/2026 10:03";"23/09/2026 15:37";0;Alta
+Cliente;"FALCON UNIFORMES PROFISSIONAIS LTDA";"Conexão Lenta";"reclamou, problem, lent, conex";2;1;0;"8 d";0;"23/09/2026 10:22";"01/10/2026 11:30";0;Média
+Cliente;"CARLA DAIANE MORAIS DA SILVA";"Conexão Lenta";;2;1;1;"1 d 9 h";0;"06/10/2026 09:33";"07/10/2026 18:58";0;Média
+Cliente;"MICHELLE SOUZA";"Usuario Não Conecta";"radi, faland, estar, agendar";2;1;0;"12 d";0;"23/09/2026 12:05";"06/10/2026 15:31";0;Média
+Cliente;"ARIOSMARIO FERREIRA DOS SANTOS";"Conexão Lenta";"youtub, midi, vide, maquininh";2;1;0;"14 d";0;"23/09/2026 16:10";"08/10/2026 07:35";0;Média
+Cliente;"SAMIRES JESUS DOS SANTOS";"Atendimento Comercial";"consegui, apresentar, tentei, ofert";2;1;1;"1 d 19 h";0;"23/09/2026 17:41";"25/09/2026 13:32";0;Alta
+Cliente;"NEUZA MADJA SILVA DOS SANTOS";"Usuario Não Conecta";"doming, desd, internet, servic";2;1;1;"18 h";0;"29/09/2026 17:13";"01/10/2026 09:37";0;Alta
+Cliente;"ESTERLITA FRANCISCA DE JESUS SILVA";"Agendamento De Fatura";"pagou, deix, corrigir, fatur";2;1;0;"13 d";0;"23/09/2026 18:10";"07/10/2026 09:08";0;Média
+Cliente;"JOÃO SILVA ROCHA FILHO";"Oscilação No Serviço De Internet";"reclamou, cleitn, tend, frequent";2;1;0;"21 d";0;"23/09/2026 20:20";"15/10/2026 18:47";0;Alta
+Cliente;"RODRIGO DE JESUS ALVES";"Conexão Lenta";"deu, afirm, szchat, retorn";2;1;1;"16 min";0;"23/09/2026 20:29";"23/09/2026 21:10";0;Média
+Cliente;"MARIZETE DOMINGAS LIMA DA SILVA";"Atendimento Comercial";"visualizou, nenhum, retorn, moment";2;1;0;"12 d";0;"24/09/2026 08:10";"06/10/2026 09:02";0;Alta
+Cliente;"RAFAEL DA PAIXÃO DE SOUZA";"Conexão Lenta";;2;1;1;"4 h";0;"24/09/2026 08:31";"24/09/2026 15:05";0;Média
+Cliente;"MARILENE SANTOS SILVA";"Alteração De Senha Do Wi-Fi";"jesustavolt, senh, msant, nova";2;1;0;"12 d";0;"24/09/2026 09:35";"06/10/2026 15:24";0;Alta
+Cliente;"JULIO DE JESUS LIMA";"Conexão Lenta";"pouc, espos, ocorri, frequent";2;1;0;"14 d";0;"02/10/2026 09:25";"16/10/2026 20:02";0;Média
+Cliente;"ADENIZIA OLIVEIRA SILVA";"Conexão Lenta";;2;1;0;"7 d";0;"24/09/2026 11:20";"01/10/2026 18:24";0;Alta
+Cliente;"TÂNIA MELO DE OLIVEIRA";"Solicitação De Materiais (P/ Cliente)";"metr, cabe, crimp, cortesi";2;1;0;"7 d";0;"24/09/2026 15:46";"02/10/2026 15:36";0;Média
+Cliente;"GABRIELLE VITORIA DA SILVA RIBEIRO CARVALHO";"Conexão Lenta";"lent, conex";2;1;0;"18 d";0;"24/09/2026 16:20";"13/10/2026 14:03";0;Média
+Cliente;"MARCOS DA SILVA SANTOS";"Conexão Lenta";;2;1;1;"2 d 7 h";0;"05/10/2026 12:54";"07/10/2026 20:15";0;Média
+Cliente;"MARCOS DA SILVA SANTOS";"Resolução De Tickets";"mascar, gateway, proxy, download";2;1;1;"1 min";0;"16/10/2026 20:31";"16/10/2026 20:31";0;Alta
+Cliente;"EVERTON SALAN DOS SANTOS";"Usuario Não Conecta";"dbm, qued, optic, aparentement";2;1;1;"3 d 2 h";0;"25/09/2026 07:40";"01/10/2026 09:57";0;Média
+Cliente;"CHRISTIAN LEONE FERREIRA";"Usuario Não Conecta";"ausenci, internet, conex";2;1;0;"21 d";0;"25/09/2026 10:04";"17/10/2026 08:22";0;Média
+Cliente;"GLEYB GOMES DOS SANTOS";"Usuario Não Conecta";"queim, font, apag, onu";2;1;1;"6 d";0;"25/09/2026 12:43";"01/10/2026 15:33";0;Média
+Cliente;"JOSÉ ANTONIO LOPES DA SILVA JUNIOR";"Usuario Não Conecta";"novament, internet, enviou, aces";2;1;0;"18 d";0;"25/09/2026 13:05";"13/10/2026 17:33";0;Alta
+Cliente;"LEIVIN RUFINO XAVIER";"Usuario Não Conecta";conex;2;1;0;"10 d";0;"26/09/2026 09:03";"06/10/2026 20:37";0;Média
+Cliente;"JAMILE DOS SANTOS NUNES MACEDO";"Resolução De Tickets";"imagem, resolvid, ruim, uso";2;1;1;"1 min";0;"15/10/2026 18:17";"15/10/2026 18:18";0;Alta
+Cliente;"ELIANA DE JESUS";"Usuario Não Conecta";;2;1;0;"13 d";0;"25/09/2026 14:28";"12/10/2026 12:10";0;Média
+Cliente;"JOSE LUIZ SOUZA";"Conexão Lenta";"momentaneament, aconteceu, googl, identificou";2;1;1;"6 d 15 h";0;"25/09/2026 17:14";"02/10/2026 08:26";0;Média
+Cliente;"MAGNOLIA DE JESUS FEITOSA";"Conexão Lenta";"lent, conex";2;1;1;"2 d 23 h";0;"02/10/2026 08:58";"05/10/2026 09:08";0;Média
+Cliente;"Silvael Miranda da Cruz";"Conexão Lenta";"maquinh, conseguem, precisar, urgenci";2;1;0;"20 d";0;"25/09/2026 19:40";"16/10/2026 11:04";0;Média
+Cliente;"LUANA SOARES SILVA";"Conexão Lenta";"rodand, abre, fica, lent";2;1;0;"11 d";0;"25/09/2026 20:55";"07/10/2026 18:17";0;Média
+Cliente;"ANA PAULA SOUZA OLIVEIRA";"Conexão Lenta";"internet, lent, netflix, carreg";2;1;1;"1 d 2 h";0;"25/09/2026 21:29";"27/09/2026 13:37";0;Média
+Cliente;"VALDEMAR GOMES DA SILVA JUNIOR";"Conexão Lenta";"perc, dbm, comecou, optic";2;1;1;"5 h";0;"26/09/2026 12:39";"28/09/2026 16:40";0;Média
+Cliente;"GEISIANE BISPO DE ALMEIDA";"Alteração De Senha Do Wi-Fi";"senh, atual, pedid, nova";2;1;0;"9 d";0;"26/09/2026 13:03";"06/10/2026 12:09";0;Média
+Cliente;"Eliana Conceição da Silva";"Conexão Lenta";"dbm, atenu, previament, execuc";2;1;1;"3 d 19 h";0;"26/09/2026 14:23";"30/09/2026 13:43";0;Média
+Cliente;"MARILENE FERREIRA MENDES E SILVA";"Alteração De Senha Do Wi-Fi";"senh, peca, node, naiar";2;1;0;"19 d";0;"26/09/2026 17:48";"16/10/2026 15:44";0;Média
+Cliente;"FERNANDO MIRANDA DA HORA FILHO";"Suporte Ao Técnico De Campo";;2;1;1;"4 d 20 h";0;"29/09/2026 15:46";"04/10/2026 11:57";0;Média
+Cliente;"FERNANDO MIRANDA DA HORA FILHO";"Conexão Lenta";;2;1;1;"21 min";0;"30/09/2026 19:52";"30/09/2026 20:30";0;Média
+Cliente;"Rosa Pereira De Jesus";"Usuario Não Conecta";"desprovisionar, provisionar, finaliz, modo";2;1;0;"8 d";0;"27/09/2026 11:24";"06/10/2026 07:57";0;Média
+Cliente;"MARIA DE FATIMA NOVAES DO NASCIMENTO BARBOSA";"Usuario Não Conecta";"power, restabelecer, agendar, aces";2;1;0;"20 d";0;"27/09/2026 11:35";"18/10/2026 15:47";1;Média
+Cliente;"CARLOS RODRIGUES OLIVEIRA LIMA";"Conexão Lenta";"pedi, cabear, abrind, netflix";2;1;1;"17 h";0;"27/09/2026 14:57";"28/09/2026 09:12";0;Média
+Cliente;"REGINALDO OLIVEIRA DA SILVA";"Atendimento Comercial";"gerac, code, pix, pagament";2;1;0;"10 d";0;"28/09/2026 08:13";"08/10/2026 16:09";0;Alta
+Cliente;"RAELITA MESSIAS OLIVEIRA SILVA";"Conexão Lenta";"dois, dispositiv, comecou, lent";2;1;0;"8 d";0;"28/09/2026 08:45";"07/10/2026 13:55";0;Média
+Cliente;"IRACEMA DE JESUS CORDEIRO";"Conexão Lenta";"thai, lima, precis, realiz";2;1;1;"5 h";0;"05/10/2026 15:17";"06/10/2026 14:44";0;Média
+Cliente;"ANTONIO SANTOS GONÇALVES";"Conexão Lenta";"bar, consegu, conectar, permanecem";2;1;1;"1 d 22 h";0;"28/09/2026 10:11";"30/09/2026 15:33";0;Alta
+Cliente;"ANA CLEIDE BARBOSA DA SILVA";"Conexão Lenta";"mandar, testou, outr, iptv";2;1;1;"15 h";0;"28/09/2026 10:13";"29/09/2026 08:36";0;Alta
+Cliente;"EVERALDO CASSINO DOS SANTOS";"Alteração De Senha Do Wi-Fi";"senh, antig, nova, conseguiu";2;1;1;"1 d 22 h";0;"28/09/2026 10:31";"30/09/2026 09:27";0;Média
+Cliente;"NORMA IZABEL PAIVA GABRIEL";"Orientações Sobre Instalação/Funcionamento Dos App's";;2;1;1;"2 h";0;"28/09/2026 12:02";"28/09/2026 15:02";0;Média
+Cliente;"BIANCA SOUSA DOS SANTOS";"Conexão Lenta";"site, sociai, lent, acessar";2;1;1;"17 h";0;"01/10/2026 16:42";"02/10/2026 10:37";0;Média
+Cliente;"FLORIZETE DE JESUS COSTA SILVA";"Conexão Lenta";"visit, anos, afirm, facebook";2;1;1;"1 d 20 h";0;"28/09/2026 13:20";"30/09/2026 14:12";0;Alta
+Cliente;"MARCOS ARAUJO LIMA";"Mudança De Data De Vencimento";contrat;2;1;1;"1 min";0;"28/09/2026 14:38";"28/09/2026 15:19";0;Alta
+Cliente;"OLDAQUIO PEREIRA BOTELHO";"Usuario Não Conecta";"diss, acess, local, especificou";2;1;1;"2 min";0;"05/10/2026 19:58";"05/10/2026 20:34";0;Média
+Cliente;"GILSON CRUZ DOS SANTOS";"Conexão Lenta";;2;1;1;"59 min";0;"28/09/2026 15:48";"28/09/2026 17:19";0;Média
+Cliente;"Diego Pablo Sampaio Pinho da Silva";"Orientações Sobre Instalação/Funcionamento Dos App's";"deezer, logar, ativar, simultane";2;1;1;"3 d 23 h";0;"28/09/2026 15:50";"02/10/2026 16:07";0;Média
+Cliente;"MANOEL MOREIRA DOS SANTOS EVANGELISTA";"Usuario Não Conecta";"desprovisionou, exclam, jeit, continuou";2;1;0;"10 d";0;"28/09/2026 16:32";"09/10/2026 08:42";0;Alta
+Cliente;"CRISTHIAN MENDES FREIRE";"Usuario Não Conecta";"provavel, problem, rede, carregavam";2;1;1;"2 d 23 h";0;"13/10/2026 08:20";"16/10/2026 12:32";0;Alta
+Cliente;"MARIA SENILDA BORGES LIMA";"Troca De Titularidade";"soni, carvalh, concili, titular";2;1;1;"6 h";0;"28/09/2026 18:14";"01/10/2026 17:45";0;Alta
+Cliente;"ALDEIZE MAGALY DE JESUS PINHO ";"Conexão Lenta";"nenhum, mandou, evidenci, print";2;1;1;"1 h";0;"29/09/2026 07:58";"29/09/2026 09:33";0;Média
+Cliente;"CLAUDIANE BISPO DE MATOS";"Usuario Não Conecta";"line, parou, funcionar, off";2;1;0;"18 d";0;"29/09/2026 08:23";"19/10/2026 13:48";1;Média
+Cliente;"Josenilde Silva Santos";"Conexão Lenta";"pedir, testar, ficou, inativ";2;1;1;"4 d 2 h";0;"02/10/2026 08:32";"06/10/2026 13:51";0;Média
+Cliente;"GENILDO RODRIGUES LUIZ";"Conexão Lenta";"momentane, algo, finalizar, mediant";2;1;1;"3 d 10 h";0;"03/10/2026 08:54";"06/10/2026 20:26";0;Média
+Cliente;"NORMÉLIA MARIA DA SILVA SANTOS ";"Usuario Não Conecta";;2;1;0;"9 d";0;"29/09/2026 11:14";"09/10/2026 12:39";0;Média
+Cliente;"ADEILTON FERREIRA DA SILVA  ( SARITA ) ";"Usuario Não Conecta";"pisc, los, onu, conex";2;1;1;"3 d 16 h";0;"29/09/2026 13:26";"05/10/2026 08:50";0;Média
+Cliente;"SIMONE PEREIRA SANTOS";"Conexão Lenta";"usar, lent, aqui, frac";2;1;1;"1 d 21 h";0;"29/09/2026 15:43";"01/10/2026 15:15";0;Média
+Cliente;"MARCIA DA SILVA CUSTODIO";"Usuario Não Conecta";"font, apag, possivel, abert";2;1;1;"1 h";0;"29/09/2026 16:00";"30/09/2026 12:14";0;Média
+Cliente;"RENATO JORGE FERREIRA";"Usuario Não Conecta";"eliab, queim, font, abert";2;1;0;"8 d";0;"29/09/2026 16:18";"09/10/2026 13:56";0;Média
+Cliente;"DOUGLAS RODRIGUES FERREIRA";"Conexão Lenta";"continuass, retornari, chegou, amanh";2;1;1;"5 d 21 h";0;"07/10/2026 20:10";"13/10/2026 18:31";0;Alta
+Cliente;"CRISLAINE SILVA LIMA";"Conexão Lenta";"site, acessar, aplicativ, lent";2;1;1;"1 d 22 h";0;"29/09/2026 16:32";"01/10/2026 15:11";0;Média
+Cliente;"Cristiana Alcântara De Souza";"Conexão Lenta";"cleitn, problem, lent, conex";2;1;0;"16 d";0;"29/09/2026 17:54";"15/10/2026 20:44";1;Média
+Cliente;"IASMIN SAN'GALO RODRIGUES";"Oscilação No Serviço De Internet";"depoi, tard, turn, desej";2;1;0;"15 d";0;"29/09/2026 18:21";"16/10/2026 08:01";0;Média
+Cliente;"IASMIN SAN'GALO RODRIGUES";"Reparo Na Rede Interna/Externa Do Assinante";"orcament, estrutur, intern, tecnic";2;1;1;"5 d 20 h";0;"01/10/2026 10:55";"07/10/2026 11:56";0;Média
+Cliente;"IASMIN SAN'GALO RODRIGUES";"Corporativo -- Usuário Não Conecta";"event, depoi, crianc, voltou";2;1;1;"4 d 9 h";0;"02/10/2026 15:01";"09/10/2026 19:33";0;Alta
+Cliente;"DERMIVALDO RODRIGUES DA SILVA";"Conexão Lenta";"netflix, instabil, primari, assistir";2;1;1;"23 h";0;"29/09/2026 19:41";"30/09/2026 19:47";0;Média
+Cliente;"Radio Jacobina FM LTDA";"Marketing Informações";consult;2;1;1;"1 min";0;"01/10/2026 09:07";"01/10/2026 10:53";0;Alta
+Cliente;"ESTER SOUZA MOREIRA DOS SANTOS";"Conexão Lenta";;2;1;1;"5 d 1 h";0;"30/09/2026 11:35";"05/10/2026 15:38";0;Média
+Cliente;"SILVANIR DOS SANTOS";"Usuario Não Conecta";"travad, retornou, los, novament";2;1;1;"2 d 21 h";0;"30/09/2026 11:54";"03/10/2026 10:14";0;Alta
+Cliente;"NIVALDINO GONÇALVES VIEIRA";"Conexão Lenta";"primari, secundari, indo, estiver";2;1;1;"21 h";0;"30/09/2026 12:19";"01/10/2026 10:19";0;Alta
+Cliente;"SUELLE SANTOS DA SILVA";"Conexão Lenta";"turn, muit, desej, acess";2;1;1;"2 d 23 h";0;"30/09/2026 12:49";"03/10/2026 13:34";0;Média
+Cliente;"ESINEIDE ALVES DOS SANTOS RODRIGUES";"Conexão Lenta";"lent, conex";2;1;1;"1 d 5 h";0;"30/09/2026 13:12";"01/10/2026 18:56";0;Média
+Cliente;"WILSON SOUZA JUNIOR";"Conexão Lenta";"aproxim, test, result, resoluc";2;1;1;"6 d 19 h";0;"30/09/2026 13:42";"07/10/2026 09:38";0;Média
+Cliente;"NAIANE SILVA DA CONCEIÇÃO";"Conexão Lenta";lent;2;1;1;"20 h";0;"30/09/2026 15:08";"01/10/2026 12:15";0;Média
+Cliente;"CICLEIDE PINTO CERQUEIRA";"Conexão Lenta";"marcel, canal, agent, dns";2;1;1;"19 h";0;"30/09/2026 15:18";"01/10/2026 11:18";0;Média
+Cliente;"LEIZIANE DA SILVA SANTOS";"Conexão Lenta";"trabalh, cham, principalment, manh";2;1;1;"1 d 21 h";0;"30/09/2026 16:31";"02/10/2026 14:15";0;Média
+Cliente;"FERNANDO LOPES DA SILVA DE OLIVEIRA";"Conexão Lenta";"primari, secundari";2;1;1;"1 d 22 h";0;"30/09/2026 18:43";"02/10/2026 18:04";0;Média
+Cliente;"EDILENE PEREIRA AMORIM";"Conexão Lenta";"entr, lent, netflix, meno";2;1;1;"3 d 17 h";0;"01/10/2026 17:38";"05/10/2026 12:09";0;Alta
+Cliente;"FRANCISCO XAVIER ROCHA MASCARENHAS";"Orientações Sobre Instalação/Funcionamento Dos App's";;2;1;0;"11 d";0;"02/10/2026 14:05";"14/10/2026 12:14";0;Média
+Cliente;"IVANA PEREIRA MENEZES";"Solicitação De Materiais (P/ Cliente)";"metragem, disponibiliz, gratuitament, estej";2;1;0;"11 d";0;"01/10/2026 08:16";"13/10/2026 11:07";0;Média
+Cliente;"TARCISIO BENTO SANTOS";"Conexão Lenta";;2;1;1;"11 h";0;"01/10/2026 08:11";"01/10/2026 19:36";0;Alta
+Cliente;"TAINARA PROFIRO ALVES RIBEIRO";"Solicitação De Materiais (P/ Cliente)";"formos, computador, smart, metr";2;1;0;"14 d";0;"01/10/2026 13:56";"16/10/2026 10:52";1;Média
+Cliente;"RODRIGO RIOS DE PINHO";"Sinal Alto Na Onu";"sinal, visit, diferenc";2;1;1;"2 h";0;"02/10/2026 16:24";"05/10/2026 17:23";0;Média
+Cliente;"SIMONE VIEIRA DOS SANTOS";"Conexão Lenta";;2;1;1;"5 d 2 h";0;"01/10/2026 10:39";"06/10/2026 13:50";0;Média
+Cliente;"GLAUCIA NASCIMENTO MOTTA";"Oscilação No Serviço De Internet";"box, atingem, solucionaram, speedtest";2;1;1;"1 d 8 h";0;"02/10/2026 11:24";"06/10/2026 16:05";0;Alta
+Cliente;"KACILÉIA OLIVEIRA DA SILVA";"Conexão Lenta";"bastant, estar, lent";2;1;0;"15 d";0;"01/10/2026 11:54";"17/10/2026 10:54";0;Média
+Cliente;"DARLLAN LISBOA GONGALVES VIANA";"Conexão Lenta";"horrivel, internet, suport, devid";2;1;1;"1 d 18 h";0;"01/10/2026 12:25";"03/10/2026 09:34";0;Média
+Cliente;"DENIVAL DA SILVA E SILVA";"Usuario Não Conecta";;2;1;0;"12 d";0;"01/10/2026 13:27";"14/10/2026 13:23";0;Média
+Cliente;"ELAINE SILVESTRE ALVES LAGO";"Conexão Lenta";"sociai, ajust, acessar, dificuldad";2;1;1;"1 min";0;"01/10/2026 14:12";"01/10/2026 15:07";0;Média
+Cliente;"Fabio Brito de Almeida";"Resolução De Tickets";"pior, boa, ficand, afet";2;1;1;"1 min";0;"06/10/2026 07:21";"06/10/2026 13:10";0;Alta
+Cliente;"DIMAXIMA OLIVEIRA LIMA";"Oscilação No Serviço De Internet";"relogi, tira, oscil, meno";2;1;0;"11 d";0;"02/10/2026 11:14";"14/10/2026 10:30";0;Média
+Cliente;"VANDELMA VILAS BOAS CARVALHO DE ARAUJO";"Conexão Lenta";"lent, conex";2;1;1;"3 d 16 h";0;"02/10/2026 16:32";"06/10/2026 09:22";0;Média
+Cliente;"ELIENE CRUZ DE SANTANA SANTOS";"Conexão Lenta";;2;1;1;"3 d 5 h";0;"03/10/2026 08:12";"06/10/2026 14:10";0;Média
+Cliente;"CAIO MARCELO DA SILVA PASSOS";"Oscilação No Serviço De Internet";"streaming, reproduc, jogo, diferent";2;1;1;"23 min";0;"06/10/2026 18:45";"08/10/2026 18:03";0;Média
+Cliente;"JOSINEIDE DE JESUS";"Conexão Lenta";"repetidor, melhori, determin, tamanh";2;1;1;"2 d 19 h";0;"03/10/2026 19:00";"06/10/2026 14:43";0;Média
+Cliente;"FELIPE MOTA FRACAROLLI";"Correção/Cancelamento De Títulos/Lançamento";"correc, finaceir, financeir";2;1;1;"1 min";0;"05/10/2026 15:34";"05/10/2026 15:38";0;Média
+Cliente;"IARA PEREIRA DOS REIS ALVES";"Conexão Lenta";"naveg, dificuldad, devid, lent";2;1;0;"8 d";0;"05/10/2026 12:18";"13/10/2026 16:09";0;Média
+Cliente;"Magna Oliveira da Conceição";"Conexão Lenta";"lent, conex";2;1;1;"52 min";0;"05/10/2026 12:39";"05/10/2026 14:14";0;Média
+Cliente;"IDALIA AMADA DA CRUZ";"Usuario Não Conecta";;2;1;1;"5 d 18 h";0;"05/10/2026 13:56";"13/10/2026 08:52";0;Média
+Cliente;"Marina de Jesus";"Conexão Lenta";"dand, interferenci, problem, diss";2;1;0;"7 d";0;"05/10/2026 14:18";"13/10/2026 09:48";0;Média
+Cliente;"LIVIA JESUS DA SILVA";"Alteração De Senha Do Wi-Fi";"senh, antig, nova";2;1;1;"3 h";0;"05/10/2026 15:34";"05/10/2026 18:54";0;Média
+Cliente;"LUCAS SOUZA DA SILVA";"Resolução De Tickets";"distanci, quart, pared, melhor";2;1;1;"1 min";0;"05/10/2026 16:29";"05/10/2026 16:29";0;Alta
+Cliente;"Antonio Carlos Alves de Oliveira (Santana)";"Usuario Não Conecta";"imagem, agradeceu, apag, conex";2;1;0;"13 d";0;"05/10/2026 17:08";"19/10/2026 11:31";0;Média
+Cliente;"LUANA SANTOS SILVA";"Conexão Lenta";;2;1;1;"2 d 2 h";0;"05/10/2026 17:25";"07/10/2026 20:37";0;Média
+Cliente;"GILDETE MARIA DE JESUS SILVA";"Usuario Não Conecta";"internet, conex, povo, todo";2;1;1;"1 d 18 h";0;"06/10/2026 09:51";"08/10/2026 09:06";0;Média
+Cliente;"JESSICA SOUZA DE JESUS";"Resolução De Tickets";"carregav, avia, ativar, enquant";2;1;1;"1 min";0;"06/10/2026 11:35";"06/10/2026 11:36";0;Alta
+Cliente;"MIDIANE FERRAZ DOS SANTOS ALVES";"Visita Técnica De Retenção";"sejam, solicit, servic, cabe";2;1;1;"5 d 8 h";0;"06/10/2026 15:05";"13/10/2026 16:38";0;Alta
+Cliente;"DANIELA JORDÃO CERQUEIRA";"Conexão Lenta";;2;1;1;"6 d 23 h";0;"06/10/2026 19:30";"13/10/2026 19:05";0;Média
+Cliente;"ELTON DA SILVA";"Conexão Lenta";"reclamou, lent, conex";2;1;0;"8 d";0;"06/10/2026 21:27";"15/10/2026 19:59";0;Média
+Cliente;"JUVILEIDE DE JESUS SANTOS";"Reparo Na Rede Interna/Externa Do Assinante";"romperam, galh, poda, arvor";2;1;1;"1 min";0;"15/10/2026 13:39";"15/10/2026 14:24";0;Alta
+Cliente;"ALZIRA BARBOSA DE JESUS";"Alteração De Senha Do Wi-Fi";"pedid, nune, tatian, idos";2;1;1;"6 h";0;"07/10/2026 09:08";"07/10/2026 15:43";0;Média
+Cliente;"EDILTON CARVALHO PEREIRA";"Conexão Lenta";"cheg, veloc, plan, nao";2;1;1;"43 min";0;"07/10/2026 11:52";"07/10/2026 13:23";0;Alta
+Cliente;"EDVAN DOS SANTOS AMARAL";"Conexão Lenta";"long, apresentav, frequent, instabil";2;1;1;"6 d 22 h";0;"07/10/2026 12:05";"14/10/2026 11:01";0;Média
+Cliente;"DEBORA SILVA SANTOS";"Conexão Lenta";;2;1;0;"7 d";0;"08/10/2026 08:49";"15/10/2026 14:44";0;Alta
+Cliente;"SILVIO VIEIRA DA SILVA";"Resolução De Tickets";"retornav, energi, normalizou, qued";2;1;1;"1 min";0;"07/10/2026 15:21";"07/10/2026 15:21";0;Alta
+Cliente;"MARIA BETANIA DE OLIVEIRA";"Resolução De Tickets";"esquecer, conectar, novament, celular";2;1;1;"1 min";0;"07/10/2026 15:23";"07/10/2026 15:23";0;Alta
+Cliente;"MARIA BETANIA DE OLIVEIRA";"Resolução De Tickets";"esquecer, novament, wifi, rede";2;1;1;"1 min";0;"10/10/2026 17:36";"10/10/2026 17:38";0;Média
+Cliente;"IONARA SOUSA NASCIMENTO";"Resolução De Tickets";"vitori, rua, usar, contrat";2;1;1;"1 min";0;"07/10/2026 15:28";"07/10/2026 15:28";0;Média
+Cliente;"PRICILA SANTOS DO NASCIMENTO";"Resolução De Tickets";"falt, reinici, residencial, roteador";2;1;1;"1 min";0;"07/10/2026 15:30";"07/10/2026 15:30";0;Média
+Cliente;"GELISTON DA SILVA BATISTA";"Resolução De Tickets";"fixa, pon, apag, los";2;1;1;"1 min";0;"07/10/2026 15:35";"07/10/2026 15:36";0;Média
+Cliente;"WALTER JUNIOR TINEL DOS SANTOS RIOS";"Conexão Lenta";"veio, dez, notad, lent";2;1;1;"5 d 23 h";0;"07/10/2026 16:13";"13/10/2026 17:03";0;Média
+Cliente;"SIDNEI FERREIRA DA SILVA";"Resolução De Tickets";"indicou, mbps, test, roteador";2;1;1;"11 min";0;"07/10/2026 18:27";"07/10/2026 18:39";0;Alta
+Cliente;"WEMERSON ALVES DA SILVA";"Alteração De Senha Do Wi-Fi";"senh, nova, matel, atual";2;1;1;"3 d 15 h";0;"07/10/2026 19:25";"11/10/2026 10:50";0;Média
+Cliente;"EDILEUZA DE LIMA PAUFERRO";"Usuario Não Conecta";"novament, conex";2;1;1;"1 d 23 h";0;"08/10/2026 10:00";"15/10/2026 08:32";0;Alta
+Cliente;"HERBERT OLIVEIRA SILVA DE JESUS";"Solicitação De Materiais (P/ Cliente)";;2;1;1;"4 d 22 h";0;"09/10/2026 15:33";"19/10/2026 16:20";1;Média
+Cliente;"RAIMUNDO BRITO DOS SANTOS";"Usuario Não Conecta";"observ, ficou, inativ, conex";2;1;0;"10 d";0;"08/10/2026 13:01";"19/10/2026 14:47";1;Média
+Cliente;"ELANDIA PEREIRA DOS SANTOS";"Alteração De Senha Do Wi-Fi";"troc, senh";2;1;1;"1 d 5 h";0;"08/10/2026 13:27";"13/10/2026 12:40";0;Média
+Cliente;"SUZIANE BARROS DOS REIS";"Usuario Não Conecta";"onu, faland, power, ligad";2;1;1;"4 d 16 h";0;"08/10/2026 15:29";"13/10/2026 09:37";0;Média
+Cliente;"BEATRIZ DOS SANTOS SILVA";"Usuario Não Conecta";"encaminhou, off, trat, irei";2;1;1;"5 d 6 h";0;"08/10/2026 18:00";"18/10/2026 16:55";0;Média
+Cliente;"LEIDILANE DA SILVA ARAUJO";"Usuario Não Conecta";;2;1;0;"9 d";0;"08/10/2026 19:16";"19/10/2026 12:30";1;Média
+Cliente;"JOSIENE AGUIAR PESSOA";"Suporte Ao Técnico De Campo";"premier, ativar, app";2;1;1;"4 d 18 h";0;"09/10/2026 18:47";"14/10/2026 13:58";0;Média
+Cliente;"GETÚLIO VARGAS GARCIA";"Correção/Cancelamento De Títulos/Lançamento";"correc, financeir";2;1;1;"6 min";0;"09/10/2026 15:32";"09/10/2026 15:41";0;Média
+Cliente;"CRISTINA LAGES VIEIRA SILVA";"Oscilação No Serviço De Internet";"observ, ficou, inativ";2;1;1;"3 h";0;"09/10/2026 11:27";"09/10/2026 15:15";0;Média
+Cliente;"JOZIENE SILVA DE OLIVEIRA ";"Solicitação De Materiais (P/ Cliente)";;2;1;1;"3 d 17 h";0;"09/10/2026 11:30";"16/10/2026 14:10";0;Média
+Cliente;"LEIDIANE DE JESUS SILVA";"Atendimento Comercial";"postal, direcion, pendent, caix";2;1;1;"1 d";0;"09/10/2026 13:46";"14/10/2026 15:12";0;Alta
+Cliente;"JOSE NILTON SANTOS SILVA";"Resolução De Tickets";"funcionar, inicialment, voltou, posteriorment";2;1;1;"1 min";0;"09/10/2026 23:29";"09/10/2026 23:29";0;Média
+Cliente;"MARIA LUCIA ALVES DOS SANTOS";"Conexão Lenta";;2;1;1;"2 h";0;"11/10/2026 14:43";"11/10/2026 17:49";0;Alta
+Cliente;"IVONE SOUSA ALVES";"Resolução De Tickets";"apareci, resolv, reinici, celular";2;1;1;"1 min";0;"12/10/2026 21:02";"12/10/2026 21:02";0;Alta
+Cliente;"ZULEIDE DE OMENA ALVES";"Alteração De Senha Do Wi-Fi";"mila, senh, trocar, nova";2;1;1;"1 h";0;"13/10/2026 09:44";"13/10/2026 12:16";0;Média
+Cliente;"VANESSA AMORIM VERAS";"Conexão Lenta";"digital, carreg, envi, persistenci";2;1;1;"1 d 20 h";0;"13/10/2026 10:49";"15/10/2026 08:50";0;Média
+Cliente;"ALMACKS LUIZ CARNEIRO DA SILVA";"Configurar App Ao Combo";"adm, ativar, nest, prossegu";2;1;1;"13 min";0;"13/10/2026 15:54";"13/10/2026 16:12";0;Média
+Cliente;"ELIZABETE SILVA DOS SANTOS";"Resolução De Tickets";"azul, dispositiv, reinici, luz";2;1;1;"3 min";0;"13/10/2026 16:39";"13/10/2026 16:43";0;Alta
+Cliente;"LUIS DE JESUS SILVA";"Resolução De Tickets";"luiz, tant, voltou, reiniciar";2;1;1;"1 min";0;"13/10/2026 23:34";"13/10/2026 23:34";0;Média
+Cliente;"MARIZETE DO CARMO";"Resolução De Tickets";"noit, anterior, normaliz, los";2;1;1;"1 min";0;"14/10/2026 07:56";"14/10/2026 07:56";0;Alta
+Cliente;"MARIZETE DO CARMO";"Usuario Não Conecta";;2;1;1;"17 h";0;"14/10/2026 09:55";"16/10/2026 08:46";0;Média
+Cliente;"JOSE ROBERTO RODRIGUES";"Usuario Não Conecta";;2;1;1;"17 h";0;"14/10/2026 08:14";"15/10/2026 08:37";0;Média
+Cliente;"HENRIQUE SOUZA LIMA";"Conexão Lenta";"site, acessar, aplicativ, lent";2;1;1;"4 d 22 h";0;"14/10/2026 09:41";"19/10/2026 09:09";0;Média
+Cliente;"CASSIANE CRUZ OLIVEIRA";"Alteração De Senha Do Wi-Fi";"perdeu, senh, wifi";2;1;1;"1 h";0;"14/10/2026 11:28";"14/10/2026 12:56";0;Média
+Cliente;"MARIA CELIA DE JESUS SILVA MACEDO";"Usuario Não Conecta";"falt, conex, colocou, retirou";2;1;1;"3 d 22 h";0;"14/10/2026 14:09";"19/10/2026 07:48";0;Alta
+Cliente;"NATIELE ARAUJO OLIVEIRA";"Usuario Não Conecta";"encontr, line, off, oscil";2;1;1;"13 h";0;"14/10/2026 18:07";"15/10/2026 08:12";0;Média
+Cliente;"ERICA ALMEIDA DOS SANTOS";"Resolução De Tickets";"desaparec, aparecer, ghz, voltou";2;1;1;"1 min";0;"15/10/2026 20:13";"15/10/2026 20:13";0;Alta
+Cliente;"GILZIMAR RODRIGUES PEDROSA";"Resolução De Tickets";"nalu, modem, reiniciar, acessar";2;1;1;"1 min";0;"16/10/2026 13:09";"16/10/2026 13:09";0;Média
+Cliente;"REGINALDO DOS SANTOS";"Conexão Lenta";"oficin, reabri, lent, problem";2;1;1;"16 h";0;"16/10/2026 14:11";"17/10/2026 09:56";1;Média
+Cliente;"ADEMILTON SANTOS DA SILVA";"Conexão Lenta";"adequadament, frac, comod, algun";2;1;1;"23 h";0;"17/10/2026 11:38";"18/10/2026 11:26";0;Média
+Cliente;"JOAO JOSE LIMA JUNIOR";"Problema Na Rede De Distribuição/Cto/Ramal Parado";"mirangab, provavel, rede, problem";2;1;1;"3 h";0;"19/10/2026 12:24";"19/10/2026 18:49";1;Alta
+Cliente;"MARIA RIBEIRO DA SILVA";"Conexão Lenta";"acontec, diss, problem, lent";2;1;1;"51 min";0;"19/10/2026 13:50";"19/10/2026 16:11";1;Média
+Cliente;"WASHINGTON FERREIRA MOTA";"Usuario Não Conecta";"desejari, alterar, off, permaneceu";1;1;0;"29 d";0;"15/09/2026 15:46";"15/10/2026 09:12";0;Média
+Cliente;"UNIDADE EXECUTORA DE SISALANDIA";"Atendimento Fiscal";"certid, competenci, envi, contrat";1;1;0;"27 d";0;"15/09/2026 08:01";"15/10/2026 08:01";0;Alta
+Cliente;"UNIDADE EXECUTORA DE SISALANDIA";"Informação De Pgt° Em Banco";;1;1;0;"8 d";0;"15/09/2026 10:04";"23/09/2026 15:45";0;Média
+Cliente;"EDNALVA FILOMENA DE ARAUJO";Cobrança;cobranc;1;1;0;"13 d";0;"21/08/2026 11:14";"22/09/2026 10:05";0;Alta
+Cliente;"MARIANA LIMA SALDANHA SOUSA ";"Conexão Lenta";"apresent, notebook, tratativ, plan";1;1;0;"18 d";0;"15/09/2026 08:55";"05/10/2026 11:59";0;Média
+Cliente;"FUNDO MUNICIPAL DE SAUDE DE CALDEIRAO GRANDE";"Informação De Pgt° Em Banco";;1;1;0;"10 d";0;"21/08/2026 16:02";"25/09/2026 15:48";0;Média
+Cliente;"FUNDO MUNICIPAL DE SAUDE DE CALDEIRAO GRANDE";"Atendimento Fiscal";"certid, competenci, envi, atualiz";1;1;0;"26 d";0;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"FUNDO MUNICIPAL DE ASSISTENCIA SOCIAL DE CALDEIRAO GRANDE";"Informação De Pgt° Em Banco";;1;1;0;"10 d";0;"21/08/2026 16:07";"25/09/2026 15:44";0;Média
+Cliente;"FUNDO MUNICIPAL DE ASSISTENCIA SOCIAL DE CALDEIRAO GRANDE";"Atendimento Fiscal";"certid, competenci, envi, atualiz";1;1;0;"26 d";0;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"PREFEITURA MUNICIPAL CALDEIRÃO GRANDE";"Informação De Pgt° Em Banco";;1;1;0;"10 d";0;"21/08/2026 16:09";"25/09/2026 15:40";0;Média
+Cliente;"PREFEITURA MUNICIPAL CALDEIRÃO GRANDE";"Atendimento Fiscal";"certid, competenci, envi, atualiz";1;1;0;"26 d";0;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"REGINALDO SANTOS CRUZ BATISTA DA SILVA";"Conexão Lenta";;1;1;0;"10 d";0;"12/09/2026 17:11";"23/09/2026 17:36";0;Média
+Cliente;"BRUNO ALEXANDRE DE BRITO";"Conexão Lenta";"suport, devid, lent, internet";1;1;0;"20 d";0;"03/09/2026 15:41";"23/09/2026 20:14";0;Média
+Cliente;"RODRIGO ALEXANDRIA VIANA";"Orientações Sobre Instalação/Funcionamento Dos App's";;1;1;0;"28 d";0;"28/08/2026 15:21";"29/09/2026 17:20";0;Média
+Cliente;"BRFIBRA TELECOMUNICAÇÕES LTDA";"Atendimento Fiscal";"fiscal, nota, competenci, bolet";1;1;0;"27 d";0;"08/09/2026 08:00";"08/10/2026 08:00";0;Alta
+Cliente;"STEPHANIE CARDOSO DA SILVA";"Conexão Lenta";"comod, diss, todo, lent";1;1;0;"28 d";0;"03/09/2026 11:38";"01/10/2026 13:35";0;Média
+Cliente;"TAISLA SANTOS DE FRANÇA";"Atendimento Comercial";"chamou, postal, direcion, caix";1;1;0;"18 d";0;"24/08/2026 13:48";"22/09/2026 14:06";0;Alta
+Cliente;"SECRETARIA DE EDUCAÇÃO -SEC";"Gerar Nf Serviço";"fiscal, nota, gerar, valor";1;1;0;"7 d";0;"27/08/2026 08:30";"29/09/2026 10:20";0;Média
+Cliente;"Prefeitura Municipal De Capim Grosso";"Atendimento Fiscal";"certid, competenci, envi, atualiz";1;1;0;"28 d";0;"09/09/2026 08:00";"09/10/2026 08:00";0;Alta
+Cliente;"Prefeitura Municipal De Capim Grosso";"Atendimento Fiscal";"cis, control, faturar, fins";1;1;0;"27 d";0;"15/09/2026 08:00";"15/10/2026 08:00";0;Alta
+Cliente;"PATRICIA SANTOS DA SILVA";"Conexão Lenta";;1;1;0;"22 d";0;"08/09/2026 11:44";"09/10/2026 12:46";0;Alta
+Cliente;"MICHELE ANDRADE DA SILVA";"Conexão Lenta";"lent, conex";1;1;0;"29 d";0;"15/09/2026 17:28";"15/10/2026 10:41";0;Média
+Cliente;"ESCOLA PROFESSORA BEATRIZ GUERREIRO MOREIRA DE FREITAS";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"LUCIANY LIMA LOPES";"Usuario Não Conecta";;1;1;0;"10 d";0;"18/09/2026 08:09";"29/09/2026 14:18";0;Média
+Cliente;"PREFEITURA MUNICIPIO DE JACOBINA";"Conexão Lenta";"lent, conex, informar, matriz";1;1;0;"11 d";0;"25/08/2026 15:21";"21/09/2026 08:43";0;Média
+Cliente;"ANA PAULA CONCEICAO ALVES";"Conexão Lenta";"lent, conex, reclamou, problem";1;1;0;"21 d";0;"03/09/2026 13:23";"25/09/2026 10:43";0;Média
+Cliente;"MASTER COMERCIAL DE VEICULOS LTDA";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"ERLANE DE JESUS SANTOS";"Conexão Lenta";"pensar, interessant, desatualiz, base";1;1;0;"26 d";0;"25/08/2026 11:59";"21/09/2026 11:20";0;Alta
+Cliente;"JOSÉ LUIZ MATOS MOURA";"Conexão Lenta";"vizinh, espos, pior, compartilh";1;1;0;"28 d";0;"25/08/2026 12:26";"24/09/2026 09:34";0;Alta
+Cliente;"HORTENCIA DE OLIVEIRA SOARES CARNEIRO";"Conexão Lenta";"confiant, certinh, houveram, relat";1;1;0;"19 d";0;"31/08/2026 09:55";"23/09/2026 12:13";0;Média
+Cliente;"PREFEITURA MUNICIPAL DE SERROLANDIA";"Informação De Pgt° Em Banco";"concili, bancari, extrat, baix";1;1;1;"1 d";0;"08/09/2026 15:17";"24/09/2026 15:53";0;Alta
+Cliente;"Aritana Brunet Silva Barbosa";"Conexão Lenta";"problem, maquininh, comerci, continu";1;1;0;"26 d";0;"25/08/2026 15:50";"14/10/2026 10:14";0;Alta
+Cliente;"EDICLEIDE ANTUNES MATOS DE SOUSA REIS";Cobrança;cobranc;1;1;0;"20 d";0;"25/08/2026 17:36";"28/09/2026 16:46";0;Alta
+Cliente;"EDICLEIDE ANTUNES MATOS DE SOUSA REIS";"Correção/Cancelamento De Títulos/Lançamento";;1;1;0;"26 d";0;"08/09/2026 16:30";"07/10/2026 12:15";0;Média
+Cliente;"Zeneide Lima de Souza Silva";Cobrança;cobranc;1;1;0;"19 d";0;"26/08/2026 08:57";"22/09/2026 10:00";0;Alta
+Cliente;"TIAGO OLIVEIRA SILVA";"Usuario Não Conecta";;1;1;0;"27 d";0;"26/08/2026 11:12";"24/09/2026 11:20";0;Média
+Cliente;"PONTO DAS CAMERAS CFTV LTDA";"Atendimento Fiscal";"adanubi, descont, mensal, efetuaram";1;1;0;"16 d";0;"26/08/2026 11:52";"30/09/2026 23:00";0;Média
+Cliente;"DEILTON LOPES ALMEIDA";"Usuario Não Conecta";"activ, subiu, reset, defeit";1;1;0;"14 d";0;"10/09/2026 12:39";"25/09/2026 09:51";0;Média
+Cliente;"ADETINA BEZERRA DO CARMO";"Atendimento Comercial";"postal, tentei, direcion, caix";1;1;1;"6 d 2 h";0;"26/08/2026 13:14";"21/09/2026 13:40";0;Alta
+Cliente;"ANA CRISTINA SOUSA DA SILVA";"Conexão Lenta";"temporariament, trazer, conect, costum";1;1;0;"25 d";0;"26/08/2026 13:26";"21/09/2026 11:18";0;Alta
+Cliente;"RAISSA OLIVEIRA SANTOS";"Conexão Lenta";"caind, afirm, szchat, estar";1;1;0;"10 d";0;"28/08/2026 13:35";"26/09/2026 19:36";0;Média
+Cliente;"BENEDITA DE JESUS";"Conexão Lenta";"problem, confer, lent, realiz";1;1;0;"29 d";0;"26/08/2026 14:03";"25/09/2026 16:05";0;Alta
+Cliente;"JAILTON DA SILVA";"Conexão Lenta";"diss, frac, troc, sanad";1;1;0;"26 d";0;"28/08/2026 09:24";"05/10/2026 14:41";0;Média
+Cliente;"TAIANE MATOS DA CRUZ OLIVEIRA";"Problema Na Rede De Distribuição/Cto/Ramal Parado";"provavel, alaz, rede, off";1;1;0;"17 d";0;"05/09/2026 10:07";"01/10/2026 17:26";0;Média
+Cliente;"JOAO RUFINO DE OLIVEIRA";"Conexão Lenta";"tirar, colocar, process, entr";1;1;0;"10 d";0;"26/08/2026 14:46";"21/09/2026 11:15";0;Alta
+Cliente;"MAIARA SANTOS ALBUQUERQUE";"Conexão Lenta";"reclamou, qued, sinal, lent";1;1;0;"8 d";0;"18/09/2026 16:55";"01/10/2026 12:51";0;Média
+Cliente;"VALDEMIR FRACAROLLI";"Oscilação No Serviço De Internet";"caind, afirm, szchat, estar";1;1;1;"49 min";0;"26/08/2026 15:11";"21/09/2026 16:12";0;Média
+Cliente;"TIAGO DE OLIVEIRA AMANCIO";"Usuario Não Conecta";"passar, soub, aparec, nao";1;1;0;"25 d";0;"27/08/2026 16:54";"22/09/2026 14:55";0;Média
+Cliente;"Empresa Gontijo de Transportes Ltda";"Atendimento Fiscal";contrat;1;1;0;"24 d";0;"27/08/2026 08:01";"27/09/2026 08:01";0;Alta
+Cliente;"TAMARA MOURA SILVA";"Atendimento Fiscal";contrat;1;1;0;"24 d";0;"27/08/2026 08:00";"27/09/2026 08:00";0;Alta
+Cliente;"EDMARA LAYANE XAVIER SOUZA";"Atendimento Fiscal";"bolet, envi, apen, venc";1;1;0;"22 d";0;"27/08/2026 08:00";"27/09/2026 08:00";0;Alta
+Cliente;"LOJAS GEOCOMERCIAL LTDA";"Atendimento Fiscal";"bolet, envi, venc, contrat";1;1;0;"24 d";0;"27/08/2026 08:00";"27/09/2026 08:00";0;Alta
+Cliente;"IVANILSON LIMA PACHECO";"Atendimento Fiscal";"bolet, envi, apen, venc";1;1;0;"18 d";0;"27/08/2026 08:00";"27/09/2026 08:00";0;Alta
+Cliente;"PARISH & ZENANDRO ADVOGADOS";"Atendimento Fiscal";contrat;1;1;0;"26 d";0;"27/08/2026 08:01";"27/09/2026 08:01";0;Alta
+Cliente;"AUTO ESCOLA DIRETRIZ";"Atendimento Fiscal";"bolet, envi, venc, contrat";1;1;0;"26 d";0;"27/08/2026 08:01";"27/09/2026 08:01";0;Alta
+Cliente;"DAVINO PEREIRA DE SOUZA FILHO";"Atendimento Fiscal";"bolet, envi, apen, venc";1;1;0;"24 d";0;"27/08/2026 08:01";"27/09/2026 08:01";0;Alta
+Cliente;"VIP TRANSPORTES DE CARGAS LTDA ";"Atendimento Fiscal";"bolet, envi, apen, venc";1;1;0;"22 d";0;"27/08/2026 08:01";"27/09/2026 08:01";0;Alta
+Cliente;"DBS DISTRIBUICAO E LOGISTICA LTDA";"Atendimento Fiscal";"envi, venc, contrat";1;1;0;"26 d";0;"27/08/2026 08:01";"27/09/2026 08:01";0;Alta
+Cliente;"ISMAEL SENA CHAGAS";"Atendimento Fiscal";contrat;1;1;0;"26 d";0;"27/08/2026 08:01";"27/09/2026 08:01";0;Alta
+Cliente;"TESLA IMAGEM MEDICINA DIAGNOSTICA LTDA";"Atendimento Fiscal";"bolet, envi, venc, contrat";1;1;0;"26 d";0;"27/08/2026 08:01";"27/09/2026 08:01";0;Alta
+Cliente;"SIPEL CONSTRUÇÕES LTDA";"Atendimento Fiscal";contrat;1;1;0;"24 d";0;"27/08/2026 08:01";"27/09/2026 08:01";0;Alta
+Cliente;"EMI - ESCOLA MUNICIPAL ITATIAIA";"Atendimento Fiscal";contrat;1;1;0;"25 d";0;"06/09/2026 08:00";"06/10/2026 08:00";0;Alta
+Cliente;"GENIVAL ALICRIM DOURADO";"Usuario Não Conecta";"usuari, conect, nao";1;1;1;"3 d 17 h";0;"17/09/2026 11:12";"21/09/2026 09:52";0;Média
+Cliente;"SECRETARIA DE EDUCAÇÃO DO MUNICÍPIO DE CAPIM GROSSO";"Usuario Não Conecta";"conex, celi, local, cortou";1;1;0;"24 d";0;"27/08/2026 10:26";"28/09/2026 12:00";0;Média
+Cliente;"SECRETARIA DE EDUCAÇÃO DO MUNICÍPIO DE CAPIM GROSSO";"Atendimento Fiscal";"cis, control, faturar, fins";1;1;0;"27 d";0;"15/09/2026 08:00";"15/10/2026 08:00";0;Alta
+Cliente;"RF SUPERMERCADO BRASIL LTDA";"Oscilação/Lentidão Na Conexão-Corporativo";"grandstream, equip, problem, restaurant";1;1;0;"25 d";0;"27/08/2026 10:37";"22/09/2026 17:07";0;Média
+Cliente;"RAQUEL SANTANA MARQUES XAVIER";"Conexão Lenta";"tend, colaborador, falh, utilizar";1;1;0;"26 d";0;"29/08/2026 19:29";"25/09/2026 19:22";0;Média
+Cliente;"DAIANE RIACHÃO DA SILVA";"Usuario Não Conecta";"conseguir, szchat, conectar, dispositiv";1;1;0;"16 d";0;"03/09/2026 21:11";"20/09/2026 08:50";0;Média
+Cliente;"Camara Municipal de Vereadores de Capim Grosso";"Informação De Pgt° Em Banco";;1;1;0;"28 d";0;"27/08/2026 17:21";"25/09/2026 15:51";0;Média
+Cliente;"Camara Municipal de Vereadores de Capim Grosso";"Atendimento Fiscal";"certid, competenci, envi, contrat";1;1;0;"27 d";0;"15/09/2026 08:00";"15/10/2026 08:00";0;Alta
+Cliente;"LUCAS RAFAEL JESUS MIRANDA";"Conexão Lenta";;1;1;0;"24 d";0;"27/08/2026 19:16";"21/09/2026 18:47";0;Média
+Cliente;"LIZANDRA DE OLIVEIRA SOUZA";"Conexão Lenta";"cleitn, suport, segund, lent";1;1;0;"28 d";0;"28/08/2026 11:32";"25/09/2026 16:32";0;Média
+Cliente;"EDELZUITA VANDIRA DOS SANTOS";"- Colar Roteador/Onu Na Parede";"colar, pared, onu, roteador";1;1;0;"20 d";0;"28/08/2026 13:38";"21/09/2026 10:11";0;Alta
+Cliente;"ISL IMPORTACAO E EXPORTACAO INDUSTRIA E COMERCIO LTDA";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"ESCOLA MUNICIPAL DOMINGOS PEREIRA DOS SANTOS";"Informação De Pgt° Em Banco";;1;1;0;"28 d";0;"28/08/2026 14:29";"25/09/2026 15:36";0;Média
+Cliente;"JACOBINA MINERAÇÃO E COMERCIO LTDA";"Informação De Pgt° Em Banco";;1;1;0;"28 d";0;"28/08/2026 14:53";"25/09/2026 15:30";0;Média
+Cliente;"JACOBINA MINERAÇÃO E COMERCIO LTDA";"Atendimento Comercial";"relatori, mensal";1;1;0;"23 d";0;"08/09/2026 10:36";"02/10/2026 11:03";0;Alta
+Cliente;"FILIPE JORDAN ALMEIDA DA SILVA";"Conexão Lenta";"provisionei, pega, diss, celular";1;1;0;"15 d";0;"28/08/2026 15:13";"02/10/2026 17:35";0;Média
+Cliente;"CARLOS HENRIQUE OLIVEIRA SOUZA";"Usuario Não Conecta";"ont, ligad, form, acord";1;1;0;"10 d";0;"12/09/2026 08:55";"25/09/2026 08:21";0;Média
+Cliente;"ERICA SANTOS PAIXÃO SAMPAIO";"Atendimento Fiscal";"competenci, envi, contrat";1;1;0;"28 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"Adonias Junior da Silva Matos";"Conexão Lenta";"naveg, conect, porem, nao";1;1;0;"15 d";0;"29/08/2026 12:13";"02/10/2026 09:45";0;Média
+Cliente;"Eric Pionorio Freire";"Atendimento Comercial";"anual, pagament, renovar, interess";1;1;0;"21 d";0;"01/09/2026 10:00";"23/09/2026 15:38";0;Alta
+Cliente;"EDINALDO DE SOUZA MENDONÇA";"Conexão Lenta";"clietn, diss, local, lent";1;1;0;"26 d";0;"30/08/2026 09:12";"25/09/2026 10:23";0;Média
+Cliente;"A.M. Comércio de Combustiveis Ltda";"Atendimento Fiscal";contrat;1;1;0;"29 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"FRANCINEIDE NASCIMENTO DE ANDRADE";"Conexão Lenta";"dispositiv, lent, internet, enfrentou";1;1;0;"18 d";0;"11/09/2026 17:54";"30/09/2026 10:10";0;Média
+Cliente;"PAULO MURILO JARDIM DA SILVA";"Atendimento Comercial";"visualizou, deu, tentei, nenhum";1;1;0;"23 d";0;"31/08/2026 14:33";"24/09/2026 09:53";0;Alta
+Cliente;"TALKD SOLUCOES EM ATENDIMENTO LTDA";"Atendimento Fiscal";"faturar, comp, contrat";1;1;0;"26 d";0;"31/08/2026 23:01";"30/09/2026 23:01";0;Alta
+Cliente;"TALKD SOLUCOES EM ATENDIMENTO LTDA";"Corporativo -- Usuário Não Conecta";"splitter, cto, possivel, problem";1;1;0;"18 d";0;"17/09/2026 09:59";"05/10/2026 17:41";0;Média
+Cliente;"GIRON COMERCIO LOGISTICA DE RESIDUOS LTDA";"Atendimento Fiscal";contrat;1;1;0;"26 d";0;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"PDDE Qualidade Col. Estadual Tempo Integral de Serrolândia";"Atendimento Fiscal";"certid, competenci, bolet, envi";1;1;0;"22 d";0;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"CAIXA DE PREVIDENCIA DOS SERVIDORES MUNIC OUROLANDIA";"Atendimento Fiscal";"certid, fiscal, nota, competenci";1;1;0;"22 d";0;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"Sport Bolsas";"Atendimento Fiscal";contrat;1;1;0;"26 d";0;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"Auto Posto Itatiaia";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"TOMÉ EQUIPAMENTOS E TRANSPORTES LTDA";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"IDEAL CONSTRUCAO E PAVIMENTACAO LTDA";"Atendimento Fiscal";"fiscai, nota, competenci, envi";1;1;0;"22 d";0;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"COMERCIO DE BEBIDAS CAPIM GROSSO LTDA";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"CENTRO MEDICO IACIRA LTDA - ME";"Atendimento Fiscal";"competenci, envi, contrat";1;1;0;"26 d";0;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"PREFEITURA MUNICIPAL DE VARZEA DO POÇO";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"FUNDO MUNICIPAL DE ASSISTENCIA SOCIAL VARZEA DO POÇO";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"31/08/2026 23:00";"30/09/2026 23:00";0;Alta
+Cliente;"REVESTE BEGE - REVESTIMENTOS EM BEGE BAHIA LTDA";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"31/08/2026 23:01";"30/09/2026 23:01";0;Alta
+Cliente;"SECRETARIA MUNICIPAL DE EDUCAÇÃO";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"31/08/2026 23:01";"30/09/2026 23:01";0;Alta
+Cliente;"FREEWAY ARTEFATOS DE COURO LTDA";"Atendimento Fiscal";contrat;1;1;0;"27 d";0;"31/08/2026 23:01";"30/09/2026 23:01";0;Alta
+Cliente;"FUNDO MUNICIPAL DA SAÚDE VÁRZEA DO POÇO";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"31/08/2026 23:01";"30/09/2026 23:01";0;Alta
+Cliente;"NOEME SILVA FELIPE";"Usuario Não Conecta";;1;1;0;"27 d";0;"01/09/2026 07:40";"09/10/2026 11:53";0;Média
+Cliente;"VENTOS DE SANTA SABINA ENERGIAS RENOVÁVEIS S/A";"Atendimento Fiscal";contrat;1;1;0;"29 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"WEBFOCO TELECOMUNICACOES LTDA";"Atendimento Fiscal";"xml, competenci, bolet, envi";1;1;0;"29 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"TELEVISAO NORTE BAIANO LTDA";"Atendimento Fiscal";"francisc, contrat";1;1;0;"28 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"CDV DESENVOLVIMENTO S.A.";"Atendimento Fiscal";contrat;1;1;0;"29 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"MICHEL SILVA SANTOS MARINHO LTDA";"Atendimento Fiscal";"envi, venc, contrat";1;1;0;"21 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"NIVIA COSTA LTDA";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"GRAN VALE LTDA";"Atendimento Fiscal";"competenci, bolet, envi, contrat";1;1;0;"21 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"ULTRANET TELECOMUNICACOES LTDA ";"Atendimento Fiscal";contrat;1;1;0;"21 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"CCNET - SERVICOS DE CONSULTORIA EM TECNOLOGIA DA INFORMACAO";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"AUTO POSTO ITATIAIA LTDA";"Atendimento Fiscal";"competenci, bolet, envi, contrat";1;1;0;"21 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"Associação Pedagógica Waldorf  de Várzea da Roça";"Atendimento Fiscal";"competenci, envi, contrat";1;1;0;"21 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"DJR COMERCIO DE MOVEIS LTDA";"Atendimento Fiscal";contrat;1;1;0;"29 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"CENTER MOVEIS COMERCIO DE MOVEIS E ELETROS LTDA";"Atendimento Fiscal";"djr, contrat";1;1;0;"29 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"EMPRESA BAIANA DE ÁGUAS E SANEAMENTO S/A";"Atendimento Fiscal";"competenci, envi, contrat";1;1;0;"29 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"CENTER MOVEIS COMERCIO DE MOVEIS E ELETROS LTDA";"Atendimento Fiscal";contrat;1;1;0;"29 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"CALCADOS PEGADA NORDESTE LTDA.";"Atendimento Fiscal";"fabric, contrat";1;1;0;"29 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"CALCADOS PEGADA NORDESTE LTDA.";"Atendimento Fiscal";contrat;1;1;0;"29 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"ALOISIO MOURA DA CUNHA";"Atendimento Fiscal";contrat;1;1;0;"29 d";0;"01/09/2026 08:00";"01/10/2026 08:00";0;Alta
+Cliente;"TOPVEL TROPICAL VEÍCULOS E PEÇAS LTDA ";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"TROPICAL MOTOS LTDA";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"PROSEGUR BRASIL S/A TRANSPORTADORA DE VALORES E SEGURANCA ";"Atendimento Fiscal";"plataform, mail, competenci, bolet";1;1;0;"28 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"VENTOS DE SAO JOAQUIM ENERGIAS RENOVAVEIS S.A.";"Atendimento Fiscal";contrat;1;1;0;"29 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"SINDICATO DOS TRAB. EM EDUC PRE-ESCOLAR, FUND E MED BAHIA";"Atendimento Fiscal";"trabalhador, educ, estad, competenci";1;1;0;"28 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"TORRES EOLICAS DO NORDESTE S/A";"Atendimento Fiscal";"nfs, mail, competenci, envi";1;1;0;"29 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"TORRES EOLICAS DO NORDESTE S/A";"Informação De Pgt° Em Banco";;1;1;0;"29 d";0;"15/09/2026 08:26";"14/10/2026 15:45";0;Média
+Cliente;"SANDOVAL MENESES LIMA";"Atendimento Fiscal";contrat;1;1;0;"28 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"JAZIEL DOS SANTOS GOMES";"Atendimento Fiscal";contrat;1;1;0;"28 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"EÓLICA SERRA DA BABILÔNIA II S.A";"Atendimento Fiscal";"competenci, bolet, envi, contrat";1;1;0;"29 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"CENTER MOVEIS COMERCIO DE MOVEIS E ELETROS LTDA";"Atendimento Fiscal";contrat;1;1;0;"28 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"COSTA NETO & CIA LTDA";"Atendimento Fiscal";"competenci, bolet, envi, contrat";1;1;0;"22 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"PENTA DERIVADOS DE PETROLEO LTDA";"Atendimento Fiscal";contrat;1;1;0;"21 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"PENTA DERIVADOS DE PETROLEO LTDA";"Conexão Lenta";"normaliz, finalizar, acontecer, chegou";1;1;0;"7 d";0;"10/09/2026 08:50";"22/09/2026 17:53";0;Média
+Cliente;"PENTA DERIVADOS DE PETROLEO LTDA";"Oscilação/Lentidão Na Conexão-Corporativo";"frequent, secundari, rote, oscil";1;1;1;"2 h";0;"18/09/2026 15:16";"21/09/2026 18:46";0;Alta
+Cliente;"ART BEGE COMERCIO DE MARMORE LTDA - ME";"Atendimento Fiscal";contrat;1;1;0;"21 d";0;"01/09/2026 08:01";"01/10/2026 08:01";0;Alta
+Cliente;"JORDANIA PAZ DOS SANTOS";"Conexão Lenta";"sever, possuem, especialment, sofr";1;1;0;"29 d";0;"01/09/2026 09:38";"01/10/2026 09:23";0;Média
+Cliente;"RAILANE MOTA SANTOS";"Conexão Lenta";"cham, instabil, trav, problem";1;1;0;"8 d";0;"15/09/2026 08:54";"24/09/2026 13:49";0;Alta
+Cliente;"ANA MARIA GONÇALVES DA SILVA OLIVEIRA";"Atendimento Comercial";"visualizou, deu, tentei, ofertar";1;1;0;"18 d";0;"01/09/2026 09:59";"22/09/2026 12:56";0;Alta
+Cliente;"EDILAINE DE JESUS";"Alteração De Senha Do Wi-Fi";"senh, atualizar, alter, wifi";1;1;0;"19 d";0;"01/09/2026 10:17";"21/09/2026 11:30";0;Média
+Cliente;"KAÊ GOMES DA SILVA";"Usuario Não Conecta";"ligand, queim, modo, font";1;1;0;"9 d";0;"18/09/2026 09:22";"01/10/2026 19:01";0;Média
+Cliente;"Glaconei dos Santos Nunes";"Conexão Lenta";"computador, consegu, melhorav, continu";1;1;0;"29 d";0;"01/09/2026 14:11";"01/10/2026 16:18";0;Média
+Cliente;"ELISIANE SANTOS DA SILVA";"Conexão Lenta";;1;1;0;"23 d";0;"01/09/2026 15:40";"25/09/2026 08:04";0;Média
+Cliente;"CONSORCIO JACUIPE";"Informação De Pgt° Em Banco";"concili, bancari, extrat, baix";1;1;0;"29 d";0;"01/09/2026 16:28";"30/09/2026 16:58";0;Alta
+Cliente;"ASSOCIAÇÃO DE PAIS E AMIGOS DE ALGODÕES";"Informação De Pgt° Em Banco";;1;1;0;"29 d";0;"01/09/2026 16:33";"30/09/2026 17:04";0;Média
+Cliente;"ASSOCIAÇÃO DE PAIS E AMIGOS DE ALGODÕES";"Atendimento Fiscal";contrat;1;1;0;"26 d";0;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"VANDELMA XAVIER CERQUEIRA";"Atendimento Fiscal";"comecar, mes, envi, novo";1;1;0;"25 d";0;"06/09/2026 08:00";"06/10/2026 08:00";0;Alta
+Cliente;"MARIA RAIMUNDA SANTANA BARRETO";"Atendimento Comercial";"maquininh, cart, receb";1;1;0;"29 d";0;"02/09/2026 08:33";"02/10/2026 08:11";0;Alta
+Cliente;"SANDOVAL AUGUSTO R. MASCARENHAS";"Conexão Lenta";"alex, conectar, dispositiv, dificuldad";1;1;0;"26 d";0;"02/09/2026 10:53";"28/09/2026 17:25";0;Média
+Cliente;"GENEROZA SOUZA LIMA";"Atualização Cadastral";"email, dado, cadastr, atualizar";1;1;0;"29 d";0;"02/09/2026 12:49";"02/10/2026 11:38";0;Alta
+Cliente;"LUANA ALMEIDA DOS SANTOS";"Conexão Lenta";"abrir, sumir, aparec, consegu";1;1;0;"28 d";0;"02/09/2026 13:05";"02/10/2026 08:03";0;Média
+Cliente;"JOSIANE DUARTE DA SILVA";"Conexão Lenta";"cancelar, informar, conex";1;1;0;"10 d";0;"18/09/2026 15:55";"29/09/2026 09:51";0;Média
+Cliente;"VERA LUCIA ALVES DE JESUS";"Atendimento Comercial";"visualizou, tentei, nenhum, retorn";1;1;0;"19 d";0;"03/09/2026 08:14";"22/09/2026 17:07";0;Média
+Cliente;"IDALIA MARIA SOUSA DE OLIVEIRA";"Usuario Não Conecta";"fica, roteador, mandou, diferenc";1;1;0;"17 d";0;"03/09/2026 08:53";"21/09/2026 14:14";0;Média
+Cliente;"NELMA DE SOUZA SANTOS";"Alteração De Senha Do Wi-Fi";;1;1;0;"22 d";0;"03/09/2026 09:04";"25/09/2026 11:26";0;Média
+Cliente;"ROBERT OLIVEIRA SOUZA";"Conexão Lenta";"lent, internet, conex";1;1;0;"17 d";0;"03/09/2026 09:39";"20/09/2026 16:59";0;Média
+Cliente;"FARMACIAS DRUMOND";"Oscilação No Serviço De Internet";"farmaci, statu, dependem, conex";1;1;0;"18 d";0;"03/09/2026 09:49";"22/09/2026 09:09";0;Média
+Cliente;"FARMACIAS DRUMOND";"Atendimento Fiscal";contrat;1;1;0;"23 d";0;"08/09/2026 08:00";"08/10/2026 08:00";0;Alta
+Cliente;"DEIVIDE LEONEL DE ARAUJO FEITOSA";"Configuração De Equipamentos";"configur, acompanhar, grandstream, instal";1;1;1;"6 d 4 h";0;"17/09/2026 10:44";"14/10/2026 13:16";0;Média
+Cliente;"JOSÉ CARLOS DA SILVA FONSECA";"Conexão Lenta";"problem, todo, lent, conx";1;1;0;"27 d";0;"03/09/2026 11:02";"01/10/2026 14:54";0;Média
+Cliente;"DAVID JEAN SILVA PEREIRA";"Conexão Lenta";"diss, local, lent, conex";1;1;0;"18 d";0;"03/09/2026 11:30";"21/09/2026 15:56";0;Média
+Cliente;"RENATO LOPES DOS SANTOS";"Conexão Lenta";"ruim, diss, conex";1;1;0;"14 d";0;"16/09/2026 13:32";"01/10/2026 11:25";0;Média
+Cliente;"VALDILENE CALAZAM CARVALHO";"Usuario Não Conecta";"igrej, ninguem, local, avis";1;1;0;"17 d";0;"03/09/2026 11:46";"28/09/2026 11:55";0;Alta
+Cliente;"ALEXSANDRO PEIXOTO PEREIRA";"Conexão Lenta";"perguntei, ficou, inativ, local";1;1;0;"21 d";0;"03/09/2026 13:39";"25/09/2026 13:37";0;Média
+Cliente;"WILTON DOUGLAS DOS SANTOS LOPES";"Oscilação No Serviço De Internet";"oscil, problem, novament, font";1;1;0;"25 d";0;"03/09/2026 14:08";"29/09/2026 10:25";0;Alta
+Cliente;"AROLDO ROSA DE JESUS";"Alteração De Senha Do Wi-Fi";"senh, remot, visit, acess";1;1;0;"19 d";0;"03/09/2026 14:26";"23/09/2026 09:08";0;Média
+Cliente;"THAINARA DE OLIVEIRA VENCESLAU";"Conexão Lenta";"caind, sempr, pedir, lent";1;1;0;"11 d";0;"10/09/2026 10:36";"21/09/2026 15:38";0;Média
+Cliente;"RAFAEL DOS SANTOS SILVA";"Usuario Não Conecta";"pisc, los, ont, local";1;1;0;"20 d";0;"03/09/2026 15:44";"24/09/2026 08:29";0;Média
+Cliente;"GENILDO JESUS PEREIRA";"Alteração De Senha Do Wi-Fi";"senh, antig, nova";1;1;0;"25 d";0;"03/09/2026 15:58";"29/09/2026 11:27";0;Média
+Cliente;"ROQUE SANTOS DE JESUS";"Atendimento Comercial";"visualizou, deu, tentei, nenhum";1;1;0;"20 d";0;"03/09/2026 17:16";"24/09/2026 14:21";0;Alta
+Cliente;"MARIA DE JESUS VIEIRA";"Problema Na Rede De Distribuição/Cto/Ramal Parado";"alaz, ourolandi, romp, provavel";1;1;0;"18 d";0;"03/09/2026 18:15";"01/10/2026 20:34";0;Média
+Cliente;"MARIA MADALENA DOS SANTOS";Cobrança;"smart, etiquet, comb, responsavel";1;1;0;"18 d";0;"03/09/2026 18:28";"06/10/2026 08:24";1;Média
+Cliente;"LUCIENE MARIA DE JESUS";Cobrança;"brcvmwjv, marian, residencial, multimidi";1;1;0;"13 d";0;"03/09/2026 18:30";"06/10/2026 08:26";1;Alta
+Cliente;"LUCILENE ALVES DE MELO";"Problema Na Rede De Distribuição/Cto/Ramal Parado";"provavel, canabrav, rede, alaz";1;1;0;"18 d";0;"03/09/2026 18:40";"01/10/2026 21:30";0;Média
+Cliente;"ROBERTA SILVA CAMPOS";"Atendimento Comercial";"consegui, tentei, atualiz, porem";1;1;0;"20 d";0;"04/09/2026 09:35";"25/09/2026 08:08";0;Alta
+Cliente;"LUCIANA CERQUEIRA DA SILVA ";"Alteração De Senha Do Wi-Fi";;1;1;0;"20 d";0;"04/09/2026 09:58";"24/09/2026 11:59";0;Média
+Cliente;"EDICARLOS SOUSA LIMA";"Conexão Lenta";"cind, celular, cerc, assistir";1;1;1;"2 d 16 h";0;"04/09/2026 13:02";"02/10/2026 10:08";0;Média
+Cliente;"VERONICA DE JESUS";"Correção/Cancelamento De Títulos/Lançamento";;1;1;0;"28 d";0;"04/09/2026 16:31";"09/10/2026 10:37";0;Média
+Cliente;"Débora Araújo Rosa";"Visita Técnica De Retenção";"estrutur, alcanc, dificuldad, espos";1;1;0;"22 d";0;"14/09/2026 10:21";"08/10/2026 08:36";0;Média
+Cliente;"JANICIO JESUS DOS SANTOS";"Problema Na Rede De Distribuição/Cto/Ramal Parado";"provavel, alaz, parad, rede";1;1;0;"17 d";0;"05/09/2026 09:44";"01/10/2026 17:31";0;Média
+Cliente;"RODRIGO FRIOLI";"Problema Na Rede De Distribuição/Cto/Ramal Parado";"ourolandi, provavel, rede, problem";1;1;0;"26 d";0;"05/09/2026 09:57";"01/10/2026 18:05";0;Média
+Cliente;"MARLENE GOMES DE LIMA";"Problema Na Rede De Distribuição/Cto/Ramal Parado";"romp, sussaran, alaz, ourolandi";1;1;0;"18 d";0;"05/09/2026 11:05";"01/10/2026 18:08";0;Média
+Cliente;"MANOELA SANTOS PINHEIRO";"Conexão Lenta";;1;1;0;"19 d";0;"05/09/2026 12:11";"30/09/2026 08:08";0;Média
+Cliente;"UDSON DE FREITAS FREIRE";"Oscilação No Serviço De Internet";"tive, mikrotik, vez, primeir";1;1;0;"22 d";0;"05/09/2026 16:07";"08/10/2026 19:41";0;Média
+Cliente;"BITNET SERVICOS DE COMUNICACAO LTDA";"Atendimento Fiscal";contrat;1;1;0;"25 d";0;"06/09/2026 08:00";"06/10/2026 08:00";0;Alta
+Cliente;"SERRARIA SOUZA LIMA LTDA";"Atendimento Fiscal";"bolet, envi, apen, venc";1;1;0;"25 d";0;"06/09/2026 08:00";"06/10/2026 08:00";0;Alta
+Cliente;"ARQUEIRO SERVICOS DE TELECOMUNICACOES LTDA.";"Atendimento Fiscal";"competenci, bolet, envi, contrat";1;1;0;"25 d";0;"06/09/2026 08:00";"06/10/2026 08:00";0;Alta
+Cliente;"WMA PRESTACAO DE SERVICOS LTDA";"Atendimento Fiscal";contrat;1;1;0;"25 d";0;"06/09/2026 08:00";"06/10/2026 08:00";0;Alta
+Cliente;"DERMIVAL NEVES DOS SANTOS";"Conexão Lenta";"lent, caind, alem, cheg";1;1;1;"4 d 1 h";0;"17/09/2026 16:31";"21/09/2026 18:26";0;Média
+Cliente;"MARCIANO REIS FELICIANO";"Atendimento Comercial";"gerac, code, pagament, efetu";1;1;0;"26 d";0;"08/09/2026 15:27";"05/10/2026 11:24";0;Média
+Cliente;"STEFANE NASCIMENTO DOS SANTOS";"Conexão Lenta";"reclamou, ruim, conex";1;1;0;"28 d";0;"06/09/2026 15:04";"05/10/2026 13:38";0;Média
+Cliente;"FLAVIO MEDEIROS BONADIMAN EIRELI";"Atendimento Fiscal";"bolet, envi, apen, venc";1;1;0;"22 d";0;"07/09/2026 08:00";"07/10/2026 08:00";0;Alta
+Cliente;"SUZANE MENDONCA DA  COSTA  DO OURO ";"Oscilação No Serviço De Internet";"qued, luca, pedid, fisic";1;1;0;"10 d";0;"07/09/2026 08:30";"21/09/2026 11:10";0;Alta
+Cliente;"GUILHERME SANTOS OLIVEIRA";"Conexão Lenta";"lent, conex, trav, internet";1;1;0;"14 d";0;"07/09/2026 11:16";"21/09/2026 18:10";0;Média
+Cliente;"SABRINA DOS SANTOS BAHIA";"Conexão Lenta";;1;1;0;"20 d";0;"07/09/2026 16:09";"05/10/2026 15:30";0;Média
+Cliente;"INGRID EDUARDA DA CONCEICAO SILVA";"Alteração De Senha Do Wi-Fi";;1;1;0;"14 d";0;"08/09/2026 13:13";"22/09/2026 15:23";0;Média
+Cliente;"Erickson Santana Amorim";"Atendimento Fiscal";"bolet, envi, apen, venc";1;1;0;"23 d";0;"08/09/2026 08:00";"08/10/2026 08:00";0;Alta
+Cliente;"FARMACIAS DRUMOND";"Atendimento Fiscal";contrat;1;1;0;"23 d";0;"08/09/2026 08:00";"08/10/2026 08:00";0;Alta
+Cliente;"PIEMONTE INDUSTRIA E COMERCIO LTDA ";"Atendimento Fiscal";contrat;1;1;0;"23 d";0;"08/09/2026 08:00";"08/10/2026 08:00";0;Alta
+Cliente;"FARMACIAS DRUMOND";"Atendimento Fiscal";contrat;1;1;0;"23 d";0;"08/09/2026 08:00";"08/10/2026 08:00";0;Alta
+Cliente;"Alberto Abreu Araújo";"Conexão Lenta";"lent, conex";1;1;0;"22 d";0;"08/09/2026 08:48";"30/09/2026 10:56";0;Média
+Cliente;"CAROLINE FARIAS GUIMARAES";"Conexão Lenta";;1;1;0;"28 d";0;"08/09/2026 09:43";"06/10/2026 19:10";0;Média
+Cliente;"SEBASTIÃO MARTINS RIOS";"Atendimento Financeiro";"pix, pagament, auxili";1;1;0;"28 d";0;"08/09/2026 10:18";"06/10/2026 11:09";0;Alta
+Cliente;"SAANE SABRINA ALMEIDA RIBEIRO";"Conexão Lenta";lent;1;1;0;"13 d";0;"08/09/2026 10:35";"22/09/2026 09:24";0;Média
+Cliente;"TARCISIO RODRIGUES DE AZEVEDO";"Conexão Lenta";"ficou, inativ, lent";1;1;0;"28 d";0;"08/09/2026 10:39";"06/10/2026 11:10";0;Média
+Cliente;"GILMAR REMIGIO FARIAS";"- Colar Roteador/Onu Na Parede";"pared, colar, desprendeu, roteador";1;1;0;"22 d";0;"08/09/2026 10:42";"02/10/2026 10:40";0;Média
+Cliente;"ELIOTON MOREIRA DE JESUS JUNIOR";"Usuario Não Conecta";"mandar, local, equip";1;1;0;"11 d";0;"08/09/2026 15:01";"20/09/2026 17:48";0;Média
+Cliente;"MANOEL DE JESUS ALMEIDA ";"Atendimento Comercial";"quit, terceir, qrcod, bemobi";1;1;0;"27 d";0;"08/09/2026 11:32";"06/10/2026 09:18";0;Alta
+Cliente;"WELINGTON PEREIRA SILVA";"Atendimento Comercial";"auxili, efetu, pagament, portal";1;1;0;"29 d";0;"08/09/2026 13:59";"08/10/2026 14:06";0;Alta
+Cliente;"EGNAILDA ALMEIDA CARNEIRO";"Conexão Lenta";"entr, lent, geral, especific";1;1;0;"11 d";0;"08/09/2026 14:11";"22/09/2026 13:09";0;Média
+Cliente;"Edinailson Santos de Jesus";"Conexão Lenta";"ruim, conex, local, largur";1;1;0;"13 d";0;"08/09/2026 14:38";"21/09/2026 17:13";0;Média
+Cliente;"ADEMILTON NASCIMENTO DOS SANTOS";"Conexão Lenta";"carregar, foto, vide, cozinh";1;1;0;"27 d";0;"08/09/2026 15:51";"08/10/2026 09:18";0;Alta
+Cliente;"MARIA EDUARDA OLIVEIRA NASCIMENTO";"Suporte Ao Técnico De Campo";"limpez, subiu, mac, editar";1;1;0;"13 d";0;"16/09/2026 19:17";"30/09/2026 19:20";0;Média
+Cliente;"NELSON OLIVEIRA SANTIAGO";"Oscilação No Serviço De Internet";"noturn, period, principalment, persistem";1;1;0;"25 d";0;"08/09/2026 17:11";"05/10/2026 10:34";0;Alta
+Cliente;"NIVAN BELTINA DE FARIAS";"Conexão Lenta";"dificuldad, naveg, disponivel, youtub";1;1;0;"28 d";0;"08/09/2026 17:14";"09/10/2026 19:16";0;Média
+Cliente;"LEONIDIA DOMINGAS DA SILVA";"Manutenção De Câmera";"camer, problem, grav, elas";1;1;0;"7 d";0;"08/09/2026 18:00";"21/09/2026 11:56";0;Média
+Cliente;"SANDRA ALVELINA DA SILVA";"Alteração De Senha Do Wi-Fi";"famili, senh, pedid, alter";1;1;0;"24 d";0;"08/09/2026 19:00";"07/10/2026 18:01";0;Média
+Cliente;"JULIO NUNES";"Atendimento Comercial";"maquininh, cart, receb";1;1;0;"28 d";0;"09/09/2026 09:12";"08/10/2026 08:04";0;Alta
+Cliente;"MISMARA SILVA CUNHA";"Conexão Lenta";"guto, parent, detalh, estagi";1;1;0;"19 d";0;"09/09/2026 10:30";"29/09/2026 11:33";0;Média
+Cliente;"Jaqueline Silva de Souza Lima";"Atendimento Comercial";"pendent, assinatur, tentei, visualizou";1;1;1;"3 d 2 h";0;"10/09/2026 16:35";"21/09/2026 13:38";0;Média
+Cliente;"EDIVALDO SANTOS DA SILVA";"Oscilação No Serviço De Internet";"falt, conex, adailt, televis";1;1;0;"10 d";0;"09/09/2026 10:35";"21/09/2026 10:18";0;Média
+Cliente;"CLEONICE ALVES DA COSTA PINHO";"Atendimento Comercial";"gerac, code, pix, pagament";1;1;0;"27 d";0;"09/09/2026 13:39";"07/10/2026 09:47";0;Alta
+Cliente;"CESAR MOTA ROCHA";"Conexão Lenta";"turn, baix, veloc, desej";1;1;0;"12 d";0;"09/09/2026 15:25";"28/09/2026 11:40";0;Média
+Cliente;"ALAN SANTOS ROCHA DA SILVA";"Alteração De Senha Do Wi-Fi";"senh, antig, nova";1;1;0;"20 d";0;"09/09/2026 16:18";"30/09/2026 14:40";0;Média
+Cliente;"Anderson Cavalcante de Souza";"Usuario Não Conecta";"extratou, apropriar, sugerid, agent";1;1;0;"24 d";0;"09/09/2026 17:18";"05/10/2026 17:27";0;Alta
+Cliente;"Paulo Washington Silva Costa";"Usuario Não Conecta";"falt, conex";1;1;0;"27 d";0;"09/09/2026 19:16";"07/10/2026 19:09";0;Média
+Cliente;"BRUNA SANTOS DO NASCIMENTO";"Conexão Lenta";"cheg, contrat, nao, ating";1;1;0;"13 d";0;"10/09/2026 18:28";"27/09/2026 14:50";0;Alta
+Cliente;"CLEUNICE CARDOZO DA SILVA";"Alteração De Senha Do Wi-Fi";"aditiv, remot, acess, senh";1;1;0;"12 d";0;"14/09/2026 07:52";"30/09/2026 16:32";0;Alta
+Cliente;"RAQUEL DOS SANTOS SILVA";Cobrança;cobranc;1;1;0;"22 d";0;"10/09/2026 08:49";"07/10/2026 15:24";1;Alta
+Cliente;"NUBIA AURORA FREIRE DA SILVA";"Usuario Não Conecta";"aparelh, consegu, veio, vermelh";1;1;0;"17 d";0;"10/09/2026 09:00";"28/09/2026 08:10";0;Alta
+Cliente;"FRANCISCO VALDECI TEIXEIRA DA SILVA";"Conexão Lenta";"bastant, insatisf, grosseir, expressar";1;1;0;"8 d";0;"18/09/2026 11:27";"29/09/2026 08:24";0;Média
+Cliente;"CARLOS ALBERTO SILVA DOS SANTOS";"Oscilação No Serviço De Internet";"principalment, continuam, acontec, pouc";1;1;0;"17 d";0;"17/09/2026 11:50";"05/10/2026 08:38";0;Média
+Cliente;"VITALINA MARIA DE JESUS SOUZA";"Atendimento Comercial";"pix, bolet, realizou, pagament";1;1;0;"25 d";0;"10/09/2026 16:40";"05/10/2026 17:11";0;Alta
+Cliente;"TATIELE MACEDO SILVA";"Conexão Lenta";;1;1;0;"14 d";0;"11/09/2026 07:56";"25/09/2026 18:45";0;Média
+Cliente;"RODRIGO BARBOSA DA CRUZ";"Conexão Lenta";"algun, instagram, corretament, youtub";1;1;0;"28 d";0;"11/09/2026 10:51";"13/10/2026 19:53";0;Média
+Cliente;"MARIZA FERREIRA DE ARAUJO OLIVEIRA";"Conexão Lenta";"baixar, resolver, vide, conseguir";1;1;0;"17 d";0;"11/09/2026 11:17";"02/10/2026 16:41";0;Alta
+Cliente;"Mikaele Santos Ferreira Silva";"Usuario Não Conecta";"rompeu, fios, caminh, passou";1;1;0;"28 d";0;"11/09/2026 12:35";"12/10/2026 16:27";0;Média
+Cliente;"TATIANA DOS SANTOS SILVA";"Conexão Lenta";"lent, esse, local, question";1;1;0;"23 d";0;"11/09/2026 12:48";"05/10/2026 10:37";0;Média
+Cliente;"ANTONIO CARLOS SANTOS DE ALBUQUERQUE";"Conexão Lenta";"turn, desej, problem, ficou";1;1;0;"7 d";0;"11/09/2026 13:22";"21/09/2026 15:38";0;Média
+Cliente;"PRIMO DO IPHONE";"Conexão Lenta";"pedir, testar, ficou, inativ";1;1;0;"11 d";0;"11/09/2026 13:30";"23/09/2026 10:09";0;Média
+Cliente;"VALDENIR MARIA DE JESUS";"Atendimento Comercial";"visualizou, deu, tentei, nenhum";1;1;0;"11 d";0;"11/09/2026 14:15";"22/09/2026 17:05";0;Alta
+Cliente;"UEBERT VINICIUS DAS NEVES RAMOS";"Conexão Lenta";"acess, local, lent, internet";1;1;0;"10 d";0;"11/09/2026 15:04";"21/09/2026 16:38";0;Média
+Cliente;"SAMUEL DE AGUIAR SILVA";"Correção/Cancelamento De Títulos/Lançamento";;1;1;0;"21 d";0;"11/09/2026 16:11";"07/10/2026 15:18";0;Média
+Cliente;"CLEIBI SANTOS DA SILVA";"Conexão Lenta";"reclamou, lent, uso, conex";1;1;0;"10 d";0;"11/09/2026 18:30";"21/09/2026 20:29";0;Média
+Cliente;"MONIQUE SANTANA DE OLIVEIRA DA SILVA";"Usuario Não Conecta";;1;1;0;"22 d";0;"12/09/2026 09:44";"06/10/2026 14:16";0;Média
+Cliente;"B S COMERCIO E SERVICOS EM INFORMATICA LTDA";"Atendimento Fiscal";"emitir, fatur, contrat";1;1;0;"26 d";0;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"B S COMERCIO E SERVICOS EM INFORMATICA LTDA";"Atendimento Fiscal";contrat;1;1;0;"26 d";0;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"COMERCIAL DE COMBUSTIVEIS FERREIRA SANTOS LTDA";"Atendimento Fiscal";contrat;1;1;0;"26 d";0;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"N. CLAUDINO & CIA LTDA";"Atendimento Fiscal";contrat;1;1;0;"26 d";0;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"LAURISETE SERAFIM DAMACENO DOS SANTOS";"Atendimento Fiscal";contrat;1;1;0;"26 d";0;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"SINDICATO DOS TRABALHADORES RURAIS  DE SANTA LUZ";"Atendimento Fiscal";contrat;1;1;0;"26 d";0;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"VARZEANET COMUNICACOES LTDA";"Atendimento Fiscal";"competenci, bolet, envi, apen";1;1;0;"26 d";0;"12/09/2026 08:00";"12/10/2026 08:00";0;Alta
+Cliente;"ROSE CLEIDE NOVAES DOS REIS";"Conexão Lenta";"continuav, audi, enviar, informar";1;1;0;"20 d";0;"12/09/2026 14:07";"05/10/2026 10:25";0;Média
+Cliente;"ELAINE DE JESUS SANTOS";"Problema Na Rede De Distribuição/Cto/Ramal Parado";"provavel, canabrav, rede, alaz";1;1;0;"18 d";0;"13/09/2026 11:06";"01/10/2026 21:37";0;Alta
+Cliente;"ANA PAULA SANTANA BARBOSA";"Conexão Lenta";"smart, ocorr, iniciar, doming";1;1;0;"19 d";0;"17/09/2026 08:20";"10/10/2026 15:15";0;Média
+Cliente;"REJANE DA SILVA FERREIRA";"Conexão Lenta";;1;1;0;"10 d";0;"14/09/2026 14:01";"24/09/2026 18:37";0;Alta
+Cliente;"MARIA APARECIDA DE JESUS SANTOS";"Usuario Não Conecta";"power, aces, led, soment";1;1;0;"10 d";0;"14/09/2026 14:02";"26/09/2026 15:07";0;Média
+Cliente;"ELIANE DE OLIVEIRA SILVA";"Usuario Não Conecta";"trav, normalizou, proced, equip";1;1;0;"11 d";0;"19/09/2026 10:34";"30/09/2026 16:39";0;Média
+Cliente;"ALEXSANDRO PEREIRA DE ARAÚJO";"Usuario Não Conecta";;1;1;0;"13 d";0;"14/09/2026 16:21";"28/09/2026 12:53";0;Média
+Cliente;"KARINA SANTOS DE JESUS";"Conexão Lenta";;1;1;0;"15 d";0;"14/09/2026 17:06";"30/09/2026 15:47";0;Média
+Cliente;"Prefeitura Municipal De Quixabeira";"Informação De Pgt° Em Banco";;1;1;0;"9 d";0;"14/09/2026 17:21";"24/09/2026 15:48";0;Média
+Cliente;"IG MOVEIS E ELETROS LTDA";"Solicitação De Materiais (P/ Cliente)";;1;1;0;"20 d";0;"14/09/2026 17:39";"07/10/2026 09:31";0;Média
+Cliente;"MARCELA JESUS DOS SANTOS";"Usuario Não Conecta";;1;1;0;"8 d";0;"14/09/2026 19:24";"24/09/2026 12:07";0;Média
+Cliente;"ARCAN TELECOM LTDA";"Atendimento Fiscal";"competenci, bolet, envi, contrat";1;1;0;"27 d";0;"15/09/2026 08:00";"15/10/2026 08:00";0;Alta
+Cliente;"UNIAO LESTE BRASILEIRA DA IGREJA ADVENTISTA DO SÉTIMO DIA";"Atendimento Fiscal";contrat;1;1;0;"22 d";0;"15/09/2026 08:00";"15/10/2026 08:02";0;Alta
+Cliente;"LEIDSON RODRIGO TEIXEIRA RIBEIRO";"Atendimento Fiscal";contrat;1;1;0;"27 d";0;"15/09/2026 08:00";"15/10/2026 08:00";0;Alta
+Cliente;"CASSIO RODRIGUES DA CONCEIÇÃO";"Atendimento Fiscal";"bolet, envi, venc, contrat";1;1;0;"27 d";0;"15/09/2026 08:00";"15/10/2026 08:00";0;Alta
+Cliente;"GEOCONTROLE BR SONDAGENS S.A.";"Atendimento Fiscal";contrat;1;1;0;"28 d";0;"15/09/2026 08:00";"15/10/2026 08:00";0;Alta
+Cliente;"Madeireira Dayane Ltda";"Atendimento Fiscal";"competenci, bolet, envi, contrat";1;1;0;"27 d";0;"15/09/2026 08:01";"15/10/2026 08:01";0;Alta
+Cliente;"ISIS BOLSAS LTDA";"Atendimento Fiscal";contrat;1;1;0;"27 d";0;"15/09/2026 08:01";"15/10/2026 08:01";0;Alta
+Cliente;"Osvaldo Moreira Rodrigues Junior";"Usuario Não Conecta";"conex, totalment, mediant, irei";1;1;0;"17 d";0;"15/09/2026 08:13";"04/10/2026 11:33";0;Média
+Cliente;"RAIANE SANTOS GONÇALVES";Cobrança;cobranc;1;1;0;"14 d";0;"15/09/2026 12:21";"15/10/2026 15:28";1;Alta
+Cliente;"CASSIA APARECIDA DE SOUZA";"Conexão Lenta";"instabil, lent, conex";1;1;0;"29 d";0;"15/09/2026 13:24";"14/10/2026 20:39";0;Média
+Cliente;"EMILLY REHEM SOBRINHO";"Usuario Não Conecta";"local, conex";1;1;0;"22 d";0;"15/09/2026 14:47";"07/10/2026 15:12";0;Média
+Cliente;"CÁSSIA SANTOS PEREIRA CARVALHO";"Oscilação No Serviço De Internet";"mesm, ocorr, cabeass, televis";1;1;0;"8 d";0;"16/09/2026 11:13";"25/09/2026 11:24";0;Média
+Cliente;"ALEXANDRE LIMA DIAS";"Usuario Não Conecta";"pisc, los, ont, conex";1;1;0;"26 d";0;"16/09/2026 11:21";"14/10/2026 17:56";0;Média
+Cliente;"MATHEUS CHRISTIAN OLIVEIRA FERREIRA";"Usuario Não Conecta";"conex, enderec, setad, posteriorment";1;1;1;"3 h";0;"16/09/2026 12:20";"22/09/2026 11:34";0;Média
+Cliente;"ANA CLECIA OLIVEIRA ASSIS DA LUZ";"Conexão Lenta";;1;1;1;"5 d 2 h";0;"16/09/2026 12:35";"21/09/2026 15:31";0;Média
+Cliente;"MIRAILDA DA SILVA CRUZ";"Conexão Lenta";"tiktok, instagram, aplicativ, outr";1;1;0;"9 d";0;"16/09/2026 14:45";"25/09/2026 17:46";0;Média
+Cliente;"LUZINETE BISPO DE OLIVEIRA";"Conexão Lenta";"possivei, frequent, durant, luminos";1;1;0;"29 d";0;"16/09/2026 14:59";"16/10/2026 16:18";0;Alta
+Cliente;"THAIS DE OLIVEIRA ANDRADE";"Usuario Não Conecta";"cto, encaminhar, verific, local";1;1;0;"10 d";0;"16/09/2026 15:58";"27/09/2026 10:24";0;Média
+Cliente;"ÉRICA FERNANDA SILVA FIGUEIREDO";"Usuario Não Conecta";"normalizou, setar, desprovisionar, diss";1;1;1;"2 d 5 h";0;"16/09/2026 16:19";"21/09/2026 14:15";0;Média
+Cliente;"BALDIANE RODRIGUES DOS SANTOS";"Conexão Lenta";"largur, constatou, wireles, band";1;1;0;"12 d";0;"16/09/2026 17:47";"29/09/2026 17:50";0;Média
+Cliente;"JOSÉ BERNARDINO DE LIMA";"Conexão Lenta";"abri, lent, procurei, zap";1;1;0;"27 d";0;"17/09/2026 08:18";"16/10/2026 08:54";0;Média
+Cliente;"ANTONIO JOSÉ VIEIRA";"Correção/Cancelamento De Títulos/Lançamento";"correc, financeir";1;1;1;"4 d 22 h";0;"17/09/2026 17:40";"22/09/2026 16:23";0;Alta
+Cliente;"VALSANTO DA SILVA MACHADO";"Usuario Não Conecta";;1;1;0;"10 d";0;"17/09/2026 11:35";"28/09/2026 15:40";0;Média
+Cliente;"ADEMILSON SANTOS DE SOUZA";"Usuario Não Conecta";"tia, moca, sobrinh, idad";1;1;0;"10 d";0;"17/09/2026 13:57";"28/09/2026 11:31";0;Média
+Cliente;"ADLIENE RODRIGUES DOS SANTOS";"Não Acessa Site Específico";"xbox, call, duty, microsoft";1;1;0;"13 d";0;"17/09/2026 19:11";"01/10/2026 14:45";0;Alta
+Cliente;"HELDONYS BENEDITO OLIVEIRA CARVALHO";"Conexão Lenta";"visit, lent, conex";1;1;1;"3 d 22 h";0;"18/09/2026 09:01";"22/09/2026 08:59";0;Média
+Cliente;"LUZIA SOUZA SILVA SANTANA";"Mudança De Data De Vencimento";"apartir, mudanc, venc, competenci";1;1;0;"14 d";0;"18/09/2026 08:28";"02/10/2026 10:14";0;Média
+Cliente;"DAIZE PACHECO DE ALMEIDA DAMACENO";"Usuario Não Conecta";"mae, valdeci, coloc, peco";1;1;0;"9 d";0;"18/09/2026 08:55";"01/10/2026 10:01";0;Média
+Cliente;"JUSSILAINE FERREIRA DE ARAÚJO TELES DE MATOS";"Usuario Não Conecta";"parad, provavel, cto, rede";1;1;0;"9 d";0;"18/09/2026 09:39";"30/09/2026 18:10";0;Média
+Cliente;"CRISTIANE DA SILVA SANTOS";"Conexão Lenta";"conex, problem, visit, lent";1;1;0;"14 d";0;"18/09/2026 09:52";"03/10/2026 10:06";0;Média
+Cliente;"VANUSIA DE OLIVEIRA FRANÇA";"Oscilação No Serviço De Internet";"semem, box, oscil, cerc";1;1;0;"12 d";0;"18/09/2026 10:01";"01/10/2026 07:57";0;Média
+Cliente;"VALMIRA FIDELINA DE MATOS ALMEIDA";"Usuario Não Conecta";"vida, font, nenhum, sinai";1;1;1;"2 d 1 h";0;"18/09/2026 10:51";"23/09/2026 10:19";0;Média
+Cliente;"REINALDO GONÇALVES DA SILVA";"Pagamento Equivocado";"bolet, cpf, atentou, correc";1;1;0;"25 d";0;"18/09/2026 13:05";"13/10/2026 17:19";0;Média
+Cliente;"MARIA FRANCISCA DE JESUS";"Atendimento Comercial";"visualizou, deu, tentei, nenhum";1;1;1;"5 d 18 h";0;"18/09/2026 13:56";"24/09/2026 08:33";0;Alta
+Cliente;"JOSELITO FRANCISCO DOS SANTOS";"Atendimento Comercial";"visualizou, deu, tentei, nenhum";1;1;1;"5 d 18 h";0;"18/09/2026 14:06";"24/09/2026 08:24";0;Alta
+Cliente;"EVANILSON SANTOS TEIXEIRA";"Conexão Lenta";"edileuz, enfrent, liga, servicedesk";1;1;0;"19 d";0;"18/09/2026 15:00";"08/10/2026 09:59";0;Média
+Cliente;"NILZETE BANDEIRA DOS REIS";"Usuario Não Conecta";"tecnic, conex, loja, ssid";1;1;0;"10 d";0;"18/09/2026 15:14";"29/09/2026 10:31";0;Média
+Cliente;"PEDRO LUAN OLIVEIRA DOS SANTOS";"Negociação De Debito";;1;1;1;"6 d 2 h";0;"18/09/2026 16:16";"05/10/2026 13:35";1;Média
+Cliente;"THALINE VITÓRIA DOS SANTOS OLIVEIRA";"Correção/Cancelamento De Títulos/Lançamento";"incorret, encontr, valor";1;1;0;"16 d";0;"18/09/2026 16:43";"05/10/2026 13:44";0;Média
+Cliente;"JOSE CARLOS ALVES ALMEIDA";"Usuario Não Conecta";"internet, activ, line, naveg";1;1;1;"2 d 1 h";0;"19/09/2026 08:55";"23/09/2026 13:11";0;Média
+Cliente;"RAFAEL DE ANDRADE CAVALCANTE";"Conexão Lenta";"lent, tvs, principalment, problem";1;1;0;"9 d";0;"19/09/2026 13:09";"28/09/2026 21:06";0;Média
+Cliente;"INAILSON SANTOS CERQUEIRA";"Usuario Não Conecta";"nenhum, acend, sabad, modo";1;1;1;"34 min";0;"19/09/2026 16:36";"21/09/2026 11:44";0;Média
+Cliente;"TALKD SOLUCOES EM ATENDIMENTO LTDA";"Migrar Conexão/Troca De Titularidade";"talkdltd, migrar, correi, agenci";12;0;0;N/D;11;"15/10/2026 17:18";"15/10/2026 17:38";0;Alta
+Cliente;"STEIN TELECOM LTDA";"Migrar Conexão/Troca De Titularidade";"steinltd, migrar, corporativ, escol";7;0;0;N/D;6;"30/09/2026 17:28";"01/10/2026 17:07";0;Alta
+Cliente;"G.V.R. TELECOMUNICACOES E SERVICOS LTDA";"Reativação - Contrato Suspenso";"program, reativ";5;0;0;N/D;4;"21/09/2026 09:11";"21/09/2026 09:24";5;Alta
+Cliente;"JAILSON SANTOS DE ALMEIDA";"Retenção N2 (Não Utilizar)";"relacion, valor, outubr, cienci";4;0;0;N/D;3;"14/10/2026 09:10";"14/10/2026 10:54";0;Alta
+Cliente;"RJV EMPREENDIMENTOS E ENGENHARIA LTDA";"Correção/Cancelamento De Títulos/Lançamento";;3;0;0;N/D;2;"14/10/2026 15:21";"14/10/2026 15:22";0;Média
+Cliente;"NILIANE DE JESUS";"Resolução De Tickets";"anterior, mbps, fast, ghz";3;0;0;N/D;2;"10/10/2026 20:28";"10/10/2026 20:28";0;Média
+Cliente;"REIJANE RODRIGUES DOS SANTOS";"Troca De Estrutura/Equipamentos (Upgrade)";"fibr, ten, essencial, basic";3;0;0;N/D;2;"28/09/2026 16:35";"30/09/2026 14:47";0;Alta
+Cliente;"MARIZA SANTANA PAIXÃO";"Resolução De Tickets";"angic, mairi, rua, alexandr";3;0;0;N/D;2;"06/10/2026 07:17";"06/10/2026 07:24";0;Alta
+Cliente;"LORRANE RIOS CARNEIRO";"Marketing Informações";"consult, equip";3;0;0;N/D;2;"13/10/2026 08:32";"13/10/2026 08:53";0;Alta
+Cliente;"TATIELLE DA SILVA SOUZA ";"Usuario Não Conecta";"los, onu, conex, tatiel";2;0;0;N/D;1;"17/10/2026 09:40";"19/10/2026 06:06";1;Alta
+Cliente;"TATIELLE DA SILVA SOUZA ";"Informações Gerais";"tatiel, sext, basic, feir";2;0;0;N/D;1;"19/10/2026 06:00";"19/10/2026 06:00";0;Média
+Cliente;"RAIMUNDO DOS SANTOS SOUZA";"Conexão Lenta";"sofr, caracteristic, som, sever";2;0;0;N/D;1;"02/10/2026 16:33";"02/10/2026 16:48";0;Média
+Cliente;"Railda Silva dos Santos";"Resolução De Tickets";"verificou, vizinh, tard, reiniciou";2;0;0;N/D;1;"06/10/2026 05:57";"06/10/2026 05:58";0;Média
+Cliente;"ELITE ENGENHARIA LTDA";"Oscilação No Serviço De Internet";"diz, nunc, tentou, digitai";2;0;0;N/D;1;"28/09/2026 10:00";"28/09/2026 10:15";0;Alta
+Cliente;"MURILO CÉSAR SILVA";"Solicitação De Materiais (P/ Cliente)";;2;0;0;N/D;1;"13/10/2026 11:12";"13/10/2026 11:14";0;Média
+Cliente;"José Bispo de Souza ";"Conexão Lenta";"reproduc, tiktok, desligou, normalizar";2;0;0;N/D;1;"08/10/2026 09:43";"08/10/2026 10:13";0;Alta
+Cliente;"Caio Felipe Ferreira Silva";"Resolução De Tickets";"sheil, silvestr, modem, encaix";2;0;0;N/D;1;"09/10/2026 20:42";"09/10/2026 20:42";0;Média
+Cliente;"A N NET SERVICOS RESIDENCIAIS LTDA";"Bloqueio Link-Provedores";"bloquei, falt, pagament, conex";2;0;0;N/D;1;"15/10/2026 14:50";"15/10/2026 14:53";0;Alta
+Cliente;"ASSOCIAÇÃO DE PAIS E AMIGOS DE ALGODÕES";"Conexão Lenta";"pppo, marivon, sagradafamili, associacaoalgod";2;0;0;N/D;1;"30/09/2026 16:02";"30/09/2026 16:06";0;Alta
+Cliente;"FLORIDETE DA SILVA ARAÚJO OLIVEIRA";"Resolução De Tickets";"rio, pesso, santaluz, verd";2;0;0;N/D;1;"26/09/2026 21:18";"26/09/2026 21:19";0;Média
+Cliente;"MARIA CONCEIÇÃO SANTOS DA SILVA";"Troca De Estrutura/Ativação Fibra";"essencial, locac, sim, plan";2;0;0;N/D;1;"22/09/2026 16:08";"22/09/2026 16:32";0;Alta
+Cliente;"UENDER MACIEL ARAUJO";"Conexão Lenta";"mal, instagram, assistir, demai";2;0;0;N/D;1;"07/10/2026 16:02";"07/10/2026 16:04";0;Alta
+Cliente;"JUCELIVALDO DOS SANTOS SOUZA";"Troca De Estrutura/Ativação Fibra";"light, pat, locac, sim";2;0;0;N/D;1;"29/09/2026 16:35";"30/09/2026 14:30";0;Alta
+Cliente;"ROSANGELA VILARONGA DE MENEZES";"Compartilhar Acesso Interno";"felip, lima, sant, instal";2;0;0;N/D;1;"25/09/2026 12:13";"25/09/2026 12:22";0;Alta
+Cliente;"WESLLEY ANDRIERY PEREIRA SILVA";"Resolução De Tickets";"queimou, substituic, permanec, nenhum";2;0;0;N/D;1;"11/10/2026 13:10";"11/10/2026 13:10";0;Média
+Cliente;"VELSIS SISTEMAS E TECNOLOGIA VIARIA S.A.";"Gerar Nf Serviço";"ajustam, simpl, nota, fiscal";2;0;0;N/D;1;"29/09/2026 16:24";"30/09/2026 12:14";0;Alta
+Cliente;"STEFANY DE SENA CRUZ";"Cancelar Titulo C/Nf";"reativou, mult, contratual, vist";2;0;0;N/D;1;"23/09/2026 09:53";"24/09/2026 17:34";0;Alta
+Cliente;"B S COMERCIO E SERVICOS EM INFORMATICA LTDA";"Resolução De Tickets";"telnet, leal, lisbo, monitor";2;0;0;N/D;1;"07/10/2026 23:16";"07/10/2026 23:21";0;Média
+Cliente;"EDMARIO DANTAS GAMA";"Usuario Não Conecta";"piscav, provision, conectar, voltou";2;0;0;N/D;1;"02/10/2026 17:00";"03/10/2026 17:27";0;Alta
+Cliente;"MARIA CLARA MACIEL DA TRINDADE";"Devolução De Equipamento";"pat, datacom, ont, devolv";2;0;0;N/D;1;"13/10/2026 15:39";"13/10/2026 16:17";0;Alta
+Cliente;"HUDSON MACEDO ARAUJO";"Resolução De Tickets";"especializ, solucion, recorrent, houv";2;0;0;N/D;1;"02/10/2026 21:21";"02/10/2026 21:22";0;Média
+Cliente;"EDUARDO RIBEIRO GUERRA";Inventário;"moviment, instal, utiliz, equip";2;0;0;N/D;1;"23/09/2026 11:47";"23/09/2026 12:31";0;Média
+Cliente;"Mech - Marcelo Cruz Barreto Costa";"Resolução De Tickets";"jacobin, rua, encaix, dano";2;0;0;N/D;1;"11/10/2026 20:31";"11/10/2026 20:31";0;Média
+Cliente;"PAULO ROBERTO OLIVEIRA SANTOS";"Lançamento De Drop";"lanc, efetu, drop, abert";2;0;0;N/D;1;"02/10/2026 10:34";"06/10/2026 17:14";0;Alta
+Cliente;"TEREZINHA MARIA DE JESUS";"Usuario Não Conecta";"forneceu, providenci, refer, dest";2;0;0;N/D;1;"16/10/2026 09:46";"16/10/2026 09:47";0;Média
+Cliente;"SANDRA SILVA DE SANTANA";"Conexão Lenta";"ligac, demai, persistem, instabil";2;0;0;N/D;1;"21/09/2026 09:27";"21/09/2026 10:21";0;Alta
+Cliente;"Janicleide Mota do Nascimento";"Troca De Estrutura/Equipamentos (Upgrade)";"plan, antig, novo";2;0;0;N/D;1;"29/09/2026 16:09";"29/09/2026 16:09";0;Alta
+Cliente;"ALINE MATOS SILVA";"Troca De Estrutura/Ativação Fibra";"plan, lado, locac, sim";2;0;0;N/D;1;"23/09/2026 14:30";"23/09/2026 15:44";0;Alta
+Cliente;"Valdinei Sousa da Silva";"Usuario Não Conecta";"imagem, pon, encaminh, pisc";2;0;0;N/D;1;"23/09/2026 18:50";"23/09/2026 19:21";0;Média
+Cliente;"LEANDRO MIRANDA COSTA";"Resolução De Tickets";"codig, credenciai, aplicativ, verific";2;0;0;N/D;1;"23/09/2026 08:10";"23/09/2026 08:10";0;Alta
+Cliente;"ROQUE ANJO VIEIRA";"Troca De Estrutura/Ativação Fibra";"bar, locac, sim, referenci";2;0;0;N/D;1;"23/09/2026 11:33";"23/09/2026 11:37";0;Alta
+Cliente;"JEANE DE MORAIS SANTOS";"Conexão Lenta";"fort, geral, insist, confirmar";2;0;0;N/D;1;"27/09/2026 09:32";"27/09/2026 12:17";0;Alta
+Cliente;"ANDRE GONCALVES SILVA";"Resolução De Tickets";"bom, atras, fatur";2;0;0;N/D;1;"04/10/2026 12:41";"04/10/2026 12:41";0;Alta
+Cliente;"MAÍSA CAROLINE SILVA DOS SANTOS";"Resolução De Tickets";"cheir, fumac, estour, manusear";2;0;0;N/D;1;"26/09/2026 06:24";"26/09/2026 06:24";0;Alta
+Cliente;"LEVI ALVES SILVA MELO";"Informações Gerais";"ideal, possivelment, ocorreu, caind";2;0;0;N/D;1;"26/09/2026 13:42";"26/09/2026 13:42";0;Alta
+Cliente;"VITOR AUGUSTO CARVALHO DE OLIVEIRA";"Retenção N2 (Não Utilizar)";"arrast, cancel, ressaltou, queix";2;0;0;N/D;1;"02/10/2026 16:38";"02/10/2026 16:40";0;Alta
+Cliente;"ADALCI FREIRE DE ARAUJO";"Conexão Lenta";"traz, pagand, adequadament, apresent";2;0;0;N/D;1;"28/09/2026 10:18";"28/09/2026 10:24";0;Alta
+Cliente;"ADALICE LIMA";"Usuario Não Conecta";"castr, desconect, regi, luca";2;0;0;N/D;1;"28/09/2026 11:19";"28/09/2026 15:17";0;Média
+Cliente;"ALDEIZE MAGALY DE JESUS PINHO ";"Resolução De Tickets";"mbps, deis, oscil, roteador";2;0;0;N/D;1;"29/09/2026 07:38";"29/09/2026 07:38";0;Média
+Cliente;"JOÃO BATISTA DOS SANTOS";"Mudança De Data De Vencimento";"vigorar, venc, outubr, passar";2;0;0;N/D;1;"29/09/2026 11:09";"29/09/2026 11:14";0;Alta
+Cliente;"JOSEVANDO DOS SANTOS";"Cancelar Titulo C/Nf";"mult, titul, cancelar, dispens";2;0;0;N/D;1;"30/09/2026 10:01";"30/09/2026 11:57";0;Média
+Cliente;"JAGNER VITOR CARNEIRO";"Solicitação De Desconto (Prob. Conexão)";"setembr, ficou, conceder, vari";2;0;0;N/D;1;"30/09/2026 15:28";"30/09/2026 15:33";0;Alta
+Cliente;"MARIA DE LOURDES BACELAR";"Usuario Não Conecta";"danificou, carr, fios, deix";2;0;0;N/D;1;"30/09/2026 16:09";"30/09/2026 16:17";0;Média
+Cliente;"MANOEL DA SILVA";"Conexão Lenta";"vincular, independentement, persist, visit";2;0;0;N/D;1;"09/10/2026 11:50";"09/10/2026 11:55";0;Alta
+Cliente;"VIVIAN FERREIRA COSTAS SANTOS";"Usuario Não Conecta";;2;0;0;N/D;1;"01/10/2026 09:00";"01/10/2026 14:29";0;Média
+Cliente;"NELSON JUNIOR LIMA SILVA";"Correção/Cancelamento De Títulos/Lançamento";correc;2;0;0;N/D;1;"01/10/2026 10:50";"01/10/2026 10:50";0;Média
+Cliente;"INGRID KEMILLY VILARONGA RIOS";"Conexão Lenta";"praticament, funcionou, estar, agor";2;0;0;N/D;1;"02/10/2026 14:50";"02/10/2026 17:39";0;Média
+Cliente;"FELIPE MOTA FRACAROLLI";"Troca De Estrutura/Equipamentos (Upgrade)";"ont, atualizou, tecnologi, plan";2;0;0;N/D;1;"05/10/2026 15:12";"05/10/2026 15:19";1;Alta
+Cliente;"GISLENE FERREIRA DA SILVA";"Troca De Estrutura/Equipamentos (Upgrade)";"scm, plan, antig, cabo";2;0;0;N/D;1;"05/10/2026 17:08";"07/10/2026 11:11";0;Alta
+Cliente;"ELIZANGELA SECUNDO SILVA COSTA";"Devolução De Equipamento";"iago, original, barret, responsavel";2;0;0;N/D;1;"07/10/2026 12:30";"16/10/2026 07:57";0;Média
+Cliente;"JUCILMA DE JESUS ANSELMO";Inventário;"genimed, rios, souz, original";2;0;0;N/D;1;"08/10/2026 08:38";"08/10/2026 09:48";0;Alta
+Cliente;"MARILEIDE FERREIRA DE OLIVEIRA";"Viabilidade Técnica - Serviço - Avulso";"recomend, adequ, caracteristic, implement";2;0;0;N/D;1;"08/10/2026 11:36";"08/10/2026 11:36";1;Alta
+Cliente;"Jamisson Almeida Sampaio Vieira";"Resolução De Tickets";"jan, testar, inclusiv, proxim";2;0;0;N/D;1;"08/10/2026 20:56";"08/10/2026 20:56";0;Alta
+Cliente;"Dalva Macedo Santana";"Usuario Não Conecta";"mandou, diz, aliment, desconect";2;0;0;N/D;1;"19/10/2026 09:14";"19/10/2026 10:17";1;Média
+Cliente;"RENILTON NUNES DOS SANTOS ";"Resolução De Tickets";"basic, soluc, funcion, realizou";2;0;0;N/D;1;"13/10/2026 06:50";"13/10/2026 06:50";0;Média
+Cliente;"WAGNER MARINHO PINTO";"Informações Gerais";"hipotes, funcion, nao";2;0;0;N/D;1;"12/10/2026 17:30";"12/10/2026 17:30";0;Alta
+Cliente;"PARQUE EOLICO JACOBINA 02 S.A";"Ajuste De Velocidade Link Dedicado";"dedic, liber, link";2;0;0;N/D;1;"16/10/2026 16:04";"16/10/2026 16:16";2;Alta
+Cliente;"MARTA DE SOUZA ALVES";"Usuario Não Conecta";"foco, import, jeit, nenhum";2;0;0;N/D;1;"16/10/2026 19:53";"16/10/2026 21:00";0;Média
+Cliente;"FELIPE DE OLIVEIRA FRUTUOSO";"Informações Gerais";"totalment, testar, energi, apag";2;0;0;N/D;1;"17/10/2026 06:50";"17/10/2026 06:51";0;Alta
+Cliente;"ELISABETE SANTOS DA SILVA";"Usuario Não Conecta";;2;0;0;N/D;1;"18/10/2026 09:11";"19/10/2026 14:45";2;Média
+Cliente;"VALDEMIR SILVA DO NASCIMENTO";"Usuario Não Conecta";"len, mediant, off, irei";2;0;0;N/D;1;"18/10/2026 16:28";"19/10/2026 10:20";0;Média
+Cliente;"DEIVIDE LEONEL DE ARAUJO FEITOSA";"Compartilhar Acesso Interno";"stream, pertencem, instal, unifi";1;0;0;N/D;1;"17/09/2026 10:37";"15/10/2026 15:23";1;Média
+Interna;"Patrimônio e Logística - Sede - Separação → Patrimônio e Logística - Sede - Triagem";"Requisição De Materiais E Equipamentos";"descric, destin, quant, justificativ";84;39;28;"3 d 16 h";45;"21/08/2026 11:10";"19/10/2026 11:42";23;Alta
+Interna;"Comercial Geral → Contas a Pagar";"Solicitação De Recursos";"ativ, agua, valor, motiv";39;19;13;"1 d 20 h";20;"24/08/2026 13:10";"19/10/2026 08:04";0;Alta
+Interna;"Infraestrutura e Manutenção → Infraestrutura - Capim Grosso";"Manutenção Na Infraestrutura";"cto, local, ramal, gross";35;16;7;"8 d";19;"24/08/2026 08:12";"19/10/2026 13:37";7;Média
+Interna;"Estoque Jacobina - TRIAGEM → Estoque Jacobina - SEPARADO";"Requisição De Materiais E Equipamentos";"descric, quant, destin, ont";34;16;14;"3 d 12 h";18;"21/08/2026 14:42";"15/10/2026 09:28";0;Alta
+Interna;"LIDERANÇAS → Contas a Pagar";"Solicitação De Recursos";"valor, ativ, observ, recurs";20;16;6;"12 d";4;"24/08/2026 08:58";"19/10/2026 17:06";3;Alta
+Interna;"Infraestrutura e Manutenção → Infraestrutura - Jacobina";"Manutenção Na Infraestrutura";"cto, ramal, local, jacobin";18;13;7;"6 d 18 h";5;"21/08/2026 14:04";"17/10/2026 12:29";3;Alta
+Interna;"Setor TI → Agendamento Geral ---";"Pc/Note/Impressora/Rede Etc. - Manutenção/Reparo";"camer, offlin, anex, desd";9;4;2;"7 d";5;"01/09/2026 08:06";"06/10/2026 10:22";4;Alta
+Interna;"Patrimônio e Logística - Sede - Triagem → Patrimônio e Logística - Sede - Aguardando Compra";"Requisição De Materiais E Equipamentos";"destin, descric, quant, justificativ";7;0;0;N/D;7;"21/08/2026 17:01";"19/10/2026 11:37";10;Média
+Interna;"Patrimônio e Logística - Sede - Aguardando Compra → Patrimônio e Logística - Sede - Triagem";"Requisição De Materiais E Equipamentos";"fita, descric, justificativ, quant";6;2;2;"4 d 8 h";4;"01/09/2026 11:29";"15/10/2026 16:45";6;Média
+Interna;"Patrimônio e Logística - Sede - Triagem → Patrimônio e Logística - Sede - Separação";"Requisição De Materiais E Equipamentos";"descric, destin, quant, justificativ";5;2;2;"1 d 21 h";3;"21/08/2026 08:50";"16/10/2026 14:56";7;Média
+Interna;"TECNICOS GERAL → Agendamento Região 03 ---";"Consulta De Cto";"neutr, revis, cto, efetuar";5;2;1;"10 d";3;"26/08/2026 09:14";"08/10/2026 10:54";0;Média
+Interna;"Estoque Jacobina - TRIAGEM → Estoque Jacobina - SEPARAÇÃO";"Requisição De Materiais E Equipamentos";"quant, descric, materiai, miguel";5;0;0;N/D;4;"13/10/2026 11:15";"15/10/2026 07:43";1;Média
+Interna;"Comercial Geral → Setor TI";"Configuração De Equipamentos";"event, senh, rede, pppo";2;2;1;"9 d";0;"25/08/2026 09:35";"08/10/2026 08:02";0;Alta
+Interna;"Agendamento Geral --- → Agendamento Região 03 ---";"Análise De Viabilidade P/ Eventos";"viabil, event, public, acontecer";2;1;0;"11 d";1;"27/08/2026 09:54";"30/09/2026 10:12";0;Média
+Interna;"Patrimônio e Logística - Sede - Separado → Patrimônio e Logística - Sede - Triagem";"Requisição De Materiais E Equipamentos";"descric, quant, destin, justificativ";2;1;0;"16 d";1;"04/09/2026 11:47";"09/10/2026 16:45";4;Média
+Interna;"Patrimônio e Logística - Sede - Triagem → INFRAESTRUTURA PREDIAL";"Manutenção Patrimonial";"oper, gelar, apontar, nobreak";1;0;0;N/D;1;"14/09/2026 08:55";"14/10/2026 17:29";1;Média
+Reencaminhamento;"TALKD SOLUCOES EM ATENDIMENTO LTDA · Comercial Geral → NOC";"Migrar Conexão/Troca De Titularidade";"talkdltd, migrar, correi, agenci";12;0;0;N/D;11;"15/10/2026 17:18";"15/10/2026 17:38";0;Alta
+Reencaminhamento;"STEIN TELECOM LTDA · Comercial Geral → NOC";"Migrar Conexão/Troca De Titularidade";"steinltd, migrar, corporativ, escol";7;0;0;N/D;6;"30/09/2026 17:28";"01/10/2026 17:07";0;Alta
+Reencaminhamento;"G.V.R. TELECOMUNICACOES E SERVICOS LTDA · Comercial Geral → Renovação";"Reativação - Contrato Suspenso";"program, reativ";5;0;0;N/D;4;"21/09/2026 09:11";"21/09/2026 09:24";5;Alta
+Reencaminhamento;"PREFEITURA MUNICIPIO DE JACOBINA · ServiceDesk → Agendamento Geral ---";"Corporativo -- Usuário Não Conecta";"solicitant, danific, font, equip";4;3;2;"4 d 18 h";0;"05/10/2026 08:09";"19/10/2026 09:44";0;Média
+Reencaminhamento;"JAILSON SANTOS DE ALMEIDA · Comercial Geral → Relacionamentos - Retenção de Cancelamento";"Retenção N2 (Não Utilizar)";"relacion, valor, outubr, cienci";4;0;0;N/D;3;"14/10/2026 09:10";"14/10/2026 10:54";0;Alta
+Reencaminhamento;"SITELBRA SISTEMA DE TELECOMUNICACOES DO BRASIL LTDA · ServiceDesk → Agendamento Geral ---";"Corporativo -- Usuário Não Conecta";"pont, mandar, conex, los";3;2;0;"18 d";1;"28/08/2026 07:59";"13/10/2026 10:27";0;Média
+Reencaminhamento;"OVIRLAINE DE OLIVEIRA DOS SANTOS  · Comercial Geral → ServiceDesk";"Conexão Lenta";"lent, instagram, instabil, carreg";3;2;1;"7 d";0;"28/09/2026 09:25";"14/10/2026 11:04";0;Média
+Reencaminhamento;"PREFEITURA MUNICIPIO DE JACOBINA · Comercial Geral → Agendamento Geral ---";"Corporativo -- Usuário Não Conecta";"cert, recorrenci, ficar, solucion";3;1;0;"12 d";1;"06/10/2026 08:17";"19/10/2026 08:51";0;Média
+Reencaminhamento;"GILVANIA SILVA DA CRUZ ARAUJO · Comercial Geral → ServiceDesk";"Conexão Lenta";"ultimament, mencion, frequenci, turn";3;1;1;"2 d";1;"21/09/2026 15:25";"24/09/2026 07:43";0;Média
+Reencaminhamento;"ISABEL RIOS GONZAGA · Atendimento Comercial → Relacionamentos - Retenção de Cancelamento";"Retenção N2 (Não Utilizar)";"filh, provedor, motiv, optand";3;1;1;"1 min";1;"25/09/2026 09:15";"25/09/2026 10:48";0;Alta
+Reencaminhamento;"REIJANE RODRIGUES DOS SANTOS · Atendimento Presencial - Quixabeira → Agendamento Geral ---";"Troca De Estrutura/Equipamentos (Upgrade)";"fibr, ten, essencial, basic";3;0;0;N/D;2;"28/09/2026 16:35";"30/09/2026 14:47";0;Alta
+Reencaminhamento;"DEISIANE GONZAGA DA CRUZ · Comercial Geral → ServiceDesk";"Conexão Lenta";"lent, compareceu, relat, insatisfeit";2;2;1;"17 d";0;"24/08/2026 11:15";"28/09/2026 10:47";0;Média
+Reencaminhamento;"MARIA SOCORRO SOUZA DE JESUS · Comercial Geral → ServiceDesk";"Conexão Lenta";"consegu, vizinh, conex, abrir";2;2;1;"17 d";0;"02/09/2026 07:56";"07/10/2026 14:00";0;Alta
+Reencaminhamento;"SUZANA LIMA ALMEIDA NASCIMENTO · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";;2;2;1;"15 d";0;"02/09/2026 09:23";"05/10/2026 09:17";0;Média
+Reencaminhamento;"EMERSON RUDNEI REIS DO VALE · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";;2;2;0;"14 d";0;"08/09/2026 08:18";"07/10/2026 13:47";0;Média
+Reencaminhamento;"MARIA SUELI SILVA NASCIMENTO · Comercial Geral → ServiceDesk";"Conexão Lenta";"comect, caiand, rede, reiniciaram";2;2;1;"6 d 22 h";0;"09/09/2026 11:39";"28/09/2026 09:34";0;Média
+Reencaminhamento;"CRISTINA SANTOS DE SOUZA SILVA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"problem, conex";2;2;1;"14 d";0;"14/09/2026 13:54";"16/10/2026 11:31";1;Média
+Reencaminhamento;"LEILA LAIZ BASTOS SILVA SANTOS · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"pon, observ, pisc, onu";2;2;1;"5 d 3 h";0;"18/09/2026 12:12";"01/10/2026 18:26";0;Média
+Reencaminhamento;"MARIA TEREZINHA ALVES DOS SANTOS · Comercial Geral → ServiceDesk";"Oscilação No Serviço De Internet";"modific, alcanc, qued, troc";2;1;0;"7 d";0;"24/09/2026 09:01";"02/10/2026 08:21";0;Média
+Reencaminhamento;"MARIA NEUSA OLIVEIRA SILVA · Comercial Geral → ServiceDesk";"Conexão Lenta";"muit, carregam, interromp, conhec";2;1;1;"21 h";0;"05/10/2026 15:51";"07/10/2026 10:36";0;Alta
+Reencaminhamento;"ELMA MARCLEY MARTA BATISTA · Comercial Geral → ServiceDesk";"Usuario Não Conecta";"veio, soub, const, gas";2;1;1;"16 h";0;"21/09/2026 08:41";"22/09/2026 09:10";0;Alta
+Reencaminhamento;"Gilza dos Santos Santana · Comercial Geral → ServiceDesk";"Conexão Intermitente";"fabinh, momentane, espos, voltou";2;1;0;"13 d";0;"30/09/2026 10:52";"15/10/2026 10:06";0;Média
+Reencaminhamento;"AGENARIO QUEIROZ DE ARGOLO · Comercial Geral → ServiceDesk";"Usuario Não Conecta";"restabelec, nora, compareceu, caiu";2;1;0;"27 d";0;"21/09/2026 09:17";"19/10/2026 11:44";1;Média
+Reencaminhamento;"MARINALVA SILVA DA ANUNCIAÇÃO · Comercial Geral → ServiceDesk";"Usuario Não Conecta";"colocou, off, statu, removeu";2;1;0;"9 d";0;"21/09/2026 10:21";"01/10/2026 16:15";0;Média
+Reencaminhamento;"ANAILDE ALMEIDA DE ARAUJO · Comercial Geral → ServiceDesk";"Oscilação No Serviço De Internet";"mbr, fala, celular, instabiil";2;1;0;"16 d";0;"21/09/2026 10:34";"08/10/2026 11:50";0;Alta
+Reencaminhamento;"ANA BEATRIZ LIMA DOS SANTOS · Comercial Geral → Agendamento Geral ---";"Instalação De Câmera";"saudad, enderec, mercadinh, esquin";2;1;0;"12 d";0;"21/09/2026 14:28";"06/10/2026 10:18";0;Média
+Reencaminhamento;"Auto Posto Itatiaia · Comercial Geral → ServiceDesk";"Conexão Lenta";"maquin, utiliz, cart, autopost";2;1;1;"2 d 2 h";0;"22/09/2026 11:19";"24/09/2026 15:49";0;Média
+Reencaminhamento;"JOEDISON SANTOS OLIVEIRA CARNEIRO · ServiceDesk → Agendamento Geral ---";"Oscilação No Serviço De Internet";"qued, frequent, turn, desej";2;1;1;"2 h";0;"27/09/2026 09:46";"28/09/2026 12:01";0;Média
+Reencaminhamento;"OMERO PEREIRA DOS REIS · Comercial Geral → ServiceDesk";"Usuario Não Conecta";"usuari, normailzou, line, desligou";2;1;0;"15 d";0;"23/09/2026 08:21";"09/10/2026 08:11";0;Média
+Reencaminhamento;"ADENIR AUGUSTO GOMES · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"mexeram, acha, telh, ligand";2;1;0;"9 d";0;"23/09/2026 08:25";"08/10/2026 08:28";0;Média
+Reencaminhamento;"MICHELLE SOUZA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"radi, faland, estar, agendar";2;1;0;"12 d";0;"23/09/2026 12:05";"06/10/2026 15:31";0;Média
+Reencaminhamento;"ARIOSMARIO FERREIRA DOS SANTOS · Comercial Geral → ServiceDesk";"Conexão Lenta";"youtub, midi, vide, maquininh";2;1;0;"14 d";0;"23/09/2026 16:10";"08/10/2026 07:35";0;Média
+Reencaminhamento;"Walter Silva Reis Junior · ServiceDesk → Agendamento Geral ---";"Conexão Lenta";"lent, conex, chegou, recorrenci";2;1;1;"6 d 3 h";0;"24/09/2026 08:31";"30/09/2026 19:58";0;Média
+Reencaminhamento;"Ivone Almeida Da Silva · Atendimento Comercial → ServiceDesk";"Conexão Lenta";"ligi, conect, filh, aparelh";2;1;1;"1 d 3 h";0;"24/09/2026 09:17";"25/09/2026 14:33";0;Média
+Reencaminhamento;"TÂNIA MELO DE OLIVEIRA · Comercial Geral → Gestão Técnica";"Solicitação De Materiais (P/ Cliente)";"metr, cabe, crimp, cortesi";2;1;0;"7 d";0;"24/09/2026 15:46";"02/10/2026 15:36";0;Média
+Reencaminhamento;"EVERTON SALAN DOS SANTOS · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"dbm, qued, optic, aparentement";2;1;1;"3 d 2 h";0;"25/09/2026 07:40";"01/10/2026 09:57";0;Média
+Reencaminhamento;"GEANE BACELAR DA SILVA XAVIER · Atendimento Presencial - Quixabeira → ServiceDesk";"Conexão Lenta";"entr, lent, continu, apresent";2;1;0;"10 d";0;"25/09/2026 09:21";"06/10/2026 14:12";0;Média
+Reencaminhamento;"GLEYB GOMES DOS SANTOS · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"queim, font, apag, onu";2;1;1;"6 d";0;"25/09/2026 12:43";"01/10/2026 15:33";0;Média
+Reencaminhamento;"ELIANA DE JESUS · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";;2;1;0;"13 d";0;"25/09/2026 14:28";"12/10/2026 12:10";0;Média
+Reencaminhamento;"ADILMA DOS SANTOS MOTA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";;2;1;0;"7 d";0;"25/09/2026 15:50";"05/10/2026 15:54";0;Média
+Reencaminhamento;"MARIA DE FATIMA NOVAES DO NASCIMENTO BARBOSA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"power, restabelecer, agendar, aces";2;1;0;"20 d";0;"27/09/2026 11:35";"18/10/2026 15:47";1;Média
+Reencaminhamento;"KLEBER LIMA DO NASCIMENTO · Comercial Geral → ServiceDesk";"Conexão Lenta";"youtub, principalment, persist, vide";2;1;1;"2 d 3 h";0;"28/09/2026 07:57";"30/09/2026 11:58";0;Alta
+Reencaminhamento;"RAELITA MESSIAS OLIVEIRA SILVA · Comercial Geral → ServiceDesk";"Conexão Lenta";"dois, dispositiv, comecou, lent";2;1;0;"8 d";0;"28/09/2026 08:45";"07/10/2026 13:55";0;Média
+Reencaminhamento;"ANTONIO SANTOS GONÇALVES · Comercial Geral → ServiceDesk";"Conexão Lenta";"bar, consegu, conectar, permanecem";2;1;1;"1 d 22 h";0;"28/09/2026 10:11";"30/09/2026 15:33";0;Alta
+Reencaminhamento;"ANA CLEIDE BARBOSA DA SILVA · Atendimento Comercial → ServiceDesk";"Conexão Lenta";"mandar, testou, outr, iptv";2;1;1;"15 h";0;"28/09/2026 10:13";"29/09/2026 08:36";0;Alta
+Reencaminhamento;"MARCOS ARAUJO LIMA · Comercial Geral → ADM Operacional";"Mudança De Data De Vencimento";contrat;2;1;1;"1 min";0;"28/09/2026 14:38";"28/09/2026 15:19";0;Alta
+Reencaminhamento;"LUZINETE SANTOS BATISTA · Comercial Geral → ServiceDesk";"Conexão Lenta";"tiktok, sempr, vide, consegu";2;1;0;"16 d";0;"28/09/2026 16:33";"15/10/2026 16:12";0;Média
+Reencaminhamento;"NORMÉLIA MARIA DA SILVA SANTOS  · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";;2;1;0;"9 d";0;"29/09/2026 11:14";"09/10/2026 12:39";0;Média
+Reencaminhamento;"ADEILTON FERREIRA DA SILVA  ( SARITA )  · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"pisc, los, onu, conex";2;1;1;"3 d 16 h";0;"29/09/2026 13:26";"05/10/2026 08:50";0;Média
+Reencaminhamento;"RENATO JORGE FERREIRA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"eliab, queim, font, abert";2;1;0;"8 d";0;"29/09/2026 16:18";"09/10/2026 13:56";0;Média
+Reencaminhamento;"IASMIN SAN'GALO RODRIGUES · ServiceDesk → Agendamento Geral ---";"Corporativo -- Usuário Não Conecta";"event, depoi, crianc, voltou";2;1;1;"4 d 9 h";0;"02/10/2026 15:01";"09/10/2026 19:33";0;Alta
+Reencaminhamento;"CARLOS HENRIQUE GOMES ABRAHAO · Comercial Geral → ADM Operacional";"Mudança De Data De Vencimento";"partir, mes, mudanc, venc";2;1;1;"17 min";0;"30/09/2026 15:04";"30/09/2026 15:29";0;Alta
+Reencaminhamento;"JUCILÂNIA REIS DA SILVA · Comercial Geral → ServiceDesk";"Conexão Lenta";"conteud, corretament, assistir, televis";2;1;1;"4 d 5 h";0;"30/09/2026 17:31";"05/10/2026 14:09";0;Alta
+Reencaminhamento;"EDVANIA SOUZA MENDES DE OLIVEIRA · ServiceDesk → Agendamento Geral ---";"Conexão Lenta";"imprimir, simpl, arquiv, prejudic";2;1;1;"6 d 9 h";0;"30/09/2026 19:50";"07/10/2026 18:48";0;Alta
+Reencaminhamento;"IVANA PEREIRA MENEZES · Comercial Geral → Gestão Técnica";"Solicitação De Materiais (P/ Cliente)";"metragem, disponibiliz, gratuitament, estej";2;1;0;"11 d";0;"01/10/2026 08:16";"13/10/2026 11:07";0;Média
+Reencaminhamento;"IASMIN SAN'GALO RODRIGUES · Comercial Geral → Agendamento Geral ---";"Reparo Na Rede Interna/Externa Do Assinante";"orcament, estrutur, intern, tecnic";2;1;1;"5 d 20 h";0;"01/10/2026 10:55";"07/10/2026 11:56";0;Média
+Reencaminhamento;"DENIVAL DA SILVA E SILVA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";;2;1;0;"12 d";0;"01/10/2026 13:27";"14/10/2026 13:23";0;Média
+Reencaminhamento;"TAINARA PROFIRO ALVES RIBEIRO · Comercial Geral → Gestão Técnica";"Solicitação De Materiais (P/ Cliente)";"formos, computador, smart, metr";2;1;0;"14 d";0;"01/10/2026 13:56";"16/10/2026 10:52";1;Média
+Reencaminhamento;"ELAINE SILVESTRE ALVES LAGO · Comercial Geral → ServiceDesk";"Conexão Lenta";"sociai, ajust, acessar, dificuldad";2;1;1;"1 min";0;"01/10/2026 14:12";"01/10/2026 15:07";0;Média
+Reencaminhamento;"MARISTELA NOVAIS CARVALHO · Comercial Geral → ServiceDesk";"Conexão Lenta";"pega, pior, meno, lent";2;1;0;"16 d";0;"02/10/2026 10:46";"19/10/2026 09:51";0;Média
+Reencaminhamento;"DIMAXIMA OLIVEIRA LIMA · Comercial Geral → ServiceDesk";"Oscilação No Serviço De Internet";"relogi, tira, oscil, meno";2;1;0;"11 d";0;"02/10/2026 11:14";"14/10/2026 10:30";0;Média
+Reencaminhamento;"Ladio Barbosa Pinto · Comercial Geral → ServiceDesk";"Conexão Lenta";"kbps, algun, indic, apresentou";2;1;0;"10 d";0;"02/10/2026 12:27";"15/10/2026 16:51";0;Alta
+Reencaminhamento;"RAUENIA ALVES DOS SANTOS SILVA · Comercial Geral → Agendamento Geral ---";"Usuario Não Conecta";"relatabnd, cedo, pessoal, identifiquei";2;1;0;"9 d";0;"02/10/2026 15:57";"14/10/2026 13:36";0;Média
+Reencaminhamento;"RODRIGO RIOS DE PINHO · Comercial Geral → Agendamento Geral ---";"Sinal Alto Na Onu";"sinal, visit, diferenc";2;1;1;"2 h";0;"02/10/2026 16:24";"05/10/2026 17:23";0;Média
+Reencaminhamento;"JUCELMA DOS SANTOS NASCIMENTO · Atendimento Presencial - Santa Luz → ServiceDesk";"Conexão Lenta";"studi, perceb, conseguir, todo";2;1;0;"10 d";0;"05/10/2026 15:03";"16/10/2026 11:12";0;Alta
+Reencaminhamento;"FUNDO MUNICIPAL DE SAUDE - FUNSAUDE · ServiceDesk → Agendamento Geral ---";"Oscilação/Lentidão Na Conexão-Corporativo";"eliab, abertur, pedid, observ";2;1;1;"6 d 2 h";0;"06/10/2026 09:03";"13/10/2026 10:11";0;Alta
+Reencaminhamento;"MIDIANE FERRAZ DOS SANTOS ALVES · Comercial Geral → Agendamento Geral ---";"Visita Técnica De Retenção";"sejam, solicit, servic, cabe";2;1;1;"5 d 8 h";0;"06/10/2026 15:05";"13/10/2026 16:38";0;Alta
+Reencaminhamento;"WALTER JUNIOR TINEL DOS SANTOS RIOS · Comercial Geral → ServiceDesk";"Conexão Lenta";"veio, dez, notad, lent";2;1;1;"5 d 23 h";0;"07/10/2026 16:13";"13/10/2026 17:03";0;Média
+Reencaminhamento;"EDILEUZA DE LIMA PAUFERRO · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"novament, conex";2;1;1;"1 d 23 h";0;"08/10/2026 10:00";"15/10/2026 08:32";0;Alta
+Reencaminhamento;"ELANDIA PEREIRA DOS SANTOS · ServiceDesk → Agendamento Geral ---";"Alteração De Senha Do Wi-Fi";"troc, senh";2;1;1;"1 d 5 h";0;"08/10/2026 13:27";"13/10/2026 12:40";0;Média
+Reencaminhamento;"SUZIANE BARROS DOS REIS · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"onu, faland, power, ligad";2;1;1;"4 d 16 h";0;"08/10/2026 15:29";"13/10/2026 09:37";0;Média
+Reencaminhamento;"BEATRIZ DOS SANTOS SILVA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"encaminhou, off, trat, irei";2;1;1;"5 d 6 h";0;"08/10/2026 18:00";"18/10/2026 16:55";0;Média
+Reencaminhamento;"LEIDILANE DA SILVA ARAUJO · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";;2;1;0;"9 d";0;"08/10/2026 19:16";"19/10/2026 12:30";1;Média
+Reencaminhamento;"JOZIENE SILVA DE OLIVEIRA  · Atendimento Presencial - Quixabeira → Gestão Técnica";"Solicitação De Materiais (P/ Cliente)";;2;1;1;"3 d 17 h";0;"09/10/2026 11:30";"16/10/2026 14:10";0;Média
+Reencaminhamento;"HERBERT OLIVEIRA SILVA DE JESUS · Comercial Geral → Gestão Técnica";"Solicitação De Materiais (P/ Cliente)";;2;1;1;"4 d 22 h";0;"09/10/2026 15:33";"19/10/2026 16:20";1;Média
+Reencaminhamento;"VIVIA ALVES PEREIRA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"danific, font, conex";2;1;1;"6 h";0;"13/10/2026 08:19";"13/10/2026 18:05";0;Média
+Reencaminhamento;"JUMARA ABREU DOS SANTOS · Comercial Geral → ServiceDesk";"Conexão Lenta";"claudian, prestar, filh, pertencent";2;1;1;"1 d 3 h";0;"15/10/2026 08:44";"16/10/2026 15:07";0;Média
+Reencaminhamento;"LORENA LUNA DOS SANTOS · Comercial Geral → ServiceDesk";"Usuario Não Conecta";"energi, ocorr, percebeu, eletric";2;1;1;"7 h";0;"16/10/2026 16:20";"19/10/2026 17:43";1;Alta
+Reencaminhamento;"A N NET SERVICOS RESIDENCIAIS LTDA · Cobrança interna - Sede → NOC";"Bloqueio Link-Provedores";"bloquei, falt, pagament, conex";2;0;0;N/D;1;"15/10/2026 14:50";"15/10/2026 14:53";0;Alta
+Reencaminhamento;"SANDRA SILVA DE SANTANA · Comercial Geral → ServiceDesk";"Conexão Lenta";"ligac, demai, persistem, instabil";2;0;0;N/D;1;"21/09/2026 09:27";"21/09/2026 10:21";0;Alta
+Reencaminhamento;"MARIA CONCEIÇÃO SANTOS DA SILVA · Comercial Geral → Agendamento Geral ---";"Troca De Estrutura/Ativação Fibra";"essencial, locac, sim, plan";2;0;0;N/D;1;"22/09/2026 16:08";"22/09/2026 16:32";0;Alta
+Reencaminhamento;"ROQUE ANJO VIEIRA · Comercial Geral → Agendamento Geral ---";"Troca De Estrutura/Ativação Fibra";"bar, locac, sim, referenci";2;0;0;N/D;1;"23/09/2026 11:33";"23/09/2026 11:37";0;Alta
+Reencaminhamento;"ALINE MATOS SILVA · Comercial Geral → Agendamento Geral ---";"Troca De Estrutura/Ativação Fibra";"plan, lado, locac, sim";2;0;0;N/D;1;"23/09/2026 14:30";"23/09/2026 15:44";0;Alta
+Reencaminhamento;"ROSANGELA VILARONGA DE MENEZES · Agendamento Geral --- → Agendamento Região 02 ---";"Compartilhar Acesso Interno";"felip, lima, sant, instal";2;0;0;N/D;1;"25/09/2026 12:13";"25/09/2026 12:22";0;Alta
+Reencaminhamento;"MARIZETE PEREIRA DA SILVA · Comercial Geral → ServiceDesk";"Conexão Lenta";"extremament, mal, enviar, mensagen";2;0;0;N/D;1;"25/09/2026 15:39";"25/09/2026 15:40";0;Alta
+Reencaminhamento;"JEANE DE MORAIS SANTOS · ServiceDesk → Agendamento Geral ---";"Conexão Lenta";"fort, geral, insist, confirmar";2;0;0;N/D;1;"27/09/2026 09:32";"27/09/2026 12:17";0;Alta
+Reencaminhamento;"ELITE ENGENHARIA LTDA · Comercial Geral → ServiceDesk";"Oscilação No Serviço De Internet";"diz, nunc, tentou, digitai";2;0;0;N/D;1;"28/09/2026 10:00";"28/09/2026 10:15";0;Alta
+Reencaminhamento;"ADALCI FREIRE DE ARAUJO · Comercial Geral → ServiceDesk";"Conexão Lenta";"traz, pagand, adequadament, apresent";2;0;0;N/D;1;"28/09/2026 10:18";"28/09/2026 10:24";0;Alta
+Reencaminhamento;"JOÃO BATISTA DOS SANTOS · Comercial Geral → ADM Operacional";"Mudança De Data De Vencimento";"vigorar, venc, outubr, passar";2;0;0;N/D;1;"29/09/2026 11:09";"29/09/2026 11:14";0;Alta
+Reencaminhamento;"Janicleide Mota do Nascimento · Comercial Geral → Agendamento Geral ---";"Troca De Estrutura/Equipamentos (Upgrade)";"plan, antig, novo";2;0;0;N/D;1;"29/09/2026 16:09";"29/09/2026 16:09";0;Alta
+Reencaminhamento;"VELSIS SISTEMAS E TECNOLOGIA VIARIA S.A. · Comercial Geral → FATURAMENTO";"Gerar Nf Serviço";"ajustam, simpl, nota, fiscal";2;0;0;N/D;1;"29/09/2026 16:24";"30/09/2026 12:14";0;Alta
+Reencaminhamento;"JUCELIVALDO DOS SANTOS SOUZA · Comercial Geral → Agendamento Geral ---";"Troca De Estrutura/Ativação Fibra";"light, pat, locac, sim";2;0;0;N/D;1;"29/09/2026 16:35";"30/09/2026 14:30";0;Alta
+Reencaminhamento;"JAGNER VITOR CARNEIRO · Comercial Geral → Setor TI";"Solicitação De Desconto (Prob. Conexão)";"setembr, ficou, conceder, vari";2;0;0;N/D;1;"30/09/2026 15:28";"30/09/2026 15:33";0;Alta
+Reencaminhamento;"ASSOCIAÇÃO DE PAIS E AMIGOS DE ALGODÕES · Comercial Geral → ServiceDesk";"Conexão Lenta";"pppo, marivon, sagradafamili, associacaoalgod";2;0;0;N/D;1;"30/09/2026 16:02";"30/09/2026 16:06";0;Alta
+Reencaminhamento;"PAULO ROBERTO OLIVEIRA SANTOS · Agendamento Geral --- → Agendamento Região 03 ---";"Lançamento De Drop";"lanc, efetu, drop, abert";2;0;0;N/D;1;"02/10/2026 10:34";"06/10/2026 17:14";0;Alta
+Reencaminhamento;"RAIMUNDO DOS SANTOS SOUZA · Atendimento Presencial - Santa Luz → ServiceDesk";"Conexão Lenta";"sofr, caracteristic, som, sever";2;0;0;N/D;1;"02/10/2026 16:33";"02/10/2026 16:48";0;Média
+Reencaminhamento;"VITOR AUGUSTO CARVALHO DE OLIVEIRA · Comercial Geral → Relacionamentos - Retenção de Cancelamento";"Retenção N2 (Não Utilizar)";"arrast, cancel, ressaltou, queix";2;0;0;N/D;1;"02/10/2026 16:38";"02/10/2026 16:40";0;Alta
+Reencaminhamento;"ANDRE GONCALVES SILVA · ServiceDesk → Financeiro N-2";"Resolução De Tickets";"bom, atras, fatur";2;0;0;N/D;1;"04/10/2026 12:41";"04/10/2026 12:41";0;Alta
+Reencaminhamento;"FELIPE MOTA FRACAROLLI · Comercial Geral → Agendamento Geral ---";"Troca De Estrutura/Equipamentos (Upgrade)";"ont, atualizou, tecnologi, plan";2;0;0;N/D;1;"05/10/2026 15:12";"05/10/2026 15:19";1;Alta
+Reencaminhamento;"MURILO GABRIEL REIS DE ALMEIDA · Atendimento Comercial → ServiceDesk";"Conexão Lenta";"funcionam, carregam, plataform, movei";2;0;0;N/D;1;"05/10/2026 10:28";"05/10/2026 10:35";0;Alta
+Reencaminhamento;"OSVALDO SANTOS DA SILVA · Comercial Geral → ServiceDesk";"Conexão Lenta";"abrem, ouvir, ficam, relig";2;0;0;N/D;1;"06/10/2026 08:54";"06/10/2026 08:56";0;Alta
+Reencaminhamento;"ELENILTON LOPES DE OLIVEIRA · Comercial Geral → ServiceDesk";"Oscilação No Serviço De Internet";"umbuzeir, solcit, audi, fabi";2;0;0;N/D;1;"06/10/2026 14:23";"06/10/2026 15:03";0;Alta
+Reencaminhamento;"Cleonice Dos Reis Pinto · Comercial Geral → ServiceDesk";"Conexão Lenta";"concluem, mensagen, tiktok, constantement";2;0;0;N/D;1;"06/10/2026 17:16";"06/10/2026 17:20";0;Alta
+Reencaminhamento;"UENDER MACIEL ARAUJO · Comercial Geral → ServiceDesk";"Conexão Lenta";"mal, instagram, assistir, demai";2;0;0;N/D;1;"07/10/2026 16:02";"07/10/2026 16:04";0;Alta
+Reencaminhamento;"José Bispo de Souza  · Comercial Geral → ServiceDesk";"Conexão Lenta";"reproduc, tiktok, desligou, normalizar";2;0;0;N/D;1;"08/10/2026 09:43";"08/10/2026 10:13";0;Alta
+Reencaminhamento;"MANOEL DA SILVA · Comercial Geral → ServiceDesk";"Conexão Lenta";"vincular, independentement, persist, visit";2;0;0;N/D;1;"09/10/2026 11:50";"09/10/2026 11:55";0;Alta
+Reencaminhamento;"MURILO CÉSAR SILVA · Comercial Geral → Gestão Técnica";"Solicitação De Materiais (P/ Cliente)";;2;0;0;N/D;1;"13/10/2026 11:12";"13/10/2026 11:14";0;Média
+Reencaminhamento;"MARIA CLARA MACIEL DA TRINDADE · Comercial Geral → (Técnica) Devolução de Equipamento";"Devolução De Equipamento";"pat, datacom, ont, devolv";2;0;0;N/D;1;"13/10/2026 15:39";"13/10/2026 16:17";0;Alta
+Reencaminhamento;"RJV EMPREENDIMENTOS E ENGENHARIA LTDA · Comercial Geral → ADM Operacional";"Correção/Cancelamento De Títulos/Lançamento";;2;0;0;N/D;1;"14/10/2026 15:21";"14/10/2026 15:22";0;Média
+Reencaminhamento;"PARQUE EOLICO JACOBINA 02 S.A · Comercial Geral → NOC";"Ajuste De Velocidade Link Dedicado";"dedic, liber, link";2;0;0;N/D;1;"16/10/2026 16:04";"16/10/2026 16:16";2;Alta
+Reencaminhamento;"ELISABETE SANTOS DA SILVA · Comercial Geral → Agendamento Geral ---";"Usuario Não Conecta";;2;0;0;N/D;1;"18/10/2026 09:11";"19/10/2026 14:45";2;Média
+Reencaminhamento;"ERLANE DE JESUS SANTOS · Comercial Geral → ServiceDesk";"Conexão Lenta";"pensar, interessant, desatualiz, base";1;1;0;"26 d";0;"25/08/2026 11:59";"21/09/2026 11:20";0;Alta
+Reencaminhamento;"Aritana Brunet Silva Barbosa · Comercial Geral → ServiceDesk";"Conexão Lenta";"problem, maquininh, comerci, continu";1;1;0;"26 d";0;"25/08/2026 15:50";"14/10/2026 10:14";0;Alta
+Reencaminhamento;"TIAGO OLIVEIRA SILVA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";;1;1;0;"27 d";0;"26/08/2026 11:12";"24/09/2026 11:20";0;Média
+Reencaminhamento;"BENEDITA DE JESUS · Comercial Geral → ServiceDesk";"Conexão Lenta";"problem, confer, lent, realiz";1;1;0;"29 d";0;"26/08/2026 14:03";"25/09/2026 16:05";0;Alta
+Reencaminhamento;"SECRETARIA DE EDUCAÇÃO -SEC · Comercial Geral → FATURAMENTO";"Gerar Nf Serviço";"fiscal, nota, gerar, valor";1;1;0;"7 d";0;"27/08/2026 08:30";"29/09/2026 10:20";0;Média
+Reencaminhamento;"TIAGO DE OLIVEIRA AMANCIO · Comercial Geral → ServiceDesk";"Usuario Não Conecta";"passar, soub, aparec, nao";1;1;0;"25 d";0;"27/08/2026 16:54";"22/09/2026 14:55";0;Média
+Reencaminhamento;"EDELZUITA VANDIRA DOS SANTOS · ServiceDesk → Agendamento Geral ---";"- Colar Roteador/Onu Na Parede";"colar, pared, onu, roteador";1;1;0;"20 d";0;"28/08/2026 13:38";"21/09/2026 10:11";0;Alta
+Reencaminhamento;"SUZETE SANTOS RIBEIRO · Atendimento Comercial → ServiceDesk";"Conexão Lenta";"perceb, extremament, principalment, frequent";1;1;0;"26 d";0;"31/08/2026 08:02";"28/09/2026 08:40";0;Média
+Reencaminhamento;"NOEME SILVA FELIPE · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";;1;1;0;"27 d";0;"01/09/2026 07:40";"09/10/2026 11:53";0;Média
+Reencaminhamento;"EDILAINE DE JESUS · ServiceDesk → Agendamento Geral ---";"Alteração De Senha Do Wi-Fi";"senh, atualizar, alter, wifi";1;1;0;"19 d";0;"01/09/2026 10:17";"21/09/2026 11:30";0;Média
+Reencaminhamento;"Glaconei dos Santos Nunes · Comercial Geral → ServiceDesk";"Conexão Lenta";"computador, consegu, melhorav, continu";1;1;0;"29 d";0;"01/09/2026 14:11";"01/10/2026 16:18";0;Média
+Reencaminhamento;"FARMACIAS DRUMOND · Comercial Geral → ServiceDesk";"Oscilação No Serviço De Internet";"farmaci, statu, dependem, conex";1;1;0;"18 d";0;"03/09/2026 09:49";"22/09/2026 09:09";0;Média
+Reencaminhamento;"JOSÉ CARLOS DA SILVA FONSECA · Comercial Geral → ServiceDesk";"Conexão Lenta";"problem, todo, lent, conx";1;1;0;"27 d";0;"03/09/2026 11:02";"01/10/2026 14:54";0;Média
+Reencaminhamento;"VALDILENE CALAZAM CARVALHO · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"igrej, ninguem, local, avis";1;1;0;"17 d";0;"03/09/2026 11:46";"28/09/2026 11:55";0;Alta
+Reencaminhamento;"LUANA ALMEIDA DOS SANTOS · Comercial Geral → ServiceDesk";"Conexão Lenta";"abrir, sumir, aparec, consegu";1;1;0;"28 d";0;"03/09/2026 13:27";"02/10/2026 08:03";0;Alta
+Reencaminhamento;"WILTON DOUGLAS DOS SANTOS LOPES · ServiceDesk → Agendamento Geral ---";"Oscilação No Serviço De Internet";"oscil, problem, novament, font";1;1;0;"25 d";0;"03/09/2026 14:08";"29/09/2026 10:25";0;Alta
+Reencaminhamento;"AROLDO ROSA DE JESUS · Comercial Geral → Agendamento Geral ---";"Alteração De Senha Do Wi-Fi";"senh, remot, visit, acess";1;1;0;"19 d";0;"03/09/2026 14:26";"23/09/2026 09:08";0;Média
+Reencaminhamento;"RAFAEL DOS SANTOS SILVA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"pisc, los, ont, local";1;1;0;"20 d";0;"03/09/2026 15:44";"24/09/2026 08:29";0;Média
+Reencaminhamento;"ADEMILTON NASCIMENTO DOS SANTOS · Comercial Geral → ServiceDesk";"Conexão Lenta";"carregar, foto, vide, cozinh";1;1;0;"27 d";0;"08/09/2026 15:51";"08/10/2026 09:18";0;Alta
+Reencaminhamento;"NELSON OLIVEIRA SANTIAGO · Comercial Geral → ServiceDesk";"Oscilação No Serviço De Internet";"noturn, period, principalment, persistem";1;1;0;"25 d";0;"08/09/2026 17:11";"05/10/2026 10:34";0;Alta
+Reencaminhamento;"MISMARA SILVA CUNHA · Comercial Geral → ServiceDesk";"Conexão Lenta";"guto, parent, detalh, estagi";1;1;0;"19 d";0;"09/09/2026 10:30";"29/09/2026 11:33";0;Média
+Reencaminhamento;"EDIVALDO SANTOS DA SILVA · Comercial Geral → ServiceDesk";"Oscilação No Serviço De Internet";"adailt, televis, melhori, solucionar";1;1;0;"10 d";0;"09/09/2026 10:35";"21/09/2026 10:18";0;Média
+Reencaminhamento;"NUBIA AURORA FREIRE DA SILVA · Comercial Geral → ServiceDesk";"Usuario Não Conecta";"aparelh, consegu, veio, vermelh";1;1;0;"17 d";0;"10/09/2026 09:00";"28/09/2026 08:10";0;Alta
+Reencaminhamento;"CARLOS ALBERTO SILVA DOS SANTOS · Comercial Geral → ServiceDesk";"Oscilação No Serviço De Internet";"principalment, continuam, acontec, pouc";1;1;0;"17 d";0;"17/09/2026 11:50";"05/10/2026 08:38";0;Média
+Reencaminhamento;"BRUNA SANTOS DO NASCIMENTO · ServiceDesk → Agendamento Geral ---";"Conexão Lenta";"cheg, contrat, nao, ating";1;1;0;"13 d";0;"10/09/2026 18:28";"27/09/2026 14:50";0;Alta
+Reencaminhamento;"MARIZA FERREIRA DE ARAUJO OLIVEIRA · Comercial Geral → ServiceDesk";"Conexão Lenta";"baixar, resolver, vide, conseguir";1;1;0;"17 d";0;"11/09/2026 11:17";"02/10/2026 16:41";0;Alta
+Reencaminhamento;"Mikaele Santos Ferreira Silva · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"rompeu, fios, caminh, passou";1;1;0;"28 d";0;"11/09/2026 12:35";"12/10/2026 16:27";0;Média
+Reencaminhamento;"UILMA TORRES DE OLIVEIRA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"qued, todo, tend, turn";1;1;0;"7 d";0;"11/09/2026 18:18";"21/09/2026 18:15";0;Média
+Reencaminhamento;"CARLOS HENRIQUE OLIVEIRA SOUZA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"ont, ligad, form, acord";1;1;0;"10 d";0;"12/09/2026 08:55";"25/09/2026 08:21";0;Média
+Reencaminhamento;"MONIQUE SANTANA DE OLIVEIRA DA SILVA · Comercial Geral → Agendamento Geral ---";"Usuario Não Conecta";;1;1;0;"22 d";0;"12/09/2026 09:44";"06/10/2026 14:16";0;Média
+Reencaminhamento;"CLEUNICE CARDOZO DA SILVA · Comercial Geral → Agendamento Geral ---";"Alteração De Senha Do Wi-Fi";"aditiv, remot, acess, senh";1;1;0;"12 d";0;"14/09/2026 07:52";"30/09/2026 16:32";0;Alta
+Reencaminhamento;"MONICA DE LIMA FELIPE · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"novament, conex, interrupc, agendar";1;1;0;"15 d";0;"14/09/2026 11:35";"02/10/2026 12:13";0;Média
+Reencaminhamento;"ALEXSANDRO PEREIRA DE ARAÚJO · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";;1;1;0;"13 d";0;"14/09/2026 16:21";"28/09/2026 12:53";0;Média
+Reencaminhamento;"IG MOVEIS E ELETROS LTDA · Comercial Geral → Gestão Técnica";"Solicitação De Materiais (P/ Cliente)";;1;1;0;"20 d";0;"14/09/2026 17:39";"07/10/2026 09:31";0;Média
+Reencaminhamento;"BRENDA VIEIRA DA SILVA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"iform, falt, conex";1;1;0;"13 d";0;"14/09/2026 19:28";"28/09/2026 19:49";0;Média
+Reencaminhamento;"RAILANE MOTA SANTOS · Comercial Geral → ServiceDesk";"Conexão Lenta";"cham, instabil, trav, problem";1;1;0;"8 d";0;"15/09/2026 08:54";"24/09/2026 13:49";0;Alta
+Reencaminhamento;"MARIANA LIMA SALDANHA SOUSA  · Atendimento Presencial - Quixabeira → ServiceDesk";"Conexão Lenta";"apresent, notebook, tratativ, plan";1;1;0;"18 d";0;"15/09/2026 08:55";"05/10/2026 11:59";0;Média
+Reencaminhamento;"CÁSSIA SANTOS PEREIRA CARVALHO · Comercial Geral → ServiceDesk";"Oscilação No Serviço De Internet";"mesm, ocorr, cabeass, televis";1;1;0;"8 d";0;"16/09/2026 11:13";"25/09/2026 11:24";0;Média
+Reencaminhamento;"ALEXANDRE LIMA DIAS · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"pisc, los, ont, conex";1;1;0;"26 d";0;"16/09/2026 11:21";"14/10/2026 17:56";0;Média
+Reencaminhamento;"LUZINETE BISPO DE OLIVEIRA · Comercial Geral → ServiceDesk";"Conexão Lenta";"possivei, frequent, durant, luminos";1;1;0;"29 d";0;"16/09/2026 14:59";"16/10/2026 16:18";0;Alta
+Reencaminhamento;"THAIS DE OLIVEIRA ANDRADE · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"cto, encaminhar, verific, local";1;1;0;"10 d";0;"16/09/2026 15:58";"27/09/2026 10:24";0;Média
+Reencaminhamento;"JOSÉ BERNARDINO DE LIMA · Comercial Geral → ServiceDesk";"Conexão Lenta";"abri, lent, procurei, zap";1;1;0;"27 d";0;"17/09/2026 08:18";"16/10/2026 08:54";0;Média
+Reencaminhamento;"DEIVIDE LEONEL DE ARAUJO FEITOSA · Comercial Geral → Setor TI";"Configuração De Equipamentos";"configur, acompanhar, grandstream, instal";1;1;1;"6 d 4 h";0;"17/09/2026 10:44";"14/10/2026 13:16";0;Média
+Reencaminhamento;"LUCIANY LIMA LOPES · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";;1;1;0;"10 d";0;"18/09/2026 08:09";"29/09/2026 14:18";0;Média
+Reencaminhamento;"DAIZE PACHECO DE ALMEIDA DAMACENO · Comercial Geral → ServiceDesk";"Usuario Não Conecta";"mae, valdeci, coloc, peco";1;1;0;"9 d";0;"18/09/2026 08:55";"01/10/2026 10:01";0;Média
+Reencaminhamento;"KAÊ GOMES DA SILVA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"ligand, queim, modo, font";1;1;0;"9 d";0;"18/09/2026 09:22";"01/10/2026 19:01";0;Média
+Reencaminhamento;"VANUSIA DE OLIVEIRA FRANÇA · Comercial Geral → ServiceDesk";"Oscilação No Serviço De Internet";"semem, box, oscil, cerc";1;1;0;"12 d";0;"18/09/2026 10:01";"01/10/2026 07:57";0;Média
+Reencaminhamento;"DJANE NUNES OLIVEIRA MATOS · Comercial Geral → ServiceDesk";"Usuario Não Conecta";"fala, caiu, mbr, reestabelec";1;1;0;"28 d";0;"18/09/2026 10:18";"16/10/2026 16:14";0;Alta
+Reencaminhamento;"VALMIRA FIDELINA DE MATOS ALMEIDA · ServiceDesk → Agendamento Geral ---";"Usuario Não Conecta";"vida, font, nenhum, sinai";1;1;1;"2 d 1 h";0;"18/09/2026 10:51";"23/09/2026 10:19";0;Média
+Reencaminhamento;"FRANCISCO VALDECI TEIXEIRA DA SILVA · Comercial Geral → ServiceDesk";"Conexão Lenta";"bastant, insatisf, grosseir, expressar";1;1;0;"8 d";0;"18/09/2026 11:27";"29/09/2026 08:24";0;Média
+Reencaminhamento;"REINALDO GONÇALVES DA SILVA · Atendimento Presencial - Quixabeira → Financeiro N-2";"Pagamento Equivocado";"bolet, cpf, atentou, correc";1;1;0;"25 d";0;"18/09/2026 13:05";"13/10/2026 17:19";0;Média
+Reencaminhamento;"EVANILSON SANTOS TEIXEIRA · Comercial Geral → ServiceDesk";"Conexão Lenta";"edileuz, enfrent, liga, servicedesk";1;1;0;"19 d";0;"18/09/2026 15:00";"08/10/2026 09:59";0;Média
+Reencaminhamento;"DEIVIDE LEONEL DE ARAUJO FEITOSA · Comercial Geral → Agendamento Geral ---";"Compartilhar Acesso Interno";"stream, pertencem, instal, unifi";1;0;0;N/D;1;"17/09/2026 10:37";"15/10/2026 15:23";1;Média

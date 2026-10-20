@@ -25,9 +25,9 @@ semana=$(date -d "$segunda" +%V)
 ano=$(date -d "$segunda" +%G)
 
 pasta="semanas/${domingo}_${sabado}"
-modulos="colaborador_x_ticket wifeed_daily_update_voucher fullcam_lucros_prejuizos fullcam_automacao_inadimplencia fullcam_automacao_instalacao_camera acompanhamento_protocolos"
+modulos="colaborador_x_ticket wifeed_daily_update_voucher fullcam_lucros_prejuizos fullcam_automacao_inadimplencia fullcam_automacao_instalacao_camera acompanhamento_protocolos tarefas_executadas anomalias_pppoe pacote_semanal"
 
-for d in fontes/voalle fontes/investigacoes individuais; do
+for d in fontes/voalle fontes/investigacoes fontes/infraestrutura/backups individuais; do
   mkdir -p "$pasta/$d" && touch "$pasta/$d/.gitkeep"
 done
 for m in $modulos; do
@@ -62,8 +62,11 @@ cat > "$pasta/PARAMETROS.md" <<EOF
 
 ## 📥 Entradas esperadas
 
-- \`fontes/voalle/\`: liomar.*, isac.*, david.*
+- \`fontes/voalle/\`: liomar.*, isac.*, david.* (HTML, "Tipo de data: Lançamento")
 - \`fontes/autotickets/<modulo>/\`: relatórios do AutoTickets cobrindo ${domingo} a ${sabado}
+  (ou um único \`fontes/autotickets/pacote_semanal/*.json\` — docs/formato_exportacao_autotickets.md)
+- \`fontes/autotickets/anomalias_pppoe/\`: retrato atual, gerado no dia da emissão do consolidado (tópico condicional 8.4)
+- \`fontes/infraestrutura/backups/\`: jobs da semana (VMs/CTs, execuções × falhas, refeitos, último teste de restauração)
 - \`fontes/investigacoes/\`: estudos datados da semana (se houver)
 - \`individuais/\`: relatórios dos colegas (se enviados; usados como fonte complementar)
 - Observações sobre o relatório anterior (opcional): \`semanas/<anterior>/feedback.md\` a partir de \`templates/feedback.md\`

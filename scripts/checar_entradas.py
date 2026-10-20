@@ -9,6 +9,7 @@ Uso:
 Imprime uma tabela Markdown com o status de cada fonte. Sai com código 1 se faltar fonte essencial.
 """
 
+import json
 import os
 import re
 import subprocess
@@ -18,6 +19,7 @@ from datetime import date
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(RAIZ, "scripts"))
 from mascarar_dados import pendencias  # noqa: E402  (mesma detecção do pre-commit)
+from validar_relatorio import itens_feedback  # noqa: E402
 
 # Repositório do AutoTickets: variável de ambiente AUTOTICKETS_REPO ou o primeiro caminho conhecido que existir.
 AUTOTICKETS_REPO = os.environ.get("AUTOTICKETS_REPO") or next(
@@ -41,6 +43,13 @@ MODULOS = [
     ("tarefas_executadas", False),
     ("anomalias_pppoe", False),
 ]
+# Nome do módulo no pacote_semanal quando difere do nome da pasta.
+PACOTE_ALIAS = {
+    "wifeed_daily_update_voucher": "wifeed",
+    "fullcam_lucros_prejuizos": "fullcam_financeiro",
+    "fullcam_automacao_inadimplencia": "fullcam_inadimplencia",
+    "fullcam_automacao_instalacao_camera": "fullcam_instalacao",
+}
 PERIODO = re.compile(r"^(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2})$")
 
 
@@ -131,9 +140,37 @@ def main():
         (f"{n} commits em {inicio}..{fim}" if n is not None else "repositório indisponível")
         + (f"; relatório: {', '.join(dev)}" if dev else ""))
 
+    # Pacote semanal (docs/formato_exportacao_autotickets.md): um JSON que cobre todos os módulos.
+    pacote_dir = os.path.join(pasta, "fontes", "autotickets", "pacote_semanal")
+    pacote = [f for f in arquivos(pacote_dir) if f.endswith(".json")]
+    modulos_pacote = set()
+    if pacote:
+        try:
+            with open(os.path.join(pacote_dir, pacote[-1]), encoding="utf-8") as h:
+                dados = json.load(h)
+            per = dados.get("meta", {}).get("periodo", {})
+            ok_periodo = (per.get("inicio"), per.get("fim")) == (inicio, fim)
+            modulos_pacote = set(dados.get("modulos", {}))
+            invalidas = [v.get("regra") for v in dados.get("validacoes", []) if not v.get("ok")]
+            add("AutoTickets — pacote_semanal", ok_periodo,
+                f"{pacote[-1]}: {len(modulos_pacote)} módulo(s)"
+                + ("" if ok_periodo else f"; período {per} ≠ {inicio}..{fim}")
+                + (f"; validações com falha: {', '.join(map(str, invalidas))}" if invalidas else ""))
+        except (OSError, ValueError) as e:
+            add("AutoTickets — pacote_semanal", False, f"{pacote[-1]}: JSON inválido ({e})")
+    else:
+        add("AutoTickets — pacote_semanal", False, "ausente (formato proposto em docs/formato_exportacao_autotickets.md)",
+            essencial=False)
+
     for mod, essencial in MODULOS:
         fs = arquivos(os.path.join(pasta, "fontes", "autotickets", mod))
-        add(f"AutoTickets — {mod}", bool(fs), ", ".join(fs) or "ausente", essencial)
+        no_pacote = PACOTE_ALIAS.get(mod, mod) in modulos_pacote
+        add(f"AutoTickets — {mod}", bool(fs) or no_pacote,
+            ", ".join(fs) or ("coberto pelo pacote_semanal" if no_pacote else "ausente"), essencial)
+
+    bkp = arquivos(os.path.join(pasta, "fontes", "infraestrutura", "backups"))
+    add("Infraestrutura — backups (8.2)", bool(bkp),
+        ", ".join(bkp) or "ausente: o quadrante de backups deve declarar ausência de fonte (nunca estimar)", essencial=False)
 
     inv = arquivos(os.path.join(pasta, "fontes", "investigacoes"))
     add("Investigações", bool(inv), ", ".join(inv) or "nenhuma na semana", essencial=False)
@@ -156,8 +193,10 @@ def main():
             essencial=False)
         fb = os.path.join(ant, "feedback.md")
         preenchido = feedback_preenchido(fb)
+        itens = itens_feedback(fb)
         add("Feedback/observações da semana anterior", preenchido,
-            f"semanas/{anteriores[-1]}/feedback.md" + ("" if preenchido else " (vazio ou inexistente)"),
+            f"semanas/{anteriores[-1]}/feedback.md"
+            + (f" — {len(itens)} observação(ões) a tratar no Resumo Executivo" if preenchido else " (vazio ou inexistente)"),
             essencial=False)
 
     sem_mascara = []
@@ -169,7 +208,8 @@ def main():
                     if pendencias(h.read(), csv_mode=f.lower().endswith(".csv")):
                         sem_mascara.append(os.path.relpath(caminho, pasta))
     add("Dados sensíveis mascarados (CPF/CNPJ, e-mail, RTMP, senha)", not sem_mascara,
-        "ok" if not sem_mascara else "rodar scripts/mascarar_dados.py em: " + ", ".join(sem_mascara))
+        "ok" if not sem_mascara else "rodar scripts/mascarar_dados.py em: " + ", ".join(sem_mascara),
+        essencial=False)
 
     print(f"## Fase 0 — Checklist de entradas: {nome}\n")
     print("| Fonte | Status | Detalhe |")

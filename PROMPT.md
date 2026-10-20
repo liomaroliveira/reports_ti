@@ -17,9 +17,9 @@ Gere o **relatório semanal consolidado** da semana a gerar (pasta mais recente 
 5. `docs/regras_metricas.md`, `docs/fontes_de_dados.md`, `docs/classificacao_protocolos.md`, `docs/glossario.md`.
 6. `docs/licoes_aprendidas.md`.
 
-Antes de concluir: `python3 scripts/validar_indice.py` nos relatórios gerados, `bash scripts/renderizar_pdf.sh` para os PDFs e commit no Git.
+Antes de concluir: `python3 scripts/validar_indice.py` e `python3 scripts/validar_relatorio.py` nos relatórios gerados, `bash scripts/renderizar_pdf.sh` para os PDFs e commit no Git.
 
-**Lembretes críticos:** nunca inventar dados nem usar números de semanas anteriores como dado atual (só como comparação rotulada) · toda afirmação com protocolo, commit ou caminho da fonte · CPFs mascarados · WhatsApp (`miscelaneous/`) não é fonte.
+**Lembretes críticos:** Destaques Analíticos e tópicos condicionais conforme os dados (ver "Classes de Tópicos" na especificação) · ler os `_ANALISE_*.md` das fontes · nunca inventar dados nem usar números de semanas anteriores como dado atual (só como comparação rotulada) · toda afirmação com protocolo, commit ou caminho da fonte · CPFs mascarados · WhatsApp (`miscelaneous/`) não é fonte.
 
 ---
 

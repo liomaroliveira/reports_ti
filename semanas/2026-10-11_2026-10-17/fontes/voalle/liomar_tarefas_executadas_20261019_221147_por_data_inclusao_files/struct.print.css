@@ -1,0 +1,125 @@
+/*--------------------------------
+	autor: Thiago Alves Luiz
+	email: thiago@syntesis.com.br
+	twitter: @taltk9
+----------------------------------*/
+
+/*Estrutura principal*/
+
+/*
+    AZUL #336b95
+    LARANJA #e17209
+*/
+html,body {width:100%; height:100%; font-family:Arial; color:#000000; font-size:14px;
+           background:#ffffff; vertical-align:middle;}
+
+table, tr {border:none;}
+table { width:100%; margin-bottom:20px;}
+td {width:70%; text-align:justify; border:1px solid #336b95; padding:5px;}
+
+td.col-title {background:#cecece; width:30%;text-align:right;}
+
+tr.cabecalho {background:#336b95;}
+tr.cabecalho td {width:100%; text-align:left; color:#ffffff;}
+tr.row-header {background:#cecece;}
+
+table.topo {background-color:none; font-size:18px; }
+table.topo td {vertical-align:middle; text-align:center; border:none;}
+table.topo td.titulo {}
+table.topo tr {border:1px solid #336b95;}
+table.topo td.col-title {background:none;}
+
+table.tarefas td.col1 {width:60%;}
+table.tarefas td.col2 {width:25%;}
+table.tarefas td.col3 {width:0%;}
+table.tarefas td.col4 {width:15%;}
+
+table.requisites td.col1 {width:30%;}
+table.requisites td.col2 {width:50%;}
+table.requisites td.col3 {width:20%;}
+
+table.stakeholders td.col1 {width:30%;}
+table.stakeholders td.col2 {width:20%;}
+table.stakeholders td.col3 {width:10%;}
+table.stakeholders td.col4 {width:10%;}
+table.stakeholders td.col5 {width:10%;}
+
+table#process table {margin-bottom:0px;}
+table#process td.w50 {width:50%;padding:0px;}
+table#process td.col-title {background:#cecece; width:30%;text-align:right;border-top:none;}
+table#process td.col-information {background:#ffffff;border-right:none;border-top:none;}
+table#process td.col1 {background:#cecece;border-bottom:none;}
+table#process td.col2 {}
+
+table#task-analysis-1 td {font-size:6.2pt;}
+table#task-analysis-1 td.col-title {background:#cecece; width:20%;text-align:right;}
+table#task-analysis-1 td {width:30%;}
+
+table#task-analysis-2 td {font-size:6.2pt;}
+table#task-analysis-2 td.col-title {background:#cecece; text-align:left;}
+table#task-analysis-2 td.col-1 {width:5%;}
+table#task-analysis-2 td.col-2 {width:35%;}
+table#task-analysis-2 td.col-3 {width:5%; text-align:center;}
+table#task-analysis-2 td.col-4 {width:5%; text-align:center;}
+table#task-analysis-2 td.col-5 {width:10%; text-align:center;}
+table#task-analysis-2 td.col-6 {width:10%; text-align:center;}
+table#task-analysis-2 td.col-7 {width:25%; text-align:left;}
+table#task-analysis-2 td.col-8 {width:5%; text-align:right;}
+
+table#resource-analysis td {font-size:6.2pt;}
+table#resource-analysis td.col-title {background:#cecece; text-align:center;}
+table#resource-analysis td.col-1 {width:18%; text-align:left;}
+table#resource-analysis td.col-2 {width:9%; text-align:right;}
+table#resource-analysis td.col-3 {width:9%; text-align:right;}
+table#resource-analysis td.col-4 {width:9%; text-align:right;}
+table#resource-analysis td.col-5 {width:9%; text-align:right;}
+table#resource-analysis td.col-6 {width:5%; text-align:center;}
+table#resource-analysis td.col-7 {width:9%; text-align:right;}
+table#resource-analysis td.col-8 {width:5%; text-align:center;}
+table#resource-analysis td.col-9 {width:9%; text-align:right;}
+table#resource-analysis td.col-10 {width:5%; text-align:center;}
+table#resource-analysis td.col-11 {width:9%; text-align:right;}
+table#resource-analysis td.col-12 {width:5%; text-align:center;}
+
+table#management-resource-analysis td {font-size:6.2pt;vertical-align: middle;}
+table#management-resource-analysis td.col-title {background:#cecece; text-align:center;}
+table#management-resource-analysis td.col-1 {width:60%; text-align:left;}
+table#management-resource-analysis td.col-2 {width:10%; text-align:center;}
+table#management-resource-analysis td.col-3 {width:10%; text-align:center;}
+table#management-resource-analysis td.col-4 {width:20%; text-align:left;}
+table#management-resource-analysis td.col-5 {width:9%; text-align:right;}
+
+table#expenses-analysis td {font-size:6.2pt;}
+table#expenses-analysis td.col-title {background:#cecece; text-align:center;}
+table#expenses-analysis td.col-1 {width:300px; text-align:left;}
+table#expenses-analysis td.col-2 {width:200px; text-align:right;}
+table#expenses-analysis td.col-3 {width:200px; text-align:right;}
+table#expenses-analysis td.col-4 {width:200px; text-align:right;}
+
+table#projects-analysis td {font-size:6.2pt;}
+table#projects-analysis td.col-title {background:#cecece; text-align:left;}
+table#projects-analysis td.col-1 {width:5%; text-align:center;}
+table#projects-analysis td.col-2 {width:30%;}
+table#projects-analysis td.col-3 {width:20%; text-align:center;}
+table#projects-analysis td.col-4 {width:10%; text-align:center;}
+table#projects-analysis td.col-5 {width:10%; text-align:center;}
+table#projects-analysis td.col-6 {width:10%; text-align:center;}
+table#projects-analysis td.col-7 {width:10%; text-align:center;}
+table#projects-analysis td.col-8 {width:5%; text-align:right;}
+
+table.rodape td {text-align:center; }
+
+tr.odd {background-color:#EEEEEE;}
+td.sem-formatacao {border:none;background:none;}
+
+@media print and (color) {
+    * {
+        -webkit-print-color-adjust : exact;
+        print-color-adjust         : exact;
+    }
+    svg {
+        -webkit-print-color-adjust : exact;
+        print-color-adjust         : exact;
+    }
+    /* presentation rules for the page on color printers */
+}

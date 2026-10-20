@@ -3,13 +3,13 @@
 > Feedback sobre a qualidade da exportação, para ajustes manuais e para o AutoTickets. **Não é fonte do relatório.** No relatório consolidado, esta fonte alimenta o tópico **8.4 Anomalias de Tráfego PPPoE e Ações Proativas para o Service Desk** (`docs/especificacao_relatorio.md`).
 
 **Arquivos:**
-- `relatorio_anomalias_pppoe_2026-10-20.csv`, já mascarado.
-- `Relatório de Anomalias PPPoE - AutoTickets NOC.pdf`, que está no `.gitignore` porque traz nome completo e IP de cada cliente.
+- `relatorio_anomalias_pppoe_2026-10-20.csv` (CPF/CNPJ mascarado).
+- `Relatório de Anomalias PPPoE - AutoTickets NOC.pdf` (traz nome e IP; uso interno, versionado).
 
-## Período: retrato fora da semana
+## Natureza da fonte: retrato atual
 
-- O PDF foi gerado em **19/10/2026 22:07:06 (-03)**, com o filtro "Período: Últimas 24 horas". Ele cobre 18 a 19/10, **depois** da semana de 11 a 17/10. No relatório, deve ser rotulado como "retrato de 18–19/10".
-- O nome do CSV diz **2026-10-20**. Provavelmente é a data em UTC.
+- **É de propósito que fique fora da semana.** Decisão de 19/10: este relatório é um **retrato atual**, gerado no dia da emissão do consolidado, com problemas para serem vistos **agora**. Não se aplica o recorte da semana. No relatório basta informar a hora do retrato: **19/10/2026 22:07:06 (-03)**.
+- O nome do CSV diz **2026-10-20**. Provavelmente é a data em UTC; deveria ser a data local.
 - **O rótulo "24h" não descreve os números.** Os totais de upload/download são **acumulados na sessão inteira**, e há sessões de até 12 dias. O filtro de 24h só seleciona as sessões que estavam ativas. Exemplo: `idealltda` tem 552 GB de upload, o que exigiria cerca de 51 Mbps contínuos em 24h, mas o throughput informado é 8,94 Mbps, com sessão média de 6d 3h.
 
 ## Estrutura e contagens
@@ -36,7 +36,7 @@
 
 ## Ranking por razão Upload/Download (top 15)
 
-Este é o insumo do tópico 8.4: só login, sem nome, documento ou IP. A razão confere com Upload ÷ Download nos 27 registros.
+Este é o insumo do tópico 8.4. No relatório, a tabela deve trazer também **cliente, contrato, CPF/CNPJ mascarado, bairro, IP, MAC e CPE**, para que o Service Desk localize cada caso. Aqui aparece só o resumo. A razão confere com Upload ÷ Download nos 27 registros.
 
 | # | Login | Cidade / POP | Plano | Upload / Download | Razão | Quedas | Sev./Score |
 | :-: | :--- | :--- | :--- | :--- | :-: | :-: | :--- |
@@ -71,7 +71,8 @@ Este é o insumo do tópico 8.4: só login, sem nome, documento ou IP. A razão 
 | :--- | :---: | :---: |
 | Os mesmos 27 registros, na mesma ordem (Upload Total desc.) | sim | sim |
 | CPF/CNPJ (23 CPF + 4 CNPJ, só dígitos) | sim; **mascarados em 19/10** | não |
-| IP do cliente (22 CGNAT 100.70.x, 5 públicos 177.93.x) e nome completo | só o nome | **sim** |
+| IP do cliente (22 CGNAT 100.70.x, 5 públicos 177.93.x) | **não** | **sim** |
+| Nome do cliente | sim | sim |
 | KPIs (27 anomalias, 8 críticas, 11 instáveis, 23 inversões, 5,66 TB up / 1,52 TB down) | não | sim |
 | Filtros aplicados (Upload mínimo ≥ 100000 MB, últimas 24h) e data de geração | não | sim |
 | Bairro, Cidade, POP, Tecnologia, Potência TX, Tempo Bloqueio, Duração Média Sessão em colunas | sim | parcial |
@@ -105,12 +106,12 @@ Este é o insumo do tópico 8.4: só login, sem nome, documento ou IP. A razão 
 
 ## Formato recomendado
 
-**CSV mascarado**, mais o cabeçalho do PDF (filtros e KPIs) anotado no relatório. O PDF não deve ser versionado.
+**Hoje:** use o CSV mais o PDF. O CSV traz as colunas; o PDF traz o **IP**, que não está no CSV, além dos KPIs e dos filtros. **Correção ideal:** incluir o IP e os KPIs no CSV (ou no pacote semanal). Assim o PDF deixa de ser necessário.
 
 ## Correções sugeridas ao AutoTickets NOC (por prioridade)
 
-1. **Mascarar CPF/CNPJ na origem.** O PDF não deveria exibir nome completo e IP juntos; o login basta.
-2. **Janela explícita (início e fim)**, com tráfego **calculado dentro da janela**, e não acumulado por sessão. Permitir exportar a semana de domingo a sábado.
+1. **Exportar no CSV tudo o que for preciso para localizar o caso:** incluir **IP**, KPIs e filtros, que hoje só estão no PDF. Mascarar CPF/CNPJ na origem.
+2. **Janela de tráfego explícita (início e fim)**, com bytes **calculados dentro da janela**, e não acumulados por sessão. Assim o rótulo "últimas 24h" passa a corresponder ao dado.
 3. **Throughput médio real** = bytes da janela ÷ tempo online na janela, mais o pico separado.
 4. **Regra de severidade publicada e coerente com o score.** Dar à razão Upload/Download um peso próprio, sem penalizar as quedas duas vezes.
 5. **Limiar mínimo de razão** (ex.: ≥ 1,5x) para classificar como "inversão" e eliminar os falsos positivos.

@@ -1,110 +1,96 @@
 # Comparativo: Tarefas Executadas AutoTickets × Voalle ERP (semana 42: 11/10 a 17/10/2026)
 
-> Feedback sobre a qualidade da exportação, para ajustes manuais e para o AutoTickets. **Não é fonte do relatório.**
-> Pergunta: o relatório de Tarefas Executadas do AutoTickets (`/modules/tickets` > Tarefas Executadas) é confiável e suficiente para **dispensar** o do Voalle? Ele serve como fonte primária de dados brutos da produção de cada colaborador.
+> Feedback sobre a qualidade da exportação, para ajustes no AutoTickets. **Este arquivo não é fonte do relatório.**
+> **Pergunta:** o relatório de Tarefas Executadas do AutoTickets (`/modules/tickets` > Tarefas Executadas) é confiável e suficiente para **dispensar** o do Voalle, como fonte primária da produção bruta de cada colaborador?
+> **Revisão de 19/10, após a reexportação do Voalle por "Data de Inclusão":** a conclusão anterior mudou (ver seção 1).
 
 **Arquivos comparados:**
 - **AutoTickets:** `{liomar,isac,david}_tarefas_executadas_*.csv` e `.pdf`, nesta pasta.
-- **Voalle:** `../../voalle/{liomar,isac,david}_tarefas_executadas_20261019_221147.html` e `.pdf`.
+- **Voalle por Lançamento:** `../../voalle/{pessoa}_tarefas_executadas_20261019_221147.html`.
+- **Voalle por Inclusão:** `../../voalle/{pessoa}_tarefas_executadas_20261019_221147_por_data_inclusao.html`.
 
-**Método:** os registros foram casados por protocolo e por data e hora de início. Antes de comparar o texto dos relatos, normalizamos os espaços e a formatação.
+**Método:** os registros foram casados por protocolo e por data e hora de início.
 
-## Veredito
+## 1. Lançamento × Inclusão no Voalle, e qual delas o AutoTickets reproduz
 
-- **CSV do AutoTickets:** o **conteúdo está correto** e é **mais estruturado que o do Voalle**. Nos 98 pares casados, título, descrição, relato e progresso batem 100%. **Ainda não dispensa o Voalle**: antes é preciso corrigir os 4 bloqueios abaixo. Depois disso, pode substituí-lo como fonte primária.
-- **PDF do AutoTickets:** **não deve ser usado como fonte**. Ele corta relatos, perde registros e perde colunas.
-- **Melhor exportação do Voalle:** **HTML**. Ver `../../voalle/_ANALISE_FONTE.md`.
-
-### Bloqueios para dispensar o Voalle
-
-1. **Filtro de período diferente.** O Voalle filtra por data de **lançamento**; o AutoTickets, pela data de **início**. Por isso o AutoTickets **omite 2 apontamentos do Liomar** que somam **209h46m**: 3217119 (início em 08/10 08:29, 120:09) e 3218766 (início em 09/10 15:03, 89:37). Os dois foram iniciados antes da semana e ficaram abertos por dias. Nenhum lugar do relatório avisa a diferença.
-2. **Arredondamento de minutos.** O CSV arredonda os minutos linha a linha, enquanto o Voalle trunca. A soma do CSV fica de 5 a 14 min acima da do Voalle. Exemplos: 3221689 em 15/10 dá 420 × 421 min, e 3219157 dá 228 × 229. O próprio PDF do AutoTickets usa segundos e bate com o Voalle, então **o CSV e o PDF do AutoTickets divergem entre si**.
-3. **Linhas espúrias.** Há 4 linhas espúrias no Isac: protocolo 3221254, chamado 3455962, de 14/10 entre 09:20 e 09:23. São do tipo "Sol. Interna", com relato "Solicitação inicial", 0 min e sem data fim.
-4. **Protocolo vazio** nas "Tarefa de Solicitação" do David: 3201861 (2 linhas), 3200974 e 3203059. O número só aparece no título, e duas dessas linhas vêm com Tipo/Ação "Relato".
-
-## Comparativo por colaborador
-
-| | Liomar | Isac | David |
+| Colaborador | Voalle **Lançamento**: registros / HT | Voalle **Inclusão**: registros / HT | AutoTickets CSV: linhas / HT |
 | :--- | :---: | :---: | :---: |
-| Voalle: tarefas / HT no cabeçalho | 6 / **306:11** | 17 / **22:43** | 41 / **31:05** |
-| Voalle HTML: registros / soma das linhas | 17 / 306:05 | 26 / 22:36 | 57 / 30:52 |
-| AutoTickets CSV: linhas / soma | 15 / **96:24** | 30 / **22:44** | 57 / **31:06** |
-| AutoTickets PDF: registros no corpo / HT | 15 / 96h23m | 30 / 22h43m (**sem coluna Data**) | **50 de 57** / 31h05m |
-| Registros casados (HT Voalle × CSV) | 15 (96:19 × 96:24) | 26 (22:36 × 22:44) | 57 (30:52 × 31:06) |
-| No Voalle e ausentes no AutoTickets | **2** (3217119, 3218766 = 209h46m) | — | — |
-| No AutoTickets e ausentes no Voalle | — | **4** linhas espúrias (3221254) | — |
+| Liomar | 17 / **306:11** | 15 / **96:23** | 15 / 96:24 |
+| Isac | 26 / 22:43 | 30 / 22:43 | 30 / 22:44 |
+| David | 57 / 31:05 | 57 / 31:05 | 57 / 31:06 |
 
-> A diferença de 306h × 96h no Liomar é efeito do item 1. Os dois apontamentos longos, de 120h e 90h, também merecem revisão no próprio Voalle: são cronômetros que ficaram abertos por dias e distorcem o confronto com o Pontomais (tópico 2.4).
+**O AutoTickets reproduz exatamente o filtro "Inclusão" do Voalle.** Os mesmos registros aparecem nos dois, inclusive as 4 linhas de 3221254 do Isac. O que a análise anterior chamou de "omissão" e de "linhas espúrias" é, na verdade, **diferença de critério**, e não erro do AutoTickets.
 
-## Fidelidade do conteúdo (CSV × Voalle)
+**O que muda entre os dois filtros (casos reais da semana):**
 
-- **Texto:** título, descrição, relato e progresso batem nos 98 pares. Há duas exceções, e nenhuma é perda de texto:
-  - **Isac 3078726:** o relato no Voalle é uma tabela HTML aninhada, que o AutoTickets converteu em texto com o link.
-  - **David 3216735:** o relato tem uma imagem embutida, que o AutoTickets **removeu sem deixar marcador**.
-- **Quebras de linha perdidas.** Parágrafos e listas viram texto colado, como "Setor de TI:Oscilações" e "técnica.Aguar". Isso ocorre em 3 relatos do Liomar, 9 do Isac e 9 do David.
-- **Imagens descartadas sem marcador:** 4 no David (3215368 com 2, 3216735 e 3202572).
+- **Somente em Lançamento:** os apontamentos do Liomar **3217119** (início 08/10 08:29, **120:09**) e **3218766** (início 09/10 15:03, **89:37**).
+  - Os dois começaram **antes** da semana e foram fechados **dentro** dela.
+  - "Lançamento" atribui o apontamento à semana em que ele é finalizado; "Inclusão", à semana em que foi criado.
+- **Somente em Inclusão:** 4 apontamentos do Isac em 3221254, em 14/10 às 09:20, 09:21, 09:22 e 09:23.
+  - Têm 00:00 de HT e **nenhuma data de fim**: foram criados, mas nunca lançados.
+  - "Lançamento" os ignora porque não foram finalizados. **Vale verificar com o Isac** se são cliques repetidos no play ou apontamentos que ficaram abertos.
 
-## Outras falhas
+**Qual é o mais adequado, se o ERP continuar sendo usado:**
+- **Padronizar "Lançamento".** Cada apontamento é contado **uma única vez**, na semana em que é finalizado. Nenhuma hora se perde.
+- **Problema do "Inclusão":** um apontamento aberto no momento da exportação, como o 3217119, que estava em execução, cai numa semana que já foi relatada. Depois de fechado, ele **não aparece em relatório nenhum**.
+- **Limitação dos dois critérios:** nenhum distribui as horas entre as semanas. Os 120h do 3217119 vão inteiros para uma única semana, embora cerca de 56h tenham ocorrido em 11–13/10 e o restante na semana 41.
+- **O que só o AutoTickets pode fazer:** recortar as horas por semana. É o principal ganho possível sobre o ERP (ver seção 4).
 
-**CSV:**
-- O Status é sempre "Concluído", mesmo com progresso de 0%.
-- "Encaminhamento – Destinatário" está sempre vazio.
-- "Equipe / Setor" traz o setor da solicitação (ex.: "Patrimônio e Logística – Sede – Triagem"), não o do colaborador. Nas atividades internas, fica vazio.
+## 2. Veredito
 
-**PDF:**
-- O relato é cortado em **140 caracteres sem reticências**: 8 de 15 relatos no Liomar, 14 de 30 no Isac e 26 de 57 no David. A descrição da demanda não aparece.
-- O **PDF do David omite 7 registros (5h03m)**, embora o cabeçalho diga "57 relatos / 31h05m". Faltam 3455201, 3454884, 3454379, 3454798, 3454791, 3453476 e 3446098, todos de 13/10.
-- O **PDF do Isac não tem a coluna Data/Período**, que foi cortada pela largura da página.
-- Os indicadores do cabeçalho não batem: Liomar aparece com "15 iniciadas", mas tem 3 aberturas; David com "19 iniciadas", mas tem 10. Só "concluídas" (progresso 100%) e "trâmites" (encaminhamentos) conferem.
-- O nome do arquivo não reflete a geração: o sufixo é `_221147`, mas o cabeçalho diz "Gerado em 22:14".
+- **Conteúdo:** o **CSV** do AutoTickets está **correto e é mais completo que o Voalle**. Nos 98 pares casados, título, descrição, relato e progresso batem 100%. Ele também traz a data e hora de fim completas (o Voalle mostra "13/10/2026 16:57 até 07:43" sem o dia), encaminhamentos com hora, cliente, tipo da demanda e ID do chamado.
+- **Ainda não dispensa o ERP:** os itens da seção 3 precisam ser corrigidos primeiro.
+- **Critério para dispensar:** os mesmos totais do Voalle nos dois critérios, em 2 semanas seguidas (ver `docs/formato_exportacao_autotickets.md`, "Critério de aceite").
+- **PDF do AutoTickets:** não deve ser usado como fonte. Ele corta relatos, perde registros e perde colunas.
 
-## Onde o AutoTickets já é melhor que o Voalle
+## 3. Correções necessárias para dispensar o Voalle
 
-- **Data e hora de fim completas.** O Voalle mostra "13/10/2026 16:57 até 07:43" sem dizer que o fim foi em 15/10.
-- **Hora nas aberturas e encaminhamentos.** O Voalle mostra só "13/10 até 13/10".
-- **Colunas próprias** para Cliente, Tipo da Demanda, Tipo/Ação, encaminhamento de origem e destino, ID do chamado e Data Registro com segundos.
+| # | Problema | Evidência | Correção |
+| :-: | :--- | :--- | :--- |
+| 1 | Só existe o critério "Inclusão" (fixo e não declarado) | Liomar: 96:24 no AutoTickets × 306:11 no Voalle por Lançamento | Parâmetro `filtro_periodo` = `lancamento` \| `inclusao` \| `sobreposicao`, **declarado no cabeçalho e no nome do arquivo**. Padrão: `sobreposicao` (seção 4). Exibir sempre os totais equivalentes do Voalle nos dois critérios para conferência. |
+| 2 | Minutos arredondados por linha (o CSV e o PDF divergem entre si) | Soma do CSV de 1 a 14 min acima do Voalle; 3221689 em 15/10 = 421 × 420 min | Guardar e somar **segundos**. Exibir com truncamento igual ao Voalle (HH:MM) só na apresentação. |
+| 3 | Apontamentos sem fim exportados como 0 min, "Concluído" e sem alerta | 4 linhas do Isac em 3221254 | Coluna `em_execucao`/`sem_fim` e alerta "apontamento aberto sem lançamento". Não chamar de "Concluído". |
+| 4 | Coluna Protocolo vazia nas "Tarefa de Solicitação" | David: 3201861 (2 linhas), 3200974 e 3203059 | Preencher o protocolo pelo vínculo da tarefa com a solicitação. Nunca deixar o número só no título. |
+| 5 | Quebras de linha perdidas nos relatos | 3 relatos do Liomar, 9 do Isac e 9 do David viram texto colado ("Setor de TI:Oscilações") | Preservar `\n` entre aspas (CSV) ou converter para Markdown. |
+| 6 | Imagens removidas sem marcador | David: 3215368 (2), 3216735 e 3202572 | Inserir `[imagem: N]` no ponto do relato. |
+| 7 | Falta o campo **Origem** do Voalle | Solicitação / Atividade Interna / Tarefa de Solicitação | Exportar `origem`. |
+| 8 | Status sempre "Concluído", mesmo com progresso 0% | Todas as linhas | Status real da tarefa/solicitação. |
+| 9 | "Equipe / Setor" mostra o setor da solicitação | "Patrimônio e Logística – Sede – Triagem" em atividade do TI | Separar `setor_colaborador` de `setor_destino`. |
+| 10 | "Encaminhamento – Destinatário" sempre vazio | Todas as linhas | Preencher ou remover. |
+| 11 | O nome do arquivo não traz período, filtro nem horário real | `_221147`, mas o cabeçalho diz 22:14 | `tarefas_executadas_<colab>_<inicio>_<fim>_<filtro>_gerado-<AAAAMMDDTHHMM>.csv`. |
+| 12 | PDF: relato cortado em 140 caracteres, 7 registros a menos no David, coluna Data ausente no Isac, indicadores "iniciadas" incoerentes | Detalhes na versão anterior deste arquivo (git) | Gerar o PDF a partir dos mesmos dados, sem corte, e conferir o total de linhas com o cabeçalho. Ou descontinuar o PDF. |
 
-## O que só o Voalle tem hoje
+## 4. Como tornar o AutoTickets **melhor** que o ERP
 
-- Campo **Origem** (Solicitação / Atividade Interna / Tarefa de Solicitação).
-- Formatação dos relatos (listas, tabelas, parágrafos) e imagens.
-- Total por pessoa calculado em segundos.
+1. **Filtro `sobreposicao`:** inclui todo apontamento cujo intervalo toca a semana, com duas colunas:
+   - `segundos` (total do apontamento);
+   - `segundos_no_periodo` (recortado ao intervalo domingo 00:00 a sábado 23:59).
 
-## Dados sensíveis
+   Assim cada hora é atribuída à semana em que ocorreu, sem perder nem duplicar. No caso do 3217119, cerca de 56h ficariam na semana 42 e o restante na 41.
+2. **Alertas automáticos por apontamento:**
+   - duração acima de 8h;
+   - atravessa noite, fim de semana ou feriado;
+   - play aberto no momento da exportação;
+   - sem fim.
 
-- Os relatos do Isac continham **senhas em texto aberto**: Wi-Fi do cliente, Unifi e Mikrotik, no protocolo 3221804 e no "Rede VITU". Também havia e-mails pessoais em relatos do David e do Liomar. **Tudo foi mascarado em 19/10 nos CSVs e HTMLs.** O PDF do Isac nesta pasta e os PDFs do Voalle **não foram versionados**.
-- **Recomendação à equipe:** credenciais devem ficar no cofre de senhas, não no relato do protocolo.
+   Esses alertas alimentam direto o confronto Voalle × Pontomais (tópico 2.4) e a orientação do Isvi de **fechar os relatos no fim do expediente** (feedback da semana 41).
+3. **Confronto com a jornada:** se o Pontomais for integrado (ou importado), adicionar `segundos_jornada` por dia e a divergência já calculada.
+4. **Uma linha por apontamento**, com:
+   - `id_apontamento` estável;
+   - `inicio` e `fim` em ISO 8601;
+   - `tipo_evento` (apontamento, abertura, encaminhamento, relato);
+   - `relato_data_hora` separado do texto.
 
-## Melhorias recomendadas para a exportação do AutoTickets
+   A descrição da demanda vai num bloco por protocolo, sem repetir a cada linha.
+5. **Exportação única com os 3 colaboradores**, além das individuais, ou já dentro do **pacote semanal** (`docs/formato_exportacao_autotickets.md`).
+6. **Bloco de conferência:**
+   - total de registros, protocolos distintos e segundos por colaborador nos 3 critérios;
+   - divergência em relação ao Voalle, quando o AutoTickets puder consultar o mesmo dado.
 
-**Antes de dispensar o Voalle (bloqueios):**
-1. **Escolha do filtro de período:** início, lançamento ou "qualquer sobreposição com o período". Por padrão, listar à parte os apontamentos que começaram antes do período e informar no cabeçalho qual filtro foi usado.
-2. **Tempo em segundos inteiros mais horas decimais**, com o mesmo cálculo no CSV e no PDF.
-3. **Remover as linhas "Solicitação inicial"** com 0 min, ou marcá-las com `tipo_evento=abertura`.
-4. **Preencher sempre a coluna Protocolo.**
+   É isso que permite dispensar o ERP com segurança.
 
-**Estrutura:**
-- **Uma linha por apontamento**, com `id_apontamento` estável, `inicio` e `fim` em ISO 8601 (`2026-10-16T12:17:52-03:00`), `segundos` e `horas_decimais`.
-- **Novos campos:**
-  - `origem`, como no Voalle;
-  - `tipo_evento` normalizado (apontamento, abertura, encaminhamento, relato);
-  - `setor_colaborador` separado de `setor_destino`.
-- **Alerta automático** para apontamentos acima de 8h ou que atravessam a noite ou o fim de semana. Isso alimenta direto a justificativa do Voalle × Pontomais.
-- **Relatos:**
-  - preservar as quebras de linha (`\n` entre aspas, ou Markdown);
-  - separar num campo próprio a data e hora que abrem o relato;
-  - inserir `[imagem: N]` onde houver imagem.
-- **Descrição da demanda** num arquivo à parte (um registro por protocolo), em vez de repetida a cada linha.
-- **Remover:** "Tempo Trabalhado (Formatado)", o prefixo "Protocolo N –" no título e o Status fixo.
+## 5. Dados sensíveis
 
-**Metadados e conferência:**
-- Nome do arquivo com o período: `tarefas_executadas_<colab>_2026-10-11_2026-10-17_gerado-20261019T2214.csv`.
-- Bloco de resumo (JSON ou rodapé) com:
-  - período e tipo de filtro;
-  - total de registros e protocolos distintos;
-  - soma em segundos;
-  - definição de cada indicador ("iniciadas" etc.);
-  - **checksum que bata com o cabeçalho do Voalle** (tarefas e HT).
-- Exportação única com os 3 colaboradores e a coluna `colaborador`, além das individuais.
-
-**PDF:** se mantido, sem corte de texto, com layout que não perca colunas e com conferência de que o número de linhas bate com o cabeçalho. Para o relatório consolidado, ele é dispensável.
+- **Senhas nos relatos do Isac:** Wi-Fi do cliente, Unifi e Mikrotik, no 3221804 e na "Rede VITU". Foram mascaradas nos CSVs e HTMLs em 19/10.
+- **Decisão de 19/10:** os arquivos são de uso interno e o commit não é bloqueado; o pre-commit só avisa.
+- **Orientação à equipe:** registrar credenciais no cofre de senhas, não no relato do protocolo.

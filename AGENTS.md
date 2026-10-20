@@ -39,6 +39,7 @@ reports_ti/
 │   ├── glossario.md              # Termos e jargões da empresa
 │   ├── licoes_aprendidas.md      # Consolidado dos feedbacks da Coordenação
 │   ├── pontos_a_melhorar.md      # Backlog de melhorias do próprio harness
+│   ├── formato_exportacao_autotickets.md # Pacote semanal único (JSON) proposto para o AutoTickets
 │   └── referencias/              # Modelo oficial da Coordenação e documentos de contexto
 ├── semanas/
 │   └── AAAA-MM-DD_AAAA-MM-DD/    # Uma pasta por semana (Domingo a Sábado)
@@ -50,9 +51,11 @@ reports_ti/
 │       │   └── **/_ANALISE_*.md      # feedback sobre a qualidade das exportações (NÃO é fonte; respeitar as ressalvas)
 │       ├── individuais/          # liomar.* | isac.* | david.* — só quando pedido, ou enviados pelos colegas
 │       ├── report_ti_AAAA-MM-DD_AAAA-MM-DD.{md,html,pdf}   # SAÍDA consolidada
-│       └── feedback.md           # Parecer do Isvi + observações do Liomar sobre o relatório desta semana (templates/feedback.md)
+│       ├── feedback.md           # Parecer do Isvi + observações do Liomar sobre o relatório desta semana (templates/feedback.md)
+│       ├── _VERIFICAR_EQUIPE_TI.md    # O que a equipe precisa verificar durante a semana (não é fonte)
+│       └── _PENDENCIAS_AUTOTICKETS.md # Problemas das exportações do AutoTickets a corrigir (não é fonte)
 ├── templates/                # report.css (visual oficial), report.html (esqueleto) e feedback.md (observações)
-├── scripts/                  # nova_semana.sh, checar_entradas.py, renderizar_pdf.sh, validar_indice.py, mascarar_dados.py
+├── scripts/                  # nova_semana.sh, checar_entradas.py, renderizar_pdf.sh, validar_indice.py, validar_relatorio.py, mascarar_dados.py
 ├── .githooks/pre-commit      # Bloqueia CPF sem máscara, chaves e dados do WhatsApp
 └── miscelaneous/             # FORA DO ESCOPO — não ler (conhecimento de extração do WhatsApp)
 ```
@@ -79,7 +82,7 @@ Siga `docs/fluxo_geracao.md`: Fase 0 (`scripts/checar_entradas.py`) → Fase 1 (
 4. **Sem distorções:** não alterar o sentido do que as equipes relataram.
 5. **Consistência do índice:** toda entrada do índice existe no corpo com o mesmo título e âncora funcional (`scripts/validar_indice.py`).
 6. **Multi-formato:** arquivos com o mesmo nome base em extensões diferentes (`.md`, `.html`, `.csv`, `.pdf`) são o mesmo relatório; tratar de forma unificada, observando só particularidades (SVG no HTML, colunas extras no CSV).
-7. **Proteção de dados (LGPD):** CPF, CNPJ de pessoa física/MEI, telefones, e-mails de clientes, senhas, stream keys (RTMP) e chaves de API nunca em arquivos versionados. CPFs de clientes sempre mascarados (`***.456.789-**`) — rodar `python3 scripts/mascarar_dados.py <arquivos>` nas exportações brutas antes do commit (detecta CPF/CNPJ com ou sem pontuação). PDFs com dados sensíveis não são versionados. No relatório, clientes de PPPoE aparecem só pelo login. O repositório tem remote no GitHub.
+7. **Proteção de dados (LGPD) — uso interno:** o relatório e o repositório são de **uso interno da empresa**. Nas **fontes**, rodar `python3 scripts/mascarar_dados.py <arquivos>` (CPF/CNPJ com ou sem pontuação, e-mails de clientes, URLs RTMP e senhas em relatos); o pre-commit apenas **avisa** — não bloqueia — e bloqueia só chaves de API e dados do WhatsApp. No **relatório**: CPF/CNPJ sempre mascarado (`***.456.789-**`) e senhas/stream keys nunca aparecem; os demais dados de identificação (nome, login PPPoE, contrato, protocolo, IP, MAC, POP, endereço) **devem** aparecer quando forem necessários para que os setores localizem o caso nos sistemas. O repositório tem remote no GitHub.
 8. **WhatsApp não é fonte de dados.** `miscelaneous/` não deve ser lido em nenhuma fase.
 
 ---
