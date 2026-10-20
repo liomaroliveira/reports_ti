@@ -29,7 +29,7 @@ DOMINIOS_INTERNOS = ("teninternet.com.br", "teninternet.net")
 CPF_FMT = re.compile(r"\b\d{3}\.(\d{3})\.(\d{3})-\d{2}\b")
 CNPJ_FMT = re.compile(r"\b\d{2}\.(\d{3})\.(\d{3})/\d{4}-\d{2}\b")
 DIGITOS = re.compile(r"(?<![\d.,/-])(\d{11}|\d{14})(?![\d,]|\.\d)")
-RTMP = re.compile(r"\b(rtmps?://[^/\s\"'<>;]+)/[^\s\"'<>;]+", re.I)
+RTMP = re.compile(r"\b(rtmps?://[^/\s\"'<>;]+)/(?!\*\*\*)[^\s\"'<>;`)]+", re.I)
 EMAIL = re.compile(r"\b([A-Za-z0-9])[A-Za-z0-9._%+-]*@([A-Za-z0-9.-]+\.[A-Za-z]{2,})\b")
 SENHA = re.compile(r"(?i)(senha|password|passwd|pwd)(\s*(?:[:=]|-(?=\s))\s*)(?!\*{8})([^\s<\"';,]+)")
 
