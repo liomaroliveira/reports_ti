@@ -8,7 +8,7 @@
 - **Período Operacional Efetivo do TI (Segunda a Sexta):** `2026-10-13` a `2026-10-16` <!-- ajustar: 12/10 é feriado -->
 - **Semana do Ano:** Semana 42 / 2026
 - **Colaborador Principal (Responsável pela Consolidação):** Liomar Antonio de Oliveira
-- **Prazo de Entrega:** `2026-10-19` (segunda-feira) até as 14h — **entrega adiada** (dados ainda não gerados)
+- **Prazo de Entrega:** `2026-10-19` (segunda-feira) até as 14h — **entrega adiada**; relatório gerado em 2026-10-20
 - **Relatórios individuais a gerar:** nenhum <!-- padrão: só o consolidado. Para gerar, liste: liomar, isac, david -->
 
 ## 📝 Instruções e Focos Específicos Desta Semana
@@ -25,14 +25,14 @@
 
 ## 📥 Entradas esperadas
 
-- [x] `fontes/voalle/`: HTML por Lançamento (Liomar, Isac, David). Também há as versões por Inclusão, usadas só para a comparação
-- [ ] `fontes/autotickets/colaborador_x_ticket/`
-- [ ] `fontes/autotickets/wifeed_daily_update_voucher/` (`.md` + `.html` com o SVG)
-- [ ] `fontes/autotickets/fullcam_lucros_prejuizos/`
-- [ ] `fontes/autotickets/fullcam_automacao_inadimplencia/`
-- [ ] `fontes/autotickets/fullcam_automacao_instalacao_camera/`
-- [ ] `fontes/autotickets/acompanhamento_protocolos/` (os CSVs de 2026-10-16 foram removidos no commit `0de3892`: gerar de novo cobrindo a semana inteira)
-- [ ] `fontes/autotickets/tarefas_executadas/` (CSV por colaborador; o PDF corta relatos — ver `_ANALISE_FONTE.md`)
+- [x] `fontes/voalle/`: HTML por Lançamento (Liomar, Isac, David). As versões por Inclusão foram removidas em 2026-10-20 (a comparação está no `_ANALISE_FONTE.md`)
+- [x] `fontes/autotickets/colaborador_x_ticket/`
+- [x] `fontes/autotickets/wifeed_daily_update_voucher/` (`.md` + `.html` com o SVG)
+- [x] `fontes/autotickets/fullcam_lucros_prejuizos/`
+- [x] `fontes/autotickets/fullcam_automacao_inadimplencia/`
+- [x] `fontes/autotickets/fullcam_automacao_instalacao_camera/`
+- [x] `fontes/autotickets/acompanhamento_protocolos/` (análise por IA de 26 protocolos, acumulada; usada só com cautela)
+- [x] `fontes/autotickets/tarefas_executadas/` (CSV por colaborador; o PDF corta relatos — ver `_ANALISE_FONTE.md`)
 - [x] `fontes/autotickets/anomalias_pppoe/` (CSV + PDF → tópico condicional 8.4; **retrato atual** de 19/10 22:07, sem recorte da semana)
 - [x] `fontes/autotickets/problemas_recorrentes/` (versão final `reincidencia_20261019_234621.md`: semana 11–17/10, retorno até 60 dias; `todas_equipes/` é só referência)
 - [ ] `fontes/infraestrutura/backups/` (quadrante do 8.2; sem fonte nesta semana → declarar ausência, nunca estimar)
@@ -44,3 +44,10 @@
 Depois de copiar: `python3 scripts/checar_entradas.py`. Formato esperado de cada fonte: `_FORMATO_ESPERADO.md` em cada pasta.
 
 > **Qualidade das fontes desta semana:** cada pasta de `fontes/` tem um `_ANALISE_FONTE.md` (e `fontes/autotickets/_ANALISE_GERAL.md`) com divergências entre formatos e campos não confiáveis. Respeitar as ressalvas ao gerar o relatório. Verificações da equipe: `_VERIFICAR_EQUIPE_TI.md` · Pendências do AutoTickets: `_PENDENCIAS_AUTOTICKETS.md` (nenhum dos dois é fonte).
+
+## 📌 Status da geração (2026-10-20)
+
+- **Gerado:** `report_ti_2026-10-11_2026-10-17.{md,html,pdf}` (consolidado; individuais não pedidos). `validar_indice.py` e `validar_relatorio.py` sem erros.
+- **Ausências declaradas no relatório:** backups (8.2), Pontomais (2.4), `produtividade_geral` (4.5), investigações (8.3), pacote semanal.
+- **Correções feitas ao relatório da semana 41 (registradas no texto):** quadrante de backups sem fonte, 45h45m de economia sem fonte, "100% DatabaseTransactions" (62 arquivos ainda com RefreshDatabase), automação WiFeed diária (não semanal).
+- **Pendências para a semana 43:** ver 9.3 do relatório (perfctl/Flashman #3219879, apontamentos longos do Liomar, ZEUS #3137037, gincana de pentest, segredo do webhook Fullcam, quadrante de backups).
